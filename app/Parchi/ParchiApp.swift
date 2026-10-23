@@ -33,6 +33,7 @@ struct RootView: View {
                 }
         }
         .onAppear(perform: jumpForTesting)
+        .onChange(of: path) { _, newPath in model.trackVisibilityChanged(newPath.contains(.track)) }
     }
 
     /// Launch with `-demoRoute confirm|plan|getItAll|track|planB` to open the demo at that step (screenshots, rehearsal reset).

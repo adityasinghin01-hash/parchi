@@ -17,3 +17,13 @@ webrx*/
 *.jpeg
 *.png
 !docs/**/*.png
+
+# build/runtime artefacts (never commit)
+server/.venv/
+server/data/
+__pycache__/
+.pytest_cache/
+*.log
+kiro_*.log
+app/Parchi.xcodeproj/xcuserdata/
+.swiftpm/

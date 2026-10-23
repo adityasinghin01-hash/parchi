@@ -48,6 +48,19 @@ final class AppModel {
     private(set) var statuses: [String: OrderStatus] = [:]
     var planB: PlanBProposal?
 
+    // Live backend (all unused while mode == .mock)
+    let backend = BackendSettings()
+    /// Plain-language problem with the server, shown in the Developer panel. nil = all fine.
+    var backendError: String?
+    private(set) var liveOrderID: String?
+    private var idempotencyKeys: [Plan: String] = [:]   // one key per approved plan, so a retry never double-orders
+    private var pollTask: Task<Void, Never>?
+    private var trackVisible = false
+    private var serverPlanVersion = 1
+    private var proposalKey: String?                    // "seller|version" already posted/shown, so we do it once
+    private var postedProposalVersion: Int?             // set only when the server holds the proposal now on screen
+    private var replacementSellers: Set<String> = []
+
     init() {
         scenario = Self.load("real_basket_cheapest")
         catalogue = Self.loadCatalogue()
@@ -66,6 +79,7 @@ final class AppModel {
         approvedPlan = nil
         statuses = [:]
         planB = nil
+        resetLiveOrder()
     }
 
     func choose(strength: String, for lineID: String) {
@@ -129,6 +143,7 @@ final class AppModel {
     func placeTestOrders() {
         approvedPlan = plan
         statuses = Dictionary(uniqueKeysWithValues: (plan?.sellerIDs ?? []).map { ($0, OrderStatus.placed) })
+        if backend.mode == .live { startLiveOrder() }
     }
 
     func simulateCancel(sellerID: String) {
@@ -143,6 +158,147 @@ final class AppModel {
         plan = proposal.newPlan
         for line in proposal.rerouted { statuses[line.sellerID] = .rerouted }
         planB = nil
+        if backend.mode == .live { sendDecision(approve: true, proposal: proposal) }
+    }
+
+    /// Live only: tells the server the patient chose not to take the proposal. (The sheet's "Choose myself" does not call this yet.)
+    func rejectPlanB() {
+        guard let proposal = planB else { return }
+        planB = nil
+        if backend.mode == .live { sendDecision(approve: false, proposal: proposal) }
+    }
+
+    // MARK: Live backend
+
+    /// Called by RootView when the Track screen appears/disappears; polling only runs while it is on screen.
+    func trackVisibilityChanged(_ visible: Bool) {
+        trackVisible = visible
+        if visible { startPollingIfNeeded() } else { stopPolling() }
+    }
+
+    func testConnection() async -> Bool {
+        guard let client = backend.makeClient() else { backendError = LiveError.badURL.message; return false }
+        do {
+            let health = try await client.health()
+            if health.ok { backendError = nil }
+            return health.ok
+        } catch {
+            backendError = (error as? LiveError)?.message
+            return false
+        }
+    }
+
+    private func resetLiveOrder() {
+        stopPolling()
+        liveOrderID = nil
+        serverPlanVersion = 1
+        proposalKey = nil
+        postedProposalVersion = nil
+        replacementSellers = []
+    }
+
+    private func startLiveOrder() {
+        guard let approved = approvedPlan else { return }
+        guard let client = backend.makeClient() else { backendError = LiveError.badURL.message; return }
+        let key = idempotencyKeys[approved] ?? UUID().uuidString
+        idempotencyKeys[approved] = key
+        let sellers = scenario.sellers
+        Task {
+            do {
+                let id = try await client.placeOrder(plan: approved, sellers: sellers, idempotencyKey: key)
+                guard approvedPlan == approved else { return }   // the user moved on while we waited
+                liveOrderID = id
+                backendError = nil
+                startPollingIfNeeded()
+            } catch {
+                // Never block the UI: the local (Mock) statuses already set above keep working.
+                backendError = (error as? LiveError)?.message ?? LiveError.unreachable.message
+            }
+        }
+    }
+
+    private func startPollingIfNeeded() {
+        guard backend.mode == .live, trackVisible, liveOrderID != nil, pollTask == nil else { return }
+        pollTask = Task { [weak self] in
+            while !Task.isCancelled {
+                guard let self, let id = self.liveOrderID, let client = self.backend.makeClient() else { break }
+                if await self.pollOnce(client: client, orderID: id) { break }
+                try? await Task.sleep(for: .seconds(2))
+            }
+            if !Task.isCancelled { self?.pollTask = nil }
+        }
+    }
+
+    private func stopPolling() {
+        pollTask?.cancel()
+        pollTask = nil
+    }
+
+    /// Returns true when polling should stop (order done).
+    private func pollOnce(client: LiveClient, orderID: String) async -> Bool {
+        do {
+            let status = try await client.status(orderID: orderID)
+            if Task.isCancelled || orderID != liveOrderID { return true }
+            backendError = nil
+            await apply(status, client: client)
+            return status.state == "done"
+        } catch is CancellationError {
+            return true
+        } catch {
+            backendError = (error as? LiveError)?.message ?? LiveError.unreachable.message
+            return false   // keep the demo state on screen and try again at the next tick
+        }
+    }
+
+    private func apply(_ status: ServerStatus, client: LiveClient) async {
+        serverPlanVersion = status.planVersion
+        for seller in status.sellers {
+            switch seller.status {
+            case "failed", "cancelled": statuses[seller.id] = .cancelled
+            case "rerouted": statuses[seller.id] = .rerouted
+            default: statuses[seller.id] = replacementSellers.contains(seller.id) ? .rerouted : .placed
+            }
+        }
+        guard let approved = approvedPlan, let orderID = liveOrderID else { return }
+
+        if status.state == "needs_proposal", let pending = status.pending {
+            let key = "\(pending.sellerID)|\(status.planVersion)"
+            guard proposalKey != key else { return }
+            proposalKey = key
+            let failure = Failure(rawValue: pending.failure) ?? .cancelled
+            // The re-routing maths stays on the phone, using the existing Plan B engine.
+            let proposal = PlanB(planner: planner).reroute(approved: approved, failedSellerID: pending.sellerID, failure: failure)
+            do {
+                try await client.postProposal(orderID: orderID, planVersion: status.planVersion, proposal: proposal)
+                postedProposalVersion = status.planVersion
+                replacementSellers = Set(proposal.rerouted.map(\.sellerID))
+                planB = proposal
+            } catch {
+                proposalKey = nil   // try again next tick
+                backendError = (error as? LiveError)?.message
+            }
+        } else if status.state == "awaiting_approval", planB == nil, let proposal = status.proposal,
+                  let pending = status.pending, proposalKey != "\(pending.sellerID)|\(status.planVersion)" {
+            // Proposal already on the server (e.g. the app was reopened): show it once.
+            proposalKey = "\(pending.sellerID)|\(status.planVersion)"
+            postedProposalVersion = status.planVersion
+            replacementSellers = Set(proposal.rerouted.map(\.sellerID))
+            planB = proposal
+        }
+    }
+
+    private func sendDecision(approve: Bool, proposal: PlanBProposal) {
+        // Only when the server actually holds this proposal (not for the local-only "Simulate cancel").
+        guard let orderID = liveOrderID, let version = postedProposalVersion, let client = backend.makeClient() else { return }
+        postedProposalVersion = nil
+        Task {
+            do {
+                if approve { try await client.approve(orderID: orderID, planVersion: version) }
+                else { try await client.reject(orderID: orderID, planVersion: version) }
+            } catch {
+                backendError = (error as? LiveError)?.message
+            }
+        }
     }
 
     // MARK: Names

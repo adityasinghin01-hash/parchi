@@ -7,7 +7,7 @@ Team TessaNova · Swift Developers Night 2.0 (KIET Apple CoE, 24 h) · budget �
 **Pitch line:** "ChatGPT tells you what's written. Parchi gets the whole parchi done, at the price you'll actually pay, and stays with it until it's done."
 
 ## Current plan
-**Target = V2** (V1 milestone on the way; recommendation engine = V3). Read `docs/plan/12-V2-MASTER-PLAN.md` (also .docx/.pdf). Automation = our own Orchestrator (Python stdlib + SQLite on the iMac), not LangChain/LangGraph/n8n/Zapier.
+**Target = V2** (V1 milestone on the way; recommendation engine = V3). Read `docs/plan/12-V2-MASTER-PLAN.md` (also .docx/.pdf). Automation = Temporal (free, self-hosted on the iMac) + a Python worker and API in `server/` (SQLite for app data); not LangChain/LangGraph/n8n/Zapier. V3 (after V2) = recommendation engine + automatic cart via partner APIs.
 
 ## Scope now
 **Cities:** Muradnagar + Meerut (extend later). **GUI is the star** (mentor, 23 Oct): Apple Maps price map + lists sorted cheapest → most expensive; local market shops included with MRP until they reply to **Ask nearby shops** (WhatsApp + reply form + pickup time).

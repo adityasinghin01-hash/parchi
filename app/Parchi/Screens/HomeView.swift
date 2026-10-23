@@ -33,5 +33,6 @@ struct HomeView: View {
             Spacer()
         }
         .padding()
+        .safeAreaInset(edge: .bottom) { BackendDeveloperPanel() }
     }
 }
