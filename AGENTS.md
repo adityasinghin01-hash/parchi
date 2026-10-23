@@ -1,5 +1,5 @@
 # PARCHI — project context (read this first: humans and AI assistants)
-Team TessaNova · Swift Developers Night 2.0 (KIET Apple CoE, 24 h) · budget ₹400 · no paid API · free Apple developer account.
+Team TessaNova · Swift Developers Night 2.0 (KIET Apple CoE, 24 h) · budget ₹400 · Claude API used for reading only; budget Rs 500 with a hard spend cap · free Apple developer account.
 
 ## What we build
 **Problem:** patients get a handwritten parchi they can't read; nobody tells them where to buy or the real price, so they pay MRP at the doctor-linked shop. Same 6-medicine basket: **₹1,030 MRP · ₹826 online (−20%) · ₹189 Jan Aushadhi (−82%)** [measured 23 Oct]. After paying, 16–29% of bad pharmacy-app reviews are about late/cancelled orders [measured, 9,000 Play reviews].

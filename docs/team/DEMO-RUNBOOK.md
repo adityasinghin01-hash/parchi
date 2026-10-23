@@ -11,14 +11,15 @@ Everything below was run on the lab iMac on 23 Oct 2026 (see `docs/verification/
 5. Judge page on a second screen: open `http://<iMac-ip>:8000/judge`, type the admin key (`data/admin.key`) into the login form once. The key is never in the address bar: a session cookie (12 h, this browser only, cleared by the server restarting or the Log out button) does the rest. An old `/judge?k=<key>` link still works once: it logs in and removes `k` from the address at once. LAN only, plain http (no `Secure` cookie).
 
 ## The 2-minute story (Live)
-1. **Choose a photo** of the demo parchi. The FIRST time, the consent screen appears (read it aloud: we try to hide the details we can find, you must check the picture, the picture goes to our own lab computer in Live mode, photo copies are removed after 24 hours, Delete everything is in Settings); tap Agree. Then the preview shows what was hidden -> Use this photo. (With no reader connected the app says so and loads the demo parchi: say it plainly.)
+1. **Choose a photo** of the demo parchi. The FIRST time, the consent screen appears (read it aloud: we try to hide the details we can find, you must check the picture, in Live mode the picture goes through our lab server to Anthropic's Claude service to be read (Anthropic's own terms apply to that copy), photo copies are removed after 24 hours, Delete everything is in Settings); tap Agree. Then the preview shows what was hidden -> Use this photo. (If the reader cannot read it, the app says why and offers Try again / Type the medicines in; in Mock mode also "Use the sample parchi", which Confirm labels "Sample parchi, not your photo". It never shows the sample by itself: say it plainly.)
 2. Confirm: the doubtful line (Telma 400 vs 40) is asked, not guessed; the H1/X line says "buy in person with the original parchi".
 3. Plan: one plan, full price up front (**List | Map** switch at the top: the Map shows live Apple Maps shops with price pins, tap a pin for the shop sheet with Call / Directions / Ask this shop; the map needs internet, the list still works), every price with its source and date ("Online, 23 Oct", "MRP, seen 23 Oct"), Smart Router chip ("Delivers about 9 of 10 ... Demo" in Mock; real counts in Live).
 4. **Ask nearby shops**: pick 3, set a pickup time, send. On the second screen, open the reply link and answer as the shop (or use the judge page). The plan re-sorts with the shop's price ("Shop replied").
 5. Get it all: Checkout Assistant walks seller by seller (the user taps Add to cart and Pay).
 6. **The wow moment:** on the judge page press **Cancel** on one seller. Within about 2 seconds the Plan B sheet appears on the phone ("Truemeds cancelled 5 items. Plan B: Medkart + doctor's shop, +Rs 165.74"). Tap **Approve**: only the failed items move, everything else stays.
 
-## If the reader cannot read a parchi (it is not connected yet)
+## If the reader cannot read a parchi
+The screen says why (no key, spending limit reached, key refused, reading service problem, too slow, too many photos, can't reach the lab server) and offers Try again / Type the medicines in. Then:
 On Confirm use **Add a medicine** (search by brand, pick the strength, set the quantity) and **Add a test**; each line has Remove. Any medicine in the catalogue then gets a plan at the catalogue MRP ("Catalogue MRP · check at the shop") with a Jan Aushadhi "ask your doctor" line. Tests are priced lab by lab below the plan and are not in its total.
 
 ## Before every rehearsal
@@ -35,7 +36,7 @@ On Confirm use **Add a medicine** (search by brand, pick the strength, set the q
 | App shows nothing for a shop/lab link | Export `PARCHI_PUBLIC_URL=http://<reachable-Wi-Fi-ip>:8000`, then `bash stop.sh` and `bash start_all.sh` so the API reads the new link address. |
 
 ## Honest limits to say out loud if asked
-- The reader model is not connected yet (`docs/team/READER-CONTRACT.md`): non-demo parchis cannot be planned until it is, and until catalogue MRPs are wired (plan gap U7).
+- The reader is Anthropic's Claude API behind our lab server, with a hard spend cap (`docs/team/READER-CONTRACT.md`); measured on 5 synthetic parchis only (79% recall, 94% precision), not a statistical result.
 - Checkout Assistant: 11 of 13 seller pages render in the in-app browser; login, add-to-cart and pay were not tested.
 - No real iPhone run yet (`docs/team/REAL-IPHONE-RUN.md`); camera scanner and WhatsApp share are not built.
 - Temporal keeps workflow history 24 h (item ids, prices, seller ids; no names or phones); "Delete everything" clears our database immediately.
