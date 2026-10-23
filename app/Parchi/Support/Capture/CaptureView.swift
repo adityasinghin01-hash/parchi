@@ -127,12 +127,28 @@ final class CaptureModel {
 
     func use(model: AppModel) async -> Bool { await use(model: model, gen: generation) }
 
+    /// Reads a PRINTED parchi on this phone (Apple Vision + the printed-line parser; nothing leaves the phone). Returns true when it
+    /// read at least one medicine or test and loaded them for Confirm; false when it read nothing (the caller then does what it did
+    /// before: the demo parchi or the error). Lines it was not sure about are listed in the notice, never guessed.
+    private func readOnPhone(_ image: UIImage, model: AppModel, gen: Int) async -> Bool {
+        phase = .reading
+        let result = await OnPhoneReader().read(image)
+        guard gen == generation, !Task.isCancelled, !result.lines.isEmpty else { return false }
+        model.loadReaderLines(result.lines)
+        let unsure = result.needsHelp.isEmpty ? "" : " Not sure about: " + result.needsHelp.joined(separator: "; ") + ". Use Add a medicine for those."
+        notice = result.note + unsure
+        phase = .idle
+        return true
+    }
+
     /// Keeps the processed copy on the phone (removed the next time Parchi opens after 24 h) and, in Live mode, asks the reader.
     /// Returns true when Confirm should open (reader lines or the demo parchi are loaded).
     private func use(model: AppModel, gen: Int) async -> Bool {
         guard canUse, let blurred, let jpeg = Self.uploadJPEG(blurred) else { return false }
         _ = TempFileStore().write(jpeg, name: "crop-\(UUID().uuidString).jpg")
         guard model.backend.mode == .live, let live = model.backend.makeClient() else {
+            if await readOnPhone(blurred, model: model, gen: gen) { return true }
+            guard gen == generation, !Task.isCancelled else { return false }
             notice = "Demo: no reader in Mock mode, so the sample parchi is shown."
             model.readDemoParchi()
             return true
@@ -147,9 +163,18 @@ final class CaptureModel {
             return true
         } catch let error as ReaderError {
             guard gen == generation, !Task.isCancelled else { return false }
-            if case .notConnected = error { notice = error.message; model.readDemoParchi(); phase = .idle; return true }
-            phase = .failed(error.message)
-            return false
+            switch error {
+            case .notConnected, .unreachable:
+                // No server reader: a PRINTED parchi can still be read on this phone (Apple Vision), also without internet.
+                if await readOnPhone(blurred, model: model, gen: gen) { return true }
+                guard gen == generation, !Task.isCancelled else { return false }
+                if case .notConnected = error { notice = error.message; model.readDemoParchi(); phase = .idle; return true }
+                phase = .failed(error.message)
+                return false
+            default:
+                phase = .failed(error.message)
+                return false
+            }
         } catch {
             guard gen == generation, !Task.isCancelled else { return false }
             phase = .failed(ReaderError.unreachable.message)

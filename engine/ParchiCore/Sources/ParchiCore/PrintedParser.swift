@@ -75,13 +75,14 @@ public struct PrintedParser: Sendable {
         var work = Self.normalise(rawLine)
         work = Self.stripListMarker(work)
         work = Self.gluePerVolume(work)
+        work = Self.splitDoseCountFromSchedule(work)
 
         // Fixed-format pieces first, so their digits are not mistaken for a strength.
         let schedulePattern = Self.extractPatternSchedule(&work)
         let duration = Self.extractDuration(&work)
         let printedQuantity = Self.extractQuantity(&work)
 
-        var tokens = Self.tokenise(work)
+        var tokens = Self.dropFormQualifiers(Self.tokenise(work))
         let formAt = Self.findForm(in: tokens)
         var form: DoseForm?
         var formTrailing = false
@@ -126,11 +127,33 @@ public struct PrintedParser: Sendable {
                     perVolume = pv
                     i += 1
                 }
+                if unit == nil, perVolume == nil, i < tokens.count {
+                    let next = tokens[i].lowercased().trimmingCharacters(in: CharacterSet(charactersIn: ".,;:"))
+                    // "1 tsf", "2 drops", "1 amp": a dose, not a strength
+                    if Self.doseUnitWords.contains(next) {
+                        if doseAmount == nil { doseAmount = "\(number.value) \(next)" }
+                        i += 1
+                        continue
+                    }
+                    // "Vertiflix 1 BD": a bare 1-4 right before a schedule word is a dose count, unless the catalogue
+                    // lists that number as a real strength of this brand ("Doxacard 2 OD").
+                    let brandKey = (brandTokens.first ?? "").filter(\.isLetter).uppercased()
+                    if let count = Int(number.value), (1...4).contains(count), Self.wordSchedule(tokens[i]) != nil,
+                       !(catalogue?.strengths[brandKey]?.contains(number.value) ?? false) {
+                        if doseAmount == nil { doseAmount = number.value }
+                        continue
+                    }
+                }
                 if unit == "ml", perVolume == nil {
                     if doseAmount == nil { doseAmount = "\(number.value) ml" }
                 } else if strength == nil {
                     strength = Self.formatStrength(value: number.value, unit: unit, perVolume: perVolume)
                 }
+                continue
+            }
+            if Self.isUnitlessCombination(token) {
+                brandOpen = false
+                if strength == nil { strength = token }
                 continue
             }
             if let split = Self.splitGluedBrand(token) {
@@ -163,6 +186,20 @@ public struct PrintedParser: Sendable {
             brand = Self.repairBrand(b, catalogue: catalogue)
             let firstWord = String(brand!.split(separator: " ").first ?? "")
             check = catalogue.check(brand: firstWord, strength: strength.map(Self.strengthNumber))
+            // "1 gm" is 1000 mg, but some catalogue names carry the gram number ("Ertaneon 1gm Injection"): accept it when that
+            // exact number is a real strength of the brand and the milligram form is not.
+            if case .some(.strengthMismatch) = check, let raw = strength, raw.hasSuffix(" g") || raw.contains(" g/") {
+                let plainNumber = String(raw.prefix { $0.isNumber || $0 == "." })
+                let retry = catalogue.check(brand: firstWord, strength: plainNumber)
+                if case .confirmed = retry { check = retry }
+            }
+        }
+
+        // "Lotion KALEEZE 100ML": for a cream / lotion / gel / ointment / powder the written volume or weight is the pack, which
+        // the catalogue lists as the strength; for syrups and drops "5 ml" is a dose and stays out of the strength.
+        if strength == nil, let form, [.lotion, .cream, .gel, .oint, .powder].contains(form), let amount = doseAmount, amount.hasSuffix(" ml") {
+            strength = amount
+            doseAmount = nil
         }
 
         let days = duration
@@ -219,8 +256,27 @@ public struct PrintedParser: Sendable {
 
     /// "125 mg / 5 ml" -> "125mg/5ml" so it stays one token.
     static func gluePerVolume(_ s: String) -> String {
-        perVolumeGlueRx.stringByReplacingMatches(in: s, range: NSRange(s.startIndex..., in: s), withTemplate: "$1$2/$3ml")
+        var glued = perVolumeGlueRx.stringByReplacingMatches(in: s, range: NSRange(s.startIndex..., in: s), withTemplate: "$1$2/$3ml")
+        glued = comboGlueRx.stringByReplacingMatches(in: glued, range: NSRange(glued.startIndex..., in: glued), withTemplate: "$1/$2")
+        glued = comboUnitRx.stringByReplacingMatches(in: glued, range: NSRange(glued.startIndex..., in: glued), withTemplate: "$1$2")
+        return glued
     }
+
+    private static let countScheduleRx = JAText.regex(#"(?<![\w.])([1-4])(OD|BD|TDS|QID|HS|SOS)(?![A-Za-z])"#)
+    private static let strengthScheduleRx = JAText.regex(#"(?<![\w.])(\d{2,4})(OD|BD|TDS|QID|HS|SOS)(?=x?\d|[^A-Za-z]|$)"#)
+    private static let scheduleDurationRx = JAText.regex(#"\b(OD|BD|TDS|QID|HS|SOS)x(?=\d)"#)
+
+    /// "1BD" / "1OD" -> "1 BD" (one dose, twice a day), "500BDx1month" -> "500 BD x 1month", so the digits are not read as part
+    /// of a name or a strength.
+    static func splitDoseCountFromSchedule(_ s: String) -> String {
+        var out = countScheduleRx.stringByReplacingMatches(in: s, range: NSRange(s.startIndex..., in: s), withTemplate: "$1 $2")
+        out = strengthScheduleRx.stringByReplacingMatches(in: out, range: NSRange(out.startIndex..., in: out), withTemplate: "$1 $2")
+        return scheduleDurationRx.stringByReplacingMatches(in: out, range: NSRange(out.startIndex..., in: out), withTemplate: "$1 x ")
+    }
+
+    /// "200 mg / 250 mg" -> "200mg/250mg" (combination tablets) so it stays one token.
+    private static let comboGlueRx = JAText.regex(#"(?<=\d)\s*(mg|mcg|µg|ug|gm|g|iu|%)\s*/\s*(\d+(?:\.\d+)?)(?=\s*(?:mg|mcg|µg|ug|gm|g|iu|%)(?![a-z]))"#)
+    private static let comboUnitRx = JAText.regex(#"(/\d+(?:\.\d+)?)\s+(mg|mcg|µg|ug|gm|g|iu|%)(?![a-z])"#)
 
     // 1-0-1, 1-0-0-1, 1/2-0-1/2, l-O-l (OCR), 1+0+1
     private static let doseTok = #"(?:\d/\d|[0-9OolI|½¼])"#
@@ -344,8 +400,39 @@ public struct PrintedParser: Sendable {
         "cream": .cream, "oint": .oint, "ointment": .oint, "gel": .gel, "lotion": .lotion,
         "inh": .inhaler, "inhaler": .inhaler, "rotacap": .inhaler, "rotacaps": .inhaler, "respules": .inhaler, "mdi": .inhaler,
         "powder": .powder, "sachet": .powder, "pwd": .powder,
-        "spray": .spray,
+        "spray": .spray, "e/d": .drops, "gran": .powder, "granules": .powder, "sach": .powder,
     ]
+
+    /// Dose-unit words that follow a plain number: "1 tsf", "2 drops", "1 amp". The number is a dose, not a strength.
+    private static let doseUnitWords: Set<String> = [
+        "tsf", "tsp", "drop", "drops", "puff", "puffs", "spray", "sprays", "amp", "ampoule", "scoop", "sachet", "vial",
+    ]
+
+    /// "Nasal spray", "Eye drops", "Dry syrup": the qualifier belongs to the form, not to the brand.
+    private static let formQualifiers: Set<String> = ["eye", "ear", "nasal", "oral", "dry", "eye/ear"]
+
+    static func dropFormQualifiers(_ tokens: [String]) -> [String] {
+        var out = tokens
+        var i = 0
+        while i + 1 < out.count {
+            if formQualifiers.contains(out[i].lowercased()), formWord(out[i + 1]) != nil, i == 0 || out[i - 1].lowercased() == "rx" {
+                out.remove(at: i)
+            } else {
+                i += 1
+            }
+        }
+        return out
+    }
+
+    /// "T." and "C." (with the full stop) as the first word mean Tab and Cap.
+    static func initialForm(_ token: String, hasNext: Bool) -> DoseForm? {
+        guard hasNext else { return nil }
+        switch token.uppercased() {
+        case "T.": return .tab
+        case "C.": return .cap
+        default: return nil
+        }
+    }
 
     static func formWord(_ token: String) -> DoseForm? {
         formWords[token.lowercased().trimmingCharacters(in: CharacterSet(charactersIn: ".,;:()"))]
@@ -358,6 +445,7 @@ public struct PrintedParser: Sendable {
         var start = 0
         if tokens[0].lowercased() == "rx", tokens.count > 1 { start = 1 }
         if let f = formWord(tokens[start]) { return (f, start, false) }
+        if let f = initialForm(tokens[start], hasNext: start + 1 < tokens.count) { return (f, start, false) }
         for index in (start + 1)..<min(tokens.count, start + 5) where index < tokens.count {
             if let f = formWord(tokens[index]), index > start {
                 let before = tokens[start..<index]
@@ -369,7 +457,12 @@ public struct PrintedParser: Sendable {
 
     // MARK: numbers and strengths
 
-    private static let numberRx = JAText.regex(#"^([0-9OolI]*[0-9][0-9OolI]*(?:\.[0-9OolI]+)?|\.\d+)\s*(mg|rng|mcg|µg|ug|gm|g|ml|iu|%)?(?:/(\d*)\s*(ml))?\.?$"#)
+    private static let numberRx = JAText.regex(#"^([0-9OolI]*[0-9][0-9OolI]*(?:\.[0-9OolI]+)?|\.\d+)\s*(mg|rng|mcg|µg|ug|gm|g|ml|iu|%)?(?:/(\d*)\s*(ml)|((?:/\d+(?:\.\d+)?\s*(?:mg|mcg|µg|ug|gm|g|iu|%))+))?\.?$"#)
+
+    private static let unitlessComboRx = JAText.regex(#"^\d{2,4}(?:\.\d+)?(?:/\d+(?:\.\d+)?)+$"#)
+
+    /// "50/12.5", "10/75": a combination strength printed without units.
+    static func isUnitlessCombination(_ token: String) -> Bool { JAText.firstMatch(unitlessComboRx, in: token) != nil }
 
     static func number(_ token: String) -> (value: String, unit: String?, perVolume: String?)? {
         guard let m = JAText.firstMatch(numberRx, in: token) else { return nil }
@@ -386,6 +479,14 @@ public struct PrintedParser: Sendable {
         if JAText.group(m, 4, in: token) != nil {
             let v = JAText.group(m, 3, in: token) ?? ""
             perVolume = "\(v.isEmpty ? "1" : v) ml"
+        } else if let tail = JAText.group(m, 5, in: token) {
+            // combination product: "200MG/250MG/5MG" -> "200 mg/250 mg/5 mg" (the other parts ride in `perVolume`)
+            let parts = tail.split(separator: "/").compactMap { part -> String? in
+                let number = String(part.prefix { $0.isNumber || $0 == "." })
+                let unit = part.dropFirst(number.count).trimmingCharacters(in: .whitespaces)
+                return number.isEmpty ? nil : unit.isEmpty ? number : "\(number) \(canonicalUnit(unit))"
+            }
+            perVolume = parts.joined(separator: "/")
         }
         return (value, unit, perVolume)
     }
@@ -443,7 +544,7 @@ public struct PrintedParser: Sendable {
     private static let stopWords: Set<String> = [
         "x", "×", "x.", "for", "iv", "im", "sc", "po", "ac", "pc", "after", "before", "food", "with", "daily", "morning",
         "night", "at", "bedtime", "per", "if", "needed", "continue", "as", "and", "then", "tab", "tabs",
-        "apply", "take", "use", "local", "application", "instill", "massage", "rub", "put", "inhale", "gargle", "orally",
+        "apply", "l/a", "neb", "take", "use", "local", "application", "instill", "massage", "rub", "put", "inhale", "gargle", "orally",
     ]
 
     static func isStopWord(_ token: String) -> Bool {

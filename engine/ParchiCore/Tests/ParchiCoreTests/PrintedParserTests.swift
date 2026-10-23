@@ -211,3 +211,66 @@ private let junk = [
     #expect(cases.count + singleLines.count + junk.count >= 25)
     #expect(cases.count + singleLines.count >= 25)
 }
+
+// MARK: K16: shapes seen in Vision output of printed parchis
+
+@Test func combinationStrengthsStayOneStrength() {
+    #expect(parse("Tab. Kapocef AZ 200MG/250MG 0-0-1 x 7d").strength == "200 mg/250 mg")
+    #expect(plain.parse(line: "Tab Pan 200 mg / 250 mg BD").strength == "200 mg/250 mg")
+    #expect(plain.parse(line: "Syrup SNIZARIL 1 MG/125 MG/2.5 MG 2 tsf TDS x 10d").strength == "1 mg/125 mg/2.5 mg")
+    #expect(plain.parse(line: "Tab TOPME CH 50/12.5 ER 0-0-1 x 15 days").strength == "50/12.5")
+    // a schedule such as 1/2-0-1/2 is still a schedule, not a strength
+    let half = plain.parse(line: "Tab. CIPROXIN 500MG ½-0-½ a.c. x 7 days")
+    #expect(half.schedule?.code == "½-0-½")
+    #expect(half.strength == "500 mg")
+}
+
+@Test func initialsAndEyeDropFormsAreRead() {
+    let t = plain.parse(line: "2) T. LDLOW 20MG 1-0-1 BF x 5d")
+    #expect(t.form == .tab && t.brand == "LDLOW" && t.strength == "20 mg")
+    let c = plain.parse(line: "C. FORZOLE-D 10MG/20MG SOS empty stomach x 7 days")
+    #expect(c.form == .cap && c.brand == "FORZOLE-D")
+    let drops = plain.parse(line: "6) E/D EUPEPTINE 1 drop QID x 30 days")
+    #expect(drops.form == .drops && drops.brand == "EUPEPTINE" && drops.strength == nil)
+    let spray = plain.parse(line: "Nasal spray FLOCARE AZ 2 sprays BD x 15d")
+    #expect(spray.form == .spray && spray.brand == "FLOCARE AZ" && spray.strength == nil)
+}
+
+@Test func doseCountsAreNotStrengths() {
+    let a = plain.parse(line: "Tab VERTIFLIX 1 BD x 15d")
+    #expect(a.strength == nil && a.schedule?.code == "BD")
+    let b = plain.parse(line: "Tab. EVAQUIN 15MG 1OD empty stomach x 5 days")
+    #expect(b.strength == "15 mg" && b.schedule?.code == "OD")
+    let c = plain.parse(line: "Syrup MOXGIL DS 1 tsf BD x 3d")
+    #expect(c.strength == nil && c.doseAmount == "1 tsf" && c.brand == "MOXGIL DS")
+    // the catalogue says 2 is a real Doxacard strength, so "2 OD" keeps it as the strength
+    let known = PrintedParser(catalogue: Catalogue(productNames: ["Doxacard 2 Tablet", "Doxacard 4 Tablet"]))
+    #expect(known.parse(line: "T. DOXACARD 2 OD after food x 1 month").strength == "2")
+}
+
+@Test func topicalPackSizeIsTheStrengthButSyrupVolumeIsNot() {
+    #expect(plain.parse(line: "Lotion KALEEZE 100ML apply HS x 15d").strength == "100 ml")
+    #expect(plain.parse(line: "Syp Ascoril LS 5ml TDS").strength == nil)
+}
+
+@Test func headerAndAdviceLinesStayUnparsed() {
+    for line in ["Dr. Nitin Agarwal", "MBBS, MD (Derma)", "Reg. No. MPMC 37101", "Sai Medical Centre, Bhopal • Ph: 79395 84427",
+                 "Name: Komal Sharma", "Age/Sex: 74 Date: 22-2-2026", "Not valid for medico-legal purposes",
+                 "Timings: 10 am - 2 pm, 5 pm - 8 pm", "Emergency: 7422806194", "BP 102/60", "Review after 7 days"] {
+        let item = plain.parse(line: line)
+        #expect(item.brand == nil && item.confidence <= 0.1, "\(line)")
+    }
+}
+
+@Test func strengthGluedToScheduleAndDuration() {
+    let a = plain.parse(line: "1. Tab. FAMCIMAC 500BDx1month")
+    #expect(a.strength == "500" && a.schedule?.code == "BD" && a.days == 30)
+    let b = plain.parse(line: "- Tab CEZOX MR 1-1-1 after food x 1 month")
+    #expect(b.brand == "CEZOX MR" && b.schedule?.code == "1-1-1")
+}
+
+@Test func gramStrengthMatchesACatalogueThatWritesTheGramNumber() {
+    let cat = PrintedParser(catalogue: Catalogue(productNames: ["Ertaneon 1gm Injection", "Ceftriaxone 1000 Injection"]))
+    #expect(cat.parse(line: "Inj Ertaneon 1GM IM stat x 5 days").check == .confirmed(brand: "ERTANEON", strength: "1"))
+    #expect(cat.parse(line: "Inj Ceftriaxone 1 gm IV BD x 3 days").check == .confirmed(brand: "CEFTRIAXONE", strength: "1000"))
+}
