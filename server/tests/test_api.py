@@ -4,6 +4,7 @@ from types import SimpleNamespace
 import pytest
 from fastapi.testclient import TestClient
 from temporalio.exceptions import WorkflowAlreadyStartedError
+from temporalio.service import RPCError, RPCStatusCode
 
 from conftest import line, plan, sellers
 
@@ -24,10 +25,28 @@ class FakeHandle:
         self.terminated = True
 
 
+class MissingHandle:
+    async def _gone(self, *args, **kwargs):
+        raise RPCError("workflow not found", RPCStatusCode.NOT_FOUND, b"")
+
+    query = signal = terminate = _gone
+
+
 class FakeTemporal:
     def __init__(self):
         self.handles = {}
         self.service_client = SimpleNamespace(check_health=self.check_health)
+        self.namespace = "default"
+        self.deleted = []  # K30: workflow ids whose history was deleted
+        self.workflow_service = SimpleNamespace(delete_workflow_execution=self.delete_workflow_execution)
+
+    async def delete_workflow_execution(self, request):
+        wid = request.workflow_execution.workflow_id
+        if wid not in self.handles:
+            raise RPCError("not found", RPCStatusCode.NOT_FOUND, b"")
+        assert self.handles[wid].terminated, "Temporal refuses to delete a running workflow"
+        self.deleted.append(wid)
+        del self.handles[wid]
 
     async def check_health(self):
         return True
@@ -45,12 +64,14 @@ class FakeTemporal:
         return self.handles[id]
 
     def get_workflow_handle(self, id):
+        if id not in self.handles:  # like Temporal: the handle exists, every call on it says NOT_FOUND
+            return MissingHandle()
         return self.handles[id]
 
     async def list_workflows(self, query):
         # Only refill watches are listed (the reset route asks for RefillWorkflow executions).
         for wid, handle in list(self.handles.items()):
-            if wid.startswith("refill-") and not handle.terminated:
+            if wid.startswith("refill-") and not (handle.terminated and "Running" in query):
                 yield SimpleNamespace(id=wid)
 
 
@@ -155,8 +176,8 @@ def test_reset_only_this_install(api_client):
         api_client.db.store_approval(order, 2, "test", "abc")
     response = api_client.client.post("/reset", headers=headers(api_client), json={})
     assert response.status_code == 200
-    assert api_client.temporal.handles[f"order-{oid}"].terminated
-    assert not api_client.temporal.handles[f"order-{other}"].terminated
+    assert f"order-{oid}" in api_client.temporal.deleted  # terminated, then its history deleted
+    assert f"order-{other}" in api_client.temporal.handles and not api_client.temporal.handles[f"order-{other}"].terminated
     assert api_client.db.list_orders(api_client.install) == []
     assert api_client.db.placements_for(oid) == []
     assert api_client.db.audit_for(oid) == []
@@ -172,11 +193,11 @@ def test_reset_terminates_this_installs_refill_watches(api_client):
     for wid, owner in (("refill-mine", api_client.install), ("refill-theirs", api_client.other_install)):
         api_client.temporal.handles[wid] = FakeHandle({"installID": owner, "state": "waiting"})
     assert api_client.client.post("/reset", headers=headers(api_client), json={}).status_code == 200
-    assert api_client.temporal.handles["refill-mine"].terminated
+    assert "refill-mine" in api_client.temporal.deleted and "refill-mine" not in api_client.temporal.handles
     assert not api_client.temporal.handles["refill-theirs"].terminated
     assert api_client.client.post("/reset?scope=demo", headers={
         "X-Admin-Key": "judge-secret"}, json={}).status_code == 200
-    assert api_client.temporal.handles["refill-theirs"].terminated
+    assert "refill-theirs" in api_client.temporal.deleted
 
 
 @pytest.mark.parametrize("price", [-1, 1.5, True, "100"])
@@ -198,7 +219,7 @@ def test_order_validation(api_client):
 
 def test_judge_and_demo_reset(api_client):
     oid = create(api_client).json()["orderID"]
-    response = api_client.client.get("/judge?k=judge-secret")
+    response = api_client.client.get("/judge", headers={"X-Admin-Key": "judge-secret"})
     assert response.status_code == 200
     assert "Test order" in response.text
     assert oid in response.text

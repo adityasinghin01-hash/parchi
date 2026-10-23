@@ -97,15 +97,45 @@ struct OnPhoneReader {
     // MARK: - Interpreting (pure, testable without Vision)
 
     func interpret(boxes: [OCRBox], aspect: CGFloat) -> OnPhoneReadResult {
-        interpret(rows: LineGrouper.group(boxes, aspect: aspect).map(Self.rowText))
+        interpret(rows: LineGrouper.group(boxes, aspect: aspect).flatMap(rowTexts))
+    }
+
+    /// Where a row's medicine starts when the row opens with something that is not a medicine (a side column like
+    /// "c/o Dx: ...") and a later box starts with a dosage form ("Tab", "Syr"...); nil when the whole row is one text.
+    private static func medicineStart(in row: TextLine) -> Int? {
+        guard row.boxes.count > 1, !startsWithFormWord(row.boxes[0].text) else { return nil }
+        return row.boxes.indices.dropFirst().first(where: { startsWithFormWord(row.boxes[$0].text) })
     }
 
     /// A row is its boxes joined left to right. When the row starts with something that is not a medicine (a side column
-    /// like "c/o Dx: ...") and a later box starts with a dosage form ("Tab", "Syr"...), the row starts at that box.
+    /// like "c/o Dx: ...") and a later box starts with a dosage form, the row starts at that box.
+    /// (Drops the leading boxes without looking at them: `rowTexts` is what the reader uses, so a medicine written first is kept.)
     static func rowText(_ row: TextLine) -> String {
-        guard row.boxes.count > 1, !startsWithFormWord(row.boxes[0].text),
-              let k = row.boxes.indices.dropFirst().first(where: { startsWithFormWord(row.boxes[$0].text) }) else { return row.text }
+        guard let k = medicineStart(in: row) else { return row.text }
         return row.boxes[k...].map(\.text).joined(separator: " ")
+    }
+
+    /// The texts of one row. A leading part that is not a medicine (side column) is dropped as before; a leading part that IS a
+    /// medicine, or a list of tests ("Dolo 650 Tablet TDS" then "Tab Pan 40 OD" in one row), is kept as a text of its own.
+    func rowTexts(_ row: TextLine) -> [String] {
+        guard let k = Self.medicineStart(in: row) else { return [row.text] }
+        let head = row.boxes[..<k].map(\.text).joined(separator: " ")
+        let tail = row.boxes[k...].map(\.text).joined(separator: " ")
+        return headIsWorthKeeping(head) ? [head, tail] : [tail]
+    }
+
+    private func headIsWorthKeeping(_ head: String) -> Bool {
+        Self.split(Self.clean(head)).contains { segment in
+            switch classify(segment) {
+            case .medicine: return true
+            case .tests(let found, _): return !found.isEmpty
+            case .needsHelp:
+                // medicine-shaped but unsure -> the person should see it; a bare clue ("Fever x 3 days") is just side-column text
+                let item = parser.parse(line: segment)
+                return item.confidence > 0.1 && (item.form != nil || item.brand != nil)
+            case .ignore: return false
+            }
+        }
     }
 
     func interpret(rows: [String]) -> OnPhoneReadResult {
@@ -146,13 +176,37 @@ struct OnPhoneReader {
         let medicineShaped = item.confidence > 0.1 && (item.form != nil || item.brand != nil)
         if medicineShaped {
             // Sure = the parser's own confident threshold AND a form AND a brand were read. Anything less is for the person to check.
-            if item.isConfident, item.form != nil, let brand = item.brand, !brand.isEmpty {
-                return .medicine(ReaderLine(kind: "medicine", name: brand, strength: item.strength,
+            if item.isConfident, let form = item.form, let brand = item.brand, !brand.isEmpty {
+                // "2 tabs 1-0-1 x 5 days": the quantity is not guessable, so the person adds this line (with its quantity) by hand.
+                if item.quantityAmbiguous { return .needsHelp }
+                return .medicine(ReaderLine(kind: "medicine", name: Self.nameCarryingForm(brand, form), strength: item.strength,
                                             quantity: item.quantityHint, schedule: item.schedule?.code))
             }
             return .needsHelp
         }
         return Self.hasMedicineClue(text) ? .needsHelp : .ignore
+    }
+
+    /// The brand with the dosage form the parchi states, as an abbreviation the catalogue matcher knows ("Dolo Inj", "Pan Cap"),
+    /// so the price and the Jan Aushadhi match use that form and not the tablet. "Drops" and "spray" are left out: they may be
+    /// eye, ear, nose or mouth, which the matcher would have to guess.
+    static func nameCarryingForm(_ brand: String, _ form: DoseForm) -> String {
+        let word: String
+        switch form {
+        case .tab: word = "Tab"
+        case .cap: word = "Cap"
+        case .syp: word = "Syp"
+        case .inj: word = "Inj"
+        case .oint: word = "Oint"
+        case .cream: word = "Cream"
+        case .gel: word = "Gel"
+        case .lotion: word = "Lotion"
+        case .inhaler: word = "Inhaler"
+        case .powder: word = "Powder"
+        case .drops, .spray: return brand
+        }
+        // never twice ("Pan Cap" read as a brand with the form already in it)
+        return brand.lowercased().split(separator: " ").last.map { $0 == word.lowercased() } == true ? brand : brand + " " + word
     }
 
     // MARK: - Text rules

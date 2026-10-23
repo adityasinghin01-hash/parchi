@@ -5,6 +5,9 @@ struct HomeView: View {
     @Binding var path: [Route]
 
     var body: some View {
+        // K24: at big text the column is taller than the screen; it scrolls instead of cutting off the buttons.
+        GeometryReader { geo in
+        ScrollView {
         VStack(spacing: 24) {
             Spacer()
             Image(systemName: "doc.text.viewfinder")
@@ -18,6 +21,7 @@ struct HomeView: View {
                 .foregroundStyle(.secondary)
                 .padding(.horizontal)
             Button {
+                guard path.isEmpty else { return }   // K24: a second quick tap opened Confirm twice
                 model.readDemoParchi()
                 path.append(.confirm)
             } label: {
@@ -39,6 +43,9 @@ struct HomeView: View {
             Spacer()
         }
         .padding()
+        .frame(minHeight: geo.size.height)
+        }
+        }
         .safeAreaInset(edge: .bottom) { BackendDeveloperPanel() }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {

@@ -1,3 +1,5 @@
+> **Verified demo endpoint, 24 Oct ~03:08 IST:** Wi-Fi `http://10.110.220.139:8000` responds from the MacBook. Ethernet `10.21.70.73` timed out from the MacBook. On restart use `export PARCHI_PUBLIC_URL=http://10.110.220.139:8000` before `bash start_all.sh` so shop/lab reply links use Wi-Fi. Addresses are venue-dependent: recheck `ipconfig getifaddr en1` (Wi-Fi here) rather than assuming en0. Latest measured gates: `../../handoff/DEMO-RESULT.md`.
+
 # Demo runbook (lead): start, show, reset, and what to do when something breaks
 Everything below was run on the lab iMac on 23 Oct 2026 (see `docs/verification/EVIDENCE-23-OCT-2026.md`).
 
@@ -6,7 +8,7 @@ Everything below was run on the lab iMac on 23 Oct 2026 (see `docs/verification/
 2. Keys live only on the iMac: `data/admin.key` (judge) and `data/sim_install.key` (app). Never paste them into chat or git.
 3. Reset to a clean demo: `curl -X POST "localhost:8000/reset?scope=demo" -H "X-Admin-Key: $(cat data/admin.key)"`.
 4. Phone/Simulator: open Parchi, Home > Developer > **Live**, URL `http://<iMac-ip>:8000` (iMac addresses: `ipconfig getifaddr en0` / `en1`), install key, **Test connection**. Mock mode needs none of this.
-5. Judge page on a second screen: `http://<iMac-ip>:8000/judge?k=<admin key>` (LAN only; the key is in the URL, so do not screen-share the address bar).
+5. Judge page on a second screen: open `http://<iMac-ip>:8000/judge`, type the admin key (`data/admin.key`) into the login form once. The key is never in the address bar: a session cookie (12 h, this browser only, cleared by the server restarting or the Log out button) does the rest. An old `/judge?k=<key>` link still works once: it logs in and removes `k` from the address at once. LAN only, plain http (no `Secure` cookie).
 
 ## The 2-minute story (Live)
 1. **Choose a photo** of the demo parchi. The FIRST time, the consent screen appears (read it aloud: we try to hide the details we can find, you must check the picture, the picture goes to our own lab computer in Live mode, photo copies are removed after 24 hours, Delete everything is in Settings); tap Agree. Then the preview shows what was hidden -> Use this photo. (With no reader connected the app says so and loads the demo parchi: say it plainly.)
@@ -30,7 +32,7 @@ On Confirm use **Add a medicine** (search by brand, pick the strength, set the q
 | Phone cannot reach `http://<iMac-ip>:8000` | Same Wi-Fi? Try the phone hotspot for both; `curl` the health URL from Safari on the phone. |
 | 429 "rate limited" in the Developer panel | Wait 1 minute (120 requests/min per key). |
 | Wrong data from earlier rehearsals | Step 3 reset. |
-| App shows nothing for a shop/lab link | Set `PARCHI_PUBLIC_URL=http://<iMac-ip>:8000` and `bash run.sh` again so links use the iMac address. |
+| App shows nothing for a shop/lab link | Export `PARCHI_PUBLIC_URL=http://<reachable-Wi-Fi-ip>:8000`, then `bash stop.sh` and `bash start_all.sh` so the API reads the new link address. |
 
 ## Honest limits to say out loud if asked
 - The reader model is not connected yet (`docs/team/READER-CONTRACT.md`): non-demo parchis cannot be planned until it is, and until catalogue MRPs are wired (plan gap U7).

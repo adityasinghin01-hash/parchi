@@ -161,7 +161,8 @@ def create_booking(tests: list[dict], slot: datetime, lab_name: str = "Redcliffe
         body["addressText"] = address
     if order_id:
         body.update(orderID=order_id, sellerID=seller_id)
-    code, r = api("POST", "/lab/book", body=body)
+    code, r = api("POST", "/lab/book", body=body,
+                  headers={"Idempotency-Key": "k20-lab-" + uuid.uuid4().hex})
     assert code == 201, f"booking create http {code}"
     return r["bookingID"], r["replyLink"]
 
@@ -217,9 +218,18 @@ async def new_context(browser, kind: str):
 
 
 async def open_judge(ctx, key: str | None = None):
+    """K31: the judge page behind the login form (no key in any URL). A context that already holds a session just opens
+    /judge; an explicit key (the wrong-key test) starts from a clean cookie jar and types that key into the form."""
     page = await ctx.new_page()
     watch = Watch(page, "judge")
-    resp = await page.goto(f"{BASE}/judge?k={key if key is not None else ADMIN}")
+    if key is not None:
+        await ctx.clear_cookies()
+    resp = await page.goto(f"{BASE}/judge")
+    if "/judge/login" in page.url:
+        await page.fill("#key", key if key is not None else ADMIN)
+        async with page.expect_navigation() as nav:
+            await page.click("button[type=submit]")
+        resp = await nav.value
     return page, watch, resp
 
 
@@ -300,8 +310,10 @@ async def scenario_1(browser):
     t_prop = round(time.time() - t_click, 2)
     check("proposal visible through the API (awaiting_approval) within 3 s of the click",
           snap is not None and snap.get("proposal") is not None and t_prop <= 3.0, f"{t_prop}s after the click")
-    code, _ = api("POST", f"/order/{oid}/approve", body={"planVersion": 1})
-    check("approve through the API accepted", code == 200, f"http {code}")
+    pid = (snap or {}).get("proposal", {}).get("proposalID")
+    check("proposal carries a proposalID (K31)", isinstance(pid, str) and pid != "", str(pid))
+    code, _ = api("POST", f"/order/{oid}/approve", body={"planVersion": 1, "proposalID": pid})
+    check("approve through the API (with the proposalID) accepted", code == 200, f"http {code}")
     final, t = await poll(lambda: (lambda s: s if s and s["planVersion"] == 2 and s["state"] == "placed" else None)(api("GET", f"/status/{oid}")[1]), 8)
     check("order moved to plan version 2", final is not None, f"{t}s")
     await page.reload()
@@ -591,11 +603,14 @@ async def scenario_4(browser):
     # ---- keys
     bad, _, resp = await open_judge(desk, key="definitely-wrong")
     body = await bad.inner_text("body")
-    check("judge page with a wrong key -> 401, no order/ask data in the body", resp.status == 401 and "Test order" not in body and "Ask " not in body, f"http {resp.status}")
+    check("login form with a wrong key -> 401, no order/ask data in the body", resp.status == 401 and "Test order" not in body and "Ask " not in body and "Wrong key" in body, f"http {resp.status}")
     await shot(bad, "s4_wrong_key")
+    check("a wrong key sets no session cookie", not [c for c in await desk.cookies() if c["name"] == "parchi_judge"])
     nokey = await desk.new_page()
     r = await nokey.goto(f"{BASE}/judge")
-    check("judge page with no key -> 401", r.status == 401, f"http {r.status}")
+    check("judge page with no session -> the login form (password field, no order data)", "/judge/login" in nokey.url and await nokey.locator("input[type=password]").count() == 1 and "Test order" not in await nokey.inner_text("body"), nokey.url)
+    code, _ = api("GET", "/judge", who="none")
+    check("judge page for a script with no key -> 401", code == 401, f"http {code}")
     for path in ("/judge/orders", "/judge/shop/asks", "/judge/lab/bookings"):
         p = await desk.new_page()
         r = await p.goto(f"{BASE}{path}?k={ADMIN}")
@@ -740,6 +755,176 @@ async def scenario_5(browser):
     await mob.close()
 
 
+EVIL_PAGE = """<!doctype html><meta charset="utf-8"><title>evil</title><body><script>
+const target = location.search.slice(1);          // http://localhost:8000/judge/<order>/event
+const body = JSON.stringify({sellerID: "s1", kind: "cancelled"});
+window.__done = [];
+(async () => {
+  // 1. credentialed no-cors POST, the way a hostile page would try
+  try { await fetch(target, {method: "POST", credentials: "include", mode: "no-cors", body}); } catch (e) {}
+  window.__done.push("fetch-no-cors");
+  // 2. auto-submitted cross-site form POST
+  const f = document.createElement("form"); f.method = "POST"; f.action = target; f.enctype = "text/plain";
+  const i = document.createElement("input"); i.name = body; i.value = ""; f.appendChild(i);
+  const fr = document.createElement("iframe"); fr.name = "sink"; document.body.appendChild(fr); f.target = "sink";
+  document.body.appendChild(f); f.submit();
+  await new Promise((r) => setTimeout(r, 700));
+  window.__done.push("form");
+  // 3. credentialed CORS POST with the guard header: the server has no CORS, so the browser blocks it
+  try { await fetch(target, {method: "POST", credentials: "include", headers: {"X-Parchi-Judge": "1", "Content-Type": "application/json"}, body}); window.__done.push("cors-allowed"); }
+  catch (e) { window.__done.push("cors-blocked"); }
+})();
+</script></body>"""
+
+
+def start_evil_server():
+    """A tiny page on :8999 that tries to cancel an order. Reached as 127.0.0.1 (cross-site) and as localhost (same site,
+    other origin: the browser DOES send the SameSite=Strict cookie there, so only the X-Parchi-Judge guard stops it)."""
+    import threading
+    from http.server import BaseHTTPRequestHandler, HTTPServer
+
+    class H(BaseHTTPRequestHandler):
+        def do_GET(self):
+            data = EVIL_PAGE.encode()
+            self.send_response(200); self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", str(len(data))); self.end_headers(); self.wfile.write(data)
+
+        def log_message(self, *a):
+            pass
+    srv = HTTPServer(("127.0.0.1", 8999), H)
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    return srv
+
+
+async def scenario_6(browser):
+    """K31: judge login form, opaque session cookie, key never in the address bar, cancel button, logout, expiry, CSRF guard."""
+    ctx = await new_context(browser, "desktop")
+    page = await ctx.new_page()
+    watch = Watch(page, "judge")
+    urls: list[str] = []
+    page.on("framenavigated", lambda f: urls.append(f.url) if f == page.main_frame else None)
+    sellers = [seller(s) for s in ("s1", "s2")]
+    oid, _ = create_order(sellers, [line("a", "s1"), line("b", "s2")])
+    await poll(lambda: (api("GET", f"/status/{oid}")[1] or {}).get("ready"), 15)
+
+    # ---- login form
+    await page.goto(f"{BASE}/judge")
+    check("no session: /judge sends the browser to the login form", "/judge/login" in page.url, page.url)
+    check("login form: one password field, a Log in button, nothing from outside",
+          await page.locator("input[type=password]").count() == 1 and await page.get_by_role("button", name="Log in").count() == 1)
+    await shot(page, "s6_login_form")
+    await page.fill("#key", "definitely-wrong")
+    async with page.expect_navigation() as nav:
+        await page.get_by_role("button", name="Log in").click()
+    r = await nav.value
+    check("wrong key: 401, 'Wrong key.' shown, no cookie", r.status == 401 and "Wrong key" in await page.inner_text("body")
+          and not [c for c in await ctx.cookies() if c["name"] == "parchi_judge"], f"http {r.status}")
+    await page.fill("#key", ADMIN)
+    async with page.expect_navigation() as nav:
+        await page.get_by_role("button", name="Log in").click()
+    r = await nav.value
+    check("right key: lands on the judge page (200) at /judge", r.status == 200 and page.url == f"{BASE}/judge" and "Parchi judge" in await page.title(), page.url)
+
+    # ---- the cookie
+    jar = [c for c in await ctx.cookies() if c["name"] == "parchi_judge"]
+    c = jar[0] if jar else {}
+    check("cookie parchi_judge: HttpOnly, SameSite=Strict, Path=/judge", bool(jar) and c["httpOnly"] and c["sameSite"] == "Strict" and c["path"] == "/judge",
+          f"httpOnly={c.get('httpOnly')} sameSite={c.get('sameSite')} path={c.get('path')}")
+    ttl = c.get("expires", 0) - time.time()
+    check("cookie lives 12 h (43200 s)", 43200 - 120 <= ttl <= 43200 + 5, f"{round(ttl)} s left")
+    check("cookie value is an opaque token, not the key", bool(jar) and ADMIN not in c["value"] and len(c["value"]) >= 32 and c["value"] != ADMIN)
+    check("page script cannot read the cookie (HttpOnly)", "parchi_judge" not in await page.evaluate("document.cookie"))
+    check("address bar and every navigation so far: no key, no k=", all(ADMIN not in u and "k=" not in u for u in urls) and ADMIN not in page.url, f"{len(urls)} navigations")
+    html_text = await page.content()
+    check("judge page source does not contain the key and its script does not read the URL", ADMIN not in html_text and "location.search" not in html_text)
+    await shot(page, "s6_judge_logged_in")
+
+    # ---- the buttons work with the cookie (cancel -> Plan B asked for)
+    await page.reload()
+    await page.locator(f'button[data-o="{oid}"][data-s="s1"][data-k="cancelled"]').click()
+    msg = await after_post(page)
+    snap, t = await poll(lambda: (lambda s: s if s and s["state"] == "needs_proposal" else None)(api("GET", f"/status/{oid}")[1]), 5)
+    check("Cancel button works from the cookie session ('sent', order asks for a Plan B)", msg == "sent" and snap is not None, f"msg={msg!r} {t}s")
+    check("still no key in the address bar after the button + reload", ADMIN not in page.url and all(ADMIN not in u for u in urls))
+    await page.goto(f"{BASE}/judge/scan")
+    check("scan page opens from the same session (no k, no redirect to login)", page.url == f"{BASE}/judge/scan" and await page.locator("#read").count() == 1, page.url)
+    code, hdr = 0, {}
+    resp_json = await ctx.request.get(f"{BASE}/judge/shop/asks")
+    check("admin JSON opens with the cookie alone", resp_json.status == 200, f"http {resp_json.status}")
+
+    # ---- CSRF: same-origin script without the header; hostile pages on another origin / another site
+    oid2, _ = create_order(sellers, [line("a", "s1"), line("b", "s2")])
+    await poll(lambda: (api("GET", f"/status/{oid2}")[1] or {}).get("ready"), 15)
+    await page.goto(f"{BASE}/judge")
+    status = await page.evaluate("""async (id) => (await fetch('/judge/' + id + '/event', {method: 'POST', headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({sellerID: 's1', kind: 'cancelled'})})).status""", oid2)
+    check("cookie POST without X-Parchi-Judge (same origin) -> 403", status == 403, f"http {status}")
+    srv = start_evil_server()
+    try:
+        for host in ("127.0.0.1", "localhost"):
+            same_site = host == urlparse(BASE).hostname
+            expect = 403 if same_site else 401
+            why = ("same site, other origin: the missing header stops the request" if same_site
+                   else "cross-site: SameSite=Strict keeps the cookie off the request")
+            evil = await ctx.new_page()
+            seen: list[tuple[str, int]] = []
+            evil.on("response", lambda resp, seen=seen: seen.append((resp.request.method, resp.status)) if f"/judge/{oid2}/event" in resp.url else None)
+            await evil.goto(f"http://{host}:8999/?{BASE}/judge/{oid2}/event")
+            for _ in range(60):
+                done = await evil.evaluate("window.__done")
+                if "cors-blocked" in done or "cors-allowed" in done:
+                    break
+                await asyncio.sleep(0.1)
+            posts = [st for m, st in seen if m == "POST"]
+            cur = (api("GET", f"/status/{oid2}")[1] or {})
+            s1 = next((x["status"] for x in cur.get("sellers", []) if x["id"] == "s1"), None)
+            check(f"hostile page on {host}:8999 ({why}): its POSTs got {expect}, the CORS call with the header is blocked, order untouched",
+                  bool(posts) and set(posts) == {expect} and "cors-blocked" in done and s1 == "placed" and cur.get("state") == "placed",
+                  f"POST statuses={posts} done={done} s1={s1} state={cur.get('state')}")
+            await evil.close()
+    finally:
+        srv.shutdown()
+
+    # ---- logout, replay of the old cookie, client-side expiry
+    old_value = c.get("value", "")
+    await page.goto(f"{BASE}/judge")
+    await page.locator("#logout").click()
+    await page.wait_for_url("**/judge/login")
+    check("Log out button: back at the login form, cookie cleared", not [x for x in await ctx.cookies() if x["name"] == "parchi_judge"], page.url)
+    await page.goto(f"{BASE}/judge")
+    check("after logout /judge asks for the login again", "/judge/login" in page.url, page.url)
+    ctx2 = await new_context(browser, "desktop")
+    await ctx2.add_cookies([{"name": "parchi_judge", "value": old_value, "url": f"{BASE}/judge"}])
+    p2 = await ctx2.new_page()
+    await p2.goto(f"{BASE}/judge")
+    check("the old cookie value replayed after logout is dead on the server (login form, no data)", "/judge/login" in p2.url and "Test order" not in await p2.inner_text("body"), p2.url)
+    await ctx2.close()
+    # expiry as the browser sees it: the cookie is gone / the server forgot the session -> the next click says so and goes to the form
+    await page.fill("#key", ADMIN)
+    async with page.expect_navigation():
+        await page.get_by_role("button", name="Log in").click()
+    await page.goto(f"{BASE}/judge")
+    await ctx.clear_cookies()
+    await page.locator(f'button[data-o="{oid2}"][data-s="s2"][data-k="confirmed"]').click()
+    msg = await after_post(page, "")
+    await page.wait_for_url("**/judge/login", timeout=5000)
+    check("expired/missing session: the click says 'session expired' and moves to the login form", "session expired" in msg, f"msg={msg!r}")
+    check("no dialogs / JS errors on the judge page", not watch.dialogs and not watch.page_errors and not watch.real_errors(),
+          f"dialogs={watch.dialogs} errors={watch.page_errors + watch.real_errors()}")
+    await ctx.close()
+
+    # ---- an old bookmark: ?k= is a one-time bridge, the key leaves the address bar at once
+    ctx3 = await new_context(browser, "desktop")
+    bp = await ctx3.new_page()
+    resp = await bp.goto(f"{BASE}/judge?k={ADMIN}")
+    first = resp.request.redirected_from
+    check("old bookmark /judge?k=<key>: answered 303 and ends on /judge WITHOUT k", first is not None and (await first.response()).status == 303
+          and bp.url == f"{BASE}/judge" and resp.status == 200, f"final {bp.url}")
+    check("the bridge set the session cookie (HttpOnly, Strict)", any(x["name"] == "parchi_judge" and x["httpOnly"] and x["sameSite"] == "Strict" for x in await ctx3.cookies()))
+    await bp.reload()
+    check("reload of the cleaned address works with the cookie", bp.url == f"{BASE}/judge" and "Parchi judge" in await bp.title())
+    await ctx3.close()
+
 # ================================================================ main
 
 async def main() -> int:
@@ -750,7 +935,7 @@ async def main() -> int:
     ap.add_argument("--only", default="", help="comma list of scenario numbers, e.g. 1,3")
     a = ap.parse_args()
     BASE, SHOTS = a.base.rstrip("/"), Path(a.shots)
-    wanted = {x for x in a.only.split(",") if x} or {"1", "2", "3", "4", "5"}
+    wanted = {x for x in a.only.split(",") if x} or {"1", "2", "3", "4", "5", "6"}
     SHOTS.mkdir(parents=True, exist_ok=True)
     code, _ = api("GET", "/health", who="none")
     if code != 200:
@@ -761,7 +946,7 @@ async def main() -> int:
     t_all = time.time()
     async with async_playwright() as pw:
         browser = await pw.chromium.launch(headless=True)
-        for n, fn in (("1", scenario_1), ("2", scenario_2), ("3", scenario_3), ("4", scenario_4), ("5", scenario_5)):
+        for n, fn in (("1", scenario_1), ("2", scenario_2), ("3", scenario_3), ("4", scenario_4), ("5", scenario_5), ("6", scenario_6)):
             if n not in wanted:
                 continue
             current[0] = f"S{n}"

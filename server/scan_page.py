@@ -1,8 +1,9 @@
 """Phone-browser "scan and read" TEST page (K22): GET /judge/scan and POST /judge/scan/read. Admin key only.
 
 A test tool on the lab iMac, like the judge page. It is not part of the app and does NOT hide the patient's name.
-The page is plain HTML + JS, no external requests. Server-side values are never put into the page; the script
-reads the admin key from its own address (?k=) and builds the result table with textContent only (no innerHTML).
+The page is plain HTML + JS, no external requests. Server-side values are never put into the page; the browser logs in
+once at /judge/login (K31) and the page's fetch rides the session cookie plus the X-Parchi-Judge header (no key in any
+URL; an old ?k= link is swapped for the cookie by a 303). The script builds the result table with textContent only.
 The photo and the reader's lines are never logged or stored.
 """
 import os
@@ -15,7 +16,7 @@ from starlette.datastructures import UploadFile
 from fastapi.responses import HTMLResponse, JSONResponse
 
 import auth
-
+import judge_session
 router = APIRouter()
 
 PAGE = """<!doctype html>
@@ -52,7 +53,6 @@ th{background:#eee}
 <script>
 (function () {
   var MAX_SIDE = 2000, QUALITY = 0.7, MAX_BYTES = 2000000;
-  var key = new URLSearchParams(location.search).get('k') || '';
   var $ = function (id) { return document.getElementById(id); };
   var blob = null, previewURL = null, busy = false;
   // Every photo choice and every read takes a new number; an answer (or error) whose number is no longer the current one
@@ -143,13 +143,15 @@ th{background:#eee}
     inflight = ctl;
     try {
       var fd = new FormData(); fd.append('image', sent, 'parchi.jpg');
-      var r = await fetch('/judge/scan/read', {method: 'POST', headers: {'X-Admin-Key': key}, body: fd, signal: ctl.signal});
+      // K31: the browser sends the judge session cookie by itself; X-Parchi-Judge is the CSRF guard. The key is not in the page.
+      var r = await fetch('/judge/scan/read', {method: 'POST', headers: {'X-Parchi-Judge': '1'}, body: fd, signal: ctl.signal});
       var data = null, raw = '';
       try { raw = await r.text(); data = JSON.parse(raw); } catch (e) { data = null; }
       if (mine !== seq) return;  // stale: another photo was chosen or read since this request began
       if (!r.ok) {
         var detail = data && data.detail !== undefined ? (typeof data.detail === 'string' ? data.detail : JSON.stringify(data.detail)) : (raw || r.statusText);
-        if (r.status === 503 && detail === 'reader not connected') setStatus('The reader is not connected yet.', true);
+        if (r.status === 401) setStatus('Your login expired. Open /judge/login and log in again.', true);
+        else if (r.status === 503 && detail === 'reader not connected') setStatus('The reader is not connected yet.', true);
         else setStatus('Error ' + r.status + ': ' + detail, true);
       } else {
         setStatus(''); show(data && data.lines, (data && typeof data.ms === 'number' ? data.ms : 0) / 1000, data && data.reader);
@@ -184,7 +186,8 @@ HEADERS = {
 
 
 def admin_query(request: Request) -> None:
-    auth.require_admin(request, allow_query=True)
+    """Header or judge session; a browser without either is sent to /judge/login (K31: ?k= is only a one-time bridge)."""
+    judge_session.admin_page(request)
 
 
 def admin_header(request: Request) -> None:

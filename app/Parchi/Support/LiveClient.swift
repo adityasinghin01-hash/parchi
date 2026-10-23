@@ -54,6 +54,9 @@ struct ServerStatus: Decodable {
     var sellers: [ServerSeller]
     var pending: ServerPending?
     var proposal: PlanBProposal?
+    /// K31: the server's id for the proposal now awaiting approval; approve/reject send it back so a late or repeated
+    /// decision can never act on a newer proposal. nil on an older server.
+    var proposalID: String?
     var nothingAvailable: Bool
     var needsCheck: [String]
     var waitingSince: String?
@@ -71,12 +74,15 @@ struct ServerStatus: Decodable {
         sellers = try c.decodeIfPresent([ServerSeller].self, forKey: .sellers) ?? []
         pending = try? c.decodeIfPresent(ServerPending.self, forKey: .pending)
         proposal = try? c.decodeIfPresent(PlanBProposal.self, forKey: .proposal)
+        proposalID = ((try? c.decodeIfPresent(ProposalMeta.self, forKey: .proposal)) ?? nil)?.proposalID
         nothingAvailable = (try? c.decodeIfPresent(Bool.self, forKey: .nothingAvailable)) ?? false
         needsCheck = (try? c.decodeIfPresent([String].self, forKey: .needsCheck)) ?? []
         waitingSince = try? c.decodeIfPresent(String.self, forKey: .waitingSince)
         audit = (try? c.decodeIfPresent([ServerAuditEntry].self, forKey: .audit)) ?? []
     }
 }
+
+private struct ProposalMeta: Decodable { var proposalID: String? }
 
 struct Health: Decodable, Equatable {
     var ok: Bool
@@ -124,15 +130,16 @@ struct LiveClient {
         try await sendIgnoringReply("POST", "order/\(orderID)/proposal", body: Body(planVersion: planVersion, proposal: proposal))
     }
 
-    func approve(orderID: String, planVersion: Int) async throws {
-        try await sendIgnoringReply("POST", "order/\(orderID)/approve", body: Version(planVersion: planVersion))
+    /// `proposalID` (K31) names the proposal the patient saw; the server answers 409 "stale proposal" if it is no longer the current one.
+    func approve(orderID: String, planVersion: Int, proposalID: String? = nil) async throws {
+        try await sendIgnoringReply("POST", "order/\(orderID)/approve", body: Decision(planVersion: planVersion, proposalID: proposalID))
     }
 
-    func reject(orderID: String, planVersion: Int) async throws {
-        try await sendIgnoringReply("POST", "order/\(orderID)/reject", body: Version(planVersion: planVersion))
+    func reject(orderID: String, planVersion: Int, proposalID: String? = nil) async throws {
+        try await sendIgnoringReply("POST", "order/\(orderID)/reject", body: Decision(planVersion: planVersion, proposalID: proposalID))
     }
 
-    private struct Version: Encodable { var planVersion: Int }
+    private struct Decision: Encodable { var planVersion: Int; var proposalID: String? }
 
     // MARK: Plumbing
 

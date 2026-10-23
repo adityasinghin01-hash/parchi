@@ -23,6 +23,7 @@ def paid(client, order, seller="s1", pincode="560001", paid=11000, items=10000, 
     # K30: a report needs a real order. Create it (as a sandbox order is created) unless it already exists.
     if db.get_order(order) is None:
         db.reserve_order(order, who)
+    db.place_order(order, seller, 1)  # report fixtures represent an actual placed seller
     body = {"sellerID": seller, "pincode": pincode, "paidPaise": paid, **extra}
     if items is not None:
         body["itemsPaise"] = items
@@ -128,6 +129,7 @@ def test_invented_order_id_is_refused_even_for_sandbox(client):
         assert client.post(f"/orders/fake{i}/paid", json=body).status_code == 404
     assert v2_db.extras("s1", "560001") == [] and price(client)["reports"] == 0
     db.reserve_order("mine", "phone-1")
+    db.place_order("mine", "s1", 1)
     assert client.post("/orders/mine/paid", json=body, headers={"X-Test-Install": "phone-2"}).status_code == 409
     assert client.post("/orders/mine/paid", json=body, headers={"X-Test-Install": "phone-1"}).status_code == 200
     db.mark_deleting("phone-1")  # an order being deleted does not exist any more

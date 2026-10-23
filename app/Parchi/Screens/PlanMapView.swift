@@ -10,6 +10,7 @@ struct PlanMapView: View {
     @State private var search = ShopSearchModel()
     @State private var selected: MapShop?
     @State private var position: MapCameraPosition = .automatic
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     private struct Row: Identifiable {
         let shop: MapShop
@@ -24,6 +25,9 @@ struct PlanMapView: View {
         VStack(spacing: 0) {
             mapArea(rows)
             List {
+                if typeSize.isAccessibilitySize && !delivery.isEmpty {
+                    Section { deliveryStrip(delivery).listRowInsets(EdgeInsets()) }
+                }
                 Section {
                     if search.state == .loading { Label("Finding shops…", systemImage: "magnifyingglass").foregroundStyle(.secondary) }
                     ForEach(rows) { row in shopRow(row) }
@@ -31,13 +35,15 @@ struct PlanMapView: View {
                 } header: {
                     Text("Shops, cheapest first, then nearest")
                 } footer: {
-                    Text("Shops come from Apple Maps, searched live around \(app.location.centre.name) and not saved by Parchi. Map data © Apple. A price marked \"Catalogue MRP\" is the printed price, not a quote from that shop.")
+                    Text("Shops come from Apple Maps, searched live around \(app.location.centre.name). Their names and places stay on this phone and are not saved. If you ask a shop, Parchi's server gets only a random code and a generic name, never its real name or place. Map data © Apple. A price marked \"Catalogue MRP\" is the printed price, not a quote from that shop.")
                 }
             }
         }
-        .safeAreaInset(edge: .bottom, spacing: 0) { if !delivery.isEmpty { deliveryStrip(delivery) } }
+        // K24: at big text the strip would fill the screen and leave no room for the shop list; it joins the list instead.
+        .safeAreaInset(edge: .bottom, spacing: 0) { if !delivery.isEmpty && !typeSize.isAccessibilitySize { deliveryStrip(delivery) } }
         .sheet(item: $selected) { shop in ShopSheet(shop: shop) }
         .task(id: "\(app.location.centre.latitude),\(app.location.centre.longitude)") {
+            selected = nil   // a sheet for the previous city's shop must not stay open under the new city
             position = .region(Self.region(for: app.location.centre))
             await search.load(around: app.location.centre)
             // Screenshot aid: `-mapOpenShop <id prefix>` opens that shop's sheet.
@@ -88,7 +94,7 @@ struct PlanMapView: View {
                     }
                 }
             }
-            .frame(height: 210)
+            .frame(height: typeSize.isAccessibilitySize ? 140 : 210)
             .accessibilityIdentifier("planMap")
         }
     }

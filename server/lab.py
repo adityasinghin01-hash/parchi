@@ -4,10 +4,16 @@ Only a hash of the lab's reply token is stored. No patient name or phone is ever
 or stored; the address text is the home-collection address only.
 """
 import asyncio
+import hashlib
+import json
+import time
 from typing import Any, Callable
 
-from fastapi import Body, Depends, FastAPI, HTTPException, Request
-from fastapi.responses import HTMLResponse
+from fastapi import Body, Depends, FastAPI, Header, HTTPException, Request
+from fastapi.responses import HTMLResponse, JSONResponse
+
+from temporalio.common import WorkflowIDReusePolicy
+from temporalio.exceptions import WorkflowAlreadyStartedError
 
 import db
 import p3_db
@@ -131,20 +137,41 @@ def register(app: FastAPI, get_temporal: Callable[..., Any],
     @app.post("/lab/book", status_code=201)
     async def lab_book(request: Request, body: dict[str, Any] = Body(...),
                        install_id: str = Depends(install_dep),
-                       temporal: Any = Depends(get_temporal)) -> dict[str, Any]:
+                       temporal: Any = Depends(get_temporal),
+                       idempotency_key: str | None = Header(default=None, min_length=1, max_length=128)) -> Any:
         try:
             booking = validate_booking(body, install_id)
         except ValueError as error:
             raise HTTPException(422, str(error))
-        booking_id, token = await asyncio.to_thread(p3_db.create_booking, install_id, booking)
+        body_hash = hashlib.sha256(json.dumps(body, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+        # A retry after a lost response must return the SAME booking (Codex R8 row 9). Clients that send no Idempotency-Key get
+        # one derived from the body and a 10-minute window, so an old client's retry is still safe.
+        key = idempotency_key or f"auto-{body_hash}-{int(time.time() // 600)}"
+        try:
+            booking_id, token, created = await asyncio.to_thread(p3_db.create_booking_once, install_id, booking, key, body_hash)
+        except p3_db.KeyReuseError:
+            raise HTTPException(409, "Idempotency-Key was already used with a different booking")
+        # Always attempt an idempotent workflow start:
+        #  - created=True  → first call; start the workflow.
+        #  - created=False → replay after a crash between SQLite commit and Temporal start;
+        #                    REJECT_DUPLICATE means Temporal will raise WorkflowAlreadyStartedError
+        #                    if the workflow is (or was) already running/completed, which we accept.
+        # On any OTHER Temporal error we retain the committed row (never delete it) and return 503
+        # so the client can retry; deleting would strand the booking permanently.
         try:
             await temporal.start_workflow(
                 "LabBookingWorkflow", {"booking_id": booking_id, "time_scale": time_scale()},
-                id="lab-" + booking_id, task_queue=task_queue())
+                id="lab-" + booking_id, task_queue=task_queue(),
+                id_reuse_policy=WorkflowIDReusePolicy.REJECT_DUPLICATE)
+        except WorkflowAlreadyStartedError:
+            pass  # idempotent: workflow already running or completed for this booking
         except Exception:
-            await asyncio.to_thread(p3_db.delete_booking, booking_id)  # no half-created booking
+            # Row is retained in SQLite so the client can retry with the same key.
             raise HTTPException(503, "temporal unavailable")
-        return {"bookingID": booking_id, "replyLink": f"{public_base(request)}/lab/reply/{token}"}
+        status_code = 201 if created else 200
+        return JSONResponse(
+            {"bookingID": booking_id, "replyLink": f"{public_base(request)}/lab/reply/{token}" if token else None},
+            status_code=status_code)
 
     @app.get("/lab/{booking_id}/status")
     async def lab_status(booking_id: str, install_id: str = Depends(install_dep)) -> dict[str, Any]:

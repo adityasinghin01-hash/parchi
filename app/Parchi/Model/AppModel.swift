@@ -61,6 +61,9 @@ final class AppModel {
     let consent = ConsentStore()
 
     var lines: [ReadLine] = []
+    /// Raw text of lines the on-phone reader saw but was not sure about (K27). Shown on Confirm so they are never lost; set right after
+    /// `loadReaderLines` for the same photo, and cleared by `loadReaderLines`, `eraseAll` and `readDemoParchi`.
+    var readerNeedsHelp: [String] = []
     var objective: Objective = .cheapest { didSet { replan() } }
     private(set) var plan: Plan?
     /// Catalogue-MRP prices for the confirmed medicines that the demo scenario has no offer for (itemID -> offer).
@@ -89,6 +92,7 @@ final class AppModel {
     private var serverPlanVersion = 1
     private var proposalKey: String?                    // "seller|version" already posted/shown, so we do it once
     private var postedProposalVersion: Int?             // set only when the server holds the proposal now on screen
+    private var serverProposalID: String?               // K31: the server's id of the proposal awaiting approval (sent back on approve/reject)
     private var replacementSellers: Set<String> = []
     /// Sellers the patient skipped in the Checkout Assistant; the planner ignores their offers.
     private(set) var skippedSellers: Set<String> = []
@@ -126,6 +130,7 @@ final class AppModel {
         resetLiveOrder()
         scenario = Self.load("real_basket_cheapest")
         lines = []
+        readerNeedsHelp = []
         plan = nil
         approvedPlan = nil
         statuses = [:]
@@ -158,6 +163,7 @@ final class AppModel {
             resetLiveOrder()
             return
         }
+        readerNeedsHelp = []
         lines = scenario.items.map { item in
             var read = item
             if item.id == "telma" { read.strength = "400" }
@@ -183,6 +189,7 @@ final class AppModel {
     /// at the catalogue MRP at the doctor's shop (`refreshCatalogue`, plan gap U7). Other tests still use lab prices only.
     func loadReaderLines(_ read: [ReaderLine]) {
         resetLiveOrder()   // a new parchi must never keep polling (or showing) the earlier Live order
+        readerNeedsHelp = []
         lines = read.enumerated().map { index, r in
             let kind: ItemKind = r.kind == "test" ? .test : .medicine
             return makeLine(RxItem(id: "r\(index + 1)", kind: kind, name: r.name, strength: r.strength, quantity: max(r.quantity ?? 1, 1)))
@@ -278,7 +285,7 @@ final class AppModel {
             prefs.reliability = reliabilityScores.mapValues(\.score)
             prefs.reliabilityWeight = 1
         }
-        return Planner(items: scenario.items, sellers: scenario.sellers, offers: plannerOffers, preferences: prefs)
+        return Planner(items: scenario.items, sellers: scenario.sellers + shopAsk.mapSellers, offers: plannerOffers, preferences: prefs)   // + quoted Apple Maps shops (in memory)
     }
 
     // MARK: Catalogue prices (any medicine) + Jan Aushadhi equivalents
@@ -471,7 +478,7 @@ final class AppModel {
         if let plan {
             // The demo parchi carries its written schedules; a real reader will supply them per line (nil = Care says "Can't tell").
             let saved = lines.filter { !$0.askDoctor }.map { SavedItem(item: $0.item, schedule: Self.demoSchedules[$0.item.id]) }
-            HistoryStore.shared.saveApproved(title: scenario.title, items: saved, plan: plan, sellers: scenario.sellers)
+            HistoryStore.shared.saveApproved(title: scenario.title, items: saved, plan: plan, sellers: scenario.sellers + shopAsk.mapSellersForServer)
             if backend.mode == .live {
                 let watch = saved.compactMap { s in s.schedule.map { (name: s.item.name, quantity: s.item.quantity, schedule: $0) } }
                 Task { await registerRefillWatch(items: watch) }
@@ -494,9 +501,10 @@ final class AppModel {
             return
         }
         // Live: the server must accept first. If it does not (offline, rate limit), the sheet comes back and the patient can tap again.
+        let proposalID = serverProposalID
         Task {
             do {
-                try await client.approve(orderID: orderID, planVersion: version)
+                try await client.approve(orderID: orderID, planVersion: version, proposalID: proposalID)
                 postedProposalVersion = nil
                 applyApproval(proposal)
             } catch {
@@ -546,6 +554,7 @@ final class AppModel {
         serverPlanVersion = 1
         proposalKey = nil
         postedProposalVersion = nil
+        serverProposalID = nil
         replacementSellers = []
         deliveredSellers = []
         inactiveSellers = []
@@ -556,7 +565,7 @@ final class AppModel {
         guard let client = backend.makeClient() else { backendError = LiveError.badURL.message; return }
         let key = idempotencyKeys[approved] ?? UUID().uuidString
         idempotencyKeys[approved] = key
-        let sellers = scenario.sellers
+        let sellers = scenario.sellers + shopAsk.mapSellersForServer   // Apple Maps shops go out under a generic name
         // Settings "Plan B" stepper: 0 = always ask me first (sent as nil).
         let cap = UserDefaults.standard.integer(forKey: "parchi.autoApproveCapPaise")
         let autoApproveCap: Int? = cap > 0 ? cap : nil
@@ -610,6 +619,7 @@ final class AppModel {
 
     private func apply(_ status: ServerStatus, client: LiveClient) async {
         serverPlanVersion = status.planVersion
+        serverProposalID = status.state == "awaiting_approval" ? status.proposalID : nil
         for seller in status.sellers {
             // The server rejects a Plan B that sends items to a seller who already delivered, so never propose one.
             if seller.status == "delivered" { deliveredSellers.insert(seller.id) }
@@ -657,10 +667,11 @@ final class AppModel {
         // Only when the server actually holds this proposal (not for the local-only "Simulate cancel").
         guard let orderID = liveOrderID, let version = postedProposalVersion, let client = backend.makeClient() else { return }
         postedProposalVersion = nil
+        let proposalID = serverProposalID
         Task {
             do {
-                if approve { try await client.approve(orderID: orderID, planVersion: version) }
-                else { try await client.reject(orderID: orderID, planVersion: version) }
+                if approve { try await client.approve(orderID: orderID, planVersion: version, proposalID: proposalID) }
+                else { try await client.reject(orderID: orderID, planVersion: version, proposalID: proposalID) }
             } catch {
                 backendError = (error as? LiveError)?.message
             }
@@ -669,8 +680,8 @@ final class AppModel {
 
     // MARK: Names
 
-    func sellerName(_ id: String) -> String { scenario.sellers.first { $0.id == id }?.name ?? id }
-    func seller(_ id: String) -> Seller? { scenario.sellers.first { $0.id == id } }
+    func sellerName(_ id: String) -> String { (scenario.sellers + shopAsk.mapSellers).first { $0.id == id }?.name ?? id }
+    func seller(_ id: String) -> Seller? { (scenario.sellers + shopAsk.mapSellers).first { $0.id == id } }
     func itemName(_ id: String) -> String {
         guard let item = scenario.items.first(where: { $0.id == id }) else { return id }
         return [item.name, item.strength].compactMap { $0 }.joined(separator: " ")

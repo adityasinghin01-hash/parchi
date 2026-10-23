@@ -63,19 +63,19 @@ struct ShopPricer {
 
     func quote(for shop: MapShop) -> ShopQuote {
         let ids = medicineIDs
-        // 1. A shop that replied through "Ask nearby shops": its own price wins.
-        if let row = app.shopAsk.rows.first(where: { $0.id == shop.id && $0.state == .replied }) {
-            let price = PinPricing.reply(medicineIDs: ids, items: row.items, repliedAt: row.repliedAt ?? Date(), isDemo: row.isDemo)
-            if !price.isAsk {
-                let items = ids.map { id -> ShopItemPrice in
-                    let item = row.items.first { $0.itemID == id }
-                    let paise = item.flatMap { $0.available ? $0.pricePaise : nil }
-                    return ShopItemPrice(itemID: id, name: app.itemName(id), paise: paise,
-                                         note: paise == nil ? (item == nil ? "Not in the reply" : "Not available") : nil)
-                }
-                return ShopQuote(price: price, items: items,
-                                 footnote: row.isDemo ? "This reply is scripted for the demo. No shop wrote it." : "The shop's own reply to your message.")
+        // 1. A shop that replied through "Ask nearby shops": its own answer wins, even when the answer is "not available" for
+        //    everything (never the catalogue MRP: that would hide what the shop actually said).
+        if let row = app.shopAsk.rows.first(where: { $0.id == app.shopAsk.key(for: shop.id) && $0.state == .replied }) {
+            var price = PinPricing.reply(medicineIDs: ids, items: row.items, repliedAt: row.repliedAt ?? Date(), isDemo: row.isDemo)
+            if price.isAsk { price.source = PinPricing.replySource(repliedAt: row.repliedAt ?? Date(), isDemo: row.isDemo) }   // "Shop replied" chip, no number
+            let items = ids.map { id -> ShopItemPrice in
+                let item = row.items.first { $0.itemID == id }
+                let paise = item.flatMap { $0.available ? $0.pricePaise : nil }
+                return ShopItemPrice(itemID: id, name: app.itemName(id), paise: paise,
+                                     note: paise == nil ? (item == nil ? "Not in the reply" : "Not available") : nil)
             }
+            return ShopQuote(price: price, items: items,
+                             footnote: row.isDemo ? "This reply is scripted for the demo. No shop wrote it." : "The shop's own reply to your message.")
         }
         // 2. Otherwise by kind.
         switch shop.kind {
@@ -134,10 +134,15 @@ extension AppModel {
     /// Same as `prepareShopAsk()`, but this shop is in the candidate list (first) and the only one picked.
     /// `prepare` does nothing while an ask is already in progress, exactly as for the normal sheet.
     func prepareShopAsk(preselecting shop: MapShop) {
-        var candidates = shopCandidates().filter { $0.id != shop.id }
-        candidates.insert(ShopCandidate(id: shop.id, name: shop.name, distanceM: shop.distanceM), at: 0)
+        // A shop from Apple Maps goes into the ask under an opaque random id; its real name and distance stay in this candidate
+        // (on the phone) and are never sent to the server.
+        let appleDerived = shop.planSellerID == nil
+        let askID = appleDerived ? shopAsk.opaqueID(forMapShop: shop.id) : shop.id
+        var candidates = shopCandidates().filter { $0.id != askID }
+        candidates.insert(ShopCandidate(id: askID, name: shop.name, distanceM: shop.distanceM, appleDerived: appleDerived,
+                                        janAushadhi: shop.kind == .janAushadhi), at: 0)
         shopAsk.prepare(items: scenario.items, candidates: candidates, demoOffers: demoShopOffers(for: candidates),
                         liveRequested: backend.mode == .live, live: backend.makeClient(), orderID: liveOrderID)
-        shopAsk.selected = [shop.id]
+        shopAsk.selected = [askID]
     }
 }

@@ -199,6 +199,8 @@ struct LabBookingView: View {
             else { Label("Waiting for the lab to confirm · preferred \(ISOTime.slot(booking.requestedSlot))", systemImage: "hourglass").foregroundStyle(.secondary) }
         case "rejected":
             Label("The lab cannot do this slot.", systemImage: "xmark.circle").foregroundStyle(.red)
+        case "expired":
+            Label("This booking was closed because nothing happened for a week. Book again if you still need it.", systemImage: "clock.badge.xmark").foregroundStyle(.secondary)
         case "report_chase_due":
             VStack(alignment: .leading, spacing: 2) {
                 Label("Your report was due. Call the lab to ask for it.", systemImage: "phone.arrow.up.right").foregroundStyle(.orange)

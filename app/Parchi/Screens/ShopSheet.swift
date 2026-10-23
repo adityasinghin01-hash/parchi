@@ -44,18 +44,20 @@ struct ShopSheet: View {
     // MARK: Header
 
     private func header(_ quote: ShopQuote) -> some View {
-        VStack(alignment: .leading, spacing: 6) {
+        // The shop answered "not available" for every medicine: a "Shop replied" chip but no number.
+        let repliedUnavailable = quote.price.isAsk && quote.price.source != nil
+        return VStack(alignment: .leading, spacing: 6) {
             Text(shop.name).font(.title3.bold()).accessibilityIdentifier("shopSheetName")
             Text([kindText, shop.distanceText].compactMap { $0 }.joined(separator: " · "))
                 .foregroundStyle(.secondary)
             if let address = shop.address { Text(address).font(.subheadline).foregroundStyle(.secondary) }
             HStack(alignment: .firstTextBaseline, spacing: 6) {
-                Text(quote.price.text).font(.title2.bold()).monospacedDigit()
+                Text(repliedUnavailable ? "Not available" : quote.price.text).font(.title2.bold()).monospacedDigit()
                 if let coverage = quote.price.coverageText { Text(coverage).foregroundStyle(.secondary) }
             }
             .padding(.top, 4)
             .accessibilityElement(children: .combine)
-            .accessibilityLabel(quote.price.spoken)
+            .accessibilityLabel(repliedUnavailable ? "Not available, the shop replied" : quote.price.spoken)
             .accessibilityIdentifier("shopSheetPrice")
             if let source = quote.price.source {
                 PriceSourceChip(source: source)

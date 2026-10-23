@@ -109,8 +109,8 @@ def test_booking_shows_slot_and_order_link_after_confirm(api_client):
 
 
 def test_bookings_capped_at_ten(api_client):
-    for _ in range(12):
-        book(api_client)
+    for n in range(12):
+        book(api_client, labName=f"City Lab {n}")  # identical posts within 10 minutes are ONE booking (idempotent), so vary them
     assert len(api_client.client.get("/judge/lab/bookings", headers=ADMIN).json()) == 10
 
 
@@ -122,7 +122,7 @@ def test_page_needs_the_admin_key(api_client):
 def test_page_has_both_sections_and_actions(api_client):
     made = ask(api_client)
     booked = book(api_client)
-    page = api_client.client.get("/judge?k=judge-secret").text
+    page = api_client.client.get("/judge", headers=ADMIN).text
     assert "<h2>Shop asks</h2>" in page and "<h2>Lab bookings</h2>" in page
     assert page.count("<button type=\"button\" data-reply-toggle>Reply</button>") == 2 and made["askID"] in page
     assert f'data-ask="{made["askID"]}" data-shop="s1"' in page
@@ -135,7 +135,7 @@ def test_page_has_both_sections_and_actions(api_client):
 
 def test_page_keeps_order_buttons(api_client):
     oid = test_api.create(api_client).json()["orderID"]
-    page = api_client.client.get("/judge?k=judge-secret").text
+    page = api_client.client.get("/judge", headers=ADMIN).text
     assert f'<button data-o="{oid}" data-s="s1" data-k="cancelled">Cancel</button>' in page
     assert "'/judge/' + encodeURIComponent(b.dataset.o) + '/event'" in page
 
@@ -146,7 +146,7 @@ def test_reply_form_only_for_shops_that_can_still_answer(api_client):
             "items": [{"itemID": "i1", "available": True, "pricePaise": 100},
                       {"itemID": "i2", "available": True, "pricePaise": 100}]}
     api_client.client.post(f"/judge/shop/{made['askID']}/reply", headers=ADMIN, json=body)
-    page = api_client.client.get("/judge?k=judge-secret").text
+    page = api_client.client.get("/judge", headers=ADMIN).text
     assert "data-reply-toggle>" not in page and "<b>replied</b>" in page and "<b>not_needed</b>" in page
 
 
@@ -155,7 +155,7 @@ def test_page_escapes_everything_from_users(api_client):
     made = ask(api_client, items=[{"itemID": XSS, "name": XSS, "quantity": 1}],
                shops=[{"shopID": XSS, "name": XSS}])
     book(api_client, labName=XSS, tests=[{"testID": "t", "name": XSS}], orderID=oid, sellerID=XSS)
-    page = api_client.client.get("/judge?k=judge-secret").text
+    page = api_client.client.get("/judge", headers=ADMIN).text
     assert XSS not in page
     assert "&lt;script&gt;alert(1)&lt;/script&gt;" in page
     assert len(re.findall(r"<script", page)) == 1  # only the page's own script

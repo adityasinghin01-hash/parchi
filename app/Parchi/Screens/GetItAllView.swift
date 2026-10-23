@@ -8,7 +8,7 @@ struct GetItAllView: View {
         List {
             Section {
                 Label("Test order: nothing is really bought or booked in this demo.", systemImage: "exclamationmark.triangle")
-                    .foregroundStyle(.orange)
+                    .foregroundStyle(Color.parchiWarning)
             }
             if let plan = model.plan {
                 ForEach(plan.sellerIDs, id: \.self) { sellerID in
@@ -28,18 +28,20 @@ struct GetItAllView: View {
                         ForEach(lines, id: \.itemID) { line in
                             if let link = model.productLink(itemID: line.itemID, sellerID: sellerID), let url = URL(string: link.productURL), url.scheme == "https" {
                                 HStack {
-                                    Link("Open \(model.itemName(line.itemID)) on \(model.sellerName(sellerID))", destination: url)
-                                        .font(.subheadline)
+                                    Link(destination: url) {
+                                        Text("Open \(model.itemName(line.itemID)) on \(model.sellerName(sellerID))")
+                                            .font(.subheadline)
+                                            .frame(minHeight: 44, alignment: .leading)   // K24: the link itself was 21 pt tall
+                                    }
                                     Spacer()
                                     Text(link.pricePaise.map { "Seen \(rupees($0))" } ?? "Price on seller page")
                                         .font(.caption).foregroundStyle(.secondary)
                                 }
-                                .frame(minHeight: 44)
                             }
                         }
                     }
                 }
-                Section { Button("Open Checkout Assistant") { path.append(.checkout) } }
+                Section { Button("Open Checkout Assistant") { guard path.last != .checkout else { return }; path.append(.checkout) }.frame(minHeight: 44) }
                 Section {
                     Text("In the real app you finish payment in each seller's own app or website. Parchi never holds your money.")
                         .font(.footnote).foregroundStyle(.secondary)
@@ -49,10 +51,11 @@ struct GetItAllView: View {
         .navigationTitle("Get it all")
         .safeAreaInset(edge: .bottom) {
             Button {
+                guard path.last != .track else { return }   // K24: a second quick tap saved the orders twice
                 model.placeTestOrders()
                 path.append(.track)
             } label: {
-                Text("Place test orders").font(.headline).frame(maxWidth: .infinity, minHeight: 50)
+                Text("Place test orders").font(.headline).frame(maxWidth: .infinity, minHeight: 50).barButtonText()
             }
             .buttonStyle(.borderedProminent)
             .padding()

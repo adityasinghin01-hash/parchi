@@ -31,8 +31,8 @@ struct PlanView: View {
             .accessibilityIdentifier("planViewPicker")
         }
         .safeAreaInset(edge: .bottom) {
-            Button { path.append(.getItAll) } label: {
-                Text("Get it all").font(.headline).frame(maxWidth: .infinity, minHeight: 50)
+            Button { guard path.last != .getItAll else { return }; path.append(.getItAll) } label: {
+                Text("Get it all").font(.headline).frame(maxWidth: .infinity, minHeight: 50).barButtonText()
             }
             .buttonStyle(.borderedProminent)
             .disabled(model.plan == nil)
@@ -86,7 +86,7 @@ private struct PlanListContent: View {
                                 }
                                 SellerTrustLines(sellerID: sellerID)
                                 if let message = model.inPersonMessage(itemID: line.itemID) {
-                                    Text(message).font(.caption).foregroundStyle(.orange)
+                                    Text(message).font(.caption).foregroundStyle(Color.parchiWarning)
                                 }
                                 if let ask = model.janAushadhiLine(itemID: line.itemID) {
                                     Text(ask)

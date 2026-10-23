@@ -67,8 +67,12 @@ enum PinPricing {
         for item in items where item.available {
             if let p = item.pricePaise, p > 0, medicineIDs.contains(item.itemID) { prices[item.itemID] = p }
         }
-        let source = PriceSource(kind: .shopReply, dateSeen: repliedAt, note: isDemo ? "Shop replied (demo, scripted) · \(PriceSource(kind: .shopReply, dateSeen: repliedAt).label)" : nil)
-        return sum(medicineIDs, prices: prices, source: source)
+        return sum(medicineIDs, prices: prices, source: replySource(repliedAt: repliedAt, isDemo: isDemo))
+    }
+
+    /// The "Shop replied 6:40 pm" chip for a shop's answer (also kept when the answer was "not available" for everything).
+    static func replySource(repliedAt: Date, isDemo: Bool) -> PriceSource {
+        PriceSource(kind: .shopReply, dateSeen: repliedAt, note: isDemo ? "Shop replied (demo, scripted) · \(PriceSource(kind: .shopReply, dateSeen: repliedAt).label)" : nil)
     }
 
     /// A seller with its own offers (delivery sellers): in-stock, non-substitute offers for the medicines.

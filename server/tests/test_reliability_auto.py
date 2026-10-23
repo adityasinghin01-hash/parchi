@@ -84,7 +84,7 @@ def test_late_counts_once_and_a_later_delivery_cannot_undo_it(temporal_env, isol
         await env.sleep(timedelta(minutes=91))
         await until(handle, lambda s: s["state"] == "needs_proposal")
         await counted("noida", "s1", (0, 1))
-        await handle.signal("seller_event", args=["s1", "delivered"])  # ignored: seller already failed
+        await handle.signal("seller_event", args=["s1", "delivered"])  # reconciled (items not re-bought), but the late count stands
         await handle.signal("seller_event", args=["s1", "late"])
         await asyncio.sleep(0.3)
         assert counts("noida", "s1") == (0, 1)

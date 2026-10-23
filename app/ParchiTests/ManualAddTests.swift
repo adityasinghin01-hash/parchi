@@ -173,7 +173,8 @@ final class ManualAddTests: XCTestCase {
         model.addManualMedicine(name: "Pantop", strength: "40", quantity: -4)
         model.addManualMedicine(name: "   ", strength: nil, quantity: 10)
         model.addManualTest(name: "")
-        XCTAssertEqual(model.lines.map(\.item.quantity), [1000, 1])
+        XCTAssertEqual(model.lines.map(\.item.quantity), [999, 1], "the shop-ask server rejects more than 999 (K29)")
+        XCTAssertEqual(AppModel.maxManualQuantity, 999)
         XCTAssertEqual(model.lines.count, 2)
     }
 

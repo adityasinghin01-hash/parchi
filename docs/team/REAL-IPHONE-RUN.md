@@ -21,5 +21,5 @@ No iPhone is connected to the iMac right now (`xctrace` lists only the iMac and 
 | WhatsApp deep link (Ask nearby shops) | WhatsApp opens with the message and reply link |
 | Location permission + map centre on you; deny it and the city picker appears | both paths work |
 | Calendar write-only permission + lab slot added; fasting reminder fires | event exists; notification arrives |
-| Judge cancel from `http://<iMac-ip>:8000/judge?k=<admin key>` | Plan B sheet appears on the phone in about 2 s |
+| Judge cancel from `http://<iMac-ip>:8000/judge` (log in with the admin key once; no key in the URL) | Plan B sheet appears on the phone in about 2 s |
 Record each row as pass/fail with a screenshot in `docs/verification/`.

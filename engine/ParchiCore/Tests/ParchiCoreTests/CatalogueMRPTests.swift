@@ -615,3 +615,24 @@ private let realScheduleSaltsOnly: ScheduleCheck = {
     print("COLD LOAD brand_mrp.json \(mrpTime), janaushadhi \(jaTime), first lookup \(firstLookup), first JA \(firstJA)")
     #expect(found != nil)
 }
+
+// K27 item 19: the on-phone reader hands over the stated form in the name ("Dolo Inj"), so the price uses that form.
+@Test func formWrittenAfterTheBrandPicksThatFormInTheRealCatalogue() throws {
+    #expect(try #require(realMRP.match(name: "Dolo", strength: "1000 mg")).entry.mrpPaise == 4500)          // no form: the tablet
+    let inj = try #require(realMRP.match(name: "Dolo Inj", strength: "1000 mg"))
+    #expect(inj.entry.form == .injection && inj.entry.mrpPaise == 26800)
+    #expect(try #require(realMRP.match(name: "Dolo Tab", strength: "1000 mg")).entry.mrpPaise == 4500)
+    #expect(realMRP.match(name: "Pan Cap", strength: "40") == nil)                                          // same as "Pan cap 40"
+}
+
+@Test func trailingFormWordIsNotPartOfTheBrandKey() throws {
+    // "Montair LC Tab" is brand MONTAIRLC; the form word must not turn it into brand MONTAIR with extra word "LC"
+    #expect(tiny.brandKey(for: "Montair LC Tab")?.brand == "MONTAIRLC")
+    #expect(tiny.brandKey(for: "Montair LC Tab")?.extras == "")
+    #expect(tiny.brandKey(for: "Dolo Inj")?.brand == "DOLO")
+    #expect(tiny.brandKey(for: "Telma H Tab")?.extras == "H")
+    #expect(Catalogue(strengths: ["MONTAIRLC": ["10"], "DOLO": ["650", "1000"]]).check(brand: "Montair LC Tab", strength: "10") == .confirmed(brand: "MONTAIRLC", strength: "10"))
+    #expect(Catalogue(strengths: ["DOLO": ["650", "1000"]]).check(brand: "Dolo Inj", strength: "1000") == .confirmed(brand: "DOLO", strength: "1000"))
+    // a brand that really ends in a form-like word keeps working
+    #expect(Catalogue(strengths: ["PANCAP": ["40"]]).check(brand: "Pan Cap", strength: "40") == .confirmed(brand: "PANCAP", strength: "40"))
+}

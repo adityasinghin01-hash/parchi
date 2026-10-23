@@ -3,6 +3,7 @@ import SwiftUI
 
 struct TrackView: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
     @State private var payingSeller: String?
 
     var body: some View {
@@ -18,24 +19,30 @@ struct TrackView: View {
                             Label(model.statuses[sellerID]?.rawValue ?? "Placed", systemImage: "shippingbox")
                             Spacer()
                             if model.seller(sellerID)?.channel == .onlinePharmacy, model.statuses[sellerID] == .placed {
-                                Button("Simulate cancel", role: .destructive) { model.simulateCancel(sellerID: sellerID) }
-                                    .buttonStyle(.bordered)
+                                Button(role: .destructive) { model.simulateCancel(sellerID: sellerID) } label: {
+                                    Text("Simulate cancel").frame(minHeight: 44)   // K24: tap area was 38 pt
+                                }
+                                .buttonStyle(.bordered)
                             }
                         }
                         ForEach(plan.lines.filter { $0.sellerID == sellerID }, id: \.itemID) { line in
                             Text(model.itemName(line.itemID)).font(.subheadline).foregroundStyle(.secondary)
                         }
                         SellerTrustLines(sellerID: sellerID)
-                        Button("What did you pay?") { payingSeller = sellerID }
-                            .font(.footnote)
+                        Button { payingSeller = sellerID } label: {
+                            Text("What did you pay?").frame(minHeight: 44, alignment: .leading)
+                        }
+                        .font(.footnote)
                     }
                 }
             }
         }
         .safeAreaInset(edge: .bottom) {
-            NavigationLink("What next? Doses and refills") { CareView(store: HistoryStore.shared) }
-                .frame(maxWidth: .infinity, minHeight: 44)
-                .background(.bar)
+            NavigationLink { CareView(store: HistoryStore.shared) } label: {
+                Text("What next? Doses and refills").frame(maxWidth: .infinity, minHeight: 44)   // K24: the whole bar is the link
+            }
+            .background(.bar)
+            .accessibilityLabel("What next? Doses and refills")
         }
         .navigationTitle("Track")
         .sheet(isPresented: Binding(get: { payingSeller != nil }, set: { if !$0 { payingSeller = nil } })) {
@@ -43,7 +50,7 @@ struct TrackView: View {
         }
         .sheet(item: Binding(get: { model.planB.map(PlanBBox.init) }, set: { if $0 == nil { model.planB = nil } })) { box in
             PlanBSheet(proposal: box.proposal)
-                .presentationDetents([.medium, .large])
+                .presentationDetents(typeSize.isAccessibilitySize ? [.large] : [.medium, .large])   // K24: at big text the half sheet showed one line
         }
     }
 }
@@ -58,6 +65,7 @@ struct PlanBSheet: View {
     @Environment(AppModel.self) private var model
     @Environment(\.dismiss) private var dismiss
     let proposal: PlanBProposal
+    @State private var answered = false   // K24: two quick taps on Approve must not ask the server twice
 
     var body: some View {
         NavigationStack {
@@ -85,8 +93,12 @@ struct PlanBSheet: View {
             .navigationTitle("Plan B")
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Approve") { model.approvePlanB(); dismiss() }
-                        .disabled(!proposal.stillMissing.isEmpty)
+                    Button("Approve") {
+                        guard !answered else { return }
+                        answered = true
+                        model.approvePlanB(); dismiss()
+                    }
+                    .disabled(!proposal.stillMissing.isEmpty || answered)
                 }
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Choose myself") { dismiss() }

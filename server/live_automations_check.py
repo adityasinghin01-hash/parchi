@@ -241,7 +241,9 @@ def a7_true_price(ctx):
     check("other install's order id (already reported by A) -> 409 and nothing changed",
           other.call("POST", f"/orders/{oids[0]}/paid", {"sellerID": seller, "paidPaise": 99999, "itemsPaise": 1, "pincode": pin})[0] == 409
           and info().get("reports") == 3 and info().get("medianExtraPaise") == 1000, str(info()))
-    check("no key -> 401", Api(api.base).call("POST", f"/orders/{oids[0]}/paid", {})[0] == 401)
+    invented = api.call("POST", f"/orders/made-up-{RUN}/paid", {"sellerID": seller, "paidPaise": 99999, "itemsPaise": 1, "pincode": pin})[0]
+    check("no key -> 401; an invented order id -> 404 and nothing stored (K30)", Api(api.base).call("POST", f"/orders/{oids[0]}/paid", {})[0] == 401
+          and invented == 404 and info().get("reports") == 3, f"invented http {invented}")
     squat = other.call("POST", f"/orders/{oids[3]}/paid", {"sellerID": seller, "paidPaise": 10100, "itemsPaise": 10000, "pincode": pin})[0]
     check("other install cannot pre-claim A's real order before A reports it (409, fixed in this task)", squat == 409 and info().get("reports") == 3, f"http {squat}")
     before = info().get("medianExtraPaise")
@@ -268,7 +270,7 @@ def kill_and_restart_worker():
     except OSError:
         pass
     if not alive:
-        out = subprocess.run(["pgrep", "-f", f"{HERE}/.venv/bin/python worker.py|^.venv/bin/python worker.py|python worker.py"], capture_output=True, text=True).stdout.split()
+        out = subprocess.run(["pgrep", "-f", r"^[^ ]*python[0-9.]* worker[.]py$"], capture_output=True, text=True).stdout.split()  # no pidfile: find the worker by its command line
         pid = int(out[0]) if out else 0
     if pid:
         os.kill(pid, signal.SIGKILL)
@@ -311,9 +313,22 @@ def a8_safety_net(ctx):
     st = wait_for(lambda: (lambda s: s if s.get("state") == "awaiting_approval" else None)(status(api, oid)), 40)
     check("order state rebuilt from history after the restart (still awaiting approval, plan v1)", bool(st) and st["planVersion"] == 1, f"{round(time.time() - t0, 1)}s")
     ctx["restarted"] = True
-    a1 = api.call("POST", f"/order/{oid}/approve", {"planVersion": pv})[0]
-    a2 = api.call("POST", f"/order/{oid}/approve", {"planVersion": pv})[0]   # sent at once: may still pass the API's version check
-    check("approve accepted; the immediate replay is either refused at the API (409) or ignored by the workflow", a1 == 200 and a2 in (200, 409), f"{a1}/{a2}")
+    # K30: two approvals sent at the SAME moment (threads + barrier), each with its own Idempotency-Key:
+    # exactly one 200, the other 409 "already approved"; replaying the WINNER's key later still gets the stored 200.
+    import threading
+    gate, got = threading.Barrier(2), []
+    def approve_now(key):
+        gate.wait()
+        code, body = api.call("POST", f"/order/{oid}/approve", {"planVersion": pv}, headers={"Idempotency-Key": key})
+        got.append((code, body, key))
+    racers = [threading.Thread(target=approve_now, args=(f"k30-{RUN}-{n}",)) for n in "ab"]
+    [t.start() for t in racers]; [t.join() for t in racers]
+    codes = sorted(c for c, _, _ in got)
+    winner = next((k for c, _, k in got if c == 200), "none")
+    replay = api.call("POST", f"/order/{oid}/approve", {"planVersion": pv}, headers={"Idempotency-Key": winner})
+    a1, a2 = codes
+    check("two approvals at once: one 200 and one 409 'already approved'; the winner's Idempotency-Key replayed later still gets 200",
+          codes == [200, 409] and [b for c, b, _ in got if c == 409] == [{"detail": "already approved"}] and replay == (200, {"ok": True}), f"{codes}, replay {replay}")
     final = wait_for(lambda: (lambda s: s if s.get("planVersion") == 2 and s.get("ready") else None)(status(api, oid)), 15)
     check("plan v2 placed after approval", bool(final))
     placed = sorted(sql("select seller_id, plan_version from placements where order_id=?", oid))
@@ -479,7 +494,8 @@ def run_section(label, fn, ctx, timings):
 
 
 def main():
-    if subprocess.run(["pgrep", "-f", "browser_e2e"], capture_output=True).stdout.strip():
+    # K30: match only a real python process running browser_e2e.py, not a shell whose text mentions it
+    if subprocess.run(["pgrep", "-f", r"^[^ ]*python[0-9.]* ([^ ]+ )*[^ ]*browser_e2e[.]py"], capture_output=True).stdout.strip():
         print("browser_e2e is running (K20). Wait for it, then re-run."); sys.exit(2)
     health = Api(BASE).call("GET", "/health")[1] or {}
     if not health.get("temporal"):

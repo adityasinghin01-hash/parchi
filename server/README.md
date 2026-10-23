@@ -1,19 +1,23 @@
+> Demo checkpoint (24 Oct): core server/app results and explicit open gates are in `../handoff/DEMO-RESULT.md`. Reset deletes SQLite rows and requests asynchronous Temporal history deletion; final background history-erasure verification is still open. No real paid-reader call was made in this pass.
+
 # Parchi Orchestrator server
-> **Phone test page (K22):** on a phone on the same Wi-Fi open `http://<iMac LAN IP>:8000/judge/scan?k=<admin key>`; take or pick a TEST parchi photo, tap "Read this parchi".
+> **Phone test page (K22):** on a phone on the same Wi-Fi open `http://<iMac LAN IP>:8000/judge/scan`, type the admin key into the login form (K31: the key is no longer put in the URL); take or pick a TEST parchi photo, tap "Read this parchi".
 > LAN IP: `ipconfig getifaddr en0` (or `en1`); admin key: `data/admin.key`. The page does NOT hide the patient's name, so use test parchis only.
 > It forwards the photo to `PARCHI_READER_URL` (503 "reader not connected" if unset). Nothing is stored or logged.
-> The key is in the URL: do not screenshot the address bar. Plain http: some phone browsers block the camera button (use "Choose from gallery").
+> An old `/judge/scan?k=<key>` link still works once (it logs in and drops `k` from the address). Plain http: some phone browsers block the camera button (use "Choose from gallery").
 Durable order state machine (Temporal) + audit log (SQLite) + FastAPI. It never re-plans: the phone sends the Plan B proposal.
 - Needs a Temporal server on localhost:7233 (`PARCHI_TEMPORAL` to change) and Python 3.11.
 - Install: `python3 -m venv .venv && .venv/bin/pip install -r requirements.txt`
 - Run: `bash run.sh` (worker + API on 0.0.0.0:8000, logs/pids/keys in `data/`); stop: `bash stop.sh`
 - Issue an app key (printed once): `.venv/bin/python -m auth issue <label> > data/app.key`
-- Admin key is created in `data/admin.key` on first run (header `X-Admin-Key`, judge page `/judge?k=...`).
+- Admin key is created in `data/admin.key` on first run. Scripts and tests send the header `X-Admin-Key`; browsers open `/judge/login`, type the key once and get a random session cookie (`parchi_judge`: HttpOnly, SameSite=Strict, Path=/judge, 12 h, kept in memory so a restart logs everyone out; `POST /judge/logout` or the page's Log out button ends it). Every `/judge...` page and JSON route takes the header OR the cookie; a cookie-authenticated POST must also carry `X-Parchi-Judge: 1` (CSRF guard, the page scripts add it, else 403). `GET /judge?k=<key>` and `/judge/scan?k=<key>` are only a one-time bridge: they set the cookie and answer 303 to the same path without `k` (the JSON routes never accept `?k=`). Wrong keys at the login form share the 30/min failed-key limit. No `Secure` flag: the LAN is plain http.
 - App endpoints (header `X-Install-Key`): `POST /order` (+`Idempotency-Key`), `GET /status/{id}`,
   `POST /order/{id}/proposal|approve|reject`, `POST /reset`.
+- Proposal ids (K31): the server stamps every accepted Plan B proposal with `proposalID` ("<planVersion>-<n>", shown in `/status` `proposal`). `approve` and `reject` take an OPTIONAL `proposalID`: not the current one -> 409 `{"detail":"stale proposal"}`; any approve/reject when no proposal is awaiting approval (already resolved) -> 409 as well, never a silent 200. Old clients (no id) keep working, but a replay without an id can only be checked against the state, not the proposal.
 - Admin: `GET /judge`, `POST /judge/{id}/event`, `POST /reset?scope=demo`. `GET /health` is open.
 - `/read`, `/shop/{id}`, `/lab/{id}` return 501 (not built yet). All placements are Test orders.
 - Tests: `.venv/bin/python -m pytest -q` (time-skipping tests download a Temporal test server once).
+- Real timers (K31): `tests/test_real_timers.py` pins every plan value with `PARCHI_TIME_SCALE` unset; `.venv/bin/python live_timers_check.py` starts one workflow of each kind on the running Temporal (its own API copy on :8013, real scale, throw-away key) and reads the pending timer's `startToFireTimeout` from the history: shop no-reply 10 min, order check 15 min, late ETA + 30 min, lab no-reply 30 min, report chase due + 6 h, refill 3 days before at 09:00 IST, fasting 21:00 IST the evening before.
 - Known limits: plain HTTP on the LAN; rate limit (60/min per key) is in memory and resets on restart.
 - Replaying an Idempotency-Key after `/reset` returns 200 but does not restart the order.
 - Claude reader (K19, `reader_claude.py`, 127.0.0.1:8100 only): add the key with `(umask 077; read -rs k; echo "$k" > data/anthropic.key)` (or `export ANTHROPIC_API_KEY`), then `bash stop.sh && bash start_all.sh`. No key = the reader is not started and `/read` answers 503.

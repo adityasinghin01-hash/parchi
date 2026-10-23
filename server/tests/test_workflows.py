@@ -49,7 +49,7 @@ async def order(env, db, current=None, cap=None, metadata=None, area=None):
         try:
             yield oid, handle
         finally:
-            if (await handle.query("snapshot"))["state"] != "done":
+            if (await handle.query("snapshot"))["state"] not in ("done", "expired"):
                 await handle.terminate("test cleanup")
 
 
@@ -228,6 +228,6 @@ def test_invalid_proposal_and_premature_approval_do_not_place(temporal_env, isol
             await handle.signal("proposal", args=[1, good])
             state = await until(handle, lambda s: s["state"] == "awaiting_approval")
             assert state["planVersion"] == 1
-            assert state["proposal"] == good
+            assert state["proposal"] == {**good, "proposalID": "1-1"}  # K31: the workflow stamps an id
             assert len(isolated_db.placements_for(oid)) == 2
     temporal_env[0].run(scenario(temporal_env[1]))

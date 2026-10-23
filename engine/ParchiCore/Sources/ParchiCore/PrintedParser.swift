@@ -50,6 +50,9 @@ public struct ParsedItem: Equatable, Sendable {
     public let confidence: Double
     /// Brand and strength checked against the catalogue (nil when no catalogue was given or no brand was read).
     public let check: CheckResult?
+    /// True when the line states a dose count that cannot be turned into one pack quantity without guessing ("2 tabs 1-0-1":
+    /// two tablets per dose, or the dose pattern already counts them?). `quantityHint` is nil then; the person must give the quantity.
+    public var quantityAmbiguous: Bool = false
 
     public var isConfident: Bool { confidence >= PrintedParser.confidentThreshold }
 }
@@ -96,6 +99,7 @@ public struct PrintedParser: Sendable {
         var schedule = schedulePattern
         var strength: String?
         var doseAmount: String?
+        var unitsPerDose: Int?          // "2BD", "2 BD", "2 tabs BD": units taken at each dose
         var brandTokens: [String] = []
         var brandOpen = true
         var skipNumber = false
@@ -141,6 +145,16 @@ public struct PrintedParser: Sendable {
                     if let count = Int(number.value), (1...4).contains(count), Self.wordSchedule(tokens[i]) != nil,
                        !(catalogue?.strengths[brandKey]?.contains(number.value) ?? false) {
                         if doseAmount == nil { doseAmount = number.value }
+                        if unitsPerDose == nil { unitsPerDose = count }
+                        continue
+                    }
+                    // "2 tabs BD", "1 cap OD", "2 tabs 1-0-1": a count, then a tablet / capsule word, then the schedule.
+                    if let count = Int(number.value), (1...4).contains(count), let unitForm = Self.formWord(tokens[i]),
+                       unitForm == .tab || unitForm == .cap,
+                       schedulePattern != nil || (i + 1 < tokens.count && Self.wordSchedule(tokens[i + 1]) != nil) {
+                        if doseAmount == nil { doseAmount = number.value }
+                        if unitsPerDose == nil { unitsPerDose = count }
+                        i += 1
                         continue
                     }
                 }
@@ -204,8 +218,15 @@ public struct PrintedParser: Sendable {
 
         let days = duration
         var quantity = printedQuantity
+        var quantityAmbiguous = false
         if quantity == nil, let perDay = schedule?.dosesPerDay, let days, form == .tab || form == .cap {
-            quantity = Int((perDay * Double(days)).rounded(.up))
+            let count = unitsPerDose ?? 1
+            if count > 1, schedulePattern != nil {
+                // "2 tabs 1-0-1 x 5 days": two per dose, or two per day in all? Not guessed: the person gives the quantity.
+                quantityAmbiguous = true
+            } else {
+                quantity = Int((perDay * Double(count) * Double(days)).rounded(.up))
+            }
         }
 
         var confidence = 0.0
@@ -225,7 +246,7 @@ public struct PrintedParser: Sendable {
 
         return ParsedItem(rawLine: rawLine, form: form, brand: brand, strength: strength, schedule: schedule,
                           days: days, quantityHint: quantity, doseAmount: doseAmount,
-                          confidence: (confidence * 100).rounded() / 100, check: check)
+                          confidence: (confidence * 100).rounded() / 100, check: check, quantityAmbiguous: quantityAmbiguous)
     }
 
     // MARK: - Pieces

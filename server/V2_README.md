@@ -16,7 +16,9 @@ Own SQLite tables live in `v2_db.py` (same `PARCHI_DB` file, CREATE IF NOT EXIST
   `GET /refill/{id}/status` -> `{refillID, state: waiting|due|done|cancelled, refillDueAt, dueFiredAt}`.
   Extra: `POST /refill/{id}/done|cancel` (409 if already finished). Medicine names are not sent to Temporal.
   Time scale from env `PARCHI_TIME_SCALE` (same meaning as orders/shop/lab: waits are MULTIPLIED, 0.01 = 100x faster; refill used to divide, fixed in K23); task queue from `PARCHI_TASK_QUEUE`.
-  "Delete everything" (`POST /reset`) terminates the install's running refill watches in Temporal (`refill.cancel_watches`).
+  "Delete everything" (`POST /reset`, K30, `reset_workflows.py`) terminates every workflow of the install in Temporal (orders, shop asks, lab bookings, refill watches) and then deletes their histories (`DeleteWorkflowExecution`). Another install's workflows are untouched. Temporal deletes in the background: gone within about 1-2 minutes on the dev server (seen 86-131 s); the reply says `workflowsDeleted` (requested) and `workflowsKept` (server could not delete: then the 24 h namespace retention still applies). A deleted order's replayed Idempotency-Key is blocked by the 48 h `deleted_orders` tombstone.
 - True price: `POST /orders/{orderID}/paid` `{sellerID, paidPaise, itemsPaise?, pincode}`; `GET /true_price?seller=&pincode=`
   -> `{sellerID, pincode, reports, enough, medianExtraPaise}`; null until 3 reports that include `itemsPaise`.
   One report per (order, seller); only the same install may replace it. No name/phone stored.
+  K30: the order must exist and belong to the caller, always (unknown id: 404 `order not found`, another install's: 409). Sandbox orders are real rows, so place one first.
+- Approve (K30): `POST /order/{id}/approve` is decided by an atomic claim per (order, planVersion) (`approve_guard.py`): the second of two simultaneous approvals gets 409 `already approved`; a replay with the SAME `Idempotency-Key` header gets the first answer (200 `{"ok":true}`).

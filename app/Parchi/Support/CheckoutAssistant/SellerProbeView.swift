@@ -18,6 +18,8 @@ struct SellerProbeView: View {
     struct Row: Identifiable {
         let site: SellerSites.Site
         let productURL: URL?
+        /// First word of the product name the link is for (e.g. "azithral"); nil for home pages.
+        var brand: String?
         var verdict = Verdict.unknown
         var detail = ""
         var id: String { site.id }
@@ -28,7 +30,19 @@ struct SellerProbeView: View {
     @State private var rows: [Row] = []
     @State private var running = false
     @State private var selected: String?
+    @State private var status = "idle"
+    @State private var entries: [Entry] = []
     private let autoRun: Bool
+    /// `-probeOut <dir>` (K21 test runs): write report.json and one PNG per page there. Nothing is written when absent.
+    private let outDir = UserDefaults.standard.string(forKey: "probeOut")
+
+    /// One loaded page, read-only checks only (K21).
+    struct Entry: Codable {
+        var seller = "", id = "", page = "", url = "", outcome = "", note = ""
+        var seconds = 0.0
+        var checks = WebController.PageChecks()
+        var startedAt = ""
+    }
 
     init(autoRun: Bool = false) { self.autoRun = autoRun }
 
@@ -41,6 +55,7 @@ struct SellerProbeView: View {
             .frame(maxHeight: .infinity)
             Text(web.currentURL?.absoluteString ?? "No page loaded").font(.caption2).lineLimit(1)
                 .padding(.horizontal).padding(.vertical, 4).frame(maxWidth: .infinity, alignment: .leading).background(.bar)
+            Text(status).font(.caption2).accessibilityIdentifier("probe.status").frame(maxWidth: .infinity, alignment: .leading).padding(.horizontal)
             List($rows) { $row in
                 HStack {
                     Button {
@@ -73,7 +88,10 @@ struct SellerProbeView: View {
         }
         .task {
             let links = SellerSites.productLinks()
-            rows = SellerSites.all.map { site in Row(site: site, productURL: site.linkKey.flatMap { links.firstURL(linkKey: $0) }) }
+            rows = SellerSites.all.map { site in
+                let brand = site.linkKey.flatMap { links.firstItemKey(linkKey: $0) }?.split(separator: "_").first.map(String.init)
+                return Row(site: site, productURL: site.linkKey.flatMap { links.firstURL(linkKey: $0) }, brand: brand)
+            }
             if autoRun { await probeAll() }
         }
     }
@@ -82,12 +100,16 @@ struct SellerProbeView: View {
 
     private func probeAll() async {
         running = true
+        status = "running"
+        entries = []
         defer { running = false }
         for index in rows.indices {
             rows[index].detail = "loading…"
-            var result = await probe(rows[index].url)
+            status = "running: \(rows[index].site.name)"
+            let row = rows[index]
+            var result = await probe(row, url: row.url, page: row.productURL == nil ? "home" : "product")
             if result.verdict != .renders, rows[index].productURL != nil {
-                let home = await probe(rows[index].site.home)
+                let home = await probe(row, url: row.site.home, page: "home")
                 result.detail += " | home: \(home.verdict.rawValue) \(home.detail)"
                 if home.verdict == .renders { result.verdict = .renders }
             }
@@ -95,25 +117,66 @@ struct SellerProbeView: View {
             rows[index].detail = result.detail
             save()
         }
+        writeReport()
+        status = "done"
         if let best = rows.first(where: { $0.verdict == .renders }) {
             selected = best.id
             _ = await web.loadAndWait(best.url)
         }
     }
 
-    private func probe(_ url: URL) async -> (verdict: Verdict, detail: String) {
+    private func probe(_ row: Row, url: URL, page: String) async -> (verdict: Verdict, detail: String) {
         await web.resetToBlank()
+        let started = Date()
+        let stamp = ISO8601DateFormatter().string(from: started)
         let outcome = await web.loadAndWait(url)
+        let seconds = Date().timeIntervalSince(started)
         try? await Task.sleep(for: .seconds(2))   // let script-built pages finish drawing
         let facts = await web.pageFacts()
+        let checks = await web.pageChecks(brand: page == "product" ? row.brand : nil)
+        if let dir = outDir, let png = await web.snapshotPNG() {
+            try? FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true)
+            try? png.write(to: URL(fileURLWithPath: dir).appendingPathComponent("\(row.id)-\(page).png"))
+        }
         let host = facts.host.isEmpty ? "?" : facts.host
         let lower = (facts.title + " " + facts.snippet).lowercased()
         let markers = ["access denied", "forbidden", "captcha", "verify you are human", "unusual traffic", "request blocked", "are you a robot", "403", "blocked"]
-        if case .failed(let message) = outcome { return (.blocked, "error: \(message)") }
-        if outcome == .timedOut && facts.textLength < 150 { return (.blocked, "timed out, nothing rendered") }
-        if let hit = markers.first(where: { lower.contains($0) }), facts.textLength < 1500 { return (.blocked, "page says \"\(hit)\" · \(host)") }
-        if facts.textLength < 150 { return (.blocked, "blank page (\(facts.textLength) chars) · \(host)") }
-        return (.renders, "\(facts.title.prefix(40)) · \(facts.textLength) chars · \(host)")
+        var entry = Entry(seller: row.site.name, id: row.id, page: page, url: url.absoluteString, seconds: (seconds * 10).rounded() / 10, checks: checks, startedAt: stamp)
+        entry.checks.textLength = max(entry.checks.textLength, facts.textLength)
+        let hit = markers.first(where: { lower.contains($0) })
+        var verdict = Verdict.renders
+        var detail = "\(facts.title.prefix(40)) · \(facts.textLength) chars · \(host)"
+        if case .failed(let message) = outcome {
+            verdict = .blocked; detail = "error: \(message)"
+            entry.outcome = message.lowercased().contains("internet") || message.lowercased().contains("offline") ? "offline" : "blocked"
+            entry.note = message
+        } else if outcome == .timedOut && facts.textLength < 150 {
+            verdict = .blocked; detail = "timed out, nothing rendered"; entry.outcome = "timed out"
+        } else if let hit, facts.textLength < 1500 {
+            verdict = .blocked; detail = "page says \"\(hit)\" · \(host)"; entry.outcome = "blocked"; entry.note = "page says \(hit)"
+        } else if !checks.botWall.isEmpty && facts.textLength < 1500 {
+            verdict = .blocked; detail = "bot wall: \(checks.botWall) · \(host)"; entry.outcome = "blocked"; entry.note = checks.botWall
+        } else if facts.textLength < 150 {
+            verdict = .blocked; detail = "blank page (\(facts.textLength) chars) · \(host)"; entry.outcome = "blank"
+        } else {
+            entry.outcome = outcome == .timedOut ? "timed out" : "loaded"
+            if outcome == .timedOut { entry.note = "page never finished loading but rendered \(facts.textLength) chars" }
+        }
+        entries.append(entry)
+        return (verdict, detail)
+    }
+
+    private func writeReport() {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+        guard let data = try? encoder.encode(entries) else { return }
+        if let docs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            try? data.write(to: docs.appendingPathComponent("seller_probe_pages.json"))
+        }
+        if let dir = outDir {
+            try? FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true)
+            try? data.write(to: URL(fileURLWithPath: dir).appendingPathComponent("report.json"))
+        }
     }
 
     /// Writes Documents/seller_probe.json so results can be read off the Simulator.

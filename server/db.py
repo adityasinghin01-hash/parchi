@@ -13,11 +13,20 @@ def connect() -> Iterator[sqlite3.Connection]:
     conn = sqlite3.connect(path, timeout=30)
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA foreign_keys=ON")
+    conn.execute("PRAGMA secure_delete=ON")
     try:
         with conn:
             yield conn
     finally:
         conn.close()
+
+
+def truncate_wal() -> None:
+    """Discard previous WAL frames after private rows have been securely deleted."""
+    with connect() as conn:
+        busy, _, _ = conn.execute("PRAGMA wal_checkpoint(TRUNCATE)").fetchone()
+        if busy:
+            raise sqlite3.OperationalError("private data checkpoint is busy; retry reset")
 
 
 def init_db() -> None:

@@ -249,6 +249,11 @@ public struct CatalogueMRPIndex: @unchecked Sendable {
     func brandKey(for name: String) -> (brand: String, extras: String)? {
         let whole = String(name.filter(\.isLetter)).uppercased()
         if whole.count >= 3, contains(brand: whole) { return (whole, "") }
+        // "Montair LC Tab": the reader appends the stated form; the brand is still "Montair LC".
+        if let bare = Catalogue.withoutTrailingForm(name) {
+            let bareKey = String(bare.filter(\.isLetter)).uppercased()
+            if bareKey.count >= 3, contains(brand: bareKey) { return (bareKey, "") }
+        }
         guard let first = name.split(separator: " ").first else { return nil }
         let key = String(first.filter(\.isLetter)).uppercased()
         guard key.count >= 3, contains(brand: key) else { return nil }

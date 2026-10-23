@@ -10,6 +10,10 @@ import ParchiCore
 /// What does NOT survive: the demo basket's own ids ("dolo", "telma"...), so once a demo-parchi line is added or removed the
 /// remaining demo lines are priced from the catalogue MRP instead of the demo scenario prices (see KIRO_REPORT_K18.md).
 extension AppModel {
+    /// The most tablets / units one typed line may have. The shop-ask server rejects a quantity above 999 (422), so the Add sheet,
+    /// the clamp below and the ask body all use this number.
+    static let maxManualQuantity = 999
+
     /// The current lines as the reader would have returned them, and which of them the patient left to the doctor.
     private func manualSnapshot() -> (lines: [ReaderLine], askDoctor: [Bool]) {
         (lines.map { line in
@@ -24,7 +28,9 @@ extension AppModel {
     }
 
     private func manualRebuild(_ read: [ReaderLine], askDoctor: [Bool]) {
+        let unresolvedRows = readerNeedsHelp
         loadReaderLines(read)
+        readerNeedsHelp = unresolvedRows
         for (index, asked) in askDoctor.enumerated() where asked && index < lines.count {
             askDoctorAbout(testLine: lines[index].id)
         }
@@ -39,19 +45,19 @@ extension AppModel {
         return both.isEmpty ? priced : both
     }
 
-    /// Adds a medicine at the end. `strength` is the number ("650") or nil; `quantity` is clamped to 1...1000.
+    /// Adds a medicine at the end. `strength` is the number ("650") or nil; `quantity` is clamped to 1...999 (the server rejects more than 999 in a shop ask).
     func addManualMedicine(name: String, strength: String?, quantity: Int) {
         let trimmed = name.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmed.isEmpty else { return }
         let cleanStrength = strength?.trimmingCharacters(in: .whitespacesAndNewlines)
         let cleaned = (cleanStrength?.isEmpty ?? true) ? nil : cleanStrength
         if !linesAreReaderLines {   // the demo parchi: keep its ids so its own prices still apply
-            appendLine(RxItem(id: "m" + UUID().uuidString.prefix(8), kind: .medicine, name: trimmed, strength: cleaned, quantity: min(max(quantity, 1), 1000)))
+            appendLine(RxItem(id: "m" + UUID().uuidString.prefix(8), kind: .medicine, name: trimmed, strength: cleaned, quantity: min(max(quantity, 1), Self.maxManualQuantity)))
             return
         }
         var (read, asked) = manualSnapshot()
         read.append(ReaderLine(kind: "medicine", name: trimmed, strength: cleaned,
-                               quantity: min(max(quantity, 1), 1000), schedule: nil))
+                               quantity: min(max(quantity, 1), Self.maxManualQuantity), schedule: nil))
         asked.append(false)
         manualRebuild(read, askDoctor: asked)
     }

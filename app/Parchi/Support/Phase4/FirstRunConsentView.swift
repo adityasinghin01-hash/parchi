@@ -22,11 +22,11 @@ struct FirstRunConsentView: View {
                 .pickerStyle(.segmented)
 
                 ForEach(cards, id: \.symbol) { card in
-                    HStack(alignment: .top, spacing: 12) {
-                        Image(systemName: card.symbol).font(.title2).frame(width: 32).foregroundStyle(.tint).accessibilityHidden(true)
+                    AdaptiveStack {
+                        Image(systemName: card.symbol).font(.title2).frame(minWidth: 32).foregroundStyle(.tint).accessibilityHidden(true)
                         VStack(alignment: .leading, spacing: 4) {
                             Text(hindi ? card.hiTitle : card.title).font(.headline)
-                            Text(hindi ? card.hiBody : card.body).foregroundStyle(.secondary)
+                            Text(hindi ? card.hiBody : card.body).foregroundStyle(.primary)   // K24: grey on the grey card failed contrast
                         }
                     }
                     .padding()
@@ -41,11 +41,13 @@ struct FirstRunConsentView: View {
                 } label: {
                     Text(hindi ? "सहमत हूँ, आगे बढ़ें" : "Agree & continue")
                         .font(.title3.bold()).frame(maxWidth: .infinity, minHeight: 52)
+                        .barButtonText()
                 }
                 .buttonStyle(.borderedProminent)
                 if let onDecline {
-                    Button(hindi ? "अभी नहीं" : "Not now", action: onDecline)
-                        .frame(maxWidth: .infinity, minHeight: 44)
+                    Button(action: onDecline) {
+                        Text(hindi ? "अभी नहीं" : "Not now").frame(maxWidth: .infinity, minHeight: 44)   // K24: the whole row is the tap area, not just the words
+                    }
                 }
                 Text(hindi ? "आप कभी भी सेटिंग्स से सब कुछ मिटा सकते हैं।" : "You can delete everything any time in Settings.")
                     .font(.footnote).foregroundStyle(.secondary)
@@ -64,10 +66,10 @@ struct FirstRunConsentView: View {
              hiTitle: "हम मरीज़ की निजी जानकारी छिपाने की कोशिश करते हैं",
              hiBody: "हमें जो नाम, उम्र, फ़ोन नंबर और पता मिलता है, उसे हम छिपाने की कोशिश करते हैं। आगे बढ़ने से पहले तस्वीर जाँच लें; अगर कुछ निजी जानकारी अब भी दिख रही है, तो उसे बंद करें और पहले क्रॉप करें।"),
         Card(symbol: "server.rack",
-             title: "In Live mode the picture goes to our lab server",
-             body: "In Live mode, when you tap Use this photo, the whole picture (with what we could hide, hidden) goes to our own computer (the Parchi lab server) to be read. In Demo mode the picture stays on this phone.",
-             hiTitle: "Live मोड में तस्वीर हमारे लैब सर्वर पर जाती है",
-             hiBody: "Live मोड में, जब आप “Use this photo” दबाते हैं, तो पूरी तस्वीर (जो हिस्सा हम छिपा पाए, वह छिपा हुआ) पढ़ने के लिए हमारे अपने कंप्यूटर (Parchi लैब सर्वर) पर जाती है। Demo मोड में तस्वीर इसी फ़ोन पर रहती है।"),
+             title: "When connected to our lab server, the picture goes there",
+             body: "When Parchi is connected to our lab server, tapping Use this photo sends the whole picture (with what we could hide, hidden) to our own computer to be read. In the demo the picture stays on this phone.",
+             hiTitle: "जब ऐप हमारे लैब सर्वर से जुड़ा हो, तस्वीर वहाँ जाती है",
+             hiBody: "जब Parchi हमारे लैब सर्वर से जुड़ा हो, तब “Use this photo” दबाने पर पूरी तस्वीर (जो हिस्सा हम छिपा पाए, वह छिपा हुआ) पढ़ने के लिए हमारे अपने कंप्यूटर पर जाती है। डेमो में तस्वीर इसी फ़ोन पर रहती है।"),
         Card(symbol: "internaldrive",
              title: "Your history stays on this phone",
              body: "Saved parchis, doses and settings are stored only on this phone. Test orders are kept on our lab computer under a random install key, never your name.",

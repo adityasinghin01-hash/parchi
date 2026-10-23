@@ -38,7 +38,7 @@ struct HistoryRow: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(record.title).font(.headline)
+            Text(HistoryTitle.short(record.title)).font(.headline)
             Text(record.createdAt.formatted(date: .abbreviated, time: .omitted))
                 .font(.subheadline).foregroundStyle(.secondary)
             HStack {
@@ -90,12 +90,25 @@ struct HistoryDetailView: View {
                 }
             }
         }
-        .navigationTitle(record.title)
+        .navigationTitle(HistoryTitle.short(record.title))
         .navigationBarTitleDisplayMode(.inline)
     }
 
     private func name(of itemID: String) -> String {
         guard let item = record.items.first(where: { $0.item.id == itemID })?.item else { return itemID }
         return [item.name, item.strength].compactMap { $0 }.joined(separator: " ")
+    }
+}
+
+/// K24: the saved title is the data file's long description ("Real basket, Ghaziabad/KIET, prices captured 23 Oct 2026 (MedScanner, ...)").
+/// A person sees only the first part.
+enum HistoryTitle {
+    static func short(_ title: String) -> String {
+        var result = title
+        for cut in [" (", ", prices captured"] {
+            if let range = result.range(of: cut) { result = String(result[..<range.lowerBound]) }
+        }
+        let trimmed = result.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmed.isEmpty ? title : trimmed
     }
 }

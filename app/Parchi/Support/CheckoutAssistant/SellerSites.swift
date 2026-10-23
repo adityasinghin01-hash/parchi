@@ -51,6 +51,11 @@ enum SellerSites {
         func firstURL(linkKey: String) -> URL? {
             table.keys.sorted().compactMap { table[$0]?[linkKey] }.first
         }
+
+        /// Item key (e.g. "dolo_650") of that first link: the probe looks for its brand word in the page title.
+        func firstItemKey(linkKey: String) -> String? {
+            table.keys.sorted().first { table[$0]?[linkKey] != nil }
+        }
     }
 
     static func productLinks() -> ProductLinks {

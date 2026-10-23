@@ -40,6 +40,9 @@ class FakeTemporal:
     async def start_workflow(self, name, data, *, id, **kwargs):
         if self.fail_start:
             raise RuntimeError("down")
+        if any(wid == id for _, wid, _ in self.started):
+            from temporalio.exceptions import WorkflowAlreadyStartedError
+            raise WorkflowAlreadyStartedError(id, name)
         self.started.append((name, id, data))
 
     def get_workflow_handle(self, id):
@@ -117,11 +120,14 @@ def test_book_validation(ctx, change):
     assert ctx.client.post("/lab/book", headers=ctx.h, json=book_body(**change)).status_code == 422
 
 
-def test_book_rolled_back_when_temporal_is_down(ctx):
+def test_book_is_retained_for_retry_when_temporal_is_down(ctx):
     ctx.temporal.fail_start = True
     assert ctx.client.post("/lab/book", headers=ctx.h, json=book_body()).status_code == 503
     with p3_db.connect() as conn:
-        assert conn.execute("SELECT count(*) FROM lab_bookings").fetchone()[0] == 0
+        assert conn.execute("SELECT count(*) FROM lab_bookings").fetchone()[0] == 1
+    ctx.temporal.fail_start = False
+    assert ctx.client.post("/lab/book", headers=ctx.h, json=book_body()).status_code == 200
+    assert len(ctx.temporal.started) == 1
 
 
 def test_order_link_must_belong_to_the_caller(ctx):

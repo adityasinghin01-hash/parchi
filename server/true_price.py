@@ -41,6 +41,8 @@ def report_paid(order_id: str, body: dict[str, Any], reporter: str) -> None:
     if order["install_id"] != reporter:
         # A real order can only be reported by the install that placed it (else B could pre-claim A's order id).
         raise ValueError("report belongs to another install")
+    if not any(row["sellerID"] == seller for row in db.placements_for(order_id)):
+        raise ValueError("seller has no placement in this order")
     paid = _paise(body.get("paidPaise"), "paidPaise", True)
     items = _paise(body.get("itemsPaise"), "itemsPaise", False)
     v2_db.save_report(order_id, seller, pincode, paid, items, reporter)

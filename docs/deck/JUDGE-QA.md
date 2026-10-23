@@ -1,6 +1,6 @@
 # Parchi: hostile judge questions
 
-Evidence: recorded lab runs of 23 Oct 2026, updated with the latest fix reports and code; final suite counts from the 24 Oct 02:04 full run. [source: docs/verification/EVIDENCE-23-OCT-2026.md] [source: app/KIRO_REPORT_K13.md] [source: engine/KIRO_REPORT_K17.md]
+Evidence: recorded lab runs of 23 Oct 2026, updated with the latest fix reports and code; final suite counts from the 24 Oct 01:20 full run. [source: docs/verification/EVIDENCE-23-OCT-2026.md] [source: app/KIRO_REPORT_K13.md] [source: engine/KIRO_REPORT_K17.md]
 There are 30 questions, as requested. [source: docs/deck/BRIEF_CODEX_C5.md:6]
 Paths are relative to the repository root. Answers describe recorded evidence, not new test runs or legal certification. Newer fix reports and code take precedence over stale descriptions; plans do not upgrade acceptance.
 
@@ -60,7 +60,7 @@ The reader is not connected and our own training is not working yet. Real iPhone
 
 ## 10. “Your acceptance table says PASS, so is the whole app tested?”
 
-No. Final counts are **148 engine, 329 server, 92 app unit (+1 skipped measurement runner), 24 app UI and 34 Python tools**, from the full run of 24 Oct 02:04. The recorded live server Plan B loop passed **3 times in a row, 72 checks, about 19 s**, with a proposal **about 1.9 s** after judge cancel; shop/lab checks were **11/11**, privacy/delete **5/5**. These scripts and Simulator paths do not establish complete scan-to-purchase acceptance; lab/offline/privacy stay PARTIAL, checkout NOT MET and the real iPhone run NOT DONE.
+No. Final counts are **148 engine, 256 server, 86 app unit (+1 skipped measurement runner), 24 app UI and 34 Python tools**, from the full run of 24 Oct 01:20. The recorded live server Plan B loop passed **3 times in a row, 72 checks, about 19 s**, with a proposal **about 1.9 s** after judge cancel; shop/lab checks were **11/11**, privacy/delete **5/5**. These scripts and Simulator paths do not establish complete scan-to-purchase acceptance; lab/offline/privacy stay PARTIAL, checkout NOT MET and the real iPhone run NOT DONE.
 
 **Evidence:** [source: docs/deck/NUMBERS-AUDIT.md] [source: docs/verification/EVIDENCE-23-OCT-2026.md]
 
@@ -142,7 +142,7 @@ Our rules prohibit brand substitution and label **H1/X** medicines “buy in per
 
 ## 23. “What stops a retry from ordering the same medicine twice?”
 
-The final server-suite count is **329** (full run of 24 Oct 02:04). The recorded worker kill/restart check showed exactly **2 placements** without a duplicate; idempotency checks and an audit log support that sandbox result. Seller-side duplicate protection is **NOT IN THE FILES** because partner ordering is not integrated.
+The final server-suite count is **256** (full run of 24 Oct 01:20). The recorded worker kill/restart check showed exactly **2 placements** without a duplicate; idempotency checks and an audit log support that sandbox result. Seller-side duplicate protection is **NOT IN THE FILES** because partner ordering is not integrated.
 
 **Evidence:** [source: docs/deck/NUMBERS-AUDIT.md] [source: docs/verification/EVIDENCE-23-OCT-2026.md] [source: docs/plan/12-V2-MASTER-PLAN.md]
 

@@ -42,7 +42,7 @@ def test_page_needs_the_admin_key(api_client):
 
 
 def test_page_content(api_client):
-    r = api_client.client.get("/judge/scan?k=judge-secret")
+    r = api_client.client.get("/judge/scan", headers=ADMIN)
     assert r.status_code == 200 and r.headers["content-type"].startswith("text/html")
     t = r.text
     assert "TEST PAGE: use test parchis only. This page does NOT hide the patient's name (the app does)." in t
@@ -51,19 +51,19 @@ def test_page_content(api_client):
     assert "Read this parchi" in t and "Try another photo" in t and "Nothing was found" in t
     assert "The reader is not connected yet" in t
     assert "2000" in t and "0.7" in t and "canvas" in t
-    assert "judge-secret" not in t  # the key is never written into the page; the script reads it from the address
+    assert "judge-secret" not in t  # the key is never written into the page (K31: the browser logs in once and uses a cookie)
     assert r.headers["cache-control"] == "no-store"
 
 
 def test_page_script_never_builds_html_and_makes_no_external_requests(api_client):
-    t = api_client.client.get("/judge/scan?k=judge-secret").text
+    t = api_client.client.get("/judge/scan", headers=ADMIN).text
     script = t[t.index("<script>"):]
     for banned in ("innerHTML", "outerHTML", "insertAdjacentHTML", "document.write", "eval(", "new Function"):
         assert banned not in script
     assert "textContent" in script
     assert not re.findall(r'(?:src|href|action)\s*=\s*["\']?(?:https?:)?//', t)
     assert re.findall(r"https?://", script) == []
-    assert "default-src 'none'" in api_client.client.get("/judge/scan?k=judge-secret").headers["content-security-policy"]
+    assert "default-src 'none'" in api_client.client.get("/judge/scan", headers=ADMIN).headers["content-security-policy"]
 
 
 def test_read_needs_the_admin_header(api_client, reader):
@@ -163,7 +163,7 @@ def test_other_routes_keep_the_1_mb_limit_and_read_is_unchanged(api_client, read
 def test_no_photo_lines_or_keys_in_the_logs(api_client, reader, caplog):
     with caplog.at_level(logging.DEBUG):
         assert post(api_client).status_code == 200
-        api_client.client.get("/judge/scan?k=judge-secret")
+        api_client.client.get("/judge/scan", headers=ADMIN)
         post(api_client, ctype="text/plain")
     # The httpx/httpx2 logger here is the TEST client's own request log (the real server runs with --no-access-log).
     text = "\n".join(r.getMessage() for r in caplog.records if r.name not in ("httpx", "httpx2"))
@@ -186,7 +186,7 @@ def test_nothing_is_written_to_disk(api_client, reader, tmp_path, monkeypatch):
 
 # ------------------------------------------------------------------ K28/17: stale answers are ignored
 def test_script_guards_against_stale_answers(api_client):
-    t = api_client.client.get("/judge/scan?k=judge-secret").text
+    t = api_client.client.get("/judge/scan", headers=ADMIN).text
     script = t[t.index("<script>"):]
     assert "var seq = 0" in script
     assert script.count("++seq") >= 3                       # chosen(), read(), "Try another photo"
@@ -199,7 +199,7 @@ def test_script_guards_against_stale_answers(api_client):
 
 
 def test_scan_page_waits_65_seconds_and_server_60(api_client):
-    t = api_client.client.get("/judge/scan?k=judge-secret").text
+    t = api_client.client.get("/judge/scan", headers=ADMIN).text
     assert "READ_WAIT_MS = 65000" in t and "no answer after 65 seconds" in t and "40000" not in t
 
 
@@ -256,7 +256,7 @@ async def main():
             else:
                 await r.fulfill(status=200, headers=headers, body=html)
         await page.route("**/*", route)
-        await page.goto("http://scan.test/judge/scan?k=k")
+        await page.goto("http://scan.test/judge/scan")
         async def until(check, seconds=10):   # the page's CSP forbids eval, so no wait_for_function
             for _ in range(int(seconds * 20)):
                 if await check():

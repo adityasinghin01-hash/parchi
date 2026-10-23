@@ -66,9 +66,19 @@ final class ShopSearchModel {
     static var testShops: Bool { UserDefaults.standard.bool(forKey: "mapTestShops") }
     static var forceOffline: Bool { UserDefaults.standard.bool(forKey: "mapOffline") }
 
+    /// Test hook: replaces the MapKit search (query, region) -> items (nil = failed). nil = the real MapKit search.
+    nonisolated(unsafe) static var searchOverride: (@Sendable (String, MKCoordinateRegion) async -> [MKMapItem]?)?
+
+    /// Bumped by every `load`; a search that finishes after a newer one started (or the centre moved) is dropped.
+    @ObservationIgnored private var generation = 0
+
     func load(around centre: City, force: Bool = false) async {
         let key = "\(centre.latitude),\(centre.longitude)"
         if !force, loadedKey == key, state == .loaded || state == .loading { return }
+        // A new search centre: the old city's shops must not stay tappable under the new city while the searches run.
+        if loadedKey != key { shops = [] }
+        generation += 1
+        let mine = generation
         loadedKey = key
         state = .loading
         if Self.forceOffline { shops = []; state = .failed; return }
@@ -80,7 +90,7 @@ final class ShopSearchModel {
         var found: [String: MapShop] = [:]
         var anySucceeded = false
         for query in Self.queries {
-            if Task.isCancelled { return }
+            guard stillCurrent(mine) else { return abandon(mine) }
             guard let items = await Self.search(query, in: region) else { continue }
             anySucceeded = true
             for item in items {
@@ -94,29 +104,46 @@ final class ShopSearchModel {
                                     kind: query.hasPrefix("Jan") ? .janAushadhi : MapShop.kind(forName: name), mapItem: item)
             }
         }
-        if Task.isCancelled { return }
+        guard stillCurrent(mine) else { return abandon(mine) }
         guard anySucceeded else { shops = []; state = .failed; return }
         shops = Array(found.values.sorted { ($0.distanceM ?? .max) < ($1.distanceM ?? .max) }.prefix(Self.maxShops))
         state = .loaded
     }
 
+    private func stillCurrent(_ mine: Int) -> Bool { !Task.isCancelled && mine == generation }
+
+    /// This search was cancelled or replaced. If nothing replaced it, forget that it was running so the next `load` starts again
+    /// (otherwise the model would stay in \"loading\" for a centre nobody is searching any more).
+    private func abandon(_ mine: Int) {
+        guard mine == generation else { return }
+        shops = []
+        state = .idle
+        loadedKey = nil
+    }
+
     /// nil = the search failed (no internet, MapKit error, timeout). [] = it worked and found nothing.
     nonisolated private static func search(_ query: String, in region: MKCoordinateRegion) async -> [MKMapItem]? {
+        if let override = searchOverride { return await override(query, region) }
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = query
         request.region = region
         request.resultTypes = .pointOfInterest
         let search = MKLocalSearch(request: request)
-        return await withTaskGroup(of: [MKMapItem]?.self) { group in
-            group.addTask { try? await search.start().mapItems }
-            group.addTask {
-                try? await Task.sleep(for: timeout)
-                search.cancel()
-                return nil
+        // Cancelling the task (the centre changed, the screen closed) cancels the running Apple Maps search too.
+        return await withTaskCancellationHandler {
+            await withTaskGroup(of: [MKMapItem]?.self) { group in
+                group.addTask { try? await search.start().mapItems }
+                group.addTask {
+                    try? await Task.sleep(for: timeout)
+                    search.cancel()
+                    return nil
+                }
+                let first = await group.next() ?? nil
+                group.cancelAll()
+                return first
             }
-            let first = await group.next() ?? nil
-            group.cancelAll()
-            return first
+        } onCancel: {
+            search.cancel()
         }
     }
 

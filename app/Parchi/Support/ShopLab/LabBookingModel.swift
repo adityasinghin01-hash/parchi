@@ -40,7 +40,7 @@ struct LabBookingState: Identifiable, Equatable {
     var homeCollection: Bool
     var requestedSlot: Date
     var address: String?
-    var state = "requested"              // requested | confirmed | rejected | collected | report_due | report_chase_due | done
+    var state = "requested"              // requested | confirmed | rejected | collected | report_due | report_chase_due | done | expired
     var noReply = false
     var slot: Date?
     var feePaise: Int?
@@ -320,7 +320,7 @@ final class LabBookingModel {
                     if Task.isCancelled { return }
                     self.error = nil
                     self.apply(status)
-                    if status.state == "rejected" || status.state == "done" { self.pollTasks[bookingID] = nil; return }
+                    if status.state == "rejected" || status.state == "done" || status.state == "expired" { self.pollTasks[bookingID] = nil; return }
                     // Confirmed, collected and report states keep being tracked, just less often.
                     if status.state != "requested" { try? await Task.sleep(for: .seconds(12)) }
                 } catch is CancellationError {

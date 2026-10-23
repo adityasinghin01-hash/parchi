@@ -140,7 +140,7 @@ struct AddMedicineSheet: View {
         }
         Section {
             HStack {
-                Stepper("Tablets / units", value: $quantity, in: 1...1000)
+                Stepper("Tablets / units", value: $quantity, in: 1...AppModel.maxManualQuantity)
                     .accessibilityValue("\(quantity)")
                     .accessibilityIdentifier("manualQuantity")
                 Text("\(quantity)").monospacedDigit().font(.title3.bold()).accessibilityHidden(true)

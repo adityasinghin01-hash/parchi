@@ -13,7 +13,10 @@ PY=.venv/bin/python
 
 alive() { [ -f "$1" ] && kill -0 "$(cat "$1")" 2>/dev/null; }
 if alive data/reader.pid; then
-  echo "reader already running (pid $(cat data/reader.pid))"; exit 0
+  if curl -fsS -m 2 http://127.0.0.1:8100/health >/dev/null 2>&1; then
+    echo "reader already running (pid $(cat data/reader.pid))"; exit 0
+  fi
+  echo "reader process is alive but unhealthy" >&2; exit 1
 fi
 if [ -z "${ANTHROPIC_API_KEY:-}" ] && [ -z "$(head -n1 data/anthropic.key 2>/dev/null | tr -d '[:space:]')" ]; then
   echo "no Anthropic key (ANTHROPIC_API_KEY or data/anthropic.key): reader not started"; exit 3
@@ -21,6 +24,9 @@ fi
 nohup "$PY" -m uvicorn reader_claude:app --host 127.0.0.1 --port 8100 --no-access-log >> data/reader.log 2>&1 < /dev/null &
 echo $! > data/reader.pid
 for _ in $(seq 1 20); do
-  curl -s -m 1 http://127.0.0.1:8100/health >/dev/null 2>&1 && break; sleep 0.5
+  if curl -fsS -m 1 http://127.0.0.1:8100/health >/dev/null 2>&1; then
+    echo "started reader $(cat data/reader.pid) on 127.0.0.1:8100"; exit 0
+  fi
+  sleep 0.5
 done
-echo "started reader $(cat data/reader.pid) on 127.0.0.1:8100"
+echo "reader failed to become ready" >&2; exit 1

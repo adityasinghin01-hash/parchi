@@ -129,14 +129,16 @@ final class CaptureModel {
 
     /// Reads a PRINTED parchi on this phone (Apple Vision + the printed-line parser; nothing leaves the phone). Returns true when it
     /// read at least one medicine or test and loaded them for Confirm; false when it read nothing (the caller then does what it did
-    /// before: the demo parchi or the error). Lines it was not sure about are listed in the notice, never guessed.
+    /// before: the demo parchi or the error). Lines it was not sure about go to `AppModel.readerNeedsHelp` (a card on Confirm), never guessed.
     private func readOnPhone(_ image: UIImage, model: AppModel, gen: Int) async -> Bool {
         phase = .reading
         let result = await OnPhoneReader().read(image)
-        guard gen == generation, !Task.isCancelled, !result.lines.isEmpty else { return false }
+        // Lines it was unsure about are kept in the model (K27): Confirm shows them in a card. If it was unsure about every line, Confirm
+        // still opens (empty list + that card) rather than showing the demo parchi in place of the patient's own.
+        guard gen == generation, !Task.isCancelled, !result.lines.isEmpty || !result.needsHelp.isEmpty else { return false }
         model.loadReaderLines(result.lines)
-        let unsure = result.needsHelp.isEmpty ? "" : " Not sure about: " + result.needsHelp.joined(separator: "; ") + ". Use Add a medicine for those."
-        notice = result.note + unsure
+        model.readerNeedsHelp = result.needsHelp
+        notice = result.note
         phase = .idle
         return true
     }

@@ -40,8 +40,23 @@ public struct Catalogue: Sendable {
         strengths = map
     }
 
+    /// A dosage-form word written after the brand ("Dolo Inj", "Pan Cap", "Montair LC Tab"): the on-phone reader adds it so the
+    /// price match uses the right form. It is part of the written line, not of the brand name.
+    static let trailingFormWords: Set<String> = ["tab", "cap", "syp", "inj", "oint", "cream", "gel", "lotion", "inhaler", "powder"]
+
+    /// The name without one trailing dosage-form word, or nil when it has none (or nothing else).
+    static func withoutTrailingForm(_ name: String) -> String? {
+        let words = name.split(separator: " ")
+        guard words.count > 1, let last = words.last,
+              trailingFormWords.contains(last.lowercased().trimmingCharacters(in: CharacterSet(charactersIn: ".,;:"))) else { return nil }
+        return words.dropLast().joined(separator: " ")
+    }
+
     public func check(brand rawBrand: String, strength rawStrength: String?) -> CheckResult {
-        let brand = rawBrand.filter(\.isLetter).uppercased()
+        var brand = rawBrand.filter(\.isLetter).uppercased()
+        if strengths[brand] == nil, let bare = Self.withoutTrailingForm(rawBrand) {
+            brand = bare.filter(\.isLetter).uppercased()
+        }
         guard let known = strengths[brand] else {
             return .unknownBrand(read: rawBrand, suggestions: suggestions(for: brand))
         }

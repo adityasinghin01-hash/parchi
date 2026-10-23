@@ -7,7 +7,7 @@ import argparse, json, os, sqlite3, subprocess, sys, time, urllib.error, urllib.
 BASE = "http://localhost:8000"
 BUNDLE = "in.tessanova.parchi"
 UDID = "12B6A285-914E-44DE-A52A-9577A9265B50"
-APP = os.path.expanduser("~/parchi-dd-claude/Build/Products/Debug-iphonesimulator/Parchi.app")
+APP = os.path.expanduser(os.environ.get("PARCHI_APP", "~/parchi-dd-claude/Build/Products/Debug-iphonesimulator/Parchi.app"))
 INSTALL = open("data/sim_install.key").read().strip()
 ADMIN = open("data/admin.key").read().strip()
 results = []

@@ -4,10 +4,14 @@ import ParchiCore
 import UIKit
 
 /// A local shop the user can ask. `id` is the Seller id from the plan data, so replies map straight back to planner offers.
+/// For a shop found on Apple Maps `id` is an opaque random code (`ShopAskModel.opaqueID(forMapShop:)`) and `appleDerived` is true:
+/// its real `name` and `distanceM` stay on the phone and are never sent to the server.
 struct ShopCandidate: Identifiable, Equatable {
     let id: String
     let name: String
     var distanceM: Int?
+    var appleDerived = false
+    var janAushadhi = false
 
     var distanceText: String? {
         guard let distanceM else { return nil }
@@ -37,6 +41,8 @@ struct ShopRow: Identifiable, Equatable {
 @Observable
 final class ShopAskModel {
     static let maxPick = 3
+    /// The server rejects a quantity above 999 in an ask (422); the Add-medicine sheet uses the same number.
+    static let maxQuantity = AppModel.maxManualQuantity
     static let demoReplyDelay: Duration = .seconds(5)
 
     enum Phase { case composing, asking, asked }
@@ -46,7 +52,8 @@ final class ShopAskModel {
     var selected: Set<String> = []
     var pickupTime: Date = ShopAskModel.defaultPickup()
     var language: MessageLanguage = .saved { didSet { MessageLanguage.saved = language } }
-    var phones: [String: String] { didSet { UserDefaults.standard.set(phones, forKey: Self.phonesKey) } }
+    /// Typed shop phone numbers, by shop id. Numbers for Apple Maps shops (keyed by their opaque id) live in memory only.
+    var phones: [String: String] { didSet { UserDefaults.standard.set(phones.filter { genericNames[$0.key] == nil }, forKey: Self.phonesKey) } }
 
     // Output
     private(set) var phase: Phase = .composing
@@ -56,6 +63,12 @@ final class ShopAskModel {
     private(set) var nextGroup: [String] = []
     private(set) var winnerShopID: String?
     private(set) var shopReplyOffers: [Offer] = [] { didSet { onQuotesChanged?() } }
+    /// Quoted Apple Maps shops, in memory only (key = opaque id). They are `mapSellers` only while their reply is in `shopReplyOffers`.
+    @ObservationIgnored private var quotedMapSellers: [String: Seller] = [:]
+    /// Map shop id (has the coordinates in it) -> opaque id (`map-` + 12 random hex), for this session only.
+    @ObservationIgnored private var opaqueIDs: [String: String] = [:]
+    /// Opaque id -> "Shop near you N", the only name the server ever sees for an Apple Maps shop.
+    @ObservationIgnored private(set) var genericNames: [String: String] = [:]
     /// AppModel re-plans when quotes arrive or are cleared.
     var onQuotesChanged: (() -> Void)?
     private(set) var winnerSource: PriceSource?
@@ -79,7 +92,10 @@ final class ShopAskModel {
     private static let phonesKey = "parchi.shopask.phones"
 
     init() {
-        phones = (UserDefaults.standard.dictionary(forKey: Self.phonesKey) as? [String: String]) ?? [:]
+        // Older builds saved phone numbers for Apple Maps shops under an id that contains the shop's name and coordinates: drop those.
+        let saved = ((UserDefaults.standard.dictionary(forKey: Self.phonesKey) as? [String: String]) ?? [:]).filter { !$0.key.hasPrefix("map-") }
+        UserDefaults.standard.set(saved, forKey: Self.phonesKey)
+        phones = saved
         NotificationCenter.default.addObserver(forName: .parchiErased, object: nil, queue: nil) { [weak self] _ in
             MainActor.assumeIsolated { self?.eraseAll() }   // "Delete everything" must not leave rows, offers or phone numbers in memory or storage
         }
@@ -96,8 +112,41 @@ final class ShopAskModel {
         liveRequested = false
         orderID = nil
         pickupTime = Self.defaultPickup()
+        opaqueIDs = [:]; genericNames = [:]; quotedMapSellers = [:]
         phones = [:]
         UserDefaults.standard.removeObject(forKey: Self.phonesKey)
+    }
+
+    // MARK: Apple Maps shops (Apple-derived fields never leave the phone)
+
+    /// The ask-list id for an Apple Maps shop: `map-` + 12 random hex, made on first use and kept in memory for the session.
+    func opaqueID(forMapShop mapID: String) -> String {
+        if let known = opaqueIDs[mapID] { return known }
+        var opaque: String
+        repeat { opaque = "map-" + String((0..<12).map { _ in "0123456789abcdef".randomElement() ?? "0" }) } while genericNames[opaque] != nil
+        opaqueIDs[mapID] = opaque
+        genericNames[opaque] = "Shop near you \(genericNames.count + 1)"
+        return opaque
+    }
+
+    /// The id this model uses for a shop: the opaque id for an Apple Maps shop that has one, else the id itself.
+    func key(for id: String) -> String { opaqueIDs[id] ?? id }
+
+    /// Quoted Apple Maps shops as in-memory local sellers (real name, for the screen), so the planner can use their reply.
+    /// Gone as soon as their reply is cleared (new ask, edited list, Delete everything).
+    var mapSellers: [Seller] {
+        let quoted = Set(shopReplyOffers.map(\.sellerID))
+        return quotedMapSellers.values.filter { quoted.contains($0.id) }.sorted { $0.id < $1.id }
+    }
+
+    /// The same sellers as the server and the saved history may see them: generic name, no distance.
+    var mapSellersForServer: [Seller] {
+        mapSellers.map { seller in
+            var copy = seller
+            copy.name = genericNames[seller.id] ?? "Shop near you"
+            copy.distanceMeters = nil
+            return copy
+        }
     }
 
     // MARK: Setup
@@ -123,6 +172,7 @@ final class ShopAskModel {
         phase = .composing
         rows = []; round = 1; noReply = false; nextGroup = []; winnerShopID = nil
         shopReplyOffers = []; winnerSource = nil; askID = nil; links = [:]
+        quotedMapSellers = [:]
         notice = nil; error = nil; isDemo = false; askedAtLocal = nil
     }
 
@@ -161,7 +211,7 @@ final class ShopAskModel {
     // MARK: Phones / actions
 
     func phone(for id: String) -> String? {
-        let text = phones[id]?.trimmingCharacters(in: .whitespaces)
+        let text = phones[key(for: id)]?.trimmingCharacters(in: .whitespaces)
         return (text?.isEmpty ?? true) ? nil : text
     }
 
@@ -179,12 +229,13 @@ final class ShopAskModel {
 
     private var itemLines: String {
         items.filter { $0.kind == .medicine }.map { item in
-            [item.name, item.strength].compactMap { $0 }.joined(separator: " ") + " x\(item.quantity)"
+            [item.name, item.strength].compactMap { $0 }.joined(separator: " ") + " x\(min(item.quantity, Self.maxQuantity))"
         }.joined(separator: "\n")
     }
 
     /// The text for one shop. WhatsApp template when we have a phone number, otherwise the SMS template.
     func message(for shopID: String) -> FilledMessage? {
+        let shopID = key(for: shopID)
         let channel: MessageChannel = phone(for: shopID).flatMap(PhoneNumber.digits) == nil ? .sms : .whatsapp
         let link = links[shopID] ?? "https://parchi-demo.invalid/r/\(shopID)"
         return templates.fill(purpose: "shop_ask", language: language, channel: channel,
@@ -240,14 +291,7 @@ final class ShopAskModel {
             let client = ShopAskClient(live: live)
             phase = .asking
             // Selected shops first (they form round 1), then the others, so "ask next 3" has someone to open.
-            let rest = candidates.filter { !selected.contains($0.id) }
-            let request = ShopAskRequest(
-                items: items.filter { $0.kind == .medicine }.map { AskItemBody(itemID: $0.id, name: $0.name, strength: $0.strength, quantity: $0.quantity) },
-                shops: (ordered + rest).prefix(9).map { AskShopBody(shopID: $0.id, name: $0.name, phone: phone(for: $0.id), distanceM: $0.distanceM) },
-                pickupBy: ISOTime.string(pickupBy),
-                groupSize: min(Self.maxPick, ordered.count),
-                waitMinutes: 10,
-                orderID: orderID)
+            let request = makeRequest(ordered: ordered)
             Task { [weak self] in
                 do {
                     let reply = try await client.ask(request)
@@ -280,7 +324,27 @@ final class ShopAskModel {
         }
     }
 
-    private func applyDemoReply() {
+    /// The body of POST /shop/ask. An Apple Maps shop goes out as its opaque id and a generic name, with no distance:
+    /// its real name, place and distance stay on the phone.
+    func makeRequest(ordered: [ShopCandidate]) -> ShopAskRequest {
+        // Selected shops first (they form round 1), then the others, so "ask next 3" has someone to open.
+        let rest = candidates.filter { !selected.contains($0.id) }
+        return ShopAskRequest(
+            items: items.filter { $0.kind == .medicine }.map {
+                AskItemBody(itemID: $0.id, name: $0.name, strength: $0.strength, quantity: min($0.quantity, Self.maxQuantity))
+            },
+            shops: (ordered + rest).prefix(9).map { shop in
+                shop.appleDerived
+                    ? AskShopBody(shopID: shop.id, name: genericNames[shop.id] ?? "Shop near you", phone: phone(for: shop.id), distanceM: nil)
+                    : AskShopBody(shopID: shop.id, name: shop.name, phone: phone(for: shop.id), distanceM: shop.distanceM)
+            },
+            pickupBy: ISOTime.string(pickupBy),
+            groupSize: min(Self.maxPick, ordered.count),
+            waitMinutes: 10,
+            orderID: orderID)
+    }
+
+    func applyDemoReply() {
         guard phase == .asked, isDemo else { return }
         let sellerWithStock = rows.first { row in
             demoOffers.contains { $0.sellerID == row.id && $0.inStock && !$0.isSubstitute }
@@ -373,6 +437,12 @@ final class ShopAskModel {
     private func setWinner(_ row: ShopRow) {
         winnerShopID = row.id
         winnerSource = PriceSource(kind: .shopReply, dateSeen: row.repliedAt ?? Date())
+        // A quoted shop from Apple Maps is not in the plan data: register it as an in-memory local seller BEFORE the offers change
+        // (which re-plans), so the planner can actually use its price.
+        if let shop = candidates.first(where: { $0.id == row.id }), shop.appleDerived {
+            quotedMapSellers[shop.id] = Seller(id: shop.id, name: shop.name, channel: shop.janAushadhi ? .janAushadhi : .localChemist,
+                                               etaMinutes: 30, requiresVisit: true, distanceMeters: shop.distanceM)
+        }
         // Treated as the price for the whole line (the quantity we asked about). See report: assumption on "per pack".
         shopReplyOffers = row.items.compactMap { item in
             guard item.available, let price = item.pricePaise else { return nil }

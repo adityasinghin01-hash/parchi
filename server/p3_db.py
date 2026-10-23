@@ -5,9 +5,13 @@ only own the timers (no-reply, report chase). Every state change that two reques
 race on (first reply wins, one answer per shop) runs inside BEGIN IMMEDIATE.
 Never stored: patient name, patient phone, shop phone.
 """
+import base64
 import hashlib
+import hmac
 import json
+import os
 import secrets
+from pathlib import Path
 from contextlib import contextmanager
 from datetime import datetime, timedelta, timezone
 from typing import Any, Iterator
@@ -59,10 +63,21 @@ STATUS = {"not_found": 404, "closed": 409, "answered": 409, "not_needed": 409,
           "conflict": 409, "invalid": 422}
 
 
+LAB_EXTRA_COLUMNS = ("idem_key", "body_hash")  # added after the first release: older databases are migrated here
+
+
+def _migrate(conn: Any) -> None:
+    have = {row[1] for row in conn.execute("PRAGMA table_info(lab_bookings)")}
+    for column in LAB_EXTRA_COLUMNS:
+        if column not in have:
+            conn.execute(f"ALTER TABLE lab_bookings ADD COLUMN {column} TEXT")
+
+
 @contextmanager
 def connect(immediate: bool = False) -> Iterator[Any]:
     with db.connect() as conn:
         conn.executescript(SCHEMA)
+        _migrate(conn)
         if immediate:
             conn.execute("BEGIN IMMEDIATE")
         yield conn
@@ -210,6 +225,19 @@ def close_ask(ask_id: str) -> str | None:
         return ask["winner_shop_id"]
 
 
+def close_ask_round(ask_id: str, round_no: int) -> dict[str, Any]:
+    """Close an ask nobody answered, but ONLY the round the caller was watching. If the user opened a newer round meanwhile (its
+    reply links are live) nothing is closed and the caller learns the newer round. (Codex R8 row 8)"""
+    with connect(immediate=True) as conn:
+        ask = conn.execute("SELECT state, round, winner_shop_id FROM shop_asks WHERE ask_id=?", (ask_id,)).fetchone()
+        if ask is None:
+            return {"winner": None, "round": round_no, "closed": True}
+        if ask["state"] == "waiting" and ask["round"] == round_no and ask["winner_shop_id"] is None:
+            conn.execute("UPDATE shop_asks SET state='closed', no_reply=1 WHERE ask_id=?", (ask_id,))
+            return {"winner": None, "round": round_no, "closed": True}
+        return {"winner": ask["winner_shop_id"], "round": ask["round"], "closed": ask["state"] != "waiting"}
+
+
 def ask_status(ask_id: str) -> dict[str, Any] | None:
     with connect() as conn:
         ask = conn.execute("SELECT * FROM shop_asks WHERE ask_id=?", (ask_id,)).fetchone()
@@ -336,6 +364,52 @@ def create_booking(install_id: str, b: dict[str, Any]) -> tuple[str, str]:
     return booking_id, token
 
 
+class KeyReuseError(Exception):
+    """The same Idempotency-Key was sent with a different booking."""
+
+
+def token_secret() -> bytes:
+    """Server-side secret next to the database (mode 600). Reply links of idempotent bookings are HMACs of the booking id, so a retry
+    can return the same link while the database still stores only the token's hash."""
+    path = Path(os.environ.get("PARCHI_DB", "data/parchi.db")).parent / "token.secret"
+    try:
+        return path.read_bytes()
+    except FileNotFoundError:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+        with os.fdopen(fd, "wb") as handle:
+            handle.write(secrets.token_bytes(32))
+        return path.read_bytes()
+
+
+def booking_token(booking_id: str) -> str:
+    mac = hmac.new(token_secret(), f"lab-reply:{booking_id}".encode(), hashlib.sha256).digest()
+    return base64.urlsafe_b64encode(mac)[:22].decode()  # 22 chars like new_token(), 132 bits
+
+
+def create_booking_once(install_id: str, b: dict[str, Any], idem_key: str, body_hash: str) -> tuple[str, str, bool]:
+    """Idempotent create (Codex R8 row 9): the booking id comes from install + key, so a retry after a lost response returns the
+    SAME booking and reply link instead of creating a second booking, token and workflow. Returns (id, token, created)."""
+    booking_id = hashlib.sha256(f"{install_id}\n{idem_key}".encode()).hexdigest()[:16]
+    token = booking_token(booking_id)
+    with connect(immediate=True) as conn:
+        row = conn.execute("SELECT install_id, body_hash, state FROM lab_bookings WHERE booking_id=?", (booking_id,)).fetchone()
+        if row is not None:
+            if row["install_id"] != install_id or row["body_hash"] != body_hash:
+                raise KeyReuseError("Idempotency-Key was already used with a different booking")
+            # the link only works while the lab has not answered; afterwards there is nothing to hand out
+            return booking_id, token if row["state"] == "requested" else "", False
+        conn.execute("""INSERT INTO lab_bookings(booking_id,install_id,lab_id,lab_name,tests,
+                        home_collection,preferred_slot,address_text,order_id,seller_id,token_hash,created,
+                        idem_key,body_hash)
+                        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                     (booking_id, install_id, b["labID"], b["labName"], json.dumps(b["tests"]),
+                      int(b["homeCollection"]), b["preferredSlot"], b.get("addressText"),
+                      b.get("orderID"), b.get("sellerID"), hash_token(token), iso(now()),
+                      hashlib.sha256(idem_key.encode()).hexdigest(), body_hash))
+    return booking_id, token, True
+
+
 def delete_booking(booking_id: str) -> None:
     with connect() as conn:
         conn.execute("DELETE FROM lab_bookings WHERE booking_id=?", (booking_id,))
@@ -379,6 +453,16 @@ def lab_time_state(booking_id: str, new_state: str, from_states: list[str]) -> s
     with connect(immediate=True) as conn:
         conn.execute(f"UPDATE lab_bookings SET state=? WHERE booking_id=? AND state IN ({marks})",
                      (new_state, booking_id, *from_states))
+        row = conn.execute("SELECT state FROM lab_bookings WHERE booking_id=?", (booking_id,)).fetchone()
+    return row["state"] if row else None
+
+
+def lab_expire(booking_id: str) -> str | None:
+    """The workflow gave up on a booking that made no progress: close it for good. The reply link only works while the state is
+    'requested' and judge events need confirmed/collected/..., so one UPDATE also kills the link. (Codex R8 row 7)"""
+    with connect(immediate=True) as conn:
+        conn.execute("""UPDATE lab_bookings SET state='expired', note=COALESCE(note || ' · ', '') || 'Closed: no progress'
+                        WHERE booking_id=? AND state IN ('requested','confirmed')""", (booking_id,))
         row = conn.execute("SELECT state FROM lab_bookings WHERE booking_id=?", (booking_id,)).fetchone()
     return row["state"] if row else None
 

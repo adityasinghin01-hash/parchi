@@ -54,7 +54,10 @@ def _quantity(value: Any) -> Fraction:
 
 
 def supply_days(quantity: Any, per_day: Any) -> int:
-    return floor(_quantity(quantity) / doses_per_day(per_day))
+    days = floor(_quantity(quantity) / doses_per_day(per_day))
+    if days > 366:
+        raise ValueError("supply horizon must be at most 366 days")
+    return days
 
 
 def days_left(quantity: Any, per_day: Any, started: date, today: date) -> int:
@@ -180,7 +183,7 @@ def register(app: FastAPI, get_temporal: Callable, get_install_id: Callable) -> 
                 raise ValueError("startDate must be YYYY-MM-DD")
             started = date.fromisoformat(raw)
             result = plan_refill(body.get("items"), started, datetime.now(IST).date())
-        except ValueError as error:
+        except (ValueError, OverflowError) as error:
             raise HTTPException(422, str(error))
         refill_id = uuid4().hex
         data = {"refill_id": refill_id, "install_id": install_id, "due_at": result["refillDueAt"],

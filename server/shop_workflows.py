@@ -31,6 +31,11 @@ async def shop_close(ask_id: str) -> str | None:
     return await asyncio.to_thread(p3_db.close_ask, ask_id)
 
 
+@activity.defn
+async def shop_close_round(ask_id: str, round_no: int) -> dict[str, Any]:
+    return await asyncio.to_thread(p3_db.close_ask_round, ask_id, round_no)
+
+
 @workflow.defn
 class ShopAskWorkflow:
     def __init__(self) -> None:
@@ -67,6 +72,7 @@ class ShopAskWorkflow:
         scale = data.get("time_scale") or 1
         wait = timedelta(minutes=data["wait_minutes"] * scale)
         grace = timedelta(minutes=NEXT_WAIT_MINUTES * scale)
+        close_by_round = workflow.patched("shop-close-round-v1")  # R8 row 8: never close a round newer than the one being watched
         while True:
             current = self.round
             changed = lambda: self.winner is not None or self.round != current  # noqa: E731
@@ -94,8 +100,19 @@ class ShopAskWorkflow:
                     continue
             # Nothing left to open (or the user never tapped): close, unless a reply
             # landed in SQLite just before and its signal is still on the way.
-            self.winner = await workflow.execute_activity(
-                shop_close, args=[self.ask_id], start_to_close_timeout=TIMEOUT, retry_policy=RETRY)
+            if close_by_round:
+                result = await workflow.execute_activity(
+                    shop_close_round, args=[self.ask_id, current], start_to_close_timeout=TIMEOUT, retry_policy=RETRY)
+                self.winner = result["winner"]
+                if self.winner is None and not result["closed"]:
+                    # The user opened a newer round while this one was timing out (its signal may still be on the way):
+                    # keep watching the newer round, its clock starts now.
+                    if result["round"] > self.round:
+                        self.round, self.no_reply, self.next_group = result["round"], False, []
+                    continue
+            else:
+                self.winner = await workflow.execute_activity(
+                    shop_close, args=[self.ask_id], start_to_close_timeout=TIMEOUT, retry_policy=RETRY)
             if self.winner is None:
                 self.state = "closed"
             break
@@ -107,4 +124,4 @@ class ShopAskWorkflow:
 
 
 WORKFLOWS = [ShopAskWorkflow]
-ACTIVITIES = [shop_mark_no_reply, shop_close]
+ACTIVITIES = [shop_mark_no_reply, shop_close, shop_close_round]

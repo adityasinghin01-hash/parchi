@@ -274,3 +274,35 @@ private let junk = [
     #expect(cat.parse(line: "Inj Ertaneon 1GM IM stat x 5 days").check == .confirmed(brand: "ERTANEON", strength: "1"))
     #expect(cat.parse(line: "Inj Ceftriaxone 1 gm IV BD x 3 days").check == .confirmed(brand: "CEFTRIAXONE", strength: "1000"))
 }
+
+// K27 item 20: an explicit number of units per dose multiplies the doses per day.
+@Test func explicitDoseCountMultipliesTheQuantity() {
+    for p in [parser, plain] {
+        let a = p.parse(line: "Tab Dolo 650 2BD x 10 days")
+        #expect(a.brand == "Dolo" && a.strength == "650" && a.schedule?.code == "BD" && a.days == 10, "\(a)")
+        #expect(a.quantityHint == 40 && !a.quantityAmbiguous)
+        #expect(p.parse(line: "Tab Dolo 650 2 BD x 10 days").quantityHint == 40)
+        #expect(p.parse(line: "Tab Dolo 650 2TDS x 5 days").quantityHint == 30)
+        #expect(p.parse(line: "Tab Dolo 650 2 tabs BD x 10 days").quantityHint == 40)
+        #expect(p.parse(line: "Cap Omez 20 2 caps OD x 7 days").quantityHint == 14)
+        #expect(p.parse(line: "Tab Dolo 650 3QID x 2 days").quantityHint == 24)
+    }
+    // unchanged: a count of one, patterns, and a printed quantity
+    #expect(parse("Tab Dolo 650 1BD x 10 days").quantityHint == 20)
+    #expect(parse("Tab Dolo 650 BD x 10 days").quantityHint == 20)
+    #expect(parse("Tab Dolo 650 1-0-1 x 10 days").quantityHint == 20)
+    #expect(parse("Tab Dolo 650 2BD x 10 days #15").quantityHint == 15)
+    #expect(parse("Tab Dolo 650 2BD").quantityHint == nil)
+}
+
+@Test func doseCountWithADosePatternIsAskedNotGuessed() {
+    for line in ["Tab Dolo 650 2 tabs 1-0-1 x 5 days", "Tab Dolo 650 1-0-1 2 tabs x 5 days"] {
+        let item = parse(line)
+        #expect(item.quantityAmbiguous && item.quantityHint == nil, "\(line) -> \(item)")
+    }
+    // no duration: nothing is inferred, so nothing to ask
+    #expect(!parse("Tab Dolo 650 2 tabs 1-0-1").quantityAmbiguous)
+    // a plain pattern is never ambiguous
+    let plainPattern = parse("Tab Dolo 650 1-0-1 x 5 days")
+    #expect(!plainPattern.quantityAmbiguous && plainPattern.quantityHint == 10)
+}

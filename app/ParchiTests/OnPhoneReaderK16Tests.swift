@@ -71,7 +71,7 @@ final class OnPhoneReaderK16Tests: XCTestCase {
     func testConfidentLineBecomesAMedicineWithFields() {
         let result = reader.interpret(rows: ["1) Tab Telma 40 1-0-0 x 30 days"])
         XCTAssertEqual(result.lines.count, 1)
-        XCTAssertEqual(result.lines.first?.name, "Telma")
+        XCTAssertEqual(result.lines.first?.name, "Telma Tab")   // K27: the written form travels in the name
         XCTAssertEqual(result.lines.first?.strength, "40")
         XCTAssertEqual(result.lines.first?.schedule, "1-0-0")
         XCTAssertEqual(result.lines.first?.quantity, 30)
@@ -91,23 +91,23 @@ final class OnPhoneReaderK16Tests: XCTestCase {
 
     func testSomeRowsWithAndWithoutHelpKeepPageOrder() {
         let result = reader.interpret(rows: ["Tab Pan 40 1-0-0", "Tab Telia 40 OD", "Tab Dolo 650 TDS"])
-        XCTAssertEqual(result.lines.map(\.name), ["Pan", "Dolo"])
+        XCTAssertEqual(result.lines.map(\.name), ["Pan Tab", "Dolo Tab"])
         XCTAssertEqual(result.needsHelp, ["Tab Telia 40 OD"])
     }
 
     func testTwoMedicinesOnOneRowAreSplit() {
         let result = reader.interpret(rows: ["1) Tab Pan 40 1-0-0 x 5d 2) Tab Dolo 650 TDS x 3d"])
-        XCTAssertEqual(result.lines.map(\.name), ["Pan", "Dolo"])
+        XCTAssertEqual(result.lines.map(\.name), ["Pan Tab", "Dolo Tab"])
     }
 
     func testSideColumnTextBeforeTheMedicineIsDroppedButHeaderIsNotPromoted() {
         let result = reader.interpret(rows: ["Allergic rhinitis 2) Tab Telma 80 OD x 10d"])
-        XCTAssertEqual(result.lines.map(\.name), ["Telma"])
+        XCTAssertEqual(result.lines.map(\.name), ["Telma Tab"])
     }
 
     func testSpacesVisionDropsAreRestored() {
         let result = reader.interpret(rows: ["-Tab Pan 40 OD", "2) T.DOLO 650 TDS", "3) TabTELMA 40 1-0-0", "-Tab AZITHRAL MR1-1-1 x 3d"])
-        XCTAssertEqual(result.lines.map { $0.name.uppercased() }, ["PAN", "DOLO", "TELMA", "AZITHRAL MR"])
+        XCTAssertEqual(result.lines.map { $0.name.uppercased() }, ["PAN TAB", "DOLO TAB", "TELMA TAB", "AZITHRAL MR TAB"])
         XCTAssertEqual(result.lines.last?.schedule, "1-1-1")
         XCTAssertTrue(result.needsHelp.isEmpty, "\(result.needsHelp)")
     }
@@ -149,15 +149,23 @@ final class OnPhoneReaderK16Tests: XCTestCase {
         OnPhoneReader(bundle: .main)
     }
 
+    /// The brand as printed: the reader appends the stated form ("TRINOX Tab") for the price match (K27).
+    private func brandOnly(_ name: String) -> String {
+        let words = name.uppercased().split(separator: " ").map(String.init)
+        let forms: Set<String> = ["TAB", "CAP", "SYP", "INJ", "OINT", "CREAM", "GEL", "LOTION", "INHALER", "POWDER"]
+        guard words.count > 1, let last = words.last, forms.contains(last) else { return name.uppercased() }
+        return words.dropLast().joined(separator: " ")
+    }
+
     func testReadsTheScanFixtureWithBrandsStrengthsAndNothingInvented() async throws {
         let result = await realReader().read(try fixture("printed_scan"))
-        let names = result.lines.filter { $0.kind == "medicine" }.map { $0.name.uppercased() }
+        let names = result.lines.filter { $0.kind == "medicine" }.map { brandOnly($0.name) }
         for expected in ["GELAMP", "FORZOLE-D", "TRINOX", "EVAQUIN"] {
             XCTAssertTrue(names.contains(expected) || result.needsHelp.joined(separator: " ").uppercased().contains(expected), "\(expected) missing: \(names) \(result.needsHelp)")
         }
         XCTAssertGreaterThanOrEqual(names.filter { ["GELAMP", "FORZOLE-D", "TRINOX", "EVAQUIN"].contains($0) }.count, 3)
-        XCTAssertEqual(result.lines.first { $0.name.uppercased() == "TRINOX" }?.strength, "250 mg")
-        XCTAssertEqual(result.lines.first { $0.name.uppercased() == "EVAQUIN" }?.strength, "15 mg")
+        XCTAssertEqual(result.lines.first { brandOnly($0.name) == "TRINOX" }?.strength, "250 mg")
+        XCTAssertEqual(result.lines.first { brandOnly($0.name) == "EVAQUIN" }?.strength, "15 mg")
         let allowed: Set<String> = ["GELAMP", "FORZOLE-D", "TRINOX", "EVAQUIN"]
         XCTAssertTrue(names.allSatisfy { allowed.contains($0) }, "invented medicine: \(names)")
         XCTAssertTrue(result.note.contains("Printed text only"), result.note)
@@ -165,7 +173,7 @@ final class OnPhoneReaderK16Tests: XCTestCase {
 
     func testReadsThePhotoFixtureAndNeverTurnsHeaderLinesIntoMedicines() async throws {
         let result = await realReader().read(try fixture("printed_photo"))
-        let names = result.lines.filter { $0.kind == "medicine" }.map { $0.name.uppercased() }
+        let names = result.lines.filter { $0.kind == "medicine" }.map { brandOnly($0.name) }
         let allowed = ["ESTIRIC", "FLUCLIK", "FLOXMED", "TRYBROR"]
         XCTAssertGreaterThanOrEqual(names.filter { n in allowed.contains { n.hasPrefix($0) } }.count, 3, "\(names) \(result.needsHelp)")
         XCTAssertTrue(names.allSatisfy { n in allowed.contains { n.hasPrefix($0) } }, "invented medicine: \(names)")

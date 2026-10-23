@@ -117,6 +117,80 @@ final class WebController: NSObject, WKNavigationDelegate, WKUIDelegate {
         return (obj["h"] as? String ?? "", obj["t"] as? String ?? "", obj["n"] as? Int ?? 0, obj["s"] as? String ?? "")
     }
 
+    /// READ-ONLY facts about the loaded page for the probe (K21). Runs a script that only reads the DOM: no click, no typing, no form post.
+    struct PageChecks: Codable, Equatable {
+        var host = "", title = "", textLength = 0
+        /// nil when there is no product brand to look for (home pages).
+        var titleHasBrand: Bool?
+        var price = ""
+        var addControls: [String] = []
+        var loginButton = false
+        var loginWall = false
+        /// "input" (a pincode box), "text" (a "check pincode / location" prompt) or "".
+        var pincode = ""
+        /// What looks like a bot wall / CAPTCHA, or "".
+        var botWall = ""
+    }
+
+    func pageChecks(brand: String?) async -> PageChecks {
+        let brandLiteral = brand.flatMap { try? JSONEncoder().encode($0) }.flatMap { String(data: $0, encoding: .utf8) } ?? "null"
+        let script = """
+        (function(brand){
+          function vis(e){ var r=e.getBoundingClientRect(); if(r.width<2||r.height<2) return false; var s=getComputedStyle(e); return s.visibility!=='hidden'&&s.display!=='none'&&s.opacity!=='0'; }
+          var text=document.body?document.body.innerText:''; var title=document.title||''; var low=text.toLowerCase();
+          var h1=document.querySelector('h1'); var h1t=h1?h1.innerText:'';
+          var o={host:location.host,title:title,textLength:text.length};
+          o.titleHasBrand = brand ? ((title+' '+h1t).toLowerCase().indexOf(brand.toLowerCase())>=0) : null;
+          var pm=text.match(/(?:\\u20B9|\\bRs\\.?|\\bINR|\\bMRP)[ \\t:\\-]*\\d[\\d,]*(?:\\.\\d+)?/i); o.price=pm?pm[0].slice(0,24):'';
+          var addRe=/^(add to (cart|bag|basket)\\b.*|add|buy( now)?|book( now| a test| tests?| walk-?in slots?| slot)?)$/i, adds=[], loginBtn=false;
+          var loginRe=/^(log ?in|sign ?in|log ?in ?\\/ ?sign ?up|sign ?up)$/i;
+          var els=document.querySelectorAll('button,a,[role=button],input[type=button],input[type=submit],div,span');
+          for(var i=0;i<els.length&&i<6000;i++){
+            var e=els[i]; var leaf=(e.tagName==='DIV'||e.tagName==='SPAN')?e.children.length===0:true; if(!leaf) continue;
+            var t=((e.innerText||e.value||e.getAttribute('aria-label')||'')+'').trim(); if(!t||t.length>30) continue;
+            if(addRe.test(t)&&vis(e)){ if(adds.length<4&&adds.indexOf(t)<0) adds.push(t); }
+            if(loginRe.test(t)&&vis(e)) loginBtn=true;
+          }
+          o.addControls=adds; o.loginButton=loginBtn;
+          var area=innerWidth*innerHeight, wall=false;
+          document.querySelectorAll('div,section,aside,dialog,[role=dialog],[aria-modal=true]').forEach(function(e){
+            if(wall) return; var s=getComputedStyle(e);
+            var over=s.position==='fixed'||e.getAttribute('role')==='dialog'||e.getAttribute('aria-modal')==='true'||e.tagName==='DIALOG';
+            if(!over||!vis(e)) return; var r=e.getBoundingClientRect(); if(r.width*r.height<area*0.25) return;
+            var authInput=false; e.querySelectorAll('input').forEach(function(i){ var k=[i.type,i.placeholder,i.name,i.id,i.getAttribute('aria-label')].join(' ').toLowerCase(); if(/password|mobile|phone|e-?mail|otp/.test(k)) authInput=true; });
+            if(authInput||/(enter (your )?(mobile|phone)( number)?|\\botp\\b|(log ?in|sign ?in) to continue)/i.test(e.innerText||'')) wall=true;
+          });
+          o.loginWall=wall;
+          var pin='';
+          document.querySelectorAll('input').forEach(function(e){ if(pin) return;
+            var k=[e.placeholder,e.name,e.id,e.getAttribute('aria-label'),e.autocomplete].join(' ').toLowerCase();
+            if(/pin ?code|postal|zip/.test(k)&&vis(e)) pin='input'; });
+          if(!pin&&/(enter|check|select|choose|change|add|your)\\s+(delivery\\s+)?(pin ?code|location|city|delivery (address|location))/i.test(text)) pin='text';
+          o.pincode=pin;
+          var bot='';
+          document.querySelectorAll('iframe').forEach(function(e){ if(!bot&&/captcha|turnstile|geetest|px-captcha|challenge/i.test(e.src||'')&&vis(e)) bot='captcha iframe'; });
+          if(!bot){ var c=document.querySelector('#px-captcha,.g-recaptcha,.h-captcha,#challenge-form,[id*=captcha i]:not(.grecaptcha-badge),[class*=captcha i]:not(.grecaptcha-badge)'); if(c&&vis(c)) bot='captcha element'; }
+          if(!bot){ var m=(title+' '+low.slice(0,2500)).match(/verify (that )?you are (a )?human|are you a robot|access denied|unusual traffic|pardon our interruption|checking your browser|request blocked|attention required|just a moment/); if(m) bot='text: '+m[0]; }
+          o.botWall=bot;
+          return JSON.stringify(o);
+        })(\(brandLiteral))
+        """
+        guard let json = try? await webView.evaluateJavaScript(script) as? String,
+              let data = json.data(using: .utf8),
+              let checks = try? JSONDecoder().decode(PageChecks.self, from: data) else { return PageChecks() }
+        return checks
+    }
+
+    /// PNG of what the web view shows right now (the probe screenshots).
+    func snapshotPNG() async -> Data? {
+        guard webView.bounds.width > 1 else { return nil }
+        let config = WKSnapshotConfiguration()
+        let image: UIImage? = await withCheckedContinuation { continuation in
+            webView.takeSnapshot(with: config) { image, _ in continuation.resume(returning: image) }
+        }
+        return image?.pngData()
+    }
+
     // MARK: WKNavigationDelegate
 
     private func sync() {

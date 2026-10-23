@@ -77,12 +77,81 @@ def require_install(request: Request) -> str:
     return row["install_id"]
 
 
-def require_admin(request: Request, allow_query: bool = False) -> None:
+def admin_key_ok(given: str) -> bool:
+    """Constant-time check of an admin key (digests, so length and non-ASCII input cannot leak or raise)."""
     expected = os.environ.get("PARCHI_ADMIN_KEY", "")
-    given = request.headers.get("X-Admin-Key") or (request.query_params.get("k") if allow_query else "") or ""
-    # Compare digests so length differences and non-ASCII input cannot leak or raise.
-    ok = bool(expected) and hmac.compare_digest(digest(given), digest(expected))
-    if not ok:
+    return bool(expected) and hmac.compare_digest(digest(given), digest(expected))
+
+
+# ---- judge browser sessions (K31): the admin key never lives in a URL or a cookie ----
+# A random opaque token in memory (only its digest is kept), so a server restart logs every browser out.
+SESSION_COOKIE = "parchi_judge"
+SESSION_SECONDS = 12 * 3600
+SESSION_MAX = 200
+CSRF_HEADER = "X-Parchi-Judge"
+SAFE_METHODS = ("GET", "HEAD", "OPTIONS")
+_sessions: dict[str, float] = {}   # digest(token) -> expiry (time.time())
+_sessions_lock = threading.Lock()
+
+
+def create_session() -> str:
+    token = secrets.token_urlsafe(32)
+    now = time.time()
+    with _sessions_lock:
+        for name in [n for n, expiry in _sessions.items() if expiry <= now]:
+            del _sessions[name]
+        while len(_sessions) >= SESSION_MAX:   # oldest first; a judge desk has a handful of browsers
+            del _sessions[min(_sessions, key=_sessions.get)]
+        _sessions[digest(token)] = now + SESSION_SECONDS
+    return token
+
+
+def session_ok(token: str | None) -> bool:
+    if not token:
+        return False
+    name = digest(token)
+    with _sessions_lock:
+        expiry = _sessions.get(name)
+        if expiry is not None and expiry <= time.time():
+            del _sessions[name]
+            return False
+        return expiry is not None
+
+
+def drop_session(token: str | None) -> None:
+    if token:
+        with _sessions_lock:
+            _sessions.pop(digest(token), None)
+
+
+def clear_sessions() -> None:
+    with _sessions_lock:
+        _sessions.clear()
+
+
+def session_cookie(token: str, max_age: int = SESSION_SECONDS) -> str:
+    """Set-Cookie value. No Secure flag: the lab LAN speaks plain http (documented limit)."""
+    return f"{SESSION_COOKIE}={token}; Max-Age={max_age}; Path=/judge; HttpOnly; SameSite=Strict"
+
+
+def fail_login(request: Request) -> None:
+    """A wrong admin key from the login form or the ?k= bridge: counted per client address like a bad install key."""
+    throttle("authfail:" + (request.client.host if request.client else "?"), FAIL_LIMIT)
+
+
+def require_admin(request: Request) -> None:
+    """Admin = the X-Admin-Key header (scripts, tests) OR a live judge session cookie (browsers).
+
+    A cookie is sent by the browser on its own, so a state-changing request authenticated by it must also carry
+    X-Parchi-Judge: 1, which a cross-site page cannot add. A wrong header never falls back to the cookie."""
+    header = request.headers.get("X-Admin-Key")
+    if header is not None:
+        if not admin_key_ok(header):
+            raise HTTPException(401, "invalid admin key")
+    elif session_ok(request.cookies.get(SESSION_COOKIE)):
+        if request.method not in SAFE_METHODS and request.headers.get(CSRF_HEADER) != "1":
+            raise HTTPException(403, "missing X-Parchi-Judge header")
+    else:
         raise HTTPException(401, "invalid admin key")
     throttle("admin")
 
