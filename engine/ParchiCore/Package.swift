@@ -3,7 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "ParchiCore",
-    platforms: [.macOS(.v14)],
+    platforms: [.macOS(.v14), .iOS(.v17)],
     products: [
         .library(name: "ParchiCore", targets: ["ParchiCore"]),
         .executable(name: "parchi-plan", targets: ["parchi-plan"]),

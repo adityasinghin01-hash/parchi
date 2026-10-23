@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B35483403313FA356E405EF /* real_basket_fastest.json in Resources */ = {isa = PBXBuildFile; fileRef = 05EFDA7B1195C82F43229B00 /* real_basket_fastest.json */; };
+		1BC0E27FF03036A0EA37BB71 /* ParchiCore in Frameworks */ = {isa = PBXBuildFile; productRef = 5A22C92E82D9279536F57ED9 /* ParchiCore */; };
+		2DC75CF530AEC124469AEE96 /* ParchiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C1C91076BDA0AD9E81B547 /* ParchiApp.swift */; };
+		4117B601F469A741621AFD44 /* brand_strengths.json in Resources */ = {isa = PBXBuildFile; fileRef = D761FE1E369DF76E28A339A8 /* brand_strengths.json */; };
+		62EAFB87E0CBCF291C0337DB /* real_basket_generics_doctor_ok.json in Resources */ = {isa = PBXBuildFile; fileRef = 26E1911C5A74B5A4F8FC9FE1 /* real_basket_generics_doctor_ok.json */; };
+		66383196F1F82F1C7ABF98AB /* ConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7177C9545C19F37DCD77FA /* ConfirmView.swift */; };
+		A130A9A389C7F22D72307346 /* GetItAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B51BE6C23205EDA339D515 /* GetItAllView.swift */; };
+		A48210C09EB7FE5DBDDD75D4 /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D7A5952D9D01AC7389B7F2 /* TrackView.swift */; };
+		CD489E8B083FEED477A1502A /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A953C50CDF5B5EDFB5DFD425 /* PlanView.swift */; };
+		D072A53E0292DC23C265930D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FEDC66918FFEB378C12FAD /* HomeView.swift */; };
+		D7D22EE63737ABCF529D821C /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400A8092A8D502A551648E2D /* AppModel.swift */; };
+		D9EC8B1DD8E5E8D9DE911C45 /* real_basket_cheapest.json in Resources */ = {isa = PBXBuildFile; fileRef = E43A3DE8AAC862360FCC50B2 /* real_basket_cheapest.json */; };
+		FA5F05839D97B6B448894435 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C5112387A672A024757088 /* Money.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		01B51BE6C23205EDA339D515 /* GetItAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetItAllView.swift; sourceTree = "<group>"; };
+		05EFDA7B1195C82F43229B00 /* real_basket_fastest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = real_basket_fastest.json; sourceTree = "<group>"; };
+		21FEDC66918FFEB378C12FAD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		26E1911C5A74B5A4F8FC9FE1 /* real_basket_generics_doctor_ok.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = real_basket_generics_doctor_ok.json; sourceTree = "<group>"; };
+		3486B76D437D4E59F6EF410B /* ParchiCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ParchiCore; path = ../engine/ParchiCore; sourceTree = SOURCE_ROOT; };
+		400A8092A8D502A551648E2D /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		4F82E5625B2544E3E6717451 /* Parchi.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Parchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		60D7A5952D9D01AC7389B7F2 /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
+		A953C50CDF5B5EDFB5DFD425 /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
+		D6C1C91076BDA0AD9E81B547 /* ParchiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParchiApp.swift; sourceTree = "<group>"; };
+		D761FE1E369DF76E28A339A8 /* brand_strengths.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = brand_strengths.json; sourceTree = "<group>"; };
+		E43A3DE8AAC862360FCC50B2 /* real_basket_cheapest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = real_basket_cheapest.json; sourceTree = "<group>"; };
+		EC7177C9545C19F37DCD77FA /* ConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmView.swift; sourceTree = "<group>"; };
+		F9C5112387A672A024757088 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F5DBB9285E8ECA715660EB41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BC0E27FF03036A0EA37BB71 /* ParchiCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20150A99D54EF962F30F8AA0 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				F9C5112387A672A024757088 /* Money.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		374C0F8E854184512D2BD860 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				3486B76D437D4E59F6EF410B /* ParchiCore */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		6B790ADCDC4557C8FBF84A1E /* scenarios */ = {
+			isa = PBXGroup;
+			children = (
+				E43A3DE8AAC862360FCC50B2 /* real_basket_cheapest.json */,
+				05EFDA7B1195C82F43229B00 /* real_basket_fastest.json */,
+				26E1911C5A74B5A4F8FC9FE1 /* real_basket_generics_doctor_ok.json */,
+			);
+			name = scenarios;
+			path = ../engine/scenarios;
+			sourceTree = "<group>";
+		};
+		8BBDB88D387FD764759F4C49 /* Parchi */ = {
+			isa = PBXGroup;
+			children = (
+				D6C1C91076BDA0AD9E81B547 /* ParchiApp.swift */,
+				986E9CBD49724543801C43B6 /* Model */,
+				FD2436670925FBCA02924331 /* Screens */,
+				20150A99D54EF962F30F8AA0 /* Support */,
+			);
+			path = Parchi;
+			sourceTree = "<group>";
+		};
+		927CCEDD904C25FFC72C393D /* catalogue */ = {
+			isa = PBXGroup;
+			children = (
+				D761FE1E369DF76E28A339A8 /* brand_strengths.json */,
+			);
+			name = catalogue;
+			path = ../engine/catalogue;
+			sourceTree = "<group>";
+		};
+		986E9CBD49724543801C43B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				400A8092A8D502A551648E2D /* AppModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D5F7F4E613260AC8B999AD9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F82E5625B2544E3E6717451 /* Parchi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8713FF716E0C7417AB918CB = {
+			isa = PBXGroup;
+			children = (
+				927CCEDD904C25FFC72C393D /* catalogue */,
+				374C0F8E854184512D2BD860 /* Packages */,
+				8BBDB88D387FD764759F4C49 /* Parchi */,
+				6B790ADCDC4557C8FBF84A1E /* scenarios */,
+				D5F7F4E613260AC8B999AD9C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FD2436670925FBCA02924331 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				EC7177C9545C19F37DCD77FA /* ConfirmView.swift */,
+				01B51BE6C23205EDA339D515 /* GetItAllView.swift */,
+				21FEDC66918FFEB378C12FAD /* HomeView.swift */,
+				A953C50CDF5B5EDFB5DFD425 /* PlanView.swift */,
+				60D7A5952D9D01AC7389B7F2 /* TrackView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0F9EA08879D95B4B379D8EE1 /* Parchi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75AA6C3CACC0401EDBCD17D1 /* Build configuration list for PBXNativeTarget "Parchi" */;
+			buildPhases = (
+				A06FCF6AD87CED5E9F72352B /* Sources */,
+				960803947C0CC64F4AD470D3 /* Resources */,
+				F5DBB9285E8ECA715660EB41 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Parchi;
+			packageProductDependencies = (
+				5A22C92E82D9279536F57ED9 /* ParchiCore */,
+			);
+			productName = Parchi;
+			productReference = 4F82E5625B2544E3E6717451 /* Parchi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D1CBBFD126EBB192C2E5F92F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					0F9EA08879D95B4B379D8EE1 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5380DB486913CB3B8B451BB0 /* Build configuration list for PBXProject "Parchi" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F8713FF716E0C7417AB918CB;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				279D89C8C4337AF899E945B3 /* XCLocalSwiftPackageReference "../engine/ParchiCore" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D5F7F4E613260AC8B999AD9C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0F9EA08879D95B4B379D8EE1 /* Parchi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		960803947C0CC64F4AD470D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4117B601F469A741621AFD44 /* brand_strengths.json in Resources */,
+				D9EC8B1DD8E5E8D9DE911C45 /* real_basket_cheapest.json in Resources */,
+				1B35483403313FA356E405EF /* real_basket_fastest.json in Resources */,
+				62EAFB87E0CBCF291C0337DB /* real_basket_generics_doctor_ok.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A06FCF6AD87CED5E9F72352B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7D22EE63737ABCF529D821C /* AppModel.swift in Sources */,
+				66383196F1F82F1C7ABF98AB /* ConfirmView.swift in Sources */,
+				A130A9A389C7F22D72307346 /* GetItAllView.swift in Sources */,
+				D072A53E0292DC23C265930D /* HomeView.swift in Sources */,
+				FA5F05839D97B6B448894435 /* Money.swift in Sources */,
+				2DC75CF530AEC124469AEE96 /* ParchiApp.swift in Sources */,
+				CD489E8B083FEED477A1502A /* PlanView.swift in Sources */,
+				A48210C09EB7FE5DBDDD75D4 /* TrackView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		00085FA4CFA790C8B5252AC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Parchi;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = in.tessanova.parchi;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		4BC28EFB8260809AE44E5C27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		95B60008A9BE187414D58094 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Parchi;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = in.tessanova.parchi;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		DD3AA8149AC9DC3A0AA98D1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5380DB486913CB3B8B451BB0 /* Build configuration list for PBXProject "Parchi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD3AA8149AC9DC3A0AA98D1B /* Debug */,
+				4BC28EFB8260809AE44E5C27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		75AA6C3CACC0401EDBCD17D1 /* Build configuration list for PBXNativeTarget "Parchi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95B60008A9BE187414D58094 /* Debug */,
+				00085FA4CFA790C8B5252AC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		279D89C8C4337AF899E945B3 /* XCLocalSwiftPackageReference "../engine/ParchiCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../engine/ParchiCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5A22C92E82D9279536F57ED9 /* ParchiCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ParchiCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D1CBBFD126EBB192C2E5F92F /* Project object */;
+}
