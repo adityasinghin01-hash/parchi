@@ -27,6 +27,7 @@ struct HomeView: View {
             }
             .buttonStyle(.borderedProminent)
             .padding(.horizontal)
+            CaptureEntry(path: $path)
             Text("Demo build: uses a sample parchi with real prices captured 23 Oct 2026.")
                 .font(.footnote)
                 .foregroundStyle(.secondary)

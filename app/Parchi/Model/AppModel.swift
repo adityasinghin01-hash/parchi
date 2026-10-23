@@ -92,6 +92,8 @@ final class AppModel {
     var reliabilityIsDemo = false
     var truePrices: [String: TruePriceInfo] = [:]
     private(set) var deliveredSellers: Set<String> = []
+    /// Dose schedules written on the demo parchi (items of `real_basket_cheapest.json`).
+    static let demoSchedules = ["dolo": "1-0-1", "pan": "1-0-0", "telma": "1-0-0", "glycomet": "1-0-1", "azithral": "1-0-0", "montair": "0-0-1"]
     var preferReliable: Bool = UserDefaults.standard.bool(forKey: "parchi.preferReliable") {
         didSet { UserDefaults.standard.set(preferReliable, forKey: "parchi.preferReliable"); replan() }
     }
@@ -121,6 +123,24 @@ final class AppModel {
         statuses = [:]
         planB = nil
         resetLiveOrder()
+    }
+
+    /// Lines from the reader (`POST /read`). Prices exist only for the demo basket, so other items will show "no seller found"
+    /// in the plan until catalogue MRPs are wired (plan gap U7); they are still checked against the catalogue on Confirm.
+    func loadReaderLines(_ read: [ReaderLine]) {
+        lines = read.enumerated().map { index, r in
+            let kind: ItemKind = r.kind == "test" ? .test : .medicine
+            let item = RxItem(id: "r\(index + 1)", kind: kind, name: r.name, strength: r.strength, quantity: max(r.quantity ?? 1, 1))
+            var line = ReadLine(id: item.id, item: item, check: check(item))
+            line.testMatch = kind == .test ? canonicalTest(for: item.name, catalogue: data.testCatalogue) : nil
+            line.inPersonOnly = kind == .medicine ? data.scheduleCheck.isInPersonOnly(brand: item.name) : nil
+            return line
+        }
+        skippedSellers = []
+        plan = nil
+        approvedPlan = nil
+        statuses = [:]
+        planB = nil
     }
 
     func choose(strength: String, for lineID: String) {
@@ -253,9 +273,13 @@ final class AppModel {
     func placeTestOrders() {
         approvedPlan = plan
         if let plan {
-            // The reader does not give us dose schedules yet, so they stay nil and Care says "Can't tell".
-            HistoryStore.shared.saveApproved(title: scenario.title, items: lines.filter { !$0.askDoctor }.map { SavedItem(item: $0.item, schedule: nil) },
-                                             plan: plan, sellers: scenario.sellers)
+            // The demo parchi carries its written schedules; a real reader will supply them per line (nil = Care says "Can't tell").
+            let saved = lines.filter { !$0.askDoctor }.map { SavedItem(item: $0.item, schedule: Self.demoSchedules[$0.item.id]) }
+            HistoryStore.shared.saveApproved(title: scenario.title, items: saved, plan: plan, sellers: scenario.sellers)
+            if backend.mode == .live {
+                let watch = saved.compactMap { s in s.schedule.map { (name: s.item.name, quantity: s.item.quantity, schedule: $0) } }
+                Task { await registerRefillWatch(items: watch) }
+            }
         }
         statuses = Dictionary(uniqueKeysWithValues: (plan?.sellerIDs ?? []).map { ($0, OrderStatus.placed) })
         if backend.mode == .live { startLiveOrder() }
