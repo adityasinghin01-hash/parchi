@@ -14,7 +14,7 @@ struct ConfirmView: View {
             }
             Section("Tests") {
                 ForEach(model.lines.filter { $0.item.kind == .test }) { line in
-                    Label(line.item.name, systemImage: "testtube.2")
+                    TestRow(line: line)
                 }
             }
         }
@@ -69,6 +69,52 @@ private struct LineRow: View {
                 Text("We couldn't find \"\(read)\". Did you mean \(suggestions.joined(separator: ", "))?")
                     .font(.subheadline)
                     .foregroundStyle(.orange)
+            }
+            if let schedule = line.inPersonOnly {
+                Label(schedule.inPersonMessage, systemImage: "person.badge.shield.checkmark")
+                    .font(.subheadline)
+                    .foregroundStyle(.orange)
+            }
+        }
+        .padding(.vertical, 4)
+        .listRowBackground(line.needsAnswer ? Color.orange.opacity(0.12) : nil)
+    }
+}
+
+/// A test line: exact match is a plain row; ambiguous asks "Which test?" (never guessed); unknown says so and keeps the written name.
+private struct TestRow: View {
+    @Environment(AppModel.self) private var model
+    let line: ReadLine
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                Label(line.item.name, systemImage: "testtube.2")
+                    .font(.body.weight(.semibold))
+                Spacer()
+                if !line.needsAnswer {
+                    Image(systemName: "checkmark.circle.fill").foregroundStyle(.green)
+                        .accessibilityLabel("Confirmed")
+                }
+            }
+            if case let .ambiguous(names)? = line.testMatch {
+                Text(line.askDoctor ? "Left out of your plan. Ask your doctor which test they meant." : "Which test?")
+                    .font(.subheadline)
+                    .foregroundStyle(.orange)
+                ForEach(names, id: \.self) { name in
+                    Button(name) { model.choose(test: name, for: line.id) }
+                        .buttonStyle(.bordered)
+                        .frame(minHeight: 44)
+                }
+                if !line.askDoctor {
+                    Button("Ask my doctor") { model.askDoctorAbout(testLine: line.id) }
+                        .buttonStyle(.bordered)
+                        .frame(minHeight: 44)
+                }
+            } else if case .unknown? = line.testMatch {
+                Text("We could not match this test")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
             }
         }
         .padding(.vertical, 4)

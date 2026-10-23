@@ -62,6 +62,7 @@ def validate_order(body: dict[str, Any]) -> None:
         text(seller.get("name"), "seller name")
         require(seller.get("channel") in CHANNELS, "invalid channel")
         integer(seller.get("etaMinutes"), "etaMinutes")
+        require(seller["etaMinutes"] <= 10_080, "etaMinutes above one week")  # also keeps workflow timers sane
         require(type(seller.get("requiresVisit")) is bool, "requiresVisit must be a boolean")
     validate_plan(body.get("plan"), known)
     require(bool(body["plan"]["lines"]), "plan is empty")

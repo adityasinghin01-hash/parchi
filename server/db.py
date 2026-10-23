@@ -141,7 +141,11 @@ def mark_deleting(install_id: str | None = None) -> list[dict[str, Any]]:
         return [dict(row) for row in conn.execute("SELECT * FROM orders" + clause, params)]
 
 
-def delete_orders(install_id: str | None = None) -> None:
-    clause = " WHERE install_id=?" if install_id is not None else ""
+def delete_orders(install_id: str | None = None, ids: list[str] | None = None) -> None:
+    """With `ids`, delete only those orders: an order created while a reset was running must survive it."""
     with connect() as conn:
+        if ids is not None:
+            conn.executemany("DELETE FROM orders WHERE order_id=?", [(i,) for i in ids])
+            return
+        clause = " WHERE install_id=?" if install_id is not None else ""
         conn.execute("DELETE FROM orders" + clause, (install_id,) if install_id is not None else ())

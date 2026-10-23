@@ -15,11 +15,9 @@ struct SettingsView: View {
     @AppStorage("parchi.autoApproveCapPaise") private var capPaise = 0
 
     @State private var confirmingDelete = false
-    @State private var confirmingSignOut = false
     @State private var working = false
     @State private var deleteResult: ResetClient.Outcome?
     @State private var deletedLocally = false
-    @State private var signedOut = false
     @State private var versionTaps = 0
     @State private var demoResetDone = false
 
@@ -69,10 +67,7 @@ struct SettingsView: View {
             }
 
             Section {
-                Button("Sign out of all sellers", role: .destructive) { confirmingSignOut = true }
-                if signedOut { Text("Done. Seller logins and carts opened in Parchi are cleared.").font(.footnote).foregroundStyle(.secondary) }
-            } footer: {
-                Text("Clears logins and cookies of the seller websites you opened inside Parchi.")
+                SignOutSellersRow()
             }
 
             Section {
@@ -110,10 +105,6 @@ struct SettingsView: View {
             Button("Cancel", role: .cancel) {}
         } message: {
             Text("This cannot be undone. Your saved parchis and settings will be gone.")
-        }
-        .confirmationDialog("Sign out of all seller websites?", isPresented: $confirmingSignOut, titleVisibility: .visible) {
-            Button("Sign out", role: .destructive) { onClearSellerSessions(); signedOut = true }
-            Button("Cancel", role: .cancel) {}
         }
     }
 

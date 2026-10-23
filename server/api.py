@@ -26,6 +26,17 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="Parchi Orchestrator", lifespan=lifespan)
+MAX_BODY_BYTES = 1_000_000
+
+
+@app.middleware("http")
+async def limit_body_size(request: Request, call_next):
+    # Reject oversized bodies by declared length before anything is read or authenticated.
+    declared = request.headers.get("content-length")
+    if declared and declared.isdigit() and int(declared) > MAX_BODY_BYTES:
+        return JSONResponse({"detail": "request body too large"}, status_code=413)
+    return await call_next(request)
+
 app.state.temporal = None
 
 
@@ -251,7 +262,7 @@ async def reset(request: Request, scope: str | None = None,
     # then delete (the cascade removes placements, audit and approvals).
     orders = db.mark_deleting(install_id)
     await terminate(temporal, orders)
-    db.delete_orders(install_id)
+    db.delete_orders(install_id, ids=[o["order_id"] for o in orders])
     # "Delete everything" also clears the shop/lab/true-price rows that belong to this install.
     if install_id is None:
         p3_db.delete_all(); v2_db.delete_all()

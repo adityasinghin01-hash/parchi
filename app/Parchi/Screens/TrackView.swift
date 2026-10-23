@@ -28,6 +28,11 @@ struct TrackView: View {
                 }
             }
         }
+        .safeAreaInset(edge: .bottom) {
+            NavigationLink("What next? Doses and refills") { CareView(store: HistoryStore.shared) }
+                .frame(maxWidth: .infinity, minHeight: 44)
+                .background(.bar)
+        }
         .navigationTitle("Track")
         .sheet(item: Binding(get: { model.planB.map(PlanBBox.init) }, set: { if $0 == nil { model.planB = nil } })) { box in
             PlanBSheet(proposal: box.proposal)

@@ -33,10 +33,16 @@ struct PlanView: View {
                 ForEach(plan.sellerIDs, id: \.self) { sellerID in
                     Section(model.sellerName(sellerID)) {
                         ForEach(plan.lines.filter { $0.sellerID == sellerID }, id: \.itemID) { line in
-                            HStack {
-                                Text(model.itemName(line.itemID))
-                                Spacer()
-                                Text(rupees(line.price)).monospacedDigit()
+                            VStack(alignment: .leading, spacing: 2) {
+                                HStack {
+                                    Text(model.itemName(line.itemID))
+                                    Spacer()
+                                    Text(rupees(line.price)).monospacedDigit()
+                                }
+                                PriceSourceChip(source: model.priceSource(sellerID: sellerID))
+                                if let message = model.inPersonMessage(itemID: line.itemID) {
+                                    Text(message).font(.caption).foregroundStyle(.orange)
+                                }
                             }
                         }
                         if let fee = plan.feesBySeller[sellerID], fee > 0 {
@@ -48,6 +54,7 @@ struct PlanView: View {
                         }
                     }
                 }
+                LabPricesSection()
                 Section("Ask your doctor") {
                     Text("The same salts cost \(rupees(model.janAushadhiMedicines)) at Jan Aushadhi instead of \(rupees(model.medicinesAtMRP)) at MRP. Only your doctor can approve a switch; Parchi never changes a medicine on its own.")
                         .font(.subheadline)
@@ -56,12 +63,19 @@ struct PlanView: View {
                     Text("Prices captured 23 Oct 2026 (MedScanner, Jan Aushadhi PMBI list, lab price pages). We rank by total price, then time, then trips. No seller pays to appear higher.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
+                    NavigationLink("How we rank") { HowWeRankView() }
+                    NavigationLink {
+                        CityPickerView(location: model.location)
+                    } label: {
+                        LabeledContent("Searching around", value: model.location.centre.name)
+                    }
                 }
             } else {
                 Text(model.unavailable.isEmpty ? "No complete plan found." : "Not available anywhere: \(model.unavailable.map(model.itemName).joined(separator: ", "))")
             }
         }
         .navigationTitle("Your plan")
+        .shopLabActions()
         .safeAreaInset(edge: .bottom) {
             Button { path.append(.getItAll) } label: {
                 Text("Get it all").font(.headline).frame(maxWidth: .infinity, minHeight: 50)

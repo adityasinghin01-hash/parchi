@@ -9,3 +9,10 @@ If you add files or change `project.yml`, run `xcodegen generate` in `app/` (`br
   (Xcode: Scheme → Edit Scheme → Arguments; or `xcrun simctl launch booted in.tessanova.parchi -demoRoute planB`).
 
 Screens: `Parchi/Screens/` (Home, Confirm, Plan, Get it all, Track + Plan B sheet). Antara/Aditya restyle and extend these per `docs/team/Frontend-Antara-Aditya.md`.
+
+## Phase 3: Ask nearby shops + lab booking (`Parchi/Support/ShopLab/`)
+- Entry: "Ask shops" / "Labs" buttons on the Plan screen (`.shopLabActions()`); launch routes `-demoRoute askShops|lab` (screenshot aids: `-demoSend 1`, `-demoBook 1`, `-demoSchedule 1`).
+- Mock mode needs no network: a scripted "Demo reply" / "Demo confirmation" arrives after 5 s. Live mode never falls back to the demo.
+- Message wording: `engine/catalogue/message_templates.json` (30 drafts, en/hi/hinglish, not yet native-reviewed).
+- Permission strings (in `project.yml`): `NSCalendarsWriteOnlyAccessUsageDescription` (EventKit write-only, adds the confirmed slot). Local notifications (fasting reminder) need no Info.plist key; iOS asks at first use (Simulator uses quiet/provisional permission).
+- Planner hook: `AppModel.shopReplyOffers` + `shopReplySource` (not merged into the planner yet).

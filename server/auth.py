@@ -69,6 +69,8 @@ def require_install(request: Request) -> str:
     with db.connect() as conn:
         row = conn.execute("SELECT install_id,key_hash FROM keys WHERE key_hash=?", (hashed,)).fetchone()
     if not key or row is None or not hmac.compare_digest(row["key_hash"], hashed):
+        # Bad keys are throttled per client address, so guessing cannot run unlimited database lookups.
+        throttle("authfail:" + (request.client.host if request.client else "?"))
         raise HTTPException(401, "invalid install key")
     throttle("install:" + hashed)
     return row["install_id"]

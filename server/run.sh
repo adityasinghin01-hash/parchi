@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 # Starts worker + API in the background. Logs and pids live in data/.
 set -euo pipefail
+umask 077   # database, logs and keys readable by this user only
 cd "$(dirname "$0")"
 mkdir -p data
+chmod 700 data; chmod 600 data/*.db* data/*.key 2>/dev/null || true
 PY=.venv/bin/python
 [ -x "$PY" ] || PY=python3
 
