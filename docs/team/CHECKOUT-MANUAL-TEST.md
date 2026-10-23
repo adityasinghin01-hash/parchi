@@ -14,6 +14,7 @@ Why by hand: the K21 probe (`app/KIRO_REPORT_K21.md`) only LOADS each seller's p
 1. Plan > Get it all > "Open Checkout Assistant". Step through to the seller's step (steps run: online sellers, then labs, then local shops). The seller name is in the header.
 2. The page opens in the in-app browser. Tap "Find on page" for the medicine in the strip at the top, check it is the right brand and strength.
 3. **You** tap the seller's Add to cart / Add button. Then tap Parchi's "Added ✓".
+   **Watch out (seen on Tata 1mg right after Add):** the seller may pop up "Switch to a cheaper generic". Tap **Not now**. Parchi never swaps your brand; only your doctor can approve a different one. Write down every such prompt you see (seller, wording).
 4. Open the seller's cart yourself. **Screenshot 1: cart total and each line's price**. Write the Parchi plan price for the same item next to it (Plan screen) and the difference.
 5. If the seller asks you to log in: log in with your own account (OTP to your own phone). **Screenshot 2: the login or OTP wall** (crop out your number). Write down: did it ask BEFORE the cart, or only at checkout? Could you continue as a guest (a "Continue as guest" / "Skip" link)? Yes / no.
 6. If it asks for a pincode or location: enter your own pincode. Write down whether the price or stock changed after entering it.
