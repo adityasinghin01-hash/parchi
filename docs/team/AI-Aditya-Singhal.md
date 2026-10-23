@@ -66,7 +66,7 @@ One `train.jsonl` row per sample: `{"image": path, "target": "...", "prompt": op
 | Checkpoints | every 200 steps, keep 3, auto-resume | A cut session costs ≤ 1 h |
 | Logging | seconds/step + ETA every 10 steps | Decide the final data size |
 
-**Data size rule:** estimated 7B speed ≈ 0.38 s/sample [J] → 40k ≈ 4–6 h. After the first 30 minutes, read the real s/step and set `max_samples = (hours left before H+10) × 3600 / (s per sample)`. If 7B is slower than 1 s/sample, switch to 3B (≈0.17 s/sample [J]) on 100k.
+**Data size rule:** estimated 7B speed ≈ 0.38 s/sample [J] → 40k ≈ 4–6 h. After the first 30 minutes, read the real s/step and set `max_samples = (hours you can spare for training) × 3600 / (s per sample)`. If 7B is slower than 1 s/sample, switch to 3B (≈0.17 s/sample [J]) on 100k.
 
 ## 5. Testing (locked)
 **Scoring (same as all our earlier numbers):** a medicine counts as found when the **first word of its brand (≥3 letters, after removing Tab/Cap/Syp…)** matches. Report recall, precision, F1, "all medicines found" per parchi, and names output on pages with no medicines. Also report the same after **snapping each name to the nearest catalogue brand** (fuzzy ≥85). Check your scorer first: on the frontier model's blind reads (`docs/research/evidence/claude_blind.json`, labels in `docs/research/evidence/labels.json`), it must give **82.1% recall / 87.3% precision / 9 of 16 complete** [M].
@@ -117,18 +117,18 @@ You are reading an Indian doctor's prescription (parchi). List every medicine an
 | `serve` (iMac) | MLX model | `/read` endpoint |
 Reference drafts of `train_lora.py` and `eval_reader.py` are in `ai/drafts/` (untested on a GPU); use them or write your own.
 
-## 9. Timeline (hours from start)
-| H | Do |
+## 9. Order of work (no fixed hours: move on when each step is done)
+| Step | Do |
 |---|---|
-| 0–1 | DGX setup, downloads, scorer check (82.1%) |
-| 1–2 | Generate 40k + 2k; send copy cards to the team WhatsApp |
-| 2–3 | **Start 7B training**; start Kaggle 3B run in parallel |
-| 3–4 | Untrained 7B on MIRAGE-100 + WA copies (baseline) |
-| 4–6 | Collect hand copies; build the test-writer set |
-| 6–10 | Training finishes; optional short second pass with hand copies (from the last checkpoint) |
-| 10–12 | Full tests; pick the stage model |
-| 12–14 | Merge → MLX → iMac; measure speed; hand the API to the app |
-| 14–24 | Fix only; numbers into the deck and the app's "How accurate" screen |
+| 1 | DGX setup, downloads, scorer check (82.1%) |
+| 2 | Generate 40k + 2k; send copy cards to the team WhatsApp |
+| 3 | **Start 7B training**; start the Kaggle 3B run in parallel |
+| 4 | Untrained 7B on MIRAGE-100 + WhatsApp copies (baseline) |
+| 5 | Collect hand copies; build the test-writer set |
+| 6 | Training finishes; optional short second pass with hand copies |
+| 7 | Full tests; pick the stage model |
+| 8 | Merge → MLX → iMac; measure speed; hand the API to the app |
+| 9 | Fixes only; numbers into the deck and the app's "How accurate" screen |
 
 ## 10. Fallback ladder (never block the demo)
 7B + LoRA → 3B + LoRA (Jarvis/Kaggle) → untrained 7B → Apple Vision for printed parchis + the confirm screen for everything else.
@@ -148,10 +148,10 @@ Untrained **Qwen2.5-VL-3B** (MLX 4-bit) on the first 30 MIRAGE images on an M1 M
 ## 13. Decision rules (you decide; don't wait for the lead)
 | If… | Then… |
 |---|---|
-| 7B training measures > 1 s/sample after 30 min | Switch to 3B on 100k, or cut 7B to what ends by H+10 |
+| 7B training measures > 1 s/sample after 30 min | Switch to 3B on 100k, or cut 7B to what finishes in time |
 | DGX install breaks torch (driver 470) | Use the container's torch; `--no-deps`; else go to Jarvis (₹400 ≈ 2.8 h on A100 80 GB) |
 | DGX session dies | Resume from the last checkpoint; never restart from zero |
-| Fewer than 150 hand-copied photos by H+6 | Train without them; keep all of them as the test set |
+| Fewer than 150 hand-copied photos when training starts | Train without them; keep all of them as the test set |
 | Trained model ≤ untrained on MIRAGE | Ship the better one and report both numbers honestly |
 | WhatsApp-1280 recall drops > 2 points vs original | Add more photo/WhatsApp effects to synthetic data for the next run |
 | Model invents names on blank pages (> 0.5 per page) | Raise the catalogue-snap threshold; report it |

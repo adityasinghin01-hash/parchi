@@ -1,5 +1,5 @@
 # Lead: Aditya Singh — the independent doc, start to end
-Locked 23 Oct 2026 (includes the mentor update). Read `CONTEXT.md` first. Claude writes and builds the code on the iMac over SSH; you decide, check, and own the demo. H0 = when Phase 1 starts.
+Locked 23 Oct 2026 (includes the mentor update). Read `CONTEXT.md` first. Claude writes and builds the code on the iMac over SSH; you decide, check, and own the demo.
 
 ## Your job in one line
 **Make the whole thing work as one app on stage, with only real numbers, and win the 3 minutes.** Integrator · iMac backend · story.
@@ -18,8 +18,8 @@ Locked 23 Oct 2026 (includes the mentor update). Read `CONTEXT.md` first. Claude
 SSH to the iMac, repo on MacBook + iMac + GitHub (private, 3 collaborators invited), ParchiCore 17/17 tests on the iMac, app flow Home → Confirm → Plan → Get it all → Track + Plan B on real prices (₹2,696.77; "Telma 400" caught).
 
 ---
-## Phase 1 — Contracts + iMac server (H0–H2)
-**Why:** everything else plugs into this. One server, nothing to install (Python standard library).
+## Phase 1 — Contracts + iMac server
+**Why:** everything else plugs into this. One server on the iMac: **Temporal** runs the automations (free, self-hosted), a small Python API serves the app and the judge/shop/lab pages (see `docs/plan/12-V2-MASTER-PLAN.md` §4).
 
 | Endpoint | Who calls it | In → Out |
 |---|---|---|
@@ -34,7 +34,7 @@ App side: `ReaderClient` and `OrderClient` with **Mock / Live** in Settings, so 
 **You:** agree the `/read` JSON with Singhal (2 min, send him this table); open `/judge` on your phone once to test.
 
 ---
-## Phase 2 — Real local data: Muradnagar + Meerut (H2–H4)
+## Phase 2 — Real local data: Muradnagar + Meerut
 | Task | Detail | Output |
 |---|---|---|
 | Places | Apple Maps search (chemist, pharmacy, medical store, Jan Aushadhi, lab, pathology) around **KIET (28.7524, 77.4990)** and **Meerut** centre; add OpenStreetMap extras; keep name, lat/lon, phone, distance | `engine/places/muradnagar.json`, `meerut.json` (dated) |
@@ -46,22 +46,22 @@ App side: `ReaderClient` and `OrderClient` with **Mock / Live** in Settings, so 
 **You:** choose the 3 demo parchis; send Blinkit fees; assign the caller.
 
 ---
-## Phase 3 — Merge the team's work (H4–H10)
+## Phase 3 — Merge the team's work
 **Branches:** `ui/antara`, `capture/aditya`, `ai/singhal`. Nobody pushes to `main` directly; Claude merges only after the iMac build passes.
 | Check | When | Pass |
 |---|---|---|
-| **Check 1** | H4 | Share → mock read → confirm → plan (list + map) on Antara's screens |
-| **Check 2** | H9 | Real photo → blur → `/read` (mock or real) → plan → test order → judge Cancel → Plan B → approve |
-**You:** tell teammates the merge times (H4, H9); check each merged build on the iMac yourself.
+| **Check 1** | after Phase 2 | Share → mock read → confirm → plan (list + map) on Antara's screens |
+| **Check 2** | before Phase 4 | Real photo → blur → `/read` (mock or real) → plan → test order → judge Cancel → Plan B → approve |
+**You:** tell teammates the merge times; check each merged build on the iMac yourself.
 
 ---
-## Phase 4 — Plug in the real reader (H10–H12)
+## Phase 4 — Plug in the real reader
 Singhal hands over the MLX model + `/read`. Point the server at it; measure the median seconds per parchi on 20 images; set the fallback switch: trained 7B → 3B → untrained → phone-only read + confirm.
 **Done when:** a real handwritten photo is read on the iMac and the time is shown in Settings → "How accurate is Parchi?" with Singhal's measured numbers.
 **You:** decide which model goes on stage, from his table (rule: it must beat the untrained model on MIRAGE-100).
 
 ---
-## Phase 5 — Evidence (send at H0, analyse at H12, test at H15–H17)
+## Phase 5 — Evidence
 | Evidence | How | For the deck |
 |---|---|---|
 | **Survey** | Google Form from `docs/verification/survey-kit.md`; send the WhatsApp text **now** | n, % doctor-linked shop, % couldn't read, % 2+ places, % late/cancelled, % would use |
@@ -70,7 +70,7 @@ Singhal hands over the MLX model + `/read`. Point the server at it; measure the 
 | **Shop calls** | Phase 2 | "We called 6 chemists near KIET" |
 
 ---
-## Phase 6 — Deck + demo script (H8–H14)
+## Phase 6 — Deck + demo script
 **Slides (one idea each, every number with a source line):**
 1. **Parchi** + the one line
 2. **Problem:** ₹1,030 at MRP vs ₹826 online vs ₹189 Jan Aushadhi; 16–29% of bad reviews = late/cancelled; legible prescriptions are an Article 21 right (P&H HC 2025)
@@ -99,14 +99,14 @@ Singhal hands over the MLX model + `/read`. Point the server at it; measure the 
 | 2:40 | Close: 4 measured numbers + "How we rank: price, time, trips. Nobody pays for position." |
 
 ---
-## Phase 7 — Freeze + rehearse (H15–H21)
-- **Freeze at H15:** after this, bug fixes only.
+## Phase 7 — Freeze + rehearse
+- **Freeze:** after this, bug fixes only.
 - Bug bash: every screen at the largest text size, dark mode, VoiceOver on the main flow.
 - **3 clean rehearsals from reset**, each under 3:00: (1) normal, (2) Wi-Fi off (phone-only read + saved plan), (3) with the judge's Cancel and a shop reply.
 - Record a 2:30 backup video (say it's recorded if you use it).
 - **No known bug in the main flow at submission** (the NETRA lesson).
 
-## Phase 8 — Submit (H21–H24)
+## Phase 8 — Submit
 - [ ] Final build runs on the iMac simulator from a clean launch
 - [ ] `main` tagged `v1.0-hackathon`; README updated
 - [ ] Deck PDF + backup video
@@ -118,18 +118,19 @@ Singhal hands over the MLX model + `/read`. Point the server at it; measure the 
 | If… | Then… |
 |---|---|
 | Server can't be reached from the phone on venue Wi-Fi | Demo on the iMac simulator (localhost); judge page on a laptop on the same Wi-Fi |
-| Model not ready by H12 | Ship the best row from Singhal's table; phone-only read + confirm as last resort |
+| Model not ready when Phase 4 starts | Ship the best row from Singhal's table; phone-only read + confirm as last resort |
 | A teammate's branch breaks the build | Don't merge; Claude fixes or reverts; never demo an unbuilt change |
 | A number has no source | It doesn't go on a slide or a screen |
 | Behind schedule | Cut: lock-screen tracking → Hindi → Care. Never cut: read, confirm, plan list+map, Ask nearby shops, Get it all, Plan B, blur |
 | Phone survey gets < 3 answers | Show MRP with "shops may give 0–10% off" and say how many we called |
 
-## Team sync points
-| H | What |
+## Team sync points (in order)
+| Sync | What |
 |---|---|
-| H0 | Kick-off: survey sent, caller assigned, Singhal on DGX, frontend on competitor teardown |
-| H4 | Check 1 |
-| H9 | Check 2 |
-| H12 | Model decision + survey numbers |
-| H15 | Freeze |
-| H18 | Rehearsal 3 |
+| Kick-off | Survey sent, caller assigned, Singhal on DGX, frontend on competitor teardown |
+| Check 1 | Core flow on the team's screens |
+| Check 2 | V1 done end to end |
+| Model decision | Singhal's numbers → stage model |
+| Check 3 | V2 complete |
+| Freeze | Bug fixes only |
+| Rehearsal 3 | Final run before submit |

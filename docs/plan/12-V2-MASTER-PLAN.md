@@ -42,7 +42,7 @@ Every claim is measured [M], sourced [V], or a design choice [D]. Drive = **pree
 | U20 | Stale-price warning | Any price older than 7 days shows "may have changed" |
 
 ---
-## 2. Research first (do all of it at the start, H0–H3, in parallel with V1 building)
+## 2. Research first (do all of it at the start, in parallel with the first V1 build steps)
 
 | ID | Question | How | Output | Owner |
 |---|---|---|---|---|
@@ -67,8 +67,8 @@ Every claim is measured [M], sourced [V], or a design choice [D]. Drive = **pree
 ```
 iPHONE APP (SwiftUI)                                   LAB iMAC                                      DRIVE + DGX
 Capture · blur · on-phone read · parser ──crop──►  READER  (Singhal's MLX model, /read)             Parchi Data (all research data)
-Confirm (catalogue, brand–strength, doctor memory)  ORCHESTRATOR (Python, standard library)          DGX: training + testing
-Plan (List | Map) · Checkout Assistant (in-app web) │  jobs + timers + states in SQLite
+Confirm (catalogue, brand–strength, doctor memory)  ORCHESTRATOR (Temporal + Python worker)          DGX: training + testing
+Plan (List | Map) · Checkout Assistant (in-app web) │  workflows, timers, signals (Temporal) + app data (SQLite)
 Ask shops (SMS/WhatsApp) · Lab booking · Track     │  8 automations (§4) · safety net
 Care (reminders, refill) · Parchi Pass · Settings  │  endpoints: /read /plan-events /order /status
         ▲  every 2 s /status  ◄──────────────────────│  /judge /shop/<id> /lab/<id> /reset
@@ -76,17 +76,16 @@ Care (reminders, refill) · Parchi Pass · Settings  │  endpoints: /read /plan
 ```
 
 ---
-## 4. Automation engine (answer: we build our own)
-
+## 4. Automation engine: Temporal (free, self-hosted)
 | Option | Verdict | Why |
 |---|---|---|
-| LangChain / LangGraph | **No** | For chaining LLM calls and agents. Our automations are rules + timers, not AI reasoning; an LLM would add delay, randomness and cost, and the only AI we need is the reader |
-| n8n (self-hosted) | Not for V2 | Free and visual, but another server to install and keep alive on the iMac; workflows live outside our code |
-| Zapier | **No** | Paid cloud; can't see our iMac; sends health data to a third party |
-| Temporal / Inngest / Trigger.dev | Not for V2 | Proper durable-workflow engines, but heavy to install for 24 h |
-| **Own engine** (Python standard library + SQLite on the iMac) | **Yes** | Nothing to install; deterministic; works offline; every step logged (our safety net); we copy the durable-workflow idea (states, timers, retries, no double runs) without the weight |
+| **Temporal** (MIT, self-hosted on the iMac; `brew install temporal` 1.9.1 + `temporalio` 1.34.0 Python SDK, both checked on the iMac) | **Yes** | Durable workflows: timers that last minutes to days and survive restarts, waiting for a human (signals: approve Plan B, judge Cancel, shop reply), retries, each step runs once (no double orders), scales by adding workers, web dashboard of every running automation. ₹0 |
+| LangChain / LangGraph | No (V3 only inside a Temporal step, if an AI agent is added) | Built for chaining AI calls/agents; our automations are rules + timers |
+| n8n | No | Visual glue; our logic would split between code and diagrams; another server to run |
+| Zapier | No | Paid cloud; can't reach the iMac; sends health data outside |
+| Zep | No (V3 candidate for recommendation memory) | Agent memory (knowledge graph), not an automation engine |
 
-**Engine design:** each automation = a **state machine** (states + allowed moves), **timers** stored in SQLite (survive restarts), **idempotency keys** (one order never placed twice), **approval records** (who approved what plan version), an **event log** the app reads. V3 can swap in n8n or Temporal if we outgrow it.
+**Setup:** `temporal server start-dev --db-filename ~/parchi/server/temporal.db` (server + UI at :8233) · Python worker (`server/worker.py`) runs the workflows · Python API (`server/api.py`) for the app + judge/shop/lab pages · app data in SQLite now → Postgres later. **If Temporal is down mid-demo:** the app still re-plans on the phone (ParchiCore), so the flow survives.
 
 ---
 ## 5. The 8 automations (V2 spec)
@@ -107,33 +106,33 @@ Care (reminders, refill) · Parchi Pass · Settings  │  endpoints: /read /plan
 Top bar: "Step 2 of 4 · Truemeds · 3 items" + item checklist. Body: the seller's own website (in-app browser). Buttons: **Find on page** (highlights the item name), **Added ✓**, **Go to checkout**, **Skip this seller** (re-plans). Rule: **the user taps "Add to cart" and "Pay" themselves**; Parchi never clicks for them (seller terms; PharmEasy bans automation [V]). Local shop step = in-app SMS (real iPhone) or share sheet (Simulator). Lab step = lab page or booking SMS.
 
 ---
-## 7. Who does what, V1 → V2 (hours from start)
+## 7. Who does what, V1 → V2 (in order; no fixed hours, move on when the check passes)
 
-| H | Lead (Aditya Singh) + Claude | Aditya Singhal (AI) | Antara (screens) | Aditya (capture/care) |
+| Step | Lead (Aditya Singh) + Claude | Aditya Singhal (AI) | Antara (screens) | Aditya (capture/care) |
 |---|---|---|---|---|
-| 0–3 | **Research R1, R2, R9, R11**; Claude R3–R8 + data to Drive; Orchestrator skeleton (SQLite, state machines, /status, /judge) | DGX setup, 40k data, start 7B training; R10 constrained-reading test | Competitor teardown (resources doc), design system, Home + Confirm | Scanner, WhatsApp share, blur port, location + address |
-| 3–6 | A2 Plan B + A8 safety net + A3 single-round shop ask + reply form; /lab booking + reply | Baseline on MIRAGE-100; hand-copy cards out | Plan List \| Map, price pins, shop sheet | On-phone printed parser (U4), consent + auto-delete |
-| 6 | **Check 1 (V1 core)** | | | |
-| 6–10 | A4 Checkout Assistant; A5 booking; real data into the app (6 cities, labs, prices, links) | Training runs; hand-copy photos | Get it all, Track, Plan B sheet, lab options | Parchi Pass, Care, Hindi |
-| 10 | **Check 2 = V1 DONE** (end to end, real data, Simulator + iPhone) | | | |
-| 10–15 | V2: A1 Router + reliability, A3 rounds, A5 reminders/chase, A6 refill, A7 true-price, U1–U20 fixes | Tests → pick model → MLX on iMac → `/read` live | Polish + dark mode + Dynamic Type + animations | History (U3), sign-out (U10), stale warnings (U20) |
-| 15 | **Check 3 = V2 feature-complete** | | | |
-| 15–18 | Tests (§9), bug bash, deck numbers | Final numbers + "How accurate" | Fixes only | Fixes only |
-| **18** | **FREEZE** | | | |
-| 18–22 | 3 rehearsals, usability test (SUS), backup video | | | |
-| 22–24 | Submit with 1 h spare | | | |
+| Step 1 · research + foundations | **Research R1, R2, R9, R11**; Claude R3–R8 + data to Drive; Orchestrator skeleton (SQLite, state machines, /status, /judge) | DGX setup, 40k data, start 7B training; R10 constrained-reading test | Competitor teardown (resources doc), design system, Home + Confirm | Scanner, WhatsApp share, blur port, location + address |
+| Step 2 | Temporal setup; A2 Plan B + A8 safety net + A3 single-round shop ask + reply form; /lab booking + reply | Baseline on MIRAGE-100; hand-copy cards out | Plan List \| Map, price pins, shop sheet | On-phone printed parser (U4), consent + auto-delete |
+| **Check 1** | **Check 1 (V1 core)** | | | |
+| Step 3 | A4 Checkout Assistant; A5 booking; real data into the app (6 cities, labs, prices, links) | Training runs; hand-copy photos | Get it all, Track, Plan B sheet, lab options | Parchi Pass, Care, Hindi |
+| **Check 2 = V1 DONE** | **Check 2 = V1 DONE** (end to end, real data, Simulator + iPhone) | | | |
+| Step 4 · V2 | V2: A1 Router + reliability, A3 rounds, A5 reminders/chase, A6 refill, A7 true-price, U1–U20 fixes | Tests → pick model → MLX on iMac → `/read` live | Polish + dark mode + Dynamic Type + animations | History (U3), sign-out (U10), stale warnings (U20) |
+| **Check 3 = V2 complete** | **Check 3 = V2 feature-complete** | | | |
+| Step 5 · tests | Tests (§9), bug bash, deck numbers | Final numbers + "How accurate" | Fixes only | Fixes only |
+| **FREEZE** | **FREEZE** | | | |
+| Step 6 · rehearse | 3 rehearsals, usability test (SUS), backup video | | | |
+| Step 7 · submit | Submit with 1 h spare | | | |
 
 **Cut line (if Check 3 is late):** A7 → A6 → A5 chase → A3 rounds → A1 reliability fall back to V1 behaviour. **Never cut V1.**
 
 ---
 ## 8. Lead's work, end to end
-1. **Research (H0–3):** R1 in-app checkout test per seller, R2 Blinkit/Zepto, R9 templates, R11 order-confirmation signals. Decide the seller list for the Checkout Assistant.
-2. **Orchestrator (H0–15):** engine + 8 automations + endpoints + judge page + shop/lab reply forms + install key + rate limit; tests for every state machine.
-3. **Data in the app (H6–10):** places, labs, prices, product links, H1/X, tests from Drive → app bundles with dates.
-4. **Integration (H6, H10, H15 checks):** merge branches only after an iMac build passes; real iPhone install (U16).
-5. **Evidence (H0 send, H12 analyse, H18–21 test):** survey, phone survey (R12), SUS, ChatGPT clip.
-6. **Deck + demo (H12–18):** slides per file 11 + Lead doc; demo v3 adds the Checkout Assistant and the shop auction.
-7. **Freeze + rehearse + submit (H18–24).**
+1. **Research:** R1 in-app checkout test per seller, R2 Blinkit/Zepto, R9 templates, R11 order-confirmation signals. Decide the seller list for the Checkout Assistant.
+2. **Orchestrator:** engine + 8 automations + endpoints + judge page + shop/lab reply forms + install key + rate limit; tests for every state machine.
+3. **Data in the app:** places, labs, prices, product links, H1/X, tests from Drive → app bundles with dates.
+4. **Integration (Checks 1, 2, 3):** merge branches only after an iMac build passes; real iPhone install (U16).
+5. **Evidence:** survey, phone survey (R12), SUS, ChatGPT clip.
+6. **Deck + demo:** slides per file 11 + Lead doc; demo v3 adds the Checkout Assistant and the shop auction.
+7. **Freeze + rehearse + submit.**
 
 ---
 ## 9. V2 acceptance tests
@@ -161,4 +160,4 @@ Conditions: Novelty 8.5 rests on the live local-shop network + reliability routi
 
 ---
 ## 11. V3 (after V2)
-Recommendation engine · shop dashboard (shops answer in 10 s, mark ready) · partner APIs (labs, pharmacies, ONDC) · WhatsApp Business API to read replies · push notifications (paid Apple account) · App Attest · TLS · more cities.
+**Personal recommendation engine** (learns each user's habits; possibly Zep for memory) · **automatic cart on big apps via partner APIs** (1mg, PharmEasy, Blinkit…) · shop dashboard (shops answer in 10 s, mark ready) · partner APIs (labs, pharmacies, ONDC) · WhatsApp Business API to read replies · push notifications (paid Apple account) · App Attest · TLS · more cities.
