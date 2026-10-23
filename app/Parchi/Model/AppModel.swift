@@ -324,7 +324,7 @@ final class AppModel {
     }
 
     /// Planner offers made from the catalogue: the whole line (packs x MRP) at the doctor's shop.
-    private var catalogueMRPOffers: [Offer] {
+    var catalogueMRPOffers: [Offer] {
         catalogueOffers.keys.sorted().compactMap { id in
             catalogueOffers[id].map { Offer(itemID: id, sellerID: Self.catalogueSellerID, price: $0.price.totalPaise) }
         }

@@ -47,6 +47,12 @@ class FakeTemporal:
     def get_workflow_handle(self, id):
         return self.handles[id]
 
+    async def list_workflows(self, query):
+        # Only refill watches are listed (the reset route asks for RefillWorkflow executions).
+        for wid, handle in list(self.handles.items()):
+            if wid.startswith("refill-") and not handle.terminated:
+                yield SimpleNamespace(id=wid)
+
 
 @pytest.fixture
 def api_client(isolated_db, monkeypatch):
@@ -159,6 +165,18 @@ def test_reset_only_this_install(api_client):
     assert api_client.client.get(f"/status/{oid}", headers=headers(api_client)).status_code == 404
     with api_client.db.connect() as conn:
         assert conn.execute("SELECT count(*) FROM approvals").fetchone()[0] == 1
+
+
+def test_reset_terminates_this_installs_refill_watches(api_client):
+    """Codex R4: refill watches have no SQLite row, so reset must find and stop them in Temporal."""
+    for wid, owner in (("refill-mine", api_client.install), ("refill-theirs", api_client.other_install)):
+        api_client.temporal.handles[wid] = FakeHandle({"installID": owner, "state": "waiting"})
+    assert api_client.client.post("/reset", headers=headers(api_client), json={}).status_code == 200
+    assert api_client.temporal.handles["refill-mine"].terminated
+    assert not api_client.temporal.handles["refill-theirs"].terminated
+    assert api_client.client.post("/reset?scope=demo", headers={
+        "X-Admin-Key": "judge-secret"}, json={}).status_code == 200
+    assert api_client.temporal.handles["refill-theirs"].terminated
 
 
 @pytest.mark.parametrize("price", [-1, 1.5, True, "100"])

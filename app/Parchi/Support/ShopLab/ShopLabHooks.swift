@@ -22,8 +22,23 @@ extension AppModel {
         }
     }
 
+    /// Mock mode only: the scripted "shop replied" quotes the demo scenario's prices where it has them and the catalogue MRP for
+    /// any other line (a typed or printed parchi), so the scripted reply never says "Not available" for a medicine we can price.
+    /// The screen already says the reply is scripted. Live mode ignores this: a real shop answers.
+    func demoShopOffers(for candidates: [ShopCandidate]) -> [Offer] {
+        let have = Set(scenario.offers.map { OfferKey(itemID: $0.itemID, sellerID: $0.sellerID) })
+        var extra: [Offer] = []
+        for candidate in candidates {
+            for offer in catalogueMRPOffers where !have.contains(OfferKey(itemID: offer.itemID, sellerID: candidate.id)) {
+                extra.append(Offer(itemID: offer.itemID, sellerID: candidate.id, price: offer.price))
+            }
+        }
+        return scenario.offers + extra
+    }
+
     func prepareShopAsk() {
-        shopAsk.prepare(items: scenario.items, candidates: shopCandidates(), demoOffers: scenario.offers,
+        let candidates = shopCandidates()
+        shopAsk.prepare(items: scenario.items, candidates: candidates, demoOffers: demoShopOffers(for: candidates),
                         liveRequested: backend.mode == .live, live: backend.makeClient(), orderID: liveOrderID)
     }
 

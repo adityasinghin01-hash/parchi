@@ -120,7 +120,8 @@ class RefillWorkflow:
         self.refill_id, self.install_id = data["refill_id"], data["install_id"]
         self.due_at = data["due_at"]
         scale = data.get("time_scale") or 1  # input, not env: workflow code must stay deterministic
-        delay = (datetime.fromisoformat(self.due_at) - workflow.now()).total_seconds() / scale
+        # Same meaning as orders, shop and lab: waits are MULTIPLIED by the scale (0.01 = 100x faster).
+        delay = (datetime.fromisoformat(self.due_at) - workflow.now()).total_seconds() * scale
         if delay > 0:
             try:
                 await workflow.wait_condition(self.finished, timeout=timedelta(seconds=delay))
@@ -141,6 +142,30 @@ ACTIVITIES: list = []
 
 def workflow_id(refill_id: str) -> str:
     return "refill-" + refill_id
+
+
+async def cancel_watches(temporal: Any, install_id: str | None) -> int:
+    """'Delete everything': terminate this install's running refill watches (None = all, for the demo reset).
+
+    Refill watches have no SQLite row, so they are found by listing running RefillWorkflow executions and
+    reading the install id from each one's snapshot. Medicine names were never sent to Temporal.
+    """
+    stopped = 0
+    try:
+        async for item in temporal.list_workflows(
+                'WorkflowType="RefillWorkflow" AND ExecutionStatus="Running"'):
+            handle = temporal.get_workflow_handle(item.id)
+            try:
+                if install_id is not None and (await handle.query("snapshot")).get("installID") != install_id:
+                    continue
+                await handle.terminate(reason="reset")
+                stopped += 1
+            except RPCError as error:  # finished or gone in the meantime is fine
+                if error.status not in (RPCStatusCode.NOT_FOUND, RPCStatusCode.FAILED_PRECONDITION):
+                    raise
+    except RPCError:
+        raise HTTPException(503, "temporal unavailable")
+    return stopped
 
 
 def register(app: FastAPI, get_temporal: Callable, get_install_id: Callable) -> None:

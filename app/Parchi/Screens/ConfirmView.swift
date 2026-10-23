@@ -124,7 +124,9 @@ private struct LineRow: View {
                 }
             }
             if case let .unknownBrand(read, suggestions)? = line.check {
-                Text("We couldn't find \"\(read)\". Did you mean \(suggestions.joined(separator: ", "))?")
+                Text(suggestions.isEmpty
+                     ? "We couldn't find \"\(read)\". Check the spelling, or remove this line and add the medicine by hand."
+                     : "We couldn't find \"\(read)\". Did you mean \(suggestions.joined(separator: ", "))?")
                     .font(.subheadline)
                     .foregroundStyle(.orange)
             }

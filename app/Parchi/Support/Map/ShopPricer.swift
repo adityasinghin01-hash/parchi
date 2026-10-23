@@ -136,7 +136,7 @@ extension AppModel {
     func prepareShopAsk(preselecting shop: MapShop) {
         var candidates = shopCandidates().filter { $0.id != shop.id }
         candidates.insert(ShopCandidate(id: shop.id, name: shop.name, distanceM: shop.distanceM), at: 0)
-        shopAsk.prepare(items: scenario.items, candidates: candidates, demoOffers: scenario.offers,
+        shopAsk.prepare(items: scenario.items, candidates: candidates, demoOffers: demoShopOffers(for: candidates),
                         liveRequested: backend.mode == .live, live: backend.makeClient(), orderID: liveOrderID)
         shopAsk.selected = [shop.id]
     }

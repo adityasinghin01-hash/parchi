@@ -189,7 +189,7 @@ def test_time_scale_shrinks_the_wait(temporal_env):
         due = (datetime.now(IST) + timedelta(days=10)).isoformat()
         async with Worker(env.client, task_queue=queue, workflows=[RefillWorkflow]):
             fast = await env.client.start_workflow(
-                RefillWorkflow.run, {"refill_id": "f", "install_id": "i", "due_at": due, "time_scale": 86400},
+                RefillWorkflow.run, {"refill_id": "f", "install_id": "i", "due_at": due, "time_scale": 1 / 86400},
                 id="refill-f-" + uuid4().hex, task_queue=queue)
             slow = await env.client.start_workflow(
                 RefillWorkflow.run, {"refill_id": "s", "install_id": "i", "due_at": due, "time_scale": 1},

@@ -32,10 +32,11 @@ MAX_BODY_BYTES = 1_000_000
 # POST /read carries a photo: up to 2 MB of image plus a little multipart framing. Every other route keeps 1 MB.
 READER_MAX_BYTES = 2_000_000
 READ_BODY_BYTES = READER_MAX_BYTES + 16_384
+PHOTO_PATHS = ("/read", "/judge/scan/read")  # the second is the admin-only phone test page (scan_page.py)
 
 
 def body_limit_for(request: Request) -> int:
-    return READ_BODY_BYTES if request.method == "POST" and request.url.path == "/read" else MAX_BODY_BYTES
+    return READ_BODY_BYTES if request.method == "POST" and request.url.path in PHOTO_PATHS else MAX_BODY_BYTES
 
 
 @app.middleware("http")
@@ -44,7 +45,7 @@ async def limit_body_size(request: Request, call_next):
     declared = request.headers.get("content-length")
     if declared and declared.isdigit() and int(declared) > body_limit_for(request):
         return JSONResponse({"detail": "request body too large"}, status_code=413)
-    if request.url.path == "/read" and request.method == "POST" and not (declared and declared.isdigit()):
+    if request.url.path in PHOTO_PATHS and request.method == "POST" and not (declared and declared.isdigit()):
         # A chunked upload has no declared size, so the guard above cannot see it: the photo route refuses it.
         return JSONResponse({"detail": "send the photo with a Content-Length"}, status_code=411)
     return await call_next(request)
@@ -302,6 +303,7 @@ async def reset(request: Request, scope: str | None = None,
     # then delete (the cascade removes placements, audit and approvals).
     orders = db.mark_deleting(install_id)
     await terminate(temporal, orders)
+    await refill.cancel_watches(temporal, install_id)  # refill watches have no row; they are found in Temporal
     db.delete_orders(install_id, ids=[o["order_id"] for o in orders])
     # "Delete everything" also clears the shop/lab/true-price rows that belong to this install.
     if install_id is None:
@@ -327,9 +329,11 @@ async def read(image: UploadFile | None = File(None), _: str = Depends(auth.requ
     if len(data) > READER_MAX_BYTES:
         raise HTTPException(413, "image too large")
     try:
-        async with httpx.AsyncClient(timeout=20, transport=READER_TRANSPORT) as client:
+        async with httpx.AsyncClient(timeout=float(os.environ.get("PARCHI_READER_TIMEOUT", "20")), transport=READER_TRANSPORT) as client:
             reply = await client.post(reader, files={"image": ("parchi", data, image.content_type)})
     except httpx.HTTPError:
+        raise HTTPException(503, "reader not connected")
+    if reply.status_code == 503:  # no key, or the reader's spending cap is reached: the app falls back to reading on the phone
         raise HTTPException(503, "reader not connected")
     if reply.status_code >= 400:
         raise HTTPException(502, "reader error")
@@ -343,3 +347,7 @@ import p3_db, v2_db, shop, lab, reliability, refill, true_price, judge_tools  # 
 
 for _module in (shop, lab, reliability, refill, true_price, judge_tools):
     _module.register(app, get_temporal, auth.require_install)
+
+import scan_page  # noqa: E402
+
+app.include_router(scan_page.router)
