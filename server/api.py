@@ -128,6 +128,8 @@ async def status(order_id: str, install_id: str = Depends(auth.require_install),
         "sellers": snap["sellers"], "pending": snap["pending"], "proposal": snap["proposal"],
         "nothingAvailable": snap["nothingAvailable"], "needsCheck": snap["needsCheck"],
         "waitingSince": snap["waitingSince"], "audit": db.audit_for(order_id, 20),
+        # False while the first placements are still being written; clients should not trust the seller list yet.
+        "ready": snap.get("ready", True),
     }
 
 
@@ -198,6 +200,21 @@ document.addEventListener('click', async (e) => {
 </script>"""
 
 
+@app.get("/judge/orders", dependencies=[Depends(admin_header)])
+async def judge_orders(temporal: Any = Depends(get_temporal)) -> list[dict[str, Any]]:
+    """Machine-readable twin of the judge page (used by the end-to-end acceptance run)."""
+    out = []
+    for order in db.list_orders(limit=20):
+        try:
+            snap = await snapshot(temporal, order["order_id"])
+        except HTTPException:
+            continue
+        out.append({"orderID": order["order_id"], "state": snap["state"], "planVersion": snap["planVersion"],
+                    "ready": snap.get("ready", True),
+                    "sellers": [{"id": x["id"], "status": x["status"]} for x in snap["sellers"]]})
+    return out
+
+
 @app.get("/judge", response_class=HTMLResponse, dependencies=[Depends(admin_query)])
 async def judge_page(temporal: Any = Depends(get_temporal)) -> str:
     def esc(value: Any) -> str:
@@ -235,6 +252,11 @@ async def reset(request: Request, scope: str | None = None,
     orders = db.mark_deleting(install_id)
     await terminate(temporal, orders)
     db.delete_orders(install_id)
+    # "Delete everything" also clears the shop/lab/true-price rows that belong to this install.
+    if install_id is None:
+        p3_db.delete_all(); v2_db.delete_all()
+    else:
+        p3_db.delete_install(install_id); v2_db.delete_install(install_id)
     return {"ok": True, "deleted": len(orders)}
 
 
@@ -243,11 +265,10 @@ async def read(_: str = Depends(auth.require_install)) -> None:
     raise HTTPException(501, "not built yet")
 
 
-@app.post("/shop/{shop_id}")
-async def shop(shop_id: str, _: str = Depends(auth.require_install)) -> None:
-    raise HTTPException(501, "not built yet")
 
 
-@app.post("/lab/{lab_id}")
-async def lab(lab_id: str, _: str = Depends(auth.require_install)) -> None:
-    raise HTTPException(501, "not built yet")
+# V2 modules: each adds its own routes (tests cover them in tests/test_reliability.py etc.).
+import p3_db, v2_db, shop, lab, reliability, refill, true_price  # noqa: E402
+
+for _module in (shop, lab, reliability, refill, true_price):
+    _module.register(app, get_temporal, auth.require_install)

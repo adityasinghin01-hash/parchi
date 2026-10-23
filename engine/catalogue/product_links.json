@@ -1,0 +1,206 @@
+{
+ "azithral_500": {
+  "Apollo Pharmacy": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": null,
+   "price_paise": null,
+   "product_url": "https://www.apollopharmacy.in/medicine/azithral-500mg-tablet"
+  },
+  "Blinkit": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 12600,
+   "price_paise": 11100,
+   "product_url": "https://blinkit.com/prn/azithral-500mg-tablets/prid/647045"
+  },
+  "Netmeds": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 11279,
+   "price_paise": null,
+   "product_url": "https://www.netmeds.com/product/azithral-500mg-tablet-5s-lui4bl-8282180"
+  },
+  "Tata 1mg": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 12673,
+   "price_paise": 11800,
+   "product_url": "https://www.1mg.com/drugs/azithral-500mg-tablet-325616"
+  },
+  "Truemeds": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 12673,
+   "price_paise": 10138,
+   "product_url": "https://www.truemeds.in/medicine/azithral-500mg-tablet-tm-tacr1-004398"
+  }
+ },
+ "dolo_650": {
+  "Apollo Pharmacy": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": null,
+   "price_paise": null,
+   "product_url": "https://www.apollopharmacy.in/otc/dolo-650mg-tablet-15-s"
+  },
+  "Blinkit": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 3200,
+   "price_paise": 3100,
+   "product_url": "https://blinkit.com/prn/dolo-650mg-tablets/prid/639498"
+  },
+  "Netmeds": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 2518,
+   "price_paise": null,
+   "product_url": "https://www.netmeds.com/product/dolo-650-tablet-15s-lui1wb-8231049"
+  },
+  "Swiggy Instamart": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 3200,
+   "price_paise": 3100,
+   "product_url": "https://instamart.in/p/dolo-paracetamol-650mg-tablet-pain-fever-relief-XGK90OI74S"
+  },
+  "Tata 1mg": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 3228,
+   "price_paise": 3100,
+   "product_url": "https://www.1mg.com/drugs/Dolo-Tablet-74467"
+  },
+  "Truemeds": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 3212,
+   "price_paise": 2570,
+   "product_url": "https://www.truemeds.in/otc/dolo-650-mg-tablet-15-tm-tacr1-011691"
+  }
+ },
+ "glycomet_sr_500": {
+  "Apollo Pharmacy": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": null,
+   "price_paise": null,
+   "product_url": "https://www.apollopharmacy.in/medicine/glycomet-sr-500mg-tablet"
+  },
+  "Blinkit": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": null,
+   "price_paise": 4200,
+   "product_url": "https://blinkit.com/prn/glycomet-sr-500mg-strip-of-20-tablets/prid/643114"
+  },
+  "Netmeds": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 3759,
+   "price_paise": null,
+   "product_url": "https://www.netmeds.com/product/glycomet-500-sr-tablet-20s-lufui7-7514003"
+  },
+  "Tata 1mg": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 4224,
+   "price_paise": 3850,
+   "product_url": "https://www.1mg.com/drugs/glycomet-500-mg-tablet-sr-117725"
+  },
+  "Truemeds": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 4224,
+   "price_paise": 3379,
+   "product_url": "https://www.truemeds.in/medicine/glycomet-500-mg-tablet-sr-20-TM-TASR1-000446"
+  }
+ },
+ "montair_lc": {
+  "Apollo Pharmacy": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": null,
+   "price_paise": null,
+   "product_url": "https://www.apollopharmacy.in/medicine/montair-lc-tablet-15s"
+  },
+  "Blinkit": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": null,
+   "price_paise": null,
+   "product_url": "https://blinkit.com/prn/montair-lc-strip-of-15-tablets/prid/640590"
+  },
+  "Netmeds": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 37361,
+   "price_paise": null,
+   "product_url": "https://www.netmeds.com/product/montair-lc-tablet-15s-lui1k6-8223458"
+  },
+  "Tata 1mg": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 41979,
+   "price_paise": 38600,
+   "product_url": "https://www.1mg.com/drugs/montair-lc-tablet-565306?wpsrc=Google+Organic+Search"
+  },
+  "Truemeds": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 41979,
+   "price_paise": 33583,
+   "product_url": "https://www.truemeds.in/medicine/montair-lc-tablet-tm-tacr1-052205"
+  }
+ },
+ "pan_40": {
+  "Apollo Pharmacy": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": null,
+   "price_paise": null,
+   "product_url": "https://www.apollopharmacy.in/medicine/pan-40mg-tablet"
+  },
+  "Blinkit": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": null,
+   "price_paise": null,
+   "product_url": "https://blinkit.com/prn/pan-40-mg-tablet-15-tab/prid/635236"
+  },
+  "Netmeds": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 17159,
+   "price_paise": null,
+   "product_url": "https://www.netmeds.com/product/pan-40mg-tablet-15s-lui278-8237698"
+  },
+  "Swiggy Instamart": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": null,
+   "price_paise": 15900,
+   "product_url": "https://instamart.in/p/pan-40mg-tablets-for-gas-acidity-acid-reflux-pantoprazole-7O16BVM9GQ"
+  },
+  "Tata 1mg": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 19280,
+   "price_paise": 18500,
+   "product_url": "https://www.1mg.com/drugs/pan-40-tablet-325250"
+  },
+  "Truemeds": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 19280,
+   "price_paise": 15424,
+   "product_url": "https://www.truemeds.in/medicine/pan-40-mg-tablet-15-TM-TACR1-030125"
+  }
+ },
+ "telma_40": {
+  "Apollo Pharmacy": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": null,
+   "price_paise": null,
+   "product_url": "https://www.apollopharmacy.in/medicine/telma-40mg-tablet-30-s"
+  },
+  "Blinkit": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": null,
+   "price_paise": null,
+   "product_url": "https://blinkit.com/prn/telma-40-mg-tablet-30-tab/prid/635264"
+  },
+  "Netmeds": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 19288,
+   "price_paise": null,
+   "product_url": "https://www.netmeds.com/product/telma-40mg-tablet-30s-lui45c-8278923"
+  },
+  "Tata 1mg": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 21672,
+   "price_paise": 20600,
+   "product_url": "https://www.1mg.com/drugs/telma-40-tablet-340679"
+  },
+  "Truemeds": {
+   "date_seen": "2026-10-23",
+   "mrp_paise": 21672,
+   "price_paise": 17338,
+   "product_url": "https://www.truemeds.in/medicine/telma-40mg-tablet-30-tm-tacr1-038773"
+  }
+ }
+}

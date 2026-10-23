@@ -1,0 +1,438 @@
+{
+ "Ghaziabad": {
+  "Dr Lal PathLabs": {
+   "CBC": {
+    "date_seen": "2026-10-23",
+    "price_paise": 34000,
+    "price_text": "₹340.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/ghaziabad"
+   },
+   "CRP": {
+    "date_seen": "2026-10-23",
+    "price_paise": 43000,
+    "price_text": "₹430.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/ghaziabad"
+   },
+   "ESR": {
+    "date_seen": "2026-10-23",
+    "price_paise": 14000,
+    "price_text": "₹140.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/ghaziabad"
+   },
+   "Fasting blood sugar": {
+    "date_seen": "2026-10-23",
+    "price_paise": 8000,
+    "price_text": "₹80.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/ghaziabad"
+   },
+   "HbA1c": {
+    "date_seen": "2026-10-23",
+    "price_paise": 43000,
+    "price_text": "₹430.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/ghaziabad"
+   },
+   "KFT": {
+    "date_seen": "2026-10-23",
+    "price_paise": 84000,
+    "price_text": "₹840.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/ghaziabad"
+   },
+   "LFT": {
+    "date_seen": "2026-10-23",
+    "price_paise": 79000,
+    "price_text": "₹790.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/ghaziabad"
+   },
+   "Lipid profile": {
+    "date_seen": "2026-10-23",
+    "price_paise": 99000,
+    "price_text": "₹990.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/ghaziabad"
+   },
+   "Serum creatinine": {
+    "date_seen": "2026-10-23",
+    "price_paise": 15000,
+    "price_text": "₹150.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/ghaziabad"
+   },
+   "TSH": {
+    "date_seen": "2026-10-23",
+    "price_paise": 22000,
+    "price_text": "₹220.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/ghaziabad"
+   },
+   "Thyroid profile (T3 T4 TSH)": {
+    "date_seen": "2026-10-23",
+    "price_paise": 54000,
+    "price_text": "₹540.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/ghaziabad"
+   },
+   "Uric acid": {
+    "date_seen": "2026-10-23",
+    "price_paise": 16000,
+    "price_text": "₹160.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/ghaziabad"
+   },
+   "Urine routine": {
+    "date_seen": "2026-10-23",
+    "price_paise": 12000,
+    "price_text": "₹120.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/ghaziabad"
+   },
+   "Vitamin B12": {
+    "date_seen": "2026-10-23",
+    "price_paise": 118000,
+    "price_text": "₹1180.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/ghaziabad"
+   },
+   "Vitamin D (25-OH)": {
+    "date_seen": "2026-10-23",
+    "price_paise": 153000,
+    "price_text": "₹1530.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/ghaziabad"
+   }
+  },
+  "Max Lab": {
+   "CBC": {
+    "date_seen": "2026-10-23",
+    "price_paise": 35000,
+    "price_text": "₹ 350",
+    "source_url": "https://www.maxlab.co.in/labs/max-lab-crossing-republic-road-ghaziabad"
+   },
+   "CRP": {
+    "date_seen": "2026-10-23",
+    "price_paise": 44000,
+    "price_text": "₹ 440",
+    "source_url": "https://www.maxlab.co.in/labs/max-lab-crossing-republic-road-ghaziabad"
+   },
+   "Fasting blood sugar": {
+    "date_seen": "2026-10-23",
+    "price_paise": 8000,
+    "price_text": "₹ 80",
+    "source_url": "https://www.maxlab.co.in/labs/max-lab-crossing-republic-road-ghaziabad"
+   },
+   "KFT": {
+    "date_seen": "2026-10-23",
+    "price_paise": 85000,
+    "price_text": "₹ 850",
+    "source_url": "https://www.maxlab.co.in/labs/max-lab-crossing-republic-road-ghaziabad"
+   },
+   "LFT": {
+    "date_seen": "2026-10-23",
+    "price_paise": 80000,
+    "price_text": "₹ 800",
+    "source_url": "https://www.maxlab.co.in/labs/max-lab-crossing-republic-road-ghaziabad"
+   },
+   "Lipid profile": {
+    "date_seen": "2026-10-23",
+    "price_paise": 100000,
+    "price_text": "₹ 1000",
+    "source_url": "https://www.maxlab.co.in/labs/max-lab-crossing-republic-road-ghaziabad"
+   },
+   "Post-prandial blood sugar": {
+    "date_seen": "2026-10-23",
+    "price_paise": 9000,
+    "price_text": "₹ 90",
+    "source_url": "https://www.maxlab.co.in/labs/max-lab-crossing-republic-road-ghaziabad"
+   },
+   "Random blood sugar": {
+    "date_seen": "2026-10-23",
+    "price_paise": 8000,
+    "price_text": "₹ 80",
+    "source_url": "https://www.maxlab.co.in/labs/max-lab-crossing-republic-road-ghaziabad"
+   },
+   "Serum creatinine": {
+    "date_seen": "2026-10-23",
+    "price_paise": 15000,
+    "price_text": "₹ 150",
+    "source_url": "https://www.maxlab.co.in/labs/max-lab-crossing-republic-road-ghaziabad"
+   },
+   "TSH": {
+    "date_seen": "2026-10-23",
+    "price_paise": 38000,
+    "price_text": "₹ 380",
+    "source_url": "https://www.maxlab.co.in/labs/max-lab-crossing-republic-road-ghaziabad"
+   },
+   "Thyroid profile (T3 T4 TSH)": {
+    "date_seen": "2026-10-23",
+    "price_paise": 55000,
+    "price_text": "₹ 550",
+    "source_url": "https://www.maxlab.co.in/labs/max-lab-crossing-republic-road-ghaziabad"
+   },
+   "Urine routine": {
+    "date_seen": "2026-10-23",
+    "price_paise": 12000,
+    "price_text": "₹ 120",
+    "source_url": "https://www.maxlab.co.in/labs/max-lab-crossing-republic-road-ghaziabad"
+   }
+  },
+  "PharmEasy Diagnostics": {
+   "CBC": {
+    "date_seen": "2026-10-23",
+    "price_paise": 29900,
+    "price_text": "₹299₹79963% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/ghaziabad-199"
+   },
+   "ESR": {
+    "date_seen": "2026-10-23",
+    "price_paise": 19900,
+    "price_text": "₹199₹34943% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/ghaziabad-199"
+   },
+   "Fasting blood sugar": {
+    "date_seen": "2026-10-23",
+    "price_paise": 11900,
+    "price_text": "₹119₹29960% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/ghaziabad-199"
+   },
+   "HbA1c": {
+    "date_seen": "2026-10-23",
+    "price_paise": 39900,
+    "price_text": "₹399₹69943% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/ghaziabad-199"
+   },
+   "KFT": {
+    "date_seen": "2026-10-23",
+    "price_paise": 44900,
+    "price_text": "₹449₹84947% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/ghaziabad-199"
+   },
+   "LFT": {
+    "date_seen": "2026-10-23",
+    "price_paise": 44900,
+    "price_text": "₹449₹109959% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/ghaziabad-199"
+   },
+   "Lipid profile": {
+    "date_seen": "2026-10-23",
+    "price_paise": 38900,
+    "price_text": "₹389₹79951% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/ghaziabad-199"
+   },
+   "Post-prandial blood sugar": {
+    "date_seen": "2026-10-23",
+    "price_paise": 11900,
+    "price_text": "₹119₹29960% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/ghaziabad-199"
+   },
+   "Random blood sugar": {
+    "date_seen": "2026-10-23",
+    "price_paise": 11900,
+    "price_text": "₹119₹24952% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/ghaziabad-199"
+   },
+   "Thyroid profile (T3 T4 TSH)": {
+    "date_seen": "2026-10-23",
+    "price_paise": 44900,
+    "price_text": "₹449₹69936% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/ghaziabad-199"
+   },
+   "Urine routine": {
+    "date_seen": "2026-10-23",
+    "price_paise": 39900,
+    "price_text": "₹399₹54927% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/ghaziabad-199"
+   }
+  }
+ },
+ "Meerut": {
+  "Agilus": {
+   "Total T4": {
+    "date_seen": "2026-10-23",
+    "price_paise": 28000,
+    "price_text": "₹280",
+    "source_url": "https://agilusdiagnostics.com/test/meerut/100003643/total-thyroxine-t4-test"
+   }
+  },
+  "Dr Lal PathLabs": {
+   "CBC": {
+    "date_seen": "2026-10-23",
+    "price_paise": 21000,
+    "price_text": "₹210.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/meerut"
+   },
+   "CRP": {
+    "date_seen": "2026-10-23",
+    "price_paise": 38000,
+    "price_text": "₹380.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/meerut"
+   },
+   "ESR": {
+    "date_seen": "2026-10-23",
+    "price_paise": 7000,
+    "price_text": "₹70.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/meerut"
+   },
+   "Fasting blood sugar": {
+    "date_seen": "2026-10-23",
+    "price_paise": 5000,
+    "price_text": "₹50.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/meerut"
+   },
+   "HbA1c": {
+    "date_seen": "2026-10-23",
+    "price_paise": 39000,
+    "price_text": "₹390.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/meerut"
+   },
+   "KFT": {
+    "date_seen": "2026-10-23",
+    "price_paise": 63000,
+    "price_text": "₹630.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/meerut"
+   },
+   "LFT": {
+    "date_seen": "2026-10-23",
+    "price_paise": 59000,
+    "price_text": "₹590.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/meerut"
+   },
+   "Lipid profile": {
+    "date_seen": "2026-10-23",
+    "price_paise": 99000,
+    "price_text": "₹990.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/meerut"
+   },
+   "Serum creatinine": {
+    "date_seen": "2026-10-23",
+    "price_paise": 11000,
+    "price_text": "₹110.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/meerut"
+   },
+   "TSH": {
+    "date_seen": "2026-10-23",
+    "price_paise": 18000,
+    "price_text": "₹180.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/meerut"
+   },
+   "Thyroid profile (T3 T4 TSH)": {
+    "date_seen": "2026-10-23",
+    "price_paise": 25000,
+    "price_text": "₹250.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/meerut"
+   },
+   "Uric acid": {
+    "date_seen": "2026-10-23",
+    "price_paise": 11000,
+    "price_text": "₹110.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/meerut"
+   },
+   "Urine routine": {
+    "date_seen": "2026-10-23",
+    "price_paise": 8000,
+    "price_text": "₹80.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/meerut"
+   },
+   "Vitamin B12": {
+    "date_seen": "2026-10-23",
+    "price_paise": 118000,
+    "price_text": "₹1180.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/meerut"
+   },
+   "Vitamin D (25-OH)": {
+    "date_seen": "2026-10-23",
+    "price_paise": 108000,
+    "price_text": "₹1080.00",
+    "source_url": "https://www.lalpathlabs.com/test/city/meerut"
+   }
+  },
+  "Max Lab": {
+   "Dengue NS1": {
+    "date_seen": "2026-10-23",
+    "price_paise": 60000,
+    "price_text": "₹ 600",
+    "source_url": "https://www.maxlab.co.in/meerut"
+   },
+   "Free T3": {
+    "date_seen": "2026-10-23",
+    "price_paise": 36000,
+    "price_text": "₹ 360",
+    "source_url": "https://www.maxlab.co.in/lab-test/profile/meerut/free-t3-serum"
+   },
+   "Free T4": {
+    "date_seen": "2026-10-23",
+    "price_paise": 36000,
+    "price_text": "₹ 360",
+    "source_url": "https://www.maxlab.co.in/lab-test/profile/meerut/free-t4-serum"
+   },
+   "Total T3": {
+    "date_seen": "2026-10-23",
+    "price_paise": 19000,
+    "price_text": "₹ 190",
+    "source_url": "https://www.maxlab.co.in/lab-test/profile/meerut/total-t3-serum"
+   },
+   "Typhoid (Widal)": {
+    "date_seen": "2026-10-23",
+    "price_paise": 14000,
+    "price_text": "₹ 140",
+    "source_url": "https://www.maxlab.co.in/meerut"
+   }
+  },
+  "PharmEasy Diagnostics": {
+   "CBC": {
+    "date_seen": "2026-10-23",
+    "price_paise": 29900,
+    "price_text": "₹299₹79963% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/meerut-162"
+   },
+   "Calcium": {
+    "date_seen": "2026-10-23",
+    "price_paise": 21900,
+    "price_text": "₹219₹34937% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/meerut-162"
+   },
+   "ESR": {
+    "date_seen": "2026-10-23",
+    "price_paise": 19900,
+    "price_text": "₹199₹34943% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/meerut-162"
+   },
+   "Iron studies": {
+    "date_seen": "2026-10-23",
+    "price_paise": 29900,
+    "price_text": "₹299₹64954% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/meerut-162"
+   },
+   "KFT": {
+    "date_seen": "2026-10-23",
+    "price_paise": 39900,
+    "price_text": "₹399₹84953% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/meerut-162"
+   },
+   "LFT": {
+    "date_seen": "2026-10-23",
+    "price_paise": 44900,
+    "price_text": "₹449₹109959% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/meerut-162"
+   },
+   "Lipid profile": {
+    "date_seen": "2026-10-23",
+    "price_paise": 34900,
+    "price_text": "₹349₹79956% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/meerut-162"
+   },
+   "Thyroid profile (T3 T4 TSH)": {
+    "date_seen": "2026-10-23",
+    "price_paise": 34900,
+    "price_text": "₹349₹69950% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/meerut-162"
+   },
+   "Urine routine": {
+    "date_seen": "2026-10-23",
+    "price_paise": 34900,
+    "price_text": "₹349₹54936% OFF with Coupon Discount",
+    "source_url": "https://pharmeasy.in/diagnostics/all-tests/meerut-162"
+   }
+  }
+ },
+ "Modinagar": {
+  "PharmEasy Diagnostics": {
+   "CBC": {
+    "date_seen": "2026-10-23",
+    "price_paise": 34900,
+    "price_text": "₹349₹799 44% OFF",
+    "source_url": "https://pharmeasy.in/diagnostics/profile/complete-blood-count-cbc-408/modinagar-163"
+   }
+  }
+ }
+}

@@ -131,7 +131,7 @@ def test_admin_rejects_install_key(api_client, path):
     assert response.status_code == 401
 
 
-@pytest.mark.parametrize("path", ["/read", "/shop/s1", "/lab/l1"])
+@pytest.mark.parametrize("path", ["/read"])
 def test_unbuilt_routes_are_501(api_client, path):
     response = api_client.client.post(path, headers=headers(api_client), json={})
     assert response.status_code == 501

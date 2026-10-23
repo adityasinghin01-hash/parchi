@@ -1,0 +1,1185 @@
+{
+ "blocked_checks": [
+  {
+   "date_seen": "2026-10-23",
+   "note": "403 on public fetch; not retried.",
+   "source_url": "https://redcliffelabs.com/glucose-post-prandial",
+   "status": "BLOCKED"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "note": "403 on opening; accessible PharmEasy page used instead.",
+   "source_url": "https://www.metropolisindia.com/parameter/urine-routine-examination",
+   "status": "BLOCKED"
+  }
+ ],
+ "date_seen": "2026-10-23",
+ "fasting_policy": "Values describe the cited standalone test or specified provider panel. Unknown means optional, variable, or not explicitly established. Co-ordered tests and the booking lab may change preparation.",
+ "scope": "Parchi prescription-name normalization: 25 requested tests plus four common additional tests; fasting flags describe cited protocols, not universal booking instructions.",
+ "sources": [
+  {
+   "date_seen": "2026-10-23",
+   "proves": "CBC alternative names, contents, and usual absence of special preparation.",
+   "source_url": "https://medlineplus.gov/lab-tests/complete-blood-count-cbc/"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "HbA1c alternative names and distinction from a single glucose measurement.",
+   "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Fasting and random glucose names; fasting glucose requires at least eight hours; random glucose and HbA1c do not require fasting.",
+   "source_url": "https://medlineplus.gov/lab-tests/blood-glucose-test/"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Lipid profile/panel names and conditional fasting protocol.",
+   "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Free and total T3 names, distinct analytes, and preparation.",
+   "source_url": "https://medlineplus.gov/lab-tests/triiodothyronine-t3-tests/"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Free and total T4 names, distinct analytes, and preparation.",
+   "source_url": "https://medlineplus.gov/lab-tests/thyroxine-t4-test/"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "TSH/thyrotropin names and preparation section.",
+   "source_url": "https://medlineplus.gov/lab-tests/tsh-thyroid-stimulating-hormone-test/"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "LFT/liver panel synonyms, component tests, and conditional fasting.",
+   "source_url": "https://medlineplus.gov/lab-tests/liver-function-tests/"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Vitamin B12/cobalamin names and conditional fasting for blood vitamin tests.",
+   "source_url": "https://medlineplus.gov/lab-tests/vitamin-b-test/"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "25-hydroxyvitamin D names, distinction from active vitamin D, and preparation.",
+   "source_url": "https://medlineplus.gov/lab-tests/vitamin-d-test/"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Serum/blood creatinine names, distinction from urine creatinine/eGFR, and conditional preparation.",
+   "source_url": "https://medlineplus.gov/lab-tests/creatinine-test/"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Serum urate/UA names and distinction between blood and urine tests.",
+   "source_url": "https://medlineplus.gov/lab-tests/uric-acid-test/"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Total versus ionized calcium distinction and preparation.",
+   "source_url": "https://medlineplus.gov/lab-tests/calcium-blood-test/"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "ESR alternative names and absence of special preparation for the standalone test.",
+   "source_url": "https://medlineplus.gov/lab-tests/erythrocyte-sedimentation-rate-esr/"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "CRP name and explicit distinction from high-sensitivity CRP.",
+   "source_url": "https://medlineplus.gov/lab-tests/c-reactive-protein-crp-test/"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Hb/Hgb names, distinction from HbA1c, and preparation.",
+   "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-test/"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "HCT/PCV/packed cell volume names and preparation.",
+   "source_url": "https://medlineplus.gov/lab-tests/hematocrit-test/"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Platelet count versus platelet function tests; no special preparation for a count.",
+   "source_url": "https://medlineplus.gov/lab-tests/platelet-tests/"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Separate iron, transferrin, TIBC and ferritin assays; fasting may be requested.",
+   "source_url": "https://medlineplus.gov/lab-tests/iron-tests/"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "eAG is calculated from HbA1c rather than an independent synonym for the assay.",
+   "source_url": "https://medlineplus.gov/ency/patientinstructions/000966.htm"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Kidney function test/KFT and kidney panel naming; this provider page requires no special preparation.",
+   "source_url": "https://www.lalpathlabs.com/test/pathology/kidney-panel/delhi"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Total thyroid panel contains total T3, total T4 and TSH; no fasting required on this provider page.",
+   "source_url": "https://www.lalpathlabs.com/test/pathology/thyroid-profile-total/greater-noida"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Separate fasting and two-hour post-meal glucose components; PP name and meal timing.",
+   "source_url": "https://apollodiagnostics.in/package-details/pune/glucose-fasting-pp"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Urine routine/analysis/microscopy naming and no-fasting statement.",
+   "source_url": "https://pharmeasy.in/diagnostics/profile/urine-routine-1761"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Serum uric acid name and no-special-preparation statement.",
+   "source_url": "https://www.lalpathlabs.com/test/pathology/uric-acid-serum/kolkata"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "CRP quantitative name and explicit no-fasting prerequisite.",
+   "source_url": "https://www.pathkindlabs.com/diagnostic/c-reactive-protein-crp-quantitative"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Dengue NS1 antigen EIA assay name and no-special-preparation statement.",
+   "source_url": "https://www.lalpathlabs.com/test/pathology/dengue-fever-ns1-antigen-eia/hyderabad"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Widal slide agglutination name, tube/slide distinction, no-fasting statement.",
+   "source_url": "https://redcliffelabs.com/kolkata/tests/widal"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Iron studies panel name; overnight fasting and sampling before noon are preferred, rather than stated mandatory.",
+   "source_url": "https://www.lalpathlabs.com/test/pathology/iron-studies/kolkata"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Urine culture/aerobic bacterial culture and sensitivity menu name; fasting not required.",
+   "source_url": "https://www.metropolisindia.com/parameter/hyderabad/culture-sensitivity-urine-test-in-jubilee-hills"
+  },
+  {
+   "date_seen": "2026-10-23",
+   "proves": "Official Lal brochure separately names NS1 antigen, dengue IgG/IgM antibody and qualitative PCR tests; supports avoiding assay substitution.",
+   "source_url": "https://media.lalpathlabs.com/pdf/brochures/DENGUE-VIRUSES.pdf"
+  }
+ ],
+ "synonym_policy": "Only English forms actually observed on cited public pages are included. No Hindi-transliterated forms were observed. Confusable mappings are explicitly labeled normalization inferences, not interchangeable tests.",
+ "tests": [
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "A CBC contains hemoglobin but is a larger panel.",
+     "source_url": "https://medlineplus.gov/lab-tests/complete-blood-count-cbc/",
+     "test": "Hemoglobin"
+    },
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "A count is only one CBC component.",
+     "source_url": "https://medlineplus.gov/lab-tests/complete-blood-count-cbc/",
+     "test": "Platelet count"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "Standalone CBC usually needs no special preparation; other co-ordered tests can change preparation.",
+   "fasting_required": false,
+   "fasting_source_url": "https://medlineplus.gov/lab-tests/complete-blood-count-cbc/",
+   "source_url": "https://medlineplus.gov/lab-tests/complete-blood-count-cbc/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/complete-blood-count-cbc/",
+     "synonyms": [
+      "Complete Blood Count",
+      "CBC",
+      "full blood count",
+      "blood cell count"
+     ]
+    }
+   ],
+   "synonyms": [
+    "Complete Blood Count",
+    "CBC",
+    "full blood count",
+    "blood cell count"
+   ],
+   "test_canonical": "CBC"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "Calculated from A1C; retain as a derived result, not an interchangeable order.",
+     "source_url": "https://medlineplus.gov/ency/patientinstructions/000966.htm",
+     "test": "Estimated average glucose (eAG)"
+    },
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "Hemoglobin concentration and HbA1c are different tests.",
+     "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-test/",
+     "test": "Hemoglobin"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The glucose-test page explicitly says HbA1c does not require fasting.",
+   "fasting_required": false,
+   "fasting_source_url": "https://medlineplus.gov/lab-tests/blood-glucose-test/",
+   "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+     "synonyms": [
+      "HbA1C",
+      "A1C",
+      "glycohemoglobin",
+      "glycated hemoglobin",
+      "glycosylated hemoglobin"
+     ]
+    }
+   ],
+   "synonyms": [
+    "HbA1C",
+    "A1C",
+    "glycohemoglobin",
+    "glycated hemoglobin",
+    "glycosylated hemoglobin"
+   ],
+   "test_canonical": "HbA1c"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "An individual cholesterol result does not specify all panel components.",
+     "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+     "test": "Cholesterol"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "Fasting may be requested for 9–12 hours; the page does not establish a universal requirement.",
+   "fasting_required": "unknown",
+   "fasting_source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+   "note": "Panel components and fasting protocol must be checked against the booked provider.",
+   "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+     "synonyms": [
+      "Lipid profile",
+      "Lipid panel"
+     ]
+    }
+   ],
+   "synonyms": [
+    "Lipid profile",
+    "Lipid panel"
+   ],
+   "test_canonical": "Lipid profile"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "A free hormone panel must not replace a total hormone panel.",
+     "source_url": "https://www.lalpathlabs.com/test/pathology/thyroid-profile-total/greater-noida",
+     "test": "Thyroid profile free"
+    },
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "An individual TSH order does not include T3 and T4.",
+     "source_url": "https://www.lalpathlabs.com/test/pathology/thyroid-profile-total/greater-noida",
+     "test": "TSH"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The cited total thyroid profile page explicitly says no fasting is required.",
+   "fasting_required": false,
+   "fasting_source_url": "https://www.lalpathlabs.com/test/pathology/thyroid-profile-total/greater-noida",
+   "note": "This record maps to the cited total T3 + total T4 + TSH panel. If free/total is unspecified on a prescription, retain that uncertainty.",
+   "source_url": "https://www.lalpathlabs.com/test/pathology/thyroid-profile-total/greater-noida",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://www.lalpathlabs.com/test/pathology/thyroid-profile-total/greater-noida",
+     "synonyms": [
+      "THYROID PROFILE TOTAL"
+     ]
+    }
+   ],
+   "synonyms": [
+    "THYROID PROFILE TOTAL"
+   ],
+   "test_canonical": "Thyroid profile (T3 T4 TSH)"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "TSH alone is one analyte, not the panel.",
+     "source_url": "https://www.lalpathlabs.com/test/pathology/thyroid-profile-total/greater-noida",
+     "test": "Thyroid profile (T3 T4 TSH)"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The cited preparation section mentions fasting when additional tests are ordered but gives no explicit standalone fasting instruction.",
+   "fasting_required": "unknown",
+   "fasting_source_url": "https://medlineplus.gov/lab-tests/tsh-thyroid-stimulating-hormone-test/",
+   "source_url": "https://medlineplus.gov/lab-tests/tsh-thyroid-stimulating-hormone-test/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/tsh-thyroid-stimulating-hormone-test/",
+     "synonyms": [
+      "TSH",
+      "thyrotropin test",
+      "thyrotropic hormone"
+     ]
+    }
+   ],
+   "synonyms": [
+    "TSH",
+    "thyrotropin test",
+    "thyrotropic hormone"
+   ],
+   "test_canonical": "TSH"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "Free measures unbound T3; total includes bound and free.",
+     "source_url": "https://medlineplus.gov/lab-tests/triiodothyronine-t3-tests/",
+     "test": "Total T3"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The T3 test page says no special preparation is needed.",
+   "fasting_required": false,
+   "fasting_source_url": "https://medlineplus.gov/lab-tests/triiodothyronine-t3-tests/",
+   "source_url": "https://medlineplus.gov/lab-tests/triiodothyronine-t3-tests/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/triiodothyronine-t3-tests/",
+     "synonyms": [
+      "Free T3",
+      "free triiodothyronine",
+      "FT3"
+     ]
+    }
+   ],
+   "synonyms": [
+    "Free T3",
+    "free triiodothyronine",
+    "FT3"
+   ],
+   "test_canonical": "Free T3"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "Free measures unbound T4; total measures bound plus free.",
+     "source_url": "https://medlineplus.gov/lab-tests/thyroxine-t4-test/",
+     "test": "Total T4"
+    },
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "FTI is a calculation and must not be assumed equivalent to a direct free T4 assay.",
+     "source_url": "https://medlineplus.gov/lab-tests/thyroxine-t4-test/",
+     "test": "Free T4 index (FTI)"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The T4 page says special preparation is usually unnecessary unless additional tests require it.",
+   "fasting_required": false,
+   "fasting_source_url": "https://medlineplus.gov/lab-tests/thyroxine-t4-test/",
+   "source_url": "https://medlineplus.gov/lab-tests/thyroxine-t4-test/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/thyroxine-t4-test/",
+     "synonyms": [
+      "free T4",
+      "free thyroxine",
+      "free T4 concentration"
+     ]
+    }
+   ],
+   "synonyms": [
+    "free T4",
+    "free thyroxine",
+    "free T4 concentration"
+   ],
+   "test_canonical": "Free T4"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "Total T3 includes bound and free fractions.",
+     "source_url": "https://medlineplus.gov/lab-tests/triiodothyronine-t3-tests/",
+     "test": "Free T3"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The T3 test page says no special preparation is needed.",
+   "fasting_required": false,
+   "fasting_source_url": "https://medlineplus.gov/lab-tests/triiodothyronine-t3-tests/",
+   "source_url": "https://medlineplus.gov/lab-tests/triiodothyronine-t3-tests/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/triiodothyronine-t3-tests/",
+     "synonyms": [
+      "total T3",
+      "total triiodothyronine",
+      "TT3"
+     ]
+    }
+   ],
+   "synonyms": [
+    "total T3",
+    "total triiodothyronine",
+    "TT3"
+   ],
+   "test_canonical": "Total T3"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "Total and free T4 measure different fractions.",
+     "source_url": "https://medlineplus.gov/lab-tests/thyroxine-t4-test/",
+     "test": "Free T4"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The T4 page says special preparation is usually unnecessary unless additional tests require it.",
+   "fasting_required": false,
+   "fasting_source_url": "https://medlineplus.gov/lab-tests/thyroxine-t4-test/",
+   "source_url": "https://medlineplus.gov/lab-tests/thyroxine-t4-test/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/thyroxine-t4-test/",
+     "synonyms": [
+      "total T4",
+      "total T4 concentration"
+     ]
+    }
+   ],
+   "synonyms": [
+    "total T4",
+    "total T4 concentration"
+   ],
+   "test_canonical": "Total T4"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "A single liver enzyme is not an entire liver panel.",
+     "source_url": "https://medlineplus.gov/lab-tests/liver-function-tests/",
+     "test": "ALT"
+    },
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "A single liver enzyme is not an entire liver panel.",
+     "source_url": "https://medlineplus.gov/lab-tests/liver-function-tests/",
+     "test": "AST"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The page says fasting will probably be required, with preparation set by the provider.",
+   "fasting_required": "unknown",
+   "fasting_source_url": "https://medlineplus.gov/lab-tests/liver-function-tests/",
+   "note": "The panel is not standardized across all labs; retain the menu components.",
+   "source_url": "https://medlineplus.gov/lab-tests/liver-function-tests/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/liver-function-tests/",
+     "synonyms": [
+      "LFT",
+      "liver panel",
+      "liver function panel",
+      "liver profile"
+     ]
+    }
+   ],
+   "synonyms": [
+    "LFT",
+    "liver panel",
+    "liver function panel",
+    "liver profile"
+   ],
+   "test_canonical": "LFT"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "Creatinine is one renal marker; it is not the entire panel.",
+     "source_url": "https://medlineplus.gov/lab-tests/creatinine-test/",
+     "test": "Serum creatinine"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "No special preparation is required on the cited Dr Lal PathLabs KFT page.",
+   "fasting_required": false,
+   "fasting_source_url": "https://www.lalpathlabs.com/test/pathology/kidney-panel/delhi",
+   "note": "Fasting value is scoped to the cited provider panel, not a universal rule for every renal panel.",
+   "source_url": "https://www.lalpathlabs.com/test/pathology/kidney-panel/delhi",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://www.lalpathlabs.com/test/pathology/kidney-panel/delhi",
+     "synonyms": [
+      "KIDNEY FUNCTION TEST (KFT)",
+      "Kidney panel"
+     ]
+    }
+   ],
+   "synonyms": [
+    "KIDNEY FUNCTION TEST (KFT)",
+    "Kidney panel"
+   ],
+   "test_canonical": "KFT"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "Meal timing is different.",
+     "source_url": "https://apollodiagnostics.in/package-details/pune/glucose-fasting-pp",
+     "test": "Post-prandial blood sugar"
+    },
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "A random sample is not a fasting sample.",
+     "source_url": "https://medlineplus.gov/lab-tests/blood-glucose-test/",
+     "test": "Random blood sugar"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "A fasting glucose sample is taken after at least eight hours without food or beverages other than water.",
+   "fasting_required": true,
+   "fasting_source_url": "https://medlineplus.gov/lab-tests/blood-glucose-test/",
+   "source_url": "https://medlineplus.gov/lab-tests/blood-glucose-test/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/blood-glucose-test/",
+     "synonyms": [
+      "fasting plasma glucose (FPG)",
+      "fasting blood sugar (FBS)",
+      "fasting blood glucose (FBG)"
+     ]
+    }
+   ],
+   "synonyms": [
+    "fasting plasma glucose (FPG)",
+    "fasting blood sugar (FBS)",
+    "fasting blood glucose (FBG)"
+   ],
+   "test_canonical": "Fasting blood sugar"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "The page lists fasting and PP as separate measurements.",
+     "source_url": "https://apollodiagnostics.in/package-details/pune/glucose-fasting-pp",
+     "test": "Fasting blood sugar"
+    },
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "A glucose-load protocol and a post-meal sample should not be merged.",
+     "source_url": "https://apollodiagnostics.in/package-details/pune/glucose-fasting-pp",
+     "test": "Oral Glucose Tolerance Test (OGTT)"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The cited source identifies the sample as two hours post meal; it does not give a complete standalone preparation protocol.",
+   "fasting_required": "unknown",
+   "fasting_source_url": "https://apollodiagnostics.in/package-details/pune/glucose-fasting-pp",
+   "note": "Meal timing is essential. A combined fasting + PP booking includes a separate fasting draw; this flag does not erase the timed-meal requirement.",
+   "source_url": "https://apollodiagnostics.in/package-details/pune/glucose-fasting-pp",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://apollodiagnostics.in/package-details/pune/glucose-fasting-pp",
+     "synonyms": [
+      "GLUCOSE, POST PRANDIAL (PP), 2 HOURS"
+     ]
+    }
+   ],
+   "synonyms": [
+    "GLUCOSE, POST PRANDIAL (PP), 2 HOURS"
+   ],
+   "test_canonical": "Post-prandial blood sugar"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "Fasting is a different sampling condition.",
+     "source_url": "https://medlineplus.gov/lab-tests/blood-glucose-test/",
+     "test": "Fasting blood sugar"
+    },
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "PP has a specified meal timing.",
+     "source_url": "https://apollodiagnostics.in/package-details/pune/glucose-fasting-pp",
+     "test": "Post-prandial blood sugar"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "A random glucose sample can be taken at any time, including after eating.",
+   "fasting_required": false,
+   "fasting_source_url": "https://medlineplus.gov/lab-tests/blood-glucose-test/",
+   "source_url": "https://medlineplus.gov/lab-tests/blood-glucose-test/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/blood-glucose-test/",
+     "synonyms": [
+      "random blood sugar",
+      "random blood glucose"
+     ]
+    }
+   ],
+   "synonyms": [
+    "random blood sugar",
+    "random blood glucose"
+   ],
+   "test_canonical": "Random blood sugar"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "Active vitamin D is a different assay from 25-OH vitamin D.",
+     "source_url": "https://medlineplus.gov/lab-tests/vitamin-d-test/",
+     "test": "1,25-dihydroxyvitamin D"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The page says no special preparation is required.",
+   "fasting_required": false,
+   "fasting_source_url": "https://medlineplus.gov/lab-tests/vitamin-d-test/",
+   "source_url": "https://medlineplus.gov/lab-tests/vitamin-d-test/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/vitamin-d-test/",
+     "synonyms": [
+      "25-hydroxyvitamin D",
+      "25(OH)D",
+      "calcidiol test"
+     ]
+    }
+   ],
+   "synonyms": [
+    "25-hydroxyvitamin D",
+    "25(OH)D",
+    "calcidiol test"
+   ],
+   "test_canonical": "Vitamin D (25-OH)"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "A combined B12/folate panel contains another analyte.",
+     "source_url": "https://medlineplus.gov/lab-tests/vitamin-b-test/",
+     "test": "Vitamin B12 and folate"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The blood vitamin B page says fasting may be needed; it does not establish a universal B12 protocol.",
+   "fasting_required": "unknown",
+   "fasting_source_url": "https://medlineplus.gov/lab-tests/vitamin-b-test/",
+   "source_url": "https://medlineplus.gov/lab-tests/vitamin-b-test/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/vitamin-b-test/",
+     "synonyms": [
+      "vitamin B12",
+      "cobalamin test"
+     ]
+    }
+   ],
+   "synonyms": [
+    "vitamin B12",
+    "cobalamin test"
+   ],
+   "test_canonical": "Vitamin B12"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "Routine urine examination does not replace culture and sensitivity.",
+     "source_url": "https://www.metropolisindia.com/parameter/hyderabad/culture-sensitivity-urine-test-in-jubilee-hills",
+     "test": "Urine culture"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The provider explicitly says fasting is not required.",
+   "fasting_required": false,
+   "fasting_source_url": "https://pharmeasy.in/diagnostics/profile/urine-routine-1761",
+   "note": "UA is context-sensitive: the uric-acid source also uses UA. Do not resolve UA without prescription context.",
+   "source_url": "https://pharmeasy.in/diagnostics/profile/urine-routine-1761",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://pharmeasy.in/diagnostics/profile/urine-routine-1761",
+     "synonyms": [
+      "Urine Analysis",
+      "UA",
+      "Urine routine and microscopy",
+      "RUA"
+     ]
+    }
+   ],
+   "synonyms": [
+    "Urine Analysis",
+    "UA",
+    "Urine routine and microscopy",
+    "RUA"
+   ],
+   "test_canonical": "Urine routine"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "Different specimen and measurement.",
+     "source_url": "https://medlineplus.gov/lab-tests/creatinine-test/",
+     "test": "urine creatinine"
+    },
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "A derived filtration estimate is not the serum creatinine assay.",
+     "source_url": "https://medlineplus.gov/lab-tests/creatinine-test/",
+     "test": "eGFR"
+    },
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "A renal panel can contain additional analytes.",
+     "source_url": "https://www.lalpathlabs.com/test/pathology/kidney-panel/delhi",
+     "test": "KFT"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "Fasting may be needed when creatinine is part of a metabolic panel; the page does not give a universal standalone rule.",
+   "fasting_required": "unknown",
+   "fasting_source_url": "https://medlineplus.gov/lab-tests/creatinine-test/",
+   "source_url": "https://medlineplus.gov/lab-tests/creatinine-test/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/creatinine-test/",
+     "synonyms": [
+      "blood creatinine",
+      "serum creatinine"
+     ]
+    }
+   ],
+   "synonyms": [
+    "blood creatinine",
+    "serum creatinine"
+   ],
+   "test_canonical": "Serum creatinine"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "A urine uric-acid order requires a different specimen.",
+     "source_url": "https://medlineplus.gov/lab-tests/uric-acid-test/",
+     "test": "uric acid: serum and urine"
+    },
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "UA is also used as a urine-analysis abbreviation.",
+     "source_url": "https://pharmeasy.in/diagnostics/profile/urine-routine-1761",
+     "test": "Urine routine"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The cited Dr Lal PathLabs serum uric-acid page says no special preparation is required.",
+   "fasting_required": false,
+   "fasting_source_url": "https://www.lalpathlabs.com/test/pathology/uric-acid-serum/kolkata",
+   "note": "Canonical scope here is serum uric acid. UA alone is ambiguous.",
+   "source_url": "https://medlineplus.gov/lab-tests/uric-acid-test/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/uric-acid-test/",
+     "synonyms": [
+      "serum urate",
+      "UA"
+     ]
+    },
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://www.lalpathlabs.com/test/pathology/uric-acid-serum/kolkata",
+     "synonyms": [
+      "URIC ACID, SERUM"
+     ]
+    }
+   ],
+   "synonyms": [
+    "serum urate",
+    "UA",
+    "URIC ACID, SERUM"
+   ],
+   "test_canonical": "Uric acid"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "Total and ionized calcium are different measurements.",
+     "source_url": "https://medlineplus.gov/lab-tests/calcium-blood-test/",
+     "test": "ionized calcium"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The calcium blood test page says special preparation is usually unnecessary; additional tests can require fasting.",
+   "fasting_required": false,
+   "fasting_source_url": "https://medlineplus.gov/lab-tests/calcium-blood-test/",
+   "note": "This canonical entry means total calcium. Preserve ionized/free qualifiers as a separate test.",
+   "source_url": "https://medlineplus.gov/lab-tests/calcium-blood-test/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/calcium-blood-test/",
+     "synonyms": [
+      "total calcium"
+     ]
+    }
+   ],
+   "synonyms": [
+    "total calcium"
+   ],
+   "test_canonical": "Calcium"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "Both can concern inflammation, but they measure different things.",
+     "source_url": "https://medlineplus.gov/lab-tests/c-reactive-protein-crp-test/",
+     "test": "CRP"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The standalone ESR page says no special preparation is needed.",
+   "fasting_required": false,
+   "fasting_source_url": "https://medlineplus.gov/lab-tests/erythrocyte-sedimentation-rate-esr/",
+   "source_url": "https://medlineplus.gov/lab-tests/erythrocyte-sedimentation-rate-esr/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/erythrocyte-sedimentation-rate-esr/",
+     "synonyms": [
+      "ESR",
+      "SED rate",
+      "Westergren sedimentation rate"
+     ]
+    }
+   ],
+   "synonyms": [
+    "ESR",
+    "SED rate",
+    "Westergren sedimentation rate"
+   ],
+   "test_canonical": "ESR"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "The source explicitly distinguishes this more sensitive assay.",
+     "source_url": "https://medlineplus.gov/lab-tests/c-reactive-protein-crp-test/",
+     "test": "high-sensitivity-(hs) CRP"
+    },
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "ESR measures cell settling, not the CRP protein.",
+     "source_url": "https://medlineplus.gov/lab-tests/erythrocyte-sedimentation-rate-esr/",
+     "test": "ESR"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "Pathkind explicitly states no fasting is needed for its quantitative CRP assay.",
+   "fasting_required": false,
+   "fasting_source_url": "https://www.pathkindlabs.com/diagnostic/c-reactive-protein-crp-quantitative",
+   "source_url": "https://medlineplus.gov/lab-tests/c-reactive-protein-crp-test/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/c-reactive-protein-crp-test/",
+     "synonyms": [
+      "c-reactive protein, serum"
+     ]
+    },
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://www.pathkindlabs.com/diagnostic/c-reactive-protein-crp-quantitative",
+     "synonyms": [
+      "C-Reactive Protein (CRP), Quantitative"
+     ]
+    }
+   ],
+   "synonyms": [
+    "c-reactive protein, serum",
+    "C-Reactive Protein (CRP), Quantitative"
+   ],
+   "test_canonical": "CRP"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "An antigen order must not become an antibody order.",
+     "source_url": "https://media.lalpathlabs.com/pdf/brochures/DENGUE-VIRUSES.pdf",
+     "test": "Dengue Virus IgG & IgM antibodies"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The cited NS1 antigen page says no special preparation is required.",
+   "fasting_required": false,
+   "fasting_source_url": "https://www.lalpathlabs.com/test/pathology/dengue-fever-ns1-antigen-eia/hyderabad",
+   "note": "NS1 is the antigen test; retain the stated method when selecting the menu item.",
+   "source_url": "https://www.lalpathlabs.com/test/pathology/dengue-fever-ns1-antigen-eia/hyderabad",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://www.lalpathlabs.com/test/pathology/dengue-fever-ns1-antigen-eia/hyderabad",
+     "synonyms": [
+      "DENGUE FEVER NS1 ANTIGEN, EIA"
+     ]
+    }
+   ],
+   "synonyms": [
+    "DENGUE FEVER NS1 ANTIGEN, EIA"
+   ],
+   "test_canonical": "Dengue NS1"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "Slide and tube methods are distinguished on the page; retain the requested method.",
+     "source_url": "https://redcliffelabs.com/kolkata/tests/widal",
+     "test": "Widal tube agglutination test"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The public Widal page explicitly says fasting is not required.",
+   "fasting_required": false,
+   "fasting_source_url": "https://redcliffelabs.com/kolkata/tests/widal",
+   "note": "Widal is not a blanket synonym for every typhoid test. Do not substitute a culture or another serological method.",
+   "source_url": "https://redcliffelabs.com/kolkata/tests/widal",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://redcliffelabs.com/kolkata/tests/widal",
+     "synonyms": [
+      "Widal",
+      "Widal Test (Slide Agglutination)"
+     ]
+    }
+   ],
+   "synonyms": [
+    "Widal",
+    "Widal Test (Slide Agglutination)"
+   ],
+   "test_canonical": "Typhoid (Widal)"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "A single ferritin assay does not specify a full iron panel.",
+     "source_url": "https://medlineplus.gov/lab-tests/iron-tests/",
+     "test": "Ferritin"
+    },
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "A single serum iron assay does not specify the full panel.",
+     "source_url": "https://medlineplus.gov/lab-tests/iron-tests/",
+     "test": "Serum iron"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "Overnight fasting and collection before noon are preferred; mandatory fasting is not stated.",
+   "fasting_required": "unknown",
+   "fasting_source_url": "https://www.lalpathlabs.com/test/pathology/iron-studies/kolkata",
+   "note": "Do not assume ferritin is included: panel composition differs by provider. The cited Lal page names iron, TIBC and percent saturation.",
+   "source_url": "https://www.lalpathlabs.com/test/pathology/iron-studies/kolkata",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://www.lalpathlabs.com/test/pathology/iron-studies/kolkata",
+     "synonyms": [
+      "IRON STUDIES"
+     ]
+    }
+   ],
+   "synonyms": [
+    "IRON STUDIES"
+   ],
+   "test_canonical": "Iron studies"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "Hemoglobin concentration is explicitly distinguished from hemoglobin A1c.",
+     "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-test/",
+     "test": "HbA1c"
+    },
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "Hematocrit measures red-cell fraction rather than hemoglobin concentration.",
+     "source_url": "https://medlineplus.gov/lab-tests/hematocrit-test/",
+     "test": "PCV"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The standalone hemoglobin page says no special preparation is required.",
+   "fasting_required": false,
+   "fasting_source_url": "https://medlineplus.gov/lab-tests/hemoglobin-test/",
+   "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-test/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-test/",
+     "synonyms": [
+      "Hb",
+      "Hgb",
+      "Hemoglobin Test"
+     ]
+    }
+   ],
+   "synonyms": [
+    "Hb",
+    "Hgb",
+    "Hemoglobin Test"
+   ],
+   "test_canonical": "Hemoglobin"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "Red-cell fraction and hemoglobin concentration differ.",
+     "source_url": "https://medlineplus.gov/lab-tests/hematocrit-test/",
+     "test": "Hemoglobin"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The hematocrit page says no special preparation is required unless additional tests need it.",
+   "fasting_required": false,
+   "fasting_source_url": "https://medlineplus.gov/lab-tests/hematocrit-test/",
+   "source_url": "https://medlineplus.gov/lab-tests/hematocrit-test/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/hematocrit-test/",
+     "synonyms": [
+      "HCT",
+      "packed cell volume",
+      "PCV",
+      "Hematocrit Test"
+     ]
+    }
+   ],
+   "synonyms": [
+    "HCT",
+    "packed cell volume",
+    "PCV",
+    "Hematocrit Test"
+   ],
+   "test_canonical": "PCV"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "A count and platelet-function testing answer different questions.",
+     "source_url": "https://medlineplus.gov/lab-tests/platelet-tests/",
+     "test": "platelet function tests"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "No special preparation is required for a platelet count test.",
+   "fasting_required": false,
+   "fasting_source_url": "https://medlineplus.gov/lab-tests/platelet-tests/",
+   "source_url": "https://medlineplus.gov/lab-tests/platelet-tests/",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://medlineplus.gov/lab-tests/platelet-tests/",
+     "synonyms": [
+      "platelet count test"
+     ]
+    }
+   ],
+   "synonyms": [
+    "platelet count test"
+   ],
+   "test_canonical": "Platelet count"
+  },
+  {
+   "confusable_with": [
+    {
+     "basis": "normalization inference from cited test descriptions",
+     "reason": "Routine urine examination is separate from culture.",
+     "source_url": "https://www.metropolisindia.com/parameter/hyderabad/culture-sensitivity-urine-test-in-jubilee-hills",
+     "test": "Urine routine"
+    }
+   ],
+   "date_seen": "2026-10-23",
+   "fasting_evidence": "The provider explicitly says fasting is not required.",
+   "fasting_required": false,
+   "fasting_source_url": "https://www.metropolisindia.com/parameter/hyderabad/culture-sensitivity-urine-test-in-jubilee-hills",
+   "note": "This synonym identifies the cited aerobic bacterial culture and sensitivity menu item; preserve culture-only versus culture-and-sensitivity scope.",
+   "source_url": "https://www.metropolisindia.com/parameter/hyderabad/culture-sensitivity-urine-test-in-jubilee-hills",
+   "synonym_sources": [
+    {
+     "date_seen": "2026-10-23",
+     "source_url": "https://www.metropolisindia.com/parameter/hyderabad/culture-sensitivity-urine-test-in-jubilee-hills",
+     "synonyms": [
+      "Urine Culture Test",
+      "Culture & Sensitivity - Aerobic bacteria, Urine"
+     ]
+    }
+   ],
+   "synonyms": [
+    "Urine Culture Test",
+    "Culture & Sensitivity - Aerobic bacteria, Urine"
+   ],
+   "test_canonical": "Urine culture"
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+{
+ "note": "Order-confirmation URL patterns are learned per seller from a real completed order and never invented. Until a seller has a measured pattern, 'Ordered' is a user tap. Entry shape when learned: {\"seller_id\": \"truemeds\", \"url_regex\": \"<regex matched against the full https URL>\", \"date_seen\": \"YYYY-MM-DD\"}.",
+ "patterns": []
+}

@@ -1,0 +1,376 @@
+[
+  {
+    "id": "shop_ask_en_sms",
+    "lang": "en",
+    "channel": "sms",
+    "purpose": "shop_ask",
+    "text": "Hello, are these medicines in stock?\n{items}\nPlease quote the price and when I can pick them up. I need the exact brand and strength as written. Preferred pickup: {pickup_hint}. Please reply at {reply_link}",
+    "placeholders": [
+      "{items}",
+      "{pickup_hint}",
+      "{reply_link}"
+    ],
+    "char_count": 206
+  },
+  {
+    "id": "shop_ask_en_whatsapp",
+    "lang": "en",
+    "channel": "whatsapp",
+    "purpose": "shop_ask",
+    "text": "Hello, do you have these medicines in stock?\n{items}\nI need the exact brand and strength as written. Please share the price for each item and when I can pick them up.\nPreferred pickup: {pickup_hint}. Would that work?\nPlease reply at {reply_link} or in this chat.",
+    "placeholders": [
+      "{items}",
+      "{pickup_hint}",
+      "{reply_link}"
+    ],
+    "char_count": 262
+  },
+  {
+    "id": "shop_ask_hi_sms",
+    "lang": "hi",
+    "channel": "sms",
+    "purpose": "shop_ask",
+    "text": "नमस्ते, क्या ये दवाइयाँ हैं?\n{items}\nलिस्ट में लिखा ब्रांड और स्ट्रेंथ ही चाहिए। दाम और कब लेने आ सकते हैं, बता दें। लेने आने का समय: {pickup_hint}। इस लिंक पर जवाब दें: {reply_link}",
+    "placeholders": [
+      "{items}",
+      "{pickup_hint}",
+      "{reply_link}"
+    ],
+    "char_count": 182,
+    "review_note": "Native speaker in Muradnagar/Meerut: check whether \"ब्रांड और स्ट्रेंथ\" and \"लेने आने का समय\" sound natural and convey the exact listed medicine and preferred pickup time."
+  },
+  {
+    "id": "shop_ask_hi_whatsapp",
+    "lang": "hi",
+    "channel": "whatsapp",
+    "purpose": "shop_ask",
+    "text": "नमस्ते, क्या ये दवाइयाँ स्टॉक में हैं?\n{items}\nलिस्ट में लिखा ब्रांड और स्ट्रेंथ ही चाहिए। हर दवा का दाम बता दें।\nलेने आने का समय: {pickup_hint}। क्या तब तैयार मिल जाएँगी? अगर नहीं, तो कब मिलेंगी?\nइस लिंक पर या यहीं जवाब दे दें: {reply_link}",
+    "placeholders": [
+      "{items}",
+      "{pickup_hint}",
+      "{reply_link}"
+    ],
+    "char_count": 241,
+    "review_note": "Native speaker in Muradnagar/Meerut: check whether \"ब्रांड और स्ट्रेंथ\" and \"लेने आने का समय\" sound natural and convey the exact listed medicine and preferred pickup time."
+  },
+  {
+    "id": "shop_ask_hinglish_sms",
+    "lang": "hinglish",
+    "channel": "sms",
+    "purpose": "shop_ask",
+    "text": "Namaste, kya ye dawaiyan stock mein hain?\n{items}\nList mein likha brand aur strength hi chahiye. Daam aur kab lene aa sakte hain, bata dein. Pickup ka time: {pickup_hint}. Is link par jawab dein: {reply_link}",
+    "placeholders": [
+      "{items}",
+      "{pickup_hint}",
+      "{reply_link}"
+    ],
+    "char_count": 208,
+    "review_note": "Native speaker in Muradnagar/Meerut: check \"brand aur strength\" and \"Pickup ka time\" for local usage and clarity."
+  },
+  {
+    "id": "shop_ask_hinglish_whatsapp",
+    "lang": "hinglish",
+    "channel": "whatsapp",
+    "purpose": "shop_ask",
+    "text": "Namaste, kya ye dawaiyan stock mein hain?\n{items}\nList mein likha brand aur strength hi chahiye. Har dawai ka daam bata dein.\nPickup ka time: {pickup_hint}. Kya tab tak taiyar mil jayengi? Agar nahi, toh kab?\nIs link par ya isi chat mein jawab de dein: {reply_link}",
+    "placeholders": [
+      "{items}",
+      "{pickup_hint}",
+      "{reply_link}"
+    ],
+    "char_count": 265,
+    "review_note": "Native speaker in Muradnagar/Meerut: check \"brand aur strength\" and \"Pickup ka time\" for local usage and clarity."
+  },
+  {
+    "id": "shop_thanks_not_needed_en_sms",
+    "lang": "en",
+    "channel": "sms",
+    "purpose": "shop_thanks_not_needed",
+    "text": "Thank you for checking. I no longer need these medicines from your shop. Please do not keep them aside for me.",
+    "placeholders": [],
+    "char_count": 110
+  },
+  {
+    "id": "shop_thanks_not_needed_en_whatsapp",
+    "lang": "en",
+    "channel": "whatsapp",
+    "purpose": "shop_thanks_not_needed",
+    "text": "Thank you for checking the medicines. I no longer need them from your shop. Please do not keep them aside for me. Thank you for your time.",
+    "placeholders": [],
+    "char_count": 138
+  },
+  {
+    "id": "shop_thanks_not_needed_hi_sms",
+    "lang": "hi",
+    "channel": "sms",
+    "purpose": "shop_thanks_not_needed",
+    "text": "दवाइयों का पता करने के लिए शुक्रिया। अब आपके यहाँ से दवाइयाँ नहीं चाहिए। मेरे लिए अलग से मत रखिएगा।",
+    "placeholders": [],
+    "char_count": 99,
+    "review_note": "Native speaker: check that \"अब आपके यहाँ से दवाइयाँ नहीं चाहिए\" sounds polite when declining another shop."
+  },
+  {
+    "id": "shop_thanks_not_needed_hi_whatsapp",
+    "lang": "hi",
+    "channel": "whatsapp",
+    "purpose": "shop_thanks_not_needed",
+    "text": "दवाइयों का पता करने के लिए शुक्रिया। अब आपके यहाँ से दवाइयाँ नहीं चाहिए। मेरे लिए अलग से मत रखिएगा। समय देने के लिए धन्यवाद।",
+    "placeholders": [],
+    "char_count": 124,
+    "review_note": "Native speaker: check that \"अब आपके यहाँ से दवाइयाँ नहीं चाहिए\" sounds polite when declining another shop."
+  },
+  {
+    "id": "shop_thanks_not_needed_hinglish_sms",
+    "lang": "hinglish",
+    "channel": "sms",
+    "purpose": "shop_thanks_not_needed",
+    "text": "Dawaiyan check karne ke liye shukriya. Ab aapki dukaan se dawaiyan nahi chahiye. Mere liye alag se mat rakhiyega.",
+    "placeholders": [],
+    "char_count": 113,
+    "review_note": "Native speaker: check that \"Ab aapki dukaan se dawaiyan nahi chahiye\" sounds polite when declining another shop."
+  },
+  {
+    "id": "shop_thanks_not_needed_hinglish_whatsapp",
+    "lang": "hinglish",
+    "channel": "whatsapp",
+    "purpose": "shop_thanks_not_needed",
+    "text": "Dawaiyan check karne ke liye shukriya. Ab aapki dukaan se dawaiyan nahi chahiye. Mere liye alag se mat rakhiyega. Apna time dene ke liye shukriya.",
+    "placeholders": [],
+    "char_count": 146,
+    "review_note": "Native speaker: check that \"Ab aapki dukaan se dawaiyan nahi chahiye\" sounds polite when declining another shop."
+  },
+  {
+    "id": "lab_booking_request_en_sms",
+    "lang": "en",
+    "channel": "sms",
+    "purpose": "lab_booking_request",
+    "text": "Hello {lab_name}, I need these tests:\n{test_list}\nIs home sample collection available, or can I visit the lab? Preferred time: {slot}. Please confirm an available slot and the price.",
+    "placeholders": [
+      "{lab_name}",
+      "{test_list}",
+      "{slot}"
+    ],
+    "char_count": 182
+  },
+  {
+    "id": "lab_booking_request_en_whatsapp",
+    "lang": "en",
+    "channel": "whatsapp",
+    "purpose": "lab_booking_request",
+    "text": "Hello {lab_name}, I would like to book these tests:\n{test_list}\nCan you collect the sample at home, or can I visit the lab?\nPreferred time: {slot}. Please confirm which option is available, the slot, and the price.",
+    "placeholders": [
+      "{lab_name}",
+      "{test_list}",
+      "{slot}"
+    ],
+    "char_count": 214
+  },
+  {
+    "id": "lab_booking_request_hi_sms",
+    "lang": "hi",
+    "channel": "sms",
+    "purpose": "lab_booking_request",
+    "text": "नमस्ते {lab_name}, ये टेस्ट कराने हैं:\n{test_list}\nक्या घर आकर सैंपल ले सकते हैं, या लैब आना होगा? समय: {slot}। क्या इस समय हो सकता है? समय और खर्च बता दें।",
+    "placeholders": [
+      "{lab_name}",
+      "{test_list}",
+      "{slot}"
+    ],
+    "char_count": 156,
+    "review_note": "Native speaker: check that \"घर आकर सैंपल\" and the slot request sound natural for a local lab booking."
+  },
+  {
+    "id": "lab_booking_request_hi_whatsapp",
+    "lang": "hi",
+    "channel": "whatsapp",
+    "purpose": "lab_booking_request",
+    "text": "नमस्ते {lab_name}, ये टेस्ट बुक कराने हैं:\n{test_list}\nक्या घर आकर सैंपल ले सकते हैं, या लैब आना होगा?\nसमय: {slot}। क्या इस समय हो सकता है? अगर नहीं, तो कोई और समय बता दें। घर से सैंपल लेंगे या लैब आना होगा, और कुल कितना खर्च होगा, बता दें।",
+    "placeholders": [
+      "{lab_name}",
+      "{test_list}",
+      "{slot}"
+    ],
+    "char_count": 240,
+    "review_note": "Native speaker: check that \"घर आकर सैंपल\" and the slot request sound natural for a local lab booking."
+  },
+  {
+    "id": "lab_booking_request_hinglish_sms",
+    "lang": "hinglish",
+    "channel": "sms",
+    "purpose": "lab_booking_request",
+    "text": "Namaste {lab_name}, ye tests karane hain:\n{test_list}\nKya ghar aakar sample le sakte hain, ya lab aana hoga? Time: {slot}. Kya is time ho sakta hai? Time aur kharcha bata dein.",
+    "placeholders": [
+      "{lab_name}",
+      "{test_list}",
+      "{slot}"
+    ],
+    "char_count": 176,
+    "review_note": "Native speaker: check \"ghar aakar sample\" and the slot request for local lab usage."
+  },
+  {
+    "id": "lab_booking_request_hinglish_whatsapp",
+    "lang": "hinglish",
+    "channel": "whatsapp",
+    "purpose": "lab_booking_request",
+    "text": "Namaste {lab_name}, ye tests book karane hain:\n{test_list}\nKya ghar aakar sample le sakte hain, ya lab aana hoga?\nTime: {slot}. Kya is time ho sakta hai? Agar nahi, toh koi aur time bata dein. Ghar se sample lenge ya lab aana hoga, aur total kharcha kitna hoga, bata dein.",
+    "placeholders": [
+      "{lab_name}",
+      "{test_list}",
+      "{slot}"
+    ],
+    "char_count": 272,
+    "review_note": "Native speaker: check \"ghar aakar sample\" and the slot request for local lab usage."
+  },
+  {
+    "id": "lab_fasting_reminder_en_sms",
+    "lang": "en",
+    "channel": "sms",
+    "purpose": "lab_fasting_reminder",
+    "text": "Reminder for tomorrow: {test_list}. The lab has said fasting is needed for these tests. Sample collection: {slot}.",
+    "placeholders": [
+      "{test_list}",
+      "{slot}"
+    ],
+    "char_count": 114
+  },
+  {
+    "id": "lab_fasting_reminder_en_whatsapp",
+    "lang": "en",
+    "channel": "whatsapp",
+    "purpose": "lab_fasting_reminder",
+    "text": "Reminder for tomorrow:\n{test_list}\nThe lab has said fasting is needed for these tests.\nSample collection: {slot}.",
+    "placeholders": [
+      "{test_list}",
+      "{slot}"
+    ],
+    "char_count": 113
+  },
+  {
+    "id": "lab_fasting_reminder_hi_sms",
+    "lang": "hi",
+    "channel": "sms",
+    "purpose": "lab_fasting_reminder",
+    "text": "कल ये टेस्ट हैं: {test_list}। लैब ने इनके लिए खाली पेट रहने को कहा है। सैंपल लेने का समय: {slot}।",
+    "placeholders": [
+      "{test_list}",
+      "{slot}"
+    ],
+    "char_count": 97,
+    "review_note": "Native speaker: check that \"खाली पेट रहने\" clearly relays the lab-confirmed fasting requirement in everyday Hindi."
+  },
+  {
+    "id": "lab_fasting_reminder_hi_whatsapp",
+    "lang": "hi",
+    "channel": "whatsapp",
+    "purpose": "lab_fasting_reminder",
+    "text": "कल ये टेस्ट हैं:\n{test_list}\nलैब ने इनके लिए खाली पेट रहने को कहा है।\nसैंपल लेने का समय: {slot}।",
+    "placeholders": [
+      "{test_list}",
+      "{slot}"
+    ],
+    "char_count": 96,
+    "review_note": "Native speaker: check that \"खाली पेट रहने\" clearly relays the lab-confirmed fasting requirement in everyday Hindi."
+  },
+  {
+    "id": "lab_fasting_reminder_hinglish_sms",
+    "lang": "hinglish",
+    "channel": "sms",
+    "purpose": "lab_fasting_reminder",
+    "text": "Kal ye tests hain: {test_list}. Lab ne inke liye khaali pet rehne ko kaha hai. Sample lene ka time: {slot}.",
+    "placeholders": [
+      "{test_list}",
+      "{slot}"
+    ],
+    "char_count": 107,
+    "review_note": "Native speaker: check that \"khaali pet rehne\" clearly relays the lab-confirmed fasting requirement in local Hinglish."
+  },
+  {
+    "id": "lab_fasting_reminder_hinglish_whatsapp",
+    "lang": "hinglish",
+    "channel": "whatsapp",
+    "purpose": "lab_fasting_reminder",
+    "text": "Kal ye tests hain:\n{test_list}\nLab ne inke liye khaali pet rehne ko kaha hai.\nSample lene ka time: {slot}.",
+    "placeholders": [
+      "{test_list}",
+      "{slot}"
+    ],
+    "char_count": 106,
+    "review_note": "Native speaker: check that \"khaali pet rehne\" clearly relays the lab-confirmed fasting requirement in local Hinglish."
+  },
+  {
+    "id": "refill_ask_en_sms",
+    "lang": "en",
+    "channel": "sms",
+    "purpose": "refill_ask",
+    "text": "Hello, I have {days_left} days of medicine left. Please keep these ready:\n{items}\nI need the exact brand and strength as written. Please confirm the price and when I can pick them up.",
+    "placeholders": [
+      "{days_left}",
+      "{items}"
+    ],
+    "char_count": 183
+  },
+  {
+    "id": "refill_ask_en_whatsapp",
+    "lang": "en",
+    "channel": "whatsapp",
+    "purpose": "refill_ask",
+    "text": "Hello, I have {days_left} days of medicine left. Please keep these medicines ready:\n{items}\nI need the exact brand and strength as written. Please confirm availability, the price, and when I can pick them up.",
+    "placeholders": [
+      "{days_left}",
+      "{items}"
+    ],
+    "char_count": 208
+  },
+  {
+    "id": "refill_ask_hi_sms",
+    "lang": "hi",
+    "channel": "sms",
+    "purpose": "refill_ask",
+    "text": "नमस्ते, अभी {days_left} दिन की दवा बची है। ये दवाइयाँ तैयार रख दीजिए:\n{items}\nलिस्ट में लिखा ब्रांड और स्ट्रेंथ ही चाहिए। दाम और कब लेने आ सकते हैं, बता दें।",
+    "placeholders": [
+      "{days_left}",
+      "{items}"
+    ],
+    "char_count": 157,
+    "review_note": "Native speaker: check \"दिन की दवा बची है\" and \"ब्रांड और स्ट्रेंथ\" for natural refill wording and exact-medicine clarity."
+  },
+  {
+    "id": "refill_ask_hi_whatsapp",
+    "lang": "hi",
+    "channel": "whatsapp",
+    "purpose": "refill_ask",
+    "text": "नमस्ते, अभी {days_left} दिन की दवा बची है। ये दवाइयाँ तैयार रख दीजिए:\n{items}\nलिस्ट में लिखा ब्रांड और स्ट्रेंथ ही चाहिए। कौन सी दवाइयाँ हैं, उनका दाम और कब लेने आ सकते हैं, बता दें।",
+    "placeholders": [
+      "{days_left}",
+      "{items}"
+    ],
+    "char_count": 182,
+    "review_note": "Native speaker: check \"दिन की दवा बची है\" and \"ब्रांड और स्ट्रेंथ\" for natural refill wording and exact-medicine clarity."
+  },
+  {
+    "id": "refill_ask_hinglish_sms",
+    "lang": "hinglish",
+    "channel": "sms",
+    "purpose": "refill_ask",
+    "text": "Namaste, abhi {days_left} din ki dawai bachi hai. Ye dawaiyan taiyar rakh dijiye:\n{items}\nList mein likha brand aur strength hi chahiye. Daam aur kab lene aa sakte hain, bata dein.",
+    "placeholders": [
+      "{days_left}",
+      "{items}"
+    ],
+    "char_count": 180,
+    "review_note": "Native speaker: check \"din ki dawai bachi hai\" and \"brand aur strength\" for natural refill wording and exact-medicine clarity."
+  },
+  {
+    "id": "refill_ask_hinglish_whatsapp",
+    "lang": "hinglish",
+    "channel": "whatsapp",
+    "purpose": "refill_ask",
+    "text": "Namaste, abhi {days_left} din ki dawai bachi hai. Ye dawaiyan taiyar rakh dijiye:\n{items}\nList mein likha brand aur strength hi chahiye. Kaun si dawaiyan stock mein hain, unka daam aur kab lene aa sakte hain, bata dein.",
+    "placeholders": [
+      "{days_left}",
+      "{items}"
+    ],
+    "char_count": 219,
+    "review_note": "Native speaker: check \"din ki dawai bachi hai\" and \"brand aur strength\" for natural refill wording and exact-medicine clarity."
+  }
+]

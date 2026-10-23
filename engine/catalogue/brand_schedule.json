@@ -1,0 +1,1014 @@
+{
+ "ACICOD": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "ACULIP": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "ACUVIN": {
+  "salt": "Tramadol",
+  "schedule": "H1"
+ },
+ "ADDNOK": {
+  "salt": "Buprenorphine",
+  "schedule": "H1"
+ },
+ "ADDWIZE": {
+  "salt": "Methylphenidate",
+  "schedule": "X"
+ },
+ "AKT": {
+  "salt": "Isoniazid",
+  "schedule": "H1"
+ },
+ "AKURIT": {
+  "salt": "Isoniazid",
+  "schedule": "H1"
+ },
+ "ALPRAX": {
+  "salt": "Alprazolam",
+  "schedule": "H1"
+ },
+ "ALZOLAM": {
+  "salt": "Alprazolam",
+  "schedule": "H1"
+ },
+ "AMITONE": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "AMITRYNC": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "AMIXIDE": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "AMIXIDEH": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "ANEKET": {
+  "salt": "Ketamine hydrochloride",
+  "schedule": "X"
+ },
+ "ANXIT": {
+  "salt": "Alprazolam",
+  "schedule": "H1"
+ },
+ "ASCORIL": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "AURINORM": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "AZIBACT": {
+  "salt": "Levofloxacin",
+  "schedule": "H1"
+ },
+ "BCIN": {
+  "salt": "Balofloxacin",
+  "schedule": "H1"
+ },
+ "BECALM": {
+  "salt": "Alprazolam",
+  "schedule": "H1"
+ },
+ "BETA": {
+  "salt": "Alprazolam",
+  "schedule": "H1"
+ },
+ "BIOTAX": {
+  "salt": "Cefotaxime",
+  "schedule": "H1"
+ },
+ "BUPATCH": {
+  "salt": "Buprenorphine",
+  "schedule": "H1"
+ },
+ "BUPINE": {
+  "salt": "Buprenorphine",
+  "schedule": "H1"
+ },
+ "BUPRENE": {
+  "salt": "Buprenorphine",
+  "schedule": "H1"
+ },
+ "BUPRIGESIC": {
+  "salt": "Buprenorphine",
+  "schedule": "H1"
+ },
+ "BUPRINOR": {
+  "salt": "Buprenorphine",
+  "schedule": "H1"
+ },
+ "BUPROCARE": {
+  "salt": "Buprenorphine",
+  "schedule": "H1"
+ },
+ "BUVALOR": {
+  "salt": "Buprenorphine",
+  "schedule": "H1"
+ },
+ "CALMPOSE": {
+  "salt": "Diazepam",
+  "schedule": "H1"
+ },
+ "CALPOL": {
+  "salt": "Tramadol",
+  "schedule": "H1"
+ },
+ "CEFIX": {
+  "salt": "Cefixime",
+  "schedule": "H1"
+ },
+ "CEFOLAC": {
+  "salt": "Cefixime",
+  "schedule": "H1"
+ },
+ "CEFTAS": {
+  "salt": "Cefixime",
+  "schedule": "H1"
+ },
+ "CIBIRIV": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "CIBIS": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "CLISTAR": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "CLOFAZ": {
+  "salt": "Clofazimine",
+  "schedule": "H1"
+ },
+ "CLOFOZINE": {
+  "salt": "Clofazimine",
+  "schedule": "H1"
+ },
+ "CLOFROS": {
+  "salt": "Clofazimine",
+  "schedule": "H1"
+ },
+ "CODECTUSS": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "CODEINE": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "CODEX": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "CODINE": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "CODISTAR": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "CODYLEX": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "CODZI": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "COLIWIN": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "COMBUNEX": {
+  "salt": "Isoniazid",
+  "schedule": "H1"
+ },
+ "COMBUTOL": {
+  "salt": "Ethambutol Hydrochloride",
+  "schedule": "H1"
+ },
+ "CONCERTA": {
+  "salt": "Methylphenidate",
+  "schedule": "X"
+ },
+ "CONTRAMAL": {
+  "salt": "Tramadol",
+  "schedule": "H1"
+ },
+ "COPHEDRIN": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "COREX": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "CROMIDE": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "CYCLON": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "CZEP": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "DASLIN": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "DECOLIC": {
+  "salt": "Diazepam",
+  "schedule": "H1"
+ },
+ "DIALEX": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "DIZERAL": {
+  "salt": "Alprazolam",
+  "schedule": "H1"
+ },
+ "DMAX": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "DOL": {
+  "salt": "Tapentadol",
+  "schedule": "H1"
+ },
+ "EGREX": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "EPHRILIME": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "EQUILIBRIUM": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "EQUIREX": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "EVATOCIN": {
+  "salt": "Oxytocin",
+  "schedule": "H1"
+ },
+ "EXIPLON": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "FAZIM": {
+  "salt": "Clofazimine",
+  "schedule": "H1"
+ },
+ "FEZA": {
+  "salt": "Clofazimine",
+  "schedule": "H1"
+ },
+ "FORECOX": {
+  "salt": "Isoniazid",
+  "schedule": "H1"
+ },
+ "FORTWIN": {
+  "salt": "Pentazocine",
+  "schedule": "H1"
+ },
+ "GERTA": {
+  "salt": "Ertapenem",
+  "schedule": "H1"
+ },
+ "GLYCODIN": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "GRILINCTUS": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "GUDRIL": {
+  "salt": "Tramadol",
+  "schedule": "H1"
+ },
+ "GUTREX": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "GUTSOOTH": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "GYNOTOCIN": {
+  "salt": "Oxytocin",
+  "schedule": "H1"
+ },
+ "HANSEPRAN": {
+  "salt": "Clofazimine",
+  "schedule": "H1"
+ },
+ "HISTOLATE": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "HITAPER": {
+  "salt": "Tapentadol",
+  "schedule": "H1"
+ },
+ "IBIREST": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "INDIKOF": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "INSPIRAL": {
+  "salt": "Methylphenidate",
+  "schedule": "X"
+ },
+ "INVANZ": {
+  "salt": "Ertapenem",
+  "schedule": "H1"
+ },
+ "INZOFRESH": {
+  "salt": "Zolpidem",
+  "schedule": "H1"
+ },
+ "ISOKIN": {
+  "salt": "Isoniazid",
+  "schedule": "H1"
+ },
+ "ISONEX": {
+  "salt": "Isoniazid",
+  "schedule": "H1"
+ },
+ "ISONIAZID": {
+  "salt": "Isoniazid",
+  "schedule": "H1"
+ },
+ "ITOCIN": {
+  "salt": "Oxytocin",
+  "schedule": "H1"
+ },
+ "KATRIDOL": {
+  "salt": "Tapentadol",
+  "schedule": "H1"
+ },
+ "KETAJET": {
+  "salt": "Ketamine hydrochloride",
+  "schedule": "X"
+ },
+ "KETALAR": {
+  "salt": "Ketamine hydrochloride",
+  "schedule": "X"
+ },
+ "KETAM": {
+  "salt": "Ketamine hydrochloride",
+  "schedule": "X"
+ },
+ "KETAMAX": {
+  "salt": "Ketamine hydrochloride",
+  "schedule": "X"
+ },
+ "KETAMINE": {
+  "salt": "Ketamine hydrochloride",
+  "schedule": "X"
+ },
+ "KETANIK": {
+  "salt": "Ketamine hydrochloride",
+  "schedule": "X"
+ },
+ "KETMIN": {
+  "salt": "Ketamine hydrochloride",
+  "schedule": "X"
+ },
+ "KETOLIDE": {
+  "salt": "Ketamine hydrochloride",
+  "schedule": "X"
+ },
+ "KETSIA": {
+  "salt": "Ketamine hydrochloride",
+  "schedule": "X"
+ },
+ "LAMPLUS": {
+  "salt": "Alprazolam",
+  "schedule": "H1"
+ },
+ "LCIN": {
+  "salt": "Levofloxacin",
+  "schedule": "H1"
+ },
+ "LEEREX": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "LEPROMINE": {
+  "salt": "Clofazimine",
+  "schedule": "H1"
+ },
+ "LEVOFLOX": {
+  "salt": "Levofloxacin",
+  "schedule": "H1"
+ },
+ "LEVOFUXIN": {
+  "salt": "Levofloxacin",
+  "schedule": "H1"
+ },
+ "LEVOMAC": {
+  "salt": "Levofloxacin",
+  "schedule": "H1"
+ },
+ "LEXA": {
+  "salt": "Zolpidem",
+  "schedule": "H1"
+ },
+ "LIBOTRYP": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "LIBRATEX": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "LIBRAX": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "LIBRINC": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "LIBRIUM": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "LIBROSAR": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "LOMOFEN": {
+  "salt": "Diphenoxylate",
+  "schedule": "H1"
+ },
+ "LOMOTIL": {
+  "salt": "Diphenoxylate",
+  "schedule": "H1"
+ },
+ "LOTEMOX": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "LOXOF": {
+  "salt": "Levofloxacin",
+  "schedule": "H1"
+ },
+ "LUPIGESICOLD": {
+  "salt": "Buprenorphine",
+  "schedule": "H1"
+ },
+ "LUPINEM": {
+  "salt": "Imipenem",
+  "schedule": "H1"
+ },
+ "MACOX": {
+  "salt": "Rifampicin",
+  "schedule": "H1"
+ },
+ "MACOXZH": {
+  "salt": "Isoniazid",
+  "schedule": "H1"
+ },
+ "MAGNATUSS": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "MAGNEX": {
+  "salt": "Cefoperazone",
+  "schedule": "H1"
+ },
+ "MAHACEF": {
+  "salt": "Cefixime",
+  "schedule": "H1"
+ },
+ "MAHACEFPLUS": {
+  "salt": "Cefixime",
+  "schedule": "H1"
+ },
+ "MAHAFLOX": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "MAHAFLOXLP": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "MEGA": {
+  "salt": "Tramadol",
+  "schedule": "H1"
+ },
+ "MERO": {
+  "salt": "Meropenem",
+  "schedule": "H1"
+ },
+ "MEROBAX": {
+  "salt": "Meropenem",
+  "schedule": "H1"
+ },
+ "MEROCRIT": {
+  "salt": "Meropenem",
+  "schedule": "H1"
+ },
+ "MEROFIC": {
+  "salt": "Meropenem",
+  "schedule": "H1"
+ },
+ "MEROMAC": {
+  "salt": "Meropenem",
+  "schedule": "H1"
+ },
+ "MERONEM": {
+  "salt": "Meropenem",
+  "schedule": "H1"
+ },
+ "MEROSURE": {
+  "salt": "Meropenem",
+  "schedule": "H1"
+ },
+ "MEROTEC": {
+  "salt": "Meropenem",
+  "schedule": "H1"
+ },
+ "MEROTROL": {
+  "salt": "Meropenem",
+  "schedule": "H1"
+ },
+ "MEROZA": {
+  "salt": "Meropenem",
+  "schedule": "H1"
+ },
+ "MERROBE": {
+  "salt": "Meropenem",
+  "schedule": "H1"
+ },
+ "METH": {
+  "salt": "Methylphenidate",
+  "schedule": "X"
+ },
+ "MEZOLAM": {
+  "salt": "Midazolam",
+  "schedule": "H1"
+ },
+ "MIDACIP": {
+  "salt": "Midazolam",
+  "schedule": "H1"
+ },
+ "MILFLOX": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "MILIXIMM": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "MIT": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "MITS": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "MLOBELP": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "MONOCEF": {
+  "salt": "Ceftriaxone",
+  "schedule": "H1"
+ },
+ "MONOCEFSB": {
+  "salt": "Ceftriaxone",
+  "schedule": "H1"
+ },
+ "MOTO": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "MOTOGRAM": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "MOXICIN": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "MOXICIP": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "MOXIF": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "MOXIFLOX": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "MOXIGRAM": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "MOXINOW": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "MOXISURGEL": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "MOXITOBRA": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "MOXOFTLP": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "MUTRANS": {
+  "salt": "Buprenorphine",
+  "schedule": "H1"
+ },
+ "MYCOBUTOL": {
+  "salt": "Ethambutol Hydrochloride",
+  "schedule": "H1"
+ },
+ "MYCOPAS": {
+  "salt": "Isoniazid",
+  "schedule": "H1"
+ },
+ "MYCURIT": {
+  "salt": "Isoniazid",
+  "schedule": "H1"
+ },
+ "NARCOGIN": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "NICPIME": {
+  "salt": "Cefepime",
+  "schedule": "H1"
+ },
+ "NITE": {
+  "salt": "Nitrazepam",
+  "schedule": "H1"
+ },
+ "NITRAVET": {
+  "salt": "Nitrazepam",
+  "schedule": "H1"
+ },
+ "NITRAZEPAM": {
+  "salt": "Nitrazepam",
+  "schedule": "H1"
+ },
+ "NITREST": {
+  "salt": "Zolpidem",
+  "schedule": "H1"
+ },
+ "NITROSUN": {
+  "salt": "Nitrazepam",
+  "schedule": "H1"
+ },
+ "NORMAXIN": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "NORPHIN": {
+  "salt": "Buprenorphine",
+  "schedule": "H1"
+ },
+ "OXITOB": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "PARACOD": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "PERCIN": {
+  "salt": "Prulifloxacin",
+  "schedule": "H1"
+ },
+ "PHENSEDYL": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "PITOCIN": {
+  "salt": "Oxytocin",
+  "schedule": "H1"
+ },
+ "PLANOKUF": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "POTENTOX": {
+  "salt": "Cefepime",
+  "schedule": "H1"
+ },
+ "PROXYVON": {
+  "salt": "Tramadol",
+  "schedule": "H1"
+ },
+ "PRUFLOX": {
+  "salt": "Prulifloxacin",
+  "schedule": "H1"
+ },
+ "PRULIN": {
+  "salt": "Prulifloxacin",
+  "schedule": "H1"
+ },
+ "PUNOX": {
+  "salt": "Prulifloxacin",
+  "schedule": "H1"
+ },
+ "PYZINA": {
+  "salt": "Pyrazinamide",
+  "schedule": "H1"
+ },
+ "QUADMOX": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "QUDICT": {
+  "salt": "Buprenorphine",
+  "schedule": "H1"
+ },
+ "RAMCET": {
+  "salt": "Tramadol",
+  "schedule": "H1"
+ },
+ "RCIN": {
+  "salt": "Rifampicin",
+  "schedule": "H1"
+ },
+ "RCINEX": {
+  "salt": "Rifampicin",
+  "schedule": "H1"
+ },
+ "RESTYL": {
+  "salt": "Alprazolam",
+  "schedule": "H1"
+ },
+ "REXCOF": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "RHEFD": {
+  "salt": "Rifampicin",
+  "schedule": "H1"
+ },
+ "RIBS": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "RIFA": {
+  "salt": "Isoniazid",
+  "schedule": "H1"
+ },
+ "RIFAMPICIN": {
+  "salt": "Rifampicin",
+  "schedule": "H1"
+ },
+ "ROTOMOXTR": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "RUPATCH": {
+  "salt": "Buprenorphine",
+  "schedule": "H1"
+ },
+ "SELF": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "SLEEP": {
+  "salt": "Zolpidem",
+  "schedule": "H1"
+ },
+ "SOLONEX": {
+  "salt": "Isoniazid",
+  "schedule": "H1"
+ },
+ "SPASMOPROXYVON": {
+  "salt": "Tramadol",
+  "schedule": "H1"
+ },
+ "SPASPOKRAN": {
+  "salt": "Tramadol",
+  "schedule": "H1"
+ },
+ "SPASRAX": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "SPASRIL": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "STILNOCT": {
+  "salt": "Zolpidem",
+  "schedule": "H1"
+ },
+ "SYNTOCINON": {
+  "salt": "Oxytocin",
+  "schedule": "H1"
+ },
+ "TALGESIC": {
+  "salt": "Buprenorphine",
+  "schedule": "H1"
+ },
+ "TAPAL": {
+  "salt": "Tapentadol",
+  "schedule": "H1"
+ },
+ "TAPALER": {
+  "salt": "Tapentadol",
+  "schedule": "H1"
+ },
+ "TAPENAX": {
+  "salt": "Tapentadol",
+  "schedule": "H1"
+ },
+ "TAPFREE": {
+  "salt": "Tapentadol",
+  "schedule": "H1"
+ },
+ "TAXIM": {
+  "salt": "Cefotaxime",
+  "schedule": "H1"
+ },
+ "TAXIMO": {
+  "salt": "Cefixime",
+  "schedule": "H1"
+ },
+ "TIDIGESIC": {
+  "salt": "Buprenorphine",
+  "schedule": "H1"
+ },
+ "TOBOX": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "TOBOXY": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "TOCIMOX": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "TOLYDOL": {
+  "salt": "Tramadol",
+  "schedule": "H1"
+ },
+ "TOPEXCD": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "TOSSEX": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "TRAMADOL": {
+  "salt": "Tramadol",
+  "schedule": "H1"
+ },
+ "TRAMASUREPLUS": {
+  "salt": "Tramadol",
+  "schedule": "H1"
+ },
+ "TRAMAZAC": {
+  "salt": "Tramadol",
+  "schedule": "H1"
+ },
+ "TRAMAZACP": {
+  "salt": "Tramadol",
+  "schedule": "H1"
+ },
+ "TRIBS": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "TRICARE": {
+  "salt": "Tramadol",
+  "schedule": "H1"
+ },
+ "TRIKA": {
+  "salt": "Alprazolam",
+  "schedule": "H1"
+ },
+ "TRIXIDEH": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "TROYCOF": {
+  "salt": "Codeine",
+  "schedule": "H1"
+ },
+ "TYDOL": {
+  "salt": "Tapentadol",
+  "schedule": "H1"
+ },
+ "ULCON": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "ULRAX": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "ULTRA": {
+  "salt": "Tramadol",
+  "schedule": "H1"
+ },
+ "ULTRACET": {
+  "salt": "Tramadol",
+  "schedule": "H1"
+ },
+ "ULTRASPAS": {
+  "salt": "Tramadol",
+  "schedule": "H1"
+ },
+ "UNIMAXIN": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "VALIUM": {
+  "salt": "Diazepam",
+  "schedule": "H1"
+ },
+ "VASOREX": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "VIGOQUINT": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "VISITOB": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "VODAMOX": {
+  "salt": "Moxifloxacin",
+  "schedule": "H1"
+ },
+ "VORTH": {
+  "salt": "Tapentadol",
+  "schedule": "H1"
+ },
+ "ZAXTER": {
+  "salt": "Meropenem",
+  "schedule": "H1"
+ },
+ "ZIBRA": {
+  "salt": "Chlordiazepoxide",
+  "schedule": "H1"
+ },
+ "ZIFI": {
+  "salt": "Cefixime",
+  "schedule": "H1"
+ },
+ "ZIFIO": {
+  "salt": "Cefixime",
+  "schedule": "H1"
+ },
+ "ZOLCALM": {
+  "salt": "Zolpidem",
+  "schedule": "H1"
+ },
+ "ZOLFRESH": {
+  "salt": "Zolpidem",
+  "schedule": "H1"
+ },
+ "ZOSTUMO": {
+  "salt": "Cefditoren",
+  "schedule": "H1"
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "build_date": "2026-10-23",
+ "counts": {
+  "brand_schedule": 253,
+  "lab_prices": 69,
+  "labs": 41,
+  "product_links": 32,
+  "product_links_with_price": 17,
+  "schedule_h1_x": 66,
+  "tests_canonical": 29
+ },
+ "input_folder": "Parchi Data"
+}
