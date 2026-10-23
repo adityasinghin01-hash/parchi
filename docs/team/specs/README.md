@@ -1,4 +1,4 @@
-# Teammate feature specs (24 Oct 2026): three independent pieces, nobody waits for anybody
+# Teammate feature specs (24 Oct 2026): four independent pieces, nobody waits for anybody
 Written by Claude for Aditya Singh (lead). Read this file first, then your own spec. Each spec is a self-contained module with its own folder, contract, tests and acceptance list. None of them changes `app/`, `server/` or `engine/`; the lead plugs your finished module in later.
 
 | Spec | Owner | What it is | Needs a Mac/iMac? |
@@ -6,8 +6,10 @@ Written by Claude for Aditya Singh (lead). Read this file first, then your own s
 | `SPEC-1-FAMILY-MESSAGES.md` | Aditya Singhal | "Tell my family": short Hindi/English messages for plan ready, order placed, Plan B, lab tomorrow, refill due; one-tap WhatsApp/SMS links; provider slot for real SMS later | No (Python); end-to-end check on the iMac |
 | `SPEC-2-RECOMMENDATION-ENGINE.md` | Aditya Singhal | The V3 personal recommendation engine: ranks whole-parchi plans for this person, explains why, learns from the person's own choices | No (Python); end-to-end check on the iMac |
 | `SPEC-3-SHOP-REPLY-PAGE.md` | Antara Gupta | Hindi-first reply page for local shops (cheap phones) + "type your reply in one sentence" parser | No (HTML/CSS/JS) |
+| `SPEC-4-ADITYA-THREE-MODULES.md` | Aditya (frontend) | One 2-hour sprint, three independent modules: (A) order problem helper (support + refund), (B) Hindi pack for the whole app, (C) delivery check against the confirmed list. Data is in `seed-data/`. Ready-to-paste Codex prompt at the top of the spec | No (Python only) |
 
-## Working agreement (applies to all three)
+
+## Working agreement (applies to all four)
 1. Read these files with `git fetch origin && git checkout team/specs` (read only). Do your work on your OWN branch off `origin/main`: `team/<yourname>/<feature>`. Commit ONLY inside your feature folder `teammates/<feature>/` (folder names are in each spec). Open a pull request to `main`; the lead merges. Never push to `main`.
 2. Do not edit `app/`, `server/`, `engine/` or any doc outside your folder. If you think the contract needs a change, write it in your `NEEDS-LEAD.md` and keep working with your assumption.
 3. No secrets, no keys, no real patient data, no real prescriptions or photos, no scraped data without a source URL and date. Test data is synthetic.

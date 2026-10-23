@@ -1,0 +1,38 @@
+{
+  "date_seen": "2026-10-24",
+  "status": "SECONDARY SOURCES ONLY (news and law-firm notes). Every item must be checked on the official page and re-dated before the app shows it to a patient. Until then the app must label it 'check on the official site'.",
+  "routes": [
+    {
+      "id": "national_consumer_helpline",
+      "name": "National Consumer Helpline (NCH)",
+      "phone": "1915",
+      "whatsapp": "8800001915",
+      "portal": "https://consumerhelpline.gov.in",
+      "notes": "Reported: toll-free, 17 languages, also via WhatsApp, SMS, email, app, UMANG and INGRAM; works before going to a Consumer Commission (pre-litigation). Exact portal steps, documents and timelines NOT confirmed.",
+      "official_to_check": "https://consumerhelpline.gov.in",
+      "secondary_sources": [
+        "https://newsonair.gov.in/toll-free-number-in-17-languages-for-consumers-grievance-redressal-across-the-country-govt-in-ls/",
+        "https://www.business-standard.com/india-news/national-consumer-helpline-resolves-67k-complaints-recovers-45-cr-in-2025-125122700291_1.html"
+      ]
+    },
+    {
+      "id": "ecommerce_rules_2020",
+      "name": "Consumer Protection (E-Commerce) Rules, 2020",
+      "applies_to": "e-commerce entities and marketplace sellers (online pharmacies, quick-commerce apps, lab-booking platforms). It does NOT clearly apply to a local shop: do not show these deadlines for local shops.",
+      "claims": [
+        {"id": "ack_48h", "text": "The grievance officer acknowledges a complaint within 48 hours of receipt.", "days": 2},
+        {"id": "redress_1m", "text": "The grievance officer redresses the complaint within 1 month of receipt.", "days": 30},
+        {"id": "refund_defect_late", "text": "An e-commerce entity may not refuse a refund where goods or services are defective or delivered late, except in force majeure events."}
+      ],
+      "official_to_check": "Department of Consumer Affairs notification of the Rules (consumeraffairs.nic.in); read the rule text itself",
+      "secondary_sources": [
+        "https://www.indialaw.in/blog/consumer-protection-e-commerce-rules/",
+        "https://cn.lakshmisri.com/newsroom/news-briefings/e-commerce-consumer-protection-e-commerce-rules-2020-notified"
+      ]
+    }
+  ],
+  "not_stated_anywhere_yet": [
+    "How many days a refund takes after approval (depends on payment method and RBI rules; do NOT state a number)",
+    "Any rule specific to pharmacies or labs"
+  ]
+}
