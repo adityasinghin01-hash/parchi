@@ -87,6 +87,15 @@ final class AppModel {
     /// Sellers the patient skipped in the Checkout Assistant; the planner ignores their offers.
     private(set) var skippedSellers: Set<String> = []
 
+    // V2 (Smart Router A1, true price A7). Additive; with the switch off the plan is chosen by price only, exactly as before.
+    var reliabilityScores: [String: SellerReliability] = [:]
+    var reliabilityIsDemo = false
+    var truePrices: [String: TruePriceInfo] = [:]
+    private(set) var deliveredSellers: Set<String> = []
+    var preferReliable: Bool = UserDefaults.standard.bool(forKey: "parchi.preferReliable") {
+        didSet { UserDefaults.standard.set(preferReliable, forKey: "parchi.preferReliable"); replan() }
+    }
+
     init() {
         scenario = Self.load("real_basket_cheapest")
         catalogue = Self.loadCatalogue()
@@ -152,11 +161,16 @@ final class AppModel {
     func confirmList() {
         scenario.items = lines.filter { !$0.askDoctor }.map(\.item)
         replan()
+        Task { await refreshReliability(); if preferReliable { replan() } }
     }
 
     private var planner: Planner {
         var prefs = scenario.preferences
         prefs.objective = objective
+        if preferReliable, !reliabilityScores.isEmpty {
+            prefs.reliability = reliabilityScores.mapValues(\.score)
+            prefs.reliabilityWeight = 1
+        }
         return Planner(items: scenario.items, sellers: scenario.sellers, offers: plannerOffers, preferences: prefs)
     }
 
@@ -165,7 +179,7 @@ final class AppModel {
         let inPerson = Set(lines.filter { $0.inPersonOnly != nil }.map(\.id))
         let delivery = Set(scenario.sellers.filter { $0.channel == .onlinePharmacy || $0.channel == .quickCommerce }.map(\.id))
         return scenario.offers.filter { offer in
-            !skippedSellers.contains(offer.sellerID) && !(inPerson.contains(offer.itemID) && delivery.contains(offer.sellerID))
+            !skippedSellers.contains(offer.sellerID) && !deliveredSellers.contains(offer.sellerID) && !(inPerson.contains(offer.itemID) && delivery.contains(offer.sellerID))
         }
     }
 
@@ -296,6 +310,7 @@ final class AppModel {
         proposalKey = nil
         postedProposalVersion = nil
         replacementSellers = []
+        deliveredSellers = []
     }
 
     private func startLiveOrder() {
@@ -357,6 +372,8 @@ final class AppModel {
     private func apply(_ status: ServerStatus, client: LiveClient) async {
         serverPlanVersion = status.planVersion
         for seller in status.sellers {
+            // The server rejects a Plan B that sends items to a seller who already delivered, so never propose one.
+            if seller.status == "delivered" { deliveredSellers.insert(seller.id) }
             switch seller.status {
             case "failed", "cancelled": statuses[seller.id] = .cancelled
             case "rerouted": statuses[seller.id] = .rerouted

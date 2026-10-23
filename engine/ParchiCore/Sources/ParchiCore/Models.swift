@@ -106,13 +106,21 @@ public struct Preferences: Codable, Sendable {
     /// What one in-person trip is worth to the patient, used so a ₹5 saving never costs an extra trip.
     public var visitCost: Paise
     public var maxEtaMinutes: Int?
+    /// Smart Router (A1): delivery reliability per seller, 0...1 (successful / total orders in the patient's area).
+    /// Optional so older scenario files still decode. Unknown sellers use the neutral 0.8 prior.
+    public var reliability: [String: Double]?
+    /// 0 (default) = choose by price only. Above 0 the planner CHOOSES with cost * (1 + weight * (1 - reliability))
+    /// per seller; the totals shown to the patient stay the real amounts.
+    public var reliabilityWeight: Double?
 
     public init(objective: Objective = .cheapest, doctorApprovedSubstitutes: Bool = false, visitCost: Paise = 5_000,
-                maxEtaMinutes: Int? = nil) {
+                maxEtaMinutes: Int? = nil, reliability: [String: Double]? = nil, reliabilityWeight: Double? = nil) {
         self.objective = objective
         self.doctorApprovedSubstitutes = doctorApprovedSubstitutes
         self.visitCost = visitCost
         self.maxEtaMinutes = maxEtaMinutes
+        self.reliability = reliability
+        self.reliabilityWeight = reliabilityWeight
     }
 }
 

@@ -3,6 +3,7 @@ import SwiftUI
 
 struct TrackView: View {
     @Environment(AppModel.self) private var model
+    @State private var payingSeller: String?
 
     var body: some View {
         @Bindable var model = model
@@ -24,6 +25,9 @@ struct TrackView: View {
                         ForEach(plan.lines.filter { $0.sellerID == sellerID }, id: \.itemID) { line in
                             Text(model.itemName(line.itemID)).font(.subheadline).foregroundStyle(.secondary)
                         }
+                        SellerTrustLines(sellerID: sellerID)
+                        Button("What did you pay?") { payingSeller = sellerID }
+                            .font(.footnote)
                     }
                 }
             }
@@ -34,6 +38,9 @@ struct TrackView: View {
                 .background(.bar)
         }
         .navigationTitle("Track")
+        .sheet(isPresented: Binding(get: { payingSeller != nil }, set: { if !$0 { payingSeller = nil } })) {
+            if let seller = payingSeller { TruePriceSheet(sellerID: seller).presentationDetents([.medium]) }
+        }
         .sheet(item: Binding(get: { model.planB.map(PlanBBox.init) }, set: { if $0 == nil { model.planB = nil } })) { box in
             PlanBSheet(proposal: box.proposal)
                 .presentationDetents([.medium, .large])

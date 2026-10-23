@@ -40,6 +40,7 @@ struct PlanView: View {
                                     Text(rupees(line.price)).monospacedDigit()
                                 }
                                 PriceSourceChip(source: model.priceSource(sellerID: sellerID))
+                                SellerTrustLines(sellerID: sellerID)
                                 if let message = model.inPersonMessage(itemID: line.itemID) {
                                     Text(message).font(.caption).foregroundStyle(.orange)
                                 }

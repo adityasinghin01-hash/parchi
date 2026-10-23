@@ -4,6 +4,7 @@ import SwiftUI
 struct SettingsView: View {
     let history: HistoryStore
     let backend: BackendSettings
+    @Environment(AppModel.self) private var appModel
     let consent: ConsentStore
     /// Clears seller website logins (the integrator passes `CheckoutPrivacy.clearSellerSessions`).
     var onClearSellerSessions: () -> Void
@@ -32,6 +33,14 @@ struct SettingsView: View {
 
     var body: some View {
         Form {
+            Section {
+                Toggle("Prefer reliable sellers", isOn: Binding(get: { appModel.preferReliable }, set: { appModel.preferReliable = $0 }))
+            } header: {
+                Text("Smart Router")
+            } footer: {
+                Text("When on, a seller that often cancels or delivers late must be clearly cheaper to be chosen. The prices shown are always the real prices.")
+            }
+
             Section("Language") {
                 Picker("Language", selection: $language) {
                     Text("English").tag("en")

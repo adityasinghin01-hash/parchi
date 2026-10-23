@@ -24,5 +24,5 @@ def test_oversized_body_is_rejected_before_auth(api_client):
 
 
 def test_failed_auth_attempts_are_throttled(api_client):
-    codes = [api_client.client.post("/order", headers={"X-Install-Key": "wrong"}, json={}).status_code for _ in range(61)]
-    assert codes[:60] == [401] * 60 and codes[60] == 429
+    codes = [api_client.client.post("/order", headers={"X-Install-Key": "wrong"}, json={}).status_code for _ in range(31)]
+    assert codes[:30] == [401] * 30 and codes[30] == 429

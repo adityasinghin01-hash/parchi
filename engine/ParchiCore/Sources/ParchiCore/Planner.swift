@@ -122,8 +122,22 @@ public struct Planner: Sendable {
     }
 
     /// Lower is better. The patient's time is priced in, so the cheapest plan is honest about trips.
+    /// With a reliability weight, sellers that often fail cost extra in the CHOICE only (never in the shown totals).
     func score(_ plan: Plan) -> Int {
-        plan.payable + plan.stops * preferences.visitCost
+        plan.payable + plan.stops * preferences.visitCost + reliabilityPenalty(plan)
+    }
+
+    /// Same formula as server/reliability.py `rank_with_reliability`: cost * (1 + weight * (1 - score)).
+    func reliabilityPenalty(_ plan: Plan) -> Int {
+        let weight = preferences.reliabilityWeight ?? 0
+        guard weight > 0 else { return 0 }
+        var extra = 0.0
+        for (sellerID, group) in Dictionary(grouping: plan.lines, by: \.sellerID) {
+            let cost = group.reduce(0) { $0 + $1.price } + (plan.feesBySeller[sellerID] ?? 0)
+            let score = min(max(preferences.reliability?[sellerID] ?? 0.8, 0), 1)
+            extra += Double(cost) * weight * (1 - score)
+        }
+        return Int(extra.rounded())
     }
 
     func better(_ a: Plan, _ b: Plan) -> Bool {

@@ -16,7 +16,7 @@ def call(method, path, key="install", body=None):
             return e.code, None
 def counts():
     con = sqlite3.connect("data/parchi.db")
-    tables = [r[0] for r in con.execute("select name from sqlite_master where type='table' and name not like 'sqlite_%' and name not in ('keys','seller_reliability')")]
+    tables = [r[0] for r in con.execute("select name from sqlite_master where type='table' and name not like 'sqlite_%' and name not in ('keys','seller_reliability','deleted_orders')")]
     return {t: con.execute(f"select count(*) from {t}").fetchone()[0] for t in tables}
 ok = []
 def check(n, c, d=""): ok.append(bool(c)); print(("PASS " if c else "FAIL ") + n + (f" ({d})" if d else ""))
@@ -40,6 +40,7 @@ after = counts()
 check("every table is empty after 'Delete everything'", sum(after.values()) == 0, str({k: v for k, v in after.items() if v}) or "all zero")
 c, _ = call("GET", f"/status/{oid}")
 check("old order no longer readable", c == 404, f"http {c}")
+print("NOTE deleted_orders keeps only random order/install ids for 48 h so a replayed request cannot resurrect a deleted order (no personal data).")
 print("NOTE Temporal keeps each workflow's history for 24 h (namespace retention): item ids, prices and seller ids only, no names or phones.")
 print("RESULT", "PASS" if all(ok) else "FAIL", f"{sum(ok)}/{len(ok)}")
 sys.exit(0 if all(ok) else 1)

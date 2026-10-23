@@ -7,7 +7,10 @@ struct ShopLabTransport {
 
     func send<R: Decodable, B: Encodable>(_ method: String, _ path: String, body: B?) async throws -> R {
         if live.installKey.isEmpty { throw LiveError.missingKey }
-        var request = URLRequest(url: live.baseURL.appendingPathComponent(path), timeoutInterval: 5)
+        let url = path.contains("?")
+            ? URL(string: live.baseURL.absoluteString.trimmingCharacters(in: CharacterSet(charactersIn: "/")) + "/" + path) ?? live.baseURL
+            : live.baseURL.appendingPathComponent(path)
+        var request = URLRequest(url: url, timeoutInterval: 5)
         request.httpMethod = method
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue(live.installKey, forHTTPHeaderField: "X-Install-Key")

@@ -82,10 +82,10 @@ def test_missing_or_wrong_key(api_client, key):
     assert api_client.client.post("/order", headers=h, json={}).status_code == 401
 
 
-def test_rate_limit_request_61(api_client):
-    for _ in range(60):
-        assert api_client.client.post("/read", headers=headers(api_client)).status_code == 501
-    response = api_client.client.post("/read", headers=headers(api_client))
+def test_rate_limit_request_121(api_client):
+    for _ in range(120):
+        assert api_client.client.get("/reliability?area=meerut", headers=headers(api_client)).status_code == 200
+    response = api_client.client.get("/reliability?area=meerut", headers=headers(api_client))
     assert response.status_code == 429
     assert 1 <= int(response.headers["Retry-After"]) <= 60
 
@@ -131,11 +131,11 @@ def test_admin_rejects_install_key(api_client, path):
     assert response.status_code == 401
 
 
-@pytest.mark.parametrize("path", ["/read"])
-def test_unbuilt_routes_are_501(api_client, path):
-    response = api_client.client.post(path, headers=headers(api_client), json={})
-    assert response.status_code == 501
-    assert response.json() == {"detail": "not built yet"}
+def test_read_without_reader_is_503(api_client, monkeypatch):
+    monkeypatch.delenv("PARCHI_READER_URL", raising=False)
+    response = api_client.client.post("/read", headers=headers(api_client))
+    assert response.status_code == 503
+    assert response.json() == {"detail": "reader not connected"}
 
 
 def test_reset_only_this_install(api_client):

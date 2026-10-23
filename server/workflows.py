@@ -43,6 +43,8 @@ class OrderWorkflow:
         self.nothing_available = False
         self.needs_check: list[str] = []
         self.waiting_since: str | None = None
+        # Items the user approved a plan without (nothing available / partial proposal): never silently dropped.
+        self.unresolved: list[str] = []
 
     # ---- signals and query ----
 
@@ -71,7 +73,7 @@ class OrderWorkflow:
                         for sid, s in self.sellers.items()],
             "pending": self.pending, "queue": self.queue, "proposal": self.proposal,
             "nothingAvailable": self.nothing_available, "needsCheck": self.needs_check,
-            "waitingSince": self.waiting_since,
+            "waitingSince": self.waiting_since, "unresolvedItems": self.unresolved,
         }
 
     # ---- main loop ----
@@ -284,6 +286,10 @@ class OrderWorkflow:
             for sid in new_ids:
                 self.sellers[sid] = self.new_seller(sid)
         extra = proposal["extraCost"]  # type: ignore[index]
+        for item in proposal["stillMissing"]:  # type: ignore[index]
+            if item not in self.unresolved:
+                self.unresolved.append(item)
         self.next_failure()
         await self.audit(approver, "approved", {"failedSellerID": failed, "newSellers": new_ids,
-                                                "extraCost": extra, "proposalHash": digest})
+                                                "extraCost": extra, "proposalHash": digest,
+                                                "unresolvedItems": list(self.unresolved)})

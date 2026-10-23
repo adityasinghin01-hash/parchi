@@ -29,6 +29,10 @@ def init_db() -> None:
                 label TEXT NOT NULL, created TEXT NOT NULL
                     DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ','now'))
             );
+            CREATE TABLE IF NOT EXISTS deleted_orders (
+                order_id TEXT PRIMARY KEY, install_id TEXT NOT NULL,
+                at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ','now'))
+            );
             CREATE TABLE IF NOT EXISTS orders (
                 order_id TEXT PRIMARY KEY, install_id TEXT NOT NULL,
                 deleting INTEGER NOT NULL DEFAULT 0,
@@ -57,15 +61,28 @@ def init_db() -> None:
                 PRIMARY KEY (order_id, plan_version)
             );
         """)
+        columns = [row["name"] for row in conn.execute("PRAGMA table_info(orders)")]
+        if "body_hash" not in columns:
+            conn.execute("ALTER TABLE orders ADD COLUMN body_hash TEXT")
+        # Tombstones only need to outlive a client's retry window (no personal data in them).
+        conn.execute("DELETE FROM deleted_orders WHERE at < strftime('%Y-%m-%dT%H:%M:%fZ','now','-48 hours')")
 
 
-def reserve_order(order_id: str, install_id: str) -> dict[str, Any]:
+class KeyReuseError(ValueError):
+    """The same Idempotency-Key was sent with a different request body."""
+
+
+def reserve_order(order_id: str, install_id: str, body_hash: str | None = None) -> dict[str, Any]:
     with connect() as conn:
-        conn.execute("INSERT OR IGNORE INTO orders(order_id,install_id) VALUES (?,?)",
-                     (order_id, install_id))
+        if conn.execute("SELECT 1 FROM deleted_orders WHERE order_id=?", (order_id,)).fetchone():
+            raise ValueError("order was deleted")  # a replayed key must not resurrect a reset order
+        conn.execute("INSERT OR IGNORE INTO orders(order_id,install_id,body_hash) VALUES (?,?,?)",
+                     (order_id, install_id, body_hash))
         row = conn.execute("SELECT * FROM orders WHERE order_id=?", (order_id,)).fetchone()
         if row["install_id"] != install_id or row["deleting"]:
             raise ValueError("order unavailable")
+        if body_hash is not None and row["body_hash"] not in (None, body_hash):
+            raise KeyReuseError("idempotency key reused with a different body")
         return dict(row)
 
 
@@ -145,7 +162,11 @@ def delete_orders(install_id: str | None = None, ids: list[str] | None = None) -
     """With `ids`, delete only those orders: an order created while a reset was running must survive it."""
     with connect() as conn:
         if ids is not None:
+            conn.executemany("""INSERT OR IGNORE INTO deleted_orders(order_id,install_id)
+                                SELECT order_id,install_id FROM orders WHERE order_id=?""", [(i,) for i in ids])
             conn.executemany("DELETE FROM orders WHERE order_id=?", [(i,) for i in ids])
             return
         clause = " WHERE install_id=?" if install_id is not None else ""
-        conn.execute("DELETE FROM orders" + clause, (install_id,) if install_id is not None else ())
+        params = (install_id,) if install_id is not None else ()
+        conn.execute("INSERT OR IGNORE INTO deleted_orders(order_id,install_id) SELECT order_id,install_id FROM orders" + clause, params)
+        conn.execute("DELETE FROM orders" + clause, params)

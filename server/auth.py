@@ -12,7 +12,8 @@ from fastapi import HTTPException, Request
 
 import db
 
-LIMIT = 60
+LIMIT = 120   # requests per minute per install key: the app polls order (2 s), shop ask (3 s) and lab status at once
+FAIL_LIMIT = 30  # bad keys per minute per client address
 WINDOW = 60.0
 
 
@@ -27,14 +28,14 @@ class RateLimiter:
         with self.lock:
             self.hits.clear()
 
-    def hit(self, name: str) -> int | None:
+    def hit(self, name: str, limit: int = LIMIT) -> int | None:
         """Record a request; return Retry-After seconds if over the limit."""
         now = time.monotonic()
         with self.lock:
             window = self.hits.setdefault(name, deque())
             while window and now - window[0] >= WINDOW:
                 window.popleft()
-            if len(window) >= LIMIT:
+            if len(window) >= limit:
                 return max(1, min(int(WINDOW), math.ceil(window[0] + WINDOW - now)))
             window.append(now)
             return None
@@ -47,8 +48,8 @@ def digest(key: str) -> str:
     return hashlib.sha256(key.encode()).hexdigest()
 
 
-def throttle(name: str) -> None:
-    retry = limiter.hit(name)
+def throttle(name: str, limit: int = LIMIT) -> None:
+    retry = limiter.hit(name, limit)
     if retry is not None:
         raise HTTPException(429, "rate limit exceeded", headers={"Retry-After": str(retry)})
 
@@ -70,7 +71,7 @@ def require_install(request: Request) -> str:
         row = conn.execute("SELECT install_id,key_hash FROM keys WHERE key_hash=?", (hashed,)).fetchone()
     if not key or row is None or not hmac.compare_digest(row["key_hash"], hashed):
         # Bad keys are throttled per client address, so guessing cannot run unlimited database lookups.
-        throttle("authfail:" + (request.client.host if request.client else "?"))
+        throttle("authfail:" + (request.client.host if request.client else "?"), FAIL_LIMIT)
         raise HTTPException(401, "invalid install key")
     throttle("install:" + hashed)
     return row["install_id"]

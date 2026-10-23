@@ -1,11 +1,13 @@
 import asyncio
 import hashlib
+import json
 import html
 import os
 from contextlib import asynccontextmanager
 from typing import Any
 
-from fastapi import Body, Depends, FastAPI, Header, HTTPException, Request
+import httpx
+from fastapi import Body, Depends, FastAPI, File, Header, HTTPException, Request, UploadFile
 from fastapi.responses import HTMLResponse, JSONResponse
 from temporalio.client import Client
 from temporalio.common import WorkflowIDReusePolicy
@@ -109,10 +111,13 @@ async def create_order(
         raise HTTPException(422, str(error))
     # Stable id: replaying the same request can only ever reach the same workflow.
     order_id = hashlib.sha256(f"{install_id}\n{idempotency_key}".encode()).hexdigest()[:32]
+    body_hash = hashlib.sha256(json.dumps(body, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
     try:
-        db.reserve_order(order_id, install_id)
-    except ValueError:
-        raise HTTPException(409, "order unavailable")
+        db.reserve_order(order_id, install_id, body_hash)
+    except db.KeyReuseError:
+        raise HTTPException(409, "Idempotency-Key was already used with a different request")
+    except ValueError as error:
+        raise HTTPException(409, str(error) if "deleted" in str(error) else "order unavailable")
     data = {"order_id": order_id, "install_id": install_id, "plan": body["plan"],
             "sellers": body["sellers"], "auto_approve_cap_paise": body.get("autoApproveCapPaise"),
             "time_scale": float(os.environ.get("PARCHI_TIME_SCALE", "1"))}
@@ -139,6 +144,7 @@ async def status(order_id: str, install_id: str = Depends(auth.require_install),
         "sellers": snap["sellers"], "pending": snap["pending"], "proposal": snap["proposal"],
         "nothingAvailable": snap["nothingAvailable"], "needsCheck": snap["needsCheck"],
         "waitingSince": snap["waitingSince"], "audit": db.audit_for(order_id, 20),
+        "unresolvedItems": snap.get("unresolvedItems", []),
         # False while the first placements are still being written; clients should not trust the seller list yet.
         "ready": snap.get("ready", True),
     }
@@ -271,9 +277,30 @@ async def reset(request: Request, scope: str | None = None,
     return {"ok": True, "deleted": len(orders)}
 
 
+READER_MAX_BYTES = 4_000_000
+READER_TYPES = {"image/jpeg", "image/png", "image/heic"}
+READER_TRANSPORT: Any = None  # tests inject an httpx.MockTransport here
+
+
 @app.post("/read")
-async def read(_: str = Depends(auth.require_install)) -> None:
-    raise HTTPException(501, "not built yet")
+async def read(image: UploadFile | None = File(None), _: str = Depends(auth.require_install)) -> JSONResponse:
+    """Forward a parchi crop to the reader model on the iMac (PARCHI_READER_URL). The image is never logged or stored."""
+    reader = os.environ.get("PARCHI_READER_URL", "")
+    if not reader:
+        raise HTTPException(503, "reader not connected")
+    if image is None or image.content_type not in READER_TYPES:
+        raise HTTPException(415, "send one image (jpeg, png or heic) in the 'image' field")
+    data = await image.read(READER_MAX_BYTES + 1)
+    if len(data) > READER_MAX_BYTES:
+        raise HTTPException(413, "image too large")
+    try:
+        async with httpx.AsyncClient(timeout=20, transport=READER_TRANSPORT) as client:
+            reply = await client.post(reader, files={"image": ("parchi", data, image.content_type)})
+    except httpx.HTTPError:
+        raise HTTPException(503, "reader not connected")
+    if reply.status_code >= 400:
+        raise HTTPException(502, "reader error")
+    return JSONResponse(reply.json())
 
 
 

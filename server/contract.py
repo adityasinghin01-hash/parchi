@@ -5,6 +5,7 @@ FAILURES = {"cancelled", "outOfStock", "late", "sampleRejected"}
 EVENTS = FAILURES | {"confirmed", "shipped", "delivered"}
 CHANNELS = {"localChemist", "janAushadhi", "quickCommerce", "onlinePharmacy", "lab"}
 INACTIVE = {"failed", "rerouted", "cancelled"}
+UNAVAILABLE_FOR_REROUTE = INACTIVE | {"delivered"}
 
 
 def require(condition: bool, message: str) -> None:
@@ -103,7 +104,8 @@ def validate_proposal(proposal: Any, plan: dict[str, Any], sellers: list[dict[st
     require(routed_items.isdisjoint(missing) and routed_items | set(missing) == failed_items,
             "rerouted and missing items must cover only the failed seller")
     for row in rerouted:
-        require(statuses.get(row["sellerID"]) not in INACTIVE, "replacement seller is inactive")
+        require(statuses.get(row["sellerID"]) not in UNAVAILABLE_FOR_REROUTE,
+                "replacement seller is inactive or already delivered")
     require(line_counts(proposal["newPlan"]["lines"]) == line_counts(kept + rerouted),
             "newPlan must contain kept and rerouted lines")
     # A phone-supplied low extraCost must not bypass the user's automatic approval cap.
