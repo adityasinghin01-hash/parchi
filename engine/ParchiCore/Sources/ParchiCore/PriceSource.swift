@@ -15,10 +15,21 @@ public struct PriceSource: Equatable, Sendable {
 
     public let kind: Kind
     public let dateSeen: Date
+    /// Replaces the standard label when the source needs to say more than its kind does (the catalogue MRP chip).
+    public let note: String?
 
-    public init(kind: Kind, dateSeen: Date) {
+    public init(kind: Kind, dateSeen: Date, note: String? = nil) {
         self.kind = kind
         self.dateSeen = dateSeen
+        self.note = note
+    }
+
+    /// A printed MRP taken from the bundled product catalogue: a pack price, not a quote from the shop in front of you.
+    public static let catalogueMRPNote = "Catalogue MRP · check at the shop"
+
+    public static func catalogueMRP(dateSeen: Date, packSizeKnown: Bool = true) -> PriceSource {
+        PriceSource(kind: .mrp, dateSeen: dateSeen,
+                    note: packSizeKnown ? catalogueMRPNote : catalogueMRPNote + " · pack size unclear, 1 pack priced")
     }
 
     /// "MRP", "Online, 23 Oct", "Shop replied 6:40 pm", "Called 24 Oct". Times are shown in IST.
@@ -33,7 +44,8 @@ public struct PriceSource: Equatable, Sendable {
 
     /// `label` plus the date for kinds whose label has none ("MRP, seen 23 Oct"), so a price always carries a date.
     public var datedLabel: String {
-        kind == .mrp ? "MRP, seen \(Self.format(dateSeen, "d MMM"))" : label
+        if let note { return note }
+        return kind == .mrp ? "MRP, seen \(Self.format(dateSeen, "d MMM"))" : label
     }
 
     /// Older than 7 days (exactly 7 days is still fresh). A date in the future is not stale.

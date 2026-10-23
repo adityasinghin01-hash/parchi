@@ -45,3 +45,15 @@ private func moment(_ y: Int, _ m: Int, _ d: Int, _ h: Int = 0, _ min: Int = 0) 
     #expect(PriceSource.date(fromISO: nil) == nil)
     #expect(PriceSource.date(fromISO: "not a date") == nil)
 }
+
+@Test func catalogueMRPChipSaysItIsACatalogueMRPAndStillAges() {
+    let seen = moment(2026, 10, 23)
+    let source = PriceSource.catalogueMRP(dateSeen: seen)
+    #expect(source.kind == .mrp)
+    #expect(source.datedLabel == "Catalogue MRP · check at the shop")
+    #expect(source != PriceSource(kind: .mrp, dateSeen: seen))
+    #expect(!source.isStale(now: moment(2026, 10, 30)))
+    #expect(source.staleNote(now: moment(2026, 10, 31)) == "may have changed")
+    #expect(PriceSource.catalogueMRP(dateSeen: seen, packSizeKnown: false).datedLabel
+        == "Catalogue MRP · check at the shop · pack size unclear, 1 pack priced")
+}

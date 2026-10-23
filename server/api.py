@@ -202,17 +202,41 @@ BUTTONS = [("Confirm", "confirmed"), ("Ship", "shipped"), ("Deliver", "delivered
 
 PAGE = """<!doctype html><meta charset="utf-8"><title>Parchi judge</title>
 <style>body{font-family:sans-serif;margin:1.5em}.o{border:1px solid #888;padding:.6em;margin:.6em 0}
-button{margin:2px}</style>
+button{margin:2px}.rf{margin:.4em 0}.rf label{margin-right:.8em}</style>
 <h1>Parchi judge: Test orders</h1><div id="msg"></div><!--ORDERS-->
 <script>
 const k = new URLSearchParams(location.search).get('k');
-document.addEventListener('click', async (e) => {
-  const b = e.target.closest('button[data-o]'); if (!b) return;
-  const r = await fetch('/judge/' + encodeURIComponent(b.dataset.o) + '/event', {
-    method: 'POST', headers: {'Content-Type': 'application/json', 'X-Admin-Key': k},
-    body: JSON.stringify({sellerID: b.dataset.s, kind: b.dataset.k})});
-  document.getElementById('msg').textContent = r.ok ? 'sent' : 'error ' + r.status;
+const say = (t) => { document.getElementById('msg').textContent = t; };
+async function post(path, body) {
+  const r = await fetch(path, {method: 'POST', headers: {'Content-Type': 'application/json', 'X-Admin-Key': k},
+    body: JSON.stringify(body)});
+  say(r.ok ? 'sent' : 'error ' + r.status);
   if (r.ok) setTimeout(() => location.reload(), 600);
+}
+document.addEventListener('click', async (e) => {
+  const t = e.target.closest('button[data-reply-toggle]');
+  if (t) { const f = t.nextElementSibling; f.hidden = !f.hidden; return; }
+  const l = e.target.closest('button[data-lab]');
+  if (l) { await post('/judge/lab/' + encodeURIComponent(l.dataset.lab) + '/event', {kind: l.dataset.k}); return; }
+  const b = e.target.closest('button[data-o]'); if (!b) return;
+  await post('/judge/' + encodeURIComponent(b.dataset.o) + '/event', {sellerID: b.dataset.s, kind: b.dataset.k});
+});
+document.addEventListener('submit', async (e) => {
+  const f = e.target.closest('form.rf'); if (!f) return;
+  e.preventDefault();
+  const items = [...f.querySelectorAll('input[data-item]')].map((i) => {
+    const has = i.value.trim() !== '';
+    return has ? {itemID: i.dataset.item, available: true, pricePaise: Math.round(parseFloat(i.value) * 100)}
+               : {itemID: i.dataset.item, available: false};
+  });
+  const time = f.querySelector('.rb').value;
+  const today = new Date(Date.now() + 5.5 * 3600e3).toISOString().slice(0, 10);
+  const body = {shopID: f.dataset.shop, items: items};
+  if (items.some((i) => i.available)) {
+    if (!time) { say('enter a ready-by time'); return; }
+    body.readyBy = today + 'T' + time + ':00+05:30';
+  }
+  await post('/judge/shop/' + encodeURIComponent(f.dataset.ask) + '/reply', body);
 });
 </script>"""
 
@@ -253,7 +277,7 @@ async def judge_page(temporal: Any = Depends(get_temporal)) -> str:
             rows.append(f'<div>{esc(s["id"])} <b>{esc(s["status"])}</b> {buttons}</div>')
         parts.append(f'<div class="o"><b>Test order {esc(oid)}</b> state: {esc(snap["state"])}'
                      f' v{esc(snap["planVersion"])}{"".join(rows)}</div>')
-    return PAGE.replace("<!--ORDERS-->", "".join(parts))
+    return PAGE.replace("<!--ORDERS-->", "".join(parts) + judge_tools.sections_html())
 
 
 @app.post("/reset")
@@ -306,7 +330,7 @@ async def read(image: UploadFile | None = File(None), _: str = Depends(auth.requ
 
 
 # V2 modules: each adds its own routes (tests cover them in tests/test_reliability.py etc.).
-import p3_db, v2_db, shop, lab, reliability, refill, true_price  # noqa: E402
+import p3_db, v2_db, shop, lab, reliability, refill, true_price, judge_tools  # noqa: E402
 
-for _module in (shop, lab, reliability, refill, true_price):
+for _module in (shop, lab, reliability, refill, true_price, judge_tools):
     _module.register(app, get_temporal, auth.require_install)
