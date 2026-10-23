@@ -120,9 +120,15 @@ async def read_body(request: Request) -> tuple[bool, Any]:
             raise HTTPException(413, "body too large")
     except ValueError:
         raise HTTPException(400, "bad content-length")
-    raw = await request.body()
-    if len(raw) > MAX_BODY:
-        raise HTTPException(413, "body too large")
+    # Stream with a hard cap so a chunked upload without Content-Length cannot be buffered whole.
+    parts: list[bytes] = []
+    total = 0
+    async for chunk in request.stream():
+        total += len(chunk)
+        if total > MAX_BODY:
+            raise HTTPException(413, "body too large")
+        parts.append(chunk)
+    raw = b"".join(parts)
     if "json" in request.headers.get("content-type", ""):
         try:
             data = json.loads(raw or b"{}")

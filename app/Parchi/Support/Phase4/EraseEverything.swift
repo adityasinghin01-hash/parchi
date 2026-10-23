@@ -1,5 +1,10 @@
 import Foundation
 
+extension Notification.Name {
+    /// Posted after local data is wiped so view models drop what they cached in memory.
+    static let parchiErased = Notification.Name("parchi.erased")
+}
+
 /// "Delete everything": history, saved settings, consent record, temp files, seller logins, then the server copy.
 @MainActor
 enum EraseEverything {
@@ -20,6 +25,7 @@ enum EraseEverything {
         for key in keysToRemove(in: Array(defaults.dictionaryRepresentation().keys)) { defaults.removeObject(forKey: key) }
         tempFiles.removeAll()
         onClearSellerSessions()
+        NotificationCenter.default.post(name: .parchiErased, object: nil)
         return await reset.reset()
     }
 }

@@ -92,6 +92,8 @@ final class AppModel {
     var reliabilityIsDemo = false
     var truePrices: [String: TruePriceInfo] = [:]
     private(set) var deliveredSellers: Set<String> = []
+    /// Sellers the server says failed / were cancelled / were re-routed: never proposed again as a replacement.
+    private(set) var inactiveSellers: Set<String> = []
     /// Dose schedules written on the demo parchi (items of `real_basket_cheapest.json`).
     static let demoSchedules = ["dolo": "1-0-1", "pan": "1-0-0", "telma": "1-0-0", "glycomet": "1-0-1", "azithral": "1-0-0", "montair": "0-0-1"]
     var preferReliable: Bool = UserDefaults.standard.bool(forKey: "parchi.preferReliable") {
@@ -101,6 +103,8 @@ final class AppModel {
     init() {
         scenario = Self.load("real_basket_cheapest")
         catalogue = Self.loadCatalogue()
+        // A shop's quote changes the plan the moment it arrives.
+        shopAsk.onQuotesChanged = { [weak self] in self?.replan() }
     }
 
     // MARK: Reading (mock until Aditya Singhal's /read server is on the iMac)
@@ -198,8 +202,12 @@ final class AppModel {
     private var plannerOffers: [Offer] {
         let inPerson = Set(lines.filter { $0.inPersonOnly != nil }.map(\.id))
         let delivery = Set(scenario.sellers.filter { $0.channel == .onlinePharmacy || $0.channel == .quickCommerce }.map(\.id))
-        return scenario.offers.filter { offer in
-            !skippedSellers.contains(offer.sellerID) && !deliveredSellers.contains(offer.sellerID) && !(inPerson.contains(offer.itemID) && delivery.contains(offer.sellerID))
+        // A price a shop quoted through "Ask nearby shops" replaces our bundled price for the same item at that shop.
+        let quoted = Set(shopReplyOffers.map { OfferKey(itemID: $0.itemID, sellerID: $0.sellerID) })
+        let base = scenario.offers.filter { !quoted.contains(OfferKey(itemID: $0.itemID, sellerID: $0.sellerID)) }
+        return (base + shopReplyOffers).filter { offer in
+            !skippedSellers.contains(offer.sellerID) && !deliveredSellers.contains(offer.sellerID) && !inactiveSellers.contains(offer.sellerID)
+                && !(inPerson.contains(offer.itemID) && delivery.contains(offer.sellerID))
         }
     }
 
@@ -293,11 +301,28 @@ final class AppModel {
 
     func approvePlanB() {
         guard let proposal = planB else { return }
+        guard backend.mode == .live, let orderID = liveOrderID, let version = postedProposalVersion, let client = backend.makeClient() else {
+            applyApproval(proposal)   // Mock mode, or the local-only "Simulate cancel": nothing on a server to wait for
+            return
+        }
+        // Live: the server must accept first. If it does not (offline, rate limit), the sheet comes back and the patient can tap again.
+        Task {
+            do {
+                try await client.approve(orderID: orderID, planVersion: version)
+                postedProposalVersion = nil
+                applyApproval(proposal)
+            } catch {
+                backendError = (error as? LiveError)?.message ?? LiveError.unreachable.message
+                planB = proposal
+            }
+        }
+    }
+
+    private func applyApproval(_ proposal: PlanBProposal) {
         approvedPlan = proposal.newPlan
         plan = proposal.newPlan
         for line in proposal.rerouted { statuses[line.sellerID] = .rerouted }
         planB = nil
-        if backend.mode == .live { sendDecision(approve: true, proposal: proposal) }
     }
 
     /// Live only: tells the server the patient chose not to take the proposal. (The sheet's "Choose myself" does not call this yet.)
@@ -335,6 +360,7 @@ final class AppModel {
         postedProposalVersion = nil
         replacementSellers = []
         deliveredSellers = []
+        inactiveSellers = []
     }
 
     private func startLiveOrder() {
@@ -398,11 +424,17 @@ final class AppModel {
         for seller in status.sellers {
             // The server rejects a Plan B that sends items to a seller who already delivered, so never propose one.
             if seller.status == "delivered" { deliveredSellers.insert(seller.id) }
+            if ["failed", "cancelled", "rerouted"].contains(seller.status) { inactiveSellers.insert(seller.id) }
             switch seller.status {
             case "failed", "cancelled": statuses[seller.id] = .cancelled
             case "rerouted": statuses[seller.id] = .rerouted
             default: statuses[seller.id] = replacementSellers.contains(seller.id) ? .rerouted : .placed
             }
+        }
+        // The server already approved this proposal itself (the patient's auto-approve cap): follow it instead of leaving a stale sheet.
+        if let shown = planB, let posted = postedProposalVersion, status.planVersion > posted {
+            postedProposalVersion = nil
+            applyApproval(shown)
         }
         guard let approved = approvedPlan, let orderID = liveOrderID else { return }
 

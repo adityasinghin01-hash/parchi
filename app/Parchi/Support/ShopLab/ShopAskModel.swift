@@ -55,7 +55,9 @@ final class ShopAskModel {
     private(set) var noReply = false
     private(set) var nextGroup: [String] = []
     private(set) var winnerShopID: String?
-    private(set) var shopReplyOffers: [Offer] = []
+    private(set) var shopReplyOffers: [Offer] = [] { didSet { onQuotesChanged?() } }
+    /// AppModel re-plans when quotes arrive or are cleared.
+    var onQuotesChanged: (() -> Void)?
     private(set) var winnerSource: PriceSource?
     private(set) var notice: String?
     private(set) var error: String?
@@ -78,6 +80,10 @@ final class ShopAskModel {
 
     init() {
         phones = (UserDefaults.standard.dictionary(forKey: Self.phonesKey) as? [String: String]) ?? [:]
+        NotificationCenter.default.addObserver(forName: .parchiErased, object: nil, queue: .main) { [weak self] _ in
+            self?.phones = [:]
+            UserDefaults.standard.removeObject(forKey: Self.phonesKey)   // "Delete everything" must not leave phone numbers in memory or storage
+        }
     }
 
     // MARK: Setup
@@ -301,7 +307,13 @@ final class ShopAskModel {
                 } catch is CancellationError {
                     return
                 } catch {
-                    self.error = (error as? LiveError)?.message ?? LiveError.unreachable.message   // keep what is on screen, retry
+                    let live = error as? LiveError
+                    self.error = live?.message ?? LiveError.unreachable.message   // keep what is on screen, retry
+                    switch live {
+                    case .unauthorized?, .rejected?: self.pollTask = nil; return   // permanent (bad key, deleted ask): stop hammering the server
+                    case .rateLimited?: try? await Task.sleep(for: .seconds(15))
+                    default: break
+                    }
                 }
             }
         }

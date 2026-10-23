@@ -18,6 +18,8 @@ from shop import (admin_header, default_install_id, esc, need, notify, message_p
 JUDGE_KINDS = {"confirmed", "collected", "report_ready", "sample_rejected", "phlebotomist_late"}
 # Judge events that also tell the order workflow, so Plan B runs.
 ORDER_EVENT = {"sample_rejected": "sampleRejected", "phlebotomist_late": "late"}
+# Events whose signals matter if the first delivery was lost; repeating them is safe (the workflows ignore duplicates).
+RESEND_KINDS = {"sample_rejected", "collected"}
 
 
 def validate_booking(body: dict[str, Any], install_id: str) -> dict[str, Any]:
@@ -152,11 +154,19 @@ def register(app: FastAPI, get_temporal: Callable[..., Any],
         kind = body.get("kind")
         if kind not in JUDGE_KINDS:
             raise HTTPException(422, "kind must be one of " + ", ".join(sorted(JUDGE_KINDS)))
+        retried = False
         try:
             row = await asyncio.to_thread(
                 lambda: p3_db.lab_event(booking_id, kind, body.get("reportDueAt")))
         except ReplyError as error:
-            raise HTTPException(p3_db.STATUS[error.code], str(error))
+            # A retry after a lost signal: SQLite already holds the new state, so send the signals again
+            # (the workflows ignore duplicates) instead of leaving the booking and the order out of step.
+            current = await asyncio.to_thread(p3_db.get_booking, booking_id)
+            applied = (current is not None and error.code == "conflict" and kind in RESEND_KINDS
+                       and current["state"] == p3_db.EVENTS[kind][1])
+            if not applied:
+                raise HTTPException(p3_db.STATUS[error.code], str(error))
+            row, retried = current, True
         await notify(temporal, "lab-" + booking_id, "lab_event",
                      [kind, row["report_due_at"] if kind == "collected" else None])
         signalled = None
@@ -166,4 +176,4 @@ def register(app: FastAPI, get_temporal: Callable[..., Any],
                                      [row["seller_id"], ORDER_EVENT[kind]])
             if not signalled:
                 raise HTTPException(502, "booking updated but the order could not be signalled")
-        return {"ok": True, "state": row["state"], "orderSignalled": bool(signalled)}
+        return {"ok": True, "state": row["state"], "orderSignalled": bool(signalled), "retried": retried}

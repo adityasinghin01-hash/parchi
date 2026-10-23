@@ -303,11 +303,19 @@ final class LabBookingModel {
                     if Task.isCancelled { return }
                     self.error = nil
                     self.apply(status)
-                    if status.state == "rejected" || status.state == "done" || status.state == "confirmed" { return }
+                    if status.state == "rejected" || status.state == "done" { self.pollTasks[bookingID] = nil; return }
+                    // Confirmed, collected and report states keep being tracked, just less often.
+                    if status.state != "requested" { try? await Task.sleep(for: .seconds(12)) }
                 } catch is CancellationError {
                     return
                 } catch {
-                    self.error = (error as? LiveError)?.message ?? LiveError.unreachable.message
+                    let live = error as? LiveError
+                    self.error = live?.message ?? LiveError.unreachable.message
+                    switch live {
+                    case .unauthorized?, .rejected?: self.pollTasks[bookingID] = nil; return   // permanent: stop hammering the server
+                    case .rateLimited?: try? await Task.sleep(for: .seconds(15))
+                    default: break
+                    }
                 }
             }
         }

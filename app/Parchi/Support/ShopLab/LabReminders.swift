@@ -10,7 +10,13 @@ import UserNotifications
 final class AddressStore {
     private static let key = "parchi.address"   // same key Settings writes
     var text: String { didSet { UserDefaults.standard.set(text, forKey: Self.key) } }
-    init() { text = UserDefaults.standard.string(forKey: Self.key) ?? "" }
+    init() {
+        text = UserDefaults.standard.string(forKey: Self.key) ?? ""
+        NotificationCenter.default.addObserver(forName: .parchiErased, object: nil, queue: .main) { [weak self] _ in
+            self?.text = ""
+            UserDefaults.standard.removeObject(forKey: Self.key)   // "Delete everything" must not leave the address in memory or storage
+        }
+    }
 }
 
 /// Calendar (write-only) and local-notification helpers for a confirmed lab slot.
