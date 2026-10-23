@@ -12,6 +12,8 @@ targets:
     platform: iOS
     sources:
       - path: Parchi
+        excludes:
+          - "**/*.md"
       - path: ../engine/scenarios
         buildPhase: resources
       - path: ../engine/catalogue
