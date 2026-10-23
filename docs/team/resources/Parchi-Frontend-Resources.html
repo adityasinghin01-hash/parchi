@@ -1,0 +1,65 @@
+<html><head><meta charset="utf-8"><title>Parchi - Frontend links and resources</title>
+<style>body{font-family:Helvetica,Arial,sans-serif;font-size:11pt;line-height:1.35}h1{font-size:20pt}h2{font-size:14pt;margin-top:18pt;border-bottom:1px solid #999}table{border-collapse:collapse;width:100%;margin:6pt 0}td,th{border:1px solid #bbb;padding:4pt 6pt;vertical-align:top;font-size:10pt}th{background:#eee;text-align:left}.note{color:#555;font-size:10pt}</style></head><body>
+<h1>Parchi: frontend links &amp; resources</h1>
+<p><b>For:</b> Antara Gupta and Aditya (frontend) &middot; <b>From:</b> Aditya Singh &middot; 23 Oct 2026<br>
+<b>Mentor's direction:</b> the GUI is the star. Build it like an app people would pay for. Full screen spec: GitHub repo &rarr; <code>docs/team/Frontend-Antara-Aditya.md</code> (section 8 = GUI v2).<br>
+<span class="note">All links below were opened and checked on 23 Oct 2026.</span></p>
+
+<h2>1. Start here: Apple's official guides (we build in SwiftUI for iPhone)</h2>
+<table><tr><th>What</th><th>Link</th><th>Use it for</th></tr>
+<tr><td>Human Interface Guidelines</td><td><a href="https://developer.apple.com/design/human-interface-guidelines">https://developer.apple.com/design/human-interface-guidelines</a></td><td>The rules judges expect from an iPhone app: layout, navigation, sheets, lists</td></tr>
+<tr><td>HIG: Maps</td><td><a href="https://developer.apple.com/design/human-interface-guidelines/maps">https://developer.apple.com/design/human-interface-guidelines/maps</a></td><td>Our Price Map screen (pins, place cards)</td></tr>
+<tr><td>HIG: Accessibility</td><td><a href="https://developer.apple.com/design/human-interface-guidelines/accessibility">https://developer.apple.com/design/human-interface-guidelines/accessibility</a></td><td>Large text, VoiceOver, 44 pt targets, contrast (elderly users)</td></tr>
+<tr><td>SwiftUI documentation</td><td><a href="https://developer.apple.com/documentation/swiftui">https://developer.apple.com/documentation/swiftui</a></td><td>Every view, modifier, sheet, navigation API</td></tr>
+<tr><td>SwiftUI tutorials</td><td><a href="https://developer.apple.com/tutorials/swiftui">https://developer.apple.com/tutorials/swiftui</a></td><td>If SwiftUI is new to you: 1&ndash;2 hours</td></tr>
+<tr><td>MapKit for SwiftUI</td><td><a href="https://developer.apple.com/documentation/mapkit/mapkit-for-swiftui">https://developer.apple.com/documentation/mapkit/mapkit-for-swiftui</a></td><td><code>Map</code>, annotations (price pins), user location, look-around</td></tr>
+<tr><td>SF Symbols</td><td><a href="https://developer.apple.com/sf-symbols/">https://developer.apple.com/sf-symbols/</a></td><td>Download the app; use only SF Symbols for icons (pills, cross.case, testtube.2, map, shippingbox)</td></tr>
+<tr><td>Apple Design Resources</td><td><a href="https://developer.apple.com/design/resources/">https://developer.apple.com/design/resources/</a></td><td>Official iOS UI kits for Figma/Sketch: design screens before coding</td></tr>
+</table>
+
+<h2>2. From our resources folder: useful for Parchi</h2>
+<table><tr><th>Resource</th><th>Link</th><th>Cost</th><th>Use it for in Parchi</th></tr>
+<tr><td><b>Mobbin</b></td><td><a href="https://mobbin.com">https://mobbin.com</a></td><td>Free tier enough</td><td>See how real iOS apps solve our screens. Search the list in section 5</td></tr>
+<tr><td><b>NameThatUI</b></td><td><a href="https://namethatui.org">https://namethatui.org</a></td><td>Free</td><td>Find the exact name of a UI element and its SwiftUI name, before asking an AI to build it ("non-modal bottom sheet with a drag handle")</td></tr>
+<tr><td>Cosmos</td><td><a href="https://www.cosmos.so">https://www.cosmos.so</a></td><td>Free</td><td>Mood board by colour for our health/trust look</td></tr>
+<tr><td>Rive (+ iOS runtime)</td><td><a href="https://rive.app">https://rive.app</a> &middot; <a href="https://github.com/rive-app/rive-ios">https://github.com/rive-app/rive-ios</a></td><td>Free tier</td><td>One or two small interactive animations (Plan B moment, "order placed" tick). Keep it small</td></tr>
+<tr><td>Recraft</td><td><a href="https://www.recraft.ai">https://www.recraft.ai</a></td><td>50 free credits/day</td><td>App icon + logo as clean SVG</td></tr>
+<tr><td>Icons8</td><td><a href="https://icons8.com">https://icons8.com</a></td><td>Free with credit</td><td>Empty-state illustrations only (icons = SF Symbols)</td></tr>
+<tr><td>APCA contrast checker</td><td><a href="https://apcacontrast.com">https://apcacontrast.com</a></td><td>Free</td><td>Check text colour contrast (light + dark mode)</td></tr>
+<tr><td>Emil Kowalski essays</td><td><a href="https://emilkowal.ski">https://emilkowal.ski</a></td><td>Free</td><td>Taste and animation judgement ("7 Practical Animation Tips", "You Don't Need Animations")</td></tr>
+<tr><td>UI/UX Pro Max (design rules)</td><td><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill">https://github.com/nextlevelbuilder/ui-ux-pro-max-skill</a></td><td>Free</td><td>Colour palettes, font pairings, UX rules checklist</td></tr>
+<tr><td>Micrographics templates (PDF in our folder)</td><td>ask Aditya Singh</td><td>Free</td><td>Infographics for the deck, not the app</td></tr>
+</table>
+<p class="note"><b>Paid, don't buy for the hackathon:</b> Devouring Details (<a href="https://devouringdetails.com,">https://devouringdetails.com,</a> $249) and Interface Craft by Josh Puckett (<a href="https://interfacecraft.dev):">https://interfacecraft.dev):</a> the best interaction-design courses, for later. Kombai (<a href="https://kombai.com):">https://kombai.com):</a> an AI frontend agent, mostly for React/web, 300 free credits/month.</p>
+
+<h2>3. In our folder but web-only (not for the iOS app)</h2>
+<p>Use only if we make a website or landing page for the pitch: Watermelon UI (ui.watermelon.sh), Cult UI (cult-ui.com), Skiper UI (skiper-ui.com), React Bits (reactbits.dev), GSAP (gsap.com), Lenis (lenis.dev), anime.js, barba.js, Shader Gradient (shadergradient.co), Spline, Unicorn Studio (unicorn.studio).</p>
+
+<h2>4. Competitors and apps to study (take screenshots into <code>docs/competitors/&lt;app&gt;/</code>)</h2>
+<table><tr><th>App</th><th>Link</th><th>Look at</th></tr>
+<tr><td>QuickPill</td><td><a href="https://www.quickpill.in">https://www.quickpill.in</a></td><td>Scan flow, per-medicine prices, "Add best deal" (we replace it with one "Get it all")</td></tr>
+<tr><td>MediSaathi</td><td><a href="https://www.mymedisaathi.com">https://www.mymedisaathi.com</a></td><td>7-pharmacy comparison layout</td></tr>
+<tr><td>Tata 1mg</td><td><a href="https://www.1mg.com">https://www.1mg.com</a> (+ app)</td><td>Upload flow, where fees appear, tracking</td></tr>
+<tr><td>PharmEasy</td><td><a href="https://pharmeasy.in">https://pharmeasy.in</a> (+ app)</td><td>"We'll call you" flow, cancellation screens</td></tr>
+<tr><td>Apollo 24/7</td><td><a href="https://www.apollopharmacy.in">https://www.apollopharmacy.in</a> (+ app)</td><td>Medicines + tests in one app</td></tr>
+<tr><td>Truemeds</td><td><a href="https://www.truemeds.in">https://www.truemeds.in</a></td><td>How substitutes are worded (we say "ask your doctor")</td></tr>
+<tr><td>LabFare</td><td><a href="https://labfare.in">https://labfare.in</a></td><td>Lab comparison: price, distance, report time</td></tr>
+<tr><td>Davaio</td><td><a href="https://www.davaio.com">https://www.davaio.com</a></td><td>Cart total including delivery</td></tr>
+<tr><td>GoodRx (US)</td><td><a href="https://www.goodrx.com">https://www.goodrx.com</a> (open in a browser)</td><td>Price-list cards per pharmacy</td></tr>
+<tr><td>Skyscanner</td><td><a href="https://www.skyscanner.co.in">https://www.skyscanner.co.in</a></td><td>"Cheapest / Best / Fastest" tabs: we copy this idea for whole-parchi options</td></tr>
+<tr><td>Apps on your phone</td><td>Blinkit, Zepto, Jan Aushadhi Sugam, Zomato/Swiggy, Uber, Apple Maps</td><td>ETA + price chips, store lists, trip tracking, place cards, map pins</td></tr>
+</table>
+
+<h2>5. What to search on Mobbin (15 minutes)</h2>
+<p>pharmacy &middot; prescription upload &middot; price comparison &middot; map with pins &middot; store list sort &middot; bottom sheet &middot; checkout &middot; order tracking &middot; delivery status &middot; onboarding permissions &middot; empty state &middot; error state &middot; settings privacy</p>
+
+<h2>6. Our own files (GitHub: adityasinghin01-hash/parchi)</h2>
+<table><tr><th>File</th><th>What</th></tr>
+<tr><td>CONTEXT.md</td><td>The whole project in 2 minutes</td></tr>
+<tr><td>docs/team/Frontend-Antara-Aditya.md</td><td>Every screen, states, errors, GUI v2 (section 8), acceptance checklist</td></tr>
+<tr><td>app/README.md</td><td>How to open and run the app in Xcode</td></tr>
+<tr><td>app/Parchi/Screens/</td><td>Current working screens (restyle and extend these)</td></tr>
+<tr><td>engine/scenarios/</td><td>Real demo data (prices captured 23 Oct)</td></tr>
+<tr><td>docs/research/02-phase2-competitors-identity.md</td><td>Competitor research + user complaint numbers</td></tr>
+</table>
+</body></html>
