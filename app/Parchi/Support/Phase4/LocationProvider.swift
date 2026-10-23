@@ -99,7 +99,7 @@ struct CityPickerView: View {
                 }
                 Text(statusText).font(.footnote).foregroundStyle(.secondary)
             } footer: {
-                Text("Parchi uses your location only on this phone, to show shops and labs near you.")
+                Text("Parchi uses your location to show shops and labs near you. The map search sends the area around you to Apple Maps; Parchi does not save it.")
             }
             Section("Or choose your city") {
                 ForEach(Cities.all) { city in

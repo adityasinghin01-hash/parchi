@@ -4,6 +4,8 @@ import SwiftUI
 struct FirstRunConsentView: View {
     let consent: ConsentStore
     var onAgree: () -> Void = {}
+    /// Shown as a smaller "Not now" button when the screen is a gate in front of a photo (nothing is read or kept if they decline).
+    var onDecline: (() -> Void)? = nil
     @State private var hindi = false
 
     var body: some View {
@@ -41,6 +43,10 @@ struct FirstRunConsentView: View {
                         .font(.title3.bold()).frame(maxWidth: .infinity, minHeight: 52)
                 }
                 .buttonStyle(.borderedProminent)
+                if let onDecline {
+                    Button(hindi ? "अभी नहीं" : "Not now", action: onDecline)
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                }
                 Text(hindi ? "आप कभी भी सेटिंग्स से सब कुछ मिटा सकते हैं।" : "You can delete everything any time in Settings.")
                     .font(.footnote).foregroundStyle(.secondary)
             }
@@ -53,24 +59,24 @@ struct FirstRunConsentView: View {
     // Hindi lines are plain translations of the English; a native speaker should check them before release.
     private let cards: [Card] = [
         Card(symbol: "eye.slash",
-             title: "The patient's name is blurred on your phone",
-             body: "Before a parchi photo is sent anywhere, the name, age, phone number and address are blurred on this phone.",
-             hiTitle: "मरीज़ का नाम आपके फ़ोन पर ही धुँधला होता है",
-             hiBody: "पर्ची की फ़ोटो कहीं भेजने से पहले, नाम, उम्र, फ़ोन नंबर और पता इसी फ़ोन पर धुँधले कर दिए जाते हैं।"),
+             title: "We try to hide the patient's details",
+             body: "We try to hide the name, age, phone and address we can find. Check the picture before you continue; if anything personal is still visible, close it and crop it first.",
+             hiTitle: "हम मरीज़ की निजी जानकारी छिपाने की कोशिश करते हैं",
+             hiBody: "हमें जो नाम, उम्र, फ़ोन नंबर और पता मिलता है, उसे हम छिपाने की कोशिश करते हैं। आगे बढ़ने से पहले तस्वीर जाँच लें; अगर कुछ निजी जानकारी अब भी दिख रही है, तो उसे बंद करें और पहले क्रॉप करें।"),
         Card(symbol: "server.rack",
-             title: "Only the medicine part leaves the phone",
-             body: "When the phone cannot read a line itself, only the cropped medicine area goes to our own computer (the Parchi lab server), not to an AI company.",
-             hiTitle: "सिर्फ़ दवाओं वाला हिस्सा फ़ोन से बाहर जाता है",
-             hiBody: "जब फ़ोन कोई पंक्ति खुद नहीं पढ़ पाता, तब केवल कटा हुआ दवाओं वाला हिस्सा हमारे अपने कंप्यूटर (Parchi लैब सर्वर) पर जाता है, किसी AI कंपनी को नहीं।"),
+             title: "In Live mode the picture goes to our lab server",
+             body: "In Live mode, when you tap Use this photo, the whole picture (with what we could hide, hidden) goes to our own computer (the Parchi lab server) to be read. In Demo mode the picture stays on this phone.",
+             hiTitle: "Live मोड में तस्वीर हमारे लैब सर्वर पर जाती है",
+             hiBody: "Live मोड में, जब आप “Use this photo” दबाते हैं, तो पूरी तस्वीर (जो हिस्सा हम छिपा पाए, वह छिपा हुआ) पढ़ने के लिए हमारे अपने कंप्यूटर (Parchi लैब सर्वर) पर जाती है। Demo मोड में तस्वीर इसी फ़ोन पर रहती है।"),
         Card(symbol: "internaldrive",
              title: "Your history stays on this phone",
              body: "Saved parchis, doses and settings are stored only on this phone. Test orders are kept on our lab computer under a random install key, never your name.",
              hiTitle: "आपका इतिहास इसी फ़ोन में रहता है",
              hiBody: "सेव की गई पर्चियाँ, खुराक और सेटिंग्स सिर्फ़ इसी फ़ोन में रहती हैं। टेस्ट ऑर्डर हमारे लैब कंप्यूटर पर एक random install key से रखे जाते हैं, आपके नाम से नहीं।"),
         Card(symbol: "trash",
-             title: "Photo crops are deleted after 24 hours",
-             body: "Photo crops and caches on this phone are deleted after 24 hours. Delete everything in Settings wipes the phone and asks our lab computer to delete this phone's test orders.",
-             hiTitle: "फ़ोटो के हिस्से 24 घंटे में मिट जाते हैं",
-             hiBody: "इस फ़ोन पर फ़ोटो के कटे हुए हिस्से और कैश 24 घंटे बाद मिटा दिए जाते हैं। सेटिंग्स में “Delete everything” फ़ोन का सारा डेटा मिटाता है और हमारे लैब कंप्यूटर से इस फ़ोन के टेस्ट ऑर्डर मिटाने को कहता है।"),
+             title: "Photo copies are removed after 24 hours",
+             body: "Photo copies on this phone are removed the next time you open Parchi after 24 hours. Delete everything in Settings wipes the phone and asks our lab computer to delete this phone's test orders. Calendar events Parchi added stay until you delete them in the Calendar app.",
+             hiTitle: "फ़ोटो की कॉपी 24 घंटे बाद मिटाई जाती हैं",
+             hiBody: "इस फ़ोन पर फ़ोटो की कॉपी 24 घंटे के बाद, अगली बार Parchi खोलने पर मिटा दी जाती हैं। सेटिंग्स में “Delete everything” फ़ोन का सारा डेटा मिटाता है और हमारे लैब कंप्यूटर से इस फ़ोन के टेस्ट ऑर्डर मिटाने को कहता है। Parchi ने जो Calendar इवेंट जोड़े हैं, वे आप Calendar ऐप में खुद मिटाएँ।"),
     ]
 }

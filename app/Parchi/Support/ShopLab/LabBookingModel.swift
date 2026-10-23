@@ -235,6 +235,7 @@ final class LabBookingModel {
                 for (request, var state) in plans {
                     do {
                         let reply = try await client.book(request)
+                        BackendUsage.markUsedLive()   // the server now holds this booking, including the address
                         state = LabBookingState(id: reply.bookingID, labID: state.labID, labName: state.labName, testNames: state.testNames,
                                                 fastingTestNames: state.fastingTestNames, homeCollection: state.homeCollection,
                                                 requestedSlot: state.requestedSlot, address: state.address, replyLink: reply.replyLink)
@@ -277,6 +278,22 @@ final class LabBookingModel {
         let calendar = ISOTime.calendar
         guard let dayBefore = calendar.date(byAdding: .day, value: -1, to: slot) else { return nil }
         return calendar.date(bySettingHour: 21, minute: 0, second: 0, of: dayBefore)
+    }
+
+    /// "Delete everything": bookings (with their addresses), polling tasks, the demo timer and all context are dropped.
+    func eraseAll() {
+        stopPolling()
+        demoTask?.cancel(); demoTask = nil
+        bookings = []
+        tests = []
+        chosenLab = [:]
+        toldToFast = []
+        phase = .choosing
+        isDemo = false
+        error = nil
+        scenarioItems = []; sellers = []; offers = []
+        live = nil; liveRequested = false; orderID = nil; planSellerIDs = []
+        address.text = ""
     }
 
     func startOver() {

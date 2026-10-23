@@ -66,12 +66,18 @@ def make_input(root, drop_price_col=None):
 
 def make_medlex(path):
     with open(path, "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=["id", "name", "salt_composition"])
+        w = csv.DictWriter(f, fieldnames=["id", "name", "salt_composition", "short_composition1", "short_composition2"])
         w.writeheader()
         w.writerow({"id": 1, "name": "Alprax 0.25 Tablet", "salt_composition": "Alprazolam (0.25mg)"})
         w.writerow({"id": 2, "name": "Ketmin 50 Injection", "salt_composition": "Ketamine (50mg)"})
         w.writerow({"id": 3, "name": "Dolo 650 Tablet", "salt_composition": "Paracetamol (650mg)"})
         w.writerow({"id": 4, "name": "Mix Tablet", "salt_composition": "Paracetamol (325mg) + Alprazolam (0.5mg)"})
+        # salt_composition empty, only the short columns filled (the real "Aaram Tablet" row)
+        w.writerow({"id": 5, "name": "Aaram 0.5mg Tablet", "salt_composition": "", "short_composition1": "Alprazolam (0.5mg)"})
+        w.writerow({"id": 6, "name": "Zolnor Tablet", "salt_composition": "", "short_composition1": "Paracetamol (325mg) ",
+                    "short_composition2": " Ketamine HCl (10mg)"})
+        w.writerow({"id": 7, "name": "Crocin 500 Tablet", "salt_composition": "", "short_composition1": "Paracetamol (500mg)"})   # negative control
+        w.writerow({"id": 8, "name": "Alprazolam 0.25 Tablet", "salt_composition": "", "short_composition1": "Alprazolam (0.25mg)"})
 
 
 class BuildTests(unittest.TestCase):
@@ -128,6 +134,37 @@ class BuildTests(unittest.TestCase):
         self.assertEqual(brands["MIX"]["salt"], "Alprazolam")
         self.assertNotIn("DOLO", brands)
 
+    def test_brand_schedule_reads_the_short_composition_columns_too(self):
+        b.build(self.inp, self.out, self.medlex)
+        brands = self.load("brand_schedule.json")
+        self.assertEqual(brands["AARAM"], {"schedule": "H1", "salt": "Alprazolam"})       # review item 2
+        self.assertEqual(brands["ALPRAZOLAM"]["schedule"], "H1")
+        self.assertEqual(brands["ZOLNOR"], {"schedule": "X", "salt": "Ketamine hydrochloride"})   # second short column
+        self.assertNotIn("CROCIN", brands)                                                  # negative control
+        self.assertNotIn("DOLO", brands)
+
+    def test_brand_schedule_still_works_for_a_file_without_the_short_columns(self):
+        old = self.root / "old.csv"
+        with open(old, "w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=["id", "name", "salt_composition"])
+            w.writeheader()
+            w.writerow({"id": 1, "name": "Alprax 0.25 Tablet", "salt_composition": "Alprazolam (0.25mg)"})
+        b.build(self.inp, self.out, old)
+        self.assertEqual(self.load("brand_schedule.json")["ALPRAX"]["schedule"], "H1")
+
+    def test_brand_is_listed_only_when_half_its_active_products_are_scheduled(self):
+        schedule = [{"salt": "Tramadol", "schedule": "H1"}]
+        rows = [{"name": "Calpol 500 Tablet", "salt_composition": "Paracetamol (500mg)"} for _ in range(7)]
+        rows.append({"name": "Calpol T Tablet", "salt_composition": "Paracetamol (325mg) + Tramadol (37.5mg)"})   # 1 of 8
+        rows.append({"name": "Calpol Old Tablet", "salt_composition": "Tramadol (50mg)", "Is_discontinued": "TRUE"})   # ignored
+        rows.append({"name": "Oflo 200 Tablet", "salt_composition": "Tramadol (50mg)"})                                # 1 of 1
+        rows += [{"name": "Half 1 Tablet", "salt_composition": "Tramadol (50mg)"}, {"name": "Half 2 Tablet", "salt_composition": "Paracetamol"}]
+        brands = b.build_brand_schedule(rows, schedule)
+        self.assertNotIn("CALPOL", brands, "1 of 8 products is not enough to flag the whole brand")
+        self.assertEqual(brands["OFLO"]["schedule"], "H1")
+        self.assertEqual(brands["HALF"]["schedule"], "H1", "exactly half counts")
+        self.assertIn("CALPOL", b.build_brand_schedule(rows, schedule, min_share=0.1), "the threshold is a parameter")
+
     def test_data_version_counts(self):
         v = b.build(self.inp, self.out, self.medlex)
         self.assertEqual(v["input_folder"], "Parchi Data")
@@ -136,7 +173,7 @@ class BuildTests(unittest.TestCase):
         self.assertEqual(v["counts"]["product_links"], 2)
         self.assertEqual(v["counts"]["product_links_with_price"], 1)
         self.assertEqual(v["counts"]["schedule_h1_x"], 2)
-        self.assertEqual(v["counts"]["brand_schedule"], 3)
+        self.assertEqual(v["counts"]["brand_schedule"], 6)
         self.assertEqual(v["build_date"], "2026-10-23")
         self.assertEqual(self.load("DATA_VERSION.json"), v)
 

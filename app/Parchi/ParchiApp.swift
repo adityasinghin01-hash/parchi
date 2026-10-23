@@ -42,6 +42,7 @@ struct RootView: View {
                 }
         }
         .onAppear(perform: jumpForTesting)
+        .captureInbox(path: $path, consent: model.consent)   // K12: Open in Parchi + the single capture preview sheet; consent gate in front of the first photo
         .overlay { if let name = UserDefaults.standard.string(forKey: "demoRoute"), let screen = Phase4Route.view(for: name) { screen.background(Color(.systemBackground)) } }   // Phase 4 demo screens: history|care|settings|consent|rank|city
         .onChange(of: path) { _, newPath in model.trackVisibilityChanged(newPath.contains(.track)) }
     }

@@ -54,7 +54,7 @@ private let tinyJSON = """
 {"forms":["","tablet","capsule","liquid","drops","injection","inhaler","topical","powder","gargle"],
  "variants":["","modified","dispersible","unclear"],
  "packs":["strip of 10 tablets","strip of 30 tablets","bottle of 100 ml Syrup","strip of 15 tablets","an odd pack"],
- "salts":["Telmisartan (40mg)","Metformin (500mg)","Amoxycillin (500mg) + Clavulanic Acid (125mg)","Paracetamol (125mg/5ml)","Paracetamol (650mg)","Pantoprazole (40mg)"],
+ "salts":["Telmisartan (40mg)","Metformin (500mg)","Amoxycillin (500mg) + Clavulanic Acid (125mg)","Paracetamol (125mg/5ml)","Paracetamol (650mg)","Pantoprazole (40mg)","Glimepiride (2mg) + Metformin (500mg)","Glimepiride (2mg) + Metformin (850mg)","Follitropin (75IU)","Alprazolam (0.5mg)","Thyroxine (50mcg)","Paracetamol (325mg) + Tramadol (37.5mg)","Alprazolam (0.25mg)"],
  "extras":["H","AM"],
  "brands":{
   "TELMA":"40,24595,1,4,1;40,15000,0,4,0,1;80,18732,3,4",
@@ -68,7 +68,17 @@ private let tinyJSON = """
   "SYNCRO":"20,900,0,4,1;20,1500,0,8",
   "DUOTEST":"625,300,0,4,3,1;625,200,3,4,3,2",
   "MIXED":"10,100,0,4,1,1;10,200,0,4,2,2",
-  "NOSALT":"10,100,0,4,0,1;10,200,0,4,0,2"
+  "NOSALT":"10,100,0,4,0,1;10,200,0,4,0,2",
+  "GLYCOMETGP":"2/500,17075,0,5,7;2/850,19350,0,5,8",
+  "GONALF":"75,208967,4,20,9",
+  "AARAM":"0.5,3300,3,4,10",
+  "ALPRAX":"0.25,2000,0,4,13;0.5,2500,0,4,10",
+  "THYRO":"50,20000,0,4,11",
+  "NUNIT":"10,100,0,4",
+  "CAPBRAND":"40,5000,0,8,6",
+  "SYPBRAND":"100,5000,2,12,4",
+  "OINTBRAND":"15,5000,2,28,6",
+  "CALPOLT":"325,1500,0,4,12"
  }}
 """
 
@@ -84,6 +94,10 @@ private let tinyJA = JanAushadhiIndex(products: [
     JAProduct(productId: 7, genericName: "Pantoprazole Gastro Resistant Tablets IP 40 mg", unitSize: "10's", mrpRupees: 9.1),
     JAProduct(productId: 8, genericName: "Pantoprazole Injection IP 40 mg", unitSize: "Vial", mrpRupees: 30),
     JAProduct(productId: 9, genericName: "Telmisartan Tablets IP 40 mg", unitSize: "30's", mrpRupees: 20),
+    JAProduct(productId: 10, genericName: "Alprazolam Tablets IP 0.5 mg", unitSize: "10's", mrpRupees: 7.94),
+    JAProduct(productId: 11, genericName: "Alprazolam Tablets IP 0.25 mg", unitSize: "10's", mrpRupees: 6),
+    JAProduct(productId: 12, genericName: "Paracetamol and Tramadol Tablets 325 mg + 37.5 mg", unitSize: "10's", mrpRupees: 9),
+    JAProduct(productId: 13, genericName: "Pantoprazole Gastro Resistant Capsules IP 40 mg", unitSize: "10's", mrpRupees: 9),
 ])
 
 @Test func exactBrandAndStrengthGetsTheMRPAndPack() throws {
@@ -198,12 +212,162 @@ private let tinyJA = JanAushadhiIndex(products: [
     #expect(syrup.linePrice(quantity: 1).totalPaise == 5000)
 }
 
-@Test func unreadablePackSizePricesOnePackAndSaysSo() throws {
-    let m = try #require(tiny.match(name: "Oddpack", strength: "10"))
-    let price = m.linePrice(quantity: 60)
-    #expect(price.packs == 1)
-    #expect(price.totalPaise == 1000)
-    #expect(!price.packSizeKnown)
+@Test func unreadablePackSizeGivesNoPriceAndSaysWhy() throws {
+    // K17 item 5: "Gonal-F 75" qty 3 used to be priced as one vial (an under-count). Now: no price, plan blocked honestly.
+    #expect(tiny.match(name: "Oddpack", strength: "10") == nil)
+    #expect(tiny.lookup(name: "Oddpack", strength: "10") == .miss(.packSizeUnclear))
+    #expect(CatalogueMiss.packSizeUnclear.reason == "pack size unclear")
+    #expect(tiny.lookup(name: "Nosuchbrand", strength: "10") == .miss(.notFound))
+    // a plain count the parser can read still prices
+    #expect(tiny.lookup(name: "Dolo", strength: "650").match != nil)
+    // the real Gonal-F, the review's input: not priced (the unit check and the pack check each refuse it)
+    #expect(tiny.match(name: "Gonal-F", strength: "75") == nil)
+    #expect(tiny.match(name: "Gonal-F", strength: "75 IU") == nil)       // IU matches the unit, then the unreadable pack label stops it
+    #expect(tiny.lookup(name: "Gonal-F", strength: "75 IU") == .miss(.packSizeUnclear))
+}
+
+// MARK: - combination strengths, units, written forms (K17)
+
+@Test func combinationStrengthsAreMatchedExactly() throws {
+    let a = try #require(tiny.match(name: "Glycomet-GP PR", strength: "2/500"))
+    let b = try #require(tiny.match(name: "Glycomet-GP PR", strength: "2/850 mg"))
+    #expect(a.entry.mrpPaise == 17075)
+    #expect(b.entry.mrpPaise == 19350)
+    #expect(tiny.match(name: "Glycomet-GP PR", strength: "2/700") == nil)
+    #expect(tiny.match(name: "Glycomet-GP PR", strength: "2") == nil)         // a half-written combination is not guessed
+    #expect(tiny.match(name: "Glycomet-GP PR", strength: "500") == nil)
+    #expect(tiny.match(name: "Glycomet-GP PR", strength: nil) == nil)
+    #expect(WrittenStrength("2/500").number == "2/500")
+    #expect(WrittenStrength("125mg/5ml").number == "125")
+    #expect(WrittenStrength("125mg/5ml").unit == "mg")
+}
+
+@Test func unitsMustAgree() throws {
+    #expect(tiny.match(name: "Dolo", strength: "650 mcg") == nil)              // review item 4
+    #expect(tiny.match(name: "Dolo", strength: "650mcg") == nil)
+    #expect(tiny.match(name: "Dolo", strength: "650 µg") == nil)
+    #expect(tiny.match(name: "Dolo", strength: "650 g") == nil)
+    #expect(tiny.match(name: "Dolo", strength: "650 iu") == nil)
+    #expect(tiny.match(name: "Dolo", strength: "650 %") == nil)
+    #expect(tiny.match(name: "Dolo", strength: "650 furlongs") == nil)         // an unknown unit never matches
+    #expect(tiny.match(name: "Dolo", strength: "650 mg") != nil)
+    #expect(tiny.match(name: "Dolo", strength: "650MG") != nil)
+    #expect(tiny.match(name: "Dolo", strength: "650") != nil)                  // no unit written, entry is mg: fine
+    #expect(tiny.match(name: "Dolo", strength: "650 tablets") != nil)
+    // entry in mcg: the unit must be written and be mcg (or an alias)
+    #expect(tiny.match(name: "Thyro", strength: "50 mcg") != nil)
+    #expect(tiny.match(name: "Thyro", strength: "50 µg") != nil)
+    #expect(tiny.match(name: "Thyro", strength: "50 μg") != nil)
+    #expect(tiny.match(name: "Thyro", strength: "50 micrograms") != nil)
+    #expect(tiny.match(name: "Thyro", strength: "50") == nil)                  // missing unit, entry is not mg
+    #expect(tiny.match(name: "Thyro", strength: "50 mg") == nil)
+    // entry with an unknown unit (no salt): mg or nothing written
+    #expect(tiny.match(name: "Nunit", strength: "10") != nil)
+    #expect(tiny.match(name: "Nunit", strength: "10 mg") != nil)
+    #expect(tiny.match(name: "Nunit", strength: "10 mcg") == nil)
+    // entry unit from the composition
+    #expect(try #require(tiny.match(name: "Thyro", strength: "50 mcg")).entry.unit == "mcg")
+    #expect(try #require(tiny.match(name: "Glycomet-GP PR", strength: "2/500")).entry.unit == "mg")
+    #expect(try #require(tiny.match(name: "Dolo", strength: "650")).entry.unit == "mg")
+    #expect(try #require(tiny.match(name: "Dolo Syrup", strength: "125 mg")).entry.unit == "mg")
+}
+
+@Test func writtenAbbreviationsStateTheForm() throws {
+    // review item 6: "Pan cap 40" is a capsule: no tablet price, no tablet Jan Aushadhi match
+    #expect(tiny.match(name: "Pan cap", strength: "40") == nil)
+    #expect(tiny.match(name: "Pan Cap.", strength: "40") == nil)
+    #expect(tiny.match(name: "Pan caps", strength: "40") == nil)
+    #expect(tiny.match(name: "Pan capsule", strength: "40") == nil)
+    #expect(tiny.match(name: "Pan tab", strength: "40")?.entry.form == .tablet)
+    #expect(tiny.match(name: "Pan inj", strength: "40")?.entry.form == .injection)
+    #expect(tiny.match(name: "Pan", strength: "40")?.entry.form == .tablet)
+    #expect(tiny.match(name: "Capbrand cap", strength: "40")?.entry.form == .capsule)
+    #expect(tiny.match(name: "Capbrand tab", strength: "40") == nil)
+    #expect(tiny.match(name: "Sypbrand syp", strength: "100")?.entry.form == .liquid)
+    #expect(tiny.match(name: "Sypbrand susp", strength: "100")?.entry.form == .liquid)
+    #expect(tiny.match(name: "Sypbrand tab", strength: "100") == nil)
+    #expect(tiny.match(name: "Ointbrand oint", strength: "15")?.entry.form == .topical)
+    #expect(tiny.match(name: "Ointbrand cap", strength: "15") == nil)
+    // the abbreviation is not an extra word that would make a different medicine
+    #expect(CatalogueMRPIndex.extraWords(afterBrandIn: "Pan cap 40") == "")
+    #expect(CatalogueMRPIndex.extraWords(afterBrandIn: "Calpol syp 125") == "")
+    #expect(CatalogueMRPIndex.extraWords(afterBrandIn: "Soframycin oint") == "")
+    #expect(CatalogueMRPIndex.extraWords(afterBrandIn: "Pan tabs 40") == "")
+    // and a Pan cap line gets no Jan Aushadhi suggestion either (there is no match to look one up for)
+    #expect(tiny.match(name: "Pan cap", strength: "40").flatMap { tinyJA.equivalent(for: $0, quantity: 15) } == nil)
+}
+
+// MARK: - quantities (K17 item 7)
+
+@Test func absurdQuantitiesGetNoPriceAndNeverTrap() throws {
+    let big = [Int.max, 50_000_000_000_000_000, 10_001, Int.max - 1]
+    for q in big {
+        #expect(tiny.match(name: "Dolo", strength: "650", quantity: q) == nil)
+        #expect(tiny.lookup(name: "Dolo", strength: "650", quantity: q) == .miss(.quantityTooLarge))
+        let m = try #require(tiny.match(name: "Dolo", strength: "650"))
+        #expect(m.pricedLine(quantity: q) == nil)
+        #expect(tinyJA.equivalent(for: try #require(tiny.match(name: "Telma", strength: "40")), quantity: q) == nil)
+        // the old entry points no longer trap either
+        let clamped = m.linePrice(quantity: q)
+        #expect(clamped.packs == 667)                     // 10,000 / 15, rounded up
+        #expect(clamped.totalPaise == 667 * 3427)
+        #expect(PackSize.packsNeeded(quantity: q, unitsPerPack: 15) > 0)
+    }
+    #expect(PackSize.packsNeeded(quantity: Int.max, unitsPerPack: 1) == Int.max)
+    #expect(PackSize.packsNeeded(quantity: Int.max, unitsPerPack: 2) == Int.max / 2 + 1)
+    #expect(PackSize.packsNeeded(quantity: Int.min, unitsPerPack: 10) == 1)
+    #expect(PackSize.packsNeeded(quantity: 10_000, unitsPerPack: 10) == 1000)
+    // the edge itself is priced
+    let m = try #require(tiny.match(name: "Dolo", strength: "650", quantity: 10_000))
+    #expect(m.pricedLine(quantity: 10_000)?.packs == 667)
+    #expect(m.pricedLine(quantity: 15) == m.linePrice(quantity: 15))
+    #expect(tiny.match(name: "Dolo", strength: "650", quantity: 0) != nil)
+    #expect(tiny.match(name: "Dolo", strength: "650", quantity: -5) != nil)
+}
+
+@Test func anAbsurdMRPInTheFileIsRejectedNotMultiplied() throws {
+    let json = """
+    {"forms":["","tablet"],"variants":["","modified"],"packs":["strip of 10 tablets"],"salts":[],"extras":[],
+     "brands":{"HUGE":"10,9223372036854775807,0,4","FINE":"10,1000,0,4"}}
+    """
+    let index = try CatalogueMRPIndex(json: Data(json.utf8))
+    #expect(index.match(name: "Huge", strength: "10") == nil)
+    #expect(index.match(name: "Fine", strength: "10") != nil)
+}
+
+// MARK: - H1 / X from the matched product's salts (K17 item 6)
+
+private let h1x = ScheduleCheck(entries: [
+    ScheduleEntry(schedule: .h1, salt: "Alprazolam"),
+    ScheduleEntry(schedule: .h1, salt: "Tramadol"),
+    ScheduleEntry(schedule: .x, salt: "Ketamine hydrochloride"),
+])
+
+@Test func aBrandMissingFromTheTableIsStillCaughtByItsSalts() throws {
+    // The table passed here has no brands at all: only the matched product's own salts can catch it.
+    #expect(h1x.brandCount == 0)
+    let aaram = try #require(tiny.match(name: "Aaram", strength: "0.5"))
+    #expect(aaram.schedule(using: h1x) == .h1)
+    #expect(tinyJA.equivalent(for: aaram, quantity: 10) != nil)                            // without the check there would be a suggestion
+    #expect(tinyJA.equivalent(for: aaram, quantity: 10, schedule: h1x) == nil)             // with it there is none
+    let alprax = try #require(tiny.match(name: "Alprax", strength: "0.25"))
+    #expect(alprax.schedule(using: h1x) == .h1)
+    #expect(tinyJA.equivalent(for: alprax, quantity: 10, schedule: h1x) == nil)
+    let alprax05 = try #require(tiny.match(name: "Alprax", strength: "0.5"))
+    #expect(alprax05.schedule(using: h1x) == .h1)
+    // a combination with one scheduled salt
+    let calpolT = try #require(tiny.match(name: "Calpolt", strength: "325"))
+    #expect(calpolT.schedule(using: h1x) == .h1)
+    #expect(tinyJA.equivalent(for: calpolT, quantity: 10, schedule: h1x) == nil)
+}
+
+@Test func negativeControlNoScheduleNoChange() throws {
+    let dolo = try #require(tiny.match(name: "Dolo", strength: "650"))
+    #expect(dolo.schedule(using: h1x) == nil)
+    #expect(tinyJA.equivalent(for: dolo, quantity: 15, schedule: h1x)?.match.mrpPaise == 1547)
+    #expect(tinyJA.equivalent(for: dolo, quantity: 15, schedule: h1x) == tinyJA.equivalent(for: dolo, quantity: 15))
+    let nosalt = try #require(tiny.match(name: "Nunit", strength: "10"))      // no salts known: nothing to check, nothing invented
+    #expect(nosalt.schedule(using: h1x) == nil)
 }
 
 // MARK: - Jan Aushadhi equivalent of a catalogue entry
@@ -348,6 +512,70 @@ private let realJA: JanAushadhiIndex = {
     #expect(realJA.equivalent(for: glycomet, quantity: 20)?.match.productName.lowercased().contains("prolonged") == true)
 }
 
+@Test func realReviewInputsGetNoWrongPrice() throws {
+    // K17 items 1, 4, 5, 6: the exact failing inputs of the Codex review, against the bundled data
+    // The bundled list has "Glycomet-GP 2 Tablet PR" (2 mg + 500 mg, Rs 170.75 for 15) and "Glycomet-GP 2/850 Tablet SR"
+    // (Rs 96.75 for 10). They used to share the key "2": 15 tablets of "2/500" were priced as two 2/850 strips, Rs 193.50.
+    #expect(realMRP.match(name: "Glycomet-GP PR", strength: "2/500") == nil)       // no product is called 2/500: no price
+    #expect(realMRP.match(name: "Glycomet-GP", strength: "2/500", quantity: 15) == nil)
+    let g850 = try #require(realMRP.match(name: "Glycomet-GP", strength: "2/850"))
+    #expect(g850.entry.strength == "2/850")
+    #expect(g850.entry.salt == nil || g850.entry.salt?.contains("850mg") == true)
+    #expect(g850.entry.mrpPaise == 9675)
+    let g2 = try #require(realMRP.match(name: "Glycomet-GP PR", strength: "2"))
+    #expect(g2.entry.strength == "2")
+    #expect(g2.entry.mrpPaise == 17075)                                             // the 2 mg + 500 mg product
+    #expect(g2.entry.salt?.contains("500mg") == true)
+    #expect(g2.linePrice(quantity: 15).totalPaise == 17075)
+    #expect(g2.linePrice(quantity: 15).totalPaise != 19350)
+    #expect(realMRP.match(name: "Dolo", strength: "650 mcg") == nil)
+    #expect(realMRP.match(name: "Dolo", strength: "650 mg") != nil)
+    #expect(realMRP.match(name: "Gonal-F", strength: "75", quantity: 3) == nil)
+    #expect(realMRP.match(name: "Gonal-F", strength: "75 IU", quantity: 3)?.pricedLine(quantity: 3) == nil
+            || realMRP.match(name: "Gonal-F", strength: "75 IU", quantity: 3) == nil)
+    #expect(realMRP.match(name: "Pan cap", strength: "40") == nil)
+    #expect(realMRP.match(name: "Dolo", strength: "650", quantity: Int.max) == nil)
+    #expect(realMRP.match(name: "Dolo", strength: "650", quantity: 50_000_000_000_000_000) == nil)
+    let dolo = try #require(realMRP.match(name: "Dolo", strength: "650"))
+    #expect(dolo.linePrice(quantity: Int.max).packs > 0)
+    #expect(dolo.pricedLine(quantity: Int.max) == nil)
+}
+
+private let realSchedule: ScheduleCheck = {
+    // swiftlint:disable:next force_try
+    try! ScheduleCheck(
+        scheduleJSON: Data(contentsOf: catalogueRepoRoot.appendingPathComponent("engine/catalogue/schedule_h1_x.json")),
+        brandJSON: Data(contentsOf: catalogueRepoRoot.appendingPathComponent("engine/catalogue/brand_schedule.json")))
+}()
+
+private let realScheduleSaltsOnly: ScheduleCheck = {
+    // swiftlint:disable:next force_try
+    try! ScheduleCheck(scheduleJSON: Data(contentsOf: catalogueRepoRoot.appendingPathComponent("engine/catalogue/schedule_h1_x.json")))
+}()
+
+@Test func realAlprazolamBrandsAreH1ByTableAndBySalts() throws {
+    for (brand, strength) in [("Aaram", "0.5"), ("Alprax", "0.5"), ("Alprax", "0.25"), ("Alzolam", "0.5")] {
+        #expect(realSchedule.isInPersonOnly(brand: brand) == .h1, "\(brand) must be in brand_schedule.json")
+        if let match = realMRP.match(name: brand, strength: strength) {
+            // the engine check alone, with a table that lists no brand at all
+            #expect(match.schedule(using: realScheduleSaltsOnly) == .h1, "\(brand) \(strength)")
+            #expect(realJA.equivalent(for: match, quantity: 10, schedule: realScheduleSaltsOnly) == nil)
+        }
+    }
+    let aaram = try #require(realMRP.match(name: "Aaram", strength: "0.5"))
+    #expect(aaram.entry.salt?.lowercased().contains("alprazolam") == true)
+    #expect(aaram.schedule(using: realScheduleSaltsOnly) == .h1)
+    #expect(realJA.equivalent(for: aaram, quantity: 10, schedule: realScheduleSaltsOnly) == nil)
+    // negative control: the six demo medicines are not scheduled by table or by salts
+    for (name, strength) in [("Dolo", "650"), ("Pan", "40"), ("Telma", "40"), ("Glycomet SR", "500"), ("Azithral", "500")] {
+        #expect(realSchedule.isInPersonOnly(brand: name) == nil, "\(name)")
+        let m = try #require(realMRP.match(name: name, strength: strength))
+        #expect(m.schedule(using: realSchedule) == nil, "\(name)")
+    }
+    #expect(realSchedule.isInPersonOnly(brand: "Montair LC") == nil)
+    #expect(realSchedule.brandCount > 5000)      // the table now reads the short_composition columns too (was 253)
+}
+
 @Test func measureCoverageOnDemoMedicinesAndSample() {
     let demo: [(String, String?, Int)] = [("Dolo", "650", 15), ("Pan", "40", 15), ("Telma", "40", 30), ("Glycomet SR", "500", 20),
                                           ("Azithral", "500", 5), ("Montair LC", nil, 15)]
@@ -367,4 +595,23 @@ private let realJA: JanAushadhiIndex = {
     print("COVERAGE demo 6: MRP \(demoMRP), JA \(demoJA); sample 200: MRP \(sampleMRP), with salt \(sampleSalt), JA \(sampleJA)")
     #expect(demoMRP >= 5)
     #expect(sampleMRP >= 150)
+}
+
+/// Item 11 of the review, engine part only: how long the two bundled files take to load and the first lookup to run.
+/// Printed, not asserted (it depends on the machine; this is a debug build on a Mac, not a phone).
+@Test func measureColdLoadOfTheBundledFiles() throws {
+    let clock = ContinuousClock()
+    var mrp: CatalogueMRPIndex?
+    let mrpTime = try clock.measure {
+        mrp = try CatalogueMRPIndex(json: Data(contentsOf: catalogueRepoRoot.appendingPathComponent("engine/catalogue/brand_mrp.json")))
+    }
+    var ja: JanAushadhiIndex?
+    let jaTime = try clock.measure {
+        ja = JanAushadhiIndex(products: try JanAushadhiIndex.products(fromJSON: Data(contentsOf: catalogueRepoRoot.appendingPathComponent("engine/catalogue/janaushadhi_products.json"))))
+    }
+    var found: CatalogueMatch?
+    let firstLookup = clock.measure { found = mrp?.match(name: "Dolo", strength: "650") }
+    let firstJA = clock.measure { _ = found.flatMap { ja?.equivalent(for: $0, quantity: 15) } }
+    print("COLD LOAD brand_mrp.json \(mrpTime), janaushadhi \(jaTime), first lookup \(firstLookup), first JA \(firstJA)")
+    #expect(found != nil)
 }

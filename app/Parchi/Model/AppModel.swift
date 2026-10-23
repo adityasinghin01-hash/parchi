@@ -63,6 +63,12 @@ final class AppModel {
     var lines: [ReadLine] = []
     var objective: Objective = .cheapest { didSet { replan() } }
     private(set) var plan: Plan?
+    /// Catalogue-MRP prices for the confirmed medicines that the demo scenario has no offer for (itemID -> offer).
+    private(set) var catalogueOffers: [String: CatalogueOffer] = [:]
+    /// Confirmed medicines with no demo offer and no catalogue price: the plan cannot be completed without them.
+    private(set) var catalogueMisses: [String] = []
+    /// "Ask your doctor" Jan Aushadhi equivalents (itemID -> equivalent), for every confirmed medicine that has one.
+    private(set) var janAushadhiAsks: [String: JanAushadhiEquivalent] = [:]
     private(set) var approvedPlan: Plan?
     private(set) var statuses: [String: OrderStatus] = [:]
     var planB: PlanBProposal?
@@ -105,12 +111,53 @@ final class AppModel {
         catalogue = Self.loadCatalogue()
         // A shop's quote changes the plan the moment it arrives.
         shopAsk.onQuotesChanged = { [weak self] in self?.replan() }
+        // Parse the 6 MB catalogue and the Jan Aushadhi list off the main thread, so the first plan does not wait for them.
+        let data = data
+        Task.detached(priority: .utility) { data.prewarmCatalogue() }
+        // "Delete everything" posts this synchronously on the main thread: drop every in-memory copy of the patient's data.
+        NotificationCenter.default.addObserver(forName: .parchiErased, object: nil, queue: nil) { [weak self] _ in
+            MainActor.assumeIsolated { self?.eraseAll() }
+        }
+    }
+
+    /// Forgets everything about the current parchi: lines, plan, approved plan, statuses, Plan B, the live order (polling stopped),
+    /// shop replies, skipped sellers, lab bookings and the shop-ask state. Called by "Delete everything".
+    func eraseAll() {
+        resetLiveOrder()
+        scenario = Self.load("real_basket_cheapest")
+        lines = []
+        plan = nil
+        approvedPlan = nil
+        statuses = [:]
+        planB = nil
+        catalogueOffers = [:]
+        catalogueMisses = []
+        janAushadhiAsks = [:]
+        skippedSellers = []
+        idempotencyKeys = [:]
+        reliabilityScores = [:]
+        truePrices = [:]
+        backendError = nil
+        shopLabSheet = nil
+        shopAsk.eraseAll()
+        labBooking.eraseAll()
     }
 
     // MARK: Reading (mock until Aditya Singhal's /read server is on the iMac)
 
     /// Simulates the reader on the demo parchi, with one realistic misread ("Telma 400").
     func readDemoParchi() {
+        // Screenshots only: `-demoReader "Dolo:650:15;Augmentin:625:10"` loads those lines as if the reader had returned them
+        // (a parchi that is not the demo basket), instead of the demo parchi.
+        if let spec = UserDefaults.standard.string(forKey: "demoReader") {
+            loadReaderLines(spec.split(separator: ";").map { part in
+                let f = part.split(separator: ":", omittingEmptySubsequences: false).map(String.init)
+                return ReaderLine(kind: "medicine", name: f.first ?? "", strength: f.count > 1 && !f[1].isEmpty ? f[1] : nil,
+                                  quantity: f.count > 2 ? Int(f[2]) : nil, schedule: nil)
+            })
+            resetLiveOrder()
+            return
+        }
         lines = scenario.items.map { item in
             var read = item
             if item.id == "telma" { read.strength = "400" }
@@ -126,25 +173,53 @@ final class AppModel {
         approvedPlan = nil
         statuses = [:]
         planB = nil
+        catalogueOffers = [:]
+        catalogueMisses = []
+        janAushadhiAsks = [:]
         resetLiveOrder()
     }
 
-    /// Lines from the reader (`POST /read`). Prices exist only for the demo basket, so other items will show "no seller found"
-    /// in the plan until catalogue MRPs are wired (plan gap U7); they are still checked against the catalogue on Confirm.
+    /// Lines from the reader (`POST /read`). The demo basket has real shop and online prices; every other medicine is priced
+    /// at the catalogue MRP at the doctor's shop (`refreshCatalogue`, plan gap U7). Other tests still use lab prices only.
     func loadReaderLines(_ read: [ReaderLine]) {
+        resetLiveOrder()   // a new parchi must never keep polling (or showing) the earlier Live order
         lines = read.enumerated().map { index, r in
             let kind: ItemKind = r.kind == "test" ? .test : .medicine
-            let item = RxItem(id: "r\(index + 1)", kind: kind, name: r.name, strength: r.strength, quantity: max(r.quantity ?? 1, 1))
-            var line = ReadLine(id: item.id, item: item, check: check(item))
-            line.testMatch = kind == .test ? canonicalTest(for: item.name, catalogue: data.testCatalogue) : nil
-            line.inPersonOnly = kind == .medicine ? data.scheduleCheck.isInPersonOnly(brand: item.name) : nil
-            return line
+            return makeLine(RxItem(id: "r\(index + 1)", kind: kind, name: r.name, strength: r.strength, quantity: max(r.quantity ?? 1, 1)))
         }
+        resetPlanState()
+    }
+
+    /// Adds one line by hand and leaves every other line, with its id, exactly as it is (the demo parchi keeps its own prices).
+    func appendLine(_ item: RxItem) {
+        resetLiveOrder()
+        lines.append(makeLine(item))
+        resetPlanState()
+    }
+
+    /// Removes one line by hand; the others keep their ids.
+    func removeLine(_ id: String) {
+        resetLiveOrder()
+        lines.removeAll { $0.id == id }
+        resetPlanState()
+    }
+
+    private func makeLine(_ item: RxItem) -> ReadLine {
+        var line = ReadLine(id: item.id, item: item, check: check(item))
+        line.testMatch = item.kind == .test ? canonicalTest(for: item.name, catalogue: data.testCatalogue) : nil
+        line.inPersonOnly = item.kind == .medicine ? data.scheduleCheck.isInPersonOnly(brand: item.name) : nil
+        return line
+    }
+
+    private func resetPlanState() {
         skippedSellers = []
         plan = nil
         approvedPlan = nil
         statuses = [:]
         planB = nil
+        catalogueOffers = [:]
+        catalogueMisses = []
+        janAushadhiAsks = [:]
     }
 
     func choose(strength: String, for lineID: String) {
@@ -183,7 +258,11 @@ final class AppModel {
     // MARK: Planning
 
     func confirmList() {
-        scenario.items = lines.filter { !$0.askDoctor }.map(\.item)
+        // A test the demo scenario has no lab offers for (any test outside the demo parchi) is not planned: it is priced lab by lab
+        // in the "Lab prices" section, so a parchi with medicines AND tests still gets a plan for the medicines.
+        let labPriced = Set(scenario.offers.map(\.itemID))
+        scenario.items = lines.filter { !$0.askDoctor && ($0.item.kind == .medicine || labPriced.contains($0.id)) }.map(\.item)
+        refreshCatalogue()
         replan()
         Task { await refreshReliability(); if preferReliable { replan() } }
     }
@@ -198,13 +277,95 @@ final class AppModel {
         return Planner(items: scenario.items, sellers: scenario.sellers, offers: plannerOffers, preferences: prefs)
     }
 
+    // MARK: Catalogue prices (any medicine) + Jan Aushadhi equivalents
+
+    /// The seller whose price the catalogue MRP stands for: the doctor's shop, at MRP.
+    static let catalogueSellerID = "doctorshop"
+    /// The catalogue and the Jan Aushadhi list were captured on this day.
+    static let catalogueSeen = PriceSource.date(fromISO: "2026-10-23") ?? Date()
+
+    /// For every confirmed medicine: a catalogue-MRP offer if the demo scenario has none for it, and the Jan Aushadhi
+    /// "ask your doctor" equivalent if there is one (H1/X medicines never get one). Called when the list is confirmed.
+    func refreshCatalogue() {
+        var offers: [String: CatalogueOffer] = [:]
+        var misses: [String] = []
+        var asks: [String: JanAushadhiEquivalent] = [:]
+        let demoPriced = Set(scenario.offers.map(\.itemID))
+        for index in lines.indices where lines[index].item.kind == .medicine && !lines[index].askDoctor {
+            let item = lines[index].item
+            // Second H1/X check, from the salts of the matched catalogue product (the brand table is the first): a typed
+            // "Oflo 200" is caught even though most Oflo products are not scheduled.
+            if lines[index].inPersonOnly == nil,
+               let schedule = data.catalogueSchedule(brand: item.name, strength: item.strength, quantity: item.quantity) {
+                lines[index].inPersonOnly = schedule
+            }
+            let line = lines[index]
+            if !demoPriced.contains(item.id) {
+                if let offer = data.catalogueOffer(brand: item.name, strength: item.strength, quantity: item.quantity) {
+                    offers[item.id] = offer
+                } else {
+                    misses.append(item.id)
+                }
+            }
+            if line.inPersonOnly == nil,
+               let eq = data.janAushadhiEquivalent(brand: item.name, strength: item.strength, quantity: item.quantity) {
+                asks[item.id] = eq
+            }
+        }
+        catalogueOffers = offers
+        catalogueMisses = misses
+        janAushadhiAsks = asks
+    }
+
+    /// Short reason a medicine has no catalogue price ("pack size unclear"), for the screen; nil when it has one or none is known.
+    func catalogueMissReason(itemID: String) -> String? {
+        guard let item = lines.first(where: { $0.id == itemID })?.item else { return nil }
+        return data.catalogueMiss(brand: item.name, strength: item.strength, quantity: item.quantity)?.reason
+    }
+
+    /// Planner offers made from the catalogue: the whole line (packs x MRP) at the doctor's shop.
+    private var catalogueMRPOffers: [Offer] {
+        catalogueOffers.keys.sorted().compactMap { id in
+            catalogueOffers[id].map { Offer(itemID: id, sellerID: Self.catalogueSellerID, price: $0.price.totalPaise) }
+        }
+    }
+
+    /// The chip for one price line in the plan: catalogue MRP for a catalogue line, else the seller's usual source.
+    func priceSource(sellerID: String, itemID: String) -> PriceSource {
+        if let reply = shopReplySource, shopReplyOffers.contains(where: { $0.sellerID == sellerID && $0.itemID == itemID }) { return reply }
+        if sellerID == Self.catalogueSellerID, let offer = catalogueOffers[itemID] {
+            return PriceSource.catalogueMRP(dateSeen: Self.catalogueSeen, packSizeKnown: offer.price.packSizeKnown)
+        }
+        return priceSource(sellerID: sellerID)
+    }
+
+    /// "2 x strip of 10 tablets at ₹120.50 a pack" under a catalogue price, so the patient can check it against the pack in the shop.
+    func cataloguePackText(itemID: String) -> String? {
+        guard let price = catalogueOffers[itemID]?.price else { return nil }
+        if !price.packSizeKnown { return "\(price.packLabel), \(rupees(price.perPackPaise)) a pack" }
+        return "\(price.packs) × \(price.packLabel) at \(rupees(price.perPackPaise)) a pack"
+    }
+
+    /// The grey line under a medicine: "Ask your doctor: same salt at Jan Aushadhi ₹X (list of 23 Oct)". nil when there is none.
+    /// Never applied to the plan, never worded as a switch.
+    func janAushadhiLine(itemID: String) -> String? {
+        guard let eq = janAushadhiAsks[itemID] else { return nil }
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(identifier: "Asia/Kolkata")
+        formatter.dateFormat = "d MMM"
+        let date = formatter.string(from: data.janAushadhiListDate)
+        let price = eq.packSizeKnown ? rupees(eq.totalPaise) : "\(rupees(eq.totalPaise)) a pack"
+        return "Ask your doctor: same salt at Jan Aushadhi \(price) (list of \(date))"
+    }
+
     /// Offers the planner may use: H1/X medicines only from shops you walk into (never delivery), and nothing from skipped sellers.
     private var plannerOffers: [Offer] {
         let inPerson = Set(lines.filter { $0.inPersonOnly != nil }.map(\.id))
         let delivery = Set(scenario.sellers.filter { $0.channel == .onlinePharmacy || $0.channel == .quickCommerce }.map(\.id))
         // A price a shop quoted through "Ask nearby shops" replaces our bundled price for the same item at that shop.
         let quoted = Set(shopReplyOffers.map { OfferKey(itemID: $0.itemID, sellerID: $0.sellerID) })
-        let base = scenario.offers.filter { !quoted.contains(OfferKey(itemID: $0.itemID, sellerID: $0.sellerID)) }
+        let base = (scenario.offers + catalogueMRPOffers).filter { !quoted.contains(OfferKey(itemID: $0.itemID, sellerID: $0.sellerID)) }
         return (base + shopReplyOffers).filter { offer in
             !skippedSellers.contains(offer.sellerID) && !deliveredSellers.contains(offer.sellerID) && !inactiveSellers.contains(offer.sellerID)
                 && !(inPerson.contains(offer.itemID) && delivery.contains(offer.sellerID))
@@ -232,6 +393,10 @@ final class AppModel {
     /// Where the price for this seller came from. A shop that replied to "Ask nearby shops" wins with its reply time.
     func priceSource(sellerID: String) -> PriceSource {
         if let reply = shopReplySource, shopReplyOffers.contains(where: { $0.sellerID == sellerID }) { return reply }
+        if sellerID == Self.catalogueSellerID, let plan, plan.lines.contains(where: { $0.sellerID == sellerID && catalogueOffers[$0.itemID] != nil }) {
+            let known = plan.lines.filter { $0.sellerID == sellerID }.allSatisfy { catalogueOffers[$0.itemID]?.price.packSizeKnown ?? true }
+            return PriceSource.catalogueMRP(dateSeen: Self.catalogueSeen, packSizeKnown: known)
+        }
         let date = Self.scenarioPricesSeen
         switch seller(sellerID)?.channel {
         case .localChemist where sellerID == "doctorshop": return PriceSource(kind: .mrp, dateSeen: date)
@@ -259,10 +424,16 @@ final class AppModel {
 
     var unavailable: [String] { planner.unavailableItems() }
 
+    /// Tests on the parchi that are priced lab by lab below the plan instead of inside its total.
+    var testsOutsidePlan: [ReadLine] {
+        let planned = Set(scenario.items.map(\.id))
+        return lines.filter { $0.item.kind == .test && !$0.askDoctor && !planned.contains($0.id) }
+    }
+
     /// What the medicines cost at MRP at the doctor's shop (the patient's default today).
     var medicinesAtMRP: Paise {
         let medicineIDs = Set(scenario.items.filter { $0.kind == .medicine }.map(\.id))
-        return scenario.offers.filter { $0.sellerID == "doctorshop" && medicineIDs.contains($0.itemID) }.map(\.price).reduce(0, +)
+        return (scenario.offers + catalogueMRPOffers).filter { $0.sellerID == Self.catalogueSellerID && medicineIDs.contains($0.itemID) }.map(\.price).reduce(0, +)
     }
 
     var planMedicinesTotal: Paise {
@@ -272,8 +443,21 @@ final class AppModel {
     }
 
     /// Same-salt Jan Aushadhi total, shown only as "ask your doctor" (never applied automatically).
-    var janAushadhiMedicines: Paise {
-        scenario.offers.filter { $0.sellerID == "janaushadhi" && $0.isSubstitute }.map(\.price).reduce(0, +)
+    /// Only the medicines of THIS parchi that have an equivalent are counted (the demo's bundled Jan Aushadhi offers for its own six
+    /// items, the catalogue's equivalent for any other), and `janAushadhiComparedMRP` is the MRP of exactly those same medicines.
+    var janAushadhiMedicines: Paise { janAushadhiComparison.janAushadhi }
+    var janAushadhiComparedMRP: Paise { janAushadhiComparison.mrp }
+
+    private var janAushadhiComparison: (janAushadhi: Paise, mrp: Paise) {
+        let ids = Set(scenario.items.filter { $0.kind == .medicine }.map(\.id))
+        var ja: [String: Paise] = [:]
+        for offer in scenario.offers where offer.sellerID == "janaushadhi" && offer.isSubstitute && ids.contains(offer.itemID) {
+            ja[offer.itemID, default: 0] += offer.price
+        }
+        for (id, eq) in janAushadhiAsks where ids.contains(id) && ja[id] == nil && eq.packSizeKnown { ja[id] = eq.totalPaise }
+        let mrp = (scenario.offers + catalogueMRPOffers)
+            .filter { $0.sellerID == Self.catalogueSellerID && ja.keys.contains($0.itemID) }.map(\.price).reduce(0, +)
+        return (ja.values.reduce(0, +), mrp)
     }
 
     // MARK: Orders + Plan B (sandbox)
@@ -377,6 +561,7 @@ final class AppModel {
                 let id = try await client.placeOrder(plan: approved, sellers: sellers, autoApproveCapPaise: autoApproveCap, idempotencyKey: key)
                 guard approvedPlan == approved else { return }   // the user moved on while we waited
                 liveOrderID = id
+                BackendUsage.markUsedLive()   // the server now holds an order for this install
                 backendError = nil
                 startPollingIfNeeded()
             } catch {

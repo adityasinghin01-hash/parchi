@@ -92,12 +92,38 @@ struct DataVersion: Codable, Equatable {
     let inputFolder: String
     let buildDate: String?
     let counts: Counts
+    /// Download date of the bundled Jan Aushadhi list ("2026-10-23"); nil in a bundle built before the list was added.
+    let janAushadhiListDate: String?
 
     enum CodingKeys: String, CodingKey {
         case inputFolder = "input_folder"
         case buildDate = "build_date"
         case counts
+        case janAushadhiListDate = "janaushadhi_list_date"
     }
+}
+
+/// Loads a big bundled file the first time it is needed (and only once), so the app starts without parsing 6 MB.
+final class LazyValue<Value: Sendable>: @unchecked Sendable {
+    private let lock = NSLock()
+    private var value: Value?
+    private var loaded = false
+    private let make: @Sendable () -> Value
+
+    init(_ make: @escaping @Sendable () -> Value) { self.make = make }
+
+    var get: Value {
+        lock.lock()
+        defer { lock.unlock() }
+        if !loaded { value = make(); loaded = true }
+        return value!   // set just above; Value is Optional where "no data" is a valid result
+    }
+}
+
+/// What the catalogue says about one written medicine: the product chosen and the price for the prescribed quantity.
+struct CatalogueOffer: Equatable {
+    let match: CatalogueMatch
+    let price: CatalogueLinePrice
 }
 
 /// Loads the bundled JSON once. A missing or broken file gives empty data and a logged warning, never a crash.
@@ -111,6 +137,11 @@ final class AppData: Sendable {
     let testCatalogue: TestCatalogue
     /// H1/X: the UI says "buy in person with the original parchi".
     let scheduleCheck: ScheduleCheck
+
+    /// Catalogue MRPs of every brand (engine/catalogue/brand_mrp.json) and the official Jan Aushadhi list.
+    /// Both load on first use; a missing or broken file means "no offer", never a crash.
+    private let mrpIndex: LazyValue<CatalogueMRPIndex?>
+    private let janAushadhiIndex: LazyValue<JanAushadhiIndex?>
 
     private let labs: [LabOption]
     private let labPrices: [String: [String: [String: LabPriceRecord]]]   // city -> lab -> test -> price
@@ -145,6 +176,29 @@ final class AppData: Sendable {
                 return nil
             }
             return try? Data(contentsOf: url)
+        }
+
+        let mrpURL = reader("brand_mrp")
+        let jaURL = reader("janaushadhi_products")
+        mrpIndex = LazyValue {
+            guard let url = mrpURL else {
+                AppData.log.warning("brand_mrp.json is not in the app bundle; no catalogue prices")
+                return nil
+            }
+            do { return try CatalogueMRPIndex(json: Data(contentsOf: url)) } catch {
+                AppData.log.warning("brand_mrp.json could not be read (\(error.localizedDescription, privacy: .public)); no catalogue prices")
+                return nil
+            }
+        }
+        janAushadhiIndex = LazyValue {
+            guard let url = jaURL else {
+                AppData.log.warning("janaushadhi_products.json is not in the app bundle; no Jan Aushadhi equivalents")
+                return nil
+            }
+            do { return JanAushadhiIndex(products: try JanAushadhiIndex.products(fromJSON: Data(contentsOf: url))) } catch {
+                AppData.log.warning("janaushadhi_products.json could not be read (\(error.localizedDescription, privacy: .public)); no Jan Aushadhi equivalents")
+                return nil
+            }
         }
 
         dataVersion = load("DATA_VERSION", as: DataVersion.self)
@@ -223,6 +277,46 @@ final class AppData: Sendable {
     /// Sellers that have a page for this medicine.
     func sellers(medicine: String) -> [String] {
         (value(in: links, key: medicine).map { Array($0.keys) } ?? []).sorted()
+    }
+
+    // MARK: Catalogue MRP + Jan Aushadhi (any medicine)
+
+    /// Loads both files now (call from a background task at launch so the first plan does not wait for them).
+    func prewarmCatalogue() {
+        _ = mrpIndex.get
+        _ = janAushadhiIndex.get
+    }
+
+    /// The catalogue product and the MRP price for what the parchi says (`brand` = the written name, "Glycomet SR"),
+    /// or nil when the catalogue has no product of exactly that brand, strength and kind.
+    /// Also nil when the pack size cannot be read or the quantity is absurd: a missing price is honest, a guessed one is not.
+    func catalogueOffer(brand: String, strength: String?, quantity: Int = 1) -> CatalogueOffer? {
+        guard let match = mrpIndex.get?.match(name: brand, strength: strength, quantity: quantity),
+              let price = match.pricedLine(quantity: quantity) else { return nil }
+        return CatalogueOffer(match: match, price: price)
+    }
+
+    /// Why there is no catalogue price for this written medicine ("pack size unclear"); nil when there is one.
+    func catalogueMiss(brand: String, strength: String?, quantity: Int = 1) -> CatalogueMiss? {
+        guard let lookup = mrpIndex.get?.lookup(name: brand, strength: strength, quantity: quantity) else { return nil }
+        if case .miss(let miss) = lookup { return miss }
+        return nil
+    }
+
+    /// H1/X from the salts of the matched catalogue product: the second check after the brand table.
+    func catalogueSchedule(brand: String, strength: String?, quantity: Int = 1) -> Schedule? {
+        mrpIndex.get?.match(name: brand, strength: strength, quantity: quantity)?.schedule(using: scheduleCheck)
+    }
+
+    /// The Jan Aushadhi product with the same salt, strength, form and release type, or nil. Only ever shown as "Ask your doctor".
+    func janAushadhiEquivalent(brand: String, strength: String?, quantity: Int = 1) -> JanAushadhiEquivalent? {
+        guard let match = mrpIndex.get?.match(name: brand, strength: strength, quantity: quantity) else { return nil }
+        return janAushadhiIndex.get?.equivalent(for: match, quantity: quantity)
+    }
+
+    /// Date of the Jan Aushadhi list in the bundle.
+    var janAushadhiListDate: Date {
+        PriceSource.date(fromISO: dataVersion?.janAushadhiListDate) ?? JanAushadhiIndex.bundledListDate
     }
 
     // MARK: Helpers

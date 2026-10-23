@@ -82,7 +82,7 @@ def test_read_forwards_to_the_reader_and_returns_its_json(api_client, reader):
 
 def test_read_rejects_wrong_type_and_oversize(api_client, reader):
     assert post_image(api_client, ctype="text/plain").status_code == 415
-    assert post_image(api_client, data=b"x" * 4_000_001).status_code == 413
+    assert post_image(api_client, data=b"x" * 2_000_001).status_code == 413
     assert reader == []  # nothing reached the reader
 
 
@@ -99,3 +99,31 @@ def test_read_when_reader_is_down_is_503(api_client, monkeypatch):
 
 def test_read_requires_the_install_key(api_client, reader):
     assert api_client.client.post("/read", files={"image": ("p.png", b"x", "image/png")}).status_code == 401
+
+
+def test_read_accepts_a_photo_over_1_mb_up_to_2_mb(api_client, reader):
+    r = post_image(api_client, data=b"\xff\xd8" + b"x" * 1_900_000, ctype="image/jpeg")
+    assert r.status_code == 200 and len(reader) == 1
+
+
+def test_read_limit_is_exactly_2_mb_for_the_image(api_client, reader):
+    assert post_image(api_client, data=b"x" * 2_000_000, ctype="image/jpeg").status_code == 200
+    assert post_image(api_client, data=b"x" * 2_000_001, ctype="image/jpeg").status_code == 413
+
+
+def test_other_routes_keep_the_1_mb_limit(api_client):
+    r = api_client.client.post("/order", content=b"x" * 1_100_000, headers={"Content-Type": "application/json"})
+    assert r.status_code == 413
+    # a body that /read would take is still refused anywhere else
+    r = api_client.client.post("/reset", content=b"x" * 1_500_000, headers={"Content-Type": "application/json"})
+    assert r.status_code == 413
+
+
+def test_read_refuses_a_chunked_upload_without_a_length(api_client, reader):
+    def chunks():
+        yield b"--b\r\n"
+        yield b"x" * 100
+
+    r = api_client.client.post("/read", headers={"X-Install-Key": api_client.key, "Content-Type": "multipart/form-data; boundary=b"},
+                               content=chunks())
+    assert r.status_code == 411 and reader == []

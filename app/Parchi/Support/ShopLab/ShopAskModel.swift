@@ -80,10 +80,24 @@ final class ShopAskModel {
 
     init() {
         phones = (UserDefaults.standard.dictionary(forKey: Self.phonesKey) as? [String: String]) ?? [:]
-        NotificationCenter.default.addObserver(forName: .parchiErased, object: nil, queue: .main) { [weak self] _ in
-            self?.phones = [:]
-            UserDefaults.standard.removeObject(forKey: Self.phonesKey)   // "Delete everything" must not leave phone numbers in memory or storage
+        NotificationCenter.default.addObserver(forName: .parchiErased, object: nil, queue: nil) { [weak self] _ in
+            MainActor.assumeIsolated { self?.eraseAll() }   // "Delete everything" must not leave rows, offers or phone numbers in memory or storage
         }
+    }
+
+    /// Back to a blank model: polling and the scripted demo stopped, rows, replies, offers, phones and context forgotten.
+    func eraseAll() {
+        startOver()
+        selected = []
+        candidates = []
+        items = []
+        demoOffers = []
+        live = nil
+        liveRequested = false
+        orderID = nil
+        pickupTime = Self.defaultPickup()
+        phones = [:]
+        UserDefaults.standard.removeObject(forKey: Self.phonesKey)
     }
 
     // MARK: Setup
@@ -199,11 +213,11 @@ final class ShopAskModel {
         guard let filled = message(for: shopID) else { error = "The message template is missing."; return }
         let name = candidates.first { $0.id == shopID }?.name ?? "the shop"
         if canOpenMessages, let url = messageURL(for: shopID) {
-            if phone(for: shopID).flatMap(PhoneNumber.digits) == nil { UIPasteboard.general.string = filled.text }
+            if phone(for: shopID).flatMap(PhoneNumber.digits) == nil { ClipboardTracker.shared.copy(filled.text) }
             UIApplication.shared.open(url)
             notice = "Press send in the message app to ask \(name)."
         } else {
-            UIPasteboard.general.string = filled.text
+            ClipboardTracker.shared.copy(filled.text)
             #if targetEnvironment(simulator)
             notice = "Simulator: message for \(name) copied to the clipboard instead of opening WhatsApp. Nothing was sent."
             #else
@@ -238,6 +252,7 @@ final class ShopAskModel {
                 do {
                     let reply = try await client.ask(request)
                     guard let self else { return }
+                    BackendUsage.markUsedLive()   // the server now holds this ask
                     self.askID = reply.askID
                     self.round = reply.round
                     for link in reply.replyLinks { self.links[link.shopID] = link.url }

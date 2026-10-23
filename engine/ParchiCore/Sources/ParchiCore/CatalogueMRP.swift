@@ -48,6 +48,85 @@ public struct CatalogueEntry: Equatable, Sendable {
     public let release: CatalogueRelease
     /// Words after the brand that name a different medicine ("H" in "Telma H 40"); "" for the plain brand.
     public let extras: String
+
+    private static let saltUnitRx = JAText.regex(#"\(\s*\d+(?:\.\d+)?\s*(mg|mcg|gm|g|iu|%)"#)
+
+    /// The unit of the strength, read from the salt composition ("Telmisartan (40mg)" -> "mg"): "mg", "mcg", "g", "iu"
+    /// or "%". nil when the composition is unknown or its salts use different units.
+    public var unit: String? {
+        guard let salt else { return nil }
+        let s = salt.lowercased()
+        var found: Set<String> = []
+        for m in Self.saltUnitRx.matches(in: s, range: NSRange(s.startIndex..., in: s)) {
+            guard let r = Range(m.range(at: 1), in: s), let unit = WrittenStrength.canonicalUnit(String(s[r])) else { return nil }
+            found.insert(unit)
+        }
+        return found.count == 1 ? found.first : nil
+    }
+}
+
+/// The strength a parchi (or the reader) wrote, split into the number(s) and the unit: "650 mcg" -> ("650", "mcg"),
+/// "2/500" -> ("2/500", nil), "125mg/5ml" -> ("125", "mg").
+public struct WrittenStrength: Equatable, Sendable {
+    /// "40", "0.5" or a combination "2/500"; "" when nothing numeric was written.
+    public let number: String
+    /// Canonical unit (mg, mcg, g, ml, iu, %); nil when none was written.
+    public let unit: String?
+    /// false: a unit word that is none of the known ones was written; such a strength never matches.
+    public let unitRecognised: Bool
+
+    private static let units: [String: String] = [
+        "mg": "mg", "mgs": "mg", "milligram": "mg", "milligrams": "mg",
+        "mcg": "mcg", "mcgs": "mcg", "µg": "mcg", "μg": "mcg", "ug": "mcg", "µcg": "mcg", "μcg": "mcg", "microgram": "mcg", "micrograms": "mcg",
+        "g": "g", "gm": "g", "gms": "g", "gram": "g", "grams": "g",
+        "ml": "ml", "iu": "iu", "%": "%",
+    ]
+    /// Words after a number that say nothing about the unit.
+    private static let harmless: Set<String> = ["tab", "tabs", "tablet", "tablets", "cap", "caps", "capsule", "capsules"]
+
+    static func canonicalUnit(_ raw: String) -> String? { units[raw.lowercased()] }
+
+    public init(_ text: String?) {
+        let chars = Array((text ?? "").trimmingCharacters(in: .whitespacesAndNewlines))
+        func isDigit(_ c: Character) -> Bool { c.isASCII && c.isNumber }
+        var i = 0
+        var number = ""
+        func readNumber() {
+            while i < chars.count, isDigit(chars[i]) || chars[i] == "." { number.append(chars[i]); i += 1 }
+        }
+        readNumber()
+        while !number.isEmpty, i + 1 < chars.count, chars[i] == "/", isDigit(chars[i + 1]) || chars[i + 1] == "." {
+            number.append("/"); i += 1
+            readNumber()
+        }
+        self.number = number
+        var j = i
+        while j < chars.count, chars[j].isWhitespace { j += 1 }
+        var word = ""
+        while j < chars.count, chars[j].isLetter || chars[j] == "%" { word.append(chars[j]); j += 1 }
+        if number.isEmpty || word.isEmpty || Self.harmless.contains(word.lowercased()) {
+            unit = nil
+            unitRecognised = true
+        } else if let canonical = Self.units[word.lowercased()] {
+            unit = canonical
+            unitRecognised = true
+        } else {
+            unit = nil
+            unitRecognised = false
+        }
+    }
+
+    /// Number and unit both agree with a catalogue entry. Same number, different unit ("650 mcg" vs 650 mg) never matches;
+    /// a missing unit on one side matches only when the other side is mg.
+    func accepts(entryUnit: String?) -> Bool {
+        guard unitRecognised else { return false }
+        switch (unit, entryUnit) {
+        case let (w?, e?): return w == e
+        case (nil, nil): return true
+        case let (w?, nil): return w == "mg"
+        case let (nil, e?): return e == "mg"
+        }
+    }
 }
 
 /// A catalogue entry chosen for a written medicine, with what had to be assumed to choose it.
@@ -60,11 +139,24 @@ public struct CatalogueMatch: Equatable, Sendable {
     /// The parchi wrote the plain brand and the catalogue has it only with a marketing word (Duo, Forte), all with one salt.
     public let extrasAssumed: Bool
 
-    /// Price for `quantity` units.
+    /// Price for `quantity` units, or nil when the quantity is above `PackSize.maxQuantity` (10,000) or the sum would
+    /// overflow. A price is never made up: the caller shows "No catalogue price found yet".
+    public func pricedLine(quantity: Int) -> CatalogueLinePrice? {
+        guard quantity <= PackSize.maxQuantity, let units = PackSize.unitsPerPack(label: entry.packLabel) else { return nil }
+        let packs = PackSize.packsNeeded(quantity: quantity, unitsPerPack: units)
+        let (total, overflow) = entry.mrpPaise.multipliedReportingOverflow(by: packs)
+        guard !overflow else { return nil }
+        return CatalogueLinePrice(totalPaise: total, packs: packs, perPackPaise: entry.mrpPaise,
+                                  packLabel: entry.packLabel, packSizeKnown: true)
+    }
+
+    /// Price for `quantity` units. Never traps: a quantity above 10,000 is priced as 10,000 (use `pricedLine` or
+    /// `CatalogueMRPIndex.match(name:strength:quantity:)`, which refuse it, when the number comes from outside).
     public func linePrice(quantity: Int) -> CatalogueLinePrice {
         let units = PackSize.unitsPerPack(label: entry.packLabel)
-        let packs = PackSize.packsNeeded(quantity: quantity, unitsPerPack: units)
-        return CatalogueLinePrice(totalPaise: entry.mrpPaise * packs, packs: packs, perPackPaise: entry.mrpPaise,
+        let packs = PackSize.packsNeeded(quantity: min(quantity, PackSize.maxQuantity), unitsPerPack: units)
+        let (total, overflow) = entry.mrpPaise.multipliedReportingOverflow(by: packs)
+        return CatalogueLinePrice(totalPaise: overflow ? entry.mrpPaise : total, packs: overflow ? 1 : packs, perPackPaise: entry.mrpPaise,
                                   packLabel: entry.packLabel, packSizeKnown: units != nil)
     }
 
@@ -121,7 +213,7 @@ public struct CatalogueMRPIndex: @unchecked Sendable {
     // "strength,m,p,fv,s,x"; s and x may be left out
     private func decode(_ row: String, brand: String) -> CatalogueEntry? {
         let f = row.split(separator: ",", omittingEmptySubsequences: false)
-        guard f.count >= 4, let m = Int(f[1]), let p = Int(f[2]), let fv = Int(f[3]), packs.indices.contains(p) else { return nil }
+        guard f.count >= 4, let m = Int(f[1]), (0...1_000_000_000).contains(m), let p = Int(f[2]), let fv = Int(f[3]), packs.indices.contains(p) else { return nil }
         let s = f.count > 4 ? Int(f[4]) ?? 0 : 0
         let x = f.count > 5 ? Int(f[5]) ?? 0 : 0
         let formName = fv / 4 < forms.count ? forms[fv / 4] : ""
@@ -137,7 +229,7 @@ public struct CatalogueMRPIndex: @unchecked Sendable {
     // MARK: Lookup for a written medicine
 
     private static let notExtra: Set<String> = Set("""
-        tablet tablets tab capsule capsules cap caps syrup dry suspension oral solution liquid drops drop eye ear nasal \
+        tablet tablets tab tabs capsule capsules cap caps syp syr susp oint syrup dry suspension oral solution liquid drops drop eye ear nasal \
         injection inj infusion cream gel ointment lotion powder sachet granules inhaler respules rotacap rotacaps spray \
         sr xr er cr pr xl mr od la tr dt md mdt odt soft gelatin chewable dispersible sugar free iv im vaccine mg ml gm g mcg iu \
         for of and with in
@@ -163,17 +255,47 @@ public struct CatalogueMRPIndex: @unchecked Sendable {
         return (key, Self.extraWords(afterBrandIn: name))
     }
 
-    /// The catalogue product for what the parchi says, or nil: never the product of a different strength, different
-    /// extra words ("Telma 40" never gets the price of "Telma H 40"), a different stated form or a different stated
-    /// release type (SR). `strength` is what the reader returned ("40", "40 mg", nil).
-    public func match(name: String, strength: String?) -> CatalogueMatch? {
+    /// The form the parchi states, with the usual abbreviations ("tab", "cap", "syp", "inj", "oint"); nil when none.
+    static func writtenForm(_ lower: String) -> JAForm? {
+        if let form = JAName.detectForm(lower) { return form }
+        if JAText.has(abbrevCapsuleRx, in: lower) { return .capsule }
+        if JAText.has(abbrevTabletRx, in: lower) { return .tablet }
+        if JAText.has(abbrevLiquidRx, in: lower) { return .liquid }
+        if JAText.has(abbrevTopicalRx, in: lower) { return .topical }
+        return nil
+    }
+    private static let abbrevCapsuleRx = JAText.regex(#"\bcaps?\b"#)
+    private static let abbrevTabletRx = JAText.regex(#"\btabs?\b"#)
+    private static let abbrevLiquidRx = JAText.regex(#"\b(?:syp|syr|susp)\b"#)
+    private static let abbrevTopicalRx = JAText.regex(#"\boint\b"#)
+
+    /// The catalogue product for what the parchi says, or nil: never the product of a different strength (a combination
+    /// "2/500" is not "2/850"), a different unit ("650 mcg" is not 650 mg), different extra words ("Telma 40" never gets
+    /// the price of "Telma H 40"), a different stated form ("Pan cap 40" is a capsule) or a different stated release
+    /// type (SR). Also nil when the pack size of the product cannot be read or `quantity` is above 10,000: a missing
+    /// price is honest, a guessed one is not. `strength` is what the reader returned ("40", "40 mg", nil).
+    public func match(name: String, strength: String?, quantity: Int = 1) -> CatalogueMatch? {
+        lookup(name: name, strength: strength, quantity: quantity).match
+    }
+
+    /// `match`, with the reason when there is no price.
+    public func lookup(name: String, strength: String?, quantity: Int = 1) -> CatalogueLookup {
+        guard quantity <= PackSize.maxQuantity else { return .miss(.quantityTooLarge) }
+        guard let found = findEntry(name: name, strength: strength) else { return .miss(.notFound) }
+        guard PackSize.unitsPerPack(label: found.entry.packLabel) != nil else { return .miss(.packSizeUnclear) }
+        return .found(found)
+    }
+
+    private func findEntry(name: String, strength: String?) -> CatalogueMatch? {
         guard let (brand, extras) = brandKey(for: name) else { return nil }
-        let wanted = String((strength ?? "").trimmingCharacters(in: .whitespaces).prefix { $0.isNumber || $0 == "." })
-        var pool = entries(brand: brand).filter { $0.strength == wanted }
+        let written = WrittenStrength(strength)
+        var pool = entries(brand: brand).filter { $0.strength == written.number }
+        if !written.number.isEmpty { pool = pool.filter { written.accepts(entryUnit: $0.unit) } }
         guard !pool.isEmpty else { return nil }
 
         let lower = name.lowercased()
-        if let form = JAName.detectForm(lower) {
+        let statedForm = Self.writtenForm(lower)
+        if let form = statedForm {
             pool = pool.filter { $0.form == form }
             guard !pool.isEmpty else { return nil }
         }
@@ -191,7 +313,6 @@ public struct CatalogueMRPIndex: @unchecked Sendable {
         }
 
         // No form written: tablets and capsules first (almost every parchi line), then syrups, then injections and creams.
-        let statedForm = JAName.detectForm(lower) != nil
         func rank(_ e: CatalogueEntry) -> Int {
             switch e.form {
             case .tablet?, .capsule?: return 0
@@ -199,22 +320,55 @@ public struct CatalogueMRPIndex: @unchecked Sendable {
             default: return 2
             }
         }
-        if !statedForm, let best = pool.map(rank).min() { pool = pool.filter { rank($0) == best } }
+        if statedForm == nil, let best = pool.map(rank).min() { pool = pool.filter { rank($0) == best } }
 
-        let written = CatalogueRelease.detect(in: lower)
+        let writtenRelease = CatalogueRelease.detect(in: lower)
         var releaseAssumed = false
-        let sameRelease = pool.filter { $0.release == written }
+        let sameRelease = pool.filter { $0.release == writtenRelease }
         if !sameRelease.isEmpty {
             pool = sameRelease
-        } else if written == .plain {
+        } else if writtenRelease == .plain {
             releaseAssumed = true     // "Glycomet 500" and only the SR exists: price it, but do not look for a Jan Aushadhi product
         } else {
             return nil                // the parchi says SR / MR / DT and no such product exists at this strength
         }
         // Ambiguous (no Jan Aushadhi lookup) only when the best kind itself has two forms, e.g. a tablet and a capsule.
-        let formAmbiguous = !statedForm && Set(pool.map { $0.form?.rawValue ?? "" }).count > 1
+        let formAmbiguous = statedForm == nil && Set(pool.map { $0.form?.rawValue ?? "" }).count > 1
         guard let entry = pool.min(by: { $0.mrpPaise < $1.mrpPaise }) else { return nil }
         return CatalogueMatch(entry: entry, releaseAssumed: releaseAssumed, formAmbiguous: formAmbiguous, extrasAssumed: extrasAssumed)
+    }
+}
+
+/// Why there is no catalogue price for a written medicine.
+public enum CatalogueMiss: String, Sendable, Equatable {
+    case notFound, packSizeUnclear, quantityTooLarge
+
+    /// Short reason for the screen.
+    public var reason: String {
+        switch self {
+        case .notFound: return "no product with exactly this name and strength"
+        case .packSizeUnclear: return "pack size unclear"
+        case .quantityTooLarge: return "quantity too large"
+        }
+    }
+}
+
+public enum CatalogueLookup: Equatable, Sendable {
+    case found(CatalogueMatch)
+    case miss(CatalogueMiss)
+
+    public var match: CatalogueMatch? {
+        if case .found(let m) = self { return m }
+        return nil
+    }
+}
+
+extension CatalogueMatch {
+    /// H1 / X from the salts of the matched product, for a brand the brand table does not list. nil when the salts are
+    /// unknown or none is scheduled. Defence in depth: `brand_schedule.json` is the first check.
+    public func schedule(using check: ScheduleCheck) -> Schedule? {
+        guard let salt = entry.salt else { return nil }
+        return check.isInPersonOnly(composition: salt)
     }
 }
 
@@ -262,7 +416,11 @@ extension JanAushadhiIndex {
 
     /// The Jan Aushadhi product with this catalogue entry's salt(s), strengths, form and release type, or nil.
     /// With several packs on the list the cheapest cost for `quantity` units wins (ties: first on the list).
-    public func equivalent(for match: CatalogueMatch, quantity: Int) -> JanAushadhiEquivalent? {
+    /// Never for an H1 / X medicine: pass `schedule` (the app's `ScheduleCheck`) and a product whose matched catalogue salts
+    /// are scheduled gets none, whatever the brand table says. Nil too for a quantity above 10,000.
+    public func equivalent(for match: CatalogueMatch, quantity: Int, schedule: ScheduleCheck? = nil) -> JanAushadhiEquivalent? {
+        if let schedule, match.schedule(using: schedule) != nil { return nil }
+        guard quantity <= PackSize.maxQuantity else { return nil }
         guard match.allowsJanAushadhi, let composition = match.entry.salt, let form = match.entry.form,
               let variant = match.entry.release.jaVariant,
               let q = Self.query(fromComposition: composition) else { return nil }
@@ -270,7 +428,8 @@ extension JanAushadhiIndex {
         let priced = found.map { m -> JanAushadhiEquivalent in
             let units = PackSize.unitsPerPack(janAushadhiUnitSize: m.unitSize)
             let packs = PackSize.packsNeeded(quantity: quantity, unitsPerPack: units)
-            return JanAushadhiEquivalent(match: m, totalPaise: m.mrpPaise * packs, packs: packs, packSizeKnown: units != nil)
+            let (total, overflow) = m.mrpPaise.multipliedReportingOverflow(by: packs)
+            return JanAushadhiEquivalent(match: m, totalPaise: overflow ? Int.max : total, packs: packs, packSizeKnown: units != nil)
         }
         return priced.enumerated().min { ($0.element.totalPaise, $0.offset) < ($1.element.totalPaise, $1.offset) }?.element
     }

@@ -86,7 +86,8 @@ public struct ScheduleCheck: Sendable {
     }
 
     /// H1/X by brand (first word, letters only, like `Catalogue`), from real product compositions.
-    /// A brand is listed if any of its products contains an H1/X salt, so this errs on the safe side.
+    /// A brand is listed when at least half of its active products contain an H1/X salt; the salts of the exact catalogue product
+    /// the parchi matches are checked separately (`CatalogueMatch.schedule(using:)`), so a mixed brand line is not flagged as a whole.
     public func isInPersonOnly(brand: String) -> Schedule? {
         byBrand[Self.brandKey(brand)]?.schedule
     }

@@ -2,22 +2,48 @@ import CoreImage
 import UIKit
 import Vision
 
-/// On-phone privacy blur: finds the patient's name, age, phone and address on a parchi photo with Apple Vision text boxes
-/// plus rules, and pixelates them BEFORE the image is stored or sent anywhere. Medicine lines are never blurred.
-/// Fails closed: with no "Name" label, every non-letterhead line above the first medicine line is blurred; with no readable
-/// text at all (`rule == "no_text"`) the caller must NOT use the photo.
-/// Port of `privacy/pii_blur.swift` (measured: name hidden on 98.3% of 300 synthetic parchis, 12/12 real photos by eye).
+/// On-phone privacy blur: tries to find the patient's name, age, phone and address on a parchi photo with Apple Vision text boxes
+/// plus rules, and pixelates what it finds BEFORE the image is stored or sent anywhere. Medicine lines are never blurred.
+/// It is a best effort, not a guarantee: the user must look at the preview. When nothing at all was hidden the photo cannot be
+/// used until the user ticks "I checked: no name, phone or address is visible" (`Decision`). With no readable text at all
+/// (`rule == "no_text"`) the photo is never used.
+/// Port of `privacy/pii_blur.swift`. Measured (docs/research/10-dataset-training-verification.md, not shown in the app): names hidden
+/// on 98.3% of 300 synthetic parchis and 12/12 real photos; PHONES only 46.0% (23/50); 7.1% of medicine lines over-blurred.
 enum PIIBlur {
     struct Result {
         let image: UIImage
         let rule: String
         let boxCount: Int
-        /// True only when the photo is safe to keep and send: some text was found and something was hidden or the page has no personal block.
-        var usable: Bool { rule != "no_text" && rule != "no_image" }
+        /// Languages Vision could not check on this phone (e.g. "hi-IN" when Hindi recognition is not installed).
+        let unchecked: [String]
+        var decision: Decision { Decision(rule: rule, hiddenCount: boxCount, unchecked: unchecked) }
+        /// False when there is no readable text or no image at all: the photo is never kept.
+        var usable: Bool { decision.hasReadableText }
     }
 
+    /// The rule that decides whether a blurred photo may be used. Pure data, so it is tested without Vision.
+    struct Decision: Equatable {
+        let rule: String
+        let hiddenCount: Int
+        let unchecked: [String]
+
+        /// Some text was read and we have an image to show.
+        var hasReadableText: Bool { rule != "no_text" && rule != "no_image" }
+        /// Nothing was hidden: the user has to confirm by eye before the photo can be used.
+        var needsUserCheck: Bool { hasReadableText && hiddenCount == 0 }
+        /// "Use this photo" (and so any Live upload) is possible only when at least one area was hidden, or the user ticked the box.
+        func canUse(userChecked: Bool) -> Bool { hasReadableText && (hiddenCount > 0 || userChecked) }
+        /// Shown in the preview when a language could not be checked; nil when everything was checked.
+        var languageWarning: String? {
+            unchecked.contains("hi-IN") ? "Hindi text could not be checked on this phone." : (unchecked.isEmpty ? nil : "Some text could not be checked on this phone.")
+        }
+    }
+
+    /// Runs the blur on a background task. Cancelling the CALLER cancels the render too (checked between the Vision and drawing steps),
+    /// and the original image is released as soon as this call returns.
     static func blurred(_ source: UIImage) async -> Result {
-        await Task.detached(priority: .userInitiated) { render(source) }.value
+        let task = Task.detached(priority: .userInitiated) { render(source) }
+        return await withTaskCancellationHandler { await task.value } onCancel: { task.cancel() }
     }
 
     struct Line { let text: String; let box: CGRect; let obs: VNRecognizedTextObservation; let cand: VNRecognizedText }
@@ -31,7 +57,7 @@ enum PIIBlur {
     static let otherLabel = try! NSRegularExpression(pattern: #"(?i)\b(age|sex|date|wt|weight|temp|bp|pulse|dt)\b"#)
     static let phone = try! NSRegularExpression(pattern: #"(?:\+91[\s-]?)?[6-9]\d{4}[\s-]?\d{5}"#)
     static let ageValue = try! NSRegularExpression(pattern: #"(?i)\b\d{1,3}\s*(y|yr|yrs|years|y/m|y/f|m|f)\b|\b\d{1,3}\s*/\s*[mf]\b"#)
-    static let letterhead = try! NSRegularExpression(pattern: #"(?i)(\bdr\b|dr\.|m\.?b\.?b\.?s|\breg\b|reg\.|clinic|hospital|nursing|centre|center|physician|specialist|consultant|surgeon|timing|m\.?d\b|d\.?n\.?b|d\.?c\.?h|d\.?g\.?o|polyclinic|road|nagar|\bph\b|ph:|emergency|डॉ|चिकित्स|अस्पताल|क्लिनिक|केन्द्र|केंद्र|समिति|समय)"#)
+    static let letterhead = try! NSRegularExpression(pattern: #"(?i)(^\s*dr\b|^\s*dr\.|m\.?b\.?b\.?s|\breg\b|reg\.|clinic|hospital|nursing|centre|center|physician|specialist|consultant|surgeon|timing|m\.?d\b|d\.?n\.?b|d\.?c\.?h|d\.?g\.?o|polyclinic|emergency|डॉ|चिकित्स|अस्पताल|क्लिनिक|केन्द्र|केंद्र|समिति|समय)"#)
 
     static func has(_ r: NSRegularExpression, _ s: String) -> NSTextCheckingResult? {
         r.firstMatch(in: s, range: NSRange(s.startIndex..., in: s))
@@ -114,23 +140,27 @@ enum PIIBlur {
     }
 
     private static func render(_ source: UIImage) -> Result {
+        if Task.isCancelled { return Result(image: UIImage(), rule: "no_image", boxCount: 0, unchecked: []) }
         let image = upright(source)
-        guard let cg = image.cgImage else { return Result(image: source, rule: "no_image", boxCount: 0) }
+        guard let cg = image.cgImage else { return Result(image: UIImage(), rule: "no_image", boxCount: 0, unchecked: []) }
         // Vision reads one script per request (the first language decides), so English and Hindi run separately.
         var lines: [Line] = []
+        var unchecked: [String] = []
         for langs in [["en-US"], ["hi-IN"]] {
+            if Task.isCancelled { return Result(image: UIImage(), rule: "no_image", boxCount: 0, unchecked: unchecked) }
             let request = VNRecognizeTextRequest()
             request.recognitionLevel = .accurate
             request.usesLanguageCorrection = false
             let supported = Set((try? request.supportedRecognitionLanguages()) ?? [])
-            guard langs.allSatisfy(supported.contains) else { continue }
+            guard langs.allSatisfy(supported.contains) else { unchecked += langs; continue }   // reported to the user, never skipped silently
             request.recognitionLanguages = langs
-            try? VNImageRequestHandler(cgImage: cg, options: [:]).perform([request])
+            do { try VNImageRequestHandler(cgImage: cg, options: [:]).perform([request]) } catch { unchecked += langs; continue }
             lines += (request.results ?? []).compactMap { o in
                 guard let c = o.topCandidates(1).first else { return nil }
                 return Line(text: c.string, box: o.boundingBox, obs: o, cand: c)
             }
         }
+        if Task.isCancelled { return Result(image: UIImage(), rule: "no_image", boxCount: 0, unchecked: unchecked) }
         let (boxes, rule) = blurBoxes(lines)
         let width = CGFloat(cg.width), height = CGFloat(cg.height)
         let pixelBoxes = boxes.map { b -> CGRect in
@@ -141,9 +171,9 @@ enum PIIBlur {
         let pixel = ci.applyingFilter("CIPixellate", parameters: [kCIInputScaleKey: max(12, width / 60)]).cropped(to: ci.extent)
         var output = ci
         for r in pixelBoxes { output = pixel.cropped(to: r).composited(over: output) }
-        guard let done = CIContext().createCGImage(output, from: ci.extent) else {
-            return Result(image: source, rule: "no_image", boxCount: 0)
+        guard !Task.isCancelled, let done = CIContext().createCGImage(output, from: ci.extent) else {
+            return Result(image: UIImage(), rule: "no_image", boxCount: 0, unchecked: unchecked)
         }
-        return Result(image: UIImage(cgImage: done), rule: rule, boxCount: pixelBoxes.count)
+        return Result(image: UIImage(cgImage: done), rule: rule, boxCount: pixelBoxes.count, unchecked: unchecked)
     }
 }

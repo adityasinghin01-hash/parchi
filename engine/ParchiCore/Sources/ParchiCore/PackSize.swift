@@ -32,9 +32,16 @@ public enum PackSize {
         return nil
     }
 
+    /// The most units of one medicine a plan prices (10,000). Above it the engine gives no price, because a quantity like
+    /// that is a misread, not a prescription.
+    public static let maxQuantity = 10_000
+
     /// `ceil(quantity / unitsPerPack)`, at least 1. Unknown pack size: 1 pack (the caller must say so on screen).
+    /// Cannot overflow: no addition on the quantity.
     public static func packsNeeded(quantity: Int, unitsPerPack: Int?) -> Int {
         guard let units = unitsPerPack, units >= 1 else { return 1 }
-        return max(1, (max(quantity, 1) + units - 1) / units)
+        let q = max(quantity, 1)
+        let (whole, rest) = q.quotientAndRemainder(dividingBy: units)
+        return max(1, rest == 0 ? whole : whole + 1)
     }
 }

@@ -22,6 +22,14 @@ targets:
     info:
       path: Info.plist
       properties:
+        NSCameraUsageDescription: "Parchi uses the camera only to photograph your parchi on this phone. Parchi tries to hide the name, phone and address on this phone and shows you the picture to check before you continue."
+        LSSupportsOpeningDocumentsInPlace: false
+        CFBundleDocumentTypes:
+          - CFBundleTypeName: Image
+            CFBundleTypeRole: Viewer
+            LSHandlerRank: Alternate
+            LSItemContentTypes:
+              - public.image
         NSAppTransportSecurity:
           NSAllowsLocalNetworking: true
         # Lab booking: write-only calendar access to add the confirmed slot. (Local notifications need no key.)
@@ -34,7 +42,7 @@ targets:
         INFOPLIST_KEY_CFBundleDisplayName: Parchi
         INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
         INFOPLIST_KEY_NSLocalNetworkUsageDescription: "Parchi talks to the lab server on your local network for order tracking."
-        INFOPLIST_KEY_NSLocationWhenInUseUsageDescription: "Parchi uses your location only on this phone, to show shops and labs near you. You can pick a city instead."
+        INFOPLIST_KEY_NSLocationWhenInUseUsageDescription: "Parchi uses your location to show shops and labs near you. The map search sends the area around you to Apple Maps. You can pick a city instead."
         MARKETING_VERSION: "0.1"
         CURRENT_PROJECT_VERSION: "1"
         SWIFT_VERSION: "5.0"
@@ -55,6 +63,20 @@ targets:
         SWIFT_VERSION: "5.0"
         TARGETED_DEVICE_FAMILY: "1"
         CODE_SIGN_STYLE: Automatic
+  ParchiTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: ParchiTests
+    dependencies:
+      - target: Parchi
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: in.tessanova.parchi.tests
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_STYLE: Automatic
 schemes:
   Parchi:
     shared: true
@@ -63,4 +85,5 @@ schemes:
         Parchi: all
     test:
       targets:
+        - ParchiTests
         - ParchiUITests

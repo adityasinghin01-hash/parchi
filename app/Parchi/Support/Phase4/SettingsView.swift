@@ -6,7 +6,7 @@ struct SettingsView: View {
     let backend: BackendSettings
     @Environment(AppModel.self) private var appModel
     let consent: ConsentStore
-    /// Clears seller website logins (the integrator passes `CheckoutPrivacy.clearSellerSessions`).
+    /// Clears seller website logins (kept for callers; Delete everything awaits `CheckoutPrivacy.clearSellerSessions` itself).
     var onClearSellerSessions: () -> Void
     /// Optional extra reset for the demo (hidden row).
     var onDemoReset: (() -> Void)?
@@ -18,7 +18,7 @@ struct SettingsView: View {
     @State private var confirmingDelete = false
     @State private var working = false
     @State private var deleteResult: ResetClient.Outcome?
-    @State private var deletedLocally = false
+    @State private var localFailures: [String]? = nil
     @State private var versionTaps = 0
     @State private var demoResetDone = false
 
@@ -83,8 +83,13 @@ struct SettingsView: View {
                 Button("Delete everything", role: .destructive) { confirmingDelete = true }
                     .disabled(working)
                 if working { ProgressView("Deleting…") }
-                if deletedLocally {
-                    Label("Everything on this phone is deleted.", systemImage: "checkmark.circle")
+                if let localFailures {
+                    if localFailures.isEmpty {
+                        Label("Everything on this phone is deleted.", systemImage: "checkmark.circle")
+                    } else {
+                        Label("Not everything on this phone could be deleted: \(localFailures.joined(separator: ", ")). Try again.", systemImage: "exclamationmark.triangle")
+                    }
+                    Text(EraseEverything.calendarNote).font(.footnote)
                 }
                 if let deleteResult {
                     Text(deleteResult.message).font(.footnote)
@@ -93,7 +98,7 @@ struct SettingsView: View {
                     }
                 }
             } footer: {
-                Text("Deletes saved parchis, doses, settings, your agreement, photo crops and seller logins on this phone, and asks our lab server to delete this phone's test orders.")
+                Text("Deletes saved parchis, doses, settings, your agreement, photo copies, seller logins, reminders Parchi scheduled and the message it copied on this phone, and asks our lab server to delete this phone's test orders. The server address and key stay so the server can be asked again. \(EraseEverything.calendarNote)")
             }
 
             Section {
@@ -129,10 +134,10 @@ struct SettingsView: View {
     private func deleteEverything() async {
         working = true
         deleteResult = nil
-        let outcome = await EraseEverything.run(history: history, reset: ResetClient(settings: backend), onClearSellerSessions: onClearSellerSessions)
+        let report = await EraseEverything.run(history: history, reset: ResetClient(settings: backend))
         consent.reload()
-        deletedLocally = true
-        deleteResult = outcome
+        localFailures = report.localFailures
+        deleteResult = report.server
         working = false
     }
 
@@ -143,7 +148,7 @@ struct SettingsView: View {
     }
 
     private func demoReset() {
-        history.deleteAll()
+        _ = history.deleteAll()
         history.fillDemo()
         onDemoReset?()
         demoResetDone = true
@@ -158,8 +163,6 @@ struct AccuracyView: View {
                 row("Reading handwriting with Apple's built-in text reader (100 real handwritten parchis, MIRAGE-100)", "26.3% of medicine names found · 12.8% of what it found was right")
                 row("A large AI model, tested blind on 16 parchis", "82.1% found · 87.3% right")
                 row("Our own reader before training (Qwen2.5-VL-3B, first 30 MIRAGE parchis)", "13.6% found · 26.2% right · about 20 seconds per parchi")
-                row("Hiding the patient's name (300 synthetic parchis)", "98.3% hidden")
-                row("Hiding the patient's name (12 real parchi photos)", "12 of 12 hidden")
             } header: {
                 Text("What we measured")
             } footer: {
@@ -167,6 +170,7 @@ struct AccuracyView: View {
             }
             Section {
                 Text("Handwriting is hard to read, which is why you check every line on the Confirm screen before any plan is made. When Parchi is unsure about a brand and strength, it asks you instead of guessing.")
+                Text("Hiding the name, age, phone and address is a best effort and can miss something, phone numbers most of all. Always check the picture before you continue.")
             } header: {
                 Text("What this means for you")
             }

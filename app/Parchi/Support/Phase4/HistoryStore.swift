@@ -125,9 +125,12 @@ final class HistoryStore {
         try? context.save()
     }
 
-    func deleteAll() {
+    /// Deletes every saved parchi. Returns false when the store could not be saved or still holds records (reported, not swallowed).
+    @discardableResult
+    func deleteAll() -> Bool {
         for record in all() { context.delete(record) }
-        try? context.save()
+        do { try context.save() } catch { return false }
+        return all().isEmpty
     }
 
     // MARK: Demo

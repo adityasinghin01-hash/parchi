@@ -9,12 +9,18 @@ Everything below was run on the lab iMac on 23 Oct 2026 (see `docs/verification/
 5. Judge page on a second screen: `http://<iMac-ip>:8000/judge?k=<admin key>` (LAN only; the key is in the URL, so do not screen-share the address bar).
 
 ## The 2-minute story (Live)
-1. **Choose a photo** of the demo parchi -> the name is hidden on the phone (show the preview) -> Use this photo. (With no reader connected the app says so and loads the demo parchi: say it plainly.)
+1. **Choose a photo** of the demo parchi. The FIRST time, the consent screen appears (read it aloud: we try to hide the details we can find, you must check the picture, the picture goes to our own lab computer in Live mode, photo copies are removed after 24 hours, Delete everything is in Settings); tap Agree. Then the preview shows what was hidden -> Use this photo. (With no reader connected the app says so and loads the demo parchi: say it plainly.)
 2. Confirm: the doubtful line (Telma 400 vs 40) is asked, not guessed; the H1/X line says "buy in person with the original parchi".
-3. Plan: one plan, full price up front, every price with its source and date ("Online, 23 Oct", "MRP, seen 23 Oct"), Smart Router chip ("Delivers about 9 of 10 ... Demo" in Mock; real counts in Live).
+3. Plan: one plan, full price up front (**List | Map** switch at the top: the Map shows live Apple Maps shops with price pins, tap a pin for the shop sheet with Call / Directions / Ask this shop; the map needs internet, the list still works), every price with its source and date ("Online, 23 Oct", "MRP, seen 23 Oct"), Smart Router chip ("Delivers about 9 of 10 ... Demo" in Mock; real counts in Live).
 4. **Ask nearby shops**: pick 3, set a pickup time, send. On the second screen, open the reply link and answer as the shop (or use the judge page). The plan re-sorts with the shop's price ("Shop replied").
 5. Get it all: Checkout Assistant walks seller by seller (the user taps Add to cart and Pay).
 6. **The wow moment:** on the judge page press **Cancel** on one seller. Within about 2 seconds the Plan B sheet appears on the phone ("Truemeds cancelled 5 items. Plan B: Medkart + doctor's shop, +Rs 165.74"). Tap **Approve**: only the failed items move, everything else stays.
+
+## If the reader cannot read a parchi (it is not connected yet)
+On Confirm use **Add a medicine** (search by brand, pick the strength, set the quantity) and **Add a test**; each line has Remove. Any medicine in the catalogue then gets a plan at the catalogue MRP ("Catalogue MRP · check at the shop") with a Jan Aushadhi "ask your doctor" line. Tests are priced lab by lab below the plan and are not in its total.
+
+## Before every rehearsal
+`curl -X POST "localhost:8000/reset?scope=demo" -H "X-Admin-Key: $(cat data/admin.key)"` on the iMac. The order engine (Temporal) database was recreated on 23 Oct night (`server/data/temporal.db`): old rehearsal orders are gone, which is expected.
 
 ## If something breaks
 | Symptom | Do this |

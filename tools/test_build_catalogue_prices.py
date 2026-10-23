@@ -40,6 +40,9 @@ ROWS = [
     row(17, "Free 10 Tablet", "0"),                                                                        # no price
     row(18, "Dolo 650 Tablet", "40", "strip of 15 tablets", salt="Paracetamol (500mg)"),                  # products disagree on the salt
     row(19, "Syrupy 5 Syrup", "40", "bottle of 60 ml Syrup", salt="Cetirizine (5mg/5ml)"),
+    row(20, "Glycomet-GP PR 2/500 Tablet PR", "170.75", "strip of 10 tablet pr", salt="Glimepiride (2mg) + Metformin (500mg)"),
+    row(21, "Glycomet-GP PR 2/850 Tablet PR", "193.50", "strip of 10 tablet pr", salt="Glimepiride (2mg) + Metformin (850mg)"),
+    row(22, "Pan 40 Capsule", "99", "strip of 10 capsules", salt="Pantoprazole (40mg)"),
 ]
 
 
@@ -66,6 +69,15 @@ class KeyTests(unittest.TestCase):
         self.assertEqual(b.brand_and_strengths("Granac MR 100mg/325mg/250mg Tablet"), ("GRANAC", {"100"}))
         self.assertEqual(b.brand_and_strengths("AB 10 Tablet"), (None, set()))
         self.assertEqual(b.brand_and_strengths("Augmentin 1.2 Injection"), ("AUGMENTIN", {"1.2"}))
+
+    def test_combination_strength_keeps_all_its_numbers(self):
+        self.assertEqual(b.brand_and_strengths("Glycomet-GP PR 2/500 Tablet PR"), ("GLYCOMETGP", {"2/500"}))
+        self.assertEqual(b.brand_and_strengths("Glycomet-GP PR 2/850 Tablet PR"), ("GLYCOMETGP", {"2/850"}))
+        self.assertEqual(b.brand_and_strengths("Telma Trio 40/12.5/5 Tablet"), ("TELMA", {"40/12.5/5"}))
+        self.assertEqual(b.strength_token("125mg/5ml"), "125")          # a volume is not part of the strength
+        self.assertEqual(b.strength_token("2/"), "2")
+        self.assertEqual(b.strength_token("/500"), "")
+        self.assertEqual(b.strength_token("H"), "")
 
     def test_extra_words(self):
         self.assertEqual(b.extra_words("Telma H 40 Tablet"), "H")
@@ -119,12 +131,26 @@ class BuildTests(unittest.TestCase):
         telma40 = [x for x in entries(data, "TELMA") if x["strength"] == "40"]
         self.assertEqual(sorted((x["extras"], x["m"]) for x in telma40), [("", 24595), ("H", 15000)])
 
+    def test_2_500_and_2_850_are_two_products_with_their_own_prices(self):
+        data = built()
+        got = {x["strength"]: x["m"] for x in entries(data, "GLYCOMETGP")}
+        self.assertEqual(got, {"2/500": 17075, "2/850": 19350})
+
+    def test_capsule_abbreviation_and_extra_word_abbreviations(self):
+        self.assertEqual(b.detect_form("Pan 40 Cap"), "capsule")
+        self.assertEqual(b.detect_form("Pan 40 Tabs"), "tablet")
+        self.assertEqual(b.extra_words("Pan cap 40"), "")
+        self.assertEqual(b.extra_words("Calpol Syp 125"), "")
+        self.assertEqual(b.extra_words("Soframycin Oint"), "")
+        pan = [x for x in entries(built(), "PAN") if x["strength"] == "40"]
+        self.assertIn(("capsule", 9900), [(x["form"], x["m"]) for x in pan])
+
     def test_release_types_and_forms_are_separate_entries(self):
         data = built()
         glycomet = [x for x in entries(data, "GLYCOMET") if x["strength"] == "500"]
         self.assertEqual(sorted((x["variant"], x["m"]) for x in glycomet), [("", 3000), ("modified", 4771)])
         pan = [x for x in entries(data, "PAN") if x["strength"] == "40"]
-        self.assertEqual(sorted((x["form"], x["m"]) for x in pan), [("injection", 7000), ("tablet", 15500)])
+        self.assertEqual(sorted((x["form"], x["m"]) for x in pan), [("capsule", 9900), ("injection", 7000), ("tablet", 15500)])
 
     def test_products_that_disagree_on_the_salt_get_no_salt(self):
         data = built()

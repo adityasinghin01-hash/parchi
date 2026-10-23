@@ -29,14 +29,24 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="Parchi Orchestrator", lifespan=lifespan)
 MAX_BODY_BYTES = 1_000_000
+# POST /read carries a photo: up to 2 MB of image plus a little multipart framing. Every other route keeps 1 MB.
+READER_MAX_BYTES = 2_000_000
+READ_BODY_BYTES = READER_MAX_BYTES + 16_384
+
+
+def body_limit_for(request: Request) -> int:
+    return READ_BODY_BYTES if request.method == "POST" and request.url.path == "/read" else MAX_BODY_BYTES
 
 
 @app.middleware("http")
 async def limit_body_size(request: Request, call_next):
     # Reject oversized bodies by declared length before anything is read or authenticated.
     declared = request.headers.get("content-length")
-    if declared and declared.isdigit() and int(declared) > MAX_BODY_BYTES:
+    if declared and declared.isdigit() and int(declared) > body_limit_for(request):
         return JSONResponse({"detail": "request body too large"}, status_code=413)
+    if request.url.path == "/read" and request.method == "POST" and not (declared and declared.isdigit()):
+        # A chunked upload has no declared size, so the guard above cannot see it: the photo route refuses it.
+        return JSONResponse({"detail": "send the photo with a Content-Length"}, status_code=411)
     return await call_next(request)
 
 app.state.temporal = None
@@ -301,7 +311,6 @@ async def reset(request: Request, scope: str | None = None,
     return {"ok": True, "deleted": len(orders)}
 
 
-READER_MAX_BYTES = 4_000_000
 READER_TYPES = {"image/jpeg", "image/png", "image/heic"}
 READER_TRANSPORT: Any = None  # tests inject an httpx.MockTransport here
 

@@ -29,6 +29,7 @@ PRICE_COLUMNS = ["city", "lab", "test_canonical", "price_inr", "price_text", "so
 LINK_COLUMNS = ["medicine_key", "seller", "usable_in_app", "product_url", "price_inr", "mrp_inr", "date_seen"]
 SCHEDULE_KEYS = ["schedule", "salt", "source_url", "date", "date_seen"]
 MEDLEX_COLUMNS = ["name", "salt_composition"]
+COMPOSITION_COLUMNS = ["salt_composition", "short_composition1", "short_composition2"]   # the last two are optional in the file
 
 
 class DataError(Exception):
@@ -145,25 +146,40 @@ def normalise_salt(text):
     return " ".join(words)
 
 
-def build_brand_schedule(rows, schedule):
+def build_brand_schedule(rows, schedule, min_share=0.5):
     """Brand (first word, letters only, upper-case; same key as Catalogue) -> H1/X salt, from the
-    salt_composition of real products. A brand is listed if ANY of its products contains an H1/X salt."""
+    salt_composition of real products. A brand is listed when at least `min_share` of its active products contain an
+    H1/X salt: a brand line that is mostly ordinary (Calpol: 1 of 8 products has tramadol) is NOT flagged as a whole,
+    because the app also checks the salts of the exact catalogue product it matches (so "Calpol T" is still caught)."""
     by_salt = {normalise_salt(e["salt"]): e for e in schedule}
-    out = {}
+    total, flagged, found = {}, {}, {}
     for r in rows:
+        if str(r.get("Is_discontinued") or "").strip().lower() in ("true", "1", "yes"):
+            continue
         parts = r["name"].split()
         if not parts:
             continue
         brand = "".join(ch for ch in parts[0] if ch.isalpha()).upper()
         if len(brand) < 3:
             continue
-        for part in re.split(r"\+", r["salt_composition"] or ""):
+        total[brand] = total.get(brand, 0) + 1
+        # salt_composition is often empty while short_composition1/2 are filled ("Aaram Tablet": Alprazolam in
+        # short_composition1 only): a product is flagged if a salt of ANY of the three columns is H1/X.
+        salts = []
+        for column in COMPOSITION_COLUMNS:
+            salts.extend(re.split(r"\+", r.get(column) or ""))
+        row_hit = None
+        for part in salts:
             hit = by_salt.get(normalise_salt(part))
-            if hit:
-                current = out.get(brand)
-                # keep the stricter schedule (X) if a brand has both
-                if current is None or (hit["schedule"] == "X" and current["schedule"] != "X"):
-                    out[brand] = {"schedule": hit["schedule"], "salt": hit["salt"]}
+            # keep the stricter schedule (X) if a product has both
+            if hit and (row_hit is None or (hit["schedule"] == "X" and row_hit["schedule"] != "X")):
+                row_hit = hit
+        if row_hit:
+            flagged[brand] = flagged.get(brand, 0) + 1
+            current = found.get(brand)
+            if current is None or (row_hit["schedule"] == "X" and current["schedule"] != "X"):
+                found[brand] = {"schedule": row_hit["schedule"], "salt": row_hit["salt"]}
+    out = {b: v for b, v in found.items() if flagged[b] / total[b] >= min_share}
     return dict(sorted(out.items()))
 
 

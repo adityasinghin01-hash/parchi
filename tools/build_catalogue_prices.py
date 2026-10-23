@@ -63,15 +63,28 @@ def brand_and_strengths(name):
         return None, set()
     strengths = set()
     for part in parts[1:]:
-        number = ""
-        for ch in part:
-            if ch.isnumeric() or ch == ".":
-                number += ch
-            else:
-                break
+        number = strength_token(part)
         if number:
             strengths.add(number)
     return brand, strengths
+
+
+def strength_token(part):
+    """The strength a word starts with: "40" for "40mg", "2/500" for "2/500" (a combination keeps ALL its numbers:
+    "2/500" and "2/850" are different products), "125" for "125mg/5ml" (the "/5ml" is a volume, not a strength).
+    "" when the word does not start with a number."""
+    number = ""
+    i = 0
+    while i < len(part) and (part[i].isnumeric() or part[i] == "."):
+        number += part[i]
+        i += 1
+    while number and i + 1 < len(part) and part[i] == "/" and (part[i + 1].isnumeric() or part[i + 1] == "."):
+        number += "/"
+        i += 1
+        while i < len(part) and (part[i].isnumeric() or part[i] == "."):
+            number += part[i]
+            i += 1
+    return number
 
 
 # --- dosage form + release type (same rules as ParchiCore JAName.detectForm / detectVariant) --------------------
@@ -82,8 +95,8 @@ def _rx(pattern):
 
 RX_INJECTION = _rx(r"injection|infusion|\binj\b")
 RX_INHALER = _rx(r"inhal(?:er|ation)\b|respules|rotacaps?|nebuli|respirator solution|\bmdi\b")
-RX_TABLET = _rx(r"\btablets?\b|\btab\b")
-RX_CAPSULE = _rx(r"\bcapsules?\b")
+RX_TABLET = _rx(r"\btablets?\b|\btabs?\b")
+RX_CAPSULE = _rx(r"\bcapsules?\b|\bcaps?\b")
 RX_GARGLE = _rx(r"gargle|mouth ?wash")
 RX_DROPS = _rx(r"\bdrops?\b")
 RX_DROPS_SITE = _rx(r"\b(?:eye|ear|nasal)\b")
@@ -199,7 +212,7 @@ def salt_composition(row):
 # Words after the brand that say how the medicine is made, not which medicine it is.
 NOT_EXTRA = set("""tablet tablets tab capsule capsules cap caps syrup dry suspension oral solution liquid drops drop eye ear
 nasal injection inj infusion cream gel ointment lotion powder sachet granules inhaler respules rotacap rotacaps spray
-sr xr er cr pr xl mr od la tr dt md mdt odt soft gelatin chewable dispersible sugar free iv im vaccine mg ml gm g mcg iu
+syp syr susp oint tabs sr xr er cr pr xl mr od la tr dt md mdt odt soft gelatin chewable dispersible sugar free iv im vaccine mg ml gm g mcg iu
 for of and with in""".split())
 
 

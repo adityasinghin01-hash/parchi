@@ -1,14 +1,14 @@
 {
  "brand_mrp": {
   "brands": 132037,
-  "entries": 215604,
+  "entries": 215755,
   "janaushadhi_rows": 2439,
   "source": "Medlex product list (updated.csv)",
-  "strengths": 187599
+  "strengths": 187863
  },
  "build_date": "2026-10-23",
  "counts": {
-  "brand_schedule": 253,
+  "brand_schedule": 12700,
   "lab_prices": 69,
   "labs": 41,
   "product_links": 32,
