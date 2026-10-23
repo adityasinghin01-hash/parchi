@@ -1,0 +1,17 @@
+import {esc,glyph} from '../components/ui.js';
+import {journeyHeader,journeyTabs,jicon,chevron,sampleNote} from '../components/journey-ui.js';
+import {profileIcon} from '../components/profile-ui.js';
+const prefRow=(icon,label,value,action)=>`<button type="button" class="account-row" data-final="${action}"><i>${icon}</i><span><strong>${label}</strong></span>${value?`<small>${esc(value)}</small>`:''}${chevron}</button>`;
+const sectionHeader=(icon,title,subtitle)=>`<div class="account-section-heading"><i>${icon}</i><span><h2>${title}</h2><p>${subtitle}</p></span></div>`;
+export function accountScreen(model,state){
+ const profile=state.profile||model.profile,guest=state.isGuest||(!state.profile&&model.loggedOut);
+ const phone=profile?.phone?String(profile.phone).replace(/\D/g,'').slice(-10):null;
+ const name=[model.firstName,model.lastName].filter(Boolean).join(' ');
+ const verified=!guest&&(profile?.verified===true||profile?.mode==='demo');
+ return `<section class="screen journey-screen final-screen account-screen">${journeyHeader('Account','Manage your profile, preferences and app settings.',{care:true,location:state.area?.label||'HSR Layout'})}
+ <section class="account-profile"><i>${glyph.userFill}</i><div><span>${guest?'Welcome to Parchi':name||'Phone number'}</span><strong>${guest?'You’re browsing as a guest':phone?`+91 ${esc(phone.slice(0,5))} ${esc(phone.slice(5))}`:'No phone number connected'}</strong>${verified?`<span class="account-verified">${glyph.checkCircle}Verified</span>`:`<small>${guest?'Sign in to save your profile and history.':'Phone verification is not confirmed.'}</small>`}</div><button type="button" ${guest?'data-nav="signin"':'data-final="name"'}>${guest?'Sign in':`${profileIcon.pen}${name?'Edit name':'Add name'}`}</button></section>
+ <section class="account-section">${sectionHeader(glyph.grid,'Quick Access','Your key Parchi features.')}<div class="account-section-rows"><button type="button" class="account-row" data-nav="history"><i>${glyph.document}</i><span><strong>Parchi History</strong><small>View your past prescriptions, orders and tests</small></span>${chevron}</button><button type="button" class="account-row" data-final="addresses"><i>${glyph.target}</i><span><strong>Saved Addresses</strong><small>Manage your delivery addresses</small></span>${chevron}</button><button type="button" class="account-row" data-final="pass"><i>${profileIcon.qr}</i><span><strong>Parchi Pass</strong><small>Show your pass at partner pharmacies and labs</small></span>${chevron}</button></div></section>
+ <section class="account-section">${sectionHeader(profileIcon.cog,'Preferences','Personalize your app experience.')}<div class="account-section-rows preference-rows">${prefRow(profileIcon.globe,'Language',model.language==='hi'?'Hindi':'English','language')}${prefRow(profileIcon.bell,'Notifications',model.notifications?'On':'Off','notifications')}${prefRow(jicon.phone,'Appearance',{system:'System',light:'Light',dark:'Dark'}[model.appearance],'appearance')}</div></section>
+ <button type="button" class="account-section privacy-settings" data-final="privacy">${sectionHeader(profileIcon.shield,'Privacy & Settings','Data, permissions and more.')}${chevron}</button>
+ <button type="button" class="account-logout" data-final="logout">${profileIcon.logout}Log out</button>${sampleNote(model.source==='reference-demo'?'Account preview · sample verification and local preferences':'Profile changes and permissions remain previews unless connected')}${journeyTabs('account')}</section>`;
+}

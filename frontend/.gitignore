@@ -1,0 +1,21 @@
+.DS_Store
+Thumbs.db
+node_modules/
+.env
+.env.*
+!.env.example
+
+.build/
+DerivedData/
+Generated/
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+
+# App artwork and supplied UI design references are frontend source assets.
+!/assets/
+!/assets/**
+!/DesignReferences/
+!/DesignReferences/**
+!/ParchiFrontend/Assets.xcassets/**/*.png
+!/Archive/**/Assets.xcassets/**/*.png

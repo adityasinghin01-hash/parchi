@@ -1,0 +1,43 @@
+name: ParchiFrontend
+options:
+  bundleIdPrefix: in.tessanova
+  deploymentTarget:
+    iOS: "17.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    CODE_SIGN_STYLE: Automatic
+targets:
+  ParchiFrontend:
+    type: application
+    platform: iOS
+    sources: [ParchiFrontend]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: in.tessanova.parchi.frontend
+        MARKETING_VERSION: "0.1"
+        CURRENT_PROJECT_VERSION: "1"
+    info:
+      path: Generated/Info.plist
+      properties:
+        CFBundleDisplayName: Parchi
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        NSLocationWhenInUseUsageDescription: "Parchi uses your location to help you choose a nearby area. You can enter a city instead."
+  ParchiFrontendUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [ParchiFrontendUITests]
+    dependencies:
+      - target: ParchiFrontend
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  ParchiFrontend:
+    build:
+      targets:
+        ParchiFrontend: all
+    test:
+      targets: [ParchiFrontendUITests]

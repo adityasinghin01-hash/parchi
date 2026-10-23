@@ -1,0 +1,30 @@
+{
+  "type": "parchi-demo-pass",
+  "id": "PRC-8294-5617",
+  "patient": "Aarav Mehta",
+  "date": "10 Oct 2026",
+  "area": "HSR Layout, Bengaluru",
+  "medicines": [
+    {
+      "name": "Paracetamol 500 mg",
+      "quantity": "10 tablets"
+    },
+    {
+      "name": "Amlodipine 5 mg",
+      "quantity": "10 tablets"
+    },
+    {
+      "name": "Metformin 500 mg",
+      "quantity": "10 tablets"
+    },
+    {
+      "name": "Atorvastatin 10 mg",
+      "quantity": "10 tablets"
+    }
+  ],
+  "tests": [
+    "Complete Blood Count (CBC)",
+    "Thyroid Profile (T3, T4, TSH)"
+  ],
+  "notice": "DEMO; not a verified medical record"
+}

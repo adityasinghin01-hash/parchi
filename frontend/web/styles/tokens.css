@@ -1,0 +1,26 @@
+/* Shared visual tokens. The eventual SwiftUI theme maps to these same values. */
+:root {
+  --color-background: #faeeda;
+  --color-surface: #fff6e4;
+  --color-ink: #421c08;
+  --color-secondary: #68553f;
+  --color-primary: #cc3f12;
+  --color-primary-bright: #dd4812;
+  --color-gold: #f7a316;
+  --color-chevron: #cfaa7c;
+  --color-privacy: #fbe4c2;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --font-editorial: Georgia, "Times New Roman", serif;
+  --radius-card: 18px;
+  --radius-sheet: 26px;
+  --target-min: 44px;
+  --duration-fast: 180ms;
+}
+* { box-sizing: border-box; }
+html { color-scheme: light; }
+body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-background); }
+button, input { font: inherit; }
+button { cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+button:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 4px; }
+button:disabled { cursor: default; }
+[hidden] { display: none !important; }

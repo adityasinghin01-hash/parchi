@@ -1,0 +1,8 @@
+import {referenceArt} from '../components/ui.js';
+import {journeyHeader,jicon,chevron,sampleNote} from '../components/journey-ui.js';
+const factors=[
+ {title:'Total Price',copy:'We look at the complete cost, including medicines, tests and all fees.',crop:[65,412,183,168]},
+ {title:'Ready Time',copy:'We prefer plans that can be completed sooner.',crop:[65,658,182,157]},
+ {title:'Number of Trips',copy:'Fewer visits or deliveries are more convenient.',crop:[65,884,183,166]}
+];
+export function rankingScreen(model,state){return `<section class="screen journey-screen final-screen ranking-screen">${journeyHeader('How We Rank','We compare plans using three key factors to<br>show you the best options.',{back:model.rankReturn,location:state.area?.label||'HSR Layout'})}<div class="ranking-factors">${factors.map((factor,index)=>`<article class="ranking-factor">${referenceArt('ranking-final',factor.crop,'ranking-art')}<span class="ranking-number">${index+1}</span><div><h2>${factor.title}</h2><p>${factor.copy}</p></div></article>`).join('')}</div><section class="ranking-disclosure"><div><i>${jicon.info}</i><span><h2>Referral payments don’t affect rankings.</h2><p>We may earn a small referral fee from some<br class="ranking-wide"> partners, but it never influences the order of results.</p></span></div><button type="button" data-final="price-sources"><strong>Where do we get prices from?</strong>${chevron}</button></section><button type="button" class="primary-action rank-back" data-nav="${model.rankReturn}">Back to Plan</button>${sampleNote('Design preview · policy and price-source claims await service verification')}</section>`;}
