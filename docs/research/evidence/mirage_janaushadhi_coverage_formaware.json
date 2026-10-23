@@ -1,0 +1,1320 @@
+{
+ "stats": {
+  "mentions": 327,
+  "no_ja_equivalent": 76,
+  "ja_equivalent": 187,
+  "not_in_catalogue": 50,
+  "no_composition": 14
+ },
+ "examples": [
+  [
+   "LEVOLIN INHALER MDI",
+   "Levolin 0.63mg Respules",
+   "Levosalbutamol Respules 0.63mg per 2.5ml",
+   "2.5 ml",
+   5.34
+  ],
+  [
+   "MONTAIR FX TAB",
+   "Montair FX Tablet",
+   "Montelukast\u00a0Sodium 10mg\u00a0\u00a0and Fexofenadine Hydrochloride 120 mg Tablets",
+   "10's",
+   45.38
+  ],
+  [
+   "NEXITO 5MG TAB",
+   "Nexito 5 Tablet",
+   "Escitalopram Tablets IP 5 mg",
+   "10's",
+   7.5
+  ],
+  [
+   "DOLO TAB 650MG",
+   "Dolo 650 Tablet",
+   "Paracetamol Tablets IP 650 mg",
+   "15's",
+   15.47
+  ],
+  [
+   "MONTAIR FX TAB",
+   "Montair FX Tablet",
+   "Montelukast\u00a0Sodium 10mg\u00a0\u00a0and Fexofenadine Hydrochloride 120 mg Tablets",
+   "10's",
+   45.38
+  ],
+  [
+   "BETADINE GARGLE",
+   "Betadine 2% Gargle Mint",
+   "Povidone Iodine Gargle 2% w/v",
+   "100ml Bottle",
+   37.5
+  ],
+  [
+   "ALLEGRA SYR",
+   "Allegra Suspension Raspberry & Vanilla",
+   "Fexofenadine Hydrochloride Suspension (30mg/5ml)",
+   "100 ml",
+   28.13
+  ],
+  [
+   "AZITHRAL 200MG SYP",
+   "Azithral 200 Liquid",
+   "Azithromycin Oral Suspension IP 200 mg",
+   "15 ml",
+   20.63
+  ],
+  [
+   "LOOZ SYP",
+   "Looz Oral Solution",
+   "Lactulose Solution IP 10g per 15ml",
+   "100 ml",
+   57.0
+  ],
+  [
+   "MONTAIR LC SYP",
+   "Montair LC Kid Syrup",
+   "Montelukast 4mg and Levocetirizine 2.5mg Syrup",
+   "60 ml",
+   18.75
+  ],
+  [
+   "GLIMY TAB 4MG",
+   "Glimy 4 Tablet",
+   "Glimepiride Tablets IP 4mg",
+   "10's",
+   8.25
+  ],
+  [
+   "TELMA 40MG TAB",
+   "Telma 40 Tablet",
+   "Telmisartan Tablets IP 40mg",
+   "10's",
+   12.38
+  ],
+  [
+   "VOLIX 0.3MG TAB",
+   "Volix M 0.3 Tablet",
+   "Metformin Hydrochloride 500mg and Voglibose 0.3mg Tablets",
+   "10's",
+   17.02
+  ],
+  [
+   "JANUMET 50/1000MG TAB",
+   "Janumet 50mg/500mg Tablet",
+   "Sitagliptin 50mg and Metformin 500mg Extended Release Tablets",
+   "10's",
+   51.56
+  ],
+  [
+   "LANTUS SOLOSTAR INJ",
+   "Lantus 100IU/ml Solution for Injection",
+   "Insulin Glargine Injection IP 100 IU per ml",
+   "Cartridge 3 ml",
+   340.0
+  ],
+  [
+   "MONTEK 10MG TAB",
+   "Montek 10 Tablet",
+   "Montelukast Sodium Tablets IP 10mg",
+   "10's",
+   20.42
+  ],
+  [
+   "HCQS 200MG TAB",
+   "HCQS 200 Tablet",
+   "Hydroxychloroquine Tablets IP 200 mg",
+   "10's",
+   34.18
+  ],
+  [
+   "FOLITRAX 15MG TAB",
+   "Folitrax 15 Tablet",
+   "Methotrexate Tablets IP 15mg",
+   "10's",
+   32.81
+  ],
+  [
+   "FOLVITE 5MG TAB",
+   "Folvite 5mg Tablet",
+   "Folic Acid Tablets IP 5 mg",
+   "15's",
+   4.54
+  ],
+  [
+   "RABLET-D TAB",
+   "Rablet 20 Tablet",
+   "Rabeprazole Gastro Resistant Tablets IP 20 mg",
+   "10's",
+   9.08
+  ],
+  [
+   "WYSOLONE 5MG TAB",
+   "Wysolone 5 Tablet DT",
+   "Prednisolone Tablets IP 5 mg",
+   "15's",
+   7.5
+  ],
+  [
+   "AZITHRAL TAB TAB 500MG",
+   "Azithral 500 Tablet",
+   "Azithromycin Tablets IP 500 mg",
+   "3's",
+   39.38
+  ],
+  [
+   "MEFTAL P SYP",
+   "Meftal-P Suspension",
+   "Mefenamic Acid Suspension 100mg per 5ml",
+   "60 ml",
+   17.96
+  ],
+  [
+   "ALLEGRA SYR",
+   "Allegra Suspension Raspberry & Vanilla",
+   "Fexofenadine Hydrochloride Suspension (30mg/5ml)",
+   "100 ml",
+   28.13
+  ],
+  [
+   "ALLEGRA SYR",
+   "Allegra Suspension Raspberry & Vanilla",
+   "Fexofenadine Hydrochloride Suspension (30mg/5ml)",
+   "100 ml",
+   28.13
+  ],
+  [
+   "MONTAIR 4MG TAB",
+   "Montair 10 Tablet",
+   "Montelukast Sodium Tablets IP 10mg",
+   "10's",
+   20.42
+  ],
+  [
+   "MEFTAL P SYP",
+   "Meftal-P Suspension",
+   "Mefenamic Acid Suspension 100mg per 5ml",
+   "60 ml",
+   17.96
+  ],
+  [
+   "ASCORIL EXPT SYR",
+   "Ascoril D Plus Syrup Sugar Free",
+   "Phenylephrine Hydrochloride 5mg and Chlorpheniramine Maleate 2mg Drops",
+   "15 ml Bottle",
+   18.75
+  ],
+  [
+   "BUDECORT 100 INHALER",
+   "Budecort 100 Inhaler",
+   "Budesonide Inhalation IP 100mcg",
+   "200 MDI",
+   115.31
+  ],
+  [
+   "MONTAIR 4MG TAB",
+   "Montair 10 Tablet",
+   "Montelukast Sodium Tablets IP 10mg",
+   "10's",
+   20.42
+  ],
+  [
+   "BETADINE GARGLE",
+   "Betadine 2% Gargle Mint",
+   "Povidone Iodine Gargle 2% w/v",
+   "100ml Bottle",
+   37.5
+  ],
+  [
+   "MONTAIR-LC TAB",
+   "Montair-LC Tablet",
+   "Montelukast Sodium 10mg and Levocetirizine 5mg Tablets IP",
+   "10's",
+   20.63
+  ],
+  [
+   "ECOSPRIN TAB 75MG",
+   "Ecosprin 75 Tablet",
+   "Aspirin Enteric Coated Tablets IP 75mg",
+   "14's",
+   2.81
+  ],
+  [
+   "CLOPITAB 75MG TAB",
+   "Clopitab Tablet",
+   "Clopidogrel Tablets IP 75mg",
+   "10's",
+   19.28
+  ],
+  [
+   "TONACT TG 10MG TAB",
+   "Tonact-TG Tablet",
+   "Atorvastatin 10mg and Fenofibrate 160mg Tablets IP",
+   "15's",
+   30.94
+  ],
+  [
+   "IVABRAD TAB",
+   "Ivabrad 5 Tablet",
+   "Ivabradine Tablets 5mg",
+   "15's",
+   92.82
+  ],
+  [
+   "IMDUR 30MG TAB",
+   "Imdur 30mg Tablet PR",
+   "Isosorbide Mononitrate Sustained Release Tablets 30 mg",
+   "30's",
+   65.63
+  ],
+  [
+   "GEMER TAB",
+   "Gemer P 2 Tablet ER",
+   "Metformin Hydrochloride Prolonged-release 500mg and Glimepiride 2mg Tablets IP",
+   "15's",
+   27.23
+  ],
+  [
+   "RIVOTRIL 0.5MG TAB",
+   "Rivotril 0.5mg Tablet",
+   "Clonazepam Tablets IP 0.5 mg",
+   "10's",
+   5.68
+  ],
+  [
+   "PANTOCID-L CAP",
+   "Pantocid L  Capsule SR",
+   "Pantoprazole 40mg (Enteric Coated) and Levosulpiride 75mg (Sustained Release) Capsules",
+   "10's",
+   56.72
+  ],
+  [
+   "FLEXON -MR TAB",
+   "Flexon MR Tablet",
+   "Ibuprofen 400mg and Paracetamol 325mg Tablets IP",
+   "10's",
+   8.25
+  ],
+  [
+   "CORDARONE 200MG TAB",
+   "Cordarone Tablet",
+   "Amiodarone Tablets IP 100 mg",
+   "10's",
+   31.97
+  ],
+  [
+   "ATARAX 25MG TAB",
+   "Atarax 25mg Tablet",
+   "Hydroxyzine Tablets IP 25mg",
+   "15's",
+   11.25
+  ],
+  [
+   "OFLOX-OZ",
+   "Oflox OZ Tablet",
+   "Ofloxacin 200mg and Ornidazole 500mg Tablets IP",
+   "10's",
+   28.36
+  ],
+  [
+   "DROTIN-M TAB",
+   "Drotin-M Tablet",
+   "Drotaverine Hydrochloride 80mg and Mefenamic Acid 250mg Tablets",
+   "10's",
+   18.75
+  ],
+  [
+   "LINID 600MG TAB",
+   "Linid Tablet",
+   "Linezolid Tablets IP 600 mg",
+   "10's",
+   154.69
+  ],
+  [
+   "ZERODOL-P FC-TAB",
+   "Zerodol-P Tablet",
+   "Aceclofenac 100mg and Paracetamol 325mg Tablets",
+   "10's",
+   10.32
+  ],
+  [
+   "SAAZ DS TAB",
+   "Saaz-DS Tablet",
+   "Sulfasalazine Gastro-resistant Tablets 1000mg",
+   "10's",
+   72.19
+  ],
+  [
+   "FOLITRAX 15MG TAB",
+   "Folitrax 15 Tablet",
+   "Methotrexate Tablets IP 15mg",
+   "10's",
+   32.81
+  ],
+  [
+   "FOLVITE 5MG TAB",
+   "Folvite 5mg Tablet",
+   "Folic Acid Tablets IP 5 mg",
+   "15's",
+   4.54
+  ],
+  [
+   "ALLEGRA 120MG TAB",
+   "Allegra 120mg Tablet",
+   "Fexofenadine\u00a0Hydrochloride\u00a0Tablets IP 120mg",
+   "10's",
+   24.75
+  ],
+  [
+   "AZITHRAL 500MG TAB",
+   "Azithral 500 Tablet",
+   "Azithromycin Tablets IP 500 mg",
+   "3's",
+   39.38
+  ],
+  [
+   "PAN 40MG INJ",
+   "Pan Tart 40mg Injection",
+   "Pantoprazole Injection 40mg",
+   "Vial",
+   23.83
+  ],
+  [
+   "PAN DSR CAP",
+   "Pan-L Capsule SR",
+   "Pantoprazole 40mg (Enteric Coated) and Levosulpiride 75mg (Sustained Release) Capsules",
+   "10's",
+   56.72
+  ],
+  [
+   "ZITEN 20MG TAB",
+   "Ziten-M 500mg/20mg Tablet ER",
+   "Teneligliptin 20mg and Metformin Hydrochloride 500mg (Sustained Release) Tablets IP",
+   "10's",
+   30.94
+  ],
+  [
+   "GLYCOMET GP2 TAB",
+   "Glycomet Trio 2 Tablet SR",
+   "Metformin Hydrochloride Prolonged-release 500mg and Glimepiride 2mg Tablets IP",
+   "15's",
+   27.23
+  ],
+  [
+   "ECOSPRIN-AV 75MG TAB",
+   "Ecosprin 75 Tablet",
+   "Aspirin Enteric Coated Tablets IP 75mg",
+   "14's",
+   2.81
+  ],
+  [
+   "LONAZEP MD 0.5MG TAB",
+   "Lonazep MD 0.5 Tablet",
+   "Clonazepam Tablets IP 0.5 mg",
+   "10's",
+   5.68
+  ],
+  [
+   "ATEN 50MG TAB",
+   "Aten 50 Tablet",
+   "Atenolol Tablets IP 50 mg",
+   "14's",
+   6.81
+  ],
+  [
+   "CALPOL SUSP 250MG/5ML",
+   "Calpol 250mg Paediatric Oral Suspension Strawberry",
+   "Paracetamol Oral Suspension IP 250mg per 5ml",
+   "60 ml",
+   19.69
+  ],
+  [
+   "VERTIN 16MG TAB",
+   "Vertin 16 Tablet",
+   "Betahistine Tablets IP 16 mg",
+   "15's",
+   16.5
+  ],
+  [
+   "DILZEM",
+   "Dilzem 30 Tablet CR",
+   "Diltiazem Tablets IP 30 mg",
+   "10's",
+   11.34
+  ],
+  [
+   "NEXITO 10MG TAB",
+   "Nexito 10 Tablet",
+   "Escitalopram Tablets IP 10 mg",
+   "10's",
+   10.32
+  ],
+  [
+   "LONAZEP-MD 0.25MG TAB",
+   "Lonazep MD 0.5 Tablet",
+   "Clonazepam Tablets IP 0.5 mg",
+   "10's",
+   5.68
+  ],
+  [
+   "FAMOCID TAB 40MG",
+   "Famocid 40 Tablet",
+   "Famotidine Tablets IP 40 mg",
+   "14's",
+   4.99
+  ],
+  [
+   "NAXDOM TAB",
+   "Naxdom 500 Tablet",
+   "Naproxen 500 mg and Domperidone 10 mg Tablet",
+   "10's",
+   48.75
+  ],
+  [
+   "REKOOL D TAB",
+   "Rekool 20 Tablet",
+   "Rabeprazole Gastro Resistant Tablets IP 20 mg",
+   "10's",
+   9.08
+  ],
+  [
+   "CITRALKA LIQD",
+   "Citralka Liquid",
+   "Disodium Hydrogen Citrate Syrup 1.53gm per 5ml",
+   "100ml Bottle",
+   28.13
+  ],
+  [
+   "URISPAS TAB",
+   "Urispas Tablet",
+   "Flavoxate Tablets IP 200 mg",
+   "15's",
+   56.25
+  ],
+  [
+   "FOLITRAX 10MG TAB",
+   "Folitrax 10 Tablet",
+   "Methotrexate Tablets IP 10mg",
+   "10's",
+   30.0
+  ],
+  [
+   "FOLVITE 5MG TAB",
+   "Folvite 5mg Tablet",
+   "Folic Acid Tablets IP 5 mg",
+   "15's",
+   4.54
+  ],
+  [
+   "SOMPRAZ D CAP",
+   "Sompraz D 40 Capsule SR",
+   "Esomeprazole 40mg (Enteric-Coated) and Domperidone 30mg (Sustained Release) Capsules",
+   "10's",
+   22.69
+  ],
+  [
+   "PREVA AS TAB",
+   "Preva-AS 75 Tablet",
+   "Clopidogrel 75mg and Aspirin 75mg Tablets IP",
+   "10's",
+   21.66
+  ],
+  [
+   "OLVANCE AM TAB",
+   "Olvance-AM 20 Tablet",
+   "Olmesartan 20mg and Amlodipine 5mg Tablets",
+   "10's",
+   25.78
+  ],
+  [
+   "TONACT 20MG TAB",
+   "Tonact 20 Tablet",
+   "Atorvastatin Tablets IP 20mg",
+   "10's",
+   12.47
+  ],
+  [
+   "PANTOCID 40MG EC-TAB",
+   "Pantocid Tablet",
+   "Pantoprazole Gastro Resistant Tablets IP 40 mg",
+   "10's",
+   12.47
+  ],
+  [
+   "MAXGALIN M TAB",
+   "Maxgalin M ER 75 Tablet",
+   "Pregabalin (Sustained release) 75mg and Methylcobalamin 1500mcg Tablets",
+   "10's",
+   46.88
+  ],
+  [
+   "AZEE 500MG TAB",
+   "Azee 500 Tablet",
+   "Azithromycin Tablets IP 500 mg",
+   "3's",
+   39.38
+  ],
+  [
+   "MONTAIR FX TAB",
+   "Montair FX Tablet",
+   "Montelukast\u00a0Sodium 10mg\u00a0\u00a0and Fexofenadine Hydrochloride 120 mg Tablets",
+   "10's",
+   45.38
+  ],
+  [
+   "DOLO TAB 650MG",
+   "Dolo 650 Tablet",
+   "Paracetamol Tablets IP 650 mg",
+   "15's",
+   15.47
+  ],
+  [
+   "CLEXANE INJ",
+   "Clexane 40mg Injection (0.4ml Each)",
+   "Enoxaparin Injection IP 40 mg per 0.4 ml",
+   "0.4 ml",
+   187.0
+  ],
+  [
+   "THYROX 50MCG TAB",
+   "Thyrox 50 Tablet",
+   "Thyroxine Sodium Tablets IP 50mcg",
+   "100's in Bottle",
+   55.65
+  ],
+  [
+   "BETNESOL INJ",
+   "Betnesol Injection 1ml",
+   "Betamethasone Injection IP 4 mg per ml",
+   "1 ml",
+   2.81
+  ],
+  [
+   "FOLVITE 5MG TAB",
+   "Folvite 5mg Tablet",
+   "Folic Acid Tablets IP 5 mg",
+   "15's",
+   4.54
+  ],
+  [
+   "VORICORT 200MG TAB",
+   "Voricort 200 Tablet",
+   "Voriconazole Tablets IP 200mg",
+   "4's",
+   328.13
+  ],
+  [
+   "MONTAIR-LC TAB",
+   "Montair-LC Tablet",
+   "Montelukast Sodium 10mg and Levocetirizine 5mg Tablets IP",
+   "10's",
+   20.63
+  ],
+  [
+   "MUCINAC TAB",
+   "Mucinac 600 Effervescent Tablet Orange Sugar Free",
+   "Acetylcysteine Tablets 600 mg",
+   "10's",
+   30.0
+  ],
+  [
+   "ZINASE-D TAB",
+   "Zinase-D Tablet",
+   "Serratiopeptidase 10mg and Diclofenac Sodium 50mg Tablets",
+   "10's",
+   15.88
+  ],
+  [
+   "TELMA-AM TAB",
+   "Telma-AM Tablet",
+   "Telmisartan 40mg and Amlodipine 5mg Tablets IP",
+   "15's",
+   24.96
+  ],
+  [
+   "ESOTAB LS CAP",
+   "Esotab-LS Capsule",
+   "Esomeprazole 40mg (Enteric-coated) and Levosulpiride 75mg (Sustained release) Capsules",
+   "10's",
+   68.07
+  ],
+  [
+   "ESOTAB 40MG TAB",
+   "Esotab 40 Tablet",
+   "Esomeprazole Tablets IP 40 mg",
+   "10's",
+   21.55
+  ],
+  [
+   "RANTAC TAB 300MG",
+   "Rantac 300 Tablet",
+   "Ranitidine Tablets IP 300 mg",
+   "10's",
+   13.41
+  ],
+  [
+   "FOLITRAX TAB",
+   "Folitrax 15 Tablet",
+   "Methotrexate Tablets IP 15mg",
+   "10's",
+   32.81
+  ],
+  [
+   "FOLVITE 5MG TAB",
+   "Folvite 5mg Tablet",
+   "Folic Acid Tablets IP 5 mg",
+   "15's",
+   4.54
+  ],
+  [
+   "ALTRADAY CAP",
+   "Altraday Capsule SR",
+   "Aceclofenac 200mg (Sustained release) and Rabeprazole Sodium 20mg (Enteric-coated) Capsules",
+   "10's",
+   28.13
+  ],
+  [
+   "MONTAIR FX TAB",
+   "Montair FX Tablet",
+   "Montelukast\u00a0Sodium 10mg\u00a0\u00a0and Fexofenadine Hydrochloride 120 mg Tablets",
+   "10's",
+   45.38
+  ],
+  [
+   "AMTAS 5MG TAB",
+   "Amtas 5 Tablet",
+   "Amlodipine Tablets IP 5mg",
+   "10's",
+   5.68
+  ],
+  [
+   "PANSEC TAB",
+   "Pansec Tablet",
+   "Pantoprazole Gastro Resistant Tablets IP 40 mg",
+   "10's",
+   12.47
+  ],
+  [
+   "ZORYL M 1MG TAB",
+   "Zoryl-M 1 Tablet PR",
+   "Metformin Hydrochloride 500mg (Prolonged release) and Glimepiride 1mg Tablets IP",
+   "10's",
+   18.15
+  ],
+  [
+   "FORACORT O-INH",
+   "Foracort Inhaler 200",
+   "Formoterol 6mcg and Budesonide 200mcg Rotacaps",
+   "30's",
+   79.69
+  ],
+  [
+   "ENDUROX 500MG TAB",
+   "Endurox 250mg Tablet",
+   "Cefuroxime Axetil Tablets IP 250 mg",
+   "10's",
+   70.31
+  ],
+  [
+   "RABESAG DSR CAP",
+   "Rabesag-DSR Capsule",
+   "Rabeprazole 20mg (Enteric Coated) and Domperidone 30mg (Sustained Release) Capsules",
+   "10's",
+   18.57
+  ],
+  [
+   "BETADINE GARGLE",
+   "Betadine 2% Gargle Mint",
+   "Povidone Iodine Gargle 2% w/v",
+   "100ml Bottle",
+   37.5
+  ],
+  [
+   "MONTAIR FX TAB",
+   "Montair FX Tablet",
+   "Montelukast\u00a0Sodium 10mg\u00a0\u00a0and Fexofenadine Hydrochloride 120 mg Tablets",
+   "10's",
+   45.38
+  ],
+  [
+   "ANOBLISS CREAM",
+   "Anobliss Cream",
+   "Lignocaine (Lidocaine) Hydrochloride 1.5% w/w and Nifedipine 0.3% w/w Cream",
+   "30g",
+   75.0
+  ],
+  [
+   "RIVOTRIL 0.5MG TAB",
+   "Rivotril 0.5mg Tablet",
+   "Clonazepam Tablets IP 0.5 mg",
+   "10's",
+   5.68
+  ],
+  [
+   "ACE-PROXYVON TAB",
+   "Ace Proxyvon Tablet",
+   "Aceclofenac 100mg and Paracetamol 325mg Tablets",
+   "10's",
+   10.32
+  ],
+  [
+   "CITRALKA LIQD",
+   "Citralka Liquid",
+   "Disodium Hydrogen Citrate Syrup 1.53gm per 5ml",
+   "100ml Bottle",
+   28.13
+  ],
+  [
+   "CROCIN TAB",
+   "Crocin Advance Tablet",
+   "Paracetamol Tablets IP 500 mg",
+   "10's",
+   6.56
+  ],
+  [
+   "ONDEM TAB",
+   "Ondem 4 Tablet",
+   "Ondansetron Tablets IP 4 mg",
+   "10's",
+   6.81
+  ],
+  [
+   "ECOSPRIN TAB 75MG",
+   "Ecosprin 75 Tablet",
+   "Aspirin Enteric Coated Tablets IP 75mg",
+   "14's",
+   2.81
+  ],
+  [
+   "NOVACEF 250MG TAB",
+   "Novacef 250 Tablet",
+   "Cefuroxime Axetil Tablets IP 250 mg",
+   "10's",
+   70.31
+  ],
+  [
+   "MEFTAL SPAS TAB",
+   "Meftal-Spas Tablet",
+   "Dicyclomine Hydrochloride 10mg and Mefenamic Acid 250mg Tablets IP",
+   "10's",
+   13.62
+  ],
+  [
+   "PANTOP D CAP",
+   "Pantop-D SR Capsule",
+   "Pantoprazole 40mg (Gastro-resistant) and Domperidone 30mg (Prolonged Release) Capsules IP",
+   "10's",
+   22.69
+  ],
+  [
+   "ECOSPRIN TAB 75MG",
+   "Ecosprin 75 Tablet",
+   "Aspirin Enteric Coated Tablets IP 75mg",
+   "14's",
+   2.81
+  ],
+  [
+   "CLOPITAB 75MG TAB",
+   "Clopitab Tablet",
+   "Clopidogrel Tablets IP 75mg",
+   "10's",
+   19.28
+  ],
+  [
+   "TONACT TG 10MG TAB",
+   "Tonact-TG Tablet",
+   "Atorvastatin 10mg and Fenofibrate 160mg Tablets IP",
+   "15's",
+   30.94
+  ],
+  [
+   "IVABRAD TAB",
+   "Ivabrad 5 Tablet",
+   "Ivabradine Tablets 5mg",
+   "15's",
+   92.82
+  ],
+  [
+   "THYROX 37.5MG TAB",
+   "Thyrox 50 Tablet",
+   "Thyroxine Sodium Tablets IP 50mcg",
+   "100's in Bottle",
+   55.65
+  ],
+  [
+   "GLUCONORM SR 500MG TAB",
+   "Gluconorm SR 500mg Tablet",
+   "Metformin Hydrochloride Tablets IP 500mg",
+   "10's",
+   6.81
+  ],
+  [
+   "RABIUM TAB",
+   "Rabium 20 Tablet",
+   "Rabeprazole Gastro Resistant Tablets IP 20 mg",
+   "10's",
+   9.08
+  ],
+  [
+   "DROTIN-DS TAB",
+   "Drotin DS Tablet",
+   "Drotaverine Hydrochloride Tablets IP 80 mg",
+   "15's",
+   20.63
+  ],
+  [
+   "TOBA EYE-DPS",
+   "Toba Eye Drop",
+   "Tobramycin Eye Drops 0.3%w/v",
+   "5 ml Vial",
+   25.0
+  ],
+  [
+   "PANTOCID 40MG TAB",
+   "Pantocid Tablet",
+   "Pantoprazole Gastro Resistant Tablets IP 40 mg",
+   "10's",
+   12.47
+  ],
+  [
+   "EMESET 4MG TAB",
+   "Emeset 4 Tablet",
+   "Ondansetron Tablets IP 4 mg",
+   "10's",
+   6.81
+  ],
+  [
+   "NEXITO 5MG TAB",
+   "Nexito 5 Tablet",
+   "Escitalopram Tablets IP 5 mg",
+   "10's",
+   7.5
+  ],
+  [
+   "NEXITO 10MG TAB",
+   "Nexito 10 Tablet",
+   "Escitalopram Tablets IP 10 mg",
+   "10's",
+   10.32
+  ],
+  [
+   "MAXGALIN ER 75MG TAB",
+   "Maxgalin ER 75 Tablet",
+   "Pregabalin Tablets 75 mg",
+   "10's",
+   24.96
+  ],
+  [
+   "VOMIS TAB 4MG",
+   "Vomis 4mg Tablet MD",
+   "Ondansetron Tablets IP 4 mg",
+   "10's",
+   6.81
+  ],
+  [
+   "SPASRINE TAB",
+   "Spasrine 80 mg/250 mg Tablet",
+   "Drotaverine Hydrochloride 80mg and Mefenamic Acid 250mg Tablets",
+   "10's",
+   18.75
+  ],
+  [
+   "REDOTIL CAP",
+   "Redotil 100mg Capsule",
+   "Racecadotril Capsule IP 100 mg",
+   "15's",
+   103.13
+  ],
+  [
+   "GLYCIPHAGE SR-TAB 500MG",
+   "Glyciphage P 15 mg/500 mg Tablet SR",
+   "Pioglitazone 15mg and Metformin 500mg Sustained Release Tablets",
+   "10's",
+   27.84
+  ],
+  [
+   "MONTAIR FX TAB",
+   "Montair FX Tablet",
+   "Montelukast\u00a0Sodium 10mg\u00a0\u00a0and Fexofenadine Hydrochloride 120 mg Tablets",
+   "10's",
+   45.38
+  ],
+  [
+   "LEVOLIN INHALER MDI",
+   "Levolin 0.63mg Respules",
+   "Levosalbutamol Respules 0.63mg per 2.5ml",
+   "2.5 ml",
+   5.34
+  ],
+  [
+   "RIFAGUT 400MG TAB",
+   "Rifagut 400 Tablet",
+   "Rifaximin Tablets 400 mg",
+   "10's",
+   134.06
+  ],
+  [
+   "GLYCOMET GP2 TAB",
+   "Glycomet Trio 2 Tablet SR",
+   "Metformin Hydrochloride Prolonged-release 500mg and Glimepiride 2mg Tablets IP",
+   "15's",
+   27.23
+  ],
+  [
+   "JANUMET 50/500MG TAB",
+   "Janumet 50mg/500mg Tablet",
+   "Sitagliptin 50mg and Metformin 500mg Extended Release Tablets",
+   "10's",
+   51.56
+  ],
+  [
+   "VOLIX 0.3MG TAB",
+   "Volix M 0.3 Tablet",
+   "Metformin Hydrochloride 500mg and Voglibose 0.3mg Tablets",
+   "10's",
+   17.02
+  ],
+  [
+   "SOMPRAZ D CAP",
+   "Sompraz D 40 Capsule SR",
+   "Esomeprazole 40mg (Enteric-Coated) and Domperidone 30mg (Sustained Release) Capsules",
+   "10's",
+   22.69
+  ],
+  [
+   "MONTEK AB TAB",
+   "Montek AB Tablet SR",
+   "Acebrophylline 200mg (Sustained Release) and Montelukast 10mg Tablets",
+   "10's",
+   56.72
+  ],
+  [
+   "ALEX COUGH FORMULA SYR",
+   "Alex Syrup",
+   "Phenylephrine Hydrochloride 5mg and Chlorpheniramine Maleate 2mg Drops",
+   "15 ml Bottle",
+   18.75
+  ],
+  [
+   "CALCIMAX TAB",
+   "Calcimax ISO Capsule",
+   "Calcium 500mg and Calcitriol 0.25mcg Tablets",
+   "15's",
+   18.56
+  ],
+  [
+   "ALTRADAY CAP",
+   "Altraday Capsule SR",
+   "Aceclofenac 200mg (Sustained release) and Rabeprazole Sodium 20mg (Enteric-coated) Capsules",
+   "10's",
+   28.13
+  ],
+  [
+   "CEPODEM 200MG TAB",
+   "Cepodem 200 Tablet",
+   "Cefpodoxime Tablets IP 200 mg",
+   "10's",
+   72.19
+  ],
+  [
+   "VALCIVIR 1000MG TAB",
+   "Valcivir 1000 Tablet",
+   "Valacyclovir Tablets 1000mg",
+   "3's",
+   103.13
+  ],
+  [
+   "ALLEGRA TAB 120MG",
+   "Allegra 120mg Tablet",
+   "Fexofenadine\u00a0Hydrochloride\u00a0Tablets IP 120mg",
+   "10's",
+   24.75
+  ],
+  [
+   "CROCIN 650MG TAB",
+   "Crocin Advance Tablet",
+   "Paracetamol Tablets IP 500 mg",
+   "10's",
+   6.56
+  ],
+  [
+   "PANTOCID- 40MG TAB",
+   "Pantocid Tablet",
+   "Pantoprazole Gastro Resistant Tablets IP 40 mg",
+   "10's",
+   12.47
+  ],
+  [
+   "DOMSTAL TAB 10MG",
+   "Domstal 10mg Tablet",
+   "Domperidone Tablets IP 10 mg",
+   "10's",
+   4.54
+  ],
+  [
+   "DUOLIN NEB",
+   "Duolin 3 Respules 3ml",
+   "Levosalbutamol 1.25mg and Ipratropium 500mcg Respules",
+   "3 ml",
+   9.28
+  ],
+  [
+   "ALLEGRA SYR",
+   "Allegra Suspension Raspberry & Vanilla",
+   "Fexofenadine Hydrochloride Suspension (30mg/5ml)",
+   "100 ml",
+   28.13
+  ],
+  [
+   "LACTIFIBER",
+   "Lactifiber  Granules",
+   "Lactitol 10 gm and Ispaghula 3.5 gm Granules",
+   "180 gm",
+   187.5
+  ],
+  [
+   "NEOPRIDE TOTAL CAP",
+   "Neopride Total Capsule SR",
+   "Rabeprazole 20mg (Enteric Coated) and Levosulpiride 75mg (Sustained Release) Capsules",
+   "10's",
+   37.13
+  ],
+  [
+   "LOX 2 % JELLY",
+   "Lox 2% Jelly",
+   "Lignocaine (Lidocaine) Hydrochloride Gel IP 2% W/V",
+   "20g",
+   10.31
+  ],
+  [
+   "PANTOCID-L CAP",
+   "Pantocid L  Capsule SR",
+   "Pantoprazole 40mg (Enteric Coated) and Levosulpiride 75mg (Sustained Release) Capsules",
+   "10's",
+   56.72
+  ],
+  [
+   "LANTUS INJ",
+   "Lantus 100IU/ml Solution for Injection",
+   "Insulin Glargine Injection IP 100 IU per ml",
+   "Cartridge 3 ml",
+   340.0
+  ],
+  [
+   "TRAJENTA 5MG TAB",
+   "Trajenta 5mg Tablet",
+   "Linagliptin Tablets 5mg",
+   "10's",
+   39.19
+  ],
+  [
+   "URIMAX 0.4MG CAP",
+   "Urimax 0.4 Capsule MR",
+   "Tamsulosin Hydrochloride Prolonged Release Capsules IP 0.4mg",
+   "10's",
+   22.69
+  ],
+  [
+   "OLVANCE AM TAB",
+   "Olvance-AM 20 Tablet",
+   "Olmesartan 20mg and Amlodipine 5mg Tablets",
+   "10's",
+   25.78
+  ],
+  [
+   "VOLIX 0.3MG TAB",
+   "Volix M 0.3 Tablet",
+   "Metformin Hydrochloride 500mg and Voglibose 0.3mg Tablets",
+   "10's",
+   17.02
+  ],
+  [
+   "NEXITO 10MG TAB",
+   "Nexito 10 Tablet",
+   "Escitalopram Tablets IP 10 mg",
+   "10's",
+   10.32
+  ],
+  [
+   "MAXGALIN M TAB",
+   "Maxgalin M ER 75 Tablet",
+   "Pregabalin (Sustained release) 75mg and Methylcobalamin 1500mcg Tablets",
+   "10's",
+   46.88
+  ],
+  [
+   "DONEP 5MG TAB",
+   "Donep 5 Tablet",
+   "Donepezil Tablets IP 5 mg",
+   "10's",
+   18.75
+  ],
+  [
+   "PAN 40MG TAB",
+   "PAN 40 Tablet",
+   "Pantoprazole Gastro Resistant Tablets IP 40 mg",
+   "10's",
+   12.47
+  ],
+  [
+   "GLUCONORM G2 TAB",
+   "Gluconorm-V 0.2 Tablet SR",
+   "Metformin Hydrochloride 500mg (Sustained Release) and Voglibose 0.2mg Tablets",
+   "10's",
+   14.44
+  ],
+  [
+   "RIFAGUT 400MG TAB",
+   "Rifagut 400 Tablet",
+   "Rifaximin Tablets 400 mg",
+   "10's",
+   134.06
+  ],
+  [
+   "NEOPRIDE TOTAL CAP",
+   "Neopride Total Capsule SR",
+   "Rabeprazole 20mg (Enteric Coated) and Levosulpiride 75mg (Sustained Release) Capsules",
+   "10's",
+   37.13
+  ],
+  [
+   "NORMAXIN TAB",
+   "Normaxin Tablet",
+   "Chlordiazepoxide 5mg and Clidinium Bromide 2.5mg Tablets",
+   "10's",
+   9.28
+  ],
+  [
+   "FLUCOS 150MG TAB",
+   "Flucos 150 Tablet",
+   "Fluconazole Tablets IP 150 mg",
+   "1's",
+   5.68
+  ],
+  [
+   "NOVAMOX-LB CAP",
+   "Novamox-LB 500 Capsule",
+   "Amoxycillin Capsules IP 500mg",
+   "10's",
+   36.09
+  ],
+  [
+   "HIFENAC -P TAB",
+   "Hifenac-P Tablet",
+   "Aceclofenac 100mg and Paracetamol 325mg Tablets",
+   "10's",
+   10.32
+  ],
+  [
+   "PAN DSR CAP",
+   "Pan-L Capsule SR",
+   "Pantoprazole 40mg (Enteric Coated) and Levosulpiride 75mg (Sustained Release) Capsules",
+   "10's",
+   56.72
+  ],
+  [
+   "SIGNOFLAM TAB",
+   "Signoflam Tablet",
+   "Aceclofenac 100mg and Paracetamol 325mg Tablets",
+   "10's",
+   10.32
+  ],
+  [
+   "VERTIN 8MG TAB",
+   "Vertin 16 Tablet",
+   "Betahistine Tablets IP 16 mg",
+   "15's",
+   16.5
+  ],
+  [
+   "GABAPIN NT TAB",
+   "Gabapin NT Tablet",
+   "Gabapentin 400mg and Nortriptyline 10mg Tablets",
+   "10's",
+   56.72
+  ],
+  [
+   "DROTIN-M TAB",
+   "Drotin-M Tablet",
+   "Drotaverine Hydrochloride 80mg and Mefenamic Acid 250mg Tablets",
+   "10's",
+   18.75
+  ],
+  [
+   "RABIUM-DSR CAP",
+   "Rabium-DSR Capsule",
+   "Rabeprazole 20mg (Enteric Coated) and Domperidone 30mg (Sustained Release) Capsules",
+   "10's",
+   18.57
+  ],
+  [
+   "MONTAIR FX TAB",
+   "Montair FX Tablet",
+   "Montelukast\u00a0Sodium 10mg\u00a0\u00a0and Fexofenadine Hydrochloride 120 mg Tablets",
+   "10's",
+   45.38
+  ],
+  [
+   "ECOSPRIN AV TAB",
+   "Ecosprin 75 Tablet",
+   "Aspirin Enteric Coated Tablets IP 75mg",
+   "14's",
+   2.81
+  ],
+  [
+   "DONEP 10MG TAB",
+   "Donep 10 Tablet",
+   "Donepezil Hydrochloride Tablets IP 10mg",
+   "10's",
+   23.44
+  ],
+  [
+   "VERTIN 16MG TAB",
+   "Vertin 16 Tablet",
+   "Betahistine Tablets IP 16 mg",
+   "15's",
+   16.5
+  ],
+  [
+   "ETOSHINE 90MG TAB",
+   "Etoshine 90 Tablet",
+   "Etoricoxib Tablets IP 90 mg",
+   "10's",
+   31.97
+  ],
+  [
+   "PANTOCID TAB",
+   "Pantocid Tablet",
+   "Pantoprazole Gastro Resistant Tablets IP 40 mg",
+   "10's",
+   12.47
+  ],
+  [
+   "CABERGOLINE TAB",
+   "Cabergoline 0.5 Tablet",
+   "Cabergoline Tablets IP 0.5mg",
+   "4's",
+   159.38
+  ],
+  [
+   "THYRONORM 62.5MCG TAB",
+   "Thyronorm 25mcg Tablet",
+   "Thyroxine Sodium Tablets IP 25mcg",
+   "100's Bottle",
+   42.19
+  ],
+  [
+   "RANTAC SYP",
+   "Rantac Syrup Mint",
+   "Ranitidine Syrup IP 75 mg per 5ml",
+   "100 ml",
+   23.44
+  ],
+  [
+   "LEVOLIN NEB",
+   "Levolin 0.63mg Respules",
+   "Levosalbutamol Respules 0.63mg per 2.5ml",
+   "2.5 ml",
+   5.34
+  ]
+ ]
+}

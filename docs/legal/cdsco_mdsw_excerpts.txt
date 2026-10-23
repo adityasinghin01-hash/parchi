@@ -1,0 +1,149 @@
+SOURCE: CDSCO Guidance Document on Medical Device Software, Doc No. CDSCO/MD/GD/MDSW/01/2026 (62 pp), https://www.cdsco.gov.in/opencms/export/sites/CDSCO_WEB/Pdf-documents/Guidance-document-on-Medical-Device-Software-under-MDR-2017.pdf  — extracted 23 Oct 2026
+
+== Section 2.0 SCOPE ==
+  This Guidance Document applies to software products which attract the definition
+  of a “Medical Device” as mentioned in the MDR-2017 (see Section 4.9 of this
+  Document) under the Drugs & Cosmetics Act, 1940, and shall be hereinafter
+  referred to as Medical Device Software (MDSW).
+
+  Further, this document does not apply to software that are merely intended for
+  general wellness, promoting a healthy lifestyle, or measure body parameters only
+  for regular tracking and fitness purposes (Section 5.2), provided it is not intended
+  for any medical purposes as defined in this Document (Section 4.10).
+
+  This Guidance Document reflects current practices under the MDR-2017 and
+  should not be misconstrued as a new regulatory control on MDSW (including In
+  vitro Diagnostic (IVD) MDSW).
+
+  The words and expressions used in this Guidance Document shall have the
+  meaning assigned to them in the Drugs & Cosmetics Act, 1940 and the MDR-2017
+
+== Section 5.2 Software NOT covered (pp 11-13) ==
+5.2 Software that are NOT covered under the MDR-2017
+
+•   Software that do not attract the definition of a Medical Device (as stated in
+    Section 4.9 of this Document).
+
+    Some practical illustrations of software that are not MDSW:
+
+
+
+
+
+
+
+ Software (such as Enterprise resource planning (ERP) software) used in
+   the design, testing, component acceptance, manufacturing, labelling,
+   packaging, distribution, complaint handling, or to automate any other
+   aspect of a medical device quality system.
+
+ Software that rely on data from a medical device, but do not have a
+   medical purpose, e.g., software that encrypt data for transmission from a
+   medical device.
+
+ Software that monitor performance or proper functioning of a medical
+   device for the purpose of servicing the device.
+
+ Software that alter the representation of data for embellishment/cosmetic
+   or compatibility purposes.
+
+ Software that are solely intended for medical teaching/training/educational
+   purposes.
+
+ Software that perform actions such as transfer, storage, archive data,
+   convert, format, communication, simple search, compression.
+
+ Hospital/Clinical Information systems (HIS/CIS) that support the process
+   of patient data management (intended only for patient admission, for
+   scheduling patient appointments/visits, for insurance and billing/invoicing
+   purposes, enabling clinical communication such as voice calling, video
+   calling, to store and transfer patient information (patient identification, vital
+   intensive care parameters and other documented clinical observations)
+   generated in association with the patient’s treatment).
+
+ Communication systems intended for general purposes, and is used for
+   transferring both medical and non-medical information (e.g. email
+   systems, mobile telecommunication systems, video communication
+   systems, paging, etc.) to transfer electronic information. Different types of
+   messages are sent such as prescription, referrals, images, patient
+   records, etc.
+
+ Laboratory Information Systems (LIS) are not qualified as medical devices,
+   wherein the main intended use is the management and validation of
+
+
+
+
+
+   incoming information obtained from IVD analyzers connected to the
+   system, such as calibration, quality control, product expiry and feedback
+   (e.g. retesting of samples needed) through interconnections with various
+   analytical instruments (technical and clinical validation). The post-
+   analytical process allows communication of laboratory results, statistics
+   and optional reporting to external databases.
+
+ Image Management System (IMS): a software-based system intended to
+   be networked with digital pathology systems, in order to access, display,
+   annotate, manage, store, archive and share collections of digitised patient
+   images.
+
+  NOTE:
+
+  If any HIS/CIS or LIS/IMS has any additional functions that allow its use for
+  any medical purposes (e.g., image analysis/modification as an aid in
+  diagnosis, quantification of physiological parameters for clinical decision-
+  making, real-time patient monitoring, etc.), then it may be considered as a
+  medical device.
+
+ General Wellness Software
+
+   General Wellness Software refers to any software that is: i) intended to
+   maintain or encourage a general state of health or a healthy activity, and/or
+   ii) relates the role of healthy lifestyle with helping to reduce the risk or
+   impact of certain chronic diseases or conditions and where it is well
+   understood and accepted that healthy lifestyle choices may play an
+   important role in health outcomes for the disease or condition. Such
+   software do not fall under the purview of MDR-2017.
+
+  NOTE:
+
+  i) The intended use statement of such general wellness software may make
+   claims about sustaining or offering general improvement to functions
+   associated with a general state of health, however it should not be making
+   any reference to diseases or disorders or pathological conditions.
+
+
+
+
+
+
+         ii) Software intended to measure, estimate, or report physiologic values for
+           medical or clinical purposes, including screening, diagnosis, monitoring,
+           alerting, or management of a disease or a disorder or a condition, shall
+           NOT be considered as General Wellness Software.
+
+6.0 INTENDED USE STATEMENT OF MEDICAL DEVICE SOFTWARE
+
+ • The intended use statement (Section 4.7) should be clinically meaningful.
+ • The clinical role of the MDSW should be clearly defined in the intended use
+   statement (e.g., whether it is a decision support software, driving a medical device,
+   providing definitive diagnosis/treatment recommendation, etc.)
+ • Key elements that may be considered while framing the Intended Use/Intended
+   Purpose statement for the MDSW:
+    a) Medical Purposes (e.g., diagnosis, prevention, screening/triage, monitoring,
+          mitigation prediction, treatment, etc.)
+    b) Intended Disease or Condition (e.g., critical, serious, non-serious, etc.)
+
+         NOTE:
+
+
+== Section 6.0 intended-use outputs ==
+g) MDSW device software function, including:
+       i.   MDSW inputs (e.g., from human user, medical device, non-medical device,
+            or consumer product)
+      ii.   MDSW outputs (e.g., this may include clinical interpretation or intervention
+            (diagnosis,     mitigation,     treatment,       prediction,     probability,   prognosis,
+            prescription, recommended treatment/therapy, radiation treatment plans,
+            etc.),   workflow       recommendations             (recommended         surgical     tools,
+            recommended              additional          tests,         recommended             imaging
+            modality/parameters, etc.), or/and data for use in medical purpose (anatomy

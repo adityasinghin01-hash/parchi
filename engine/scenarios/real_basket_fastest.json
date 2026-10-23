@@ -1,0 +1,549 @@
+{
+ "title": "Real basket, Ghaziabad/KIET, prices captured 23 Oct 2026 (MedScanner, Jan Aushadhi PMBI list, lab listings)",
+ "items": [
+  {
+   "id": "dolo",
+   "kind": "medicine",
+   "name": "Dolo",
+   "strength": "650",
+   "quantity": 15
+  },
+  {
+   "id": "pan",
+   "kind": "medicine",
+   "name": "Pan",
+   "strength": "40",
+   "quantity": 15
+  },
+  {
+   "id": "telma",
+   "kind": "medicine",
+   "name": "Telma",
+   "strength": "40",
+   "quantity": 30
+  },
+  {
+   "id": "glycomet",
+   "kind": "medicine",
+   "name": "Glycomet SR",
+   "strength": "500",
+   "quantity": 20
+  },
+  {
+   "id": "azithral",
+   "kind": "medicine",
+   "name": "Azithral",
+   "strength": "500",
+   "quantity": 5
+  },
+  {
+   "id": "montair",
+   "kind": "medicine",
+   "name": "Montair LC",
+   "quantity": 15
+  },
+  {
+   "id": "cbc",
+   "kind": "test",
+   "name": "CBC",
+   "quantity": 1
+  },
+  {
+   "id": "hba1c",
+   "kind": "test",
+   "name": "HbA1c",
+   "quantity": 1
+  },
+  {
+   "id": "lipid",
+   "kind": "test",
+   "name": "Lipid profile",
+   "quantity": 1
+  },
+  {
+   "id": "thyroid",
+   "kind": "test",
+   "name": "Thyroid profile (T3 T4 TSH)",
+   "quantity": 1
+  }
+ ],
+ "sellers": [
+  {
+   "id": "doctorshop",
+   "name": "Doctor's shop (at MRP)",
+   "channel": "localChemist",
+   "deliveryFee": 0,
+   "handlingFee": 0,
+   "collectionFee": 0,
+   "etaMinutes": 5,
+   "requiresVisit": false
+  },
+  {
+   "id": "truemeds",
+   "name": "Truemeds",
+   "channel": "onlinePharmacy",
+   "deliveryFee": 4900,
+   "freeDeliveryAbove": 75000,
+   "handlingFee": 0,
+   "collectionFee": 0,
+   "etaMinutes": 720,
+   "requiresVisit": false
+  },
+  {
+   "id": "medkart",
+   "name": "Medkart",
+   "channel": "onlinePharmacy",
+   "deliveryFee": 5000,
+   "freeDeliveryAbove": 50000,
+   "handlingFee": 0,
+   "collectionFee": 0,
+   "etaMinutes": 4320,
+   "requiresVisit": false
+  },
+  {
+   "id": "pharmeasy",
+   "name": "PharmEasy",
+   "channel": "onlinePharmacy",
+   "deliveryFee": 4900,
+   "freeDeliveryAbove": 49900,
+   "handlingFee": 0,
+   "collectionFee": 0,
+   "etaMinutes": 480,
+   "requiresVisit": false
+  },
+  {
+   "id": "onemg",
+   "name": "Tata 1mg",
+   "channel": "onlinePharmacy",
+   "deliveryFee": 4900,
+   "freeDeliveryAbove": 50000,
+   "handlingFee": 0,
+   "collectionFee": 0,
+   "etaMinutes": 60,
+   "requiresVisit": false
+  },
+  {
+   "id": "medplus",
+   "name": "MedPlus (store pickup)",
+   "channel": "localChemist",
+   "deliveryFee": 0,
+   "handlingFee": 0,
+   "collectionFee": 0,
+   "etaMinutes": 120,
+   "requiresVisit": true
+  },
+  {
+   "id": "janaushadhi",
+   "name": "Jan Aushadhi Kendra (3.6 km)",
+   "channel": "janAushadhi",
+   "deliveryFee": 0,
+   "handlingFee": 0,
+   "collectionFee": 0,
+   "etaMinutes": 30,
+   "requiresVisit": true
+  },
+  {
+   "id": "redcliffe",
+   "name": "Redcliffe Labs (home collection)",
+   "channel": "lab",
+   "deliveryFee": 0,
+   "handlingFee": 0,
+   "collectionFee": 0,
+   "etaMinutes": 1440,
+   "requiresVisit": false
+  },
+  {
+   "id": "healthians",
+   "name": "Healthians (home collection)",
+   "channel": "lab",
+   "deliveryFee": 0,
+   "handlingFee": 0,
+   "collectionFee": 0,
+   "etaMinutes": 1440,
+   "requiresVisit": false
+  },
+  {
+   "id": "apollo",
+   "name": "Apollo 24|7 Ghaziabad",
+   "channel": "lab",
+   "deliveryFee": 0,
+   "handlingFee": 0,
+   "collectionFee": 0,
+   "etaMinutes": 720,
+   "requiresVisit": false
+  },
+  {
+   "id": "max",
+   "name": "Max Lab Ghaziabad",
+   "channel": "lab",
+   "deliveryFee": 0,
+   "handlingFee": 0,
+   "collectionFee": 0,
+   "etaMinutes": 1440,
+   "requiresVisit": false
+  }
+ ],
+ "offers": [
+  {
+   "itemID": "dolo",
+   "sellerID": "doctorshop",
+   "price": 3212,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "dolo",
+   "sellerID": "medplus",
+   "price": 3212,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "pan",
+   "sellerID": "doctorshop",
+   "price": 19280,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "pan",
+   "sellerID": "medplus",
+   "price": 19280,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "telma",
+   "sellerID": "doctorshop",
+   "price": 21672,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "telma",
+   "sellerID": "medplus",
+   "price": 21672,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "glycomet",
+   "sellerID": "doctorshop",
+   "price": 4224,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "glycomet",
+   "sellerID": "medplus",
+   "price": 4224,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "azithral",
+   "sellerID": "doctorshop",
+   "price": 12673,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "azithral",
+   "sellerID": "medplus",
+   "price": 12673,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "montair",
+   "sellerID": "doctorshop",
+   "price": 41979,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "montair",
+   "sellerID": "medplus",
+   "price": 41979,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "dolo",
+   "sellerID": "truemeds",
+   "price": 2570,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "pan",
+   "sellerID": "truemeds",
+   "price": 15424,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "telma",
+   "sellerID": "truemeds",
+   "price": 17338,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "azithral",
+   "sellerID": "truemeds",
+   "price": 10138,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "montair",
+   "sellerID": "truemeds",
+   "price": 33583,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "dolo",
+   "sellerID": "medkart",
+   "price": 3067,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "pan",
+   "sellerID": "medkart",
+   "price": 16388,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "telma",
+   "sellerID": "medkart",
+   "price": 18421,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "glycomet",
+   "sellerID": "medkart",
+   "price": 3590,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "azithral",
+   "sellerID": "medkart",
+   "price": 10772,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "pan",
+   "sellerID": "pharmeasy",
+   "price": 17352,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "telma",
+   "sellerID": "pharmeasy",
+   "price": 19505,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "glycomet",
+   "sellerID": "pharmeasy",
+   "price": 3886,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "dolo",
+   "sellerID": "onemg",
+   "price": 3212,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "pan",
+   "sellerID": "onemg",
+   "price": 19280,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "telma",
+   "sellerID": "onemg",
+   "price": 21672,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "azithral",
+   "sellerID": "onemg",
+   "price": 12673,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "montair",
+   "sellerID": "onemg",
+   "price": 41979,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "dolo",
+   "sellerID": "janaushadhi",
+   "price": 1547,
+   "inStock": true,
+   "exactMatch": false,
+   "isSubstitute": true
+  },
+  {
+   "itemID": "pan",
+   "sellerID": "janaushadhi",
+   "price": 1871,
+   "inStock": true,
+   "exactMatch": false,
+   "isSubstitute": true
+  },
+  {
+   "itemID": "telma",
+   "sellerID": "janaushadhi",
+   "price": 3714,
+   "inStock": true,
+   "exactMatch": false,
+   "isSubstitute": true
+  },
+  {
+   "itemID": "glycomet",
+   "sellerID": "janaushadhi",
+   "price": 2158,
+   "inStock": true,
+   "exactMatch": false,
+   "isSubstitute": true
+  },
+  {
+   "itemID": "azithral",
+   "sellerID": "janaushadhi",
+   "price": 6563,
+   "inStock": true,
+   "exactMatch": false,
+   "isSubstitute": true
+  },
+  {
+   "itemID": "montair",
+   "sellerID": "janaushadhi",
+   "price": 3095,
+   "inStock": true,
+   "exactMatch": false,
+   "isSubstitute": true
+  },
+  {
+   "itemID": "cbc",
+   "sellerID": "redcliffe",
+   "price": 29900,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "hba1c",
+   "sellerID": "redcliffe",
+   "price": 29500,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "cbc",
+   "sellerID": "healthians",
+   "price": 40400,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "hba1c",
+   "sellerID": "healthians",
+   "price": 27300,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "lipid",
+   "sellerID": "healthians",
+   "price": 66300,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "hba1c",
+   "sellerID": "apollo",
+   "price": 63800,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "thyroid",
+   "sellerID": "apollo",
+   "price": 62900,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  },
+  {
+   "itemID": "thyroid",
+   "sellerID": "max",
+   "price": 122400,
+   "inStock": true,
+   "exactMatch": true,
+   "isSubstitute": false
+  }
+ ],
+ "preferences": {
+  "objective": "fastest",
+  "doctorApprovedSubstitutes": false,
+  "visitCost": 5000
+ },
+ "simulateFailure": {
+  "sellerID": "onemg",
+  "failure": "outOfStock"
+ }
+}

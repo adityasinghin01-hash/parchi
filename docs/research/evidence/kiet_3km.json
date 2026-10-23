@@ -1,0 +1,1766 @@
+{
+  "blood test lab" : [
+    {
+      "lon" : 77.293722000000002,
+      "phone" : "+91 98917 58770",
+      "name" : "Quadri Lab - Blood Test",
+      "url" : "",
+      "dist_m" : 29171,
+      "category" : "",
+      "lat" : 28.560485
+    },
+    {
+      "name" : "Blood Test Lab Collection Centre",
+      "category" : "",
+      "dist_m" : 24580,
+      "lon" : 77.314834000000005,
+      "lat" : 28.600345999999998,
+      "url" : "",
+      "phone" : ""
+    },
+    {
+      "lon" : 77.355803399999999,
+      "lat" : 28.590311,
+      "name" : "Max Lab",
+      "phone" : "+91 74287 00434",
+      "dist_m" : 22713,
+      "url" : "https:\/\/www.maxlab.co.in",
+      "category" : ""
+    },
+    {
+      "lon" : 77.463266000000004,
+      "dist_m" : 10620,
+      "name" : "Blood Bank",
+      "phone" : "",
+      "category" : "",
+      "lat" : 28.661712999999999,
+      "url" : ""
+    },
+    {
+      "name" : "Blood Test Lab",
+      "category" : "",
+      "lat" : 28.500406999999999,
+      "url" : "http:\/\/www.alphacare247.in",
+      "lon" : 77.325940000000003,
+      "dist_m" : 32608,
+      "phone" : ""
+    }
+  ],
+  "pharmacy" : [
+    {
+      "lat" : 28.776350999999998,
+      "phone" : "",
+      "category" : "MKPOICategoryPharmacy",
+      "name" : "Siddiqui Pharmaceutical",
+      "dist_m" : 2654,
+      "url" : "",
+      "lon" : 77.501211999999995
+    },
+    {
+      "category" : "MKPOICategoryPharmacy",
+      "lat" : 28.780605000000001,
+      "name" : "Tyagi Medicos",
+      "lon" : 77.494979000000001,
+      "url" : "",
+      "dist_m" : 3115,
+      "phone" : ""
+    },
+    {
+      "lon" : 77.449019000000007,
+      "url" : "https:\/\/zeelabpharmacy.com",
+      "category" : "MKPOICategoryPharmacy",
+      "phone" : "",
+      "name" : "Zeelab Pharmacy",
+      "dist_m" : 8325,
+      "lat" : 28.690943000000001
+    },
+    {
+      "url" : "",
+      "category" : "MKPOICategoryPharmacy",
+      "lat" : 28.662407999999999,
+      "dist_m" : 11470,
+      "lon" : 77.440128000000001,
+      "name" : "Sampada Pharmacy",
+      "phone" : ""
+    },
+    {
+      "lat" : 28.674305,
+      "phone" : "",
+      "category" : "MKPOICategoryPharmacy",
+      "dist_m" : 10116,
+      "url" : "",
+      "lon" : 77.444467000000003,
+      "name" : "Shree Lakshmi Medicos Pharmacy"
+    },
+    {
+      "phone" : "",
+      "lat" : 28.733032999999999,
+      "name" : "Friends Nutrients",
+      "category" : "MKPOICategoryStore",
+      "lon" : 77.472234999999998,
+      "dist_m" : 3300,
+      "url" : ""
+    },
+    {
+      "phone" : "",
+      "name" : "Aastha Food Supplement Agency",
+      "lon" : 77.511756000000005,
+      "url" : "",
+      "dist_m" : 3011,
+      "category" : "MKPOICategoryStore",
+      "lat" : 28.776783999999999
+    },
+    {
+      "phone" : "+91 120-2834176",
+      "category" : "MKPOICategoryPharmacy",
+      "lon" : 77.427042999999998,
+      "dist_m" : 12351,
+      "name" : "Vardhman Medical Store",
+      "url" : "",
+      "lat" : 28.660191000000001
+    },
+    {
+      "name" : "Health Care Pharmacy",
+      "lon" : 77.515536999999995,
+      "lat" : 28.688451000000001,
+      "category" : "MKPOICategoryPharmacy",
+      "phone" : "+91 99907 78326",
+      "dist_m" : 7320,
+      "url" : ""
+    },
+    {
+      "name" : "Zeelab Pharmacy",
+      "lat" : 28.651478999999998,
+      "category" : "MKPOICategoryPharmacy",
+      "lon" : 77.410711000000006,
+      "phone" : "+91 88609 01912",
+      "dist_m" : 14066,
+      "url" : "https:\/\/zeelabpharmacy.com"
+    },
+    {
+      "dist_m" : 5453,
+      "url" : "http:\/\/janaushadhi.gov.in",
+      "name" : "Jan Aushadhi Store",
+      "lon" : 77.460718,
+      "phone" : "+91 93194 99770",
+      "category" : "MKPOICategoryPharmacy",
+      "lat" : 28.715736
+    },
+    {
+      "category" : "MKPOICategoryPharmacy",
+      "dist_m" : 7570,
+      "lon" : 77.452179999999998,
+      "phone" : "+91 99103 95219",
+      "lat" : 28.697323000000001,
+      "url" : "",
+      "name" : "Sangeeta Medical Hall"
+    },
+    {
+      "lat" : 28.701405999999999,
+      "phone" : "+91 97610 26221",
+      "dist_m" : 8825,
+      "lon" : 77.428504000000004,
+      "url" : "",
+      "name" : "Shyam Medical Store",
+      "category" : "MKPOICategoryPharmacy"
+    },
+    {
+      "lon" : 77.426469999999995,
+      "url" : "",
+      "lat" : 28.644898999999999,
+      "category" : "MKPOICategoryPharmacy",
+      "dist_m" : 13817,
+      "phone" : "",
+      "name" : "Lakshay Pharmacy"
+    },
+    {
+      "phone" : "+91 120-4371860",
+      "category" : "MKPOICategoryPharmacy",
+      "dist_m" : 9098,
+      "lon" : 77.465800000000002,
+      "lat" : 28.675470000000001,
+      "name" : "Prathanmanthri Barathiy Jan Aushadi Kendra",
+      "url" : ""
+    },
+    {
+      "phone" : "",
+      "name" : "F.S. Medical Store",
+      "lat" : 28.662762000000001,
+      "dist_m" : 12804,
+      "url" : "",
+      "lon" : 77.415305000000004,
+      "category" : "MKPOICategoryPharmacy"
+    },
+    {
+      "phone" : "",
+      "name" : "Max Super Speciality Hospital Pharmacy",
+      "dist_m" : 29035,
+      "category" : "MKPOICategoryPharmacy",
+      "url" : "",
+      "lat" : 28.515481000000001,
+      "lon" : 77.371433999999994
+    },
+    {
+      "dist_m" : 9460,
+      "name" : "Pal Medical Store",
+      "lat" : 28.671641000000001,
+      "phone" : "+91 93139 38939",
+      "lon" : 77.467016000000001,
+      "category" : "MKPOICategoryPharmacy",
+      "url" : ""
+    },
+    {
+      "lon" : 77.378169,
+      "url" : "https:\/\/www.apollopharmacy.in",
+      "category" : "MKPOICategoryPharmacy",
+      "name" : "Apollo Pharmacy",
+      "dist_m" : 17228,
+      "phone" : "",
+      "lat" : 28.638331999999998
+    },
+    {
+      "name" : "Jummey Medical Store",
+      "dist_m" : 8074,
+      "lon" : 77.521981999999994,
+      "category" : "MKPOICategoryPharmacy",
+      "url" : "",
+      "lat" : 28.682960999999999,
+      "phone" : "+91 95409 89948"
+    },
+    {
+      "category" : "MKPOICategoryPharmacy",
+      "name" : "Man Medical Store",
+      "lat" : 28.649160999999999,
+      "dist_m" : 13443,
+      "phone" : "",
+      "lon" : 77.425837999999999,
+      "url" : ""
+    },
+    {
+      "category" : "MKPOICategoryPharmacy",
+      "lon" : 77.376414999999994,
+      "dist_m" : 15019,
+      "url" : "https:\/\/zeelabpharmacy.com",
+      "lat" : 28.669345,
+      "phone" : "+91 95993 82839",
+      "name" : "Zeelab Pharmacy"
+    },
+    {
+      "lat" : 28.647542999999999,
+      "lon" : 77.297540999999995,
+      "name" : "Arya Vaidya Sala Ayurvedic Centre",
+      "dist_m" : 22762,
+      "category" : "MKPOICategoryStore",
+      "phone" : "+91 11-22376534",
+      "url" : "https:\/\/www.aryavaidyasala.com"
+    },
+    {
+      "url" : "",
+      "category" : "MKPOICategoryPharmacy",
+      "lat" : 28.628204,
+      "lon" : 77.447443000000007,
+      "dist_m" : 14635,
+      "name" : "New Life Pharmacy",
+      "phone" : "+91 97601 47025"
+    },
+    {
+      "phone" : "+91 120-4157534",
+      "category" : "MKPOICategoryPharmacy",
+      "url" : "http:\/\/www.biomed.co.in\/",
+      "dist_m" : 12811,
+      "name" : "Bio Med",
+      "lat" : 28.643080999999999,
+      "lon" : 77.455740000000006
+    }
+  ],
+  "medical store" : [
+    {
+      "name" : "Siddiqui Pharmaceutical",
+      "url" : "",
+      "category" : "MKPOICategoryPharmacy",
+      "lon" : 77.501211999999995,
+      "lat" : 28.776350999999998,
+      "dist_m" : 2654,
+      "phone" : ""
+    },
+    {
+      "dist_m" : 12351,
+      "lon" : 77.427042999999998,
+      "url" : "",
+      "lat" : 28.660191000000001,
+      "name" : "Vardhman Medical Store",
+      "phone" : "+91 120-2834176",
+      "category" : "MKPOICategoryPharmacy"
+    },
+    {
+      "phone" : "+91 99103 95219",
+      "dist_m" : 7570,
+      "lon" : 77.452179999999998,
+      "category" : "MKPOICategoryPharmacy",
+      "url" : "",
+      "name" : "Sangeeta Medical Hall",
+      "lat" : 28.697323000000001
+    },
+    {
+      "lat" : 28.701405999999999,
+      "dist_m" : 8825,
+      "url" : "",
+      "phone" : "+91 97610 26221",
+      "category" : "MKPOICategoryPharmacy",
+      "lon" : 77.428504000000004,
+      "name" : "Shyam Medical Store"
+    },
+    {
+      "lon" : 77.494979000000001,
+      "url" : "",
+      "category" : "MKPOICategoryPharmacy",
+      "dist_m" : 3115,
+      "name" : "Tyagi Medicos",
+      "lat" : 28.780605000000001,
+      "phone" : ""
+    },
+    {
+      "phone" : "",
+      "category" : "MKPOICategoryPharmacy",
+      "name" : "F.S. Medical Store",
+      "dist_m" : 12804,
+      "lon" : 77.415305000000004,
+      "lat" : 28.662762000000001,
+      "url" : ""
+    },
+    {
+      "lon" : 77.467016000000001,
+      "url" : "",
+      "lat" : 28.671641000000001,
+      "name" : "Pal Medical Store",
+      "category" : "MKPOICategoryPharmacy",
+      "dist_m" : 9460,
+      "phone" : "+91 93139 38939"
+    },
+    {
+      "dist_m" : 8074,
+      "phone" : "+91 95409 89948",
+      "url" : "",
+      "name" : "Jummey Medical Store",
+      "lon" : 77.521981999999994,
+      "lat" : 28.682960999999999,
+      "category" : "MKPOICategoryPharmacy"
+    },
+    {
+      "category" : "MKPOICategoryPharmacy",
+      "lon" : 77.425837999999999,
+      "phone" : "",
+      "url" : "",
+      "lat" : 28.649160999999999,
+      "name" : "Man Medical Store",
+      "dist_m" : 13443
+    },
+    {
+      "lat" : 28.770716,
+      "dist_m" : 8506,
+      "lon" : 77.582336999999995,
+      "phone" : "",
+      "name" : "Rihan Medical Store",
+      "url" : "",
+      "category" : "MKPOICategoryPharmacy"
+    },
+    {
+      "category" : "MKPOICategoryStore",
+      "lon" : 77.472234999999998,
+      "lat" : 28.733032999999999,
+      "url" : "",
+      "name" : "Friends Nutrients",
+      "dist_m" : 3300,
+      "phone" : ""
+    },
+    {
+      "phone" : "",
+      "lat" : 28.6651168,
+      "category" : "MKPOICategorySpa",
+      "lon" : 77.429239999999993,
+      "url" : "https:\/\/ceragem.co.in",
+      "name" : "Ceragem",
+      "dist_m" : 11779
+    },
+    {
+      "lat" : 28.638178,
+      "dist_m" : 13089,
+      "category" : "MKPOICategoryPharmacy",
+      "phone" : "+91 99994 90404",
+      "lon" : 77.464516000000003,
+      "name" : "Krishna Medical Store",
+      "url" : ""
+    },
+    {
+      "dist_m" : 3011,
+      "phone" : "",
+      "category" : "MKPOICategoryStore",
+      "lat" : 28.776783999999999,
+      "lon" : 77.511756000000005,
+      "url" : "",
+      "name" : "Aastha Food Supplement Agency"
+    },
+    {
+      "phone" : "+91 93899 09288",
+      "category" : "MKPOICategoryPharmacy",
+      "dist_m" : 12381,
+      "lon" : 77.609082999999998,
+      "name" : "Kabir Medical Store",
+      "lat" : 28.699301999999999,
+      "url" : ""
+    },
+    {
+      "lat" : 28.690943000000001,
+      "dist_m" : 8325,
+      "name" : "Zeelab Pharmacy",
+      "category" : "MKPOICategoryPharmacy",
+      "phone" : "",
+      "url" : "https:\/\/zeelabpharmacy.com",
+      "lon" : 77.449019000000007
+    },
+    {
+      "name" : "Pankaj Medical Store",
+      "lat" : 28.638517,
+      "dist_m" : 14794,
+      "url" : "",
+      "phone" : "+91 93503 46226",
+      "category" : "MKPOICategoryPharmacy",
+      "lon" : 77.419088000000002
+    },
+    {
+      "category" : "MKPOICategoryPharmacy",
+      "dist_m" : 15309,
+      "phone" : "",
+      "lon" : 77.420863999999995,
+      "name" : "Raaj Patanjali Medical Store",
+      "url" : "",
+      "lat" : 28.632224000000001
+    },
+    {
+      "url" : "https:\/\/www.apollopharmacy.in",
+      "name" : "Apollo Pharmacy",
+      "phone" : "+91 88269 91592",
+      "lon" : 77.447833000000003,
+      "dist_m" : 9250,
+      "lat" : 28.681647999999999,
+      "category" : "MKPOICategoryPharmacy"
+    },
+    {
+      "name" : "Sampada Pharmacy",
+      "dist_m" : 11470,
+      "url" : "",
+      "lat" : 28.662407999999999,
+      "category" : "MKPOICategoryPharmacy",
+      "phone" : "",
+      "lon" : 77.440128000000001
+    },
+    {
+      "name" : "Shree Lakshmi Medicos Pharmacy",
+      "lon" : 77.444467000000003,
+      "dist_m" : 10116,
+      "lat" : 28.674305,
+      "category" : "MKPOICategoryPharmacy",
+      "url" : "",
+      "phone" : ""
+    },
+    {
+      "name" : "Happy Medical Store",
+      "dist_m" : 16833,
+      "url" : "",
+      "category" : "MKPOICategoryPharmacy",
+      "lat" : 28.692938000000002,
+      "phone" : "+91 97737 33284",
+      "lon" : 77.339247
+    },
+    {
+      "phone" : "+91 99907 78326",
+      "category" : "MKPOICategoryPharmacy",
+      "name" : "Health Care Pharmacy",
+      "lat" : 28.688451000000001,
+      "lon" : 77.515536999999995,
+      "url" : "",
+      "dist_m" : 7320
+    },
+    {
+      "lon" : 77.418181000000004,
+      "phone" : "+91 92134 12842",
+      "lat" : 28.613181999999998,
+      "url" : "",
+      "name" : "Aryan Medical Store",
+      "dist_m" : 17296,
+      "category" : "MKPOICategoryPharmacy"
+    },
+    {
+      "category" : "MKPOICategoryPharmacy",
+      "lat" : 28.747817999999999,
+      "url" : "",
+      "dist_m" : 19287,
+      "lon" : 77.300301000000005,
+      "phone" : "+91 76783 52510",
+      "name" : "DUA Medical Store"
+    }
+  ],
+  "Dr Lal PathLabs" : [
+    {
+      "dist_m" : 7967,
+      "category" : "",
+      "phone" : "+91 93545 74685",
+      "lon" : 77.516097000000002,
+      "url" : "https:\/\/labs.lalpathlabs.com\/dr-lal-pathlabs-patient-service-centre-diagnostic-centre-dasna-ghaziabad-459622\/Home",
+      "lat" : 28.682565,
+      "name" : "Dr Lal Path Labs"
+    },
+    {
+      "url" : "",
+      "lat" : 28.689316000000002,
+      "dist_m" : 8270,
+      "name" : "Dr Lal Path Labs",
+      "category" : "",
+      "lon" : 77.452848000000003,
+      "phone" : "+91 95608 06181"
+    },
+    {
+      "category" : "",
+      "url" : "https:\/\/labs.lalpathlabs.com\/dr-lal-pathlabs-patient-service-centre-diagnostic-centre-gda-market-ghaziabad-290613\/Home",
+      "lat" : 28.674985,
+      "dist_m" : 9079,
+      "lon" : 77.467968999999997,
+      "phone" : "+91 99583 13235",
+      "name" : "Dr Lal Path Labs"
+    },
+    {
+      "phone" : "+91 80-71498267",
+      "category" : "",
+      "url" : "https:\/\/labs.lalpathlabs.com\/dr-lal-pathlabs-patient-service-centre-diagnostic-centre-raj-nagar-ghaziabad-538594\/Home",
+      "name" : "Dr Lal Path Labs",
+      "lat" : 28.681687499999999,
+      "lon" : 77.448437499999997,
+      "dist_m" : 9215
+    },
+    {
+      "category" : "",
+      "name" : "Dr Lal Path Labs",
+      "lat" : 28.675678000000001,
+      "lon" : 77.443218999999999,
+      "dist_m" : 10050,
+      "url" : "https:\/\/labs.lalpathlabs.com\/dr-lal-pathlabs-patient-service-radiology-centre-diagnostic-centre-kabir-nagar-new-delhi-288993\/Home",
+      "phone" : "+91 120-3988505"
+    },
+    {
+      "name" : "Dr Lal Path Labs",
+      "dist_m" : 10076,
+      "url" : "https:\/\/labs.lalpathlabs.com\/dr-lal-pathlabs-patient-service-centre-diagnostic-centre-kavi-nagar-ghaziabad-290651\/Home",
+      "lon" : 77.449281999999997,
+      "category" : "",
+      "lat" : 28.672328,
+      "phone" : "+91 98733 37487"
+    },
+    {
+      "phone" : "+91 99104 92286",
+      "dist_m" : 10873,
+      "name" : "Dr Lal Path Labs",
+      "category" : "",
+      "lat" : 28.673349000000002,
+      "url" : "",
+      "lon" : 77.432107000000002
+    },
+    {
+      "dist_m" : 13549,
+      "url" : "https:\/\/labs.lalpathlabs.com\/dr-lal-pathlabs-patient-service-centre-diagnostic-centre-lalkuan-ghaziabad-290873\/Home",
+      "category" : "",
+      "name" : "Dr Lal Path Labs",
+      "lon" : 77.463751000000002,
+      "phone" : "+91 88825 58931",
+      "lat" : 28.634066000000001
+    },
+    {
+      "lon" : 77.421256999999997,
+      "url" : "https:\/\/labs.lalpathlabs.com\/dr-lal-pathlabs-patient-service-centre-diagnostic-centre-sector-12-ghaziabad-288784\/Home",
+      "phone" : "+91 96506 98990",
+      "name" : "Dr Lal Path Labs",
+      "category" : "",
+      "lat" : 28.645471000000001,
+      "dist_m" : 14027
+    },
+    {
+      "lon" : 77.379283999999998,
+      "category" : "",
+      "lat" : 28.670082000000001,
+      "phone" : "+91 96544 34943",
+      "dist_m" : 14748,
+      "name" : "Dr Lal Path Labs",
+      "url" : "https:\/\/labs.lalpathlabs.com\/dr-lal-pathlabs-patient-service-centre-diagnostic-centre-sector-2b-ghaziabad-288435\/Home"
+    },
+    {
+      "lon" : 77.437906299999995,
+      "category" : "",
+      "url" : "https:\/\/labs.lalpathlabs.com\/dr-lal-pathlabs-patient-service-centre-diagnostic-centre-crossings-republik-ghaziabad-290258\/Home",
+      "phone" : "+91 85272 33535",
+      "lat" : 28.629130700000001,
+      "dist_m" : 14879,
+      "name" : "Dr Lal Path Labs"
+    },
+    {
+      "lat" : 28.679207000000002,
+      "dist_m" : 15266,
+      "category" : "",
+      "lon" : 77.365472999999994,
+      "url" : "https:\/\/labs.lalpathlabs.com\/dr-lal-pathlabs-patient-service-centre-diagnostic-centre-shyam-park-extention-ghaziabad-288655\/Home",
+      "phone" : "+91 92122 64330",
+      "name" : "Dr Lal Path Labs"
+    },
+    {
+      "lat" : 28.683001999999998,
+      "name" : "Dr Lal Path Labs",
+      "dist_m" : 15354,
+      "phone" : "+91 80-37160338",
+      "lon" : 77.361815000000007,
+      "url" : "https:\/\/labs.lalpathlabs.com\/dr-lal-pathlabs-patient-service-centre-diagnostic-centre-sector-3-ghaziabad-424322\/Home",
+      "category" : ""
+    },
+    {
+      "phone" : "+91 96502 71877",
+      "name" : "Dr Lal Path Labs",
+      "category" : "",
+      "lon" : 77.376013299999997,
+      "dist_m" : 15445,
+      "lat" : 28.6636487,
+      "url" : "https:\/\/labs.lalpathlabs.com\/dr-lal-pathlabs-patient-service-centre-diagnostic-centre-sector-6-ghaziabad-530719\/Home"
+    },
+    {
+      "phone" : "+91 120-4243929",
+      "name" : "Dr Lal Path Labs",
+      "lon" : 77.369767300000007,
+      "category" : "",
+      "dist_m" : 15921,
+      "lat" : 28.6636281,
+      "url" : ""
+    },
+    {
+      "url" : "https:\/\/labs.lalpathlabs.com\/dr-lal-pathlabs-patient-service-centre-diagnostic-centre-sector-2-rajendra-nagar-ghaziabad-416733\/Home",
+      "lon" : 77.349716999999998,
+      "lat" : 28.690626999999999,
+      "category" : "",
+      "name" : "Dr Lal Path Labs",
+      "dist_m" : 16006,
+      "phone" : "+91 180-7131835"
+    },
+    {
+      "name" : "Dr Lal Path Labs",
+      "lon" : 77.331768999999994,
+      "phone" : "+91 80-71318433",
+      "dist_m" : 16921,
+      "lat" : 28.708773999999998,
+      "category" : "",
+      "url" : "https:\/\/labs.lalpathlabs.com\/dr-lal-pathlabs-patient-service-centre-diagnostic-centre-panchsheel-enclave-ghaziabad-432123\/Home"
+    },
+    {
+      "name" : "Dr Lal Path Labs",
+      "lon" : 77.448577,
+      "category" : "",
+      "url" : "https:\/\/labs.lalpathlabs.com\/dr-lal-pathlabs-patient-service-centre-diagnostic-centre-sector-16b-ghaziabad-342923\/Home",
+      "dist_m" : 16942,
+      "lat" : 28.605996000000001,
+      "phone" : "+91 180-3716018"
+    },
+    {
+      "lat" : 28.655163000000002,
+      "url" : "https:\/\/labs.lalpathlabs.com\/dr-lal-pathlabs-patient-service-radiology-centre-diagnostic-centre-vasundhara-gurugram-289053\/Home",
+      "phone" : "+91 120-4243929",
+      "category" : "",
+      "name" : "Dr Lal Path Labs",
+      "dist_m" : 17280,
+      "lon" : 77.359634999999997
+    },
+    {
+      "url" : "https:\/\/labs.lalpathlabs.com\/dr-lal-pathlabs-patient-service-centre-diagnostic-centre-khekra-baghpat-311903\/Home",
+      "category" : "",
+      "lon" : 77.344656000000001,
+      "lat" : 28.833434,
+      "dist_m" : 17422,
+      "name" : "Dr Lal Path Labs",
+      "phone" : "+91 78385 07070"
+    },
+    {
+      "dist_m" : 17777,
+      "lon" : 77.359994,
+      "url" : "https:\/\/labs.lalpathlabs.com\/dr-lal-pathlabs-patient-service-centre-diagnostic-centre-indirapuram-ghaziabad-377420\/Home",
+      "name" : "Dr Lal Path Labs",
+      "category" : "",
+      "lat" : 28.647777000000001,
+      "phone" : "+91 98917 97798"
+    },
+    {
+      "dist_m" : 18398,
+      "name" : "Dr Lal Path Labs",
+      "lon" : 77.360916000000003,
+      "phone" : "+91 120-4317291",
+      "lat" : 28.638531,
+      "url" : "https:\/\/labs.lalpathlabs.com\/dr-lal-pathlabs-patient-service-radiology-centre-diagnostic-centre-tilak-nagar-new-delhi-289076\/Home",
+      "category" : ""
+    },
+    {
+      "lat" : 28.669951000000001,
+      "phone" : "+91 98916 29456",
+      "name" : "Dr Lal Path Labs",
+      "lon" : 77.331119999999999,
+      "url" : "",
+      "dist_m" : 18676,
+      "category" : ""
+    },
+    {
+      "phone" : "+91 99712 49155",
+      "url" : "",
+      "name" : "Dr Lal Path Labs",
+      "dist_m" : 18808,
+      "lat" : 28.697437000000001,
+      "category" : "",
+      "lon" : 77.315629000000001
+    }
+  ],
+  "diagnostic centre" : [
+    {
+      "lat" : 28.6864512,
+      "category" : "",
+      "lon" : 77.452384800000004,
+      "dist_m" : 8564,
+      "phone" : "+91 120-4154458",
+      "name" : "Molecular Imaging and Therapy",
+      "url" : "https:\/\/www.molecularit.com"
+    },
+    {
+      "phone" : "+91 70502 33745",
+      "name" : "R.G. Clinic & Diagnostics",
+      "lat" : 28.773461000000001,
+      "category" : "",
+      "lon" : 77.505870999999999,
+      "dist_m" : 2445,
+      "url" : ""
+    },
+    {
+      "lon" : 77.423601000000005,
+      "category" : "",
+      "url" : "",
+      "phone" : "+91 92138 60666",
+      "lat" : 28.663433000000001,
+      "dist_m" : 12250,
+      "name" : "Global Diagnostic Centre"
+    },
+    {
+      "name" : "D.S. Diagnostic Centre",
+      "dist_m" : 8197,
+      "category" : "",
+      "lat" : 28.679843000000002,
+      "phone" : "+91 98919 79222",
+      "lon" : 77.482603999999995,
+      "url" : ""
+    },
+    {
+      "name" : "SN Diagnostic Centre",
+      "lat" : 28.674353,
+      "dist_m" : 10132,
+      "phone" : "",
+      "category" : "",
+      "url" : "",
+      "lon" : 77.444061000000005
+    },
+    {
+      "lon" : 77.420535000000001,
+      "dist_m" : 11302,
+      "phone" : "+91 92667 27324",
+      "url" : "",
+      "name" : "Radiant Diagnostic",
+      "category" : "",
+      "lat" : 28.676625000000001
+    },
+    {
+      "dist_m" : 11661,
+      "name" : "New Sunshine Diagnostic Centre",
+      "category" : "",
+      "lat" : 28.672871000000001,
+      "url" : "",
+      "lon" : 77.419809999999998,
+      "phone" : "+91 78400 78302"
+    },
+    {
+      "name" : "Ved Diagnostic Centre",
+      "phone" : "",
+      "lon" : 77.424098000000001,
+      "url" : "",
+      "lat" : 28.662362999999999,
+      "category" : "",
+      "dist_m" : 12318
+    },
+    {
+      "lat" : 28.691846999999999,
+      "lon" : 77.491141999999996,
+      "phone" : "+91 95609 07661",
+      "url" : "",
+      "category" : "",
+      "dist_m" : 6763,
+      "name" : "Parv Diagnostic Centre"
+    },
+    {
+      "phone" : "+91 120-4979282",
+      "lat" : 28.656863999999999,
+      "lon" : 77.449089999999998,
+      "name" : "SR Global Diagnostic Centre",
+      "url" : "",
+      "dist_m" : 11625,
+      "category" : ""
+    },
+    {
+      "lon" : 77.467909000000006,
+      "dist_m" : 9010,
+      "phone" : "+91 96672 66299",
+      "url" : "",
+      "lat" : 28.675657999999999,
+      "category" : "",
+      "name" : "Life Line Diagnostic Centre"
+    },
+    {
+      "lat" : 28.684709000000002,
+      "name" : "Tyagi Imaging & Diagnostic Center",
+      "lon" : 77.513233999999997,
+      "category" : "",
+      "dist_m" : 7675,
+      "url" : "",
+      "phone" : "+91 79-06254345"
+    },
+    {
+      "category" : "",
+      "phone" : "",
+      "name" : "HP Online Diagnostic Booking Centre",
+      "lat" : 28.69763,
+      "lon" : 77.452400999999995,
+      "url" : "",
+      "dist_m" : 7530
+    },
+    {
+      "name" : "Kalyade Diagnostic",
+      "lat" : 28.668251000000001,
+      "lon" : 77.447318999999993,
+      "phone" : "+91 120-3122955",
+      "category" : "",
+      "url" : "",
+      "dist_m" : 10565
+    },
+    {
+      "phone" : "+91 88106 10099",
+      "lat" : 28.649162,
+      "name" : "DK Diagnostic Path Lab",
+      "category" : "",
+      "dist_m" : 12679,
+      "url" : "",
+      "lon" : 77.442276000000007
+    },
+    {
+      "lon" : 77.454702999999995,
+      "url" : "",
+      "lat" : 28.724088999999999,
+      "category" : "",
+      "dist_m" : 5256,
+      "name" : "Accuprobe Diagnostic FPL Lab",
+      "phone" : ""
+    },
+    {
+      "dist_m" : 23521,
+      "phone" : "+91 20-26835266",
+      "name" : "Shri Anandpur Trust Charitable Diagnostic Center",
+      "url" : "http:\/\/www.satdiagnostic.com",
+      "category" : "",
+      "lat" : 28.656504999999999,
+      "lon" : 77.283068
+    },
+    {
+      "lat" : 28.645436,
+      "dist_m" : 14019,
+      "url" : "",
+      "phone" : "+91 120-2740020",
+      "name" : "Shivam Diagnostic Center",
+      "category" : "",
+      "lon" : 77.421482999999995
+    },
+    {
+      "dist_m" : 17136,
+      "lon" : 77.363575999999995,
+      "url" : "",
+      "category" : "",
+      "name" : "SR Diagnostic Centre",
+      "phone" : "+91 88026 04672",
+      "lat" : 28.652984
+    },
+    {
+      "category" : "",
+      "lat" : 28.608495000000001,
+      "lon" : 77.378232999999994,
+      "url" : "",
+      "name" : "Mahi Diagnostic Centre",
+      "dist_m" : 19784,
+      "phone" : "+91 98118 61400"
+    },
+    {
+      "name" : "Metropolis Healthcare",
+      "dist_m" : 12152,
+      "url" : "https:\/\/www.metropolisindia.com\/lab\/diagnostic-centre-in-wave-city-null-ghaziabad",
+      "category" : "",
+      "phone" : "+91 11-41194317",
+      "lon" : 77.425110000000004,
+      "lat" : 28.663561000000001
+    },
+    {
+      "name" : "CRL Diagnostics",
+      "phone" : "+91 78598 21278",
+      "category" : "",
+      "lon" : 77.498600999999994,
+      "dist_m" : 7211,
+      "url" : "",
+      "lat" : 28.687541
+    },
+    {
+      "category" : "",
+      "lat" : 28.605823999999998,
+      "name" : "Vi-Scan Diagnostics",
+      "lon" : 77.427931000000001,
+      "url" : "https:\/\/viscandiagnostics.com",
+      "phone" : "+91 96069 80274",
+      "dist_m" : 17638
+    },
+    {
+      "dist_m" : 18052,
+      "name" : "House Of Diagnostics",
+      "lat" : 28.635815999999998,
+      "url" : "https:\/\/www.hod.care",
+      "lon" : 77.368931000000003,
+      "phone" : "",
+      "category" : ""
+    },
+    {
+      "phone" : "+91 120-3155230",
+      "dist_m" : 7789,
+      "category" : "",
+      "name" : "Sharp Imaging & Diagnostics",
+      "lon" : 77.450843000000006,
+      "lat" : 28.695746,
+      "url" : ""
+    }
+  ],
+  "pathology lab" : [
+    {
+      "category" : "",
+      "phone" : "+91 120-4154458",
+      "url" : "https:\/\/www.molecularit.com",
+      "name" : "Molecular Imaging and Therapy",
+      "lon" : 77.452384800000004,
+      "lat" : 28.6864512,
+      "dist_m" : 8564
+    },
+    {
+      "category" : "",
+      "dist_m" : 2445,
+      "lat" : 28.773461000000001,
+      "phone" : "+91 70502 33745",
+      "name" : "R.G. Clinic & Diagnostics",
+      "url" : "",
+      "lon" : 77.505870999999999
+    },
+    {
+      "lon" : 77.460080000000005,
+      "url" : "",
+      "name" : "Mapex Lab",
+      "phone" : "",
+      "lat" : 28.713021999999999,
+      "category" : "",
+      "dist_m" : 5722
+    },
+    {
+      "name" : "DK Diagnostic Path Lab",
+      "url" : "",
+      "lat" : 28.649162,
+      "phone" : "+91 88106 10099",
+      "lon" : 77.442276000000007,
+      "category" : "",
+      "dist_m" : 12679
+    },
+    {
+      "url" : "https:\/\/www.metropolisindia.com\/lab\/diagnostic-centre-in-wave-city-null-ghaziabad",
+      "category" : "",
+      "phone" : "+91 11-41194317",
+      "name" : "Metropolis Healthcare",
+      "lon" : 77.425110000000004,
+      "dist_m" : 12152,
+      "lat" : 28.663561000000001
+    },
+    {
+      "phone" : "+91 98992 58076",
+      "lat" : 28.671213000000002,
+      "lon" : 77.417293000000001,
+      "dist_m" : 11961,
+      "url" : "http:\/\/www.checkupcancer.com",
+      "name" : "Metrolyf Hospital",
+      "category" : "MKPOICategoryHospital"
+    },
+    {
+      "lat" : 28.724088999999999,
+      "dist_m" : 5256,
+      "url" : "",
+      "phone" : "",
+      "lon" : 77.454702999999995,
+      "name" : "Accuprobe Diagnostic FPL Lab",
+      "category" : ""
+    },
+    {
+      "dist_m" : 16620,
+      "category" : "",
+      "lat" : 28.61581,
+      "lon" : 77.428004999999999,
+      "name" : "Fusion Diagnostics",
+      "url" : "http:\/\/www.fusiondiagnostics.in",
+      "phone" : "+91 120-6051333"
+    },
+    {
+      "phone" : "+91 85059 65035",
+      "lon" : 77.413432999999998,
+      "url" : "",
+      "category" : "",
+      "lat" : 28.684743999999998,
+      "dist_m" : 11152,
+      "name" : "Sunshine Path Lab"
+    },
+    {
+      "lat" : 28.663433000000001,
+      "name" : "Global Diagnostic Centre",
+      "phone" : "+91 92138 60666",
+      "category" : "",
+      "lon" : 77.423601000000005,
+      "dist_m" : 12250,
+      "url" : ""
+    },
+    {
+      "dist_m" : 7675,
+      "lat" : 28.684709000000002,
+      "name" : "Tyagi Imaging & Diagnostic Center",
+      "phone" : "+91 79-06254345",
+      "url" : "",
+      "category" : "",
+      "lon" : 77.513233999999997
+    },
+    {
+      "category" : "",
+      "phone" : "+91 92667 27324",
+      "lon" : 77.420535000000001,
+      "name" : "Radiant Diagnostic",
+      "url" : "",
+      "dist_m" : 11302,
+      "lat" : 28.676625000000001
+    },
+    {
+      "name" : "Kalyade Diagnostic",
+      "phone" : "+91 120-3122955",
+      "category" : "",
+      "lat" : 28.668251000000001,
+      "dist_m" : 10565,
+      "lon" : 77.447318999999993,
+      "url" : ""
+    },
+    {
+      "name" : "D.S. Diagnostic Centre",
+      "lon" : 77.482603999999995,
+      "lat" : 28.679843000000002,
+      "phone" : "+91 98919 79222",
+      "dist_m" : 8197,
+      "url" : "",
+      "category" : ""
+    },
+    {
+      "name" : "DN Pathology Lab",
+      "lon" : 77.324777999999995,
+      "category" : "",
+      "dist_m" : 17659,
+      "lat" : 28.706178000000001,
+      "url" : "",
+      "phone" : "+91 85951 35351"
+    },
+    {
+      "url" : "",
+      "name" : "SN Diagnostic Centre",
+      "lon" : 77.444061000000005,
+      "lat" : 28.674353,
+      "dist_m" : 10132,
+      "phone" : "",
+      "category" : ""
+    },
+    {
+      "category" : "",
+      "name" : "Super Health Care",
+      "phone" : "",
+      "lat" : 28.686851999999998,
+      "dist_m" : 7429,
+      "url" : "",
+      "lon" : 77.482859000000005
+    },
+    {
+      "lat" : 28.695746,
+      "url" : "",
+      "dist_m" : 7788,
+      "phone" : "+91 120-3155230",
+      "name" : "Sharp Imaging & Diagnostics",
+      "lon" : 77.450843000000006,
+      "category" : ""
+    },
+    {
+      "name" : "SR Global Diagnostic Centre",
+      "category" : "",
+      "url" : "",
+      "phone" : "+91 120-4979282",
+      "lon" : 77.449089999999998,
+      "dist_m" : 11625,
+      "lat" : 28.656863999999999
+    },
+    {
+      "lat" : 28.691846999999999,
+      "phone" : "+91 95609 07661",
+      "category" : "",
+      "dist_m" : 6763,
+      "url" : "",
+      "lon" : 77.491141999999996,
+      "name" : "Parv Diagnostic Centre"
+    },
+    {
+      "lat" : 28.656504999999999,
+      "phone" : "+91 20-26835266",
+      "lon" : 77.283068,
+      "dist_m" : 23521,
+      "url" : "http:\/\/www.satdiagnostic.com",
+      "category" : "",
+      "name" : "Shri Anandpur Trust Charitable Diagnostic Center"
+    },
+    {
+      "phone" : "+91 96672 66299",
+      "dist_m" : 9010,
+      "name" : "Life Line Diagnostic Centre",
+      "lon" : 77.467909000000006,
+      "lat" : 28.675657999999999,
+      "category" : "",
+      "url" : ""
+    },
+    {
+      "category" : "",
+      "name" : "New Sunshine Diagnostic Centre",
+      "lon" : 77.419809999999998,
+      "url" : "",
+      "lat" : 28.672871000000001,
+      "dist_m" : 11661,
+      "phone" : "+91 78400 78302"
+    },
+    {
+      "lon" : 77.452950000000001,
+      "category" : "",
+      "dist_m" : 10672,
+      "lat" : 28.664757000000002,
+      "name" : "Mfine Labs",
+      "phone" : "",
+      "url" : "http:\/\/www.mfine.co"
+    },
+    {
+      "name" : "Vi-Scan Diagnostics",
+      "category" : "",
+      "phone" : "+91 96069 80274",
+      "lon" : 77.427931000000001,
+      "lat" : 28.605823999999998,
+      "dist_m" : 17638,
+      "url" : "https:\/\/viscandiagnostics.com"
+    }
+  ],
+  "Thyrocare" : [
+    {
+      "category" : "",
+      "dist_m" : 6734,
+      "url" : "https:\/\/www.thyrocare.com",
+      "phone" : "+91 99996 12961",
+      "name" : "Thyrocare",
+      "lon" : 77.461451999999994,
+      "lat" : 28.700911999999999
+    },
+    {
+      "lat" : 28.716705999999999,
+      "url" : "https:\/\/www.thyrocare.com",
+      "name" : "Thyrocare",
+      "lon" : 77.553748999999996,
+      "dist_m" : 6767,
+      "phone" : "+91 22-30900000",
+      "category" : ""
+    },
+    {
+      "url" : "https:\/\/www.thyrocare.com",
+      "name" : "Thyrocare",
+      "dist_m" : 6829,
+      "phone" : "+91 22-30900000",
+      "category" : "",
+      "lat" : 28.691272999999999,
+      "lon" : 77.490919000000005
+    },
+    {
+      "url" : "https:\/\/www.thyrocare.com",
+      "lat" : 28.704930600000001,
+      "phone" : "+91 93153 54363",
+      "name" : "Thyrocare",
+      "category" : "",
+      "lon" : 77.451400000000007,
+      "dist_m" : 6954
+    },
+    {
+      "lon" : 77.505565000000004,
+      "dist_m" : 7388,
+      "url" : "https:\/\/www.thyrocare.com",
+      "phone" : "",
+      "name" : "Thyrocare",
+      "category" : "",
+      "lat" : 28.686298000000001
+    },
+    {
+      "lon" : 77.521096999999997,
+      "lat" : 28.683067999999999,
+      "url" : "https:\/\/www.thyrocare.com",
+      "name" : "Thyrocare",
+      "phone" : "",
+      "category" : "",
+      "dist_m" : 8038
+    },
+    {
+      "lon" : 77.428325000000001,
+      "dist_m" : 8614,
+      "category" : "",
+      "url" : "https:\/\/www.thyrocare.com",
+      "lat" : 28.704613999999999,
+      "phone" : "",
+      "name" : "Thyrocare"
+    },
+    {
+      "lat" : 28.689599999999999,
+      "dist_m" : 9333,
+      "category" : "",
+      "url" : "https:\/\/www.thyrocare.com",
+      "phone" : "",
+      "lon" : 77.434299999999993,
+      "name" : "Thyrocare"
+    },
+    {
+      "category" : "",
+      "phone" : "+91 92176 19257",
+      "lat" : 28.671847,
+      "dist_m" : 9411,
+      "url" : "https:\/\/www.thyrocare.com",
+      "lon" : 77.467901999999995,
+      "name" : "Thyrocare"
+    },
+    {
+      "category" : "",
+      "lat" : 28.668847,
+      "phone" : "",
+      "dist_m" : 10222,
+      "lon" : 77.453881999999993,
+      "url" : "https:\/\/www.thyrocare.com",
+      "name" : "Thyrocare"
+    },
+    {
+      "url" : "https:\/\/www.thyrocare.com",
+      "phone" : "+91 98181 53720",
+      "name" : "Thyrocare",
+      "lat" : 28.676683000000001,
+      "lon" : 77.437079999999995,
+      "category" : "",
+      "dist_m" : 10289
+    },
+    {
+      "dist_m" : 10399,
+      "lon" : 77.465215999999998,
+      "url" : "https:\/\/www.thyrocare.com",
+      "category" : "",
+      "phone" : "",
+      "name" : "Thyrocare",
+      "lat" : 28.663249
+    },
+    {
+      "dist_m" : 11073,
+      "url" : "https:\/\/www.thyrocare.com",
+      "lon" : 77.449143000000007,
+      "category" : "",
+      "name" : "Thyrocare",
+      "lat" : 28.662322,
+      "phone" : "+91 93122 48587"
+    },
+    {
+      "phone" : "+91 85950 06144",
+      "url" : "https:\/\/www.thyrocare.com",
+      "name" : "Thyrocare",
+      "category" : "",
+      "dist_m" : 11441,
+      "lat" : 28.649564999999999,
+      "lon" : 77.504985000000005
+    },
+    {
+      "dist_m" : 12816,
+      "url" : "https:\/\/www.thyrocare.com",
+      "lat" : 28.841253999999999,
+      "name" : "Thyrocare",
+      "category" : "",
+      "phone" : "+91 90581 62221",
+      "lon" : 77.581985000000003
+    },
+    {
+      "name" : "Thyrocare",
+      "lat" : 28.646108000000002,
+      "phone" : "+91 93508 60914",
+      "category" : "",
+      "dist_m" : 12938,
+      "lon" : 77.443444,
+      "url" : "https:\/\/www.thyrocare.com"
+    },
+    {
+      "lat" : 28.655224,
+      "lon" : 77.412058000000002,
+      "url" : "https:\/\/www.thyrocare.com",
+      "dist_m" : 13656,
+      "phone" : "+91 73030 50936",
+      "name" : "Thyrocare",
+      "category" : ""
+    },
+    {
+      "category" : "",
+      "lon" : 77.415961999999993,
+      "dist_m" : 14272,
+      "phone" : "",
+      "lat" : 28.645882,
+      "name" : "Thyrocare",
+      "url" : "https:\/\/www.thyrocare.com"
+    },
+    {
+      "category" : "",
+      "lat" : 28.680634000000001,
+      "url" : "https:\/\/www.thyrocare.com",
+      "dist_m" : 14625,
+      "name" : "Thyrocare",
+      "phone" : "+91 95991 63822",
+      "lon" : 77.372228000000007
+    },
+    {
+      "category" : "",
+      "url" : "https:\/\/www.thyrocare.com",
+      "lon" : 77.367242000000005,
+      "lat" : 28.683394,
+      "name" : "Thyrocare",
+      "phone" : "+91 93155 50745",
+      "dist_m" : 14875
+    },
+    {
+      "url" : "https:\/\/www.thyrocare.com",
+      "name" : "Thyrocare",
+      "phone" : "+91 98112 69449",
+      "lat" : 28.630980000000001,
+      "dist_m" : 14834,
+      "lon" : 77.434308000000001,
+      "category" : ""
+    },
+    {
+      "lat" : 28.680734000000001,
+      "name" : "Thyrocare",
+      "phone" : "+91 82872 00957",
+      "lon" : 77.367852999999997,
+      "dist_m" : 14979,
+      "category" : "",
+      "url" : "https:\/\/www.thyrocare.com"
+    },
+    {
+      "dist_m" : 14976,
+      "name" : "Thyrocare",
+      "phone" : "+91 98715 53237",
+      "lat" : 28.661379,
+      "url" : "https:\/\/www.thyrocare.com",
+      "lon" : 77.384617000000006,
+      "category" : ""
+    },
+    {
+      "name" : "Thyrocare",
+      "category" : "",
+      "lon" : 77.362324999999998,
+      "dist_m" : 15365,
+      "url" : "https:\/\/www.thyrocare.com",
+      "lat" : 28.682044300000001,
+      "phone" : "+91 91528 55981"
+    }
+  ],
+  "Jan Aushadhi Kendra" : [
+    {
+      "url" : "http:\/\/janaushadhi.gov.in",
+      "name" : "Jan Aushadhi Store",
+      "lat" : 28.778625000000002,
+      "category" : "MKPOICategoryPharmacy",
+      "lon" : 77.519803999999993,
+      "dist_m" : 3602,
+      "phone" : ""
+    },
+    {
+      "category" : "MKPOICategoryPharmacy",
+      "url" : "http:\/\/janaushadhi.gov.in",
+      "lat" : 28.655735,
+      "phone" : "+91 98711 99230",
+      "lon" : 77.447674000000006,
+      "dist_m" : 11796,
+      "name" : "Jan Aushadhi Store"
+    },
+    {
+      "category" : "MKPOICategoryPharmacy",
+      "lat" : 28.715736,
+      "url" : "http:\/\/janaushadhi.gov.in",
+      "phone" : "+91 93194 99770",
+      "name" : "Jan Aushadhi Store",
+      "lon" : 77.460718,
+      "dist_m" : 5453
+    },
+    {
+      "name" : "Jan Aushadhi Store",
+      "lon" : 77.466678000000002,
+      "url" : "http:\/\/janaushadhi.gov.in",
+      "category" : "MKPOICategoryPharmacy",
+      "dist_m" : 9379,
+      "phone" : "+91 120-4112663",
+      "lat" : 28.672514
+    },
+    {
+      "lat" : 28.631088999999999,
+      "url" : "http:\/\/janaushadhi.gov.in",
+      "name" : "Jan Aushadhi Store",
+      "dist_m" : 14818,
+      "phone" : "+91 97736 94859",
+      "category" : "MKPOICategoryPharmacy",
+      "lon" : 77.434443000000002
+    },
+    {
+      "lat" : 28.684660000000001,
+      "phone" : "+91 11-22135057",
+      "lon" : 77.310062000000002,
+      "category" : "MKPOICategoryPharmacy",
+      "name" : "Jan Aushadhi Store",
+      "dist_m" : 19818,
+      "url" : "http:\/\/janaushadhi.gov.in"
+    },
+    {
+      "lon" : 77.421083999999993,
+      "url" : "http:\/\/janaushadhi.gov.in",
+      "phone" : "+91 95823 96677",
+      "name" : "Jan Aushadhi Store",
+      "dist_m" : 11147,
+      "category" : "MKPOICategoryPharmacy",
+      "lat" : 28.678075
+    },
+    {
+      "name" : "Jan Aushadhi Store",
+      "category" : "MKPOICategoryPharmacy",
+      "dist_m" : 15062,
+      "lat" : 28.616941000000001,
+      "url" : "http:\/\/janaushadhi.gov.in",
+      "phone" : "",
+      "lon" : 77.488489000000001
+    },
+    {
+      "lat" : 28.701051,
+      "dist_m" : 9511,
+      "url" : "http:\/\/janaushadhi.gov.in",
+      "name" : "Jan Aushadhi Store",
+      "category" : "MKPOICategoryPharmacy",
+      "phone" : "",
+      "lon" : 77.419859000000002
+    },
+    {
+      "lat" : 28.585467999999999,
+      "dist_m" : 18984,
+      "url" : "http:\/\/janaushadhi.gov.in",
+      "category" : "MKPOICategoryPharmacy",
+      "name" : "Jan Aushadhi Store",
+      "phone" : "+91 98915 05332",
+      "lon" : 77.455132000000006
+    },
+    {
+      "lat" : 28.591358,
+      "url" : "http:\/\/janaushadhi.gov.in",
+      "category" : "MKPOICategoryPharmacy",
+      "name" : "Jan Aushadhi Store",
+      "phone" : "+91 92665 80510",
+      "dist_m" : 21207,
+      "lon" : 77.380871999999997
+    },
+    {
+      "dist_m" : 15979,
+      "lon" : 77.654758999999999,
+      "name" : "Jan Aushadhi Store",
+      "category" : "MKPOICategoryPharmacy",
+      "url" : "http:\/\/janaushadhi.gov.in",
+      "phone" : "",
+      "lat" : 28.712295000000001
+    },
+    {
+      "url" : "http:\/\/janaushadhi.gov.in",
+      "dist_m" : 20694,
+      "lat" : 28.678882000000002,
+      "name" : "Jan Aushadhi Store",
+      "category" : "MKPOICategoryPharmacy",
+      "phone" : "+91 88829 15139",
+      "lon" : 77.303101999999996
+    },
+    {
+      "dist_m" : 22568,
+      "phone" : "+91 120-4852917",
+      "url" : "http:\/\/janaushadhi.gov.in",
+      "lon" : 77.345993000000007,
+      "category" : "MKPOICategoryPharmacy",
+      "name" : "Jan Aushadhi Store",
+      "lat" : 28.599083
+    },
+    {
+      "url" : "http:\/\/janaushadhi.gov.in",
+      "phone" : "+91 836-8641571",
+      "lon" : 77.441653000000002,
+      "name" : "Jan Aushadhi Store",
+      "lat" : 28.610109000000001,
+      "category" : "MKPOICategoryPharmacy",
+      "dist_m" : 16715
+    },
+    {
+      "lat" : 28.662821999999998,
+      "url" : "http:\/\/janaushadhi.gov.in",
+      "name" : "Jan Aushadhi Store",
+      "phone" : "+91 97112 88997",
+      "category" : "MKPOICategoryPharmacy",
+      "lon" : 77.283642,
+      "dist_m" : 23162
+    }
+  ],
+  "chemist" : [
+    {
+      "phone" : "",
+      "dist_m" : 2654,
+      "name" : "Siddiqui Pharmaceutical",
+      "lat" : 28.776350999999998,
+      "category" : "MKPOICategoryPharmacy",
+      "lon" : 77.501211999999995,
+      "url" : ""
+    },
+    {
+      "lat" : 28.780605000000001,
+      "lon" : 77.494979000000001,
+      "phone" : "",
+      "dist_m" : 3115,
+      "url" : "",
+      "name" : "Tyagi Medicos",
+      "category" : "MKPOICategoryPharmacy"
+    },
+    {
+      "name" : "Friends Nutrients",
+      "phone" : "",
+      "category" : "MKPOICategoryStore",
+      "lat" : 28.733032999999999,
+      "lon" : 77.472234999999998,
+      "url" : "",
+      "dist_m" : 3300
+    },
+    {
+      "url" : "",
+      "lon" : 77.511756000000005,
+      "phone" : "",
+      "lat" : 28.776783999999999,
+      "category" : "MKPOICategoryStore",
+      "name" : "Aastha Food Supplement Agency",
+      "dist_m" : 3011
+    },
+    {
+      "url" : "",
+      "name" : "Vardhman Medical Store",
+      "category" : "MKPOICategoryPharmacy",
+      "lat" : 28.660191000000001,
+      "phone" : "+91 120-2834176",
+      "lon" : 77.427042999999998,
+      "dist_m" : 12351
+    },
+    {
+      "category" : "MKPOICategoryPharmacy",
+      "url" : "",
+      "name" : "Arun Medical Store",
+      "lat" : 28.675096,
+      "lon" : 77.445188999999999,
+      "phone" : "",
+      "dist_m" : 10005
+    },
+    {
+      "category" : "MKPOICategoryPharmacy",
+      "dist_m" : 8325,
+      "lat" : 28.690943000000001,
+      "name" : "Zeelab Pharmacy",
+      "lon" : 77.449019000000007,
+      "url" : "https:\/\/zeelabpharmacy.com",
+      "phone" : ""
+    },
+    {
+      "lat" : 28.701405999999999,
+      "phone" : "+91 97610 26221",
+      "category" : "MKPOICategoryPharmacy",
+      "lon" : 77.428504000000004,
+      "name" : "Shyam Medical Store",
+      "dist_m" : 8825,
+      "url" : ""
+    },
+    {
+      "lon" : 77.447833000000003,
+      "name" : "Apollo Pharmacy",
+      "lat" : 28.681647999999999,
+      "dist_m" : 9250,
+      "phone" : "+91 88269 91592",
+      "category" : "MKPOICategoryPharmacy",
+      "url" : "https:\/\/www.apollopharmacy.in"
+    },
+    {
+      "phone" : "",
+      "category" : "MKPOICategoryPharmacy",
+      "dist_m" : 11470,
+      "url" : "",
+      "name" : "Sampada Pharmacy",
+      "lon" : 77.440128000000001,
+      "lat" : 28.662407999999999
+    },
+    {
+      "category" : "MKPOICategoryPharmacy",
+      "lon" : 77.452179999999998,
+      "phone" : "+91 99103 95219",
+      "url" : "",
+      "lat" : 28.697323000000001,
+      "dist_m" : 7570,
+      "name" : "Sangeeta Medical Hall"
+    },
+    {
+      "lat" : 28.674305,
+      "url" : "",
+      "category" : "MKPOICategoryPharmacy",
+      "dist_m" : 10116,
+      "lon" : 77.444467000000003,
+      "phone" : "",
+      "name" : "Shree Lakshmi Medicos Pharmacy"
+    },
+    {
+      "lat" : 28.684692999999999,
+      "phone" : "",
+      "category" : "MKPOICategoryPharmacy",
+      "dist_m" : 11340,
+      "url" : "",
+      "name" : "Geet Medical Store",
+      "lon" : 77.410877999999997
+    },
+    {
+      "dist_m" : 12804,
+      "name" : "F.S. Medical Store",
+      "phone" : "",
+      "lat" : 28.662762000000001,
+      "url" : "",
+      "category" : "MKPOICategoryPharmacy",
+      "lon" : 77.415305000000004
+    },
+    {
+      "url" : "",
+      "dist_m" : 8074,
+      "name" : "Jummey Medical Store",
+      "lon" : 77.521981999999994,
+      "category" : "MKPOICategoryPharmacy",
+      "phone" : "+91 95409 89948",
+      "lat" : 28.682960999999999
+    },
+    {
+      "phone" : "+91 93139 38939",
+      "dist_m" : 9460,
+      "category" : "MKPOICategoryPharmacy",
+      "name" : "Pal Medical Store",
+      "lat" : 28.671641000000001,
+      "url" : "",
+      "lon" : 77.467016000000001
+    },
+    {
+      "lon" : 77.515536999999995,
+      "name" : "Health Care Pharmacy",
+      "phone" : "+91 99907 78326",
+      "lat" : 28.688451000000001,
+      "url" : "",
+      "dist_m" : 7320,
+      "category" : "MKPOICategoryPharmacy"
+    },
+    {
+      "phone" : "",
+      "lat" : 28.649160999999999,
+      "dist_m" : 13443,
+      "category" : "MKPOICategoryPharmacy",
+      "name" : "Man Medical Store",
+      "url" : "",
+      "lon" : 77.425837999999999
+    },
+    {
+      "lon" : 77.582336999999995,
+      "dist_m" : 8506,
+      "url" : "",
+      "lat" : 28.770716,
+      "name" : "Rihan Medical Store",
+      "category" : "MKPOICategoryPharmacy",
+      "phone" : ""
+    },
+    {
+      "name" : "The Chemist",
+      "dist_m" : 29332,
+      "url" : "",
+      "lat" : 28.741897000000002,
+      "category" : "MKPOICategoryPharmacy",
+      "phone" : "+91 98913 50074",
+      "lon" : 77.197633999999994
+    },
+    {
+      "phone" : "+91 11-22376534",
+      "url" : "https:\/\/www.aryavaidyasala.com",
+      "dist_m" : 22762,
+      "lon" : 77.297540999999995,
+      "category" : "MKPOICategoryStore",
+      "name" : "Arya Vaidya Sala Ayurvedic Centre",
+      "lat" : 28.647542999999999
+    },
+    {
+      "name" : "DNF Pharmaceuticals",
+      "category" : "MKPOICategoryPharmacy",
+      "lat" : 28.67595,
+      "url" : "",
+      "dist_m" : 13263,
+      "lon" : 77.393456,
+      "phone" : "+91 93151 32303"
+    },
+    {
+      "phone" : "+91 120-4157534",
+      "category" : "MKPOICategoryPharmacy",
+      "name" : "Bio Med",
+      "url" : "http:\/\/www.biomed.co.in\/",
+      "lon" : 77.455740000000006,
+      "lat" : 28.643080999999999,
+      "dist_m" : 12811
+    },
+    {
+      "dist_m" : 14066,
+      "lat" : 28.651478999999998,
+      "name" : "Zeelab Pharmacy",
+      "category" : "MKPOICategoryPharmacy",
+      "url" : "https:\/\/zeelabpharmacy.com",
+      "lon" : 77.410711000000006,
+      "phone" : "+91 88609 01912"
+    },
+    {
+      "phone" : "",
+      "url" : "",
+      "name" : "Lakshay Pharmacy",
+      "lon" : 77.426469999999995,
+      "category" : "MKPOICategoryPharmacy",
+      "dist_m" : 13817,
+      "lat" : 28.644898999999999
+    }
+  ]
+}

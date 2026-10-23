@@ -1,0 +1,9 @@
+all_pii                hidden  94.2% (570/605)
+names_photo            hidden  97.6% (163/167)
+names_scan             hidden  99.2% (132/133)
+patient_age            hidden  98.8% (252/255)
+patient_name           hidden  98.3% (295/300)
+patient_phone          hidden  46.0% (23/50)
+medicine lines over-blurred: 7.1% (73/1033)
+rule used: {'label': 256, 'fallback': 38, 'fallback_top_half': 6}
+name misses (first 12): [('s10_000003.jpg', np.float64(0.77), 'label'), ('s10_000036.jpg', np.float64(0.7), 'fallback'), ('s10_000078.jpg', np.float64(0.76), 'label'), ('s10_000195.jpg', np.float64(0.68), 'fallback'), ('s10_000262.jpg', np.float64(0.75), 'label')]

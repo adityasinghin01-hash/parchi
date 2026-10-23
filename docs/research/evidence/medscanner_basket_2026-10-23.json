@@ -1,0 +1,17 @@
+{"source":"medscanner.in, pincode 560095 (default), captured 23 Oct 2026 05:10 IST",
+ "items":{
+  "Dolo 650 (15 tabs)":{"mrp":32.12,"offers":{"Truemeds":25.70,"Medkart":30.67,"1mg":32.12,"MedPlus":32.28},"eta":{"Truemeds":"today 10 PM","Medkart":"3 days","1mg":"60 min","MedPlus":"120 min"}},
+  "Pan 40 tablet (15)":{"mrp":192.80,"offers":{"Truemeds":154.24,"Medkart":163.88,"PharmEasy":173.52,"1mg":192.80,"MedPlus":192.80},"note":"MedScanner 'BEST PRICE' shown = PAN IV 40MG INJECTION Rs 47.66 (wrong form)"},
+  "Telma 40 (30 tabs)":{"mrp":216.72,"offers":{"Truemeds":173.38,"Medkart":184.21,"PharmEasy":195.05,"MedPlus":216.72,"1mg":216.72},"note":"MedScanner 'BEST PRICE' = 10-tab pack Rs 60.33 (pack mismatch vs 30-tab MRP)"},
+  "Glycomet SR 500 (20)":{"mrp":42.24,"offers":{"Medkart":35.90,"PharmEasy":38.86,"MedPlus":42.24}},
+  "Azithral 500 (5)":{"mrp":126.73,"offers":{"Truemeds":101.38,"Medkart":107.72,"1mg":126.73,"MedPlus":126.73}},
+  "Montair LC (15)":{"mrp":419.79,"offers":{"Truemeds":335.83,"MedPlus":419.79,"1mg":419.79}}
+ },
+ "generic_alternatives_listed":{
+  "Paracetamol 650":{"name":"Cipmol 650 (10)","price":13.62,"seller":"Truemeds"},
+  "Pantoprazole 40":{"name":"Pantomerit 40 (10)","price":25.00,"seller":"Medkart"},
+  "Telmisartan 40":{"name":"Telmistatus 40 (10)","price":20.00,"seller":"Medkart"},
+  "Metformin SR 500":{"name":"Elneumet SR 500 (10)","price":18.00,"seller":"Medkart"},
+  "Azithromycin 500":{"name":"Azicip 500 (3)","price":42.58,"seller":"Truemeds"},
+  "Montelukast 10 + Levocetirizine 5":{"name":"Montecip LC (10)","price":128.74,"seller":"Truemeds"}
+ }}

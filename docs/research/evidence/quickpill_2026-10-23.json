@@ -1,0 +1,105 @@
+{
+ "captured": "2026-10-23 08:23-09:01 UTC, quickpill.in/upload, logged in",
+ "names_as_shown": {
+  "rx010.jpg": [
+   "Crocin DS",
+   "Meftal P",
+   "Allegra",
+   "Ambrolite S",
+   "Nasivion Paed Nasal"
+  ],
+  "rx011.jpg": [
+   "Meftal P",
+   "Enterogermina",
+   "Allegra",
+   "Montair",
+   "Zinconia",
+   "Nasoclear saline drops",
+   "Candid ear drops"
+  ],
+  "rx012.jpg": [],
+  "rx013.jpg": [
+   "Betadine mouth gargle",
+   "T. Acecloplus",
+   "Karvol Plus",
+   "Ascoril C",
+   "T. Augmentin 625mg",
+   "Sporlac sachet",
+   "Inj Dynapar"
+  ],
+  "rx014.jpg": [
+   "Inj Arachitol 6 Lac",
+   "Inj Nervidat 2500",
+   "Tab Supracal-OS",
+   "Tab Hadjod",
+   "Tab Atiz 10",
+   "Tab Cartigen Forte",
+   "Cap Uprise D3 60K"
+  ],
+  "rx015.jpg": [
+   "Laxopeg Sachet",
+   "Budecort Inhaler",
+   "Montair Tablet",
+   "Bevon Syrup"
+  ],
+  "rx016.jpg": [],
+  "rx017.jpg": [
+   "Clexane",
+   "Bortezomib"
+  ],
+  "rx018.jpg": [
+   "Aceclofenac Plus",
+   "Montair LC"
+  ],
+  "rx019.jpg": [
+   "Ecosprin",
+   "Clopitab",
+   "Tonact",
+   "Starpress XL",
+   "Ivabrad",
+   "Imdur",
+   "Gemer",
+   "Rivotril"
+  ],
+  "rx020.jpg": [],
+  "rx021.jpg": [
+   "Nervemax",
+   "Supracal-Pro",
+   "Uprise-D3 60k",
+   "Pantocid-L",
+   "Flexon-MR"
+  ],
+  "rx022.jpg": [
+   "Cordarone",
+   "Atarax",
+   "Oflox-OZ",
+   "VSL #3",
+   "Zedott",
+   "Bio D3 Max",
+   "Drotin-M"
+  ],
+  "rx023.jpg": [
+   "UNID 500",
+   "Zerodol-P"
+  ],
+  "rx024.jpg": [
+   "Tab. Saaz DS",
+   "Tab. Folitrax",
+   "Tab. Folvite",
+   "Rituximab"
+  ],
+  "rx025.jpg": [
+   "Tablet Allegra (120 mg)",
+   "Syrup Ambrolite S",
+   "Tablet Azithral (500 mg)",
+   "Sachet Pegura-17g"
+  ]
+ },
+ "not_run": [
+  "rx026.jpg",
+  "rx027.jpg",
+  "rx028.jpg",
+  "rx029.jpg"
+ ],
+ "reason": "site stopped loading (page.goto timeouts)"
+}
