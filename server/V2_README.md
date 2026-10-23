@@ -15,7 +15,8 @@ Own SQLite tables live in `v2_db.py` (same `PARCHI_DB` file, CREATE IF NOT EXIST
 - Refill: `POST /refill/watch` `{items:[{name,quantity,dosesPerDay|"1-0-1"}], startDate}` -> 201 `{refillID, daysLeft, runsOutOn, refillDueAt, items}`.
   `GET /refill/{id}/status` -> `{refillID, state: waiting|due|done|cancelled, refillDueAt, dueFiredAt}`.
   Extra: `POST /refill/{id}/done|cancel` (409 if already finished). Medicine names are not sent to Temporal.
-  Time scale from env `PARCHI_TIME_SCALE`; task queue from `PARCHI_TASK_QUEUE`.
+  Time scale from env `PARCHI_TIME_SCALE` (same meaning as orders/shop/lab: waits are MULTIPLIED, 0.01 = 100x faster; refill used to divide, fixed in K23); task queue from `PARCHI_TASK_QUEUE`.
+  "Delete everything" (`POST /reset`) terminates the install's running refill watches in Temporal (`refill.cancel_watches`).
 - True price: `POST /orders/{orderID}/paid` `{sellerID, paidPaise, itemsPaise?, pincode}`; `GET /true_price?seller=&pincode=`
   -> `{sellerID, pincode, reports, enough, medianExtraPaise}`; null until 3 reports that include `itemsPaise`.
   One report per (order, seller); only the same install may replace it. No name/phone stored.

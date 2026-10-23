@@ -4,6 +4,7 @@ from typing import Any
 from temporalio import activity
 
 import db
+import reliability
 
 
 @activity.defn
@@ -20,3 +21,10 @@ async def audit(order_id: str, actor: str, event: str, detail: dict[str, Any],
 @activity.defn
 async def store_approval(order_id: str, plan_version: int, approver: str, proposal_hash: str) -> None:
     await asyncio.to_thread(db.store_approval, order_id, plan_version, approver, proposal_hash)
+
+
+
+@activity.defn
+async def record_outcome(order_id: str, seller_id: str, area: str, outcome: str) -> bool:
+    """A1: count a finished placement once for (seller, area); a repeat or a deleted order counts nothing."""
+    return await asyncio.to_thread(reliability.record_order_outcome, order_id, seller_id, area, outcome)

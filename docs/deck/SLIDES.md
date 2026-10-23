@@ -61,13 +61,13 @@ Paths below are relative to the repository root. Newer fix reports and current c
 ## 8. Acceptance evidence, including the unfinished work
 
 - Recorded lab evidence, not a complete-product pass; final suite counts await Claude’s final run.
-- Suites: engine **148**, server **256**, app unit **86** (+1 skipped runner), app UI **24**, Python tools **34**. [source: docs/deck/NUMBERS-AUDIT.md]
+- Suites: engine **148**, server **329**, app unit **92** (+1 skipped runner), app UI **24**, Python tools **34**. [source: docs/deck/NUMBERS-AUDIT.md]
 - Live server Plan B loop: **3 times in a row, 72 checks, about 19 s**; proposal **about 1.9 s** after judge cancel. Shop/lab **11/11**; privacy/delete **5/5**, within their scripted scopes. [source: docs/verification/EVIDENCE-23-OCT-2026.md]
 
 | Acceptance row | Recorded status | What the evidence actually covers |
 |---|---|---|
-| T1 Engine | **PASS** (final run 24 Oct 01:20) | Engine 148; Python tools 34; app unit 86. [source: docs/deck/NUMBERS-AUDIT.md] |
-| T2 Orchestrator | **PASS** (final run 24 Oct 01:20) | Server 256; worker kill/restart recovery in the sandbox. [source: docs/verification/EVIDENCE-23-OCT-2026.md] |
+| T1 Engine | **PASS** (final run 24 Oct 02:04) | Engine 148; Python tools 34; app unit 92. [source: docs/deck/NUMBERS-AUDIT.md] |
+| T2 Orchestrator | **PASS** (final run 24 Oct 02:04) | Server 329; worker kill/restart recovery in the sandbox. [source: docs/verification/EVIDENCE-23-OCT-2026.md] |
 | T3 Cancellation and approval | **PASS, limited scope** | Live Simulator approval starts at Track; share-to-plan taps excluded. Final app UI count 24; the Mock cancel test has a recorded flake. [source: docs/verification/EVIDENCE-23-OCT-2026.md] [source: app/KIRO_REPORT_K14.md] |
 | T4 Shop auction | **PASS** | Timeout escalation on a test clock; live reply handling and shop quotes changing the plan. [source: docs/verification/EVIDENCE-23-OCT-2026.md] |
 | T5 Lab flow | **PARTIAL** | Server booking/reply/reminder works; Calendar/notifications still need a real phone. [source: docs/verification/EVIDENCE-23-OCT-2026.md] |

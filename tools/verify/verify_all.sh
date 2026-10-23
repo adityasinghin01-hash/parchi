@@ -19,7 +19,7 @@ if [ "${1:-}" != "--no-sync" ]; then
   ssh $HOST "mkdir -p /tmp/parchi_samples" && [ -d app/ParchiTests/Fixtures ] && scp -q app/ParchiTests/Fixtures/*.jpg $HOST:/tmp/parchi_samples/
 fi
 echo "=== 0 python tools (MacBook)"; python3 -m unittest tools/test_build_app_data.py tools/test_build_catalogue_prices.py 2>&1 | tail -3
-ssh $HOST "SERVER_DIR=$SERVER_DIR CODE_DIR=$CODE_DIR zsh -l -s" <<'REMOTE_SCRIPT'
+ssh $HOST "SERVER_DIR=$SERVER_DIR CODE_DIR=$CODE_DIR FLAKE_RUNS=${PARCHI_FLAKE_RUNS:-5} zsh -l -s" <<'REMOTE_SCRIPT'
 set -u
 LOG=/tmp/parchi_verify; mkdir -p $LOG
 echo "=== 1 server pytest"; cd ~/$SERVER_DIR/server && .venv/bin/python -m pytest -q 2>&1 | tail -1
@@ -29,7 +29,8 @@ for i in $(seq 1 40); do curl -sf localhost:8000/health >/dev/null && break; sle
 .venv/bin/python e2e_live.py --loops 3 2>&1 | tail -1
 .venv/bin/python live_p3_check.py 2>&1 | tail -1
 .venv/bin/python live_t8_privacy.py 2>&1 | tail -1
-[ -f browser_e2e.py ] && ~/pw-venv/bin/python browser_e2e.py 2>&1 | tail -3
+echo "--- real-browser end to end"; for PW in ~/pw-venv/bin/python ~/pw-venv2/bin/python; do [ -x $PW ] && [ -f browser_e2e.py ] && { $PW browser_e2e.py 2>&1 | tail -2; break; }; done
+[ -f live_automations_check.py ] && { echo "--- live automations (A1 A5 A6 A7 A8)"; .venv/bin/python live_automations_check.py 2>&1 | tail -2; }
 echo "=== 3 engine swift test"; cd ~/$CODE_DIR/engine/ParchiCore && swift test --scratch-path ~/.swiftpm-verify 2>&1 | grep -E "Test run with|✘" | tail -4
 echo "=== 4 app: unit + UI tests (Live tests use the keys on this machine)"
 cd ~/$CODE_DIR/app && xcodegen generate | tail -1
@@ -40,9 +41,9 @@ xcodebuild test -project Parchi.xcodeproj -scheme Parchi -destination 'platform=
 grep -E "Test Suite '.*' (passed|failed)|Executed [0-9]+ tests|\*\* TEST|error: " $LOG/app_test.log | grep -v "All tests\|xctest" | tail -40
 echo "=== 5 flake check: SimulateCancel x5"
 pass=0
-for n in 1 2 3 4 5; do
+for n in $(seq 1 $FLAKE_RUNS); do
   xcodebuild test-without-building -project Parchi.xcodeproj -scheme Parchi -destination 'platform=iOS Simulator,name=iPhone 17 Pro' -derivedDataPath ~/parchi-dd-verify -only-testing:ParchiUITests/SimulateCancelUITests > $LOG/sc_$n.log 2>&1 && pass=$((pass+1))
 done
-echo "SimulateCancel passed $pass of 5"
+echo "SimulateCancel passed $pass of $FLAKE_RUNS"
 echo "=== done"
 REMOTE_SCRIPT

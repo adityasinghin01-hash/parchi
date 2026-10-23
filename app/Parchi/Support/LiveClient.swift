@@ -105,10 +105,12 @@ struct LiveClient {
     }
 
     /// Returns the server's order ID. The same `idempotencyKey` always returns the same order.
-    func placeOrder(plan: Plan, sellers: [Seller], autoApproveCapPaise: Int? = nil, idempotencyKey: String) async throws -> String {
-        struct Body: Encodable { var plan: Plan; var sellers: [Seller]; var autoApproveCapPaise: Int? }
+    /// `area` is the city the person searches around: the server counts each seller's outcome for that area, which is what the
+    /// "Delivers about N of 10 in <city>" chip reads back (automation A1).
+    func placeOrder(plan: Plan, sellers: [Seller], autoApproveCapPaise: Int? = nil, area: String? = nil, idempotencyKey: String) async throws -> String {
+        struct Body: Encodable { var plan: Plan; var sellers: [Seller]; var autoApproveCapPaise: Int?; var area: String? }
         struct Reply: Decodable { var orderID: String }
-        let reply: Reply = try await send("POST", "order", body: Body(plan: plan, sellers: sellers, autoApproveCapPaise: autoApproveCapPaise),
+        let reply: Reply = try await send("POST", "order", body: Body(plan: plan, sellers: sellers, autoApproveCapPaise: autoApproveCapPaise, area: area),
                                           headers: ["Idempotency-Key": idempotencyKey])
         return reply.orderID
     }

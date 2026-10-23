@@ -562,7 +562,7 @@ final class AppModel {
         let autoApproveCap: Int? = cap > 0 ? cap : nil
         Task {
             do {
-                let id = try await client.placeOrder(plan: approved, sellers: sellers, autoApproveCapPaise: autoApproveCap, idempotencyKey: key)
+                let id = try await client.placeOrder(plan: approved, sellers: sellers, autoApproveCapPaise: autoApproveCap, area: areaName, idempotencyKey: key)
                 guard approvedPlan == approved else { return }   // the user moved on while we waited
                 liveOrderID = id
                 BackendUsage.markUsedLive()   // the server now holds an order for this install

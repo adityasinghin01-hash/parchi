@@ -1,6 +1,7 @@
 """K22: the phone-browser scan-and-read test page (GET /judge/scan, POST /judge/scan/read)."""
 import logging
 import re
+from pathlib import Path
 
 import httpx
 import pytest
@@ -181,3 +182,123 @@ def test_nothing_is_written_to_disk(api_client, reader, tmp_path, monkeypatch):
     assert scan_page.reader_label("http://u:p@10.0.0.5:9000/x?y=1") == "10.0.0.5:9000"
     assert scan_page.reader_label("http://localhost/read") == "localhost"
     assert os.environ.get("PARCHI_READER_URL")
+
+
+# ------------------------------------------------------------------ K28/17: stale answers are ignored
+def test_script_guards_against_stale_answers(api_client):
+    t = api_client.client.get("/judge/scan?k=judge-secret").text
+    script = t[t.index("<script>"):]
+    assert "var seq = 0" in script
+    assert script.count("++seq") >= 3                       # chosen(), read(), "Try another photo"
+    assert script.count("mine !== seq") >= 4 and "if (mine === seq) { inflight = null; busy = false;" in script   # prepare, reply, both catches, finally
+    assert "inflight.abort()" in script                     # choosing another photo cancels the request in flight
+    reply_at = script.index("raw = await r.text()")
+    assert script.index("if (mine !== seq) return;", reply_at) < script.index("show(data", reply_at), \
+        "the stale check must come before anything is shown"
+    assert "fd.append('image', sent" in script              # the photo that was clicked is the photo that is sent
+
+
+def test_scan_page_waits_65_seconds_and_server_60(api_client):
+    t = api_client.client.get("/judge/scan?k=judge-secret").text
+    assert "READ_WAIT_MS = 65000" in t and "no answer after 65 seconds" in t and "40000" not in t
+
+
+def test_reader_wait_defaults_to_60_seconds_on_read_and_scan(api_client, monkeypatch):
+    seen = []
+    real = httpx.AsyncClient
+
+    def spy(*args, **kwargs):
+        seen.append(kwargs.get("timeout"))
+        return real(*args, **kwargs)
+
+    monkeypatch.delenv("PARCHI_READER_TIMEOUT", raising=False)
+    monkeypatch.setenv("PARCHI_READER_URL", "http://reader.test/read")
+    monkeypatch.setattr(api, "READER_TRANSPORT", httpx.MockTransport(lambda req: httpx.Response(200, json={"lines": []})))
+    monkeypatch.setattr(httpx, "AsyncClient", spy)
+    assert post(api_client).status_code == 200
+    r = api_client.client.post("/read", headers={"X-Install-Key": api_client.key},
+                               files={"image": ("p.jpg", b"\xff\xd8x", "image/jpeg")})
+    assert r.status_code == 200
+    assert seen == [60.0, 60.0]
+    monkeypatch.setenv("PARCHI_READER_TIMEOUT", "75")
+    post(api_client)
+    assert seen[-1] == 75.0
+
+
+PW_PYTHON = Path.home() / "pw-venv2" / "bin" / "python"
+
+PW_SCRIPT = r"""
+import asyncio, json, struct, sys, zlib
+from playwright.async_api import async_playwright
+
+def png(w, h):
+    raw = b"".join(b"\x00" + b"".join(bytes([(x * 7 + y) % 256, 90, 160]) for x in range(w)) for y in range(h))
+    def chunk(t, d): c = struct.pack(">I", len(d)) + t + d; return c + struct.pack(">I", zlib.crc32(t + d) & 0xffffffff)
+    return b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", struct.pack(">IIBBBBB", w, h, 8, 2, 0, 0, 0)) + chunk(b"IDAT", zlib.compress(raw)) + chunk(b"IEND", b"")
+
+async def main():
+    html = open(sys.argv[1], encoding="utf8").read()
+    headers = json.loads(sys.argv[2])
+    requests = []
+    async with async_playwright() as pw:
+        browser = await pw.chromium.launch()
+        page = await browser.new_page()
+        async def route(r):
+            url = r.request.url
+            if url.endswith("/judge/scan/read"):
+                n = len(requests); requests.append(n)
+                if n == 0:
+                    await asyncio.sleep(2.0)   # photo A: a slow reading
+                    body = {"lines": [{"kind": "medicine", "name": "A-LIST-MEDICINE"}], "ms": 2000, "reader": "x"}
+                else:
+                    body = {"lines": [{"kind": "medicine", "name": "B-LIST-MEDICINE"}], "ms": 50, "reader": "x"}
+                await r.fulfill(status=200, content_type="application/json", body=json.dumps(body))
+            else:
+                await r.fulfill(status=200, headers=headers, body=html)
+        await page.route("**/*", route)
+        await page.goto("http://scan.test/judge/scan?k=k")
+        async def until(check, seconds=10):   # the page's CSP forbids eval, so no wait_for_function
+            for _ in range(int(seconds * 20)):
+                if await check():
+                    return
+                await asyncio.sleep(0.05)
+            raise SystemExit("timed out")
+        async def reading():
+            return (await page.text_content("#status")).startswith("Reading")
+        async def choose(w, h):
+            await page.set_input_files("#gal", {"name": "p.png", "mimeType": "image/png", "buffer": png(w, h)})
+            await until(lambda: page.locator("#read").is_enabled())
+        await choose(40, 30)                                   # photo A
+        await page.click("#read")                              # slow reading starts
+        await until(lambda: reading())
+        await choose(60, 45)                                   # photo B chosen while A is being read
+        preview_b = await page.text_content("#size")
+        await asyncio.sleep(2.6)                               # A's answer arrives now
+        out = {"after_stale": await page.inner_text("#result"), "status": await page.text_content("#status"),
+               "size_unchanged": preview_b == await page.text_content("#size"),
+               "read_enabled": await page.eval_on_selector("#read", "e => !e.disabled")}
+        await page.click("#read")                              # now read B
+        await page.wait_for_selector("#result table")
+        out["b_result"] = await page.inner_text("#result")
+        out["requests"] = len(requests)
+        await browser.close()
+    print("RESULT" + json.dumps(out))
+
+asyncio.run(main())
+"""
+
+
+@pytest.mark.skipif(not PW_PYTHON.exists(), reason="~/pw-venv2 (Playwright) is not on this computer")
+def test_browser_slow_answer_for_photo_a_is_not_shown_under_photo_b(tmp_path):
+    import json
+    import subprocess
+    (tmp_path / "page.html").write_text(scan_page.PAGE, encoding="utf-8")
+    (tmp_path / "check.py").write_text(PW_SCRIPT, encoding="utf-8")
+    done = subprocess.run([str(PW_PYTHON), str(tmp_path / "check.py"), str(tmp_path / "page.html"), json.dumps(scan_page.HEADERS)],
+                          capture_output=True, text=True, timeout=120)
+    line = next((ln for ln in done.stdout.splitlines() if ln.startswith("RESULT")), None)
+    assert line, done.stdout + done.stderr
+    out = json.loads(line[len("RESULT"):])
+    assert "A-LIST-MEDICINE" not in out["after_stale"] and out["after_stale"].strip() == "", out
+    assert not out["status"].startswith("Reading") and out["size_unchanged"] and out["read_enabled"], out
+    assert "B-LIST-MEDICINE" in out["b_result"] and "A-LIST-MEDICINE" not in out["b_result"] and out["requests"] == 2, out

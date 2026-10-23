@@ -4,6 +4,7 @@ from typing import Any
 
 from temporalio import workflow
 from temporalio.common import RetryPolicy
+from temporalio.exceptions import ActivityError
 
 with workflow.unsafe.imports_passed_through():
     import hashlib
@@ -34,6 +35,8 @@ class OrderWorkflow:
         self.catalog: dict[str, dict[str, Any]] = {}
         self.cap: int | None = None
         self.scale: float = 1
+        self.area = ""
+        self.record_reliability = False
         self.plan_version = 1
         self.state = "placed"
         self.sellers: dict[str, dict[str, Any]] = {}
@@ -85,6 +88,9 @@ class OrderWorkflow:
         self.catalog = {s["id"]: s for s in data["sellers"]}
         self.cap = data.get("auto_approve_cap_paise")
         self.scale = data.get("time_scale") or 1
+        self.area = data.get("area") or ""
+        # Orders already running when this was added replay without the new activity.
+        self.record_reliability = workflow.patched("record-reliability-v1")
         ids = list(dict.fromkeys(row["sellerID"] for row in self.plan["lines"]))
         # The only parallel mutations; the (order, seller, version) key makes retries safe.
         results = await asyncio.gather(*[self.place(sid, 1) for sid in ids])
@@ -142,6 +148,17 @@ class OrderWorkflow:
         await workflow.execute_activity(
             activities.audit, args=[self.order_id, actor, event, detail, self.plan_version, self.seq],
             start_to_close_timeout=TIMEOUT, retry_policy=RETRY)
+
+    async def record_outcome(self, sid: str, outcome: str) -> None:
+        """A1 reliability: once per (order, seller, outcome); the activity dedupes. Never blocks the order."""
+        if not self.record_reliability:
+            return
+        try:
+            await workflow.execute_activity(
+                activities.record_outcome, args=[self.order_id, sid, self.area, outcome],
+                start_to_close_timeout=TIMEOUT, retry_policy=RETRY)
+        except ActivityError:
+            pass
 
     async def ignore(self, signal: str, reason: str, **detail: Any) -> None:
         await self.audit("workflow", "ignored_signal", {"signal": signal, "reason": reason, **detail})
@@ -210,6 +227,8 @@ class OrderWorkflow:
         if kind == "delivered":
             s["confirm_due"] = s["late_due"] = None
         await self.audit("seller", kind, {"sellerID": sid})
+        if kind == "delivered":
+            await self.record_outcome(sid, "delivered")
 
     async def fail(self, sid: str, kind: str) -> None:
         s = self.sellers[sid]
@@ -223,6 +242,7 @@ class OrderWorkflow:
         else:
             self.set_pending(failure)
         await self.audit("workflow", "failure", {**failure, "queued": queued})
+        await self.record_outcome(sid, kind)
 
     async def on_proposal_signal(self, version: Any, proposal: Any) -> None:
         if version != self.plan_version or type(version) is not int:

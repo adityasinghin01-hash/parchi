@@ -14,6 +14,13 @@ CREATE TABLE IF NOT EXISTS seller_reliability (
     ok INTEGER NOT NULL DEFAULT 0, total INTEGER NOT NULL DEFAULT 0,
     PRIMARY KEY (area, seller_id), CHECK (ok >= 0 AND total >= ok)
 );
+-- Dedupe keys for reliability: sha256(order|seller|outcome), one way. install_id only lets
+-- "Delete everything" clear this install's keys; the counts above carry no install or order id.
+CREATE TABLE IF NOT EXISTS reliability_seen (
+    key TEXT PRIMARY KEY, install_id TEXT NOT NULL DEFAULT '',
+    created TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ','now'))
+);
+CREATE INDEX IF NOT EXISTS reliability_seen_install ON reliability_seen(install_id);
 CREATE TABLE IF NOT EXISTS true_price_reports (
     order_id TEXT NOT NULL, seller_id TEXT NOT NULL, pincode TEXT NOT NULL,
     paid_paise INTEGER NOT NULL, items_paise INTEGER,
@@ -43,6 +50,32 @@ def bump_reliability(area: str, seller_id: str, ok: bool) -> tuple[int, int]:
         row = conn.execute("SELECT ok,total FROM seller_reliability WHERE area=? AND seller_id=?",
                            (area, seller_id)).fetchone()
         return row["ok"], row["total"]
+
+
+def bump_reliability_once(key: str, area: str, seller_id: str, ok: bool, order_id: str,
+                          live_order_only: bool) -> tuple[bool, int, int]:
+    """Count one outcome unless `key` was counted before. Returns (counted, ok, total).
+
+    The key and the count are written in one transaction, so replays, retries and a second
+    process cannot count twice. With `live_order_only` (the workflow path) nothing is counted
+    unless the order still exists and is not being deleted, so a reset wins against late retries.
+    """
+    with connect() as conn:
+        if live_order_only:
+            cur = conn.execute("""INSERT OR IGNORE INTO reliability_seen(key,install_id)
+                                  SELECT ?, install_id FROM orders WHERE order_id=? AND deleting=0""",
+                               (key, order_id))
+        else:
+            cur = conn.execute("""INSERT OR IGNORE INTO reliability_seen(key,install_id)
+                                  VALUES (?, COALESCE((SELECT install_id FROM orders WHERE order_id=?),''))""",
+                               (key, order_id))
+        if cur.rowcount == 1:
+            conn.execute("INSERT OR IGNORE INTO seller_reliability(area,seller_id) VALUES (?,?)", (area, seller_id))
+            conn.execute("UPDATE seller_reliability SET total=total+1, ok=ok+? WHERE area=? AND seller_id=?",
+                         (1 if ok else 0, area, seller_id))
+        row = conn.execute("SELECT ok,total FROM seller_reliability WHERE area=? AND seller_id=?",
+                           (area, seller_id)).fetchone()
+        return cur.rowcount == 1, (row["ok"] if row else 0), (row["total"] if row else 0)
 
 
 def reliability_counts(area: str, seller_id: str | None = None) -> list[dict[str, Any]]:
@@ -87,11 +120,13 @@ def median_int(values: list[int]) -> int:
 
 
 def delete_install(install_id: str) -> None:
-    """Privacy: 'Delete everything' removes this install's true-price reports (reliability counts are aggregate, no install id)."""
+    """Privacy: 'Delete everything' removes this install's true-price reports (reliability counts are aggregate, no install id, and stay; only the dedupe keys go)."""
     with connect() as conn:
         conn.execute("DELETE FROM true_price_reports WHERE reporter=?", (install_id,))
+        conn.execute("DELETE FROM reliability_seen WHERE install_id=?", (install_id,))
 
 
 def delete_all() -> None:
     with connect() as conn:
         conn.execute("DELETE FROM true_price_reports")
+        conn.execute("DELETE FROM reliability_seen")

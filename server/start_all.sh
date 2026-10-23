@@ -11,7 +11,7 @@ fi
 # The Claude reader only runs (and the API only points at it) when a key exists; otherwise /read answers 503 as before.
 if bash start_reader.sh; then
   export PARCHI_READER_URL="http://127.0.0.1:8100/read"
-  export PARCHI_READER_TIMEOUT=75   # reader allows 60 s + one retry
+  export PARCHI_READER_TIMEOUT="${PARCHI_READER_TIMEOUT:-60}"   # end-to-end budget: reader 50 s < server/scan page 60 s < app 65 s
 fi
 bash run.sh
 sleep 3

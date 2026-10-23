@@ -1,5 +1,7 @@
 """A local stand-in for api.anthropic.com/v1/messages, for proving the chain without a key or money.
-  .venv/bin/python tests/stub_anthropic.py 8199        (then PARCHI_ANTHROPIC_BASE_URL=http://127.0.0.1:8199)
+  .venv/bin/python tests/stub_anthropic.py 8199
+  then start the reader with PARCHI_ANTHROPIC_BASE_URL=http://127.0.0.1:8199 AND PARCHI_READER_TEST_UPSTREAM=1.
+Without the second variable the reader treats every call as real spending (counted and capped), as it must.
 GET /last shows what the reader sent (image data replaced by its length), so parameters can be inspected.
 """
 import json

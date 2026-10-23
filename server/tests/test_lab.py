@@ -443,3 +443,12 @@ def test_workflow_ends_when_the_lab_declines(temporal_env, isolated_db):
             result = await handle.result()
         assert result["state"] == "rejected" and db_state(bid)["state"] == "rejected"
     temporal_env[0].run(scenario(temporal_env[1]))
+
+
+def test_form_reposted_after_answer_says_already_sent_not_error(ctx):
+    # K20: reloading the thank-you page re-posts the form.
+    data = book(ctx)
+    assert ctx.client.post("/lab/reply/" + data["token"], content="action=confirm", headers=FORM).status_code == 200
+    again = ctx.client.post("/lab/reply/" + data["token"], content="action=decline", headers=FORM)
+    assert again.status_code == 409 and "already sent" in again.text and "Could not send" not in again.text
+    assert status(ctx, data["bookingID"])["state"] == "confirmed"

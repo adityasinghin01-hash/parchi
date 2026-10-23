@@ -131,7 +131,9 @@ async def create_order(
         raise HTTPException(409, str(error) if "deleted" in str(error) else "order unavailable")
     data = {"order_id": order_id, "install_id": install_id, "plan": body["plan"],
             "sellers": body["sellers"], "auto_approve_cap_paise": body.get("autoApproveCapPaise"),
-            "time_scale": float(os.environ.get("PARCHI_TIME_SCALE", "1"))}
+            "time_scale": float(os.environ.get("PARCHI_TIME_SCALE", "1")),
+            # Reliability area: the order's area, else city, else pincode; none = the default area.
+            "area": next((body[k] for k in contract.AREA_KEYS if body.get(k)), None) or reliability.DEFAULT_AREA}
     created = True
     try:
         await temporal.start_workflow(
@@ -329,7 +331,7 @@ async def read(image: UploadFile | None = File(None), _: str = Depends(auth.requ
     if len(data) > READER_MAX_BYTES:
         raise HTTPException(413, "image too large")
     try:
-        async with httpx.AsyncClient(timeout=float(os.environ.get("PARCHI_READER_TIMEOUT", "20")), transport=READER_TRANSPORT) as client:
+        async with httpx.AsyncClient(timeout=float(os.environ.get("PARCHI_READER_TIMEOUT", "60")), transport=READER_TRANSPORT) as client:
             reply = await client.post(reader, files={"image": ("parchi", data, image.content_type)})
     except httpx.HTTPError:
         raise HTTPException(503, "reader not connected")

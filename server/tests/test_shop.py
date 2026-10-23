@@ -132,6 +132,31 @@ def test_ask_max_nine_shops(ctx):
     assert ctx.client.post("/shop/ask", headers=ctx.h, json=ask_body(9)).status_code == 201
 
 
+def test_quantity_ceiling_is_999_the_same_number_the_app_uses(ctx):
+    """K29: the app's Add sheet, its clamp and its ask body all stop at 999."""
+    def with_quantity(n):
+        body = ask_body(1)
+        body["items"][0]["quantity"] = n
+        return ctx.client.post("/shop/ask", headers=ctx.h, json=body).status_code
+    assert with_quantity(999) == 201
+    assert with_quantity(1000) == 422
+
+
+def test_apple_maps_shop_is_stored_only_as_opaque_id_and_generic_name(ctx, isolated_db):
+    """K29: the phone sends `map-` + 12 hex, "Shop near you N" and no distance for a shop found on Apple Maps."""
+    body = ask_body(2)
+    body["shops"] = [{"shopID": "map-0a1b2c3d4e5f", "name": "Shop near you 1"},
+                     {"shopID": "map-ffeeddccbbaa", "name": "Shop near you 2", "phone": "+910000000000"}]
+    response = ctx.client.post("/shop/ask", headers=ctx.h, json=body)
+    assert response.status_code == 201
+    assert [l["shopID"] for l in response.json()["replyLinks"]] == ["map-0a1b2c3d4e5f", "map-ffeeddccbbaa"]
+    with p3_db.connect() as conn:
+        rows = [tuple(r) for r in conn.execute("SELECT shop_id, name, distance_m FROM shop_shops ORDER BY position")]
+    assert rows == [("map-0a1b2c3d4e5f", "Shop near you 1", None), ("map-ffeeddccbbaa", "Shop near you 2", None)]
+    st = status(ctx, response.json()["askID"])
+    assert [s["shopID"] for s in st["shops"]] == ["map-0a1b2c3d4e5f", "map-ffeeddccbbaa"]
+
+
 def test_ask_rolled_back_when_temporal_is_down(ctx):
     ctx.temporal.fail_start = True
     assert ctx.client.post("/shop/ask", headers=ctx.h, json=ask_body()).status_code == 503
@@ -480,3 +505,21 @@ def test_workflow_time_scale_shrinks_the_wait(temporal_env, isolated_db):
             assert snap["nextGroup"] == ["s4"]
             await handle.terminate("test cleanup")
     temporal_env[0].run(scenario(temporal_env[1]))
+
+
+def test_form_reposted_after_reply_says_already_sent_not_error(ctx):
+    # K20: a phone reload of the thank-you page re-posts the form; the user must not see "Could not send".
+    data = make_ask(ctx)
+    t1 = token_of(data["replyLinks"][0])
+    form = "a0=1&p0=12.50&a1=0&p1=&readyBy=18%3A30"
+    headers = {"content-type": "application/x-www-form-urlencoded"}
+    assert ctx.client.post("/shop/reply/" + t1, content=form, headers=headers).status_code == 200
+    again = ctx.client.post("/shop/reply/" + t1, content=form, headers=headers)
+    assert again.status_code == 409 and "already sent" in again.text and "Could not send" not in again.text
+    assert shop_state(ctx, data["askID"], "s1")["items"][0]["pricePaise"] == 1250   # first reply untouched
+
+
+def test_inputs_cannot_push_the_phone_page_sideways():
+    # K20: a datetime-local input stuck out of its card at 390 px; labels wrap and inputs may shrink.
+    assert "flex-wrap:wrap" in shop.CSS and "min-width:0" in shop.CSS
+    assert "overflow-wrap:anywhere" in shop.CSS   # a 100-letter name without spaces was 1200 px wide

@@ -8,6 +8,7 @@ from typing import Any, Callable
 
 from fastapi import APIRouter, Body, Depends, FastAPI, HTTPException, Query
 
+import db
 import v2_db
 
 MIN_REPORTS = 3
@@ -33,6 +34,13 @@ def report_paid(order_id: str, body: dict[str, Any], reporter: str) -> None:
     pincode = body.get("pincode")
     if not isinstance(pincode, str) or not PINCODE.fullmatch(pincode):
         raise ValueError("pincode must be 6 digits")
+    order = db.get_order(order_id)
+    if order is None:
+        # K30: always strict. A report must reference an order that exists (sandbox orders are real rows too).
+        raise ValueError("order not found")
+    if order["install_id"] != reporter:
+        # A real order can only be reported by the install that placed it (else B could pre-claim A's order id).
+        raise ValueError("report belongs to another install")
     paid = _paise(body.get("paidPaise"), "paidPaise", True)
     items = _paise(body.get("itemsPaise"), "itemsPaise", False)
     v2_db.save_report(order_id, seller, pincode, paid, items, reporter)
@@ -55,7 +63,7 @@ def register(app: FastAPI, get_temporal: Callable, get_install_id: Callable) -> 
         try:
             report_paid(order_id, body, install_id)
         except ValueError as error:
-            status = 409 if "another install" in str(error) else 422
+            status = 409 if "another install" in str(error) else 404 if "not found" in str(error) else 422
             raise HTTPException(status, str(error))
         return {"ok": True}
 

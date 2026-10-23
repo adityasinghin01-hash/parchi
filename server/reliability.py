@@ -4,6 +4,7 @@ score = (ok + PRIOR_OK) / (total + PRIOR_TOTAL) = (ok + 4) / (total + 5).
 That is a neutral prior of 0.8 (as if every seller had 4 good orders out of 5 already), so one
 bad first order drops a seller to 0.667 instead of 0, and a new seller is never ranked as perfect.
 """
+import hashlib
 from typing import Any, Callable
 
 from fastapi import APIRouter, Body, Depends, FastAPI, HTTPException, Query, Request
@@ -15,6 +16,7 @@ import v2_db
 PRIOR_OK = 4
 PRIOR_TOTAL = 5
 PRIOR_SCORE = PRIOR_OK / PRIOR_TOTAL
+DEFAULT_AREA = "unknown"  # used when an order carries no area / city / pincode
 OK_OUTCOMES = {"ok", "delivered"}
 FAIL_OUTCOMES = contract.FAILURES | {"fail"}
 
@@ -37,12 +39,46 @@ def is_ok(outcome: Any) -> bool:
     raise ValueError("outcome must be ok, delivered, fail or one of " + ", ".join(sorted(contract.FAILURES)))
 
 
-def record(area: str, seller: str, outcome: str) -> float:
-    """Count one order for (area, seller); returns the new score."""
+def check_seller(seller: Any) -> None:
     if not isinstance(seller, str) or not seller or len(seller) > 256:
         raise ValueError("invalid sellerID")
-    ok, total = v2_db.bump_reliability(normalize_area(area), seller, is_ok(outcome))
+
+
+def dedupe_key(order_id: str, seller: str, outcome: str) -> str:
+    """One-way key for "this order's outcome for this seller was counted" (ok == delivered)."""
+    canonical = "delivered" if outcome in OK_OUTCOMES else outcome
+    return hashlib.sha256(f"{order_id}\n{seller}\n{canonical}".encode()).hexdigest()
+
+
+def record(area: str, seller: str, outcome: str, order_id: str | None = None) -> float:
+    """Count one order for (area, seller); returns the new score.
+
+    With `order_id` the outcome is counted once per (order, seller, outcome): the workflow
+    already records finished orders, so a manual call for the same one changes nothing.
+    """
+    check_seller(seller)
+    area, good = normalize_area(area), is_ok(outcome)
+    if order_id is None:
+        ok, total = v2_db.bump_reliability(area, seller, good)
+    else:
+        if not isinstance(order_id, str) or not order_id or len(order_id) > 128:
+            raise ValueError("invalid orderID")
+        _, ok, total = v2_db.bump_reliability_once(dedupe_key(order_id, seller, outcome), area, seller,
+                                                   good, order_id, live_order_only=False)
     return compute_score(ok, total)
+
+
+def record_order_outcome(order_id: str, seller: str, area: Any, outcome: str) -> bool:
+    """Workflow path: count a finished placement once. Returns False if it was already counted
+    (replay, retry, restart, duplicate signal) or the order is gone (reset)."""
+    check_seller(seller)
+    try:
+        area = normalize_area(area)
+    except ValueError:
+        area = DEFAULT_AREA
+    counted, _, _ = v2_db.bump_reliability_once(dedupe_key(order_id, seller, outcome), area, seller,
+                                                is_ok(outcome), order_id, live_order_only=True)
+    return counted
 
 
 def score(area: str, seller: str) -> float:
@@ -90,7 +126,7 @@ def register(app: FastAPI, get_temporal: Callable, get_install_id: Callable) -> 
     @router.post("/judge/reliability/record", dependencies=[Depends(admin)])
     async def judge_record(body: dict[str, Any] = Body(...)) -> dict[str, Any]:
         try:
-            new = record(body.get("area"), body.get("sellerID"), body.get("outcome"))
+            new = record(body.get("area"), body.get("sellerID"), body.get("outcome"), body.get("orderID"))
         except ValueError as error:
             raise HTTPException(422, str(error))
         return {"ok": True, "score": round(new, 4)}

@@ -32,18 +32,18 @@ async def until(handle, predicate):
 
 
 @asynccontextmanager
-async def order(env, db, current=None, cap=None, metadata=None):
+async def order(env, db, current=None, cap=None, metadata=None, area=None):
     oid = uuid4().hex
     queue = "test-" + oid
     db.reserve_order(oid, "phone")
     async with Worker(env.client, task_queue=queue, workflows=[OrderWorkflow],
                       activities=[activities.place_order, activities.audit,
-                                  activities.store_approval]):
+                                  activities.store_approval, activities.record_outcome]):
         handle = await env.client.start_workflow(
             OrderWorkflow.run,
             {"order_id": oid, "install_id": "phone", "plan": current or plan(),
              "sellers": metadata or sellers(), "auto_approve_cap_paise": cap,
-             "time_scale": 1}, id="order-" + oid, task_queue=queue,
+             "time_scale": 1, **({"area": area} if area else {})}, id="order-" + oid, task_queue=queue,
         )
         await until(handle, lambda s: s["ready"])
         try:

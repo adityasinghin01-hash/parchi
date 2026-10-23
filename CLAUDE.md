@@ -33,7 +33,7 @@ Training: KIET DGX (1×A100 40 GB) / Jarvis (A100 80 GB, emergency) / Kaggle (fr
 | Untrained Qwen2.5-VL-3B (MLX, M1), first 30 MIRAGE | 13.6% recall, 26.2% precision, ~20 s/parchi |
 | Synthetic generator difficulty (messy 2/3) | Apple Vision 26.9% vs real 26.3% |
 | Patient-name blur | 98.3% hidden (300 new synthetic), 12/12 real web photos |
-| Planner on real prices | cheapest whole plan ₹2,697, Plan B +₹166; engine suite 148 Swift tests pass, server 256 pytest pass, app 86 unit + 24 UI tests pass (full run 24 Oct 01:20) |
+| Planner on real prices | cheapest whole plan ₹2,697, Plan B +₹166; engine suite 148 Swift tests pass, server 329 pytest pass, app 92 unit + 24 of 24 UI tests pass (full run 24 Oct 02:04) |
 | Jan Aushadhi equivalent exists | 55.7% of 327 MIRAGE medicine mentions with the app's matcher (the Python heuristic says 57.2%); use 55.7% |
 
 ## Who owns what

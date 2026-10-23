@@ -23,7 +23,8 @@ def wait_up(url):
 
 @pytest.fixture
 def chain(tmp_path):
-    env = {"PATH": "/usr/bin:/bin", "ANTHROPIC_API_KEY": "fake-test-key", "PARCHI_ANTHROPIC_BASE_URL": "http://127.0.0.1:18199"}
+    env = {"PATH": "/usr/bin:/bin", "ANTHROPIC_API_KEY": "fake-test-key", "PARCHI_ANTHROPIC_BASE_URL": "http://127.0.0.1:18199",
+           "PARCHI_READER_TEST_UPSTREAM": "1"}  # the stub is free only with this explicit flag (K28/14)
     stub = subprocess.Popen([sys.executable, str(SERVER / "tests" / "stub_anthropic.py"), "18199"], env=env)
     reader = subprocess.Popen([sys.executable, "-m", "uvicorn", "reader_claude:app", "--host", "127.0.0.1", "--port", "18100",
                                "--log-level", "warning"], cwd=SERVER, env=env)

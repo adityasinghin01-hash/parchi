@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 # Idempotent: starts the Claude reader on 127.0.0.1:8100 ONLY if a key exists. Logs (no content) go to data/reader.log.
+# The reader never starts in "free" mode by itself: PARCHI_ANTHROPIC_BASE_URL alone is counted and capped like the real API;
+# only a local stub needs PARCHI_READER_TEST_UPSTREAM=1 together with PARCHI_ANTHROPIC_BASE_URL (never set it for real use).
 # Exit 0 = running (started now or already), 3 = no key so nothing started.
 set -euo pipefail
 umask 077
 cd "$(dirname "$0")"
 mkdir -p data
+unset ANTHROPIC_LOG   # the SDK would log the whole request, photo included, at debug (K28/15)
 PY=.venv/bin/python
 [ -x "$PY" ] || PY=python3
 

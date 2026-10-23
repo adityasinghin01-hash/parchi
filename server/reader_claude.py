@@ -9,15 +9,48 @@ import asyncio
 import base64
 import json
 import logging
+import math
 import os
 import re
 import threading
 import time
 from pathlib import Path
+from urllib.parse import urlsplit
 
-import anthropic
-from fastapi import FastAPI, File, HTTPException, Request, UploadFile
-from fastapi.responses import JSONResponse
+# K28/15: the SDK reads ANTHROPIC_LOG when it is imported and at "debug" it logs the whole request, including the
+# base64 photo. Remove it BEFORE the import, then (below) pin the SDK/HTTP loggers to WARNING with a filter.
+os.environ.pop("ANTHROPIC_LOG", None)
+
+import anthropic  # noqa: E402
+from fastapi import FastAPI, File, HTTPException, Request, UploadFile  # noqa: E402
+from fastapi.responses import JSONResponse  # noqa: E402
+
+_QUIET_LOGGERS = ("anthropic", "httpx", "httpx2", "httpcore")
+
+
+class _DropBelowWarning(logging.Filter):
+    """Drops DEBUG/INFO records of the SDK and HTTP libraries (their debug lines carry the request body)."""
+
+    def filter(self, record: logging.LogRecord) -> bool:
+        return record.levelno >= logging.WARNING or not record.name.split(".")[0] in _QUIET_LOGGERS
+
+
+def silence_sdk_logging() -> None:
+    """Idempotent. A logger filter only sees records logged directly on that logger, so the filter is also put on every
+    existing child logger and on the root handlers (where child records end up); levels are forced to WARNING."""
+    flt = _DropBelowWarning()
+    names = [n for n in logging.root.manager.loggerDict if n.split(".")[0] in _QUIET_LOGGERS] + list(_QUIET_LOGGERS)
+    for name in names:
+        lg = logging.getLogger(name)
+        lg.setLevel(logging.WARNING)
+        if not any(isinstance(f, _DropBelowWarning) for f in lg.filters):
+            lg.addFilter(flt)
+    for handler in logging.root.handlers:
+        if not any(isinstance(f, _DropBelowWarning) for f in handler.filters):
+            handler.addFilter(flt)
+
+
+silence_sdk_logging()
 
 log = logging.getLogger("reader_claude")
 if not log.handlers:  # uvicorn does not configure app loggers; only counts, status codes and timings are ever logged
@@ -30,13 +63,18 @@ DEFAULT_MODEL = "claude-opus-5-5"
 MAX_IMAGE_BYTES = 2_000_000
 ALLOWED_TYPES = {"image/jpeg", "image/png", "image/heic"}
 KEY_FILE = Path(__file__).resolve().parent / "data" / "anthropic.key"
-CONNECT_TIMEOUT_S = 20
-TOTAL_TIMEOUT_S = 60
+# One end-to-end budget (K28/16): app waits 65 s > server /read and scan page wait 60 s > reader deadline 50 s (+ small
+# connect/write slack). The deadline covers the retry; the retry only happens if at least MIN_RETRY_REMAINING_S are left.
+CONNECT_TIMEOUT_S = 10
+TOTAL_DEADLINE_S = 50
+MIN_RETRY_REMAINING_S = 15
 RETRY_DELAY_S = 1.0
 INR_PER_USD = 88
 # Hard stop for REAL spending (the user's limit is Rs 500; a $5 top-up). Counted across restarts in data/reader_spend.json.
 SPEND_CAP_USD = float(os.environ.get("PARCHI_SPEND_CAP_USD", "4.5"))
 SPEND_FILE = Path(os.environ.get("PARCHI_SPEND_FILE") or Path(__file__).resolve().parent / "data" / "reader_spend.json")
+# Worst-case USD reserved BEFORE each real call (K28/12), released/reconciled with the real cost afterwards.
+RESERVE_USD = {"claude-opus-5-5": 0.06, "claude-sonnet-5-5": 0.03, "claude-haiku-5-5": 0.005}
 MAX_LINES = 30
 MAX_NAME_CHARS = 80
 MAX_FIELD_CHARS = 40
@@ -174,32 +212,75 @@ def _get_client():
         if _client_cache is None or _client_cache[0] != fingerprint:
             _client_cache = (fingerprint, anthropic.Anthropic(
                 api_key=key, base_url=base_url, max_retries=0,
-                timeout=anthropic.Timeout(TOTAL_TIMEOUT_S, connect=CONNECT_TIMEOUT_S)))
+                timeout=anthropic.Timeout(TOTAL_DEADLINE_S, connect=CONNECT_TIMEOUT_S)))
         return _client_cache[1]
 
 
+def _price_key(model: str) -> str:
+    return model if model in PRICES else next((name for name in PRICES if model.startswith(name)), DEFAULT_MODEL)
+
+
+def reserve_estimate(model: str) -> float:
+    """Worst-case USD for one call. PARCHI_RESERVE_USD (a positive number) overrides the per-model table."""
+    try:
+        override = float(os.environ.get("PARCHI_RESERVE_USD", ""))
+        if math.isfinite(override) and override > 0:
+            return override
+    except ValueError:
+        pass
+    return RESERVE_USD[_price_key(model)]
+
+
+class SpendRefused(HTTPException):
+    def __init__(self, detail: str) -> None:
+        super().__init__(503, detail)
+
+
 class Usage:
+    EPS = 1e-9
+
     def __init__(self) -> None:
         self.lock = threading.Lock()
         self.reset()
+        self.reserved = 0.0
+        self.ledger_ok = True      # False = cannot read or write the spend file: real calls are refused (fail closed)
+        self.refusals = 0
+        self.lifetime_usd = 0.0
         self.lifetime_usd = self._load()
 
-    @staticmethod
-    def _load() -> float:
+    def _load(self) -> float:
+        """A missing file is the first start (= 0). Anything else that is not a clean non-negative number fails closed."""
         try:
-            return max(0.0, float(json.loads(SPEND_FILE.read_text(encoding="utf-8"))["usd"]))
-        except (OSError, ValueError, KeyError, TypeError):
-            return 0.0
+            text = SPEND_FILE.read_text(encoding="utf-8")
+        except FileNotFoundError:
+            self.ledger_ok = True
+            return self.lifetime_usd
+        except OSError:
+            self.ledger_ok = False
+            return self.lifetime_usd
+        try:
+            raw = json.loads(text)["usd"]
+            if isinstance(raw, bool):
+                raise ValueError
+            value = float(raw)
+            if not math.isfinite(value) or value < 0:
+                raise ValueError
+        except (ValueError, KeyError, TypeError):
+            self.ledger_ok = False
+            return self.lifetime_usd
+        self.ledger_ok = True
+        return max(value, self.lifetime_usd)
 
-    def _save(self) -> None:
-        try:  # best effort; the prepaid balance is the real limit
+    def _save(self) -> bool:
+        try:
             SPEND_FILE.parent.mkdir(parents=True, exist_ok=True)
             tmp = SPEND_FILE.with_suffix(".tmp")
             tmp.write_text(json.dumps({"usd": round(self.lifetime_usd, 6)}), encoding="utf-8")
             os.chmod(tmp, 0o600)
             os.replace(tmp, SPEND_FILE)
+            return True
         except OSError:
-            log.warning("could not save the spend counter")
+            return False
 
     def reset(self) -> None:
         self.calls = 0
@@ -208,23 +289,67 @@ class Usage:
         self.cost_usd = 0.0
         self.since = time.strftime("%Y-%m-%dT%H:%M:%S%z")
 
-    def add(self, model: str, input_tokens: int, output_tokens: int) -> None:
-        price_in, price_out = PRICES.get(model) or next(
-            (p for name, p in PRICES.items() if model.startswith(name)), PRICES[DEFAULT_MODEL])
+    def _refuse(self, detail: str, why: str) -> None:
+        self.refusals += 1
+        log.warning("%s; refusing a real call (refusals=%d)", why, self.refusals)
+        raise SpendRefused(detail)
+
+    def reserve(self, model: str) -> float:
+        """Atomically set aside the worst-case cost of one call BEFORE it is dispatched. Returns the amount (0 when the
+        call is free: fake client or test upstream). Invariant: lifetime + reserved never exceeds the cap."""
+        if not real_spend():
+            return 0.0
+        estimate = reserve_estimate(model)
+        with self.lock:
+            if not self.ledger_ok or not SPEND_FILE.exists():
+                # after a failure: re-read (never lower than memory); on a first start: prove the file can be written.
+                if not self.ledger_ok:
+                    self.lifetime_usd = self._load()
+                if self.ledger_ok and not self._save():
+                    self.ledger_ok = False
+            if not self.ledger_ok:
+                self._refuse("reader spending ledger unavailable", "spend ledger cannot be read or written")
+            if self.lifetime_usd + self.reserved + estimate > SPEND_CAP_USD + self.EPS:
+                self._refuse("reader spending cap reached", "spending cap would be exceeded")
+            self.reserved += estimate
+            return estimate
+
+    def release(self, reserved: float) -> None:
+        """The call failed (nothing was billed): give the reservation back."""
+        if reserved:
+            with self.lock:
+                self.reserved = max(0.0, self.reserved - reserved)
+
+    def add(self, model: str, input_tokens: int, output_tokens: int, reserved: float = 0.0) -> None:
+        """Count a finished call and, in the same locked step, swap its reservation for the real cost."""
+        price_in, price_out = PRICES[_price_key(model)]
         with self.lock:
             self.calls += 1
             self.input_tokens += input_tokens
             self.output_tokens += output_tokens
             delta = (input_tokens * price_in + output_tokens * price_out) / 1_000_000
             self.cost_usd += delta
+            self.reserved = max(0.0, self.reserved - reserved)
             if real_spend():
                 self.lifetime_usd += delta
-                self._save()
+                if not self._save():
+                    self.ledger_ok = False
+                    log.warning("could not save the spend counter; refusing real calls until it can be saved")
 
 
 def real_spend() -> bool:
-    """False for tests and for a stub upstream: only calls to the real API count against the cap."""
-    return CLIENT_OVERRIDE is None and not os.environ.get("PARCHI_ANTHROPIC_BASE_URL")
+    """True unless this is a fake client or an EXPLICIT test upstream. The exemption needs PARCHI_READER_TEST_UPSTREAM=1
+    AND a base URL whose host is not anthropic.com; a base URL alone (even the real API) is counted and capped."""
+    if CLIENT_OVERRIDE is not None:
+        return False
+    if os.environ.get("PARCHI_READER_TEST_UPSTREAM") != "1":
+        return True
+    base = os.environ.get("PARCHI_ANTHROPIC_BASE_URL") or ""
+    try:
+        host = (urlsplit(base).hostname or "").lower().rstrip(".")
+    except ValueError:
+        return True
+    return not host or host == "anthropic.com" or host.endswith(".anthropic.com")
 
 
 USAGE = Usage()
@@ -243,10 +368,28 @@ def _sniff(data: bytes) -> str | None:
     return None
 
 
-def _call_once(client, model: str, media_type: str, b64: str):
+_now = time.monotonic   # tests replace these two to drive the deadline arithmetic without waiting
+_sleep = time.sleep
+
+
+def attempt_timeouts(remaining: float) -> tuple[float, float]:
+    """(connect, everything else) in seconds for one attempt; connect + the rest never exceeds what is left."""
+    remaining = max(1.0, remaining)
+    connect = min(float(CONNECT_TIMEOUT_S), remaining / 2)
+    return connect, remaining - connect
+
+
+def may_retry(remaining: float) -> bool:
+    """Retry only if, after the pause, at least MIN_RETRY_REMAINING_S of the deadline are still left."""
+    return remaining - RETRY_DELAY_S >= MIN_RETRY_REMAINING_S
+
+
+def _call_once(client, model: str, media_type: str, b64: str, remaining: float = float(TOTAL_DEADLINE_S)):
+    connect, rest = attempt_timeouts(remaining)
     return client.messages.create(
         model=model,
         max_tokens=4000,
+        timeout=anthropic.Timeout(rest, connect=connect),
         output_config={"effort": "low", "format": {"type": "json_schema", "schema": LINES_SCHEMA}},
         messages=[{"role": "user", "content": [
             {"type": "image", "source": {"type": "base64", "media_type": media_type, "data": b64}},
@@ -255,22 +398,28 @@ def _call_once(client, model: str, media_type: str, b64: str):
     )
 
 
-def _call_with_retry(client, model: str, media_type: str, b64: str):
-    """Most specific exception first. Retry ONCE after 1 s on 429 / 5xx / connection errors, then 502."""
+def _call_with_retry(client, model: str, media_type: str, b64: str, deadline: float | None = None):
+    """Most specific exception first. One deadline (TOTAL_DEADLINE_S) covers both attempts. Retry ONCE after 1 s on
+    429 / 5xx / connection errors, and only when at least MIN_RETRY_REMAINING_S would remain; otherwise 502."""
+    if deadline is None:
+        deadline = _now() + TOTAL_DEADLINE_S
     for attempt in (1, 2):
         try:
-            return _call_once(client, model, media_type, b64)
+            return _call_once(client, model, media_type, b64, deadline - _now())
         except anthropic.RateLimitError:
             retryable, why = True, "429"
         except anthropic.APIStatusError as exc:
             retryable, why = exc.status_code >= 500, str(exc.status_code)
         except anthropic.APIConnectionError as exc:
             retryable, why = True, type(exc).__name__
+        if retryable and attempt == 1 and not may_retry(deadline - _now()):
+            log.warning("upstream failed (%s); too little of the deadline is left to retry", why)
+            raise HTTPException(502, CANNOT_READ)
         if not retryable or attempt == 2:
             log.warning("upstream failed (%s) attempt=%d", why, attempt)
             raise HTTPException(502, CANNOT_READ)
         log.info("upstream %s, retrying once", why)
-        time.sleep(RETRY_DELAY_S)
+        _sleep(RETRY_DELAY_S)
     raise HTTPException(502, CANNOT_READ)  # unreachable
 
 
@@ -293,11 +442,16 @@ def _lines_from_response(response) -> list[dict]:
 def read_photo(client, data: bytes, media_type: str) -> list[dict]:
     model = model_name()
     started = time.monotonic()
-    response = _call_with_retry(client, model, media_type, base64.b64encode(data).decode("ascii"))
+    reserved = USAGE.reserve(model)  # K28/12: set the worst case aside BEFORE the call; may raise 503 (cap / ledger)
+    try:
+        response = _call_with_retry(client, model, media_type, base64.b64encode(data).decode("ascii"))
+    except BaseException:
+        USAGE.release(reserved)      # nothing was billed
+        raise
     usage = getattr(response, "usage", None)
     tokens_in = int(getattr(usage, "input_tokens", 0) or 0)
     tokens_out = int(getattr(usage, "output_tokens", 0) or 0)
-    USAGE.add(model, tokens_in, tokens_out)
+    USAGE.add(model, tokens_in, tokens_out, reserved)  # reservation -> real cost
     lines = _lines_from_response(response)
     log.info("read ok lines=%d in=%d out=%d seconds=%.1f", len(lines), tokens_in, tokens_out, time.monotonic() - started)
     return lines
@@ -328,6 +482,8 @@ def usage() -> dict:
             "lifetimeCostInr": round(USAGE.lifetime_usd * INR_PER_USD, 2),
             "capUsd": SPEND_CAP_USD,
             "capReached": over_cap(),
+            "reservedUsd": round(USAGE.reserved, 4),
+            "ledgerOk": USAGE.ledger_ok,
         }
 
 

@@ -3,6 +3,7 @@ from typing import Any
 
 FAILURES = {"cancelled", "outOfStock", "late", "sampleRejected"}
 EVENTS = FAILURES | {"confirmed", "shipped", "delivered"}
+AREA_KEYS = ("area", "city", "pincode")
 CHANNELS = {"localChemist", "janAushadhi", "quickCommerce", "onlinePharmacy", "lab"}
 INACTIVE = {"failed", "rerouted", "cancelled"}
 UNAVAILABLE_FOR_REROUTE = INACTIVE | {"delivered"}
@@ -67,6 +68,9 @@ def validate_order(body: dict[str, Any]) -> None:
         require(type(seller.get("requiresVisit")) is bool, "requiresVisit must be a boolean")
     validate_plan(body.get("plan"), known)
     require(bool(body["plan"]["lines"]), "plan is empty")
+    for key in AREA_KEYS:  # optional: where the order is delivered (reliability is kept per area)
+        if body.get(key) is not None:
+            require(isinstance(body[key], str) and 0 < len(body[key].strip()) and len(body[key]) <= 64, f"invalid {key}")
     cap = body.get("autoApproveCapPaise")
     if cap is not None:
         integer(cap, "autoApproveCapPaise")

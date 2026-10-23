@@ -31,14 +31,17 @@ SECURITY_HEADERS = {
     "Content-Security-Policy": ("default-src 'none'; style-src 'unsafe-inline'; "
                                 "form-action 'self'; base-uri 'none'; frame-ancestors 'none'"),
 }
-CSS = ("body{font:18px/1.4 system-ui,sans-serif;margin:0;padding:12px;max-width:560px}"
+CSS = ("body{font:18px/1.4 system-ui,sans-serif;margin:0;padding:12px;max-width:560px;overflow-wrap:anywhere}"
        "h1{font-size:1.25em}.i{border:1px solid #888;border-radius:8px;padding:10px;margin:10px 0}"
-       "label{display:flex;align-items:center;gap:10px;padding:10px 0;font-weight:600}"
+       "label{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:10px 0;font-weight:600}"
        "input[type=radio]{width:26px;height:26px}"
        "input[type=number],input[type=time],input[type=datetime-local]{font-size:1em;padding:10px;"
-       "width:100%;box-sizing:border-box}"
+       "width:100%;min-width:0;box-sizing:border-box}"
        "button{font-size:1.1em;padding:14px;width:100%;margin-top:12px;border-radius:8px}"
        ".n{font-size:.85em;color:#444}")
+
+
+ALREADY_SENT = ("Your reply was already sent. Thank you.", "आपका जवाब पहले ही भेजा जा चुका है। धन्यवाद।")
 
 
 # ---- shared web helpers (lab.py imports these too) ----
@@ -314,6 +317,8 @@ def register(app: FastAPI, get_temporal: Callable[..., Any],
             if error.code == "not_needed":
                 return message_page("Thanks, this is no longer needed.",
                                     "धन्यवाद, अब इसकी ज़रूरत नहीं है।", status)
+            if error.code == "answered":  # a phone reload re-posts the form: the first reply is safe
+                return message_page(ALREADY_SENT[0], ALREADY_SENT[1], status)
             return message_page(f"Could not send: {error}", "जवाब नहीं भेजा जा सका।", status)
         await notify(temporal, "shop-" + result["askID"], "shop_reply", [result["shopID"]])
         if is_json:

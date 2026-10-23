@@ -2,6 +2,7 @@ import pytest
 from fastapi import FastAPI, Header
 from fastapi.testclient import TestClient
 
+import db
 import true_price
 import v2_db
 
@@ -19,6 +20,9 @@ def client(isolated_db):
 
 
 def paid(client, order, seller="s1", pincode="560001", paid=11000, items=10000, who="phone-1", **extra):
+    # K30: a report needs a real order. Create it (as a sandbox order is created) unless it already exists.
+    if db.get_order(order) is None:
+        db.reserve_order(order, who)
     body = {"sellerID": seller, "pincode": pincode, "paidPaise": paid, **extra}
     if items is not None:
         body["itemsPaise"] = items
@@ -104,3 +108,27 @@ def test_unknown_fields_are_not_stored(client):
 def test_query_validation(client):
     assert client.get("/true_price", params={"seller": "s1", "pincode": "12"}).status_code == 422
     assert client.get("/true_price", params={"seller": "s1"}).status_code == 422
+
+
+def test_real_order_can_only_be_reported_by_its_owner(client, isolated_db):
+    """Found live (K23): another install could pre-claim an order id before its owner reported it."""
+    isolated_db.reserve_order("real-order", "phone-1")
+    assert paid(client, "real-order", who="phone-2").status_code == 409
+    assert v2_db.extras("s1", "560001") == []
+    assert paid(client, "real-order", who="phone-1").status_code == 200
+    assert v2_db.extras("s1", "560001") == [1000]
+
+
+def test_invented_order_id_is_refused_even_for_sandbox(client):
+    """K30: an id that is not in the orders table (or is another install's) never creates a report."""
+    body = {"sellerID": "s1", "pincode": "560001", "paidPaise": 11000, "itemsPaise": 10000}
+    r = client.post("/orders/made-up/paid", json=body, headers={"X-Test-Install": "phone-1"})
+    assert (r.status_code, r.json()["detail"]) == (404, "order not found")
+    for i in range(3):
+        assert client.post(f"/orders/fake{i}/paid", json=body).status_code == 404
+    assert v2_db.extras("s1", "560001") == [] and price(client)["reports"] == 0
+    db.reserve_order("mine", "phone-1")
+    assert client.post("/orders/mine/paid", json=body, headers={"X-Test-Install": "phone-2"}).status_code == 409
+    assert client.post("/orders/mine/paid", json=body, headers={"X-Test-Install": "phone-1"}).status_code == 200
+    db.mark_deleting("phone-1")  # an order being deleted does not exist any more
+    assert client.post("/orders/mine/paid", json=body, headers={"X-Test-Install": "phone-1"}).status_code == 404

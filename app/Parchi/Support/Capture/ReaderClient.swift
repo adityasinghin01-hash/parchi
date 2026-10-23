@@ -35,7 +35,7 @@ struct ReaderClient {
         body.append(Data("--\(boundary)\r\nContent-Disposition: form-data; name=\"image\"; filename=\"parchi.jpg\"\r\nContent-Type: image/jpeg\r\n\r\n".utf8))
         body.append(jpeg)
         body.append(Data("\r\n--\(boundary)--\r\n".utf8))
-        var request = URLRequest(url: live.baseURL.appendingPathComponent("read"), timeoutInterval: 25)
+        var request = URLRequest(url: live.baseURL.appendingPathComponent("read"), timeoutInterval: 65)
         request.httpMethod = "POST"
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         request.setValue(live.installKey, forHTTPHeaderField: "X-Install-Key")

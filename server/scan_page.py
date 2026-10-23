@@ -55,6 +55,10 @@ th{background:#eee}
   var key = new URLSearchParams(location.search).get('k') || '';
   var $ = function (id) { return document.getElementById(id); };
   var blob = null, previewURL = null, busy = false;
+  // Every photo choice and every read takes a new number; an answer (or error) whose number is no longer the current one
+  // belongs to an older photo and is dropped, so a slow reading of photo A can never appear under photo B's preview.
+  var seq = 0, inflight = null;
+  var READ_WAIT_MS = 65000;  // the server waits 60 s for the reader; the page waits a little longer so the server's answer wins
 
   function setStatus(text, isError) {
     var s = $('status'); s.textContent = text; s.className = isError ? 'err' : '';
@@ -89,16 +93,22 @@ th{background:#eee}
     var file = ev.target.files && ev.target.files[0];
     ev.target.value = '';
     if (!file) return;
-    blob = null; $('read').disabled = true; clearResult(); $('again').hidden = true;
+    var mine = ++seq;
+    if (inflight) { inflight.abort(); inflight = null; }
+    busy = false; blob = null; $('read').disabled = true; clearResult(); $('again').hidden = true;
     setStatus('Preparing the photo...');
     try {
-      blob = await prepare(file);
+      var prepared = await prepare(file);
+      if (mine !== seq) return;  // a newer photo was chosen while this one was being prepared
+      blob = prepared;
       if (previewURL) URL.revokeObjectURL(previewURL);
       previewURL = URL.createObjectURL(blob);
       $('preview').src = previewURL; $('preview').hidden = false;
       $('size').textContent = 'Will send ' + Math.round(blob.size / 1024) + ' KB (JPEG, max 2000 px, quality 0.7).';
       $('read').disabled = false; setStatus('');
-    } catch (e) { $('preview').hidden = true; $('size').textContent = ''; setStatus('Error: ' + e.message, true); }
+    } catch (e) {
+      if (mine !== seq) return;
+      $('preview').hidden = true; $('size').textContent = ''; setStatus('Error: ' + e.message, true); }
   }
 
   function show(lines, seconds, reader) {
@@ -127,13 +137,16 @@ th{background:#eee}
 
   async function read() {
     if (!blob || busy) return;
+    var mine = ++seq, sent = blob;
     busy = true; $('read').disabled = true; clearResult(); setStatus('Reading... this can take a while.');
-    var ctl = new AbortController(), timer = setTimeout(function () { ctl.abort(); }, 40000);
+    var ctl = new AbortController(), timer = setTimeout(function () { ctl.abort(); }, READ_WAIT_MS);
+    inflight = ctl;
     try {
-      var fd = new FormData(); fd.append('image', blob, 'parchi.jpg');
+      var fd = new FormData(); fd.append('image', sent, 'parchi.jpg');
       var r = await fetch('/judge/scan/read', {method: 'POST', headers: {'X-Admin-Key': key}, body: fd, signal: ctl.signal});
       var data = null, raw = '';
       try { raw = await r.text(); data = JSON.parse(raw); } catch (e) { data = null; }
+      if (mine !== seq) return;  // stale: another photo was chosen or read since this request began
       if (!r.ok) {
         var detail = data && data.detail !== undefined ? (typeof data.detail === 'string' ? data.detail : JSON.stringify(data.detail)) : (raw || r.statusText);
         if (r.status === 503 && detail === 'reader not connected') setStatus('The reader is not connected yet.', true);
@@ -142,9 +155,11 @@ th{background:#eee}
         setStatus(''); show(data && data.lines, (data && typeof data.ms === 'number' ? data.ms : 0) / 1000, data && data.reader);
       }
     } catch (e) {
-      setStatus('Error: ' + (e.name === 'AbortError' ? 'no answer after 40 seconds' : e.message), true);
+      if (mine !== seq) return;
+      setStatus('Error: ' + (e.name === 'AbortError' ? 'no answer after 65 seconds' : e.message), true);
     } finally {
-      clearTimeout(timer); busy = false; $('again').hidden = false; $('read').disabled = !blob;
+      clearTimeout(timer);
+      if (mine === seq) { inflight = null; busy = false; $('again').hidden = false; $('read').disabled = !blob; }
     }
   }
 
@@ -152,6 +167,7 @@ th{background:#eee}
   $('gal').addEventListener('change', chosen);
   $('read').addEventListener('click', read);
   $('again').addEventListener('click', function () {
+    ++seq; if (inflight) { inflight.abort(); inflight = null; } busy = false;
     blob = null; clearResult(); setStatus(''); $('preview').hidden = true; $('size').textContent = '';
     $('read').disabled = true; $('again').hidden = true; window.scrollTo(0, 0);
   });
@@ -205,7 +221,7 @@ async def scan_read(request: Request) -> JSONResponse:
     if len(data) > api.READER_MAX_BYTES:
         raise HTTPException(413, "image too large")
     try:
-        async with httpx.AsyncClient(timeout=float(os.environ.get("PARCHI_READER_TIMEOUT", "20")), transport=api.READER_TRANSPORT) as client:
+        async with httpx.AsyncClient(timeout=float(os.environ.get("PARCHI_READER_TIMEOUT", "60")), transport=api.READER_TRANSPORT) as client:
             reply = await client.post(reader, files={"image": ("parchi", data, image.content_type)})
     except httpx.HTTPError:
         raise HTTPException(503, "reader not connected")

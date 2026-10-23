@@ -12,7 +12,7 @@ from fastapi.responses import HTMLResponse
 import db
 import p3_db
 from p3_db import ReplyError
-from shop import (admin_header, default_install_id, esc, need, notify, message_page, page,
+from shop import (ALREADY_SENT, admin_header, default_install_id, esc, need, notify, message_page, page,
                   public_base, read_body, rupees_to_paise, short_text, task_queue, time_scale)
 
 JUDGE_KINDS = {"confirmed", "collected", "report_ready", "sample_rejected", "phlebotomist_late"}
@@ -119,6 +119,8 @@ def register(app: FastAPI, get_temporal: Callable[..., Any],
             status = p3_db.STATUS[error.code]
             if is_json:
                 raise HTTPException(status, str(error))
+            if error.code == "answered":  # a phone reload re-posts the form: the first answer is safe
+                return message_page(ALREADY_SENT[0], ALREADY_SENT[1], status)
             return message_page(f"Could not send: {error}", "जवाब नहीं भेजा जा सका।", status)
         kind = "rejected" if row["state"] == "rejected" else "confirmed"
         await notify(temporal, "lab-" + row["booking_id"], "lab_event", [kind, None])
