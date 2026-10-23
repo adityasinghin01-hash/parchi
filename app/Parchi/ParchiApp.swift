@@ -12,6 +12,7 @@ struct ParchiApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
+                .tint(Theme.Color.accent)
                 .environment(model)
         }
         .onChange(of: scenePhase) { _, phase in
