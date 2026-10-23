@@ -6,6 +6,9 @@ Team TessaNova · Swift Developers Night 2.0 (KIET Apple CoE, 24 h) · budget �
 **Solution:** iPhone app. Share/scan the parchi → name blurred on the phone → medicines + tests read → checked against 2.46 lakh real products → ONE plan for the whole parchi (nearby chemist, Jan Aushadhi, 10-min apps, online, labs) with the full price up front → one tap hand-off → **Plan B** re-routes only failed items.
 **Pitch line:** "ChatGPT tells you what's written. Parchi gets the whole parchi done, at the price you'll actually pay, and stays with it until it's done."
 
+## Current plan
+**Target = V2** (V1 milestone on the way; recommendation engine = V3). Read `docs/plan/12-V2-MASTER-PLAN.md` (also .docx/.pdf). Automation = our own Orchestrator (Python stdlib + SQLite on the iMac), not LangChain/LangGraph/n8n/Zapier.
+
 ## Scope now
 **Cities:** Muradnagar + Meerut (extend later). **GUI is the star** (mentor, 23 Oct): Apple Maps price map + lists sorted cheapest → most expensive; local market shops included with MRP until they reply to **Ask nearby shops** (WhatsApp + reply form + pickup time).
 
