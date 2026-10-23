@@ -44,6 +44,18 @@ struct ReadLine: Identifiable {
     }
 }
 
+/// Where the lines on Confirm came from. Confirm shows `AppModel.readNote` as a banner (always for `.sample`).
+enum ReadSource: Equatable {
+    /// The lab server's reader (`POST /read`).
+    case reader
+    /// The on-phone reader (Apple Vision, printed parchis only).
+    case onPhone
+    /// The bundled sample parchi: never the patient's photo.
+    case sample
+    /// Typed in by hand (or nothing read yet).
+    case manual
+}
+
 enum OrderStatus: String {
     case placed = "Placed", rerouted = "Re-routed (Plan B)", cancelled = "Cancelled by seller"
 }
@@ -64,6 +76,15 @@ final class AppModel {
     /// Raw text of lines the on-phone reader saw but was not sure about (K27). Shown on Confirm so they are never lost; set right after
     /// `loadReaderLines` for the same photo, and cleared by `loadReaderLines`, `eraseAll` and `readDemoParchi`.
     var readerNeedsHelp: [String] = []
+    /// Where the current lines came from. Manual add / remove / edit keep it; `eraseAll` resets it to `.manual`.
+    private(set) var readSource: ReadSource = .manual
+    /// Banner text for Confirm ("Sample parchi, not your photo" for the sample). nil = no banner.
+    private(set) var readNote: String?
+    /// Ids of lines whose quantity the reader did NOT read (Confirm shows "assumed 1, check"). Cleared per line by `setQuantity`.
+    private(set) var quantityAssumed: Set<String> = []
+    /// The demo basket as bundled. A demo line keeps its bundled shop prices only while it still matches this exactly.
+    private static let demoItems: [String: RxItem] =
+        Dictionary(load("real_basket_cheapest").items.map { ($0.id, $0) }, uniquingKeysWith: { a, _ in a })
     var objective: Objective = .cheapest { didSet { replan() } }
     private(set) var plan: Plan?
     /// Catalogue-MRP prices for the confirmed medicines that the demo scenario has no offer for (itemID -> offer).
@@ -131,6 +152,9 @@ final class AppModel {
         scenario = Self.load("real_basket_cheapest")
         lines = []
         readerNeedsHelp = []
+        readSource = .manual
+        readNote = nil
+        quantityAssumed = []
         plan = nil
         approvedPlan = nil
         statuses = [:]
@@ -161,9 +185,11 @@ final class AppModel {
                                   quantity: f.count > 2 ? Int(f[2]) : nil, schedule: nil)
             })
             resetLiveOrder()
+            markSample()
             return
         }
         readerNeedsHelp = []
+        markSample()
         lines = scenario.items.map { item in
             var read = item
             if item.id == "telma" { read.strength = "400" }
@@ -187,14 +213,89 @@ final class AppModel {
 
     /// Lines from the reader (`POST /read`). The demo basket has real shop and online prices; every other medicine is priced
     /// at the catalogue MRP at the doctor's shop (`refreshCatalogue`, plan gap U7). Other tests still use lab prices only.
-    func loadReaderLines(_ read: [ReaderLine]) {
+    /// `source`: `.reader` (lab server) or `.onPhone` (Apple Vision). A medicine line with no quantity gets 1 and is marked in
+    /// `quantityAssumed`. `assumedIndices` (manual rebuilds only) replaces that rule with the given line positions.
+    func loadReaderLines(_ read: [ReaderLine], source: ReadSource = .reader, assumedIndices: Set<Int>? = nil) {
         resetLiveOrder()   // a new parchi must never keep polling (or showing) the earlier Live order
         readerNeedsHelp = []
         lines = read.enumerated().map { index, r in
             let kind: ItemKind = r.kind == "test" ? .test : .medicine
             return makeLine(RxItem(id: "r\(index + 1)", kind: kind, name: r.name, strength: r.strength, quantity: max(r.quantity ?? 1, 1)))
         }
+        if let assumedIndices {
+            quantityAssumed = Set(assumedIndices.filter { $0 < lines.count }.map { lines[$0].id })
+        } else {
+            quantityAssumed = Set(read.indices.filter { read[$0].quantity == nil && read[$0].kind != "test" }.map { lines[$0].id })
+        }
+        readSource = source
+        readNote = nil
         resetPlanState()
+    }
+
+    /// Positions (in `lines`) of the lines whose quantity is still assumed: used to carry the marks through a manual rebuild.
+    var quantityAssumedIndices: Set<Int> { Set(lines.indices.filter { quantityAssumed.contains(lines[$0].id) }) }
+
+    /// "Type the medicines in": Confirm opens with an empty list, source `.manual`.
+    func startManualList() {
+        resetLiveOrder()
+        readerNeedsHelp = []
+        lines = []
+        quantityAssumed = []
+        readSource = .manual
+        readNote = nil
+        resetPlanState()
+    }
+
+    private func markSample() {
+        readSource = .sample
+        readNote = ReaderCopy.sampleBanner
+        quantityAssumed = []
+    }
+
+    /// Most units one line may have when edited on Confirm.
+    static let maxEditQuantity = min(99, maxManualQuantity)
+
+    /// The patient sets how many units a line needs (clamped 1...`maxEditQuantity`). The line is no longer "assumed".
+    func setQuantity(_ lineID: String, _ qty: Int) {
+        guard let i = lines.firstIndex(where: { $0.id == lineID }) else { return }
+        resetLiveOrder()
+        lines[i].item.quantity = min(max(qty, 1), Self.maxEditQuantity)
+        quantityAssumed.remove(lineID)
+        detachFromDemoPriceIfChanged(i)
+        resetPlanState()
+    }
+
+    /// The patient corrects a line's name and/or strength. The brand-strength check, test match and H1/X check run again.
+    func editLine(_ id: String, name: String, strength: String?) {
+        guard let i = lines.firstIndex(where: { $0.id == id }) else { return }
+        let trimmed = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return }
+        let cleanStrength = strength?.trimmingCharacters(in: .whitespacesAndNewlines)
+        resetLiveOrder()
+        var item = lines[i].item
+        item.name = trimmed
+        item.strength = (cleanStrength?.isEmpty ?? true) ? nil : cleanStrength
+        let askDoctor = lines[i].askDoctor && item.name == lines[i].item.name
+        var line = makeLine(item)
+        line.askDoctor = askDoctor
+        lines[i] = line
+        detachFromDemoPriceIfChanged(i)
+        resetPlanState()
+    }
+
+    /// A demo-parchi line keeps the bundled shop prices only while its name, strength and quantity still match the bundled item
+    /// (e.g. the deliberate "Telma 400" corrected back to 40). Anything else gets a new id, so it is priced from the catalogue
+    /// instead of showing the demo price for a different medicine or amount.
+    private func detachFromDemoPriceIfChanged(_ i: Int) {
+        let item = lines[i].item
+        guard let original = Self.demoItems[item.id] else { return }
+        let same = original.name == item.name && original.strength == item.strength && original.quantity == item.quantity && original.kind == item.kind
+        guard !same else { return }
+        let oldID = item.id
+        let newID = "e" + UUID().uuidString.prefix(8)
+        lines[i] = ReadLine(id: newID, item: RxItem(id: newID, kind: item.kind, name: item.name, strength: item.strength, quantity: item.quantity),
+                            check: lines[i].check, testMatch: lines[i].testMatch, inPersonOnly: lines[i].inPersonOnly, askDoctor: lines[i].askDoctor)
+        if quantityAssumed.remove(oldID) != nil { quantityAssumed.insert(newID) }
     }
 
     /// Adds one line by hand and leaves every other line, with its id, exactly as it is (the demo parchi keeps its own prices).
@@ -208,6 +309,7 @@ final class AppModel {
     func removeLine(_ id: String) {
         resetLiveOrder()
         lines.removeAll { $0.id == id }
+        quantityAssumed.remove(id)
         resetPlanState()
     }
 
