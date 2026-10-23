@@ -157,6 +157,41 @@ final class ReaderContractTests: XCTestCase {
         XCTAssertFalse(ReaderCopy.liveUploadNote.localizedCaseInsensitiveContains("days"))
     }
 
+    // MARK: CaptureModel choices after a failure
+
+    func testChoicesAfterAFailureAreExplicit() {
+        let model = AppModel()
+        let capture = CaptureModel()
+        capture.phase = .failed("x")
+        XCTAssertTrue(capture.useSampleInstead(model: model))
+        XCTAssertEqual(model.readSource, .sample)
+        XCTAssertEqual(model.readNote, ReaderCopy.sampleBanner)
+        XCTAssertEqual(capture.phase, .idle)
+        capture.phase = .failed("x")
+        XCTAssertTrue(capture.continueManually(model: model))
+        XCTAssertEqual(model.readSource, .manual)
+        XCTAssertTrue(model.lines.isEmpty)
+        capture.phase = .failed("x")
+        capture.retry(model: model)   // no photo kept: nothing to read again, back to idle, nothing loaded
+        XCTAssertEqual(capture.phase, .idle)
+        XCTAssertNil(capture.failure)
+        XCTAssertTrue(model.lines.isEmpty)
+    }
+
+    // MARK: consent version 2 (G6)
+
+    func testAgreementToVersion1MustBeGivenAgain() throws {
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: "kr-consent-\(UUID().uuidString)"))
+        defaults.set(ConsentStore.format(Date()), forKey: ConsentStore.atKey)
+        defaults.set(1, forKey: ConsentStore.versionKey)
+        let store = ConsentStore(store: defaults)
+        XCTAssertEqual(ConsentStore.currentVersion, 2)
+        XCTAssertTrue(store.needsConsent, "the old text said 'our own computer': agree again to the Anthropic wording")
+        store.agree()
+        XCTAssertFalse(store.needsConsent)
+        XCTAssertEqual(defaults.integer(forKey: ConsentStore.versionKey), 2)
+    }
+
     // MARK: ReaderClient (stubbed HTTP)
 
     private func client() throws -> ReaderClient {

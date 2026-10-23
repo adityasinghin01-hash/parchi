@@ -6,7 +6,8 @@ import Observation
 @Observable
 final class ConsentStore {
     /// Bump when the promise text changes in a way that needs a new agreement.
-    static let currentVersion = 1
+    /// 2 (KR, G6): the picture is read by Anthropic's Claude service through our lab server (was: "our own computer").
+    static let currentVersion = 2
     static let atKey = "parchi.consentAt"
     static let versionKey = "parchi.consentVersion"
 

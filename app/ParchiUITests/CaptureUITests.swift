@@ -10,7 +10,7 @@ final class CaptureUITests: XCTestCase {
     func testImagePathShowsBlurredPreview() throws {
         try XCTSkipUnless(FileManager.default.fileExists(atPath: sample), "sample parchi not on this machine")
         let app = XCUIApplication()
-        app.launchArguments = ["-backendMode", "mock", "-parchi.consentAt", "2026-10-24T00:00:00Z", "-parchi.consentVersion", "1", "-captureImagePath", sample]
+        app.launchArguments = ["-backendMode", "mock", "-parchi.consentAt", "2026-10-24T00:00:00Z", "-parchi.consentVersion", "2", "-captureImagePath", sample]
         app.launch()
         XCTAssertTrue(app.navigationBars["Check your photo"].waitForExistence(timeout: 15))
         XCTAssertTrue(app.images["Your parchi, with the details we could find covered"].waitForExistence(timeout: 20))

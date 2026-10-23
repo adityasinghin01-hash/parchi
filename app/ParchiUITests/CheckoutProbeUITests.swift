@@ -28,7 +28,7 @@ final class CheckoutProbeUITests: XCTestCase {
         let stamp = ISO8601DateFormatter().string(from: Date()).replacingOccurrences(of: ":", with: "")
         let dir = "/tmp/k21/probe-\(stamp)"
         let app = XCUIApplication()
-        app.launchArguments = ["-backendMode", "mock", "-parchi.consentAt", "2026-10-24T00:00:00Z", "-parchi.consentVersion", "1",
+        app.launchArguments = ["-backendMode", "mock", "-parchi.consentAt", "2026-10-24T00:00:00Z", "-parchi.consentVersion", "2",
                                "-demoRoute", "checkout", "-checkoutScreen", "probe", "-probeAuto", "1", "-probeOut", dir]
         app.launch()
         let status = app.staticTexts["probe.status"]

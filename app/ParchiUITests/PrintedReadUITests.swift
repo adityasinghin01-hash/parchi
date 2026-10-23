@@ -10,7 +10,7 @@ final class PrintedReadUITests: XCTestCase {
     func testPrintedPhotoIsReadOnThePhoneAndConfirmShowsItsMedicines() throws {
         try XCTSkipUnless(FileManager.default.fileExists(atPath: sample), "printed fixture not on this machine")
         let app = XCUIApplication()
-        app.launchArguments = ["-backendMode", "mock", "-parchi.consentAt", "2026-10-24T00:00:00Z", "-parchi.consentVersion", "1", "-captureImagePath", sample]
+        app.launchArguments = ["-backendMode", "mock", "-parchi.consentAt", "2026-10-24T00:00:00Z", "-parchi.consentVersion", "2", "-captureImagePath", sample]
         app.launch()
         XCTAssertTrue(app.images["Your parchi, with the details we could find covered"].waitForExistence(timeout: 30))
         let tick = app.switches.matching(NSPredicate(format: "label CONTAINS 'I checked'")).firstMatch
