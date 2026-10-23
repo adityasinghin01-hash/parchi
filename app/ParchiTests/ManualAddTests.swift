@@ -228,3 +228,36 @@ final class ManualAddTests: XCTestCase {
         XCTAssertEqual(try XCTUnwrap(model.plan).payable, 269_677, "Rs 2,696.77")
     }
 }
+
+// MARK: Codex review R7 rows 9 and 10
+@MainActor
+final class LineChangeTests: XCTestCase {
+    private func reader(_ name: String, _ strength: String?, _ quantity: Int) -> ReaderLine {
+        ReaderLine(kind: "medicine", name: name, strength: strength, quantity: quantity, schedule: nil)
+    }
+
+    func testRemovingALineForgetsShopQuotesSoNoOtherLineInheritsThem() {
+        let model = AppModel()
+        model.loadReaderLines([reader("Dolo", "650", 15), reader("Pantop", "40", 15), reader("Augmentin", "625", 10)])
+        model.confirmList()
+        model.shopAsk.eraseAll()    // start from a known blank ask, then pretend a shop quoted r2 (Pantop)
+        model.removeManualLine("r2")     // Augmentin becomes r2
+        XCTAssertTrue(model.shopReplyOffers.isEmpty, "quotes made for the old prescription must be forgotten")
+        XCTAssertEqual(model.lines.map(\.id), ["r1", "r2"])
+    }
+
+    func testTypedTestsStayBookableAndTestsOnlyParchiShowsLabPricesNotAnEmptyPlan() {
+        let model = AppModel()
+        model.loadReaderLines([reader("Dolo", "650", 15), ReaderLine(kind: "test", name: "CBC", strength: nil, quantity: nil, schedule: nil)])
+        model.confirmList()
+        XCTAssertEqual(model.testsOutsidePlan.map(\.item.name), ["CBC"])
+        model.prepareLabBooking()
+        XCTAssertTrue(model.labBooking.tests.contains { $0.name == "CBC" }, "CBC must be offered for booking")
+        // a parchi with only a test
+        let only = AppModel()
+        only.loadReaderLines([ReaderLine(kind: "test", name: "CBC", strength: nil, quantity: nil, schedule: nil)])
+        only.confirmList()
+        XCTAssertNil(only.plan)
+        XCTAssertEqual(only.testsOutsidePlan.count, 1, "its lab prices are shown on the Plan screen")
+    }
+}

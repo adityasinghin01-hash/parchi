@@ -7,6 +7,34 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 
+@pytest.fixture(autouse=True)
+def _never_touch_the_real_spend_ledger(tmp_path, monkeypatch):
+    """data/reader_spend.json is the user's real Claude budget ledger (Rs 500 limit). No test may read or write it: a test that added
+    fake usage to the real file once left $36.60 in it and the real reader would have refused every call as 'cap reached'."""
+    try:
+        import reader_claude
+    except Exception:  # the anthropic package may be missing on a machine that does not run the reader tests
+        yield
+        return
+    monkeypatch.setattr(reader_claude, "SPEND_FILE", tmp_path / "reader_spend.json")
+    monkeypatch.setattr(reader_claude.USAGE, "lifetime_usd", 0.0)
+    yield
+
+
+@pytest.fixture(autouse=True)
+def _never_touch_the_real_spend_ledger(tmp_path, monkeypatch):
+    """data/reader_spend.json is the user's real Claude budget ledger (Rs 500 limit). No test may read or write it: a test that added
+    fake usage to the real file once left $36.60 in it and the real reader would have refused every call as 'cap reached'."""
+    try:
+        import reader_claude
+    except Exception:  # the anthropic package may be missing on a machine that does not run the reader tests
+        yield
+        return
+    monkeypatch.setattr(reader_claude, "SPEND_FILE", tmp_path / "reader_spend.json")
+    monkeypatch.setattr(reader_claude.USAGE, "lifetime_usd", 0.0)
+    yield
+
+
 @pytest.fixture
 def isolated_db(tmp_path, monkeypatch):
     monkeypatch.setenv("PARCHI_DB", str(tmp_path / "parchi.db"))

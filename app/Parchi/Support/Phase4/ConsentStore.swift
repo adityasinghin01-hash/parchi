@@ -19,6 +19,11 @@ final class ConsentStore {
         self.store = store
         agreedAt = store.string(forKey: Self.atKey).flatMap { Self.parse($0) }
         version = store.integer(forKey: Self.versionKey)
+        // Delete everything clears the saved agreement BEFORE it posts this notification: re-read at once, so a photo that arrives
+        // while the server copy is still being deleted cannot use the old, cached agreement.
+        NotificationCenter.default.addObserver(forName: .parchiErased, object: nil, queue: nil) { [weak self] _ in
+            MainActor.assumeIsolated { self?.reload() }
+        }
     }
 
     /// True on first run, after "Delete everything", or after the text changed.

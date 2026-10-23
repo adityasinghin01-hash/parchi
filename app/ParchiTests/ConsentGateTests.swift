@@ -89,4 +89,62 @@ final class ConsentGateTests: XCTestCase {
         XCTAssertFalse(FileManager.default.fileExists(atPath: file.path), "declined: the incoming copy is deleted")
         XCTAssertFalse(s.showPreview)
     }
+
+    // MARK: Codex review R7 rows 1-4
+
+    func testDeleteEverythingDuringTheStartDelayDropsThePhoto() async throws {
+        let s = session(agreed: false)
+        s.start(image: image)
+        try await Task.sleep(for: .milliseconds(700))
+        s.consent.agree()
+        s.consentAgreed()                                            // the 500 ms wait before the photo starts begins
+        NotificationCenter.default.post(name: .parchiErased, object: nil)   // Delete everything arrives inside that wait
+        try await Task.sleep(for: .milliseconds(900))
+        XCTAssertFalse(s.showPreview, "an erased photo must never start afterwards")
+    }
+
+    func testAgreementIsWithdrawnAtOnceWhenEverythingIsErased() async throws {
+        let s = session(agreed: false)
+        s.start(image: image)
+        try await Task.sleep(for: .milliseconds(700))
+        s.consent.agree()
+        s.consentAgreed()
+        for key in [ConsentStore.atKey, ConsentStore.versionKey] { defaults.removeObject(forKey: key) }   // what Delete everything does first
+        NotificationCenter.default.post(name: .parchiErased, object: nil)
+        XCTAssertTrue(s.consent.needsConsent, "the cached agreement must not survive the deletion")
+        try await Task.sleep(for: .milliseconds(900))
+        XCTAssertFalse(s.showPreview)
+    }
+
+    func testANewerPhotoReplacesOneStillWaitingForConsentAndCleansItUp() throws {
+        let inbox = URL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent("Documents/Inbox", isDirectory: true)
+        try FileManager.default.createDirectory(at: inbox, withIntermediateDirectories: true)
+        let a = inbox.appendingPathComponent("gate-a-\(UUID().uuidString).jpg")
+        let b = inbox.appendingPathComponent("gate-b-\(UUID().uuidString).jpg")
+        let data = try XCTUnwrap(image.jpegData(compressionQuality: 0.8))
+        try data.write(to: a); try data.write(to: b)
+        let s = session(agreed: false)
+        s.open(url: a)
+        s.open(url: b)                                              // replaces A while A waits for an answer
+        XCTAssertFalse(FileManager.default.fileExists(atPath: a.path), "the replaced photo's incoming copy is deleted")
+        XCTAssertTrue(FileManager.default.fileExists(atPath: b.path), "the newest one waits for the answer")
+        s.consentDeclined()
+        XCTAssertFalse(FileManager.default.fileExists(atPath: b.path))
+    }
+
+    func testANewerPhotoWinsOverOneInItsStartDelay() async throws {
+        let inbox = URL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent("Documents/Inbox", isDirectory: true)
+        try FileManager.default.createDirectory(at: inbox, withIntermediateDirectories: true)
+        let a = inbox.appendingPathComponent("gate-late-\(UUID().uuidString).jpg")
+        try XCTUnwrap(image.jpegData(compressionQuality: 0.8)).write(to: a)
+        let s = session(agreed: false)
+        s.open(url: a)
+        try await Task.sleep(for: .milliseconds(700))
+        s.consent.agree()
+        s.consentAgreed()                                           // A would start in 500 ms
+        s.start(image: image)                                       // B opens now and wins
+        XCTAssertTrue(s.showPreview)
+        try await Task.sleep(for: .milliseconds(900))
+        XCTAssertFalse(FileManager.default.fileExists(atPath: a.path), "A was dropped and its incoming copy cleaned up")
+    }
 }

@@ -15,12 +15,25 @@ final class CaptureSession {
     /// Reads the same saved agreement as the app's own store, so a photo that arrives before the root hook runs is still checked.
     var consent = ConsentStore()
     var showConsent = false
-    private var pendingAfterConsent: (start: () -> Void, decline: () -> Void)?
+    /// Every new photo request and every Delete everything bumps this. A delayed start (the short waits below) that finds a newer
+    /// number is dropped and cleaned up, so an erased or superseded photo can never start after the fact (Codex R7 rows 1, 3, 4).
+    private var generation = 0
+    private var pendingAfterConsent: (gen: Int, start: () -> Void, decline: () -> Void)?
 
     init() {
-        // "Delete everything" closes the preview and drops the picture and any running blur or reader request.
+        // "Delete everything" closes the preview and drops the picture, any running blur or reader request, the consent screen,
+        // and any photo still waiting for an answer or for its delayed start.
         NotificationCenter.default.addObserver(forName: .parchiErased, object: nil, queue: nil) { [weak self] _ in
-            MainActor.assumeIsolated { self?.showPreview = false; self?.capture.discard() }
+            MainActor.assumeIsolated {
+                guard let self else { return }
+                self.generation += 1
+                let pending = self.pendingAfterConsent
+                self.pendingAfterConsent = nil
+                self.showConsent = false
+                self.showPreview = false
+                self.capture.discard()
+                pending?.decline()
+            }
         }
     }
 
@@ -43,12 +56,16 @@ final class CaptureSession {
     /// Runs `start` at once when the person has already agreed; otherwise shows the consent screen first and runs it only on
     /// "Agree & continue". "Not now" (or swiping the screen away) runs `decline` and nothing is read or kept.
     private func requireConsent(_ start: @escaping () -> Void, decline: @escaping () -> Void) {
+        generation += 1
+        let gen = generation
+        // A newer photo replaces one still waiting for an answer: clean the old one up first (an Inbox copy is deleted).
+        if let old = pendingAfterConsent { pendingAfterConsent = nil; old.decline() }
         guard consent.needsConsent else { start(); return }
-        pendingAfterConsent = (start, decline)
+        pendingAfterConsent = (gen, start, decline)
         // The photo picker or scanner that produced this image is still closing; a sheet presented that instant is dropped by iOS.
         Task {
             try? await Task.sleep(for: .milliseconds(400))
-            if pendingAfterConsent != nil { showConsent = true }
+            if pendingAfterConsent?.gen == gen, gen == generation { showConsent = true }
         }
     }
 
@@ -56,12 +73,14 @@ final class CaptureSession {
 
     func consentAgreed() {
         showConsent = false
-        let pending = pendingAfterConsent
+        guard let pending = pendingAfterConsent else { return }
         pendingAfterConsent = nil
         // Let the consent sheet finish closing first: iOS drops a sheet presented while another one is still on its way out.
+        // If Delete everything, a newer photo or a withdrawn agreement arrives during the wait, this photo is dropped and cleaned up.
         Task {
             try? await Task.sleep(for: .milliseconds(500))
-            pending?.start()
+            guard pending.gen == generation, !consent.needsConsent else { pending.decline(); return }
+            pending.start()
         }
     }
 

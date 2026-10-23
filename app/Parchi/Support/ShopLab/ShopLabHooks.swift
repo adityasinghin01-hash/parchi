@@ -44,7 +44,8 @@ extension AppModel {
 
     func prepareLabBooking() {
         let inPlan = Set((approvedPlan ?? plan)?.sellerIDs ?? [])
-        labBooking.prepare(items: scenario.items, sellers: scenario.sellers, offers: scenario.offers,
+        // Tests that are priced lab by lab (not part of the plan) must still be bookable. (Codex R7 row 10)
+        labBooking.prepare(items: scenario.items + testsOutsidePlan.map(\.item), sellers: scenario.sellers, offers: scenario.offers,
                            liveRequested: backend.mode == .live, live: backend.makeClient(), orderID: liveOrderID, planSellerIDs: inPlan)
     }
 

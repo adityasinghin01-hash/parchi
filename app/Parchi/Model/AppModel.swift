@@ -212,6 +212,10 @@ final class AppModel {
     }
 
     private func resetPlanState() {
+        // The prescription changed: shop asks, replies and lab bookings made for the old lines must never be applied to the new ones
+        // (line ids are reused, e.g. r2 after a removal). Saved phone numbers and the address are kept. (Codex R7 row 9)
+        shopAsk.startOver()
+        labBooking.startOver()
         skippedSellers = []
         plan = nil
         approvedPlan = nil

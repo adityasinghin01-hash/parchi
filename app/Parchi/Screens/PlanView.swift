@@ -133,6 +133,8 @@ private struct PlanListContent: View {
                     let elsewhere = model.unavailable.filter { !model.catalogueMisses.contains($0) }
                     if !elsewhere.isEmpty {
                         Text("Not available anywhere: \(elsewhere.map(model.itemName).joined(separator: ", "))")
+                    } else if model.catalogueMisses.isEmpty && model.scenario.items.isEmpty && !model.testsOutsidePlan.isEmpty {
+                        Text("This parchi has only lab tests. Their prices are shown lab by lab below.")
                     } else if model.catalogueMisses.isEmpty {
                         Text("No complete plan found.")
                     }
@@ -141,6 +143,9 @@ private struct PlanListContent: View {
                             .font(.footnote)
                             .foregroundStyle(.secondary)
                     }
+                }
+                if !model.testsOutsidePlan.isEmpty {   // lab tests are priced lab by lab even when there is no medicine plan
+                    LabPricesSection()
                 }
             }
         }
