@@ -33,7 +33,7 @@ Training: KIET DGX (1×A100 40 GB) / Jarvis (A100 80 GB, emergency) / Kaggle (fr
 ## Who owns what
 | Person | Owns | Doc |
 |---|---|---|
-| Aditya Singh (lead) | ParchiCore in app, iMac server, sandbox + Plan B, deck, demo | docs/plan/11-FINAL-LOCKED-PLAN.md |
+| Aditya Singh (lead) | ParchiCore in app, iMac server, sandbox + Plan B, deck, demo | docs/team/Lead-Aditya-Singh.md |
 | Aditya Singhal | ALL AI + data + Drive: generate, train, test, export to iMac | docs/team/AI-Aditya-Singhal.md |
 | Antara Gupta | Screens (Home, Confirm, Plan, Get it all, Track/Plan B, Care, Settings) | docs/team/Frontend-Antara-Aditya.md |
 | Aditya | Capture, blur, Parchi Pass, Calendar/reminders, Hindi | docs/team/Frontend-Antara-Aditya.md |
