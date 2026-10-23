@@ -1,0 +1,557 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-05-31T22:37:44Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 4863477921,
+  "lat": 28.7068603,
+  "lon": 77.4452126,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name:en": "Vardan Multi Speciality Hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 7018108341,
+  "lat": 28.6763705,
+  "lon": 77.4736266,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "Se-12 Shastri Nagar",
+    "addr:postcode": "201005",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "clinic",
+    "name": "Navjeevan Nursing Home, Shastri Nagar",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7018564222,
+  "lat": 28.6865836,
+  "lon": 77.4460183,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "Sector 10,near St Pauls Academy, Raj Nagar",
+    "addr:postcode": "201002",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "hospital",
+    "contact:phone": "2752440",
+    "name": "Vardan Eye Hospital, Ghaziabad",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7018620981,
+  "lat": 28.6885725,
+  "lon": 77.5530255,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "Vill. Massori, P.O. Dasna",
+    "addr:postcode": "201015",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "hospital",
+    "name": "Holy Cross Hospital, Ghaziabad",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7020669954,
+  "lat": 28.7524589,
+  "lon": 77.4956381,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "I.T.S Dental College Campus, Muradnagar",
+    "addr:postcode": "201206",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "hospital",
+    "contact:mobile": "9999353800",
+    "healthcare": "hospital",
+    "name": "I T S Hospital",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7020768213,
+  "lat": 28.6809262,
+  "lon": 77.4412268,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "R-2/227, Raj Nagar",
+    "addr:postcode": "201002",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "clinic",
+    "name": "Tyagi Nursing Home",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7020925916,
+  "lat": 28.6805831,
+  "lon": 77.4634999,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "CGHS Dispensary No.68,Kamla Nehru Nagar",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "clinic",
+    "health_facility:type": "dispensary",
+    "healthcare": "centre",
+    "name": "CGHS Dispensary, Kamla Nehru Nagar",
+    "operator:type": "government",
+    "source": "OpenGovernmentData",
+    "website": "http://nb.bsf.gov.in/CGHS%20DIspenseries.pdf"
+  }
+},
+{
+  "type": "node",
+  "id": 7020925967,
+  "lat": 28.6816651,
+  "lon": 77.4918348,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "B-58 , Govind Puram Gzd",
+    "addr:postcode": "201002",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "clinic",
+    "name": "Sohan Nursing Home and Maternity Centre",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7020926045,
+  "lat": 28.6745067,
+  "lon": 77.4617296,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "Sb- 22 & 23, Shastri Nagar, Main Hapur Road, Near Hapur Chungi",
+    "addr:postcode": "201010",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "hospital",
+    "name": "Heera Lal Hospital and Heart Care Centre",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7022093963,
+  "lat": 28.6740831,
+  "lon": 77.4664289,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "Sd-200, Shastri Nagar Opposite Cbi Acadamy",
+    "addr:postcode": "201002",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "hospital",
+    "name": "Prime Hospital",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7024843760,
+  "lat": 28.6796341,
+  "lon": 77.4911327,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "5, Gangapuram , Opposite Govindpuram Petrol Pump",
+    "addr:postcode": "201002",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "hospital",
+    "contact:mobile": "9311739107",
+    "name": "Shivalik Hospital, Ghaziabad",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7024906924,
+  "lat": 28.6912702,
+  "lon": 77.4367192,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "13, Prem Enclave, Meerut Road, Opposite Dps",
+    "addr:postcode": "201001",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "hospital",
+    "contact:phone": "0120 2706124",
+    "name": "Kailash Medicare and Research Center",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7025136072,
+  "lat": 28.6865262,
+  "lon": 77.4507420,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "R-9/1, Raj Nagar",
+    "addr:postcode": "201002",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "hospital",
+    "name": "Pulmonic Hospital",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7025223722,
+  "lat": 28.6805275,
+  "lon": 77.4530001,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "R-13/24, Raj Nagar Opposite Alt Centre",
+    "addr:postcode": "201002",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "hospital",
+    "name": "Sharnam Eye Centre and Laser Services",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7027411289,
+  "lat": 28.6818957,
+  "lon": 77.4442175,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "R-5/49B. Raj Nagar,Near Sanatass Dharm Mandir",
+    "addr:postcode": "201002",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "hospital",
+    "name": "Shri Raghuwar Shyam Hospital and Research Centre Pvt. Ltd.",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7027743633,
+  "lat": 28.6831687,
+  "lon": 77.4492252,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "R - 9 / 182, Near Alt Centre, Near Rajnagar , Sector 10 Market",
+    "addr:postcode": "201001",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "hospital",
+    "name": "Gargi Hospital - Ghaziabad",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7027783668,
+  "lat": 28.6911391,
+  "lon": 77.4515803,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "H-110, Sector -23, Raj Nagar",
+    "addr:postcode": "201002",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "clinic",
+    "contact:phone": "2783428",
+    "name": "Sharma Nursing Home, Ghaziabad",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7027819907,
+  "lat": 28.6827835,
+  "lon": 77.4526592,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "R-12/44, Raj Nagar",
+    "addr:postcode": "201002",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "clinic",
+    "name": "Agrawal Maternity and Nursing home",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7027859309,
+  "lat": 28.6911643,
+  "lon": 77.4525958,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "D-179, Sanjay Nagar Sector-23",
+    "addr:postcode": "201002",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "clinic",
+    "name": "Vijay Clinic and Maternity Centre",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7027961500,
+  "lat": 28.6841869,
+  "lon": 77.4397045,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "H No R 3/4 Near Railway Crossing Raj Nagar",
+    "addr:postcode": "201001",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "hospital",
+    "name": "Shivam Hospital and Heart Centre",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7028065211,
+  "lat": 28.6707585,
+  "lon": 77.4609283,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "Captain Suri Marg, Block H, Shastri Nagar",
+    "addr:postcode": "201002",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "clinic",
+    "name": "Kasana Nursing Home",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7029523751,
+  "lat": 28.6933217,
+  "lon": 77.4486887,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "A-19, Sector 23, Sanjay Nagar",
+    "addr:postcode": "201002",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "hospital",
+    "name": "Singh Ortho Maternity Centre",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7031035884,
+  "lat": 28.6711880,
+  "lon": 77.4615231,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "Sh 298, Shastri Nagar",
+    "addr:postcode": "201002",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "clinic",
+    "contact:phone": "2712630",
+    "name": "Suraj Maternity Fracture Clinic",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7031844632,
+  "lat": 28.6786419,
+  "lon": 77.4508835,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "R-13/82, Raj Nagar",
+    "addr:postcode": "201005",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "clinic",
+    "name": "Dr. Sanjeev Anand Clinic",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7037751988,
+  "lat": 28.6700603,
+  "lon": 77.4608706,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "Sh-283, Shastri Nagar",
+    "addr:postcode": "201002",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "clinic",
+    "contact:phone": "2752706",
+    "name": "Verma Nursing Homeand Reliance Daignostic Centre",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7038662654,
+  "lat": 28.6747244,
+  "lon": 77.4964964,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "Nh-24,26/27 Km Stone, Delhi Hapur Bye Pass",
+    "addr:postcode": "245101",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "hospital",
+    "name": "Raghubir Hospital Pvt. Ltd.",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7039962713,
+  "lat": 28.6890065,
+  "lon": 77.4561560,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "Near Ghanta Ghar, G T Road",
+    "addr:postcode": "201001",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "hospital",
+    "name": "District Hospital, Ghaziabad",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 7205469172,
+  "lat": 28.6859053,
+  "lon": 77.4541484,
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:full": "Hotel Fortune Inn, Ghaziabad, P Block, Sec 23, Sanjay Nagar, Near ALT Bus Stand",
+    "addr:postcode": "201001",
+    "addr:state": "Uttar Pradesh",
+    "amenity": "hospital",
+    "description": "District Hospital",
+    "name": "District combind hospital sanjay nagar",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 12595808673,
+  "lat": 28.6919666,
+  "lon": 77.4864004,
+  "tags": {
+    "amenity": "pharmacy",
+    "healthcare": "pharmacy"
+  }
+},
+{
+  "type": "node",
+  "id": 12595808693,
+  "lat": 28.6848998,
+  "lon": 77.4821651,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "myra hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 12595808698,
+  "lat": 28.6907923,
+  "lon": 77.4841199,
+  "tags": {
+    "name": "jatin medical store",
+    "shop": "chemist"
+  }
+},
+{
+  "type": "way",
+  "id": 454449753,
+  "center": {
+    "lat": 28.6726216,
+    "lon": 77.5043269
+  },
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:district": "Ghaziabad",
+    "addr:full": "Kazipura Dasna Road, Behind Akg Engg. College",
+    "addr:postcode": "201009",
+    "addr:state": "Uttar Pradesh",
+    "addr:street": "National Highway 24 Bypass",
+    "amenity": "hospital",
+    "emergency": "yes",
+    "name": "Dr. Ram Saran Garg Indo-German Hospital",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "way",
+  "id": 1297129473,
+  "center": {
+    "lat": 28.6932077,
+    "lon": 77.4400609
+  },
+  "tags": {
+    "amenity": "hospital",
+    "building": "yes",
+    "healthcare": "hospital",
+    "name": "Navin Hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 1297133496,
+  "center": {
+    "lat": 28.7715549,
+    "lon": 77.5122291
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Shyam Hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 1302897714,
+  "center": {
+    "lat": 28.7713484,
+    "lon": 77.5110954
+  },
+  "tags": {
+    "amenity": "hospital",
+    "building": "yes",
+    "healthcare": "hospital",
+    "name": "Muradnagar Metro Hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 1408818183,
+  "center": {
+    "lat": 28.6780186,
+    "lon": 77.4602857
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 1413084864,
+  "center": {
+    "lat": 28.6877617,
+    "lon": 77.4511697
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Yashoda Superspeciality Hospital & Cancer Institute"
+  }
+}
+
+  ]
+}

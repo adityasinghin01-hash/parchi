@@ -1,4 +1,4 @@
-# PARCHI — FINAL LOCKED PLAN (23 Oct 2026, 16:00 IST)
+# PARCHI — FINAL LOCKED PLAN (23 Oct 2026, 16:00 IST; mentor update 18:00)
 Team TessaNova · Swift Developers Night 2.0 · 24 h · Budget ₹400 · No paid API.
 Every number below is measured by us [M] or sourced [V] in files 01–10. [J] = judgement, [A] = assumption to be measured.
 
@@ -9,6 +9,14 @@ Every number below is measured by us [M] or sourced [V] in files 01–10. [J] = 
 **Solution.** Parchi, an iPhone app: share the parchi from WhatsApp (or scan it), and Parchi reads every medicine **and** test, checks each one is a real product, and builds **one plan for the whole parchi** across the nearby chemist, Jan Aushadhi, 10-minute apps, online pharmacies and labs, with the **full price up front**. One tap hands everything off; if a seller cancels, **Plan B** moves only that item.
 
 **One line:** *"ChatGPT tells you what's written. Parchi gets the whole parchi done, at the price you'll actually pay, and stays with it until it's done."*
+
+---
+## 1b. Mentor update (23 Oct, 18:00)
+- **The GUI is the star.** UI fully owned by Antara + Aditya (spec: docs/team/Frontend-Antara-Aditya.md §8); the lead adjusts it later.
+- **Cities:** Muradnagar + Meerut first; more after the hackathon.
+- **Maps:** Apple Maps is primary (measured: 17 chemists within 10 km of KIET vs **2 in OpenStreetMap**, and OSM's free servers failed 3 of 4 times on 23 Oct); OSM shops are merged in where Apple has none, with attribution.
+- **Local market shops are core:** shown with MRP (legal maximum) until they reply; **Ask nearby shops** (WhatsApp + reply form on the iMac) with a **pickup time** moves from "cut first" to core; plus a 30-min phone survey of 5–8 shops for real local prices ("called 24 Oct").
+- **Every list sorts cheapest → most expensive.**
 
 ---
 ## 2. End-to-end system
@@ -48,10 +56,10 @@ Every number below is measured by us [M] or sourced [V] in files 01–10. [J] = 
 | 14 | **Care** | Lab slot → Calendar, dose reminders, refill countdown | Separate reminder apps | From the same parchi, zero typing | 24 h (cut 4th) |
 | 15 | **How we rank** | "Price, then time, then trips. No seller pays for position." | E-Commerce Rules 2020 + 2026 amendment require ranking disclosure [V] | Compliance as a trust feature | 24 h (static) |
 | 16 | **Hindi** | Hindi UI + read-aloud of the schedule | Mostly English apps | For elderly/Hindi-first users | Cut 3rd |
-| 17 | Shop Quote | WhatsApp message to 3 nearby chemists | AskIt | From the parchi | Cut 1st |
+| 17 | **Ask nearby shops + pickup time** | WhatsApp message with a reply link to 3 nearby chemists; prices + "keep ready by 6 pm" | AskIt (local quotes) | From the parchi, replies go live into the plan/map | **Core (mentor)** |
 | 18 | Lock-screen tracking | Live Activity | Food apps | Medicines + lab in one | Cut 2nd |
 
-**Never cut:** 1, 3, 4, 5, 7, 8, 11, 12. **Cut order if late:** 17 → 18 → 16 → 14.
+**Never cut:** 1, 3, 4, 5, 7, 8, 11, 12. **Cut order if late:** 18 → 16 → 14 (Ask nearby shops is now core).
 
 ---
 ## 4. Us vs competitors

@@ -1,6 +1,6 @@
 # Parchi frontend: screens and competitor research (owners: Antara Gupta + Aditya)
 Read `CONTEXT.md` (repo root) first. This doc is everything you need to design and build without waiting for anyone.
-Locked 23 Oct 2026. SwiftUI, iOS 17+, **free Apple account** (so no Sign in with Apple, push notifications, App Attest or Siri; local notifications, Calendar, App Groups and Maps are fine).
+Locked 23 Oct 2026, **updated after the mentor's review (GUI is the star; see §8)**. SwiftUI, iOS 17+, **free Apple account** (so no Sign in with Apple, push notifications, App Attest or Siri; local notifications, Calendar, App Groups and Maps are fine).
 
 ## 0. Split
 | Antara Gupta: screens | Aditya: capture, privacy, care |
@@ -148,3 +148,61 @@ Install or open each, **take screenshots**, and fill the table. Use one public s
 Raw data: `docs/research/02-phase2-competitors-identity.md`, `docs/research/evidence/review_themes.json`, `docs/research/evidence/quickpill_2026-10-23.json`.
 
 **Screenshot task:** put your phone screenshots of each app in `docs/competitors/<app>/` (e.g. `docs/competitors/quickpill/01-scan.png`) and commit them. Use our demo parchi, never a real family prescription.
+
+## 8. GUI v2: the mentor's direction (23 Oct evening) — this section wins over anything above
+**The GUI is what judges will remember.** Build it like a consumer app people would pay for, not a form. Cities for now: **Muradnagar and Meerut** (more later).
+
+### 8.1 Think like the user
+| The user is thinking… | So the screen must… |
+|---|---|
+| "Which is cheapest?" | Sort every list **cheapest → most expensive** by default, with the saving vs MRP on each row |
+| "Is it near me? Is it open?" | Show distance, open/closed (when known) and a **Call** + **Directions** button on every shop |
+| "Can I trust this price?" | A small chip on every price: "MRP" · "Online, 23 Oct" · "Shop replied 6:40 pm" · "Called 24 Oct" |
+| "I don't want to go twice" | Trips and ready-time on every option card |
+| "Can my local shop keep it ready?" | **Ask nearby shops** + **pickup time** (below) |
+| "I can't read small English" | Large text, Hindi, read-aloud; one big action per screen |
+
+### 8.2 Plan screen becomes two views: **List | Map** (segmented control at the top)
+**List (default):** whole-parchi options sorted **cheapest → most expensive**, one card each:
+- "Everything · ₹2,697 · ready tomorrow · 0 trips" (best value, tag **Cheapest**)
+- "All from Sharma Medical, 1.2 km · ₹1,030 (MRP) · ready now · 1 trip" (tag **Fastest**)
+- "Medicines from Jan Aushadhi · ₹189 · ask your doctor first" (tag **Lowest, needs doctor's OK**)
+Tap a card → its breakdown by seller (as today). Tags copy the idea of flight apps' **Cheapest / Best / Fastest** tabs (Skyscanner, Google Flights): adopt that, but for a whole parchi.
+**Map:** Apple Maps (SwiftUI `Map`) centred on the user. **Price pins**: each shop/lab/Jan Aushadhi store shows its total for *your* items ("₹826 · 1.2 km"); colour by type **with an icon and text label** (never colour alone); delivery-only sellers as a strip at the bottom ("Truemeds · ₹826 · delivers tomorrow"). The chosen plan's stops are joined by a line. Tap a pin → **Shop sheet**.
+
+### 8.3 Shop sheet (bottom sheet, medium/large)
+Name · distance · open/closed (if known) · price per item for your parchi, cheapest first · source chip · buttons **Call**, **Directions** (opens Apple Maps), **WhatsApp**, **Ask this shop**.
+
+### 8.4 Ask nearby shops + pickup time (new core feature)
+1. User picks up to 3 shops on the map (or "nearest 3").
+2. Chooses a **pickup time** ("Keep ready by 6:00 pm").
+3. Parchi writes the WhatsApp message (typed list + pickup time + a reply link) and opens WhatsApp; the user presses send.
+4. The shopkeeper opens the link, types prices / "available" per item, taps send (a 1-page web form on our iMac server, built by Aditya Singh).
+5. Replies appear live: the pin updates ("Replied ₹964 · ready 6 pm"), and the List re-sorts.
+States: waiting (with time since sent), replied, no reply in 30 min ("Call instead?").
+
+### 8.5 Lab tests (keep: already working in the engine)
+Per test, options sorted cheapest → most expensive: lab name · home collection or visit · fee · report time · fasting note. Slot picker → added to Calendar.
+
+### 8.6 Where the shop data comes from (so the UI labels it honestly)
+| Source | What it gives | Measured coverage (10 km around KIET) |
+|---|---|---|
+| Apple Maps (MapKit search, free) | Names, location, phone for chemists/labs | **17 chemists/pharmacies** (9 with phone) |
+| OpenStreetMap | Extra shops where Apple has none | **2** (sparse in Muradnagar) |
+| Prices | MRP from the catalogue (legal maximum) until a shop replies; online prices dated; phoned-in prices dated | — |
+Show "Map data © Apple, © OpenStreetMap contributors" in small text on the map.
+
+### 8.7 Visual system (use everywhere)
+- **Colour tokens:** primary teal/green (trust, health), amber = needs attention, red = failed/cancelled, neutral greys; full **dark mode**.
+- **Type:** SF Pro with Dynamic Type; one large number per card (the price), secondary text below.
+- **Layout:** 8-pt grid, 16-pt card radius, cards with clear hierarchy, max 2 lines per row.
+- **Motion:** subtle (price re-sorts animate, Plan B sheet slides up); respect Reduce Motion. Haptic on success (order placed, Plan B approved).
+- **Icons:** SF Symbols only (pills, cross.case, testtube.2, building.2, shippingbox, map).
+- **Look at for quality:** Apple Maps place cards, Zomato/Swiggy store lists (ETA + price chips), Skyscanner/Google Flights (Cheapest/Fastest tabs), Uber trip tracking (Track screen), GoodRx price list. **Adopt the pattern, change it for a whole parchi.**
+
+### 8.8 Acceptance (add to §6)
+- [ ] Every list sorted cheapest → most expensive by default
+- [ ] List | Map toggle on the Plan screen; pins show price + distance
+- [ ] Ask nearby shops: send → (teammate replies on a phone) → pin updates live
+- [ ] Pickup time chosen and shown in the WhatsApp message
+- [ ] Every price has a source chip
