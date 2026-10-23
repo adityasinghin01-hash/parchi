@@ -57,7 +57,7 @@ def test_cap_reached_answers_503_and_makes_no_call(capped, monkeypatch):
 def test_below_the_cap_still_reads(capped, monkeypatch):
     fake = Fake(reply({"lines": [{"kind": "medicine", "name": "Telma", "strength": "40", "quantity": None, "schedule": None}]}))
     monkeypatch.setattr(rc, "_get_client", lambda: fake)
-    rc.USAGE.lifetime_usd = 4.4   # 4.4 + the $0.06 Opus reservation fits under 4.5
+    rc.USAGE.lifetime_usd = 4.4   # 4.4 + the $0.07 Opus reservation fits under 4.5
     response = TestClient(rc.app).post("/read", files={"image": ("p.jpg", JPEG, "image/jpeg")})
     assert response.status_code == 200 and response.json()["lines"][0]["name"] == "Telma"
     assert rc.USAGE.lifetime_usd > 4.4 and rc.USAGE.reserved == 0, "the call was counted and its reservation reconciled"
@@ -79,7 +79,7 @@ def test_server_maps_a_reader_503_to_reader_not_connected(api_client, monkeypatc
 
 # ------------------------------------------------------------------ K28/12: reserve before dispatch, threads
 def test_concurrent_reads_never_exceed_the_cap(capped):
-    """10 simultaneous reads at $4.40: only one $0.06 reservation fits under 4.5; the rest are refused BEFORE any call."""
+    """10 simultaneous reads at $4.40: only one $0.07 reservation fits under 4.5; the rest are refused BEFORE any call."""
     import threading
     rc.USAGE.lifetime_usd = 4.4
     inside, release, started = threading.Event(), threading.Event(), threading.Barrier(10)
@@ -114,7 +114,7 @@ def test_concurrent_reads_never_exceed_the_cap(capped):
             break
         import time; time.sleep(0.05)
     assert sorted(results) == [503] * 9
-    assert rc.USAGE.reserved == pytest.approx(0.06) and rc.USAGE.lifetime_usd + rc.USAGE.reserved <= 4.5 + 1e-9
+    assert rc.USAGE.reserved == pytest.approx(0.07) and rc.USAGE.lifetime_usd + rc.USAGE.reserved <= 4.5 + 1e-9
     release.set()
     for t in threads:
         t.join(5)
@@ -123,7 +123,7 @@ def test_concurrent_reads_never_exceed_the_cap(capped):
 
 
 def test_many_slots_never_overbook(capped):
-    """Cap room for 8 reservations (0.5 / 0.06); 40 threads; the reserved total never passes the room and at most 8 run."""
+    """Cap room for 7 reservations (0.5 / 0.07); 40 threads; the reserved total never passes the room and at most 7 run."""
     import threading
     rc.USAGE.lifetime_usd = 4.0
     release, lock = threading.Event(), threading.Lock()
@@ -152,8 +152,8 @@ def test_many_slots_never_overbook(capped):
         t.start()
     for t in threads:
         t.join(10)
-    assert state["peak"] <= 8 and state["max_total"] <= 4.5 + 1e-9
-    assert codes.count(200) >= 8 and set(codes) <= {200, 503} and rc.USAGE.reserved == 0
+    assert state["peak"] <= 7 and state["max_total"] <= 4.5 + 1e-9
+    assert codes.count(200) >= 7 and set(codes) <= {200, 503} and rc.USAGE.reserved == 0
     assert rc.USAGE.lifetime_usd <= 4.5
 
 
@@ -172,9 +172,9 @@ def test_reservation_is_released_on_failure_and_reconciled_on_success(capped):
 
 
 def test_reservation_estimate_is_per_model_and_configurable(capped, monkeypatch):
-    assert rc.reserve_estimate("claude-opus-5-5") == 0.06
-    assert rc.reserve_estimate("claude-sonnet-5-5") == 0.03 and rc.reserve_estimate("claude-haiku-5-5") == 0.005
-    assert rc.reserve_estimate("claude-opus-5-5-20260101") == 0.06 and rc.reserve_estimate("something-new") == 0.06
+    assert rc.reserve_estimate("claude-opus-5-5") == 0.07
+    assert rc.reserve_estimate("claude-sonnet-5-5") == 0.04 and rc.reserve_estimate("claude-haiku-5-5") == 0.005
+    assert rc.reserve_estimate("claude-opus-5-5-20260101") == 0.07 and rc.reserve_estimate("something-new") == 0.07
     monkeypatch.setenv("PARCHI_RESERVE_USD", "0.5")
     assert rc.reserve_estimate("claude-haiku-5-5") == 0.5
     rc.USAGE.lifetime_usd = 4.1
@@ -183,10 +183,10 @@ def test_reservation_estimate_is_per_model_and_configurable(capped, monkeypatch)
     assert exc.value.status_code == 503 and rc.USAGE.reserved == 0
     for bad in ("abc", "-1", "0", "nan"):
         monkeypatch.setenv("PARCHI_RESERVE_USD", bad)
-        assert rc.reserve_estimate("claude-opus-5-5") == 0.06
+        assert rc.reserve_estimate("claude-opus-5-5") == 0.07
     monkeypatch.delenv("PARCHI_RESERVE_USD")
-    rc.USAGE.lifetime_usd = 4.44                       # exactly fits: 4.44 + 0.06 = 4.50
-    assert rc.USAGE.reserve("claude-opus-5-5") == 0.06
+    rc.USAGE.lifetime_usd = 4.43                       # exactly fits: 4.43 + 0.07 = 4.50
+    assert rc.USAGE.reserve("claude-opus-5-5") == 0.07
     with pytest.raises(rc.HTTPException):
         rc.USAGE.reserve("claude-haiku-5-5")           # even $0.005 more would pass the cap
 
@@ -244,22 +244,22 @@ def test_ledger_that_cannot_be_written_refuses_the_next_call(capped, monkeypatch
     # a plain missing file in a WRITABLE folder is still a normal first start
     monkeypatch.setattr(rc, "SPEND_FILE", capped / "sub" / "reader_spend.json")
     rc.USAGE = rc.Usage()
-    assert rc.USAGE.ledger_ok and rc.USAGE.reserve("claude-opus-5-5") == 0.06
+    assert rc.USAGE.ledger_ok and rc.USAGE.reserve("claude-opus-5-5") == 0.07
 
 
 def test_save_failure_after_a_call_closes_the_budget_until_it_can_save(capped, monkeypatch):
     rc.USAGE = rc.Usage()
-    assert rc.USAGE.reserve("claude-opus-5-5") == 0.06   # healthy start (file created)
+    assert rc.USAGE.reserve("claude-opus-5-5") == 0.07   # healthy start (file created)
     real_save = rc.Usage._save
     monkeypatch.setattr(rc.Usage, "_save", lambda self: False)
-    rc.USAGE.add("claude-opus-5-5", 1000, 100, 0.06)
+    rc.USAGE.add("claude-opus-5-5", 1000, 100, 0.07)
     assert rc.USAGE.ledger_ok is False and rc.USAGE.lifetime_usd > 0
     with pytest.raises(rc.HTTPException) as exc:
         rc.USAGE.reserve("claude-opus-5-5")
     assert exc.value.status_code == 503
     monkeypatch.setattr(rc.Usage, "_save", real_save)    # the disk works again
     rc.USAGE.release(0)
-    assert rc.USAGE.reserve("claude-opus-5-5") == 0.06 and rc.USAGE.ledger_ok
+    assert rc.USAGE.reserve("claude-opus-5-5") == 0.07 and rc.USAGE.ledger_ok
 
 
 def test_recovered_ledger_never_lowers_what_memory_knows(capped):
@@ -267,7 +267,7 @@ def test_recovered_ledger_never_lowers_what_memory_knows(capped):
     usage = rc.Usage()
     usage.lifetime_usd = 3.0
     (capped / "reader_spend.json").write_text('{"usd": 1.0}')
-    assert usage.reserve("claude-opus-5-5") == 0.06 and usage.lifetime_usd == 3.0
+    assert usage.reserve("claude-opus-5-5") == 0.07 and usage.lifetime_usd == 3.0
 
 
 # ------------------------------------------------------------------ K28/14: only an explicit test upstream is free

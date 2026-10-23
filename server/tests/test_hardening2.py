@@ -94,7 +94,7 @@ def test_read_when_reader_is_down_is_503(api_client, monkeypatch):
 
     monkeypatch.setattr(api, "READER_TRANSPORT", httpx.MockTransport(boom))
     r = post_image(api_client)
-    assert r.status_code == 503 and r.json() == {"detail": "reader not connected"}
+    assert r.status_code == 503 and r.json() == {"detail": "reader not connected", "code": "not_configured"}
 
 
 def test_read_requires_the_install_key(api_client, reader):

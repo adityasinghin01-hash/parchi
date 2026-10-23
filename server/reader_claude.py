@@ -69,12 +69,25 @@ CONNECT_TIMEOUT_S = 10
 TOTAL_DEADLINE_S = 50
 MIN_RETRY_REMAINING_S = 15
 RETRY_DELAY_S = 1.0
-INR_PER_USD = 88
+def _inr_per_usd() -> float:
+    """Fixed estimate rate (not live). Default 97; PARCHI_INR_PER_USD (a positive number) overrides it."""
+    try:
+        value = float(os.environ.get("PARCHI_INR_PER_USD", ""))
+        if math.isfinite(value) and value > 0:
+            return value
+    except ValueError:
+        pass
+    return 97.0
+
+
+INR_PER_USD = _inr_per_usd()
 # Hard stop for REAL spending (the user's limit is Rs 500; a $5 top-up). Counted across restarts in data/reader_spend.json.
 SPEND_CAP_USD = float(os.environ.get("PARCHI_SPEND_CAP_USD", "4.5"))
 SPEND_FILE = Path(os.environ.get("PARCHI_SPEND_FILE") or Path(__file__).resolve().parent / "data" / "reader_spend.json")
 # Worst-case USD reserved BEFORE each real call (K28/12), released/reconciled with the real cost afterwards.
-RESERVE_USD = {"claude-opus-5-5": 0.06, "claude-sonnet-5-5": 0.03, "claude-haiku-5-5": 0.005}
+# G9: measured 5 real calls = about 2,500 input + 250 output tokens, $0.015 and 5.8 s per scan (max_tokens 2000 caps the output).
+RESERVE_USD = {"claude-opus-5-5": 0.07, "claude-sonnet-5-5": 0.04, "claude-haiku-5-5": 0.005}
+MAX_TOKENS = 2000
 MAX_LINES = 30
 MAX_NAME_CHARS = 80
 MAX_FIELD_CHARS = 40
@@ -125,6 +138,15 @@ LINES_SCHEMA = {
 }
 
 CANNOT_READ = "reader could not read this photo"
+
+
+class ReaderFailed(HTTPException):
+    """An HTTP error that also carries a machine `code` for the app (docs/team/READER-CONTRACT.md):
+    not_configured | cap_reached | bad_key | reader_error | timeout | slow_down. The body is {"detail": ..., "code": ...}."""
+
+    def __init__(self, status: int, detail: str, code: str, headers: dict | None = None) -> None:
+        super().__init__(status, detail, headers=headers)
+        self.code = code
 
 
 # ---------------------------------------------------------------- output hygiene (pure)
@@ -231,9 +253,9 @@ def reserve_estimate(model: str) -> float:
     return RESERVE_USD[_price_key(model)]
 
 
-class SpendRefused(HTTPException):
-    def __init__(self, detail: str) -> None:
-        super().__init__(503, detail)
+class SpendRefused(ReaderFailed):
+    def __init__(self, detail: str, code: str = "cap_reached") -> None:
+        super().__init__(503, detail, code)
 
 
 class Usage:
@@ -289,10 +311,10 @@ class Usage:
         self.cost_usd = 0.0
         self.since = time.strftime("%Y-%m-%dT%H:%M:%S%z")
 
-    def _refuse(self, detail: str, why: str) -> None:
+    def _refuse(self, detail: str, why: str, code: str = "cap_reached") -> None:
         self.refusals += 1
         log.warning("%s; refusing a real call (refusals=%d)", why, self.refusals)
-        raise SpendRefused(detail)
+        raise SpendRefused(detail, code)
 
     def reserve(self, model: str) -> float:
         """Atomically set aside the worst-case cost of one call BEFORE it is dispatched. Returns the amount (0 when the
@@ -308,7 +330,7 @@ class Usage:
                 if self.ledger_ok and not self._save():
                     self.ledger_ok = False
             if not self.ledger_ok:
-                self._refuse("reader spending ledger unavailable", "spend ledger cannot be read or written")
+                self._refuse("reader spending ledger unavailable", "spend ledger cannot be read or written", "reader_error")
             if self.lifetime_usd + self.reserved + estimate > SPEND_CAP_USD + self.EPS:
                 self._refuse("reader spending cap reached", "spending cap would be exceeded")
             self.reserved += estimate
@@ -388,7 +410,7 @@ def _call_once(client, model: str, media_type: str, b64: str, remaining: float =
     connect, rest = attempt_timeouts(remaining)
     return client.messages.create(
         model=model,
-        max_tokens=4000,
+        max_tokens=MAX_TOKENS,
         timeout=anthropic.Timeout(rest, connect=connect),
         output_config={"effort": "low", "format": {"type": "json_schema", "schema": LINES_SCHEMA}},
         messages=[{"role": "user", "content": [
@@ -398,44 +420,81 @@ def _call_once(client, model: str, media_type: str, b64: str, remaining: float =
     )
 
 
+def _error_info(exc) -> tuple[str, str]:
+    """(error type, message) from an Anthropic error body, lower case; never logged (may echo request details)."""
+    body = getattr(exc, "body", None)
+    err = body.get("error") if isinstance(body, dict) else None
+    if not isinstance(err, dict):
+        err = body if isinstance(body, dict) else {}
+    kind = str(err.get("type") or "").lower()
+    message = str(err.get("message") or getattr(exc, "message", "") or "").lower()
+    return kind, message
+
+
+def is_spend_limit(exc) -> bool:
+    """Anthropic's own spend limit: HTTP 400 "You have reached your specified ... usage limits", or 429
+    `enforced_spend_limit_reached`. Retrying cannot help, so it is never retried."""
+    status = getattr(exc, "status_code", None)
+    kind, message = _error_info(exc)
+    if status == 429 and ("enforced_spend_limit" in kind or "enforced_spend_limit" in message or "spend limit" in message):
+        return True
+    return status == 400 and "usage limits" in message
+
+
+def classify(exc) -> tuple[bool, int, str, str]:
+    """(retryable, http status, detail, code) for an upstream exception. Most specific first."""
+    if isinstance(exc, anthropic.APITimeoutError):
+        return True, 504, "reader timed out", "timeout"
+    if isinstance(exc, anthropic.APIStatusError):
+        status = exc.status_code
+        if is_spend_limit(exc):
+            return False, 503, "reader spending cap reached", "cap_reached"
+        if status in (401, 403):
+            return False, 502, CANNOT_READ, "bad_key"
+        if status == 429 or status >= 500:
+            return True, 502, CANNOT_READ, "reader_error"
+        return False, 502, CANNOT_READ, "reader_error"
+    if isinstance(exc, anthropic.APIConnectionError):
+        return True, 502, CANNOT_READ, "reader_error"
+    return False, 502, CANNOT_READ, "reader_error"
+
+
 def _call_with_retry(client, model: str, media_type: str, b64: str, deadline: float | None = None):
-    """Most specific exception first. One deadline (TOTAL_DEADLINE_S) covers both attempts. Retry ONCE after 1 s on
-    429 / 5xx / connection errors, and only when at least MIN_RETRY_REMAINING_S would remain; otherwise 502."""
+    """One deadline (TOTAL_DEADLINE_S) covers both attempts. Retry ONCE after 1 s on 429 / 5xx / connection errors / timeouts,
+    and only when at least MIN_RETRY_REMAINING_S would remain. Never retried: Anthropic's spend limit (400 "usage limits",
+    429 enforced_spend_limit_reached), 401/403 and other 4xx. Every failure carries a machine code (ReaderFailed)."""
     if deadline is None:
         deadline = _now() + TOTAL_DEADLINE_S
     for attempt in (1, 2):
         try:
             return _call_once(client, model, media_type, b64, deadline - _now())
-        except anthropic.RateLimitError:
-            retryable, why = True, "429"
-        except anthropic.APIStatusError as exc:
-            retryable, why = exc.status_code >= 500, str(exc.status_code)
-        except anthropic.APIConnectionError as exc:
-            retryable, why = True, type(exc).__name__
+        except (anthropic.APIStatusError, anthropic.APIConnectionError) as exc:
+            retryable, status, detail, code = classify(exc)
+            why = str(getattr(exc, "status_code", "")) or type(exc).__name__
         if retryable and attempt == 1 and not may_retry(deadline - _now()):
-            log.warning("upstream failed (%s); too little of the deadline is left to retry", why)
-            raise HTTPException(502, CANNOT_READ)
+            log.warning("upstream failed (%s, %s); too little of the deadline is left to retry", why, code)
+            raise ReaderFailed(status, detail, code)
         if not retryable or attempt == 2:
-            log.warning("upstream failed (%s) attempt=%d", why, attempt)
-            raise HTTPException(502, CANNOT_READ)
+            log.warning("upstream failed (%s, %s) attempt=%d", why, code, attempt)
+            raise ReaderFailed(status, detail, code)
         log.info("upstream %s, retrying once", why)
         _sleep(RETRY_DELAY_S)
-    raise HTTPException(502, CANNOT_READ)  # unreachable
+    raise ReaderFailed(502, CANNOT_READ, "reader_error")  # unreachable
 
 
 def _lines_from_response(response) -> list[dict]:
     if getattr(response, "stop_reason", None) in ("refusal", "max_tokens"):
         log.warning("model stop_reason=%s", response.stop_reason)
-        raise HTTPException(502, CANNOT_READ)
+        raise ReaderFailed(502, CANNOT_READ, "reader_error")
     text = next((b.text for b in getattr(response, "content", []) or [] if getattr(b, "type", None) == "text"), None)
     try:
         parsed = json.loads(text)
     except (TypeError, ValueError):
         log.warning("model reply was not valid JSON")
-        raise HTTPException(502, CANNOT_READ)
+        raise ReaderFailed(502, CANNOT_READ, "reader_error")
     if not isinstance(parsed, dict) or not isinstance(parsed.get("lines"), list):
         log.warning("model reply had no lines list")
-        raise HTTPException(502, CANNOT_READ)
+        raise ReaderFailed(502, CANNOT_READ, "reader_error")
     return clean_lines(parsed)
 
 
@@ -459,6 +518,11 @@ def read_photo(client, data: bytes, media_type: str) -> list[dict]:
 
 # ---------------------------------------------------------------- the web app
 app = FastAPI(title="Parchi Claude reader", docs_url=None, redoc_url=None, openapi_url=None)
+
+
+@app.exception_handler(ReaderFailed)
+async def _reader_failed(_: Request, exc: ReaderFailed) -> JSONResponse:
+    return JSONResponse({"detail": exc.detail, "code": exc.code}, status_code=exc.status_code, headers=exc.headers)
 
 
 @app.get("/health")
@@ -494,9 +558,9 @@ async def read(request: Request, image: UploadFile | None = File(None)) -> JSONR
         raise HTTPException(413, "image too large")
     client = _get_client()
     if client is None:
-        raise HTTPException(503, "reader not connected")
-    if over_cap():  # the app then reads on the phone instead (the server maps a reader 503 to "reader not connected")
-        raise HTTPException(503, "reader spending cap reached")
+        raise ReaderFailed(503, "reader not connected", "not_configured")
+    if over_cap():  # the app shows "spending limit reached" (and still tries its on-phone reader for printed parchis)
+        raise ReaderFailed(503, "reader spending cap reached", "cap_reached")
     if image is None or image.content_type not in ALLOWED_TYPES:
         raise HTTPException(415, "send one image (jpeg, png or heic) in the 'image' field")
     data = await image.read(MAX_IMAGE_BYTES + 1)
