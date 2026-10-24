@@ -37,3 +37,6 @@ assert result["followUps"] == []
 
 ## Honest limits
 The rules are from secondary sources only and output says **check on the official site**. Contact provenance is preserved, not reverified online. No refund completion time is promised. +30 days does not mean one calendar month. A native speaker has not reviewed Hindi; precaution wording has `reviewed: false`. An issue code describes what the person reports; the helper cannot prove it happened. The supplied order amount is shown as context and is not assumed to be the refund amount. Review the draft before use.
+
+## Browser check
+The local demo was exercised in the browser with Hindi / wrong item / Blinkit. The message, sourced escalation ladder and planned follow-up dates rendered successfully. No complaint was sent. This check does not validate native iPhone layout or Hindi wording.

@@ -121,7 +121,7 @@ def _brand_relation(observed,expected,strengths,approved):
     if observed in approved:return 'approved'
     if observed in strengths:return 'brand_differs' # Real brand identity precedes OCR tolerance.
     if not re.fullmatch(r'[A-Z0-9-]+',observed):return 'unreadable'
-    if len(expected)>=4 and distance(normalise_brand(observed),normalise_brand(expected))<=2:return 'likely_ok'
+    if distance(normalise_brand(observed),normalise_brand(expected))<=2:return 'likely_ok'
     return 'brand_differs'
 
 
@@ -132,7 +132,7 @@ def _received(entry,catalogue_dir):
     for field in ('brand','strength','units','expiry','batch'):
         if entry.get(field) is not None:
             before=parsed[field];after=entry[field]
-            equal=(_same_strength(before,after) if field=='strength' else parse_expiry(before)==parse_expiry(after) if field=='expiry' else str(before).casefold()==str(after).casefold())
+            equal=(_same_strength(before,after) if field=='strength' else parse_expiry(before)==parse_expiry(after) if field=='expiry' else (str(before)==str(after) or (isinstance(before,(int,float)) and isinstance(after,(int,float)) and before==after)) if field=='units' else str(before).casefold()==str(after).casefold())
             if before is not None and not equal:parsed['conflicts'].append(field)
             parsed[field]=after
     if entry.get('brand') is not None:parsed['brandCandidate']=entry['brand']

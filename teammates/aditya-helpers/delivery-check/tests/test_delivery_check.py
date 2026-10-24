@@ -191,3 +191,17 @@ def test_strength_unit_is_not_inferred_from_numeric_catalogue():
     assert verdict(payload(strength='650 mg'))=='unreadable'
     p=payload(strength='650 mg');p['confirmed'][0]['strength']='650 mg';assert verdict(p)=='ok'
     p=payload(strength='650 g');p['confirmed'][0]['strength']='650 mg';assert verdict(p)=='strength_differs'
+
+
+def test_short_brand_typo_is_tentative_not_silently_repaired():
+    catalogue,_,_=load_catalogue();assert 'P4N' not in catalogue
+    p=payload(brand='P4N',strength=catalogue['PAN'][0]);p['confirmed'][0].update(name='PAN',strength=catalogue['PAN'][0])
+    assert verdict(p)=='likely_ok'
+
+def test_numeric_quantity_override_equivalence():
+    p=copy.deepcopy(EXAMPLE);p['received'][0]['units']=15.0
+    assert verdict(p)=='ok'
+
+def test_empty_confirmed_list_retains_all_received_as_extra():
+    p=payload();p['confirmed']=[]
+    out=compare(p);assert out['lines']==[] and len(out['extra'])==1

@@ -11,7 +11,7 @@ Runtime: 3.11.16; pytest pinned in ../requirements.txt.
 147 passed in 0.99s
 ```
 
-Six fixed golden cases below were inspected for message facts, contacts, date calculations, local-shop and sandbox exclusions. Tests compare subsequent output against these committed files. Hindi remains unreviewed by a native speaker. API-level demo checks cover page delivery, 24-company list, generation, cross-origin rejection and invalid input; no visual browser check is claimed.
+Six fixed golden cases below were inspected for message facts, contacts, date calculations, local-shop and sandbox exclusions. Tests compare subsequent output against these committed files. Hindi remains unreviewed by a native speaker. API-level demo checks cover page delivery, 24-company list, generation, cross-origin rejection and invalid input; A browser check also generated a synthetic Hindi wrong-item complaint for Blinkit and verified visible message, sourced escalation and planned dates; no message was sent.
 
 Review fixes: validate object shapes; use UTF-8 for the Windows CLI; do not infer that a whole order amount equals the disputed refund; distinguish planned follow-ups from a sent complaint. No independent legal or contact freshness verification performed.
 
