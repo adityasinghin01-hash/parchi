@@ -10,8 +10,8 @@ python -m pytest hindi-pack/tests -q
 Python 3.11.16. Source: current main app at repository commit 0d5c1d9; rerun against the final frontend.
 
 ```text
-...............................................................          [100%]
-63 passed in 1.77s
+.................................................................        [100%]
+65 passed in 1.84s
 ```
 
 ```json
@@ -31,3 +31,5 @@ Python 3.11.16. Source: current main app at repository commit 0d5c1d9; rerun aga
 All extracted keys have nonempty draft translations with placeholder parity. Zero glossary violations in this run. The default catalog has zero entries because no human review is recorded; `Localizable.draft.xcstrings` has 275 needs_review entries for demonstration only.
 
 Review fixes: filter standalone interpolations, date format strings, configuration keys, and clearly named sellers; preserve the production #else arm of DEBUG blocks; distinguish purchase order from ranking order; preserve savings/MRP placeholder meaning. The not-auto report is deliberately conservative and contains configuration/data false positives. Unknown interpolation types, plural suffixes and nonliteral expressions need manual checking. This is lexical analysis, not a Swift compiler or proof that the entire app is localized. No simulator, iPhone layout test or native-speaker review was performed.
+
+Additional review regression checks: negated DEBUG #else exclusion and duplicate catalog-key rejection.

@@ -95,3 +95,11 @@ def test_duplicates_merge_and_debug_else_is_retained(tmp_path):
     repeated=next(e for e in result['entries'] if e['key']=='Repeated')
     assert len(repeated['locations'])==2
     assert {e['key'] for e in result['entries']}=={'Repeated','Visible'}
+
+
+def test_negated_debug_else_is_excluded(tmp_path):
+    (tmp_path/'Flags.swift').write_text('#if !DEBUG\nText("Release arm")\n#else\nText("Debug arm")\n#endif',encoding='utf-8')
+    assert {e['key'] for e in extract(tmp_path)['entries']}=={'Release arm'}
+
+def test_duplicate_catalog_key_is_rejected():
+    with pytest.raises(ValueError):build_catalog([row(status='reviewed'),row(status='reviewed')])

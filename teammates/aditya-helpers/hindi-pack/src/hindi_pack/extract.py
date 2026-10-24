@@ -72,11 +72,12 @@ def debug_lines(source):
         s=line.strip()
         if s.startswith('#if '):
             condition=s[4:];is_debug=bool(re.search(r'\bDEBUG\b',condition)) and not bool(re.search(r'!\s*DEBUG',condition))
-            stack.append([is_debug,is_debug]);excluded.add(line_no)
+            kind=(-1 if re.search(r'!\s*DEBUG',condition) else 1) if re.search(r'\bDEBUG\b',condition) else 0
+            stack.append([is_debug,kind]);excluded.add(line_no)
         elif s.startswith('#elseif ') and stack:
             stack[-1][0]=bool(re.search(r'\bDEBUG\b',s)) and not bool(re.search(r'!\s*DEBUG',s));excluded.add(line_no)
         elif s=='#else' and stack:
-            stack[-1][0]=not stack[-1][1] if stack[-1][1] else False;excluded.add(line_no)
+            stack[-1][0]=stack[-1][1]==-1;excluded.add(line_no)
         elif s=='#endif' and stack:
             stack.pop();excluded.add(line_no)
         elif any(s[0] for s in stack):excluded.add(line_no)
@@ -198,9 +199,11 @@ def placeholders(text):
 
 
 def validate_rows(rows):
-    errors=[]
+    errors=[];seen=set()
     for row in rows:
         key=row['key'];hi=row.get('hindi','')
+        if key in seen:errors.append(f'{key}: duplicate key')
+        seen.add(key)
         if row.get('status') not in {'draft','reviewed'}:errors.append(f'{key}: invalid status')
         if row.get('status')=='reviewed' and not hi.strip():errors.append(f'{key}: reviewed translation is empty')
         if hi and placeholders(row.get('english',key))!=placeholders(hi):errors.append(f'{key}: placeholder parity differs')

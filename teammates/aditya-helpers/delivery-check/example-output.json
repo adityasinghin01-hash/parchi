@@ -1,0 +1,38 @@
+{
+  "lines": [
+    {
+      "itemId": "dolo",
+      "verdict": "ok",
+      "message": "Brand, strength, quantity and expiry match the checked fields.",
+      "messageHi": "जांचे गए ब्रांड, स्ट्रेंथ, संख्या और एक्सपायरी मेल खाते हैं।",
+      "severity": "info",
+      "findings": [
+        {
+          "code": "ok",
+          "message": "Brand, strength, quantity and expiry match the checked fields.",
+          "messageHi": "जांचे गए ब्रांड, स्ट्रेंथ, संख्या और एक्सपायरी मेल खाते हैं।",
+          "detail": null
+        }
+      ],
+      "receivedIndices": [
+        0
+      ]
+    }
+  ],
+  "extra": [],
+  "summary": {
+    "counts": {
+      "ok": 1
+    },
+    "extraCount": 0,
+    "sentence": "1 confirmed lines checked; 0 entries need checking.",
+    "nextStep": "Keep the confirmed list and bill."
+  },
+  "notes": [
+    "ASSUMPTION: near-expiry means within 3 calendar months; you can change this threshold.",
+    "Two-digit expiry years are interpreted as 2000–2099.",
+    "Hindi messages are drafts; native review pending.",
+    "Typed or reader text only; no photo validation performed."
+  ],
+  "dataVersion": "2026-10-23"
+}
