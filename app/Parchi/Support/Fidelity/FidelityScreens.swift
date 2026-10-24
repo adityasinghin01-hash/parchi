@@ -7,6 +7,6 @@ import SwiftUI
 @MainActor
 enum FidelityScreens {
     static func view(for name: String) -> AnyView? {
-        FidelityFE2.view(name) ?? FidelityFE3.view(name) ?? FidelityFE4.view(name) ?? FidelityFE5.view(name)
+        FidelityLead.view(name) ?? FidelityFE2.view(name) ?? FidelityFE3.view(name) ?? FidelityFE4.view(name) ?? FidelityFE5.view(name)
     }
 }

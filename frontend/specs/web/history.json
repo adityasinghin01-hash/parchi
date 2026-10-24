@@ -8,6 +8,7 @@
  "scrollHeight": 979,
  "elements": [
   {
+   "z": 0,
    "order": 0,
    "tag": "span",
    "cls": "clock",
@@ -21,6 +22,13 @@
     "wu": 58.5,
     "hu": 32
    },
+   "trect": {
+    "x": 48.8,
+    "y": 14.9,
+    "w": 31,
+    "h": 17
+   },
+   "lines": 1,
    "text": "9:41",
    "type": {
     "family": "-apple-system",
@@ -35,6 +43,7 @@
    }
   },
   {
+   "z": 0,
    "order": 1,
    "tag": "span",
    "cls": "dynamic-island",
@@ -52,6 +61,7 @@
    "radius": "39px"
   },
   {
+   "z": 0,
    "order": 2,
    "tag": "svg",
    "cls": "",
@@ -65,9 +75,11 @@
     "wu": 121.3,
     "hu": 36.8
    },
-   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>",
+   "color": "rgb(66, 28, 8)"
   },
   {
+   "z": 0,
    "order": 3,
    "tag": "section",
    "cls": "screen journey-screen final-screen history-screen",
@@ -84,6 +96,7 @@
    "bg": "rgb(250, 238, 218)"
   },
   {
+   "z": 0,
    "order": 5,
    "tag": "strong",
    "cls": "",
@@ -97,6 +110,13 @@
     "wu": 131,
     "hu": 40
    },
+   "trect": {
+    "x": 53.6,
+    "y": 48.4,
+    "w": 69.5,
+    "h": 24
+   },
+   "lines": 1,
    "text": "Parchi",
    "type": {
     "family": "Georgia",
@@ -111,6 +131,7 @@
    }
   },
   {
+   "z": 0,
    "order": 6,
    "tag": "button",
    "cls": "j-area",
@@ -128,6 +149,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 7,
    "tag": "svg",
    "cls": "",
@@ -141,9 +163,11 @@
     "wu": 20,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"pin\" x1=\"16\" y1=\"4\" x2=\"43\" y2=\"60\"><stop stop-color=\"#e94f14\"></stop><stop offset=\"1\" stop-color=\"#b6340a\"></stop></linearGradient></defs><path d=\"M32 4C18 4 10 14 10 26c0 15 22 35 22 35s22-20 22-35C54 14 46 4 32 4Z\" fill=\"url(#pin)\"></path><circle cx=\"32\" cy=\"25\" r=\"9.5\" fill=\"#fff2d9\"></circle></svg>"
+   "svg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"pin\" x1=\"16\" y1=\"4\" x2=\"43\" y2=\"60\"><stop stop-color=\"#e94f14\"></stop><stop offset=\"1\" stop-color=\"#b6340a\"></stop></linearGradient></defs><path d=\"M32 4C18 4 10 14 10 26c0 15 22 35 22 35s22-20 22-35C54 14 46 4 32 4Z\" fill=\"url(#pin)\"></path><circle cx=\"32\" cy=\"25\" r=\"9.5\" fill=\"#fff2d9\"></circle></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 8,
    "tag": "span",
    "cls": "",
@@ -157,6 +181,13 @@
     "wu": 96.2,
     "hu": 20.7
    },
+   "trect": {
+    "x": 307.2,
+    "y": 60.2,
+    "w": 51,
+    "h": 11
+   },
+   "lines": 1,
    "text": "HSR Layout",
    "type": {
     "family": "-apple-system",
@@ -171,6 +202,7 @@
    }
   },
   {
+   "z": 0,
    "order": 9,
    "tag": "svg",
    "cls": "",
@@ -184,9 +216,11 @@
     "wu": 16,
     "hu": 16
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 1,
    "order": 10,
    "tag": "h1",
    "cls": "",
@@ -200,6 +234,13 @@
     "wu": 679.1,
     "hu": 54.9
    },
+   "trect": {
+    "x": 14.8,
+    "y": 90.8,
+    "w": 169.5,
+    "h": 30
+   },
+   "lines": 1,
    "text": "Your History",
    "type": {
     "family": "Georgia",
@@ -214,6 +255,7 @@
    }
   },
   {
+   "z": 1,
    "order": 11,
    "tag": "p",
    "cls": "",
@@ -227,7 +269,14 @@
     "wu": 679.1,
     "hu": 59.8
    },
-   "text": "View your past prescriptions, orders and lab tests. Reorder, view details or show your Parchi Pass again.",
+   "trect": {
+    "x": 14.8,
+    "y": 124.6,
+    "w": 303.7,
+    "h": 30.9
+   },
+   "lines": 2,
+   "text": "View your past prescriptions, orders and lab tests.\nReorder, view details or show your Parchi Pass again.",
    "type": {
     "family": "-apple-system",
     "size": 12.2,
@@ -241,6 +290,7 @@
    }
   },
   {
+   "z": 0,
    "order": 13,
    "tag": "button",
    "cls": "",
@@ -254,6 +304,13 @@
     "wu": 125.9,
     "hu": 71.6
    },
+   "trect": {
+    "x": 43.6,
+    "y": 179.4,
+    "w": 14.6,
+    "h": 13
+   },
+   "lines": 1,
    "text": "All",
    "type": {
     "family": "-apple-system",
@@ -270,6 +327,7 @@
    "radius": "9.55102px"
   },
   {
+   "z": 0,
    "order": 14,
    "tag": "button",
    "cls": "",
@@ -283,6 +341,13 @@
     "wu": 167.1,
     "hu": 71.6
    },
+   "trect": {
+    "x": 107.6,
+    "y": 179.4,
+    "w": 56.9,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Medicines",
    "type": {
     "family": "-apple-system",
@@ -299,6 +364,7 @@
    "radius": "9.55102px"
   },
   {
+   "z": 0,
    "order": 15,
    "tag": "button",
    "cls": "",
@@ -312,6 +378,13 @@
     "wu": 167.1,
     "hu": 71.6
    },
+   "trect": {
+    "x": 205.4,
+    "y": 179.4,
+    "w": 53.5,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Lab Tests",
    "type": {
     "family": "-apple-system",
@@ -328,6 +401,7 @@
    "radius": "9.55102px"
   },
   {
+   "z": 0,
    "order": 16,
    "tag": "button",
    "cls": "",
@@ -341,6 +415,13 @@
     "wu": 167.1,
     "hu": 71.6
    },
+   "trect": {
+    "x": 309,
+    "y": 179.4,
+    "w": 38.3,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Orders",
    "type": {
     "family": "-apple-system",
@@ -357,6 +438,7 @@
    "radius": "9.55102px"
   },
   {
+   "z": 0,
    "order": 17,
    "tag": "h2",
    "cls": "",
@@ -370,6 +452,13 @@
     "wu": 679.1,
     "hu": 37.2
    },
+   "trect": {
+    "x": 17.5,
+    "y": 217.6,
+    "w": 111.5,
+    "h": 19
+   },
+   "lines": 1,
    "text": "October 2026",
    "type": {
     "family": "Georgia",
@@ -384,6 +473,7 @@
    }
   },
   {
+   "z": 0,
    "order": 18,
    "tag": "article",
    "cls": "history-card",
@@ -401,6 +491,7 @@
    "radius": "12.7347px"
   },
   {
+   "z": 0,
    "order": 19,
    "tag": "span",
    "cls": "history-date",
@@ -418,6 +509,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 20,
    "tag": "strong",
    "cls": "",
@@ -431,6 +523,13 @@
     "wu": 37.8,
     "hu": 36.3
    },
+   "trect": {
+    "x": 35.8,
+    "y": 266.8,
+    "w": 20.1,
+    "h": 21
+   },
+   "lines": 1,
    "text": "10",
    "type": {
     "family": "-apple-system",
@@ -445,6 +544,7 @@
    }
   },
   {
+   "z": 0,
    "order": 21,
    "tag": "small",
    "cls": "",
@@ -458,6 +558,13 @@
     "wu": 34.6,
     "hu": 18.8
    },
+   "trect": {
+    "x": 36.7,
+    "y": 288.6,
+    "w": 18.4,
+    "h": 10
+   },
+   "lines": 1,
    "text": "OCT",
    "type": {
     "family": "-apple-system",
@@ -472,6 +579,7 @@
    }
   },
   {
+   "z": 0,
    "order": 22,
    "tag": "button",
    "cls": "history-record-title",
@@ -487,6 +595,7 @@
    }
   },
   {
+   "z": 0,
    "order": 23,
    "tag": "strong",
    "cls": "",
@@ -500,6 +609,13 @@
     "wu": 263.5,
     "hu": 28.7
    },
+   "trect": {
+    "x": 81.1,
+    "y": 253.3,
+    "w": 139.8,
+    "h": 15
+   },
+   "lines": 1,
    "text": "Dr. Sharma Prescription",
    "type": {
     "family": "-apple-system",
@@ -514,6 +630,7 @@
    }
   },
   {
+   "z": 0,
    "order": 24,
    "tag": "svg",
    "cls": "",
@@ -527,9 +644,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(104, 85, 63)"
   },
   {
+   "z": 0,
    "order": 25,
    "tag": "span",
    "cls": "",
@@ -543,6 +662,13 @@
     "wu": 144.9,
     "hu": 23
    },
+   "trect": {
+    "x": 99.2,
+    "y": 271.8,
+    "w": 58.8,
+    "h": 12
+   },
+   "lines": 1,
    "text": "4 medicines",
    "type": {
     "family": "-apple-system",
@@ -557,6 +683,7 @@
    }
   },
   {
+   "z": 0,
    "order": 26,
    "tag": "svg",
    "cls": "",
@@ -570,9 +697,11 @@
     "wu": 23,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 27,
    "tag": "span",
    "cls": "",
@@ -586,6 +715,13 @@
     "wu": 129.6,
     "hu": 23
    },
+   "trect": {
+    "x": 189.3,
+    "y": 271.8,
+    "w": 50.7,
+    "h": 12
+   },
+   "lines": 1,
    "text": "2 lab tests",
    "type": {
     "family": "-apple-system",
@@ -600,6 +736,7 @@
    }
   },
   {
+   "z": 0,
    "order": 28,
    "tag": "svg",
    "cls": "",
@@ -613,9 +750,11 @@
     "wu": 23,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3h8m-7 0v12L5 28c-1 2 23 2 22 0l-8-13V3M9 22h14\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3h8m-7 0v12L5 28c-1 2 23 2 22 0l-8-13V3M9 22h14\"></path></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 29,
    "tag": "span",
    "cls": "history-status ",
@@ -629,6 +768,13 @@
     "wu": 116.4,
     "hu": 34.7
    },
+   "trect": {
+    "x": 88,
+    "y": 294.6,
+    "w": 48,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Completed",
    "type": {
     "family": "-apple-system",
@@ -645,6 +791,7 @@
    "radius": "5.30612px"
   },
   {
+   "z": 0,
    "order": 30,
    "tag": "button",
    "cls": "",
@@ -658,6 +805,13 @@
     "wu": 216.6,
     "hu": 49
    },
+   "trect": {
+    "x": 278.8,
+    "y": 294.6,
+    "w": 78.3,
+    "h": 11
+   },
+   "lines": 1,
    "text": "View Parchi Pass",
    "type": {
     "family": "-apple-system",
@@ -674,6 +828,7 @@
    "radius": "9.02041px"
   },
   {
+   "z": 0,
    "order": 31,
    "tag": "svg",
    "cls": "",
@@ -687,9 +842,11 @@
     "wu": 24,
     "hu": 24
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"7\" y=\"3\" width=\"18\" height=\"27\" rx=\"3\"></rect><path d=\"M12 9h8m-8 6h8m-8 6h5\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"7\" y=\"3\" width=\"18\" height=\"27\" rx=\"3\"></rect><path d=\"M12 9h8m-8 6h8m-8 6h5\"></path></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 32,
    "tag": "article",
    "cls": "history-card",
@@ -707,6 +864,7 @@
    "radius": "12.7347px"
   },
   {
+   "z": 0,
    "order": 33,
    "tag": "span",
    "cls": "history-date",
@@ -724,6 +882,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 34,
    "tag": "strong",
    "cls": "",
@@ -737,6 +896,13 @@
     "wu": 42.1,
     "hu": 36.3
    },
+   "trect": {
+    "x": 34.7,
+    "y": 350.9,
+    "w": 22.4,
+    "h": 21
+   },
+   "lines": 1,
    "text": "02",
    "type": {
     "family": "-apple-system",
@@ -751,6 +917,7 @@
    }
   },
   {
+   "z": 0,
    "order": 35,
    "tag": "small",
    "cls": "",
@@ -764,6 +931,13 @@
     "wu": 34.6,
     "hu": 18.8
    },
+   "trect": {
+    "x": 36.7,
+    "y": 372.8,
+    "w": 18.4,
+    "h": 10
+   },
+   "lines": 1,
    "text": "OCT",
    "type": {
     "family": "-apple-system",
@@ -778,6 +952,7 @@
    }
   },
   {
+   "z": 0,
    "order": 36,
    "tag": "button",
    "cls": "history-record-title",
@@ -793,6 +968,7 @@
    }
   },
   {
+   "z": 0,
    "order": 37,
    "tag": "strong",
    "cls": "",
@@ -806,6 +982,13 @@
     "wu": 220.2,
     "hu": 28.7
    },
+   "trect": {
+    "x": 81.1,
+    "y": 337.5,
+    "w": 116.8,
+    "h": 15
+   },
+   "lines": 1,
    "text": "Dr. Iyer Prescription",
    "type": {
     "family": "-apple-system",
@@ -820,6 +1003,7 @@
    }
   },
   {
+   "z": 0,
    "order": 38,
    "tag": "svg",
    "cls": "",
@@ -833,9 +1017,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(104, 85, 63)"
   },
   {
+   "z": 0,
    "order": 39,
    "tag": "span",
    "cls": "",
@@ -849,6 +1035,13 @@
     "wu": 144.6,
     "hu": 23
    },
+   "trect": {
+    "x": 99.2,
+    "y": 356,
+    "w": 58.7,
+    "h": 12
+   },
+   "lines": 1,
    "text": "3 medicines",
    "type": {
     "family": "-apple-system",
@@ -863,6 +1056,7 @@
    }
   },
   {
+   "z": 0,
    "order": 40,
    "tag": "svg",
    "cls": "",
@@ -876,9 +1070,11 @@
     "wu": 23,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 41,
    "tag": "span",
    "cls": "history-status ",
@@ -892,6 +1088,13 @@
     "wu": 104.3,
     "hu": 34.7
    },
+   "trect": {
+    "x": 88,
+    "y": 378.8,
+    "w": 41.6,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Delivered",
    "type": {
     "family": "-apple-system",
@@ -908,6 +1111,7 @@
    "radius": "5.30612px"
   },
   {
+   "z": 0,
    "order": 42,
    "tag": "button",
    "cls": "",
@@ -921,6 +1125,13 @@
     "wu": 232,
     "hu": 49
    },
+   "trect": {
+    "x": 270.6,
+    "y": 378.8,
+    "w": 86.5,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Reorder Medicines",
    "type": {
     "family": "-apple-system",
@@ -937,6 +1148,7 @@
    "radius": "9.02041px"
   },
   {
+   "z": 0,
    "order": 43,
    "tag": "svg",
    "cls": "",
@@ -950,9 +1162,11 @@
     "wu": 24,
     "hu": 24
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M28 12A12 12 0 0 0 7 6L3 10m0-8v8h8M4 20a12 12 0 0 0 21 6l4-4m0 8v-8h-8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M28 12A12 12 0 0 0 7 6L3 10m0-8v8h8M4 20a12 12 0 0 0 21 6l4-4m0 8v-8h-8\"></path></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 44,
    "tag": "h2",
    "cls": "",
@@ -966,6 +1180,13 @@
     "wu": 679.1,
     "hu": 37.2
    },
+   "trect": {
+    "x": 17.5,
+    "y": 419.5,
+    "w": 135.3,
+    "h": 19
+   },
+   "lines": 1,
    "text": "September 2026",
    "type": {
     "family": "Georgia",
@@ -980,6 +1201,7 @@
    }
   },
   {
+   "z": 0,
    "order": 45,
    "tag": "article",
    "cls": "history-card",
@@ -997,6 +1219,7 @@
    "radius": "12.7347px"
   },
   {
+   "z": 0,
    "order": 46,
    "tag": "span",
    "cls": "history-date",
@@ -1014,6 +1237,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 47,
    "tag": "strong",
    "cls": "",
@@ -1027,6 +1251,13 @@
     "wu": 38.1,
     "hu": 36.3
    },
+   "trect": {
+    "x": 35.8,
+    "y": 468.6,
+    "w": 20.2,
+    "h": 21
+   },
+   "lines": 1,
    "text": "18",
    "type": {
     "family": "-apple-system",
@@ -1041,6 +1272,7 @@
    }
   },
   {
+   "z": 0,
    "order": 48,
    "tag": "small",
    "cls": "",
@@ -1054,6 +1286,13 @@
     "wu": 30.9,
     "hu": 18.8
    },
+   "trect": {
+    "x": 37.7,
+    "y": 490.5,
+    "w": 16.4,
+    "h": 10
+   },
+   "lines": 1,
    "text": "SEP",
    "type": {
     "family": "-apple-system",
@@ -1068,6 +1307,7 @@
    }
   },
   {
+   "z": 0,
    "order": 49,
    "tag": "button",
    "cls": "history-record-title",
@@ -1083,6 +1323,7 @@
    }
   },
   {
+   "z": 0,
    "order": 50,
    "tag": "strong",
    "cls": "",
@@ -1096,6 +1337,13 @@
     "wu": 220.1,
     "hu": 28.7
    },
+   "trect": {
+    "x": 81.1,
+    "y": 455.2,
+    "w": 116.8,
+    "h": 15
+   },
+   "lines": 1,
    "text": "Dr. Rao Prescription",
    "type": {
     "family": "-apple-system",
@@ -1110,6 +1358,7 @@
    }
   },
   {
+   "z": 0,
    "order": 51,
    "tag": "svg",
    "cls": "",
@@ -1123,9 +1372,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(104, 85, 63)"
   },
   {
+   "z": 0,
    "order": 52,
    "tag": "span",
    "cls": "",
@@ -1139,6 +1390,13 @@
     "wu": 144.4,
     "hu": 23
    },
+   "trect": {
+    "x": 99.2,
+    "y": 473.7,
+    "w": 58.6,
+    "h": 12
+   },
+   "lines": 1,
    "text": "5 medicines",
    "type": {
     "family": "-apple-system",
@@ -1153,6 +1411,7 @@
    }
   },
   {
+   "z": 0,
    "order": 53,
    "tag": "svg",
    "cls": "",
@@ -1166,9 +1425,11 @@
     "wu": 23,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 54,
    "tag": "span",
    "cls": "",
@@ -1182,6 +1443,13 @@
     "wu": 117,
     "hu": 23
    },
+   "trect": {
+    "x": 189,
+    "y": 473.7,
+    "w": 44,
+    "h": 12
+   },
+   "lines": 1,
    "text": "1 lab test",
    "type": {
     "family": "-apple-system",
@@ -1196,6 +1464,7 @@
    }
   },
   {
+   "z": 0,
    "order": 55,
    "tag": "svg",
    "cls": "",
@@ -1209,9 +1478,11 @@
     "wu": 23,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3h8m-7 0v12L5 28c-1 2 23 2 22 0l-8-13V3M9 22h14\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3h8m-7 0v12L5 28c-1 2 23 2 22 0l-8-13V3M9 22h14\"></path></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 56,
    "tag": "span",
    "cls": "history-status ",
@@ -1225,6 +1496,13 @@
     "wu": 104.3,
     "hu": 34.7
    },
+   "trect": {
+    "x": 88,
+    "y": 496.5,
+    "w": 41.6,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Delivered",
    "type": {
     "family": "-apple-system",
@@ -1241,6 +1519,7 @@
    "radius": "5.30612px"
   },
   {
+   "z": 0,
    "order": 57,
    "tag": "button",
    "cls": "",
@@ -1254,6 +1533,13 @@
     "wu": 176.3,
     "hu": 49
    },
+   "trect": {
+    "x": 300.2,
+    "y": 496.5,
+    "w": 56.9,
+    "h": 11
+   },
+   "lines": 1,
    "text": "View Details",
    "type": {
     "family": "-apple-system",
@@ -1270,6 +1556,7 @@
    "radius": "9.02041px"
   },
   {
+   "z": 0,
    "order": 58,
    "tag": "svg",
    "cls": "",
@@ -1283,9 +1570,11 @@
     "wu": 24,
     "hu": 24
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"7\" y=\"3\" width=\"18\" height=\"27\" rx=\"3\"></rect><path d=\"M12 9h8m-8 6h8m-8 6h5\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"7\" y=\"3\" width=\"18\" height=\"27\" rx=\"3\"></rect><path d=\"M12 9h8m-8 6h8m-8 6h5\"></path></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 59,
    "tag": "article",
    "cls": "history-card",
@@ -1303,6 +1592,7 @@
    "radius": "12.7347px"
   },
   {
+   "z": 0,
    "order": 60,
    "tag": "span",
    "cls": "history-date",
@@ -1320,6 +1610,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 61,
    "tag": "strong",
    "cls": "",
@@ -1333,6 +1624,13 @@
     "wu": 42.8,
     "hu": 36.3
    },
+   "trect": {
+    "x": 34.5,
+    "y": 552.8,
+    "w": 22.7,
+    "h": 21
+   },
+   "lines": 1,
    "text": "03",
    "type": {
     "family": "-apple-system",
@@ -1347,6 +1645,7 @@
    }
   },
   {
+   "z": 0,
    "order": 62,
    "tag": "small",
    "cls": "",
@@ -1360,6 +1659,13 @@
     "wu": 30.9,
     "hu": 18.8
    },
+   "trect": {
+    "x": 37.7,
+    "y": 574.7,
+    "w": 16.4,
+    "h": 10
+   },
+   "lines": 1,
    "text": "SEP",
    "type": {
     "family": "-apple-system",
@@ -1374,6 +1680,7 @@
    }
   },
   {
+   "z": 0,
    "order": 63,
    "tag": "button",
    "cls": "history-record-title",
@@ -1389,6 +1696,7 @@
    }
   },
   {
+   "z": 0,
    "order": 64,
    "tag": "strong",
    "cls": "",
@@ -1402,6 +1710,13 @@
     "wu": 247.5,
     "hu": 28.7
    },
+   "trect": {
+    "x": 81.1,
+    "y": 539.4,
+    "w": 131.3,
+    "h": 15
+   },
+   "lines": 1,
    "text": "Dr. Mehta Prescription",
    "type": {
     "family": "-apple-system",
@@ -1416,6 +1731,7 @@
    }
   },
   {
+   "z": 0,
    "order": 65,
    "tag": "svg",
    "cls": "",
@@ -1429,9 +1745,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(104, 85, 63)"
   },
   {
+   "z": 0,
    "order": 66,
    "tag": "span",
    "cls": "",
@@ -1445,6 +1763,13 @@
     "wu": 144.1,
     "hu": 23
    },
+   "trect": {
+    "x": 99.2,
+    "y": 557.9,
+    "w": 58.4,
+    "h": 12
+   },
+   "lines": 1,
    "text": "2 medicines",
    "type": {
     "family": "-apple-system",
@@ -1459,6 +1784,7 @@
    }
   },
   {
+   "z": 0,
    "order": 67,
    "tag": "svg",
    "cls": "",
@@ -1472,9 +1798,11 @@
     "wu": 23,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 68,
    "tag": "span",
    "cls": "",
@@ -1488,6 +1816,13 @@
     "wu": 129.6,
     "hu": 23
    },
+   "trect": {
+    "x": 188.9,
+    "y": 557.9,
+    "w": 50.7,
+    "h": 12
+   },
+   "lines": 1,
    "text": "2 lab tests",
    "type": {
     "family": "-apple-system",
@@ -1502,6 +1837,7 @@
    }
   },
   {
+   "z": 0,
    "order": 69,
    "tag": "svg",
    "cls": "",
@@ -1515,9 +1851,11 @@
     "wu": 23,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3h8m-7 0v12L5 28c-1 2 23 2 22 0l-8-13V3M9 22h14\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3h8m-7 0v12L5 28c-1 2 23 2 22 0l-8-13V3M9 22h14\"></path></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 70,
    "tag": "span",
    "cls": "history-status partial",
@@ -1531,6 +1869,13 @@
     "wu": 185.7,
     "hu": 34.7
    },
+   "trect": {
+    "x": 88,
+    "y": 580.7,
+    "w": 84.8,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Partially completed",
    "type": {
     "family": "-apple-system",
@@ -1547,6 +1892,7 @@
    "radius": "5.30612px"
   },
   {
+   "z": 0,
    "order": 71,
    "tag": "button",
    "cls": "",
@@ -1560,6 +1906,13 @@
     "wu": 176.3,
     "hu": 49
    },
+   "trect": {
+    "x": 300.2,
+    "y": 580.7,
+    "w": 56.9,
+    "h": 11
+   },
+   "lines": 1,
    "text": "View Details",
    "type": {
     "family": "-apple-system",
@@ -1576,6 +1929,7 @@
    "radius": "9.02041px"
   },
   {
+   "z": 0,
    "order": 72,
    "tag": "svg",
    "cls": "",
@@ -1589,9 +1943,11 @@
     "wu": 24,
     "hu": 24
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"7\" y=\"3\" width=\"18\" height=\"27\" rx=\"3\"></rect><path d=\"M12 9h8m-8 6h8m-8 6h5\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"7\" y=\"3\" width=\"18\" height=\"27\" rx=\"3\"></rect><path d=\"M12 9h8m-8 6h8m-8 6h5\"></path></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 73,
    "tag": "h2",
    "cls": "",
@@ -1605,6 +1961,13 @@
     "wu": 679.1,
     "hu": 37.2
    },
+   "trect": {
+    "x": 17.5,
+    "y": 621.4,
+    "w": 103.2,
+    "h": 19
+   },
+   "lines": 1,
    "text": "August 2026",
    "type": {
     "family": "Georgia",
@@ -1619,6 +1982,7 @@
    }
   },
   {
+   "z": 0,
    "order": 74,
    "tag": "article",
    "cls": "history-card",
@@ -1636,6 +2000,7 @@
    "radius": "12.7347px"
   },
   {
+   "z": 0,
    "order": 75,
    "tag": "span",
    "cls": "history-date",
@@ -1653,6 +2018,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 76,
    "tag": "strong",
    "cls": "",
@@ -1666,6 +2032,13 @@
     "wu": 36.4,
     "hu": 36.3
    },
+   "trect": {
+    "x": 36.2,
+    "y": 670.5,
+    "w": 19.3,
+    "h": 21
+   },
+   "lines": 1,
    "text": "21",
    "type": {
     "family": "-apple-system",
@@ -1680,6 +2053,7 @@
    }
   },
   {
+   "z": 0,
    "order": 77,
    "tag": "small",
    "cls": "",
@@ -1693,6 +2067,13 @@
     "wu": 35.3,
     "hu": 18.8
    },
+   "trect": {
+    "x": 36.5,
+    "y": 692.4,
+    "w": 18.8,
+    "h": 10
+   },
+   "lines": 1,
    "text": "AUG",
    "type": {
     "family": "-apple-system",
@@ -1707,6 +2088,7 @@
    }
   },
   {
+   "z": 0,
    "order": 78,
    "tag": "button",
    "cls": "history-record-title",
@@ -1722,6 +2104,7 @@
    }
   },
   {
+   "z": 0,
    "order": 79,
    "tag": "strong",
    "cls": "",
@@ -1735,6 +2118,13 @@
     "wu": 257.5,
     "hu": 28.7
    },
+   "trect": {
+    "x": 81.1,
+    "y": 657.1,
+    "w": 136.6,
+    "h": 15
+   },
+   "lines": 1,
    "text": "Dr. Kapoor Prescription",
    "type": {
     "family": "-apple-system",
@@ -1749,6 +2139,7 @@
    }
   },
   {
+   "z": 0,
    "order": 80,
    "tag": "svg",
    "cls": "",
@@ -1762,9 +2153,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(104, 85, 63)"
   },
   {
+   "z": 0,
    "order": 81,
    "tag": "span",
    "cls": "",
@@ -1778,6 +2171,13 @@
     "wu": 144.6,
     "hu": 23
    },
+   "trect": {
+    "x": 99.2,
+    "y": 675.6,
+    "w": 58.7,
+    "h": 12
+   },
+   "lines": 1,
    "text": "3 medicines",
    "type": {
     "family": "-apple-system",
@@ -1792,6 +2192,7 @@
    }
   },
   {
+   "z": 0,
    "order": 82,
    "tag": "svg",
    "cls": "",
@@ -1805,9 +2206,11 @@
     "wu": 23,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 83,
    "tag": "span",
    "cls": "history-status ",
@@ -1821,6 +2224,13 @@
     "wu": 104.3,
     "hu": 34.7
    },
+   "trect": {
+    "x": 88,
+    "y": 698.4,
+    "w": 41.6,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Delivered",
    "type": {
     "family": "-apple-system",
@@ -1837,6 +2247,7 @@
    "radius": "5.30612px"
   },
   {
+   "z": 0,
    "order": 84,
    "tag": "button",
    "cls": "",
@@ -1850,6 +2261,13 @@
     "wu": 232,
     "hu": 49
    },
+   "trect": {
+    "x": 270.6,
+    "y": 698.4,
+    "w": 86.5,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Reorder Medicines",
    "type": {
     "family": "-apple-system",
@@ -1866,6 +2284,7 @@
    "radius": "9.02041px"
   },
   {
+   "z": 0,
    "order": 85,
    "tag": "svg",
    "cls": "",
@@ -1879,9 +2298,11 @@
     "wu": 24,
     "hu": 24
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M28 12A12 12 0 0 0 7 6L3 10m0-8v8h8M4 20a12 12 0 0 0 21 6l4-4m0 8v-8h-8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M28 12A12 12 0 0 0 7 6L3 10m0-8v8h8M4 20a12 12 0 0 0 21 6l4-4m0 8v-8h-8\"></path></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 86,
    "tag": "article",
    "cls": "history-card",
@@ -1899,6 +2320,7 @@
    "radius": "12.7347px"
   },
   {
+   "z": 0,
    "order": 87,
    "tag": "span",
    "cls": "history-date",
@@ -1916,6 +2338,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 88,
    "tag": "strong",
    "cls": "",
@@ -1929,6 +2352,13 @@
     "wu": 42.8,
     "hu": 36.3
    },
+   "trect": {
+    "x": 34.5,
+    "y": 754.7,
+    "w": 22.7,
+    "h": 21
+   },
+   "lines": 1,
    "text": "05",
    "type": {
     "family": "-apple-system",
@@ -1943,6 +2373,7 @@
    }
   },
   {
+   "z": 0,
    "order": 89,
    "tag": "small",
    "cls": "",
@@ -1956,6 +2387,13 @@
     "wu": 35.3,
     "hu": 18.8
    },
+   "trect": {
+    "x": 36.5,
+    "y": 776.6,
+    "w": 18.8,
+    "h": 10
+   },
+   "lines": 1,
    "text": "AUG",
    "type": {
     "family": "-apple-system",
@@ -1970,6 +2408,7 @@
    }
   },
   {
+   "z": 0,
    "order": 90,
    "tag": "button",
    "cls": "history-record-title",
@@ -1985,6 +2424,7 @@
    }
   },
   {
+   "z": 0,
    "order": 91,
    "tag": "strong",
    "cls": "",
@@ -1998,6 +2438,13 @@
     "wu": 316.4,
     "hu": 28.7
    },
+   "trect": {
+    "x": 81.1,
+    "y": 741.3,
+    "w": 167.9,
+    "h": 15
+   },
+   "lines": 1,
    "text": "Thyroid Profile (T3, T4, TSH)",
    "type": {
     "family": "-apple-system",
@@ -2012,6 +2459,7 @@
    }
   },
   {
+   "z": 0,
    "order": 92,
    "tag": "svg",
    "cls": "",
@@ -2025,9 +2473,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(104, 85, 63)"
   },
   {
+   "z": 0,
    "order": 93,
    "tag": "span",
    "cls": "",
@@ -2041,6 +2491,13 @@
     "wu": 117,
     "hu": 23
    },
+   "trect": {
+    "x": 99.2,
+    "y": 759.8,
+    "w": 44,
+    "h": 12
+   },
+   "lines": 1,
    "text": "1 lab test",
    "type": {
     "family": "-apple-system",
@@ -2055,6 +2512,7 @@
    }
   },
   {
+   "z": 0,
    "order": 94,
    "tag": "svg",
    "cls": "",
@@ -2068,9 +2526,11 @@
     "wu": 23,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3h8m-7 0v12L5 28c-1 2 23 2 22 0l-8-13V3M9 22h14\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3h8m-7 0v12L5 28c-1 2 23 2 22 0l-8-13V3M9 22h14\"></path></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 95,
    "tag": "span",
    "cls": "history-status ",
@@ -2084,6 +2544,13 @@
     "wu": 116.4,
     "hu": 34.7
    },
+   "trect": {
+    "x": 88,
+    "y": 782.5,
+    "w": 48,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Completed",
    "type": {
     "family": "-apple-system",
@@ -2100,6 +2567,7 @@
    "radius": "5.30612px"
   },
   {
+   "z": 0,
    "order": 96,
    "tag": "button",
    "cls": "",
@@ -2113,6 +2581,13 @@
     "wu": 174.7,
     "hu": 49
    },
+   "trect": {
+    "x": 301,
+    "y": 782.5,
+    "w": 56.1,
+    "h": 11
+   },
+   "lines": 1,
    "text": "View Report",
    "type": {
     "family": "-apple-system",
@@ -2129,6 +2604,7 @@
    "radius": "9.02041px"
   },
   {
+   "z": 0,
    "order": 97,
    "tag": "svg",
    "cls": "",
@@ -2142,9 +2618,11 @@
     "wu": 24,
     "hu": 24
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M11 7h18M11 16h18M11 25h18M3 7h1M3 16h1M3 25h1\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M11 7h18M11 16h18M11 25h18M3 7h1M3 16h1M3 25h1\"></path></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 98,
    "tag": "button",
    "cls": "history-older",
@@ -2162,6 +2640,7 @@
    "radius": "11.1429px"
   },
   {
+   "z": 0,
    "order": 99,
    "tag": "i",
    "cls": "",
@@ -2179,6 +2658,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 100,
    "tag": "svg",
    "cls": "",
@@ -2192,9 +2672,11 @@
     "wu": 28,
     "hu": 28
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>",
+   "color": "rgb(255, 246, 228)"
   },
   {
+   "z": 0,
    "order": 101,
    "tag": "strong",
    "cls": "",
@@ -2208,6 +2690,13 @@
     "wu": 557.1,
     "hu": 27.3
    },
+   "trect": {
+    "x": 66.3,
+    "y": 831.3,
+    "w": 129.5,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Need something older?",
    "type": {
     "family": "-apple-system",
@@ -2222,6 +2711,7 @@
    }
   },
   {
+   "z": 0,
    "order": 102,
    "tag": "small",
    "cls": "",
@@ -2235,6 +2725,13 @@
     "wu": 557.1,
     "hu": 44.8
    },
+   "trect": {
+    "x": 66.3,
+    "y": 847.3,
+    "w": 288.5,
+    "h": 21.9
+   },
+   "lines": 2,
    "text": "You can always show any past Parchi Pass at partner pharmacies and labs.",
    "type": {
     "family": "-apple-system",
@@ -2249,6 +2746,7 @@
    }
   },
   {
+   "z": 0,
    "order": 103,
    "tag": "p",
    "cls": "j-sample-note",
@@ -2262,6 +2760,13 @@
     "wu": 679.1,
     "hu": 23.7
    },
+   "trect": {
+    "x": 63,
+    "y": 885.4,
+    "w": 263.9,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Sample history \u00b7 no personal medical records are connected",
    "type": {
     "family": "-apple-system",
@@ -2276,6 +2781,7 @@
    }
   },
   {
+   "z": 3,
    "order": 104,
    "tag": "nav",
    "cls": "j-bottom-nav",
@@ -2299,6 +2805,7 @@
    "radius": "14.3265px 14.3265px 0px 0px"
   },
   {
+   "z": 0,
    "order": 105,
    "tag": "button",
    "cls": "",
@@ -2314,6 +2821,7 @@
    }
   },
   {
+   "z": 0,
    "order": 106,
    "tag": "svg",
    "cls": "",
@@ -2327,9 +2835,11 @@
     "wu": 35,
     "hu": 35
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 14 13-11 13 11M7 13v16h7v-9h5v9h6V13\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 14 13-11 13 11M7 13v16h7v-9h5v9h6V13\"></path></svg>",
+   "color": "rgb(104, 85, 63)"
   },
   {
+   "z": 0,
    "order": 107,
    "tag": "span",
    "cls": "",
@@ -2343,6 +2853,13 @@
     "wu": 53.6,
     "hu": 22.6
    },
+   "trect": {
+    "x": 34.1,
+    "y": 938.3,
+    "w": 28.4,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Home",
    "type": {
     "family": "-apple-system",
@@ -2357,6 +2874,7 @@
    }
   },
   {
+   "z": 0,
    "order": 108,
    "tag": "button",
    "cls": "",
@@ -2372,6 +2890,7 @@
    }
   },
   {
+   "z": 0,
    "order": 109,
    "tag": "svg",
    "cls": "",
@@ -2385,9 +2904,11 @@
     "wu": 35,
     "hu": 35
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"7\" y=\"3\" width=\"18\" height=\"27\" rx=\"3\"></rect><path d=\"M12 9h8m-8 6h8m-8 6h5\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"7\" y=\"3\" width=\"18\" height=\"27\" rx=\"3\"></rect><path d=\"M12 9h8m-8 6h8m-8 6h5\"></path></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 110,
    "tag": "span",
    "cls": "",
@@ -2401,6 +2922,13 @@
     "wu": 67.1,
     "hu": 22.6
    },
+   "trect": {
+    "x": 103.9,
+    "y": 938.3,
+    "w": 35.6,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Parchis",
    "type": {
     "family": "-apple-system",
@@ -2415,6 +2943,7 @@
    }
   },
   {
+   "z": 0,
    "order": 111,
    "tag": "button",
    "cls": "",
@@ -2430,6 +2959,7 @@
    }
   },
   {
+   "z": 0,
    "order": 112,
    "tag": "svg",
    "cls": "",
@@ -2443,9 +2973,11 @@
     "wu": 35,
     "hu": 35
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M2 6h18v19H2Zm18 7h6l4 6v6H20M23 14v5h7\"></path><circle cx=\"8\" cy=\"26\" r=\"3\"></circle><circle cx=\"25\" cy=\"26\" r=\"3\"></circle></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M2 6h18v19H2Zm18 7h6l4 6v6H20M23 14v5h7\"></path><circle cx=\"8\" cy=\"26\" r=\"3\"></circle><circle cx=\"25\" cy=\"26\" r=\"3\"></circle></svg>",
+   "color": "rgb(104, 85, 63)"
   },
   {
+   "z": 0,
    "order": 113,
    "tag": "span",
    "cls": "",
@@ -2459,6 +2991,13 @@
     "wu": 50.4,
     "hu": 22.6
    },
+   "trect": {
+    "x": 181.6,
+    "y": 938.3,
+    "w": 26.7,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Track",
    "type": {
     "family": "-apple-system",
@@ -2473,6 +3012,7 @@
    }
   },
   {
+   "z": 0,
    "order": 114,
    "tag": "button",
    "cls": "",
@@ -2488,6 +3028,7 @@
    }
   },
   {
+   "z": 0,
    "order": 115,
    "tag": "svg",
    "cls": "",
@@ -2501,9 +3042,11 @@
     "wu": 35,
     "hu": 35
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M16 28S2 18 2 10c0-9 12-10 14-2 3-8 14-7 14 2 0 8-14 18-14 18Z\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M16 28S2 18 2 10c0-9 12-10 14-2 3-8 14-7 14 2 0 8-14 18-14 18Z\"></path></svg>",
+   "color": "rgb(104, 85, 63)"
   },
   {
+   "z": 0,
    "order": 116,
    "tag": "span",
    "cls": "",
@@ -2517,6 +3060,13 @@
     "wu": 42.8,
     "hu": 22.6
    },
+   "trect": {
+    "x": 257,
+    "y": 938.3,
+    "w": 22.7,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Care",
    "type": {
     "family": "-apple-system",
@@ -2531,6 +3081,7 @@
    }
   },
   {
+   "z": 0,
    "order": 117,
    "tag": "button",
    "cls": "",
@@ -2546,6 +3097,7 @@
    }
   },
   {
+   "z": 0,
    "order": 118,
    "tag": "svg",
    "cls": "",
@@ -2559,9 +3111,11 @@
     "wu": 35,
     "hu": 35
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"9\" r=\"5\"></circle><path d=\"M5 28v-4c0-10 22-10 22 0v4Z\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"9\" r=\"5\"></circle><path d=\"M5 28v-4c0-10 22-10 22 0v4Z\"></path></svg>",
+   "color": "rgb(104, 85, 63)"
   },
   {
+   "z": 0,
    "order": 119,
    "tag": "span",
    "cls": "",
@@ -2575,6 +3129,13 @@
     "wu": 75.3,
     "hu": 22.6
    },
+   "trect": {
+    "x": 321.7,
+    "y": 938.3,
+    "w": 40,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Account",
    "type": {
     "family": "-apple-system",
@@ -2589,6 +3150,7 @@
    }
   },
   {
+   "z": 5,
    "order": 120,
    "tag": "div",
    "cls": "home-indicator",
@@ -2608,6 +3170,8 @@
  ],
  "art": [
   {
+   "blend": "multiply",
+   "z": 0,
    "viewBox": "524 157 183 156",
    "href": "assets/references/history-final.jpeg",
    "aspect": "xMidYMid meet",
@@ -2628,6 +3192,7 @@
  ],
  "images": [
   {
+   "z": 0,
    "src": "assets/parchi-logo-transparent.png",
    "alt": "",
    "rect": {

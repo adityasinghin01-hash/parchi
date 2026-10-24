@@ -8,6 +8,7 @@
  "scrollHeight": 878,
  "elements": [
   {
+   "z": 0,
    "order": 0,
    "tag": "span",
    "cls": "clock",
@@ -21,6 +22,13 @@
     "wu": 58.5,
     "hu": 32
    },
+   "trect": {
+    "x": 48.8,
+    "y": 14.9,
+    "w": 31,
+    "h": 17
+   },
+   "lines": 1,
    "text": "9:41",
    "type": {
     "family": "-apple-system",
@@ -35,6 +43,7 @@
    }
   },
   {
+   "z": 0,
    "order": 1,
    "tag": "span",
    "cls": "dynamic-island",
@@ -52,6 +61,7 @@
    "radius": "39px"
   },
   {
+   "z": 0,
    "order": 2,
    "tag": "svg",
    "cls": "",
@@ -65,9 +75,11 @@
     "wu": 121.3,
     "hu": 36.8
    },
-   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>",
+   "color": "rgb(66, 28, 8)"
   },
   {
+   "z": 0,
    "order": 3,
    "tag": "section",
    "cls": "screen journey-screen final-screen ranking-screen",
@@ -84,6 +96,7 @@
    "bg": "rgb(250, 238, 218)"
   },
   {
+   "z": 0,
    "order": 4,
    "tag": "button",
    "cls": "j-back",
@@ -102,6 +115,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 5,
    "tag": "svg",
    "cls": "",
@@ -115,9 +129,11 @@
     "wu": 45.4,
     "hu": 45.4
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m20 5-11 11 11 11\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m20 5-11 11 11 11\"></path></svg>",
+   "color": "rgb(66, 28, 8)"
   },
   {
+   "z": 0,
    "order": 7,
    "tag": "strong",
    "cls": "",
@@ -131,6 +147,13 @@
     "wu": 131,
     "hu": 40
    },
+   "trect": {
+    "x": 179.6,
+    "y": 48.4,
+    "w": 69.5,
+    "h": 24
+   },
+   "lines": 1,
    "text": "Parchi",
    "type": {
     "family": "Georgia",
@@ -145,6 +168,7 @@
    }
   },
   {
+   "z": 0,
    "order": 8,
    "tag": "button",
    "cls": "j-area",
@@ -162,6 +186,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 9,
    "tag": "svg",
    "cls": "",
@@ -175,9 +200,11 @@
     "wu": 20,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"pin\" x1=\"16\" y1=\"4\" x2=\"43\" y2=\"60\"><stop stop-color=\"#e94f14\"></stop><stop offset=\"1\" stop-color=\"#b6340a\"></stop></linearGradient></defs><path d=\"M32 4C18 4 10 14 10 26c0 15 22 35 22 35s22-20 22-35C54 14 46 4 32 4Z\" fill=\"url(#pin)\"></path><circle cx=\"32\" cy=\"25\" r=\"9.5\" fill=\"#fff2d9\"></circle></svg>"
+   "svg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"pin\" x1=\"16\" y1=\"4\" x2=\"43\" y2=\"60\"><stop stop-color=\"#e94f14\"></stop><stop offset=\"1\" stop-color=\"#b6340a\"></stop></linearGradient></defs><path d=\"M32 4C18 4 10 14 10 26c0 15 22 35 22 35s22-20 22-35C54 14 46 4 32 4Z\" fill=\"url(#pin)\"></path><circle cx=\"32\" cy=\"25\" r=\"9.5\" fill=\"#fff2d9\"></circle></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 10,
    "tag": "span",
    "cls": "",
@@ -191,6 +218,13 @@
     "wu": 96.2,
     "hu": 20.7
    },
+   "trect": {
+    "x": 305.6,
+    "y": 60.2,
+    "w": 51,
+    "h": 11
+   },
+   "lines": 1,
    "text": "HSR Layout",
    "type": {
     "family": "-apple-system",
@@ -205,6 +239,7 @@
    }
   },
   {
+   "z": 0,
    "order": 11,
    "tag": "svg",
    "cls": "",
@@ -218,9 +253,11 @@
     "wu": 16,
     "hu": 16
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>",
+   "color": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 12,
    "tag": "h1",
    "cls": "",
@@ -234,6 +271,13 @@
     "wu": 673,
     "hu": 62.7
    },
+   "trect": {
+    "x": 16.4,
+    "y": 108.8,
+    "w": 213.2,
+    "h": 34
+   },
+   "lines": 1,
    "text": "How We Rank",
    "type": {
     "family": "Georgia",
@@ -248,6 +292,7 @@
    }
   },
   {
+   "z": 0,
    "order": 13,
    "tag": "p",
    "cls": "",
@@ -261,7 +306,14 @@
     "wu": 673,
     "hu": 72.8
    },
-   "text": "We compare plans using three key factors to show you the best options.",
+   "trect": {
+    "x": 16.4,
+    "y": 147.8,
+    "w": 302.1,
+    "h": 36.3
+   },
+   "lines": 2,
+   "text": "We compare plans using three key factors to\nshow you the best options.",
    "type": {
     "family": "-apple-system",
     "size": 14.9,
@@ -275,6 +327,7 @@
    }
   },
   {
+   "z": 0,
    "order": 14,
    "tag": "article",
    "cls": "ranking-factor",
@@ -292,6 +345,7 @@
    "radius": "14.8571px"
   },
   {
+   "z": 0,
    "order": 16,
    "tag": "span",
    "cls": "ranking-number",
@@ -305,6 +359,13 @@
     "wu": 54,
     "hu": 54
    },
+   "trect": {
+    "x": 158.4,
+    "y": 231.6,
+    "w": 7.9,
+    "h": 19
+   },
+   "lines": 1,
    "text": "1",
    "type": {
     "family": "-apple-system",
@@ -321,6 +382,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 17,
    "tag": "h2",
    "cls": "",
@@ -334,6 +396,13 @@
     "wu": 320.1,
     "hu": 39.6
    },
+   "trect": {
+    "x": 187.8,
+    "y": 227.6,
+    "w": 95,
+    "h": 20
+   },
+   "lines": 1,
    "text": "Total Price",
    "type": {
     "family": "Georgia",
@@ -348,6 +417,7 @@
    }
   },
   {
+   "z": 0,
    "order": 18,
    "tag": "p",
    "cls": "",
@@ -361,6 +431,13 @@
     "wu": 320.1,
     "hu": 97.4
    },
+   "trect": {
+    "x": 187.8,
+    "y": 255,
+    "w": 160.1,
+    "h": 50.5
+   },
+   "lines": 3,
    "text": "We look at the complete cost, including medicines, tests and all fees.",
    "type": {
     "family": "-apple-system",
@@ -375,6 +452,7 @@
    }
   },
   {
+   "z": 0,
    "order": 19,
    "tag": "article",
    "cls": "ranking-factor",
@@ -392,6 +470,7 @@
    "radius": "14.8571px"
   },
   {
+   "z": 0,
    "order": 21,
    "tag": "span",
    "cls": "ranking-number",
@@ -405,6 +484,13 @@
     "wu": 54,
     "hu": 54
    },
+   "trect": {
+    "x": 157.3,
+    "y": 365.3,
+    "w": 10.1,
+    "h": 19
+   },
+   "lines": 1,
    "text": "2",
    "type": {
     "family": "-apple-system",
@@ -421,6 +507,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 22,
    "tag": "h2",
    "cls": "",
@@ -434,6 +521,13 @@
     "wu": 320.1,
     "hu": 39.6
    },
+   "trect": {
+    "x": 187.8,
+    "y": 369.9,
+    "w": 103.6,
+    "h": 20
+   },
+   "lines": 1,
    "text": "Ready Time",
    "type": {
     "family": "Georgia",
@@ -448,6 +542,7 @@
    }
   },
   {
+   "z": 0,
    "order": 23,
    "tag": "p",
    "cls": "",
@@ -461,6 +556,13 @@
     "wu": 320.1,
     "hu": 65
    },
+   "trect": {
+    "x": 187.8,
+    "y": 397.3,
+    "w": 169.9,
+    "h": 33.2
+   },
+   "lines": 2,
    "text": "We prefer plans that can be completed sooner.",
    "type": {
     "family": "-apple-system",
@@ -475,6 +577,7 @@
    }
   },
   {
+   "z": 0,
    "order": 24,
    "tag": "article",
    "cls": "ranking-factor",
@@ -492,6 +595,7 @@
    "radius": "14.8571px"
   },
   {
+   "z": 0,
    "order": 26,
    "tag": "span",
    "cls": "ranking-number",
@@ -505,6 +609,13 @@
     "wu": 54,
     "hu": 54
    },
+   "trect": {
+    "x": 157,
+    "y": 499,
+    "w": 10.5,
+    "h": 19
+   },
+   "lines": 1,
    "text": "3",
    "type": {
     "family": "-apple-system",
@@ -521,6 +632,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 27,
    "tag": "h2",
    "cls": "",
@@ -534,6 +646,13 @@
     "wu": 320.1,
     "hu": 39.6
    },
+   "trect": {
+    "x": 187.8,
+    "y": 503.6,
+    "w": 145.5,
+    "h": 20
+   },
+   "lines": 1,
    "text": "Number of Trips",
    "type": {
     "family": "Georgia",
@@ -548,6 +667,7 @@
    }
   },
   {
+   "z": 0,
    "order": 28,
    "tag": "p",
    "cls": "",
@@ -561,6 +681,13 @@
     "wu": 320.1,
     "hu": 65
    },
+   "trect": {
+    "x": 187.8,
+    "y": 530.9,
+    "w": 151.4,
+    "h": 33.2
+   },
+   "lines": 2,
    "text": "Fewer visits or deliveries are more convenient.",
    "type": {
     "family": "-apple-system",
@@ -575,6 +702,7 @@
    }
   },
   {
+   "z": 0,
    "order": 29,
    "tag": "section",
    "cls": "ranking-disclosure",
@@ -597,6 +725,7 @@
    "radius": "14.3265px"
   },
   {
+   "z": 0,
    "order": 30,
    "tag": "i",
    "cls": "",
@@ -614,6 +743,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 31,
    "tag": "svg",
    "cls": "",
@@ -627,9 +757,11 @@
     "wu": 29.2,
     "hu": 29.2
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"13\"></circle><path d=\"M16 14v10m0-16v1\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"13\"></circle><path d=\"M16 14v10m0-16v1\"></path></svg>",
+   "color": "rgb(255, 255, 255)"
   },
   {
+   "z": 0,
    "order": 32,
    "tag": "h2",
    "cls": "",
@@ -643,6 +775,13 @@
     "wu": 525.4,
     "hu": 31.2
    },
+   "trect": {
+    "x": 74.7,
+    "y": 626.7,
+    "w": 264.4,
+    "h": 15
+   },
+   "lines": 1,
    "text": "Referral payments don\u2019t affect rankings.",
    "type": {
     "family": "Georgia",
@@ -657,6 +796,7 @@
    }
   },
   {
+   "z": 0,
    "order": 33,
    "tag": "p",
    "cls": "",
@@ -670,7 +810,14 @@
     "wu": 525.4,
     "hu": 93.1
    },
-   "text": "We may earn a small referral fee from some partners, but it never influences the order of results.",
+   "trect": {
+    "x": 74.7,
+    "y": 645.9,
+    "w": 253.8,
+    "h": 47.9
+   },
+   "lines": 3,
+   "text": "We may earn a small referral fee from some\npartners, but it never influences the order of results.",
    "type": {
     "family": "-apple-system",
     "size": 12.2,
@@ -684,6 +831,7 @@
    }
   },
   {
+   "z": 0,
    "order": 34,
    "tag": "button",
    "cls": "",
@@ -704,6 +852,7 @@
    }
   },
   {
+   "z": 0,
    "order": 35,
    "tag": "strong",
    "cls": "",
@@ -717,6 +866,13 @@
     "wu": 381.8,
     "hu": 28.3
    },
+   "trect": {
+    "x": 36.5,
+    "y": 723.3,
+    "w": 202.6,
+    "h": 15
+   },
+   "lines": 1,
    "text": "Where do we get prices from?",
    "type": {
     "family": "Georgia",
@@ -731,6 +887,7 @@
    }
   },
   {
+   "z": 0,
    "order": 36,
    "tag": "svg",
    "cls": "",
@@ -744,9 +901,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(66, 28, 8)"
   },
   {
+   "z": 0,
    "order": 37,
    "tag": "button",
    "cls": "primary-action rank-back",
@@ -760,6 +919,13 @@
     "wu": 653,
     "hu": 88
    },
+   "trect": {
+    "x": 151.2,
+    "y": 790.8,
+    "w": 87.7,
+    "h": 17
+   },
+   "lines": 1,
    "text": "Back to Plan",
    "type": {
     "family": "-apple-system",
@@ -776,6 +942,7 @@
    "radius": "13.2653px"
   },
   {
+   "z": 0,
    "order": 38,
    "tag": "p",
    "cls": "j-sample-note",
@@ -789,6 +956,13 @@
     "wu": 673,
     "hu": 23.7
    },
+   "trect": {
+    "x": 33.9,
+    "y": 829,
+    "w": 322.3,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Design preview \u00b7 policy and price-source claims await service verification",
    "type": {
     "family": "-apple-system",
@@ -803,6 +977,7 @@
    }
   },
   {
+   "z": 5,
    "order": 39,
    "tag": "div",
    "cls": "home-indicator",
@@ -822,6 +997,8 @@
  ],
  "art": [
   {
+   "blend": "multiply",
+   "z": 0,
    "viewBox": "65 412 183 168",
    "href": "assets/references/ranking-final.jpeg",
    "aspect": "xMidYMid meet",
@@ -840,6 +1017,8 @@
    "asset": "art_rankingfinal_65_412_183_168"
   },
   {
+   "blend": "multiply",
+   "z": 0,
    "viewBox": "65 658 182 157",
    "href": "assets/references/ranking-final.jpeg",
    "aspect": "xMidYMid meet",
@@ -858,6 +1037,8 @@
    "asset": "art_rankingfinal_65_658_182_157"
   },
   {
+   "blend": "multiply",
+   "z": 0,
    "viewBox": "65 884 183 166",
    "href": "assets/references/ranking-final.jpeg",
    "aspect": "xMidYMid meet",
@@ -878,6 +1059,7 @@
  ],
  "images": [
   {
+   "z": 0,
    "src": "assets/parchi-logo-transparent.png",
    "alt": "",
    "rect": {

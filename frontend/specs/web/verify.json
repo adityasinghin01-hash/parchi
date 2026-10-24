@@ -8,6 +8,7 @@
  "scrollHeight": 862,
  "elements": [
   {
+   "z": 0,
    "order": 0,
    "tag": "span",
    "cls": "clock",
@@ -21,6 +22,13 @@
     "wu": 58.5,
     "hu": 32
    },
+   "trect": {
+    "x": 48.8,
+    "y": 14.9,
+    "w": 31,
+    "h": 17
+   },
+   "lines": 1,
    "text": "9:41",
    "type": {
     "family": "-apple-system",
@@ -35,6 +43,7 @@
    }
   },
   {
+   "z": 0,
    "order": 1,
    "tag": "span",
    "cls": "dynamic-island",
@@ -52,6 +61,7 @@
    "radius": "39px"
   },
   {
+   "z": 0,
    "order": 2,
    "tag": "svg",
    "cls": "",
@@ -65,9 +75,11 @@
     "wu": 121.3,
     "hu": 36.8
    },
-   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>",
+   "color": "rgb(66, 28, 8)"
   },
   {
+   "z": 0,
    "order": 3,
    "tag": "section",
    "cls": "screen otp-screen",
@@ -84,6 +96,7 @@
    "bgImage": "radial-gradient(at 35% 35%, rgba(255, 244, 228, 0.3), rgba(0, 0, 0, 0) 70%)"
   },
   {
+   "z": 2,
    "order": 4,
    "tag": "button",
    "cls": "back-control",
@@ -100,6 +113,7 @@
    "aria": "Go back"
   },
   {
+   "z": 0,
    "order": 5,
    "tag": "svg",
    "cls": "",
@@ -113,9 +127,11 @@
     "wu": 57,
     "hu": 57
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m20 5-11 11 11 11\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m20 5-11 11 11 11\"></path></svg>",
+   "color": "rgb(66, 28, 8)"
   },
   {
+   "z": 0,
    "order": 7,
    "tag": "strong",
    "cls": "",
@@ -129,6 +145,13 @@
     "wu": 240,
     "hu": 63
    },
+   "trect": {
+    "x": 35.3,
+    "y": 167.7,
+    "w": 99.3,
+    "h": 35
+   },
+   "lines": 1,
    "text": "Parchi",
    "type": {
     "family": "Georgia",
@@ -143,6 +166,7 @@
    }
   },
   {
+   "z": 0,
    "order": 8,
    "tag": "small",
    "cls": "",
@@ -156,7 +180,14 @@
     "wu": 240,
     "hu": 44
    },
-   "text": "YOUR HEALTH, MORE CLEARLY",
+   "trect": {
+    "x": 43.3,
+    "y": 203.7,
+    "w": 83.2,
+    "h": 21.7
+   },
+   "lines": 2,
+   "text": "YOUR HEALTH,\nMORE CLEARLY",
    "type": {
     "family": "-apple-system",
     "size": 8,
@@ -170,6 +201,7 @@
    }
   },
   {
+   "z": 0,
    "order": 10,
    "tag": "h1",
    "cls": "",
@@ -184,7 +216,14 @@
     "wu": 387.2,
     "hu": 118
    },
-   "text": "Verify your phone number",
+   "trect": {
+    "x": 28.1,
+    "y": 255.7,
+    "w": 205.5,
+    "h": 62.3
+   },
+   "lines": 2,
+   "text": "Verify your\nphone number",
    "type": {
     "family": "Georgia",
     "size": 27.6,
@@ -198,6 +237,7 @@
    }
   },
   {
+   "z": 0,
    "order": 11,
    "tag": "p",
    "cls": "",
@@ -211,6 +251,13 @@
     "wu": 387.2,
     "hu": 118.9
    },
+   "trect": {
+    "x": 28.1,
+    "y": 330,
+    "w": 191.7,
+    "h": 17
+   },
+   "lines": 1,
    "text": "We\u2019ve sent a 6-digit code to",
    "type": {
     "family": "-apple-system",
@@ -225,6 +272,7 @@
    }
   },
   {
+   "z": 0,
    "order": 12,
    "tag": "strong",
    "cls": "",
@@ -238,6 +286,13 @@
     "wu": 245.1,
     "hu": 36
    },
+   "trect": {
+    "x": 28.1,
+    "y": 360.5,
+    "w": 130,
+    "h": 18
+   },
+   "lines": 1,
    "text": "+91 98765 43210",
    "type": {
     "family": "-apple-system",
@@ -252,6 +307,7 @@
    }
   },
   {
+   "z": 0,
    "order": 13,
    "tag": "button",
    "cls": "edit-phone",
@@ -265,6 +321,13 @@
     "wu": 92.1,
     "hu": 82.9
    },
+   "trect": {
+    "x": 168.8,
+    "y": 361.5,
+    "w": 27.7,
+    "h": 17
+   },
+   "lines": 1,
    "text": "Edit",
    "type": {
     "family": "-apple-system",
@@ -279,6 +342,7 @@
    }
   },
   {
+   "z": 0,
    "order": 14,
    "tag": "span",
    "cls": "otp-cell is-active",
@@ -302,6 +366,7 @@
    "shadow": "rgba(202, 85, 19, 0.086) 0px 2px 6px 0px"
   },
   {
+   "z": 0,
    "order": 15,
    "tag": "i",
    "cls": "",
@@ -318,6 +383,7 @@
    "bg": "rgb(204, 63, 18)"
   },
   {
+   "z": 0,
    "order": 16,
    "tag": "span",
    "cls": "otp-cell ",
@@ -341,6 +407,7 @@
    "shadow": "rgba(231, 211, 178, 0.12) 0px 0px 0px 1px"
   },
   {
+   "z": 0,
    "order": 17,
    "tag": "i",
    "cls": "",
@@ -358,6 +425,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 18,
    "tag": "span",
    "cls": "otp-cell ",
@@ -381,6 +449,7 @@
    "shadow": "rgba(231, 211, 178, 0.12) 0px 0px 0px 1px"
   },
   {
+   "z": 0,
    "order": 19,
    "tag": "i",
    "cls": "",
@@ -398,6 +467,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 20,
    "tag": "span",
    "cls": "otp-cell ",
@@ -421,6 +491,7 @@
    "shadow": "rgba(231, 211, 178, 0.12) 0px 0px 0px 1px"
   },
   {
+   "z": 0,
    "order": 21,
    "tag": "i",
    "cls": "",
@@ -438,6 +509,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 22,
    "tag": "span",
    "cls": "otp-cell ",
@@ -461,6 +533,7 @@
    "shadow": "rgba(231, 211, 178, 0.12) 0px 0px 0px 1px"
   },
   {
+   "z": 0,
    "order": 23,
    "tag": "i",
    "cls": "",
@@ -478,6 +551,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 24,
    "tag": "span",
    "cls": "otp-cell ",
@@ -501,6 +575,7 @@
    "shadow": "rgba(231, 211, 178, 0.12) 0px 0px 0px 1px"
   },
   {
+   "z": 0,
    "order": 25,
    "tag": "i",
    "cls": "",
@@ -518,6 +593,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 26,
    "tag": "input",
    "cls": "otp-input",
@@ -533,11 +609,31 @@
     "hu": 104
    },
    "aria": "Six-digit verification code",
+   "placeholderColor": "rgba(0, 0, 0, 0)",
+   "value": "",
+   "pad": [
+    1,
+    2,
+    1,
+    2
+   ],
+   "type": {
+    "family": "-apple-system",
+    "size": 16,
+    "sizeU": 30.2,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgba(0, 0, 0, 0)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "start"
+   },
    "opacity": "0.01",
    "placeholder": null,
    "inputType": "text"
   },
   {
+   "z": 0,
    "order": 27,
    "tag": "div",
    "cls": "resend-row",
@@ -551,6 +647,13 @@
     "wu": 629,
     "hu": 82.9
    },
+   "trect": {
+    "x": 73.7,
+    "y": 472.9,
+    "w": 139.4,
+    "h": 15
+   },
+   "lines": 1,
    "text": "Didn\u2019t receive the code?",
    "type": {
     "family": "-apple-system",
@@ -565,6 +668,7 @@
    }
   },
   {
+   "z": 0,
    "order": 28,
    "tag": "button",
    "cls": "",
@@ -579,6 +683,13 @@
     "wu": 194.6,
     "hu": 82.9
    },
+   "trect": {
+    "x": 217.9,
+    "y": 472.9,
+    "w": 59.6,
+    "h": 15
+   },
+   "lines": 1,
    "text": "Resend in",
    "type": {
     "family": "-apple-system",
@@ -593,6 +704,7 @@
    }
   },
   {
+   "z": 0,
    "order": 29,
    "tag": "span",
    "cls": "",
@@ -607,6 +719,13 @@
     "wu": 64.3,
     "hu": 28.3
    },
+   "trect": {
+    "x": 277.5,
+    "y": 472.9,
+    "w": 34.1,
+    "h": 15
+   },
+   "lines": 1,
    "text": "00:29",
    "type": {
     "family": "-apple-system",
@@ -621,6 +740,7 @@
    }
   },
   {
+   "z": 0,
    "order": 30,
    "tag": "button",
    "cls": "primary-action verify-button",
@@ -635,6 +755,13 @@
     "wu": 629,
     "hu": 82.9
    },
+   "trect": {
+    "x": 122.4,
+    "y": 526.5,
+    "w": 120.3,
+    "h": 17
+   },
+   "lines": 1,
    "text": "Verify & Continue",
    "type": {
     "family": "-apple-system",
@@ -651,6 +778,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 31,
    "tag": "svg",
    "cls": "",
@@ -664,9 +792,11 @@
     "wu": 29,
     "hu": 29
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 16h23m-9-9 9 9-9 9\" stroke=\"currentColor\" stroke-width=\"2.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 16h23m-9-9 9 9-9 9\" stroke=\"currentColor\" stroke-width=\"2.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(255, 249, 238)"
   },
   {
+   "z": 0,
    "order": 32,
    "tag": "button",
    "cls": "",
@@ -685,6 +815,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 33,
    "tag": "strong",
    "cls": "",
@@ -698,6 +829,13 @@
     "wu": 22.7,
     "hu": 50
    },
+   "trect": {
+    "x": 64.8,
+    "y": 600.4,
+    "w": 12.1,
+    "h": 32
+   },
+   "lines": 1,
    "text": "1",
    "type": {
     "family": "-apple-system",
@@ -712,6 +850,7 @@
    }
   },
   {
+   "z": 0,
    "order": 34,
    "tag": "button",
    "cls": "",
@@ -730,6 +869,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 35,
    "tag": "strong",
    "cls": "",
@@ -743,6 +883,13 @@
     "wu": 28.9,
     "hu": 50
    },
+   "trect": {
+    "x": 187.3,
+    "y": 594.2,
+    "w": 15.3,
+    "h": 32
+   },
+   "lines": 1,
    "text": "2",
    "type": {
     "family": "-apple-system",
@@ -757,6 +904,7 @@
    }
   },
   {
+   "z": 0,
    "order": 36,
    "tag": "small",
    "cls": "",
@@ -770,6 +918,13 @@
     "wu": 53.4,
     "hu": 22.6
    },
+   "trect": {
+    "x": 180.8,
+    "y": 624.2,
+    "w": 28.3,
+    "h": 12
+   },
+   "lines": 1,
    "text": "ABC",
    "type": {
     "family": "-apple-system",
@@ -784,6 +939,7 @@
    }
   },
   {
+   "z": 0,
    "order": 37,
    "tag": "button",
    "cls": "",
@@ -802,6 +958,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 38,
    "tag": "strong",
    "cls": "",
@@ -815,6 +972,13 @@
     "wu": 30.2,
     "hu": 50
    },
+   "trect": {
+    "x": 311.1,
+    "y": 594.2,
+    "w": 16,
+    "h": 32
+   },
+   "lines": 1,
    "text": "3",
    "type": {
     "family": "-apple-system",
@@ -829,6 +993,7 @@
    }
   },
   {
+   "z": 0,
    "order": 39,
    "tag": "small",
    "cls": "",
@@ -842,6 +1007,13 @@
     "wu": 50.4,
     "hu": 22.6
    },
+   "trect": {
+    "x": 305.8,
+    "y": 624.2,
+    "w": 26.7,
+    "h": 12
+   },
+   "lines": 1,
    "text": "DEF",
    "type": {
     "family": "-apple-system",
@@ -856,6 +1028,7 @@
    }
   },
   {
+   "z": 0,
    "order": 40,
    "tag": "button",
    "cls": "",
@@ -874,6 +1047,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 41,
    "tag": "strong",
    "cls": "",
@@ -887,6 +1061,13 @@
     "wu": 30.9,
     "hu": 50
    },
+   "trect": {
+    "x": 62.6,
+    "y": 652.5,
+    "w": 16.4,
+    "h": 32
+   },
+   "lines": 1,
    "text": "4",
    "type": {
     "family": "-apple-system",
@@ -901,6 +1082,7 @@
    }
   },
   {
+   "z": 0,
    "order": 42,
    "tag": "small",
    "cls": "",
@@ -914,6 +1096,13 @@
     "wu": 47.6,
     "hu": 22.6
    },
+   "trect": {
+    "x": 58.2,
+    "y": 682.6,
+    "w": 25.3,
+    "h": 12
+   },
+   "lines": 1,
    "text": "GHI",
    "type": {
     "family": "-apple-system",
@@ -928,6 +1117,7 @@
    }
   },
   {
+   "z": 0,
    "order": 43,
    "tag": "button",
    "cls": "",
@@ -946,6 +1136,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 44,
    "tag": "strong",
    "cls": "",
@@ -959,6 +1150,13 @@
     "wu": 29.9,
     "hu": 50
    },
+   "trect": {
+    "x": 187.1,
+    "y": 652.5,
+    "w": 15.8,
+    "h": 32
+   },
+   "lines": 1,
    "text": "5",
    "type": {
     "family": "-apple-system",
@@ -973,6 +1171,7 @@
    }
   },
   {
+   "z": 0,
    "order": 45,
    "tag": "small",
    "cls": "",
@@ -986,6 +1185,13 @@
     "wu": 47.8,
     "hu": 22.6
    },
+   "trect": {
+    "x": 182.3,
+    "y": 682.6,
+    "w": 25.4,
+    "h": 12
+   },
+   "lines": 1,
    "text": "JKL",
    "type": {
     "family": "-apple-system",
@@ -1000,6 +1206,7 @@
    }
   },
   {
+   "z": 0,
    "order": 46,
    "tag": "button",
    "cls": "",
@@ -1018,6 +1225,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 47,
    "tag": "strong",
    "cls": "",
@@ -1031,6 +1239,13 @@
     "wu": 31.4,
     "hu": 50
    },
+   "trect": {
+    "x": 310.8,
+    "y": 652.5,
+    "w": 16.7,
+    "h": 32
+   },
+   "lines": 1,
    "text": "6",
    "type": {
     "family": "-apple-system",
@@ -1045,6 +1260,7 @@
    }
   },
   {
+   "z": 0,
    "order": 48,
    "tag": "small",
    "cls": "",
@@ -1058,6 +1274,13 @@
     "wu": 60.2,
     "hu": 22.6
    },
+   "trect": {
+    "x": 303.2,
+    "y": 682.6,
+    "w": 32,
+    "h": 12
+   },
+   "lines": 1,
    "text": "MNO",
    "type": {
     "family": "-apple-system",
@@ -1072,6 +1295,7 @@
    }
   },
   {
+   "z": 0,
    "order": 49,
    "tag": "button",
    "cls": "",
@@ -1090,6 +1314,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 50,
    "tag": "strong",
    "cls": "",
@@ -1103,6 +1328,13 @@
     "wu": 27.9,
     "hu": 50
    },
+   "trect": {
+    "x": 63.4,
+    "y": 710.9,
+    "w": 14.8,
+    "h": 32
+   },
+   "lines": 1,
    "text": "7",
    "type": {
     "family": "-apple-system",
@@ -1117,6 +1349,7 @@
    }
   },
   {
+   "z": 0,
    "order": 51,
    "tag": "small",
    "cls": "",
@@ -1130,6 +1363,13 @@
     "wu": 70.6,
     "hu": 22.6
    },
+   "trect": {
+    "x": 52.1,
+    "y": 740.9,
+    "w": 37.5,
+    "h": 12
+   },
+   "lines": 1,
    "text": "PQRS",
    "type": {
     "family": "-apple-system",
@@ -1144,6 +1384,7 @@
    }
   },
   {
+   "z": 0,
    "order": 52,
    "tag": "button",
    "cls": "",
@@ -1162,6 +1403,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 53,
    "tag": "strong",
    "cls": "",
@@ -1175,6 +1417,13 @@
     "wu": 30.6,
     "hu": 50
    },
+   "trect": {
+    "x": 186.9,
+    "y": 710.9,
+    "w": 16.2,
+    "h": 32
+   },
+   "lines": 1,
    "text": "8",
    "type": {
     "family": "-apple-system",
@@ -1189,6 +1438,7 @@
    }
   },
   {
+   "z": 0,
    "order": 54,
    "tag": "small",
    "cls": "",
@@ -1202,6 +1452,13 @@
     "wu": 53.4,
     "hu": 22.6
    },
+   "trect": {
+    "x": 180.8,
+    "y": 740.9,
+    "w": 28.3,
+    "h": 12
+   },
+   "lines": 1,
    "text": "TUV",
    "type": {
     "family": "-apple-system",
@@ -1216,6 +1473,7 @@
    }
   },
   {
+   "z": 0,
    "order": 55,
    "tag": "button",
    "cls": "",
@@ -1234,6 +1492,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 56,
    "tag": "strong",
    "cls": "",
@@ -1247,6 +1506,13 @@
     "wu": 31.4,
     "hu": 50
    },
+   "trect": {
+    "x": 310.8,
+    "y": 710.9,
+    "w": 16.7,
+    "h": 32
+   },
+   "lines": 1,
    "text": "9",
    "type": {
     "family": "-apple-system",
@@ -1261,6 +1527,7 @@
    }
   },
   {
+   "z": 0,
    "order": 57,
    "tag": "small",
    "cls": "",
@@ -1274,6 +1541,13 @@
     "wu": 75.9,
     "hu": 22.6
    },
+   "trect": {
+    "x": 299,
+    "y": 740.9,
+    "w": 40.3,
+    "h": 12
+   },
+   "lines": 1,
    "text": "WXYZ",
    "type": {
     "family": "-apple-system",
@@ -1288,6 +1562,7 @@
    }
   },
   {
+   "z": 0,
    "order": 58,
    "tag": "button",
    "cls": "",
@@ -1306,6 +1581,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 59,
    "tag": "strong",
    "cls": "",
@@ -1319,6 +1595,13 @@
     "wu": 30.9,
     "hu": 50
    },
+   "trect": {
+    "x": 186.8,
+    "y": 775.5,
+    "w": 16.4,
+    "h": 32
+   },
+   "lines": 1,
    "text": "0",
    "type": {
     "family": "-apple-system",
@@ -1333,6 +1616,7 @@
    }
   },
   {
+   "z": 0,
    "order": 60,
    "tag": "button",
    "cls": "erase-key",
@@ -1350,6 +1634,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 61,
    "tag": "svg",
    "cls": "",
@@ -1363,9 +1648,11 @@
     "wu": 50,
     "hu": 50
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M11 5h18v22H11L2 16Zm4 6 9 10m0-10-9 10\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M11 5h18v22H11L2 16Zm4 6 9 10m0-10-9 10\"></path></svg>",
+   "color": "rgb(66, 28, 8)"
   },
   {
+   "z": 0,
    "order": 62,
    "tag": "p",
    "cls": "otp-mode-note",
@@ -1380,6 +1667,13 @@
     "wu": 629,
     "hu": 20.7
    },
+   "trect": {
+    "x": 111.7,
+    "y": 826,
+    "w": 166.6,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Demo code: 482931 \u00b7 No SMS is sent.",
    "type": {
     "family": "-apple-system",
@@ -1394,6 +1688,7 @@
    }
   },
   {
+   "z": 5,
    "order": 63,
    "tag": "div",
    "cls": "home-indicator",
@@ -1413,6 +1708,8 @@
  ],
  "art": [
   {
+   "mask": "linear-gradient(to right, rgba(0, 0, 0, 0), rgb(0, 0, 0) 10%)",
+   "z": 0,
    "viewBox": "345 120 390 505",
    "href": "assets/references/otp.jpeg",
    "aspect": "xMidYMid meet",
@@ -1433,6 +1730,7 @@
  ],
  "images": [
   {
+   "z": 0,
    "src": "assets/parchi-logo-transparent.png",
    "alt": "",
    "rect": {

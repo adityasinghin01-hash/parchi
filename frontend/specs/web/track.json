@@ -8,6 +8,7 @@
  "scrollHeight": 918,
  "elements": [
   {
+   "z": 0,
    "order": 0,
    "tag": "span",
    "cls": "clock",
@@ -21,6 +22,13 @@
     "wu": 58.5,
     "hu": 32
    },
+   "trect": {
+    "x": 48.8,
+    "y": 14.9,
+    "w": 31,
+    "h": 17
+   },
+   "lines": 1,
    "text": "9:41",
    "type": {
     "family": "-apple-system",
@@ -35,6 +43,7 @@
    }
   },
   {
+   "z": 0,
    "order": 1,
    "tag": "span",
    "cls": "dynamic-island",
@@ -52,6 +61,7 @@
    "radius": "39px"
   },
   {
+   "z": 0,
    "order": 2,
    "tag": "svg",
    "cls": "",
@@ -65,9 +75,11 @@
     "wu": 121.3,
     "hu": 36.8
    },
-   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>",
+   "color": "rgb(66, 28, 8)"
   },
   {
+   "z": 0,
    "order": 3,
    "tag": "section",
    "cls": "screen journey-screen tracking-screen",
@@ -84,6 +96,7 @@
    "bg": "rgb(255, 251, 244)"
   },
   {
+   "z": 0,
    "order": 4,
    "tag": "button",
    "cls": "j-back",
@@ -102,6 +115,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 5,
    "tag": "svg",
    "cls": "",
@@ -115,9 +129,11 @@
     "wu": 45.4,
     "hu": 45.4
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m20 5-11 11 11 11\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m20 5-11 11 11 11\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
+   "z": 0,
    "order": 7,
    "tag": "strong",
    "cls": "",
@@ -131,6 +147,13 @@
     "wu": 131,
     "hu": 40
    },
+   "trect": {
+    "x": 179.6,
+    "y": 48.4,
+    "w": 69.5,
+    "h": 24
+   },
+   "lines": 1,
    "text": "Parchi",
    "type": {
     "family": "Georgia",
@@ -145,6 +168,7 @@
    }
   },
   {
+   "z": 0,
    "order": 8,
    "tag": "button",
    "cls": "j-area",
@@ -162,6 +186,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 9,
    "tag": "svg",
    "cls": "",
@@ -175,9 +200,11 @@
     "wu": 20,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"pin\" x1=\"16\" y1=\"4\" x2=\"43\" y2=\"60\"><stop stop-color=\"#e94f14\"></stop><stop offset=\"1\" stop-color=\"#b6340a\"></stop></linearGradient></defs><path d=\"M32 4C18 4 10 14 10 26c0 15 22 35 22 35s22-20 22-35C54 14 46 4 32 4Z\" fill=\"url(#pin)\"></path><circle cx=\"32\" cy=\"25\" r=\"9.5\" fill=\"#fff2d9\"></circle></svg>"
+   "svg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"pin\" x1=\"16\" y1=\"4\" x2=\"43\" y2=\"60\"><stop stop-color=\"#e94f14\"></stop><stop offset=\"1\" stop-color=\"#b6340a\"></stop></linearGradient></defs><path d=\"M32 4C18 4 10 14 10 26c0 15 22 35 22 35s22-20 22-35C54 14 46 4 32 4Z\" fill=\"url(#pin)\"></path><circle cx=\"32\" cy=\"25\" r=\"9.5\" fill=\"#fff2d9\"></circle></svg>",
+   "color": "rgb(180, 71, 23)"
   },
   {
+   "z": 0,
    "order": 10,
    "tag": "span",
    "cls": "",
@@ -191,6 +218,13 @@
     "wu": 96.2,
     "hu": 20.7
    },
+   "trect": {
+    "x": 300.8,
+    "y": 60.2,
+    "w": 51,
+    "h": 11
+   },
+   "lines": 1,
    "text": "HSR Layout",
    "type": {
     "family": "-apple-system",
@@ -205,6 +239,7 @@
    }
   },
   {
+   "z": 0,
    "order": 11,
    "tag": "svg",
    "cls": "",
@@ -218,9 +253,11 @@
     "wu": 16,
     "hu": 16
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>",
+   "color": "rgb(180, 71, 23)"
   },
   {
+   "z": 1,
    "order": 12,
    "tag": "h1",
    "cls": "",
@@ -234,6 +271,13 @@
     "wu": 655,
     "hu": 43.6
    },
+   "trect": {
+    "x": 21.2,
+    "y": 84.9,
+    "w": 225.7,
+    "h": 24
+   },
+   "lines": 1,
    "text": "Your order is on track",
    "type": {
     "family": "Georgia",
@@ -248,6 +292,7 @@
    }
   },
   {
+   "z": 1,
    "order": 13,
    "tag": "p",
    "cls": "",
@@ -261,6 +306,13 @@
     "wu": 655,
     "hu": 29.9
    },
+   "trect": {
+    "x": 21.2,
+    "y": 112.8,
+    "w": 240.5,
+    "h": 15
+   },
+   "lines": 1,
    "text": "Track medicines and lab tests in real time.",
    "type": {
     "family": "-apple-system",
@@ -275,6 +327,7 @@
    }
   },
   {
+   "z": 0,
    "order": 15,
    "tag": "ol",
    "cls": "order-milestones",
@@ -292,6 +345,7 @@
    "radius": "13.2653px"
   },
   {
+   "z": 0,
    "order": 16,
    "tag": "i",
    "cls": "",
@@ -309,6 +363,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 17,
    "tag": "svg",
    "cls": "",
@@ -322,9 +377,11 @@
     "wu": 25.9,
     "hu": 25.9
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>",
+   "color": "rgb(255, 255, 255)"
   },
   {
+   "z": 0,
    "order": 18,
    "tag": "strong",
    "cls": "",
@@ -338,6 +395,13 @@
     "wu": 136.9,
     "hu": 20.4
    },
+   "trect": {
+    "x": 23.6,
+    "y": 173.8,
+    "w": 72.6,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Order confirmed",
    "type": {
     "family": "-apple-system",
@@ -352,6 +416,7 @@
    }
   },
   {
+   "z": 0,
    "order": 19,
    "tag": "small",
    "cls": "",
@@ -365,6 +430,13 @@
     "wu": 67.4,
     "hu": 21
    },
+   "trect": {
+    "x": 42,
+    "y": 187.7,
+    "w": 35.8,
+    "h": 10
+   },
+   "lines": 1,
    "text": "10:12 AM",
    "type": {
     "family": "-apple-system",
@@ -379,7 +451,29 @@
    }
   },
   {
+   "z": 0,
    "order": 20,
+   "tag": "span",
+   "cls": "__pseudo after",
+   "rect": {
+    "x": 73.1,
+    "y": 159.9,
+    "w": 63.5,
+    "h": 2,
+    "xu": 137.8,
+    "yu": 301.4,
+    "wu": 119.8,
+    "hu": 3.8
+   },
+   "border": {
+    "width": "2px 0px 0px 0px",
+    "style": "solid",
+    "color": "rgb(198, 75, 34)"
+   }
+  },
+  {
+   "z": 0,
+   "order": 21,
    "tag": "i",
    "cls": "",
    "rect": {
@@ -392,6 +486,13 @@
     "wu": 37,
     "hu": 37
    },
+   "trect": {
+    "x": 146,
+    "y": 152.7,
+    "w": 7.8,
+    "h": 15
+   },
+   "lines": 1,
    "text": "2",
    "type": {
     "family": "-apple-system",
@@ -408,7 +509,8 @@
    "radius": "50%"
   },
   {
-   "order": 21,
+   "z": 0,
+   "order": 22,
    "tag": "strong",
    "cls": "",
    "rect": {
@@ -421,7 +523,14 @@
     "wu": 89.8,
     "hu": 40.8
    },
-   "text": "Medicines on the way",
+   "trect": {
+    "x": 126.1,
+    "y": 173.8,
+    "w": 47.6,
+    "h": 21.8
+   },
+   "lines": 2,
+   "text": "Medicines\non the way",
    "type": {
     "family": "-apple-system",
     "size": 9,
@@ -435,7 +544,8 @@
    }
   },
   {
-   "order": 22,
+   "z": 0,
+   "order": 23,
    "tag": "small",
    "cls": "",
    "rect": {
@@ -448,6 +558,13 @@
     "wu": 67.4,
     "hu": 21
    },
+   "trect": {
+    "x": 132.1,
+    "y": 198.5,
+    "w": 35.8,
+    "h": 10
+   },
+   "lines": 1,
    "text": "11:20 AM",
    "type": {
     "family": "-apple-system",
@@ -462,7 +579,29 @@
    }
   },
   {
-   "order": 23,
+   "z": 0,
+   "order": 24,
+   "tag": "span",
+   "cls": "__pseudo after",
+   "rect": {
+    "x": 163.2,
+    "y": 159.9,
+    "w": 63.5,
+    "h": 2,
+    "xu": 307.6,
+    "yu": 301.4,
+    "wu": 119.8,
+    "hu": 3.8
+   },
+   "border": {
+    "width": "2px 0px 0px 0px",
+    "style": "dotted",
+    "color": "rgb(208, 201, 189)"
+   }
+  },
+  {
+   "z": 0,
+   "order": 25,
    "tag": "i",
    "cls": "",
    "rect": {
@@ -475,6 +614,13 @@
     "wu": 37,
     "hu": 37
    },
+   "trect": {
+    "x": 236,
+    "y": 152.7,
+    "w": 8.2,
+    "h": 15
+   },
+   "lines": 1,
    "text": "3",
    "type": {
     "family": "-apple-system",
@@ -491,7 +637,8 @@
    "radius": "50%"
   },
   {
-   "order": 24,
+   "z": 0,
+   "order": 26,
    "tag": "strong",
    "cls": "",
    "rect": {
@@ -504,7 +651,14 @@
     "wu": 81.6,
     "hu": 40.8
    },
-   "text": "Lab test upcoming",
+   "trect": {
+    "x": 218.4,
+    "y": 173.8,
+    "w": 43.3,
+    "h": 21.8
+   },
+   "lines": 2,
+   "text": "Lab test\nupcoming",
    "type": {
     "family": "-apple-system",
     "size": 9,
@@ -518,7 +672,8 @@
    }
   },
   {
-   "order": 25,
+   "z": 0,
+   "order": 27,
    "tag": "small",
    "cls": "",
    "rect": {
@@ -531,6 +686,13 @@
     "wu": 114.9,
     "hu": 21
    },
+   "trect": {
+    "x": 209.5,
+    "y": 198.5,
+    "w": 61,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Today, 4:30 PM",
    "type": {
     "family": "-apple-system",
@@ -545,7 +707,29 @@
    }
   },
   {
-   "order": 26,
+   "z": 0,
+   "order": 28,
+   "tag": "span",
+   "cls": "__pseudo after",
+   "rect": {
+    "x": 253.3,
+    "y": 159.9,
+    "w": 63.5,
+    "h": 2,
+    "xu": 477.4,
+    "yu": 301.4,
+    "wu": 119.8,
+    "hu": 3.8
+   },
+   "border": {
+    "width": "2px 0px 0px 0px",
+    "style": "dotted",
+    "color": "rgb(208, 201, 189)"
+   }
+  },
+  {
+   "z": 0,
+   "order": 29,
    "tag": "i",
    "cls": "",
    "rect": {
@@ -558,6 +742,13 @@
     "wu": 37,
     "hu": 37
    },
+   "trect": {
+    "x": 325.9,
+    "y": 152.7,
+    "w": 8.4,
+    "h": 15
+   },
+   "lines": 1,
    "text": "4",
    "type": {
     "family": "-apple-system",
@@ -574,7 +765,8 @@
    "radius": "50%"
   },
   {
-   "order": 27,
+   "z": 0,
+   "order": 30,
    "tag": "strong",
    "cls": "",
    "rect": {
@@ -587,6 +779,13 @@
     "wu": 103.1,
     "hu": 20.4
    },
+   "trect": {
+    "x": 302.8,
+    "y": 173.8,
+    "w": 54.7,
+    "h": 11
+   },
+   "lines": 1,
    "text": "All complete",
    "type": {
     "family": "-apple-system",
@@ -601,7 +800,8 @@
    }
   },
   {
-   "order": 28,
+   "z": 0,
+   "order": 31,
    "tag": "small",
    "cls": "",
    "rect": {
@@ -614,6 +814,13 @@
     "wu": 60.1,
     "hu": 21
    },
+   "trect": {
+    "x": 314.2,
+    "y": 187.7,
+    "w": 31.9,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Pending",
    "type": {
     "family": "-apple-system",
@@ -628,7 +835,8 @@
    }
   },
   {
-   "order": 29,
+   "z": 0,
+   "order": 32,
    "tag": "button",
    "cls": "tracking-group-title",
    "rect": {
@@ -645,7 +853,8 @@
    "radius": "10.6122px"
   },
   {
-   "order": 30,
+   "z": 0,
+   "order": 33,
    "tag": "h2",
    "cls": "",
    "rect": {
@@ -658,6 +867,13 @@
     "wu": 463.7,
     "hu": 30.2
    },
+   "trect": {
+    "x": 20.2,
+    "y": 230.8,
+    "w": 69.3,
+    "h": 16
+   },
+   "lines": 1,
    "text": "Medicines",
    "type": {
     "family": "-apple-system",
@@ -672,7 +888,8 @@
    }
   },
   {
-   "order": 31,
+   "z": 0,
+   "order": 34,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -685,6 +902,13 @@
     "wu": 99,
     "hu": 24.5
    },
+   "trect": {
+    "x": 94.8,
+    "y": 232.3,
+    "w": 52.5,
+    "h": 13
+   },
+   "lines": 1,
    "text": "(2 shops)",
    "type": {
     "family": "-apple-system",
@@ -699,7 +923,8 @@
    }
   },
   {
-   "order": 32,
+   "z": 0,
+   "order": 35,
    "tag": "small",
    "cls": "",
    "rect": {
@@ -712,6 +937,13 @@
     "wu": 154.4,
     "hu": 28.9
    },
+   "trect": {
+    "x": 277.9,
+    "y": 234.3,
+    "w": 71.3,
+    "h": 9
+   },
+   "lines": 1,
    "text": "1 out of 2 delivered",
    "type": {
     "family": "-apple-system",
@@ -728,7 +960,8 @@
    "radius": "99px"
   },
   {
-   "order": 33,
+   "z": 0,
+   "order": 36,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -741,10 +974,12 @@
     "wu": 17,
     "hu": 17
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
-   "order": 34,
+   "z": 0,
+   "order": 37,
    "tag": "article",
    "cls": "tracking-card",
    "rect": {
@@ -761,7 +996,8 @@
    "radius": "11.6735px"
   },
   {
-   "order": 35,
+   "z": 0,
+   "order": 38,
    "tag": "button",
    "cls": "tracking-provider",
    "rect": {
@@ -776,7 +1012,8 @@
    }
   },
   {
-   "order": 37,
+   "z": 0,
+   "order": 40,
    "tag": "strong",
    "cls": "",
    "rect": {
@@ -789,6 +1026,13 @@
     "wu": 330.9,
     "hu": 29.9
    },
+   "trect": {
+    "x": 95,
+    "y": 263.7,
+    "w": 99.6,
+    "h": 15
+   },
+   "lines": 1,
    "text": "Apollo Pharmacy",
    "type": {
     "family": "-apple-system",
@@ -803,7 +1047,8 @@
    }
   },
   {
-   "order": 38,
+   "z": 0,
+   "order": 41,
    "tag": "small",
    "cls": "",
    "rect": {
@@ -816,6 +1061,13 @@
     "wu": 330.9,
     "hu": 26.6
    },
+   "trect": {
+    "x": 95,
+    "y": 280.5,
+    "w": 98.1,
+    "h": 12
+   },
+   "lines": 1,
    "text": "HSR Layout \u00b7 0.8 km",
    "type": {
     "family": "-apple-system",
@@ -830,7 +1082,8 @@
    }
   },
   {
-   "order": 39,
+   "z": 0,
+   "order": 42,
    "tag": "span",
    "cls": "j-status green",
    "rect": {
@@ -843,6 +1096,13 @@
     "wu": 127.2,
     "hu": 35
    },
+   "trect": {
+    "x": 303.4,
+    "y": 273.6,
+    "w": 39.4,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Delivered",
    "type": {
     "family": "-apple-system",
@@ -859,7 +1119,8 @@
    "radius": "99px"
   },
   {
-   "order": 40,
+   "z": 0,
+   "order": 43,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -872,10 +1133,12 @@
     "wu": 21,
     "hu": 21
    },
-   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"m6 12 4 4 8-9\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"m6 12 4 4 8-9\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>",
+   "color": "rgb(47, 134, 56)"
   },
   {
-   "order": 41,
+   "z": 0,
+   "order": 44,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -888,10 +1151,29 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
-   "order": 42,
+   "z": 0,
+   "order": 45,
+   "tag": "span",
+   "cls": "__pseudo before",
+   "rect": {
+    "x": 27,
+    "y": 311.5,
+    "w": 1,
+    "h": 17,
+    "xu": 51,
+    "yu": 587.1,
+    "wu": 1.9,
+    "hu": 32
+   },
+   "bg": "rgb(202, 213, 191)"
+  },
+  {
+   "z": 1,
+   "order": 46,
    "tag": "i",
    "cls": "",
    "rect": {
@@ -908,7 +1190,8 @@
    "radius": "50%"
   },
   {
-   "order": 43,
+   "z": 0,
+   "order": 47,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -921,10 +1204,12 @@
     "wu": 16.1,
     "hu": 16.1
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>",
+   "color": "rgb(255, 255, 255)"
   },
   {
-   "order": 44,
+   "z": 0,
+   "order": 48,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -937,6 +1222,13 @@
     "wu": 129.6,
     "hu": 22.4
    },
+   "trect": {
+    "x": 41.4,
+    "y": 305.6,
+    "w": 68.8,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Order confirmed",
    "type": {
     "family": "-apple-system",
@@ -951,7 +1243,8 @@
    }
   },
   {
-   "order": 45,
+   "z": 0,
+   "order": 49,
    "tag": "time",
    "cls": "",
    "rect": {
@@ -964,6 +1257,13 @@
     "wu": 63.3,
     "hu": 19.6
    },
+   "trect": {
+    "x": 167.5,
+    "y": 306.3,
+    "w": 33.6,
+    "h": 9
+   },
+   "lines": 1,
    "text": "10:12 AM",
    "type": {
     "family": "-apple-system",
@@ -978,7 +1278,25 @@
    }
   },
   {
-   "order": 46,
+   "z": 0,
+   "order": 50,
+   "tag": "span",
+   "cls": "__pseudo before",
+   "rect": {
+    "x": 27,
+    "y": 328.5,
+    "w": 1,
+    "h": 17,
+    "xu": 51,
+    "yu": 619.1,
+    "wu": 1.9,
+    "hu": 32
+   },
+   "bg": "rgb(202, 213, 191)"
+  },
+  {
+   "z": 1,
+   "order": 51,
    "tag": "i",
    "cls": "",
    "rect": {
@@ -995,7 +1313,8 @@
    "radius": "50%"
   },
   {
-   "order": 47,
+   "z": 0,
+   "order": 52,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -1008,10 +1327,12 @@
     "wu": 16.1,
     "hu": 16.1
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>",
+   "color": "rgb(255, 255, 255)"
   },
   {
-   "order": 48,
+   "z": 0,
+   "order": 53,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -1024,6 +1345,13 @@
     "wu": 162.5,
     "hu": 22.4
    },
+   "trect": {
+    "x": 41.4,
+    "y": 322.6,
+    "w": 86.2,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Preparing your order",
    "type": {
     "family": "-apple-system",
@@ -1038,7 +1366,8 @@
    }
   },
   {
-   "order": 49,
+   "z": 0,
+   "order": 54,
    "tag": "time",
    "cls": "",
    "rect": {
@@ -1051,6 +1380,13 @@
     "wu": 65.5,
     "hu": 19.6
    },
+   "trect": {
+    "x": 166.3,
+    "y": 323.3,
+    "w": 34.8,
+    "h": 9
+   },
+   "lines": 1,
    "text": "10:25 AM",
    "type": {
     "family": "-apple-system",
@@ -1065,7 +1401,25 @@
    }
   },
   {
-   "order": 50,
+   "z": 0,
+   "order": 55,
+   "tag": "span",
+   "cls": "__pseudo before",
+   "rect": {
+    "x": 27,
+    "y": 345.5,
+    "w": 1,
+    "h": 17,
+    "xu": 51,
+    "yu": 651.1,
+    "wu": 1.9,
+    "hu": 32
+   },
+   "bg": "rgb(202, 213, 191)"
+  },
+  {
+   "z": 1,
+   "order": 56,
    "tag": "i",
    "cls": "",
    "rect": {
@@ -1082,7 +1436,8 @@
    "radius": "50%"
   },
   {
-   "order": 51,
+   "z": 0,
+   "order": 57,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -1095,10 +1450,12 @@
     "wu": 16.1,
     "hu": 16.1
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>",
+   "color": "rgb(255, 255, 255)"
   },
   {
-   "order": 52,
+   "z": 0,
+   "order": 58,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -1111,6 +1468,13 @@
     "wu": 122.4,
     "hu": 22.4
    },
+   "trect": {
+    "x": 41.4,
+    "y": 339.5,
+    "w": 64.9,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Out for delivery",
    "type": {
     "family": "-apple-system",
@@ -1125,7 +1489,8 @@
    }
   },
   {
-   "order": 53,
+   "z": 0,
+   "order": 59,
    "tag": "time",
    "cls": "",
    "rect": {
@@ -1138,6 +1503,13 @@
     "wu": 63.5,
     "hu": 19.6
    },
+   "trect": {
+    "x": 167.3,
+    "y": 340.3,
+    "w": 33.7,
+    "h": 9
+   },
+   "lines": 1,
    "text": "11:05 AM",
    "type": {
     "family": "-apple-system",
@@ -1152,7 +1524,8 @@
    }
   },
   {
-   "order": 54,
+   "z": 1,
+   "order": 60,
    "tag": "i",
    "cls": "",
    "rect": {
@@ -1169,7 +1542,8 @@
    "radius": "50%"
   },
   {
-   "order": 55,
+   "z": 0,
+   "order": 61,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -1182,10 +1556,12 @@
     "wu": 16.1,
     "hu": 16.1
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>",
+   "color": "rgb(255, 255, 255)"
   },
   {
-   "order": 56,
+   "z": 0,
+   "order": 62,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -1198,6 +1574,13 @@
     "wu": 74.2,
     "hu": 22.4
    },
+   "trect": {
+    "x": 41.4,
+    "y": 356.5,
+    "w": 39.4,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Delivered",
    "type": {
     "family": "-apple-system",
@@ -1212,7 +1595,8 @@
    }
   },
   {
-   "order": 57,
+   "z": 0,
+   "order": 63,
    "tag": "time",
    "cls": "",
    "rect": {
@@ -1225,6 +1609,13 @@
     "wu": 63.5,
     "hu": 19.6
    },
+   "trect": {
+    "x": 167.4,
+    "y": 357.3,
+    "w": 33.7,
+    "h": 9
+   },
+   "lines": 1,
    "text": "11:28 AM",
    "type": {
     "family": "-apple-system",
@@ -1239,7 +1630,8 @@
    }
   },
   {
-   "order": 58,
+   "z": 0,
+   "order": 64,
    "tag": "div",
    "cls": "tracking-delivered",
    "rect": {
@@ -1256,7 +1648,8 @@
    "radius": "7.95918px"
   },
   {
-   "order": 60,
+   "z": 0,
+   "order": 66,
    "tag": "p",
    "cls": "",
    "rect": {
@@ -1269,6 +1662,13 @@
     "wu": 139.3,
     "hu": 60.5
    },
+   "trect": {
+    "x": 284.7,
+    "y": 330.6,
+    "w": 51.3,
+    "h": 9
+   },
+   "lines": 1,
    "text": "(HSR Layout)",
    "type": {
     "family": "-apple-system",
@@ -1283,7 +1683,8 @@
    }
   },
   {
-   "order": 61,
+   "z": 0,
+   "order": 67,
    "tag": "strong",
    "cls": "",
    "rect": {
@@ -1296,7 +1697,14 @@
     "wu": 89.7,
     "hu": 35.1
    },
-   "text": "Delivered to Home",
+   "trect": {
+    "x": 262,
+    "y": 321,
+    "w": 47.6,
+    "h": 18.6
+   },
+   "lines": 2,
+   "text": "Delivered to\nHome",
    "type": {
     "family": "-apple-system",
     "size": 7.4,
@@ -1310,7 +1718,8 @@
    }
   },
   {
-   "order": 62,
+   "z": 0,
+   "order": 68,
    "tag": "small",
    "cls": "",
    "rect": {
@@ -1323,6 +1732,13 @@
     "wu": 139.3,
     "hu": 18.2
    },
+   "trect": {
+    "x": 262,
+    "y": 343.4,
+    "w": 60.4,
+    "h": 9
+   },
+   "lines": 1,
    "text": "11:28 AM, Today",
    "type": {
     "family": "-apple-system",
@@ -1337,7 +1753,8 @@
    }
   },
   {
-   "order": 63,
+   "z": 0,
+   "order": 69,
    "tag": "button",
    "cls": "tracking-items",
    "rect": {
@@ -1350,6 +1767,13 @@
     "wu": 655,
     "hu": 60.3
    },
+   "trect": {
+    "x": 153,
+    "y": 387.8,
+    "w": 66.5,
+    "h": 11
+   },
+   "lines": 1,
    "text": "View items (3)",
    "type": {
     "family": "-apple-system",
@@ -1371,7 +1795,8 @@
    "radius": "8.4898px"
   },
   {
-   "order": 64,
+   "z": 0,
+   "order": 70,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -1384,10 +1809,12 @@
     "wu": 20,
     "hu": 20
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
-   "order": 65,
+   "z": 0,
+   "order": 71,
    "tag": "article",
    "cls": "tracking-card",
    "rect": {
@@ -1404,7 +1831,8 @@
    "radius": "11.6735px"
   },
   {
-   "order": 66,
+   "z": 0,
+   "order": 72,
    "tag": "button",
    "cls": "tracking-provider",
    "rect": {
@@ -1419,7 +1847,8 @@
    }
   },
   {
-   "order": 68,
+   "z": 0,
+   "order": 74,
    "tag": "strong",
    "cls": "",
    "rect": {
@@ -1432,6 +1861,13 @@
     "wu": 317.2,
     "hu": 29.9
    },
+   "trect": {
+    "x": 95,
+    "y": 432.5,
+    "w": 112.9,
+    "h": 15
+   },
+   "lines": 1,
    "text": "MedPlus Pharmacy",
    "type": {
     "family": "-apple-system",
@@ -1446,7 +1882,8 @@
    }
   },
   {
-   "order": 69,
+   "z": 0,
+   "order": 75,
    "tag": "small",
    "cls": "",
    "rect": {
@@ -1459,6 +1896,13 @@
     "wu": 317.2,
     "hu": 26.6
    },
+   "trect": {
+    "x": 95,
+    "y": 449.3,
+    "w": 96.4,
+    "h": 12
+   },
+   "lines": 1,
    "text": "HSR Layout \u00b7 1.2 km",
    "type": {
     "family": "-apple-system",
@@ -1473,7 +1917,8 @@
    }
   },
   {
-   "order": 70,
+   "z": 0,
+   "order": 76,
    "tag": "span",
    "cls": "j-status warm",
    "rect": {
@@ -1486,6 +1931,13 @@
     "wu": 140.8,
     "hu": 35
    },
+   "trect": {
+    "x": 296.2,
+    "y": 442.4,
+    "w": 46.6,
+    "h": 10
+   },
+   "lines": 1,
    "text": "On the way",
    "type": {
     "family": "-apple-system",
@@ -1502,7 +1954,8 @@
    "radius": "99px"
   },
   {
-   "order": 71,
+   "z": 0,
+   "order": 77,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -1515,10 +1968,12 @@
     "wu": 21,
     "hu": 21
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M2 6h18v19H2Zm18 7h6l4 6v6H20M23 14v5h7\"></path><circle cx=\"8\" cy=\"26\" r=\"3\"></circle><circle cx=\"25\" cy=\"26\" r=\"3\"></circle></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M2 6h18v19H2Zm18 7h6l4 6v6H20M23 14v5h7\"></path><circle cx=\"8\" cy=\"26\" r=\"3\"></circle><circle cx=\"25\" cy=\"26\" r=\"3\"></circle></svg>",
+   "color": "rgb(196, 89, 40)"
   },
   {
-   "order": 72,
+   "z": 0,
+   "order": 78,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -1531,10 +1986,29 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
-   "order": 73,
+   "z": 0,
+   "order": 79,
+   "tag": "span",
+   "cls": "__pseudo before",
+   "rect": {
+    "x": 27,
+    "y": 480.4,
+    "w": 1,
+    "h": 17,
+    "xu": 51,
+    "yu": 905.3,
+    "wu": 1.9,
+    "hu": 32
+   },
+   "bg": "rgb(202, 213, 191)"
+  },
+  {
+   "z": 1,
+   "order": 80,
    "tag": "i",
    "cls": "",
    "rect": {
@@ -1551,7 +2025,8 @@
    "radius": "50%"
   },
   {
-   "order": 74,
+   "z": 0,
+   "order": 81,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -1564,10 +2039,12 @@
     "wu": 16.1,
     "hu": 16.1
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>",
+   "color": "rgb(255, 255, 255)"
   },
   {
-   "order": 75,
+   "z": 0,
+   "order": 82,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -1580,6 +2057,13 @@
     "wu": 129.6,
     "hu": 22.4
    },
+   "trect": {
+    "x": 41.4,
+    "y": 474.4,
+    "w": 68.8,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Order confirmed",
    "type": {
     "family": "-apple-system",
@@ -1594,7 +2078,8 @@
    }
   },
   {
-   "order": 76,
+   "z": 0,
+   "order": 83,
    "tag": "time",
    "cls": "",
    "rect": {
@@ -1607,6 +2092,13 @@
     "wu": 63.5,
     "hu": 19.6
    },
+   "trect": {
+    "x": 167.3,
+    "y": 475.2,
+    "w": 33.7,
+    "h": 9
+   },
+   "lines": 1,
    "text": "10:15 AM",
    "type": {
     "family": "-apple-system",
@@ -1621,7 +2113,25 @@
    }
   },
   {
-   "order": 77,
+   "z": 0,
+   "order": 84,
+   "tag": "span",
+   "cls": "__pseudo before",
+   "rect": {
+    "x": 27,
+    "y": 497.3,
+    "w": 1,
+    "h": 17,
+    "xu": 51,
+    "yu": 937.3,
+    "wu": 1.9,
+    "hu": 32
+   },
+   "bg": "rgb(202, 213, 191)"
+  },
+  {
+   "z": 1,
+   "order": 85,
    "tag": "i",
    "cls": "",
    "rect": {
@@ -1638,7 +2148,8 @@
    "radius": "50%"
   },
   {
-   "order": 78,
+   "z": 0,
+   "order": 86,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -1651,10 +2162,12 @@
     "wu": 16.1,
     "hu": 16.1
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>",
+   "color": "rgb(255, 255, 255)"
   },
   {
-   "order": 79,
+   "z": 0,
+   "order": 87,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -1667,6 +2180,13 @@
     "wu": 162.5,
     "hu": 22.4
    },
+   "trect": {
+    "x": 41.4,
+    "y": 491.4,
+    "w": 86.2,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Preparing your order",
    "type": {
     "family": "-apple-system",
@@ -1681,7 +2201,8 @@
    }
   },
   {
-   "order": 80,
+   "z": 0,
+   "order": 88,
    "tag": "time",
    "cls": "",
    "rect": {
@@ -1694,6 +2215,13 @@
     "wu": 66.2,
     "hu": 19.6
    },
+   "trect": {
+    "x": 165.9,
+    "y": 492.1,
+    "w": 35.1,
+    "h": 9
+   },
+   "lines": 1,
    "text": "10:40 AM",
    "type": {
     "family": "-apple-system",
@@ -1708,7 +2236,25 @@
    }
   },
   {
-   "order": 81,
+   "z": 0,
+   "order": 89,
+   "tag": "span",
+   "cls": "__pseudo before",
+   "rect": {
+    "x": 27,
+    "y": 514.3,
+    "w": 1,
+    "h": 17,
+    "xu": 51,
+    "yu": 969.3,
+    "wu": 1.9,
+    "hu": 32
+   },
+   "bg": "rgb(202, 213, 191)"
+  },
+  {
+   "z": 1,
+   "order": 90,
    "tag": "i",
    "cls": "",
    "rect": {
@@ -1725,7 +2271,8 @@
    "radius": "50%"
   },
   {
-   "order": 82,
+   "z": 0,
+   "order": 91,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -1738,10 +2285,12 @@
     "wu": 16.1,
     "hu": 16.1
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>",
+   "color": "rgb(255, 255, 255)"
   },
   {
-   "order": 83,
+   "z": 0,
+   "order": 92,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -1754,6 +2303,13 @@
     "wu": 127.9,
     "hu": 22.4
    },
+   "trect": {
+    "x": 41.4,
+    "y": 508.4,
+    "w": 67.9,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Out for delivery",
    "type": {
     "family": "-apple-system",
@@ -1768,7 +2324,8 @@
    }
   },
   {
-   "order": 84,
+   "z": 0,
+   "order": 93,
    "tag": "time",
    "cls": "",
    "rect": {
@@ -1781,6 +2338,13 @@
     "wu": 63.4,
     "hu": 19.6
    },
+   "trect": {
+    "x": 167.4,
+    "y": 509.1,
+    "w": 33.6,
+    "h": 9
+   },
+   "lines": 1,
    "text": "11:20 AM",
    "type": {
     "family": "-apple-system",
@@ -1795,7 +2359,8 @@
    }
   },
   {
-   "order": 85,
+   "z": 1,
+   "order": 94,
    "tag": "i",
    "cls": "",
    "rect": {
@@ -1812,7 +2377,8 @@
    "radius": "50%"
   },
   {
-   "order": 86,
+   "z": 0,
+   "order": 95,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -1825,10 +2391,12 @@
     "wu": 16.1,
     "hu": 16.1
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>",
+   "color": "rgb(255, 255, 255)"
   },
   {
-   "order": 87,
+   "z": 0,
+   "order": 96,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -1841,6 +2409,13 @@
     "wu": 140.3,
     "hu": 22.4
    },
+   "trect": {
+    "x": 41.4,
+    "y": 525.3,
+    "w": 74.5,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Expected delivery",
    "type": {
     "family": "-apple-system",
@@ -1855,7 +2430,8 @@
    }
   },
   {
-   "order": 88,
+   "z": 0,
+   "order": 97,
    "tag": "time",
    "cls": "",
    "rect": {
@@ -1868,6 +2444,13 @@
     "wu": 112.3,
     "hu": 19.6
    },
+   "trect": {
+    "x": 141.4,
+    "y": 526.1,
+    "w": 59.6,
+    "h": 9
+   },
+   "lines": 1,
    "text": "12:00\u201312:30 PM",
    "type": {
     "family": "-apple-system",
@@ -1882,7 +2465,8 @@
    }
   },
   {
-   "order": 89,
+   "z": 0,
+   "order": 98,
    "tag": "div",
    "cls": "tracking-map-preview",
    "rect": {
@@ -1899,7 +2483,8 @@
    "radius": "7.95918px"
   },
   {
-   "order": 90,
+   "z": 0,
+   "order": 99,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -1912,10 +2497,12 @@
     "wu": 28,
     "hu": 28
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 7 9-4 9 4 8-4v23l-8 4-9-4-9 4ZM12 3v23M21 7v23\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 7 9-4 9 4 8-4v23l-8 4-9-4-9 4ZM12 3v23M21 7v23\"></path></svg>",
+   "color": "rgb(125, 129, 114)"
   },
   {
-   "order": 91,
+   "z": 0,
+   "order": 100,
    "tag": "strong",
    "cls": "",
    "rect": {
@@ -1928,6 +2515,13 @@
     "wu": 114.7,
     "hu": 18.2
    },
+   "trect": {
+    "x": 258.5,
+    "y": 501.8,
+    "w": 60.9,
+    "h": 9
+   },
+   "lines": 1,
    "text": "Map unavailable",
    "type": {
     "family": "-apple-system",
@@ -1942,7 +2536,8 @@
    }
   },
   {
-   "order": 92,
+   "z": 0,
+   "order": 101,
    "tag": "small",
    "cls": "",
    "rect": {
@@ -1955,6 +2550,13 @@
     "wu": 132.4,
     "hu": 25.1
    },
+   "trect": {
+    "x": 256.4,
+    "y": 517.7,
+    "w": 65,
+    "h": 7
+   },
+   "lines": 1,
    "text": "Sample ETA: 15 mins",
    "type": {
     "family": "-apple-system",
@@ -1970,7 +2572,8 @@
    "bg": "rgb(255, 248, 232)"
   },
   {
-   "order": 93,
+   "z": 0,
+   "order": 102,
    "tag": "button",
    "cls": "tracking-items",
    "rect": {
@@ -1983,6 +2586,13 @@
     "wu": 655,
     "hu": 60.3
    },
+   "trect": {
+    "x": 153.1,
+    "y": 556.6,
+    "w": 66.3,
+    "h": 11
+   },
+   "lines": 1,
    "text": "View items (2)",
    "type": {
     "family": "-apple-system",
@@ -2004,7 +2614,8 @@
    "radius": "8.4898px"
   },
   {
-   "order": 94,
+   "z": 0,
+   "order": 103,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -2017,10 +2628,12 @@
     "wu": 20,
     "hu": 20
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
-   "order": 95,
+   "z": 0,
+   "order": 104,
    "tag": "button",
    "cls": "tracking-group-title",
    "rect": {
@@ -2037,7 +2650,8 @@
    "radius": "10.6122px"
   },
   {
-   "order": 96,
+   "z": 0,
+   "order": 105,
    "tag": "h2",
    "cls": "",
    "rect": {
@@ -2050,6 +2664,13 @@
     "wu": 484.2,
     "hu": 34
    },
+   "trect": {
+    "x": 43.5,
+    "y": 599.3,
+    "w": 65,
+    "h": 16
+   },
+   "lines": 1,
    "text": "Lab Tests",
    "type": {
     "family": "-apple-system",
@@ -2064,7 +2685,8 @@
    }
   },
   {
-   "order": 97,
+   "z": 0,
+   "order": 106,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -2077,10 +2699,12 @@
     "wu": 34,
     "hu": 34
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3h8m-7 0v12L5 28c-1 2 23 2 22 0l-8-13V3M9 22h14\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3h8m-7 0v12L5 28c-1 2 23 2 22 0l-8-13V3M9 22h14\"></path></svg>",
+   "color": "rgb(189, 87, 30)"
   },
   {
-   "order": 98,
+   "z": 0,
+   "order": 107,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -2093,6 +2717,13 @@
     "wu": 99.9,
     "hu": 24.5
    },
+   "trect": {
+    "x": 113.8,
+    "y": 600.8,
+    "w": 53,
+    "h": 13
+   },
+   "lines": 1,
    "text": "(1 centre)",
    "type": {
     "family": "-apple-system",
@@ -2107,7 +2738,8 @@
    }
   },
   {
-   "order": 99,
+   "z": 0,
+   "order": 108,
    "tag": "small",
    "cls": "warm",
    "rect": {
@@ -2120,6 +2752,13 @@
     "wu": 133.8,
     "hu": 28.9
    },
+   "trect": {
+    "x": 288.8,
+    "y": 602.8,
+    "w": 60.4,
+    "h": 9
+   },
+   "lines": 1,
    "text": "Upcoming today",
    "type": {
     "family": "-apple-system",
@@ -2136,7 +2775,8 @@
    "radius": "99px"
   },
   {
-   "order": 100,
+   "z": 0,
+   "order": 109,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -2149,10 +2789,12 @@
     "wu": 17,
     "hu": 17
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
-   "order": 101,
+   "z": 0,
+   "order": 110,
    "tag": "article",
    "cls": "tracking-card",
    "rect": {
@@ -2169,7 +2811,8 @@
    "radius": "11.6735px"
   },
   {
-   "order": 102,
+   "z": 0,
+   "order": 111,
    "tag": "button",
    "cls": "tracking-provider",
    "rect": {
@@ -2184,7 +2827,8 @@
    }
   },
   {
-   "order": 104,
+   "z": 0,
+   "order": 113,
    "tag": "strong",
    "cls": "",
    "rect": {
@@ -2197,6 +2841,13 @@
     "wu": 287.3,
     "hu": 29.9
    },
+   "trect": {
+    "x": 95,
+    "y": 633.1,
+    "w": 132.1,
+    "h": 15
+   },
+   "lines": 1,
    "text": "Thyrocare Diagnostics",
    "type": {
     "family": "-apple-system",
@@ -2211,7 +2862,8 @@
    }
   },
   {
-   "order": 105,
+   "z": 0,
+   "order": 114,
    "tag": "small",
    "cls": "",
    "rect": {
@@ -2224,6 +2876,13 @@
     "wu": 287.3,
     "hu": 26.6
    },
+   "trect": {
+    "x": 95,
+    "y": 650,
+    "w": 94.9,
+    "h": 12
+   },
+   "lines": 1,
    "text": "HSR Layout \u00b7 1.1 km",
    "type": {
     "family": "-apple-system",
@@ -2238,7 +2897,8 @@
    }
   },
   {
-   "order": 106,
+   "z": 0,
+   "order": 115,
    "tag": "span",
    "cls": "j-status warm",
    "rect": {
@@ -2251,6 +2911,13 @@
     "wu": 170.7,
     "hu": 35
    },
+   "trect": {
+    "x": 280.3,
+    "y": 643,
+    "w": 62.5,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Today 4:30 PM",
    "type": {
     "family": "-apple-system",
@@ -2267,7 +2934,8 @@
    "radius": "99px"
   },
   {
-   "order": 107,
+   "z": 0,
+   "order": 116,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -2280,10 +2948,12 @@
     "wu": 21,
     "hu": 21
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>",
+   "color": "rgb(196, 89, 40)"
   },
   {
-   "order": 108,
+   "z": 0,
+   "order": 117,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -2296,10 +2966,29 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
-   "order": 109,
+   "z": 0,
+   "order": 118,
+   "tag": "span",
+   "cls": "__pseudo before",
+   "rect": {
+    "x": 27,
+    "y": 681.3,
+    "w": 1,
+    "h": 17,
+    "xu": 51,
+    "yu": 1284.1,
+    "wu": 1.9,
+    "hu": 32
+   },
+   "bg": "rgb(202, 213, 191)"
+  },
+  {
+   "z": 1,
+   "order": 119,
    "tag": "i",
    "cls": "",
    "rect": {
@@ -2316,7 +3005,8 @@
    "radius": "50%"
   },
   {
-   "order": 110,
+   "z": 0,
+   "order": 120,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -2329,10 +3019,12 @@
     "wu": 16.1,
     "hu": 16.1
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>",
+   "color": "rgb(255, 255, 255)"
   },
   {
-   "order": 111,
+   "z": 0,
+   "order": 121,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -2345,6 +3037,13 @@
     "wu": 115.5,
     "hu": 22.4
    },
+   "trect": {
+    "x": 41.4,
+    "y": 675.4,
+    "w": 61.3,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Slot confirmed",
    "type": {
     "family": "-apple-system",
@@ -2359,7 +3058,8 @@
    }
   },
   {
-   "order": 112,
+   "z": 0,
+   "order": 122,
    "tag": "time",
    "cls": "",
    "rect": {
@@ -2372,6 +3072,13 @@
     "wu": 113.2,
     "hu": 19.6
    },
+   "trect": {
+    "x": 141,
+    "y": 676.1,
+    "w": 60,
+    "h": 9
+   },
+   "lines": 1,
    "text": "Today, 10:18 AM",
    "type": {
     "family": "-apple-system",
@@ -2386,7 +3093,25 @@
    }
   },
   {
-   "order": 113,
+   "z": 0,
+   "order": 123,
+   "tag": "span",
+   "cls": "__pseudo before",
+   "rect": {
+    "x": 27,
+    "y": 698.3,
+    "w": 1,
+    "h": 17,
+    "xu": 51,
+    "yu": 1316.1,
+    "wu": 1.9,
+    "hu": 32
+   },
+   "bg": "rgb(202, 213, 191)"
+  },
+  {
+   "z": 1,
+   "order": 124,
    "tag": "i",
    "cls": "",
    "rect": {
@@ -2403,7 +3128,8 @@
    "radius": "50%"
   },
   {
-   "order": 114,
+   "z": 0,
+   "order": 125,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -2416,10 +3142,12 @@
     "wu": 16.1,
     "hu": 16.1
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>",
+   "color": "rgb(255, 255, 255)"
   },
   {
-   "order": 115,
+   "z": 0,
+   "order": 126,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -2432,6 +3160,13 @@
     "wu": 119.7,
     "hu": 22.4
    },
+   "trect": {
+    "x": 41.4,
+    "y": 692.4,
+    "w": 63.5,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Upcoming test",
    "type": {
     "family": "-apple-system",
@@ -2446,7 +3181,8 @@
    }
   },
   {
-   "order": 116,
+   "z": 0,
+   "order": 127,
    "tag": "time",
    "cls": "",
    "rect": {
@@ -2459,6 +3195,13 @@
     "wu": 108,
     "hu": 19.6
    },
+   "trect": {
+    "x": 143.8,
+    "y": 693.1,
+    "w": 57.3,
+    "h": 9
+   },
+   "lines": 1,
    "text": "Today, 4:30 PM",
    "type": {
     "family": "-apple-system",
@@ -2473,7 +3216,25 @@
    }
   },
   {
-   "order": 117,
+   "z": 0,
+   "order": 128,
+   "tag": "span",
+   "cls": "__pseudo before",
+   "rect": {
+    "x": 27,
+    "y": 715.3,
+    "w": 1,
+    "h": 17,
+    "xu": 51,
+    "yu": 1348,
+    "wu": 1.9,
+    "hu": 32
+   },
+   "bg": "rgb(202, 213, 191)"
+  },
+  {
+   "z": 1,
+   "order": 129,
    "tag": "i",
    "cls": "",
    "rect": {
@@ -2490,7 +3251,8 @@
    "radius": "50%"
   },
   {
-   "order": 118,
+   "z": 0,
+   "order": 130,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -2503,10 +3265,12 @@
     "wu": 16.1,
     "hu": 16.1
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>",
+   "color": "rgb(255, 255, 255)"
   },
   {
-   "order": 119,
+   "z": 0,
+   "order": 131,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -2519,6 +3283,13 @@
     "wu": 139.6,
     "hu": 22.4
    },
+   "trect": {
+    "x": 41.4,
+    "y": 709.3,
+    "w": 74.1,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Sample collection",
    "type": {
     "family": "-apple-system",
@@ -2533,7 +3304,8 @@
    }
   },
   {
-   "order": 120,
+   "z": 0,
+   "order": 132,
    "tag": "time",
    "cls": "",
    "rect": {
@@ -2546,6 +3318,13 @@
     "wu": 56.5,
     "hu": 19.6
    },
+   "trect": {
+    "x": 171.1,
+    "y": 710.1,
+    "w": 30,
+    "h": 9
+   },
+   "lines": 1,
    "text": "Pending",
    "type": {
     "family": "-apple-system",
@@ -2560,7 +3339,8 @@
    }
   },
   {
-   "order": 121,
+   "z": 1,
+   "order": 133,
    "tag": "i",
    "cls": "",
    "rect": {
@@ -2577,7 +3357,8 @@
    "radius": "50%"
   },
   {
-   "order": 122,
+   "z": 0,
+   "order": 134,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -2590,10 +3371,12 @@
     "wu": 16.1,
     "hu": 16.1
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>",
+   "color": "rgb(255, 255, 255)"
   },
   {
-   "order": 123,
+   "z": 0,
+   "order": 135,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -2606,6 +3389,13 @@
     "wu": 101.7,
     "hu": 22.4
    },
+   "trect": {
+    "x": 41.4,
+    "y": 726.3,
+    "w": 53.9,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Report ready",
    "type": {
     "family": "-apple-system",
@@ -2620,7 +3410,8 @@
    }
   },
   {
-   "order": 124,
+   "z": 0,
+   "order": 136,
    "tag": "time",
    "cls": "",
    "rect": {
@@ -2633,6 +3424,13 @@
     "wu": 162.3,
     "hu": 19.6
    },
+   "trect": {
+    "x": 115,
+    "y": 727,
+    "w": 86.1,
+    "h": 9
+   },
+   "lines": 1,
    "text": "By tomorrow, 10:00 AM",
    "type": {
     "family": "-apple-system",
@@ -2647,7 +3445,8 @@
    }
   },
   {
-   "order": 125,
+   "z": 0,
+   "order": 137,
    "tag": "div",
    "cls": "tracking-appointment",
    "rect": {
@@ -2664,7 +3463,8 @@
    "radius": "7.95918px"
   },
   {
-   "order": 126,
+   "z": 0,
+   "order": 138,
    "tag": "i",
    "cls": "",
    "rect": {
@@ -2681,7 +3481,8 @@
    "radius": "50%"
   },
   {
-   "order": 127,
+   "z": 0,
+   "order": 139,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -2694,10 +3495,12 @@
     "wu": 28,
     "hu": 28
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"4\" y=\"6\" width=\"24\" height=\"23\" rx=\"3\"></rect><path d=\"M10 3v7m12-7v7M4 13h24M10 18h4v5h-4Z\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"4\" y=\"6\" width=\"24\" height=\"23\" rx=\"3\"></rect><path d=\"M10 3v7m12-7v7M4 13h24M10 18h4v5h-4Z\"></path></svg>",
+   "color": "rgb(193, 72, 27)"
   },
   {
-   "order": 128,
+   "z": 0,
+   "order": 140,
    "tag": "div",
    "cls": "",
    "rect": {
@@ -2710,6 +3513,13 @@
     "wu": 166.9,
     "hu": 99.3
    },
+   "trect": {
+    "x": 256.7,
+    "y": 680.5,
+    "w": 57,
+    "h": 9
+   },
+   "lines": 1,
    "text": "Appointment at",
    "type": {
     "family": "-apple-system",
@@ -2724,7 +3534,8 @@
    }
   },
   {
-   "order": 129,
+   "z": 0,
+   "order": 141,
    "tag": "strong",
    "cls": "",
    "rect": {
@@ -2737,6 +3548,13 @@
     "wu": 166.9,
     "hu": 17
    },
+   "trect": {
+    "x": 256.7,
+    "y": 690.1,
+    "w": 88.6,
+    "h": 9
+   },
+   "lines": 1,
    "text": "Thyrocare Diagnostics",
    "type": {
     "family": "-apple-system",
@@ -2751,7 +3569,8 @@
    }
   },
   {
-   "order": 130,
+   "z": 0,
+   "order": 142,
    "tag": "small",
    "cls": "",
    "rect": {
@@ -2764,6 +3583,13 @@
     "wu": 166.9,
     "hu": 15.1
    },
+   "trect": {
+    "x": 256.7,
+    "y": 701.8,
+    "w": 48.6,
+    "h": 7
+   },
+   "lines": 1,
    "text": "Today, 4:30 PM",
    "type": {
     "family": "-apple-system",
@@ -2778,7 +3604,8 @@
    }
   },
   {
-   "order": 131,
+   "z": 0,
+   "order": 143,
    "tag": "button",
    "cls": "",
    "rect": {
@@ -2791,6 +3618,13 @@
     "wu": 122.1,
     "hu": 35.9
    },
+   "trect": {
+    "x": 266.8,
+    "y": 718.8,
+    "w": 44.8,
+    "h": 9
+   },
+   "lines": 1,
    "text": "View details",
    "type": {
     "family": "-apple-system",
@@ -2812,7 +3646,8 @@
    "radius": "5.83673px"
   },
   {
-   "order": 132,
+   "z": 0,
+   "order": 144,
    "tag": "button",
    "cls": "j-notice tracking-help",
    "rect": {
@@ -2834,7 +3669,8 @@
    "radius": "10.6122px"
   },
   {
-   "order": 133,
+   "z": 0,
+   "order": 145,
    "tag": "i",
    "cls": "",
    "rect": {
@@ -2851,7 +3687,8 @@
    "radius": "50%"
   },
   {
-   "order": 134,
+   "z": 0,
+   "order": 146,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -2864,10 +3701,12 @@
     "wu": 39,
     "hu": 39
    },
-   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"M12 5v9m0 3v2\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"M12 5v9m0 3v2\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>",
+   "color": "rgb(182, 90, 33)"
   },
   {
-   "order": 135,
+   "z": 0,
+   "order": 147,
    "tag": "strong",
    "cls": "",
    "rect": {
@@ -2880,6 +3719,13 @@
     "wu": 542.3,
     "hu": 31.2
    },
+   "trect": {
+    "x": 64.7,
+    "y": 774.1,
+    "w": 70.9,
+    "h": 15
+   },
+   "lines": 1,
    "text": "Need help?",
    "type": {
     "family": "-apple-system",
@@ -2894,7 +3740,8 @@
    }
   },
   {
-   "order": 136,
+   "z": 0,
+   "order": 148,
    "tag": "small",
    "cls": "",
    "rect": {
@@ -2907,6 +3754,13 @@
     "wu": 542.3,
     "hu": 24.3
    },
+   "trect": {
+    "x": 64.7,
+    "y": 792.2,
+    "w": 262.4,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Contact a seller, reschedule a lab test or report an issue.",
    "type": {
     "family": "-apple-system",
@@ -2921,7 +3775,8 @@
    }
   },
   {
-   "order": 137,
+   "z": 0,
+   "order": 149,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -2934,10 +3789,12 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
-   "order": 138,
+   "z": 0,
+   "order": 150,
    "tag": "p",
    "cls": "j-sample-note",
    "rect": {
@@ -2950,6 +3807,13 @@
     "wu": 695,
     "hu": 23.7
    },
+   "trect": {
+    "x": 88.2,
+    "y": 824.8,
+    "w": 213.6,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Sample tracking \u00b7 statuses and times are not live",
    "type": {
     "family": "-apple-system",
@@ -2964,7 +3828,8 @@
    }
   },
   {
-   "order": 139,
+   "z": 3,
+   "order": 151,
    "tag": "nav",
    "cls": "j-bottom-nav",
    "rect": {
@@ -2987,7 +3852,8 @@
    "radius": "14.3265px 14.3265px 0px 0px"
   },
   {
-   "order": 140,
+   "z": 0,
+   "order": 152,
    "tag": "button",
    "cls": "",
    "rect": {
@@ -3002,7 +3868,8 @@
    }
   },
   {
-   "order": 141,
+   "z": 0,
+   "order": 153,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -3015,10 +3882,12 @@
     "wu": 35,
     "hu": 35
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 14 13-11 13 11M7 13v16h7v-9h5v9h6V13\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 14 13-11 13 11M7 13v16h7v-9h5v9h6V13\"></path></svg>",
+   "color": "rgb(138, 142, 139)"
   },
   {
-   "order": 142,
+   "z": 0,
+   "order": 154,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -3031,6 +3900,13 @@
     "wu": 53.6,
     "hu": 22.6
    },
+   "trect": {
+    "x": 34.1,
+    "y": 877.7,
+    "w": 28.4,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Home",
    "type": {
     "family": "-apple-system",
@@ -3045,7 +3921,8 @@
    }
   },
   {
-   "order": 143,
+   "z": 0,
+   "order": 155,
    "tag": "button",
    "cls": "",
    "rect": {
@@ -3060,7 +3937,8 @@
    }
   },
   {
-   "order": 144,
+   "z": 0,
+   "order": 156,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -3073,10 +3951,12 @@
     "wu": 35,
     "hu": 35
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"7\" y=\"3\" width=\"18\" height=\"27\" rx=\"3\"></rect><path d=\"M12 9h8m-8 6h8m-8 6h5\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"7\" y=\"3\" width=\"18\" height=\"27\" rx=\"3\"></rect><path d=\"M12 9h8m-8 6h8m-8 6h5\"></path></svg>",
+   "color": "rgb(138, 142, 139)"
   },
   {
-   "order": 145,
+   "z": 0,
+   "order": 157,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -3089,6 +3969,13 @@
     "wu": 67.1,
     "hu": 22.6
    },
+   "trect": {
+    "x": 103.9,
+    "y": 877.7,
+    "w": 35.6,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Parchis",
    "type": {
     "family": "-apple-system",
@@ -3103,7 +3990,8 @@
    }
   },
   {
-   "order": 146,
+   "z": 0,
+   "order": 158,
    "tag": "button",
    "cls": "",
    "rect": {
@@ -3118,7 +4006,8 @@
    }
   },
   {
-   "order": 147,
+   "z": 0,
+   "order": 159,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -3131,10 +4020,12 @@
     "wu": 35,
     "hu": 35
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M2 6h18v19H2Zm18 7h6l4 6v6H20M23 14v5h7\"></path><circle cx=\"8\" cy=\"26\" r=\"3\"></circle><circle cx=\"25\" cy=\"26\" r=\"3\"></circle></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M2 6h18v19H2Zm18 7h6l4 6v6H20M23 14v5h7\"></path><circle cx=\"8\" cy=\"26\" r=\"3\"></circle><circle cx=\"25\" cy=\"26\" r=\"3\"></circle></svg>",
+   "color": "rgb(211, 68, 22)"
   },
   {
-   "order": 148,
+   "z": 0,
+   "order": 160,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -3147,6 +4038,13 @@
     "wu": 50.4,
     "hu": 22.6
    },
+   "trect": {
+    "x": 181.6,
+    "y": 877.7,
+    "w": 26.7,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Track",
    "type": {
     "family": "-apple-system",
@@ -3161,7 +4059,8 @@
    }
   },
   {
-   "order": 149,
+   "z": 0,
+   "order": 161,
    "tag": "button",
    "cls": "",
    "rect": {
@@ -3176,7 +4075,8 @@
    }
   },
   {
-   "order": 150,
+   "z": 0,
+   "order": 162,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -3189,10 +4089,12 @@
     "wu": 35,
     "hu": 35
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M16 28S2 18 2 10c0-9 12-10 14-2 3-8 14-7 14 2 0 8-14 18-14 18Z\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M16 28S2 18 2 10c0-9 12-10 14-2 3-8 14-7 14 2 0 8-14 18-14 18Z\"></path></svg>",
+   "color": "rgb(138, 142, 139)"
   },
   {
-   "order": 151,
+   "z": 0,
+   "order": 163,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -3205,6 +4107,13 @@
     "wu": 42.8,
     "hu": 22.6
    },
+   "trect": {
+    "x": 257,
+    "y": 877.7,
+    "w": 22.7,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Care",
    "type": {
     "family": "-apple-system",
@@ -3219,7 +4128,8 @@
    }
   },
   {
-   "order": 152,
+   "z": 0,
+   "order": 164,
    "tag": "button",
    "cls": "",
    "rect": {
@@ -3234,7 +4144,8 @@
    }
   },
   {
-   "order": 153,
+   "z": 0,
+   "order": 165,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -3247,10 +4158,12 @@
     "wu": 35,
     "hu": 35
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"9\" r=\"5\"></circle><path d=\"M5 28v-4c0-10 22-10 22 0v4Z\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"9\" r=\"5\"></circle><path d=\"M5 28v-4c0-10 22-10 22 0v4Z\"></path></svg>",
+   "color": "rgb(138, 142, 139)"
   },
   {
-   "order": 154,
+   "z": 0,
+   "order": 166,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -3263,6 +4176,13 @@
     "wu": 75.3,
     "hu": 22.6
    },
+   "trect": {
+    "x": 321.7,
+    "y": 877.7,
+    "w": 40,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Account",
    "type": {
     "family": "-apple-system",
@@ -3277,7 +4197,8 @@
    }
   },
   {
-   "order": 155,
+   "z": 5,
+   "order": 167,
    "tag": "div",
    "cls": "home-indicator",
    "rect": {
@@ -3296,6 +4217,7 @@
  ],
  "art": [
   {
+   "z": 0,
    "viewBox": "465 149 268 116",
    "href": "assets/references/tracking.jpeg",
    "aspect": "xMidYMid meet",
@@ -3314,6 +4236,7 @@
    "asset": "art_tracking_465_149_268_116"
   },
   {
+   "z": 0,
    "viewBox": "48 738 117 101",
    "href": "assets/references/medicine-options.jpeg",
    "aspect": "xMidYMid meet",
@@ -3328,10 +4251,11 @@
     "wu": 117,
     "hu": 68
    },
-   "order": 36,
+   "order": 39,
    "asset": "art_medicineoptions_48_738_117_101"
   },
   {
+   "z": 0,
    "viewBox": "437 567 83 96",
    "href": "assets/references/tracking.jpeg",
    "aspect": "xMidYMid meet",
@@ -3346,10 +4270,11 @@
     "wu": 85,
     "hu": 95
    },
-   "order": 59,
+   "order": 65,
    "asset": "art_tracking_437_567_83_96"
   },
   {
+   "z": 0,
    "viewBox": "48 924 117 61",
    "href": "assets/references/medicine-options.jpeg",
    "aspect": "xMidYMid meet",
@@ -3364,10 +4289,11 @@
     "wu": 117,
     "hu": 68
    },
-   "order": 67,
+   "order": 73,
    "asset": "art_medicineoptions_48_924_117_61"
   },
   {
+   "z": 0,
    "viewBox": "115 725 135 94",
    "href": "assets/references/lab-options.jpeg",
    "aspect": "xMidYMid meet",
@@ -3382,12 +4308,13 @@
     "wu": 117,
     "hu": 68
    },
-   "order": 103,
+   "order": 112,
    "asset": "art_laboptions_115_725_135_94"
   }
  ],
  "images": [
   {
+   "z": 0,
    "src": "assets/parchi-logo-transparent.png",
    "alt": "",
    "rect": {

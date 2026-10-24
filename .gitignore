@@ -17,6 +17,10 @@ webrx*/
 *.jpeg
 *.png
 !docs/**/*.png
+# app asset catalogue and the design specs are product assets, not patient photos (these exact folders only)
+!app/Parchi/Assets.xcassets/**/*.png
+!frontend/specs/web/*.png
+!frontend/assets/*.png
 
 # build/runtime artefacts (never commit)
 server/.venv/

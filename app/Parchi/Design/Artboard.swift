@@ -51,7 +51,7 @@ extension Font {
     }
 }
 
-private func cssWeightToUIKit(_ css: Double) -> CGFloat {
+func cssWeightToUIKit(_ css: Double) -> CGFloat {
     let points: [(Double, Double)] = [(100, -0.8), (200, -0.6), (300, -0.4), (400, 0), (500, 0.23), (600, 0.3), (700, 0.4), (800, 0.56), (900, 0.62)]
     if css <= points.first!.0 { return CGFloat(points.first!.1) }
     for i in 1..<points.count where css <= points[i].0 {

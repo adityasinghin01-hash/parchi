@@ -8,6 +8,7 @@
  "scrollHeight": 930,
  "elements": [
   {
+   "z": 0,
    "order": 0,
    "tag": "span",
    "cls": "clock",
@@ -21,6 +22,13 @@
     "wu": 58.5,
     "hu": 32
    },
+   "trect": {
+    "x": 48.8,
+    "y": 14.9,
+    "w": 31,
+    "h": 17
+   },
+   "lines": 1,
    "text": "9:41",
    "type": {
     "family": "-apple-system",
@@ -35,6 +43,7 @@
    }
   },
   {
+   "z": 0,
    "order": 1,
    "tag": "span",
    "cls": "dynamic-island",
@@ -52,6 +61,7 @@
    "radius": "39px"
   },
   {
+   "z": 0,
    "order": 2,
    "tag": "svg",
    "cls": "",
@@ -65,9 +75,11 @@
     "wu": 121.3,
     "hu": 36.8
    },
-   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>",
+   "color": "rgb(66, 28, 8)"
   },
   {
+   "z": 0,
    "order": 3,
    "tag": "section",
    "cls": "screen journey-screen get-all-screen",
@@ -84,6 +96,7 @@
    "bg": "rgb(255, 251, 244)"
   },
   {
+   "z": 0,
    "order": 4,
    "tag": "button",
    "cls": "j-back",
@@ -102,6 +115,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 5,
    "tag": "svg",
    "cls": "",
@@ -115,9 +129,11 @@
     "wu": 45.4,
     "hu": 45.4
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m20 5-11 11 11 11\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m20 5-11 11 11 11\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
+   "z": 0,
    "order": 7,
    "tag": "strong",
    "cls": "",
@@ -131,6 +147,13 @@
     "wu": 103.9,
     "hu": 37
    },
+   "trect": {
+    "x": 186.8,
+    "y": 49.2,
+    "w": 55.1,
+    "h": 23
+   },
+   "lines": 1,
    "text": "Parchi",
    "type": {
     "family": "-apple-system",
@@ -145,6 +168,7 @@
    }
   },
   {
+   "z": 0,
    "order": 8,
    "tag": "h1",
    "cls": "",
@@ -158,6 +182,13 @@
     "wu": 679.1,
     "hu": 52.6
    },
+   "trect": {
+    "x": 14.8,
+    "y": 84.9,
+    "w": 171.5,
+    "h": 29
+   },
+   "lines": 1,
    "text": "Get it all review",
    "type": {
     "family": "-apple-system",
@@ -172,6 +203,7 @@
    }
   },
   {
+   "z": 0,
    "order": 9,
    "tag": "p",
    "cls": "",
@@ -185,6 +217,13 @@
     "wu": 679.1,
     "hu": 31.2
    },
+   "trect": {
+    "x": 14.8,
+    "y": 117.6,
+    "w": 208,
+    "h": 15
+   },
+   "lines": 1,
    "text": "Check everything before checkout.",
    "type": {
     "family": "-apple-system",
@@ -199,6 +238,7 @@
    }
   },
   {
+   "z": 0,
    "order": 10,
    "tag": "div",
    "cls": "getall-summary",
@@ -221,6 +261,7 @@
    "radius": "10.0816px"
   },
   {
+   "z": 0,
    "order": 11,
    "tag": "span",
    "cls": "",
@@ -234,6 +275,13 @@
     "wu": 201.9,
     "hu": 24.5
    },
+   "trect": {
+    "x": 29.6,
+    "y": 156.3,
+    "w": 70.2,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Total payable",
    "type": {
     "family": "-apple-system",
@@ -248,6 +296,7 @@
    }
   },
   {
+   "z": 0,
    "order": 12,
    "tag": "strong",
    "cls": "",
@@ -261,6 +310,13 @@
     "wu": 201.9,
     "hu": 50.4
    },
+   "trect": {
+    "x": 29.6,
+    "y": 168.3,
+    "w": 73.5,
+    "h": 27
+   },
+   "lines": 1,
    "text": "\u20b91,248",
    "type": {
     "family": "-apple-system",
@@ -275,6 +331,7 @@
    }
   },
   {
+   "z": 0,
    "order": 13,
    "tag": "b",
    "cls": "",
@@ -288,6 +345,13 @@
     "wu": 85.5,
     "hu": 32.7
    },
+   "trect": {
+    "x": 32.8,
+    "y": 202.4,
+    "w": 39,
+    "h": 11
+   },
+   "lines": 1,
    "text": "14% less",
    "type": {
     "family": "-apple-system",
@@ -304,6 +368,7 @@
    "radius": "4.77551px"
   },
   {
+   "z": 0,
    "order": 14,
    "tag": "s",
    "cls": "",
@@ -317,6 +382,13 @@
     "wu": 54,
     "hu": 18.8
    },
+   "trect": {
+    "x": 82.4,
+    "y": 202.9,
+    "w": 28.7,
+    "h": 10
+   },
+   "lines": 1,
    "text": "\u20b91,460",
    "type": {
     "family": "-apple-system",
@@ -331,6 +403,7 @@
    }
   },
   {
+   "z": 0,
    "order": 15,
    "tag": "div",
    "cls": "",
@@ -351,6 +424,7 @@
    }
   },
   {
+   "z": 0,
    "order": 16,
    "tag": "span",
    "cls": "",
@@ -364,6 +438,13 @@
     "wu": 190.6,
     "hu": 24.5
    },
+   "trect": {
+    "x": 159,
+    "y": 156.3,
+    "w": 48.8,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Ready by",
    "type": {
     "family": "-apple-system",
@@ -378,6 +459,7 @@
    }
   },
   {
+   "z": 0,
    "order": 17,
    "tag": "svg",
    "cls": "",
@@ -393,9 +475,11 @@
    },
    "bg": "rgb(255, 234, 208)",
    "radius": "50%",
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>",
+   "color": "rgb(115, 59, 22)"
   },
   {
+   "z": 0,
    "order": 18,
    "tag": "strong",
    "cls": "",
@@ -409,6 +493,13 @@
     "wu": 131.6,
     "hu": 62.4
    },
+   "trect": {
+    "x": 190.3,
+    "y": 176.8,
+    "w": 53.3,
+    "h": 31.5
+   },
+   "lines": 2,
    "text": "Today, 4:30 PM",
    "type": {
     "family": "-apple-system",
@@ -423,6 +514,7 @@
    }
   },
   {
+   "z": 0,
    "order": 19,
    "tag": "div",
    "cls": "",
@@ -443,6 +535,7 @@
    }
   },
   {
+   "z": 0,
    "order": 20,
    "tag": "span",
    "cls": "",
@@ -456,6 +549,13 @@
     "wu": 147.2,
     "hu": 24.5
    },
+   "trect": {
+    "x": 282.3,
+    "y": 156.3,
+    "w": 53,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Total trips",
    "type": {
     "family": "-apple-system",
@@ -470,6 +570,7 @@
    }
   },
   {
+   "z": 0,
    "order": 21,
    "tag": "svg",
    "cls": "",
@@ -485,9 +586,11 @@
    },
    "bg": "rgb(255, 234, 208)",
    "radius": "50%",
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 13 3-9h16l3 9M4 13h24v12H4ZM8 25v4m16-4v4M8 19h2m12 0h2\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 13 3-9h16l3 9M4 13h24v12H4ZM8 25v4m16-4v4M8 19h2m12 0h2\"></path></svg>",
+   "color": "rgb(115, 59, 22)"
   },
   {
+   "z": 0,
    "order": 22,
    "tag": "strong",
    "cls": "",
@@ -501,6 +604,13 @@
     "wu": 77.2,
     "hu": 31.2
    },
+   "trect": {
+    "x": 313.6,
+    "y": 180.1,
+    "w": 41,
+    "h": 15
+   },
+   "lines": 1,
    "text": "2 trips",
    "type": {
     "family": "-apple-system",
@@ -515,6 +625,7 @@
    }
   },
   {
+   "z": 0,
    "order": 23,
    "tag": "div",
    "cls": "getall-address",
@@ -532,6 +643,7 @@
    "radius": "11.1429px"
   },
   {
+   "z": 0,
    "order": 24,
    "tag": "svg",
    "cls": "",
@@ -545,9 +657,11 @@
     "wu": 35,
     "hu": 35
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"9\"></circle><circle cx=\"16\" cy=\"16\" r=\"3\"></circle><path d=\"M16 1v6m0 18v6M1 16h6m18 0h6\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"9\"></circle><circle cx=\"16\" cy=\"16\" r=\"3\"></circle><path d=\"M16 1v6m0 18v6M1 16h6m18 0h6\"></path></svg>",
+   "color": "rgb(131, 66, 23)"
   },
   {
+   "z": 0,
    "order": 25,
    "tag": "span",
    "cls": "",
@@ -561,6 +675,13 @@
     "wu": 446.1,
     "hu": 24.5
    },
+   "trect": {
+    "x": 52,
+    "y": 253,
+    "w": 57.3,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Deliver to:",
    "type": {
     "family": "-apple-system",
@@ -575,6 +696,7 @@
    }
   },
   {
+   "z": 0,
    "order": 26,
    "tag": "strong",
    "cls": "",
@@ -588,6 +710,13 @@
     "wu": 178.7,
     "hu": 24.5
    },
+   "trect": {
+    "x": 109.2,
+    "y": 253,
+    "w": 94.8,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Sector 62, Noida",
    "type": {
     "family": "-apple-system",
@@ -602,6 +731,7 @@
    }
   },
   {
+   "z": 0,
    "order": 27,
    "tag": "button",
    "cls": "",
@@ -615,6 +745,13 @@
     "wu": 128,
     "hu": 64.1
    },
+   "trect": {
+    "x": 305.6,
+    "y": 253.5,
+    "w": 37.2,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Change",
    "type": {
     "family": "-apple-system",
@@ -631,6 +768,7 @@
    "radius": "9.02041px"
   },
   {
+   "z": 0,
    "order": 28,
    "tag": "svg",
    "cls": "",
@@ -644,9 +782,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(179, 68, 33)"
   },
   {
+   "z": 0,
    "order": 29,
    "tag": "button",
    "cls": "getall-seller",
@@ -664,6 +804,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 31,
    "tag": "strong",
    "cls": "",
@@ -677,6 +818,13 @@
     "wu": 198,
     "hu": 30
    },
+   "trect": {
+    "x": 82.8,
+    "y": 302.3,
+    "w": 105,
+    "h": 16
+   },
+   "lines": 1,
    "text": "Apollo Pharmacy",
    "type": {
     "family": "-apple-system",
@@ -691,6 +839,7 @@
    }
   },
   {
+   "z": 0,
    "order": 32,
    "tag": "small",
    "cls": "",
@@ -704,6 +853,13 @@
     "wu": 132.2,
     "hu": 33.1
    },
+   "trect": {
+    "x": 200,
+    "y": 306.2,
+    "w": 57.4,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Medicines (4)",
    "type": {
     "family": "-apple-system",
@@ -720,6 +876,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 33,
    "tag": "b",
    "cls": "",
@@ -733,6 +890,13 @@
     "wu": 79.8,
     "hu": 37.2
    },
+   "trect": {
+    "x": 311.1,
+    "y": 301.4,
+    "w": 42.3,
+    "h": 19
+   },
+   "lines": 1,
    "text": "\u20b9520",
    "type": {
     "family": "-apple-system",
@@ -747,6 +911,7 @@
    }
   },
   {
+   "z": 0,
    "order": 34,
    "tag": "svg",
    "cls": "",
@@ -760,9 +925,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
+   "z": 0,
    "order": 35,
    "tag": "span",
    "cls": "getall-seller-items",
@@ -776,6 +943,13 @@
     "wu": 535.1,
     "hu": 53.2
    },
+   "trect": {
+    "x": 82.8,
+    "y": 330.1,
+    "w": 239.5,
+    "h": 26.1
+   },
+   "lines": 2,
    "text": "Paracetamol 500 mg | Amlodipine 5 mg | Atorvastatin 10 mg +1 more",
    "type": {
     "family": "-apple-system",
@@ -790,6 +964,7 @@
    }
   },
   {
+   "z": 0,
    "order": 36,
    "tag": "span",
    "cls": "",
@@ -803,6 +978,13 @@
     "wu": 158.2,
     "hu": 24
    },
+   "trect": {
+    "x": 100.3,
+    "y": 368.5,
+    "w": 66.4,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Home delivery",
    "type": {
     "family": "-apple-system",
@@ -817,6 +999,7 @@
    }
   },
   {
+   "z": 0,
    "order": 37,
    "tag": "svg",
    "cls": "",
@@ -830,9 +1013,11 @@
     "wu": 24,
     "hu": 24
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 14 13-11 13 11M7 13v16h7v-9h5v9h6V13\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 14 13-11 13 11M7 13v16h7v-9h5v9h6V13\"></path></svg>",
+   "color": "rgb(102, 108, 102)"
   },
   {
+   "z": 0,
    "order": 38,
    "tag": "small",
    "cls": "",
@@ -846,6 +1031,13 @@
     "wu": 208.1,
     "hu": 32.8
    },
+   "trect": {
+    "x": 271.1,
+    "y": 369,
+    "w": 90.3,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Sample price \u00b7 3:12 PM",
    "type": {
     "family": "-apple-system",
@@ -862,6 +1054,7 @@
    "radius": "5.83673px"
   },
   {
+   "z": 0,
    "order": 39,
    "tag": "i",
    "cls": "",
@@ -879,6 +1072,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 40,
    "tag": "button",
    "cls": "getall-seller",
@@ -896,6 +1090,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 42,
    "tag": "strong",
    "cls": "",
@@ -909,6 +1104,13 @@
     "wu": 101.2,
     "hu": 30
    },
+   "trect": {
+    "x": 82.8,
+    "y": 411.7,
+    "w": 53.7,
+    "h": 16
+   },
+   "lines": 1,
    "text": "MedPlus",
    "type": {
     "family": "-apple-system",
@@ -923,6 +1125,7 @@
    }
   },
   {
+   "z": 0,
    "order": 43,
    "tag": "small",
    "cls": "",
@@ -936,6 +1139,13 @@
     "wu": 131.9,
     "hu": 33.1
    },
+   "trect": {
+    "x": 148.6,
+    "y": 415.6,
+    "w": 57.3,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Medicines (3)",
    "type": {
     "family": "-apple-system",
@@ -952,6 +1162,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 44,
    "tag": "b",
    "cls": "",
@@ -965,6 +1176,13 @@
     "wu": 80.4,
     "hu": 37.2
    },
+   "trect": {
+    "x": 310.8,
+    "y": 410.8,
+    "w": 42.7,
+    "h": 19
+   },
+   "lines": 1,
    "text": "\u20b9260",
    "type": {
     "family": "-apple-system",
@@ -979,6 +1197,7 @@
    }
   },
   {
+   "z": 0,
    "order": 45,
    "tag": "svg",
    "cls": "",
@@ -992,9 +1211,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
+   "z": 0,
    "order": 46,
    "tag": "span",
    "cls": "getall-seller-items",
@@ -1008,6 +1229,13 @@
     "wu": 535.1,
     "hu": 26.6
    },
+   "trect": {
+    "x": 82.8,
+    "y": 439.5,
+    "w": 239.4,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Metformin 500 mg | Vitamin D3 | +1 more",
    "type": {
     "family": "-apple-system",
@@ -1022,6 +1250,7 @@
    }
   },
   {
+   "z": 0,
    "order": 47,
    "tag": "span",
    "cls": "",
@@ -1035,6 +1264,13 @@
     "wu": 143.4,
     "hu": 24
    },
+   "trect": {
+    "x": 100.3,
+    "y": 463.7,
+    "w": 58.6,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Store pickup",
    "type": {
     "family": "-apple-system",
@@ -1049,6 +1285,7 @@
    }
   },
   {
+   "z": 0,
    "order": 48,
    "tag": "svg",
    "cls": "",
@@ -1062,9 +1299,11 @@
     "wu": 24,
     "hu": 24
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 13 3-9h16l3 9M4 13h24v12H4ZM8 25v4m16-4v4M8 19h2m12 0h2\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 13 3-9h16l3 9M4 13h24v12H4ZM8 25v4m16-4v4M8 19h2m12 0h2\"></path></svg>",
+   "color": "rgb(102, 108, 102)"
   },
   {
+   "z": 0,
    "order": 49,
    "tag": "small",
    "cls": "",
@@ -1078,6 +1317,13 @@
     "wu": 208.5,
     "hu": 32.8
    },
+   "trect": {
+    "x": 270.9,
+    "y": 464.3,
+    "w": 90.5,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Sample price \u00b7 3:13 PM",
    "type": {
     "family": "-apple-system",
@@ -1094,6 +1340,7 @@
    "radius": "5.83673px"
   },
   {
+   "z": 0,
    "order": 50,
    "tag": "i",
    "cls": "",
@@ -1111,6 +1358,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 51,
    "tag": "button",
    "cls": "getall-seller",
@@ -1128,6 +1376,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 53,
    "tag": "strong",
    "cls": "",
@@ -1141,6 +1390,13 @@
     "wu": 262.1,
     "hu": 30
    },
+   "trect": {
+    "x": 82.8,
+    "y": 507,
+    "w": 139.1,
+    "h": 16
+   },
+   "lines": 1,
    "text": "Thyrocare Diagnostics",
    "type": {
     "family": "-apple-system",
@@ -1155,6 +1411,7 @@
    }
   },
   {
+   "z": 0,
    "order": 54,
    "tag": "small",
    "cls": "",
@@ -1168,6 +1425,13 @@
     "wu": 124.6,
     "hu": 33.1
    },
+   "trect": {
+    "x": 234,
+    "y": 510.8,
+    "w": 53.4,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Lab tests (3)",
    "type": {
     "family": "-apple-system",
@@ -1184,6 +1448,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 55,
    "tag": "b",
    "cls": "",
@@ -1197,6 +1462,13 @@
     "wu": 76.3,
     "hu": 37.2
    },
+   "trect": {
+    "x": 312.9,
+    "y": 506.1,
+    "w": 40.5,
+    "h": 19
+   },
+   "lines": 1,
    "text": "\u20b9418",
    "type": {
     "family": "-apple-system",
@@ -1211,6 +1483,7 @@
    }
   },
   {
+   "z": 0,
    "order": 56,
    "tag": "svg",
    "cls": "",
@@ -1224,9 +1497,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
+   "z": 0,
    "order": 57,
    "tag": "span",
    "cls": "getall-seller-items",
@@ -1240,6 +1515,13 @@
     "wu": 535.1,
     "hu": 26.6
    },
+   "trect": {
+    "x": 82.8,
+    "y": 534.8,
+    "w": 269.8,
+    "h": 12
+   },
+   "lines": 1,
    "text": "CBC (Complete Blood Count) | T3 | Lipid Profile",
    "type": {
     "family": "-apple-system",
@@ -1254,6 +1536,7 @@
    }
   },
   {
+   "z": 0,
    "order": 58,
    "tag": "span",
    "cls": "",
@@ -1267,6 +1550,13 @@
     "wu": 174.4,
     "hu": 24
    },
+   "trect": {
+    "x": 100.3,
+    "y": 559,
+    "w": 75.1,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Home collection",
    "type": {
     "family": "-apple-system",
@@ -1281,6 +1571,7 @@
    }
   },
   {
+   "z": 0,
    "order": 59,
    "tag": "svg",
    "cls": "",
@@ -1294,9 +1585,11 @@
     "wu": 24,
     "hu": 24
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 14 13-11 13 11M7 13v16h7v-9h5v9h6V13\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 14 13-11 13 11M7 13v16h7v-9h5v9h6V13\"></path></svg>",
+   "color": "rgb(102, 108, 102)"
   },
   {
+   "z": 0,
    "order": 60,
    "tag": "small",
    "cls": "",
@@ -1310,6 +1603,13 @@
     "wu": 208.7,
     "hu": 32.8
    },
+   "trect": {
+    "x": 270.8,
+    "y": 559.5,
+    "w": 90.6,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Sample price \u00b7 3:14 PM",
    "type": {
     "family": "-apple-system",
@@ -1326,6 +1626,7 @@
    "radius": "5.83673px"
   },
   {
+   "z": 0,
    "order": 61,
    "tag": "i",
    "cls": "",
@@ -1343,6 +1644,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 62,
    "tag": "div",
    "cls": "j-row slot-row",
@@ -1360,6 +1662,7 @@
    "radius": "10.0816px"
   },
   {
+   "z": 0,
    "order": 63,
    "tag": "i",
    "cls": "",
@@ -1377,6 +1680,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 64,
    "tag": "svg",
    "cls": "",
@@ -1390,9 +1694,11 @@
     "wu": 37.2,
     "hu": 37.2
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
+   "z": 0,
    "order": 65,
    "tag": "strong",
    "cls": "",
@@ -1406,6 +1712,13 @@
     "wu": 379.8,
     "hu": 28.7
    },
+   "trect": {
+    "x": 66.3,
+    "y": 599.5,
+    "w": 99,
+    "h": 15
+   },
+   "lines": 1,
    "text": "Home collection",
    "type": {
     "family": "-apple-system",
@@ -1420,6 +1733,7 @@
    }
   },
   {
+   "z": 0,
    "order": 66,
    "tag": "small",
    "cls": "",
@@ -1433,6 +1747,13 @@
     "wu": 379.8,
     "hu": 25.2
    },
+   "trect": {
+    "x": 66.3,
+    "y": 617.3,
+    "w": 125.5,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Today \u00b7 4:30 PM \u2013 5:00 PM",
    "type": {
     "family": "-apple-system",
@@ -1447,6 +1768,7 @@
    }
   },
   {
+   "z": 0,
    "order": 67,
    "tag": "button",
    "cls": "",
@@ -1460,6 +1782,13 @@
     "wu": 167.3,
     "hu": 64.1
    },
+   "trect": {
+    "x": 285.9,
+    "y": 608.6,
+    "w": 58,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Change slot",
    "type": {
     "family": "-apple-system",
@@ -1476,6 +1805,7 @@
    "radius": "9.02041px"
   },
   {
+   "z": 0,
    "order": 68,
    "tag": "svg",
    "cls": "",
@@ -1489,9 +1819,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(179, 68, 33)"
   },
   {
+   "z": 0,
    "order": 69,
    "tag": "div",
    "cls": "j-notice",
@@ -1514,6 +1846,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 70,
    "tag": "svg",
    "cls": "",
@@ -1529,9 +1862,11 @@
    },
    "bg": "rgb(255, 234, 208)",
    "radius": "50%",
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"7\" y=\"3\" width=\"18\" height=\"27\" rx=\"3\"></rect><path d=\"M12 9h8m-8 6h8m-8 6h5\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"7\" y=\"3\" width=\"18\" height=\"27\" rx=\"3\"></rect><path d=\"M12 9h8m-8 6h8m-8 6h5\"></path></svg>",
+   "color": "rgb(182, 90, 33)"
   },
   {
+   "z": 0,
    "order": 71,
    "tag": "strong",
    "cls": "",
@@ -1545,6 +1880,13 @@
     "wu": 558.3,
     "hu": 54.5
    },
+   "trect": {
+    "x": 68.9,
+    "y": 655.9,
+    "w": 278,
+    "h": 27.5
+   },
+   "lines": 2,
    "text": "You will complete payment in each seller\u2019s app or website.",
    "type": {
     "family": "-apple-system",
@@ -1559,6 +1901,7 @@
    }
   },
   {
+   "z": 0,
    "order": 72,
    "tag": "small",
    "cls": "",
@@ -1572,6 +1915,13 @@
     "wu": 558.3,
     "hu": 24.3
    },
+   "trect": {
+    "x": 68.9,
+    "y": 686.5,
+    "w": 135.7,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Parchi will guide the process.",
    "type": {
     "family": "-apple-system",
@@ -1586,6 +1936,7 @@
    }
   },
   {
+   "z": 0,
    "order": 73,
    "tag": "button",
    "cls": "j-row",
@@ -1603,6 +1954,7 @@
    "radius": "10.0816px"
   },
   {
+   "z": 0,
    "order": 74,
    "tag": "i",
    "cls": "",
@@ -1620,6 +1972,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 75,
    "tag": "svg",
    "cls": "",
@@ -1633,9 +1986,11 @@
     "wu": 37.2,
     "hu": 37.2
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M11 7h18M11 16h18M11 25h18M3 7h1M3 16h1M3 25h1\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M11 7h18M11 16h18M11 25h18M3 7h1M3 16h1M3 25h1\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
+   "z": 0,
    "order": 76,
    "tag": "strong",
    "cls": "",
@@ -1649,6 +2004,13 @@
     "wu": 533.1,
     "hu": 28.7
    },
+   "trect": {
+    "x": 66.3,
+    "y": 724.5,
+    "w": 78.1,
+    "h": 15
+   },
+   "lines": 1,
    "text": "How we rank",
    "type": {
     "family": "-apple-system",
@@ -1663,6 +2025,7 @@
    }
   },
   {
+   "z": 0,
    "order": 77,
    "tag": "small",
    "cls": "",
@@ -1676,6 +2039,13 @@
     "wu": 533.1,
     "hu": 25.2
    },
+   "trect": {
+    "x": 66.3,
+    "y": 742.3,
+    "w": 255.5,
+    "h": 11
+   },
+   "lines": 1,
    "text": "We compare total cost, delivery time and seller ratings.",
    "type": {
     "family": "-apple-system",
@@ -1690,6 +2060,7 @@
    }
   },
   {
+   "z": 0,
    "order": 78,
    "tag": "svg",
    "cls": "",
@@ -1703,9 +2074,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
+   "z": 0,
    "order": 79,
    "tag": "div",
    "cls": "j-row",
@@ -1723,6 +2096,7 @@
    "radius": "10.0816px"
   },
   {
+   "z": 0,
    "order": 80,
    "tag": "i",
    "cls": "",
@@ -1740,6 +2114,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 81,
    "tag": "svg",
    "cls": "",
@@ -1753,9 +2128,11 @@
     "wu": 37.2,
     "hu": 37.2
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"9\" r=\"5\"></circle><path d=\"M5 28v-4c0-10 22-10 22 0v4Z\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"9\" r=\"5\"></circle><path d=\"M5 28v-4c0-10 22-10 22 0v4Z\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
+   "z": 0,
    "order": 82,
    "tag": "button",
    "cls": "j-row-signin",
@@ -1771,6 +2148,7 @@
    }
   },
   {
+   "z": 0,
    "order": 83,
    "tag": "strong",
    "cls": "",
@@ -1784,6 +2162,13 @@
     "wu": 437.4,
     "hu": 57.5
    },
+   "trect": {
+    "x": 66.3,
+    "y": 776.7,
+    "w": 187.8,
+    "h": 30.3
+   },
+   "lines": 2,
    "text": "Sign in to save this plan across devices",
    "type": {
     "family": "-apple-system",
@@ -1798,6 +2183,7 @@
    }
   },
   {
+   "z": 0,
    "order": 84,
    "tag": "small",
    "cls": "",
@@ -1811,6 +2197,13 @@
     "wu": 437.4,
     "hu": 25.2
    },
+   "trect": {
+    "x": 66.3,
+    "y": 809.8,
+    "w": 183.8,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Keep your medicines and tests for later.",
    "type": {
     "family": "-apple-system",
@@ -1825,6 +2218,7 @@
    }
   },
   {
+   "z": 0,
    "order": 85,
    "tag": "button",
    "cls": "",
@@ -1838,6 +2232,13 @@
     "wu": 109.7,
     "hu": 64.1
    },
+   "trect": {
+    "x": 316.4,
+    "y": 793.4,
+    "w": 40.2,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Not now",
    "type": {
     "family": "-apple-system",
@@ -1854,6 +2255,7 @@
    "radius": "9.02041px"
   },
   {
+   "z": 0,
    "order": 86,
    "tag": "button",
    "cls": "primary-action j-primary",
@@ -1871,6 +2273,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 87,
    "tag": "span",
    "cls": "",
@@ -1884,6 +2287,13 @@
     "wu": 297.6,
     "hu": 56.1
    },
+   "trect": {
+    "x": 156.5,
+    "y": 844.1,
+    "w": 52.1,
+    "h": 16
+   },
+   "lines": 1,
    "text": "Get it all",
    "type": {
     "family": "-apple-system",
@@ -1898,6 +2308,7 @@
    }
   },
   {
+   "z": 0,
    "order": 88,
    "tag": "small",
    "cls": "",
@@ -1911,6 +2322,13 @@
     "wu": 297.6,
     "hu": 26
    },
+   "trect": {
+    "x": 103.6,
+    "y": 860.1,
+    "w": 157.9,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Checkout assistant starts next",
    "type": {
     "family": "-apple-system",
@@ -1926,6 +2344,7 @@
    "opacity": "0.7"
   },
   {
+   "z": 0,
    "order": 89,
    "tag": "svg",
    "cls": "",
@@ -1939,9 +2358,11 @@
     "wu": 29,
     "hu": 29
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 16h23m-9-9 9 9-9 9\" stroke=\"currentColor\" stroke-width=\"2.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 16h23m-9-9 9 9-9 9\" stroke=\"currentColor\" stroke-width=\"2.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(255, 248, 237)"
   },
   {
+   "z": 0,
    "order": 90,
    "tag": "p",
    "cls": "j-sample-note",
@@ -1955,6 +2376,13 @@
     "wu": 679.1,
     "hu": 23.7
    },
+   "trect": {
+    "x": 45.8,
+    "y": 887.3,
+    "w": 298.4,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Reference preview \u00b7 final fees and item allocation need confirmation",
    "type": {
     "family": "-apple-system",
@@ -1969,6 +2397,7 @@
    }
   },
   {
+   "z": 5,
    "order": 91,
    "tag": "div",
    "cls": "home-indicator",
@@ -1988,6 +2417,7 @@
  ],
  "art": [
   {
+   "z": 0,
    "viewBox": "48 738 117 101",
    "href": "assets/references/medicine-options.jpeg",
    "aspect": "xMidYMid meet",
@@ -2006,6 +2436,7 @@
    "asset": "art_medicineoptions_48_738_117_101"
   },
   {
+   "z": 0,
    "viewBox": "48 924 117 61",
    "href": "assets/references/medicine-options.jpeg",
    "aspect": "xMidYMid meet",
@@ -2024,6 +2455,7 @@
    "asset": "art_medicineoptions_48_924_117_61"
   },
   {
+   "z": 0,
    "viewBox": "115 725 135 94",
    "href": "assets/references/lab-options.jpeg",
    "aspect": "xMidYMid meet",
@@ -2044,6 +2476,7 @@
  ],
  "images": [
   {
+   "z": 0,
    "src": "assets/parchi-logo-transparent.png",
    "alt": "",
    "rect": {

@@ -8,6 +8,7 @@
  "scrollHeight": 852,
  "elements": [
   {
+   "z": 0,
    "order": 0,
    "tag": "span",
    "cls": "clock",
@@ -21,6 +22,13 @@
     "wu": 58.5,
     "hu": 32
    },
+   "trect": {
+    "x": 48.8,
+    "y": 14.9,
+    "w": 31,
+    "h": 17
+   },
+   "lines": 1,
    "text": "9:41",
    "type": {
     "family": "-apple-system",
@@ -35,6 +43,7 @@
    }
   },
   {
+   "z": 0,
    "order": 1,
    "tag": "span",
    "cls": "dynamic-island",
@@ -52,6 +61,7 @@
    "radius": "39px"
   },
   {
+   "z": 0,
    "order": 2,
    "tag": "svg",
    "cls": "",
@@ -65,9 +75,11 @@
     "wu": 121.3,
     "hu": 36.8
    },
-   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>",
+   "color": "rgb(66, 28, 8)"
   },
   {
+   "z": 0,
    "order": 3,
    "tag": "section",
    "cls": "screen scan-screen confirmation-screen",
@@ -84,6 +96,7 @@
    "bg": "rgb(255, 251, 242)"
   },
   {
+   "z": 0,
    "order": 4,
    "tag": "button",
    "cls": "scan-back",
@@ -102,6 +115,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 5,
    "tag": "svg",
    "cls": "",
@@ -115,9 +129,11 @@
     "wu": 42.9,
     "hu": 42.9
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m20 5-11 11 11 11\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m20 5-11 11 11 11\"></path></svg>",
+   "color": "rgb(71, 35, 15)"
   },
   {
+   "z": 0,
    "order": 7,
    "tag": "strong",
    "cls": "",
@@ -131,6 +147,13 @@
     "wu": 135.9,
     "hu": 49
    },
+   "trect": {
+    "x": 182,
+    "y": 55.8,
+    "w": 72.1,
+    "h": 30
+   },
+   "lines": 1,
    "text": "Parchi",
    "type": {
     "family": "-apple-system",
@@ -145,6 +168,7 @@
    }
   },
   {
+   "z": 0,
    "order": 8,
    "tag": "h1",
    "cls": "",
@@ -158,6 +182,13 @@
     "wu": 735,
     "hu": 36.4
    },
+   "trect": {
+    "x": 128.4,
+    "y": 95.4,
+    "w": 133.3,
+    "h": 17
+   },
+   "lines": 1,
    "text": "Did we read it right?",
    "type": {
     "family": "-apple-system",
@@ -172,6 +203,7 @@
    }
   },
   {
+   "z": 0,
    "order": 9,
    "tag": "div",
    "cls": "confirmation-summary",
@@ -189,6 +221,7 @@
    "radius": "13.2653px"
   },
   {
+   "z": 0,
    "order": 10,
    "tag": "span",
    "cls": "summary-check",
@@ -206,6 +239,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 11,
    "tag": "svg",
    "cls": "",
@@ -219,9 +253,11 @@
     "wu": 28.8,
     "hu": 28.8
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>",
+   "color": "rgb(255, 255, 255)"
   },
   {
+   "z": 0,
    "order": 12,
    "tag": "strong",
    "cls": "",
@@ -235,6 +271,13 @@
     "wu": 161,
     "hu": 33.7
    },
+   "trect": {
+    "x": 86.4,
+    "y": 128,
+    "w": 85.4,
+    "h": 17
+   },
+   "lines": 1,
    "text": "4 confirmed",
    "type": {
     "family": "-apple-system",
@@ -249,6 +292,7 @@
    }
   },
   {
+   "z": 0,
    "order": 13,
    "tag": "small",
    "cls": "",
@@ -262,6 +306,13 @@
     "wu": 161,
     "hu": 30.8
    },
+   "trect": {
+    "x": 86.4,
+    "y": 146.9,
+    "w": 63.9,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Looks good",
    "type": {
     "family": "-apple-system",
@@ -276,6 +327,7 @@
    }
   },
   {
+   "z": 0,
    "order": 14,
    "tag": "div",
    "cls": "",
@@ -296,6 +348,7 @@
    }
   },
   {
+   "z": 0,
    "order": 15,
    "tag": "svg",
    "cls": "",
@@ -309,9 +362,11 @@
     "wu": 48,
     "hu": 48
    },
-   "svg": "<svg viewBox=\"0 0 32 30\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M13 3c1-3 5-3 6 0l13 23c1 2-1 4-3 4H3c-3 0-4-2-3-4Z\"></path><path d=\"M16 9v9m0 4v2\" stroke=\"#fff\" stroke-width=\"3\" stroke-linecap=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 30\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M13 3c1-3 5-3 6 0l13 23c1 2-1 4-3 4H3c-3 0-4-2-3-4Z\"></path><path d=\"M16 9v9m0 4v2\" stroke=\"#fff\" stroke-width=\"3\" stroke-linecap=\"round\"></path></svg>",
+   "color": "rgb(233, 163, 2)"
   },
   {
+   "z": 0,
    "order": 16,
    "tag": "strong",
    "cls": "",
@@ -325,6 +380,13 @@
     "wu": 183.5,
     "hu": 33.7
    },
+   "trect": {
+    "x": 251,
+    "y": 128,
+    "w": 97.3,
+    "h": 17
+   },
+   "lines": 1,
    "text": "2 need review",
    "type": {
     "family": "-apple-system",
@@ -339,6 +401,7 @@
    }
   },
   {
+   "z": 0,
    "order": 17,
    "tag": "small",
    "cls": "",
@@ -352,6 +415,13 @@
     "wu": 183.5,
     "hu": 30.8
    },
+   "trect": {
+    "x": 251,
+    "y": 146.9,
+    "w": 70.5,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Please verify",
    "type": {
     "family": "-apple-system",
@@ -366,6 +436,7 @@
    }
   },
   {
+   "z": 0,
    "order": 18,
    "tag": "h2",
    "cls": "",
@@ -379,6 +450,13 @@
     "wu": 185.8,
     "hu": 37.7
    },
+   "trect": {
+    "x": 13.3,
+    "y": 186.7,
+    "w": 98.6,
+    "h": 18
+   },
+   "lines": 1,
    "text": "Medicines (3)",
    "type": {
     "family": "-apple-system",
@@ -393,6 +471,7 @@
    }
   },
   {
+   "z": 0,
    "order": 19,
    "tag": "span",
    "cls": "",
@@ -406,6 +485,13 @@
     "wu": 115.7,
     "hu": 26
    },
+   "trect": {
+    "x": 315.3,
+    "y": 188.8,
+    "w": 61.4,
+    "h": 12
+   },
+   "lines": 1,
    "text": "3 confirmed",
    "type": {
     "family": "-apple-system",
@@ -420,6 +506,7 @@
    }
   },
   {
+   "z": 0,
    "order": 20,
    "tag": "button",
    "cls": "scan-confirmed-row",
@@ -438,6 +525,7 @@
    "shadow": "rgba(108, 75, 48, 0.016) 0px 3px 12px 0px"
   },
   {
+   "z": 0,
    "order": 21,
    "tag": "span",
    "cls": "scan-item-icon rose",
@@ -455,6 +543,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 22,
    "tag": "svg",
    "cls": "",
@@ -468,9 +557,11 @@
     "wu": 36.5,
     "hu": 36.5
    },
-   "svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" aria-hidden=\"true\"><ellipse cx=\"20\" cy=\"20\" rx=\"15\" ry=\"11\" transform=\"rotate(-35 20 20)\"></ellipse><path d=\"M8 18c4 12 20 8 24-4M13 12l14 15\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" aria-hidden=\"true\"><ellipse cx=\"20\" cy=\"20\" rx=\"15\" ry=\"11\" transform=\"rotate(-35 20 20)\"></ellipse><path d=\"M8 18c4 12 20 8 24-4M13 12l14 15\"></path></svg>",
+   "color": "rgb(165, 42, 31)"
   },
   {
+   "z": 0,
    "order": 23,
    "tag": "strong",
    "cls": "",
@@ -484,6 +575,13 @@
     "wu": 316.2,
     "hu": 32.5
    },
+   "trect": {
+    "x": 74.8,
+    "y": 220,
+    "w": 110.4,
+    "h": 16
+   },
+   "lines": 1,
    "text": "Amlodipine 5 mg",
    "type": {
     "family": "-apple-system",
@@ -498,6 +596,7 @@
    }
   },
   {
+   "z": 0,
    "order": 24,
    "tag": "span",
    "cls": "",
@@ -511,6 +610,13 @@
     "wu": 316.2,
     "hu": 28.3
    },
+   "trect": {
+    "x": 74.8,
+    "y": 239.3,
+    "w": 32.5,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Tablet",
    "type": {
     "family": "-apple-system",
@@ -525,6 +631,7 @@
    }
   },
   {
+   "z": 0,
    "order": 25,
    "tag": "small",
    "cls": "",
@@ -538,6 +645,13 @@
     "wu": 316.2,
     "hu": 28.3
    },
+   "trect": {
+    "x": 74.8,
+    "y": 255.3,
+    "w": 80.7,
+    "h": 13
+   },
+   "lines": 1,
    "text": "1 OD \u00d7 30 days",
    "type": {
     "family": "-apple-system",
@@ -552,6 +666,7 @@
    }
   },
   {
+   "z": 0,
    "order": 26,
    "tag": "span",
    "cls": "scan-match-badge ",
@@ -565,6 +680,13 @@
     "wu": 180.9,
     "hu": 44.9
    },
+   "trect": {
+    "x": 279.7,
+    "y": 238.7,
+    "w": 62.6,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Exact match",
    "type": {
     "family": "-apple-system",
@@ -581,6 +703,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 27,
    "tag": "svg",
    "cls": "",
@@ -594,9 +717,11 @@
     "wu": 25,
     "hu": 25
    },
-   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"m6 12 4 4 8-9\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"m6 12 4 4 8-9\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>",
+   "color": "rgb(113, 167, 74)"
   },
   {
+   "z": 0,
    "order": 28,
    "tag": "svg",
    "cls": "",
@@ -610,9 +735,11 @@
     "wu": 10,
     "hu": 22
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(173, 168, 156)"
   },
   {
+   "z": 0,
    "order": 29,
    "tag": "button",
    "cls": "scan-confirmed-row",
@@ -631,6 +758,7 @@
    "shadow": "rgba(108, 75, 48, 0.016) 0px 3px 12px 0px"
   },
   {
+   "z": 0,
    "order": 30,
    "tag": "span",
    "cls": "scan-item-icon peach",
@@ -648,6 +776,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 31,
    "tag": "svg",
    "cls": "",
@@ -661,9 +790,11 @@
     "wu": 36.5,
     "hu": 36.5
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>",
+   "color": "rgb(162, 90, 26)"
   },
   {
+   "z": 0,
    "order": 32,
    "tag": "strong",
    "cls": "",
@@ -677,6 +808,13 @@
     "wu": 316.2,
     "hu": 32.5
    },
+   "trect": {
+    "x": 74.8,
+    "y": 292.7,
+    "w": 122.5,
+    "h": 16
+   },
+   "lines": 1,
    "text": "Metformin 500 mg",
    "type": {
     "family": "-apple-system",
@@ -691,6 +829,7 @@
    }
   },
   {
+   "z": 0,
    "order": 33,
    "tag": "span",
    "cls": "",
@@ -704,6 +843,13 @@
     "wu": 316.2,
     "hu": 28.3
    },
+   "trect": {
+    "x": 74.8,
+    "y": 312,
+    "w": 32.5,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Tablet",
    "type": {
     "family": "-apple-system",
@@ -718,6 +864,7 @@
    }
   },
   {
+   "z": 0,
    "order": 34,
    "tag": "small",
    "cls": "",
@@ -731,6 +878,13 @@
     "wu": 316.2,
     "hu": 28.3
    },
+   "trect": {
+    "x": 74.8,
+    "y": 328.1,
+    "w": 79.4,
+    "h": 13
+   },
+   "lines": 1,
    "text": "1 BD \u00d7 30 days",
    "type": {
     "family": "-apple-system",
@@ -745,6 +899,7 @@
    }
   },
   {
+   "z": 0,
    "order": 35,
    "tag": "span",
    "cls": "scan-match-badge ",
@@ -758,6 +913,13 @@
     "wu": 180.9,
     "hu": 44.9
    },
+   "trect": {
+    "x": 279.7,
+    "y": 311.4,
+    "w": 62.6,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Exact match",
    "type": {
     "family": "-apple-system",
@@ -774,6 +936,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 36,
    "tag": "svg",
    "cls": "",
@@ -787,9 +950,11 @@
     "wu": 25,
     "hu": 25
    },
-   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"m6 12 4 4 8-9\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"m6 12 4 4 8-9\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>",
+   "color": "rgb(113, 167, 74)"
   },
   {
+   "z": 0,
    "order": 37,
    "tag": "svg",
    "cls": "",
@@ -803,9 +968,11 @@
     "wu": 10,
     "hu": 22
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(173, 168, 156)"
   },
   {
+   "z": 0,
    "order": 38,
    "tag": "button",
    "cls": "scan-confirmed-row",
@@ -824,6 +991,7 @@
    "shadow": "rgba(108, 75, 48, 0.016) 0px 3px 12px 0px"
   },
   {
+   "z": 0,
    "order": 39,
    "tag": "span",
    "cls": "scan-item-icon blue",
@@ -841,6 +1009,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 40,
    "tag": "svg",
    "cls": "",
@@ -854,9 +1023,11 @@
     "wu": 36.5,
     "hu": 36.5
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>",
+   "color": "rgb(36, 103, 162)"
   },
   {
+   "z": 0,
    "order": 41,
    "tag": "strong",
    "cls": "",
@@ -870,6 +1041,13 @@
     "wu": 316.2,
     "hu": 32.5
    },
+   "trect": {
+    "x": 74.8,
+    "y": 365.4,
+    "w": 124,
+    "h": 16
+   },
+   "lines": 1,
    "text": "Atorvastatin 10 mg",
    "type": {
     "family": "-apple-system",
@@ -884,6 +1062,7 @@
    }
   },
   {
+   "z": 0,
    "order": 42,
    "tag": "span",
    "cls": "",
@@ -897,6 +1076,13 @@
     "wu": 316.2,
     "hu": 28.3
    },
+   "trect": {
+    "x": 74.8,
+    "y": 384.7,
+    "w": 42.8,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Capsule",
    "type": {
     "family": "-apple-system",
@@ -911,6 +1097,7 @@
    }
   },
   {
+   "z": 0,
    "order": 43,
    "tag": "small",
    "cls": "",
@@ -924,6 +1111,13 @@
     "wu": 316.2,
     "hu": 28.3
    },
+   "trect": {
+    "x": 74.8,
+    "y": 400.8,
+    "w": 80.7,
+    "h": 13
+   },
+   "lines": 1,
    "text": "1 OD \u00d7 30 days",
    "type": {
     "family": "-apple-system",
@@ -938,6 +1132,7 @@
    }
   },
   {
+   "z": 0,
    "order": 44,
    "tag": "span",
    "cls": "scan-match-badge ",
@@ -951,6 +1146,13 @@
     "wu": 180.9,
     "hu": 44.9
    },
+   "trect": {
+    "x": 279.7,
+    "y": 384.1,
+    "w": 62.6,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Exact match",
    "type": {
     "family": "-apple-system",
@@ -967,6 +1169,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 45,
    "tag": "svg",
    "cls": "",
@@ -980,9 +1183,11 @@
     "wu": 25,
     "hu": 25
    },
-   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"m6 12 4 4 8-9\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"m6 12 4 4 8-9\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>",
+   "color": "rgb(113, 167, 74)"
   },
   {
+   "z": 0,
    "order": 46,
    "tag": "svg",
    "cls": "",
@@ -996,9 +1201,11 @@
     "wu": 10,
     "hu": 22
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(173, 168, 156)"
   },
   {
+   "z": 0,
    "order": 47,
    "tag": "h2",
    "cls": "",
@@ -1012,6 +1219,13 @@
     "wu": 115.8,
     "hu": 37.7
    },
+   "trect": {
+    "x": 13.3,
+    "y": 439.7,
+    "w": 61.4,
+    "h": 18
+   },
+   "lines": 1,
    "text": "Tests (1)",
    "type": {
     "family": "-apple-system",
@@ -1026,6 +1240,7 @@
    }
   },
   {
+   "z": 0,
    "order": 48,
    "tag": "span",
    "cls": "",
@@ -1039,6 +1254,13 @@
     "wu": 112.5,
     "hu": 26
    },
+   "trect": {
+    "x": 317.1,
+    "y": 441.8,
+    "w": 59.7,
+    "h": 12
+   },
+   "lines": 1,
    "text": "1 confirmed",
    "type": {
     "family": "-apple-system",
@@ -1053,6 +1275,7 @@
    }
   },
   {
+   "z": 0,
    "order": 49,
    "tag": "button",
    "cls": "scan-confirmed-row",
@@ -1071,6 +1294,7 @@
    "shadow": "rgba(108, 75, 48, 0.016) 0px 3px 12px 0px"
   },
   {
+   "z": 0,
    "order": 50,
    "tag": "span",
    "cls": "scan-item-icon rose",
@@ -1088,6 +1312,7 @@
    "radius": "50%"
   },
   {
+   "z": 0,
    "order": 51,
    "tag": "svg",
    "cls": "",
@@ -1101,9 +1326,11 @@
     "wu": 36.5,
     "hu": 36.5
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3h8m-7 0v12L5 28c-1 2 23 2 22 0l-8-13V3M9 22h14\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3h8m-7 0v12L5 28c-1 2 23 2 22 0l-8-13V3M9 22h14\"></path></svg>",
+   "color": "rgb(165, 42, 31)"
   },
   {
+   "z": 0,
    "order": 52,
    "tag": "strong",
    "cls": "",
@@ -1117,6 +1344,13 @@
     "wu": 335.9,
     "hu": 30
    },
+   "trect": {
+    "x": 74.8,
+    "y": 477.1,
+    "w": 177,
+    "h": 15
+   },
+   "lines": 1,
    "text": "CBC (Complete Blood Count)",
    "type": {
     "family": "-apple-system",
@@ -1131,6 +1365,7 @@
    }
   },
   {
+   "z": 0,
    "order": 53,
    "tag": "span",
    "cls": "",
@@ -1144,6 +1379,13 @@
     "wu": 335.9,
     "hu": 28.3
    },
+   "trect": {
+    "x": 74.8,
+    "y": 495.1,
+    "w": 56,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Blood Test",
    "type": {
     "family": "-apple-system",
@@ -1158,6 +1400,7 @@
    }
   },
   {
+   "z": 0,
    "order": 54,
    "tag": "span",
    "cls": "scan-match-badge ",
@@ -1171,6 +1414,13 @@
     "wu": 161.3,
     "hu": 44.9
    },
+   "trect": {
+    "x": 290.1,
+    "y": 487.1,
+    "w": 52.2,
+    "h": 12
+   },
+   "lines": 1,
    "text": "No fasting",
    "type": {
     "family": "-apple-system",
@@ -1187,6 +1437,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 55,
    "tag": "svg",
    "cls": "",
@@ -1200,9 +1451,11 @@
     "wu": 25,
     "hu": 25
    },
-   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"m6 12 4 4 8-9\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"m6 12 4 4 8-9\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>",
+   "color": "rgb(113, 167, 74)"
   },
   {
+   "z": 0,
    "order": 56,
    "tag": "svg",
    "cls": "",
@@ -1216,9 +1469,11 @@
     "wu": 10,
     "hu": 22
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(173, 168, 156)"
   },
   {
+   "z": 0,
    "order": 57,
    "tag": "h2",
    "cls": "",
@@ -1232,6 +1487,13 @@
     "wu": 296.9,
     "hu": 37.7
    },
+   "trect": {
+    "x": 13.3,
+    "y": 541.3,
+    "w": 157.5,
+    "h": 18
+   },
+   "lines": 1,
    "text": "Needs your review (2)",
    "type": {
     "family": "-apple-system",
@@ -1246,6 +1508,7 @@
    }
   },
   {
+   "z": 0,
    "order": 58,
    "tag": "span",
    "cls": "",
@@ -1259,6 +1522,13 @@
     "wu": 242.8,
     "hu": 26
    },
+   "trect": {
+    "x": 247.9,
+    "y": 543.5,
+    "w": 128.8,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Please confirm or correct",
    "type": {
     "family": "-apple-system",
@@ -1273,6 +1543,7 @@
    }
   },
   {
+   "z": 0,
    "order": 59,
    "tag": "article",
    "cls": "scan-uncertain-card ",
@@ -1296,6 +1567,7 @@
    "radius": "11.6735px"
   },
   {
+   "z": 0,
    "order": 60,
    "tag": "div",
    "cls": "uncertain-source",
@@ -1313,6 +1585,7 @@
    "radius": "7.42857px"
   },
   {
+   "z": 0,
    "order": 62,
    "tag": "h3",
    "cls": "",
@@ -1326,6 +1599,13 @@
     "wu": 477.5,
     "hu": 28.6
    },
+   "trect": {
+    "x": 116.1,
+    "y": 577.7,
+    "w": 146.9,
+    "h": 13
+   },
+   "lines": 1,
    "text": "1. Medicine name unclear",
    "type": {
     "family": "-apple-system",
@@ -1340,6 +1620,7 @@
    }
   },
   {
+   "z": 0,
    "order": 63,
    "tag": "span",
    "cls": "uncertain-reason",
@@ -1353,6 +1634,13 @@
     "wu": 219.8,
     "hu": 30.9
    },
+   "trect": {
+    "x": 137.8,
+    "y": 597.5,
+    "w": 88.5,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Handwriting unclear",
    "type": {
     "family": "-apple-system",
@@ -1369,6 +1657,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 64,
    "tag": "svg",
    "cls": "",
@@ -1382,9 +1671,11 @@
     "wu": 23,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 32 30\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M13 3c1-3 5-3 6 0l13 23c1 2-1 4-3 4H3c-3 0-4-2-3-4Z\"></path><path d=\"M16 9v9m0 4v2\" stroke=\"#fff\" stroke-width=\"3\" stroke-linecap=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 30\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M13 3c1-3 5-3 6 0l13 23c1 2-1 4-3 4H3c-3 0-4-2-3-4Z\"></path><path d=\"M16 9v9m0 4v2\" stroke=\"#fff\" stroke-width=\"3\" stroke-linecap=\"round\"></path></svg>",
+   "color": "rgb(236, 162, 9)"
   },
   {
+   "z": 0,
    "order": 65,
    "tag": "button",
    "cls": "is-highlighted",
@@ -1398,6 +1689,13 @@
     "wu": 111.9,
     "hu": 56.5
    },
+   "trect": {
+    "x": 124.5,
+    "y": 627.6,
+    "w": 42.6,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Telma 40",
    "type": {
     "family": "-apple-system",
@@ -1419,6 +1717,7 @@
    "radius": "9.55102px"
   },
   {
+   "z": 0,
    "order": 66,
    "tag": "button",
    "cls": "",
@@ -1432,6 +1731,13 @@
     "wu": 111.9,
     "hu": 56.5
    },
+   "trect": {
+    "x": 187.6,
+    "y": 627.6,
+    "w": 42.5,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Telma 80",
    "type": {
     "family": "-apple-system",
@@ -1453,6 +1759,7 @@
    "radius": "9.55102px"
   },
   {
+   "z": 0,
    "order": 67,
    "tag": "button",
    "cls": "",
@@ -1466,6 +1773,13 @@
     "wu": 111.9,
     "hu": 56.5
    },
+   "trect": {
+    "x": 250.4,
+    "y": 627.6,
+    "w": 43,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Telsar 40",
    "type": {
     "family": "-apple-system",
@@ -1487,6 +1801,7 @@
    "radius": "9.55102px"
   },
   {
+   "z": 0,
    "order": 68,
    "tag": "button",
    "cls": "type-choice",
@@ -1500,6 +1815,13 @@
     "wu": 111.9,
     "hu": 56.5
    },
+   "trect": {
+    "x": 331.2,
+    "y": 627.6,
+    "w": 31.4,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Type it",
    "type": {
     "family": "-apple-system",
@@ -1521,6 +1843,7 @@
    "radius": "9.55102px"
   },
   {
+   "z": 0,
    "order": 69,
    "tag": "svg",
    "cls": "",
@@ -1534,9 +1857,11 @@
     "wu": 20,
     "hu": 20
    },
-   "svg": "<svg viewBox=\"0 0 28 28\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m4 24 2-7L22 2l5 5L11 22Zm3-7 4 5M18 6l5 5\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 28 28\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m4 24 2-7L22 2l5 5L11 22Zm3-7 4 5M18 6l5 5\"></path></svg>",
+   "color": "rgb(41, 32, 22)"
   },
   {
+   "z": 0,
    "order": 70,
    "tag": "article",
    "cls": "scan-uncertain-card ",
@@ -1560,6 +1885,7 @@
    "radius": "11.6735px"
   },
   {
+   "z": 0,
    "order": 71,
    "tag": "div",
    "cls": "uncertain-source",
@@ -1577,6 +1903,7 @@
    "radius": "7.42857px"
   },
   {
+   "z": 0,
    "order": 73,
    "tag": "h3",
    "cls": "",
@@ -1590,6 +1917,13 @@
     "wu": 477.5,
     "hu": 28.6
    },
+   "trect": {
+    "x": 116.1,
+    "y": 677.7,
+    "w": 120.8,
+    "h": 13
+   },
+   "lines": 1,
    "text": "2. Test name unclear",
    "type": {
     "family": "-apple-system",
@@ -1604,6 +1938,7 @@
    }
   },
   {
+   "z": 0,
    "order": 74,
    "tag": "span",
    "cls": "uncertain-reason",
@@ -1617,6 +1952,13 @@
     "wu": 244.8,
     "hu": 30.9
    },
+   "trect": {
+    "x": 137.8,
+    "y": 697.5,
+    "w": 101.8,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Could be multiple tests",
    "type": {
     "family": "-apple-system",
@@ -1633,6 +1975,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 75,
    "tag": "svg",
    "cls": "",
@@ -1646,9 +1989,11 @@
     "wu": 23,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 32 30\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M13 3c1-3 5-3 6 0l13 23c1 2-1 4-3 4H3c-3 0-4-2-3-4Z\"></path><path d=\"M16 9v9m0 4v2\" stroke=\"#fff\" stroke-width=\"3\" stroke-linecap=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 30\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M13 3c1-3 5-3 6 0l13 23c1 2-1 4-3 4H3c-3 0-4-2-3-4Z\"></path><path d=\"M16 9v9m0 4v2\" stroke=\"#fff\" stroke-width=\"3\" stroke-linecap=\"round\"></path></svg>",
+   "color": "rgb(236, 162, 9)"
   },
   {
+   "z": 0,
    "order": 76,
    "tag": "button",
    "cls": "is-highlighted",
@@ -1662,6 +2007,13 @@
     "wu": 111.9,
     "hu": 56.5
    },
+   "trect": {
+    "x": 139.6,
+    "y": 727.6,
+    "w": 12.2,
+    "h": 11
+   },
+   "lines": 1,
    "text": "T3",
    "type": {
     "family": "-apple-system",
@@ -1683,6 +2035,7 @@
    "radius": "9.55102px"
   },
   {
+   "z": 0,
    "order": 77,
    "tag": "button",
    "cls": "",
@@ -1696,6 +2049,13 @@
     "wu": 111.9,
     "hu": 56.5
    },
+   "trect": {
+    "x": 191.1,
+    "y": 727.6,
+    "w": 35.5,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Free T3",
    "type": {
     "family": "-apple-system",
@@ -1717,6 +2077,7 @@
    "radius": "9.55102px"
   },
   {
+   "z": 0,
    "order": 78,
    "tag": "button",
    "cls": "",
@@ -1730,6 +2091,13 @@
     "wu": 111.9,
     "hu": 56.5
    },
+   "trect": {
+    "x": 253.1,
+    "y": 727.6,
+    "w": 37.7,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Total T3",
    "type": {
     "family": "-apple-system",
@@ -1751,6 +2119,7 @@
    "radius": "9.55102px"
   },
   {
+   "z": 0,
    "order": 79,
    "tag": "button",
    "cls": "type-choice",
@@ -1764,6 +2133,13 @@
     "wu": 111.9,
     "hu": 56.5
    },
+   "trect": {
+    "x": 331.2,
+    "y": 727.6,
+    "w": 31.4,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Type it",
    "type": {
     "family": "-apple-system",
@@ -1785,6 +2161,7 @@
    "radius": "9.55102px"
   },
   {
+   "z": 0,
    "order": 80,
    "tag": "svg",
    "cls": "",
@@ -1798,9 +2175,11 @@
     "wu": 20,
     "hu": 20
    },
-   "svg": "<svg viewBox=\"0 0 28 28\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m4 24 2-7L22 2l5 5L11 22Zm3-7 4 5M18 6l5 5\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 28 28\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m4 24 2-7L22 2l5 5L11 22Zm3-7 4 5M18 6l5 5\"></path></svg>",
+   "color": "rgb(41, 32, 22)"
   },
   {
+   "z": 0,
    "order": 81,
    "tag": "button",
    "cls": "primary-action all-correct",
@@ -1814,6 +2193,13 @@
     "wu": 699,
     "hu": 88
    },
+   "trect": {
+    "x": 145.2,
+    "y": 786.9,
+    "w": 74.7,
+    "h": 17
+   },
+   "lines": 1,
    "text": "All correct",
    "type": {
     "family": "-apple-system",
@@ -1830,6 +2216,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 82,
    "tag": "svg",
    "cls": "",
@@ -1843,9 +2230,11 @@
     "wu": 29,
     "hu": 29
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 16h23m-9-9 9 9-9 9\" stroke=\"currentColor\" stroke-width=\"2.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 16h23m-9-9 9 9-9 9\" stroke=\"currentColor\" stroke-width=\"2.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(255, 246, 228)"
   },
   {
+   "z": 0,
    "order": 83,
    "tag": "p",
    "cls": "scan-reference-note",
@@ -1859,6 +2248,13 @@
     "wu": 699,
     "hu": 23.7
    },
+   "trect": {
+    "x": 95.6,
+    "y": 823.5,
+    "w": 198.9,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Reference demo \u00b7 sample prescription details",
    "type": {
     "family": "-apple-system",
@@ -1873,6 +2269,7 @@
    }
   },
   {
+   "z": 5,
    "order": 84,
    "tag": "div",
    "cls": "home-indicator",
@@ -1892,6 +2289,7 @@
  ],
  "art": [
   {
+   "z": 0,
    "viewBox": "125 1088 156 121",
    "href": "assets/references/review-regenerated.jpeg",
    "aspect": "xMidYMid meet",
@@ -1910,6 +2308,7 @@
    "asset": "art_reviewregenerated_125_1088_156_121"
   },
   {
+   "z": 0,
    "viewBox": "125 1265 156 120",
    "href": "assets/references/review-regenerated.jpeg",
    "aspect": "xMidYMid meet",
@@ -1930,6 +2329,7 @@
  ],
  "images": [
   {
+   "z": 0,
    "src": "assets/parchi-logo-transparent.png",
    "alt": "",
    "rect": {

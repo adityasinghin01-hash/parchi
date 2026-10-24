@@ -8,6 +8,7 @@
  "scrollHeight": 984,
  "elements": [
   {
+   "z": 0,
    "order": 0,
    "tag": "span",
    "cls": "clock",
@@ -21,6 +22,13 @@
     "wu": 58.5,
     "hu": 32
    },
+   "trect": {
+    "x": 48.8,
+    "y": 14.9,
+    "w": 31,
+    "h": 17
+   },
+   "lines": 1,
    "text": "9:41",
    "type": {
     "family": "-apple-system",
@@ -35,6 +43,7 @@
    }
   },
   {
+   "z": 0,
    "order": 1,
    "tag": "span",
    "cls": "dynamic-island",
@@ -52,6 +61,7 @@
    "radius": "39px"
   },
   {
+   "z": 0,
    "order": 2,
    "tag": "svg",
    "cls": "",
@@ -65,9 +75,11 @@
     "wu": 121.3,
     "hu": 36.8
    },
-   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>",
+   "color": "rgb(66, 28, 8)"
   },
   {
+   "z": 0,
    "order": 3,
    "tag": "section",
    "cls": "screen journey-screen care-screen",
@@ -84,6 +96,7 @@
    "bg": "rgb(255, 251, 244)"
   },
   {
+   "z": 0,
    "order": 5,
    "tag": "strong",
    "cls": "",
@@ -97,6 +110,13 @@
     "wu": 131,
     "hu": 40
    },
+   "trect": {
+    "x": 53.6,
+    "y": 48.4,
+    "w": 69.5,
+    "h": 24
+   },
+   "lines": 1,
    "text": "Parchi",
    "type": {
     "family": "Georgia",
@@ -111,6 +131,7 @@
    }
   },
   {
+   "z": 0,
    "order": 6,
    "tag": "button",
    "cls": "j-area",
@@ -128,6 +149,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 7,
    "tag": "svg",
    "cls": "",
@@ -141,9 +163,11 @@
     "wu": 20,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"pin\" x1=\"16\" y1=\"4\" x2=\"43\" y2=\"60\"><stop stop-color=\"#e94f14\"></stop><stop offset=\"1\" stop-color=\"#b6340a\"></stop></linearGradient></defs><path d=\"M32 4C18 4 10 14 10 26c0 15 22 35 22 35s22-20 22-35C54 14 46 4 32 4Z\" fill=\"url(#pin)\"></path><circle cx=\"32\" cy=\"25\" r=\"9.5\" fill=\"#fff2d9\"></circle></svg>"
+   "svg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"pin\" x1=\"16\" y1=\"4\" x2=\"43\" y2=\"60\"><stop stop-color=\"#e94f14\"></stop><stop offset=\"1\" stop-color=\"#b6340a\"></stop></linearGradient></defs><path d=\"M32 4C18 4 10 14 10 26c0 15 22 35 22 35s22-20 22-35C54 14 46 4 32 4Z\" fill=\"url(#pin)\"></path><circle cx=\"32\" cy=\"25\" r=\"9.5\" fill=\"#fff2d9\"></circle></svg>",
+   "color": "rgb(180, 71, 23)"
   },
   {
+   "z": 0,
    "order": 8,
    "tag": "span",
    "cls": "",
@@ -157,6 +181,13 @@
     "wu": 96.2,
     "hu": 20.7
    },
+   "trect": {
+    "x": 307.2,
+    "y": 60.2,
+    "w": 51,
+    "h": 11
+   },
+   "lines": 1,
    "text": "HSR Layout",
    "type": {
     "family": "-apple-system",
@@ -171,6 +202,7 @@
    }
   },
   {
+   "z": 0,
    "order": 9,
    "tag": "svg",
    "cls": "",
@@ -184,9 +216,11 @@
     "wu": 16,
     "hu": 16
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>",
+   "color": "rgb(180, 71, 23)"
   },
   {
+   "z": 1,
    "order": 10,
    "tag": "h1",
    "cls": "",
@@ -200,6 +234,13 @@
     "wu": 679.1,
     "hu": 48.1
    },
+   "trect": {
+    "x": 14.8,
+    "y": 84.9,
+    "w": 243.5,
+    "h": 26
+   },
+   "lines": 1,
    "text": "Care for better health",
    "type": {
     "family": "Georgia",
@@ -214,6 +255,7 @@
    }
   },
   {
+   "z": 1,
    "order": 11,
    "tag": "p",
    "cls": "",
@@ -227,7 +269,14 @@
     "wu": 679.1,
     "hu": 59.8
    },
-   "text": "Stay on track with your medicines and lab tests. Get reminders, refills and easy reorders.",
+   "trect": {
+    "x": 14.8,
+    "y": 115.2,
+    "w": 274.1,
+    "h": 30.9
+   },
+   "lines": 2,
+   "text": "Stay on track with your medicines and lab tests.\nGet reminders, refills and easy reorders.",
    "type": {
     "family": "-apple-system",
     "size": 12.2,
@@ -241,6 +290,7 @@
    }
   },
   {
+   "z": 0,
    "order": 13,
    "tag": "div",
    "cls": "care-tabs",
@@ -259,6 +309,7 @@
    "radius": "11.1429px"
   },
   {
+   "z": 0,
    "order": 14,
    "tag": "button",
    "cls": "",
@@ -276,6 +327,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 15,
    "tag": "svg",
    "cls": "",
@@ -289,9 +341,11 @@
     "wu": 40,
     "hu": 40
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>",
+   "color": "rgb(255, 249, 237)"
   },
   {
+   "z": 0,
    "order": 16,
    "tag": "strong",
    "cls": "",
@@ -305,6 +359,13 @@
     "wu": 117.4,
     "hu": 27.6
    },
+   "trect": {
+    "x": 59.7,
+    "y": 179.4,
+    "w": 62.3,
+    "h": 15
+   },
+   "lines": 1,
    "text": "Medicines",
    "type": {
     "family": "-apple-system",
@@ -319,6 +380,7 @@
    }
   },
   {
+   "z": 0,
    "order": 17,
    "tag": "small",
    "cls": "",
@@ -332,6 +394,13 @@
     "wu": 117.4,
     "hu": 20.7
    },
+   "trect": {
+    "x": 59.7,
+    "y": 197.1,
+    "w": 35.2,
+    "h": 11
+   },
+   "lines": 1,
    "text": "4 active",
    "type": {
     "family": "-apple-system",
@@ -346,6 +415,7 @@
    }
   },
   {
+   "z": 0,
    "order": 18,
    "tag": "button",
    "cls": "",
@@ -361,6 +431,7 @@
    }
   },
   {
+   "z": 0,
    "order": 19,
    "tag": "svg",
    "cls": "",
@@ -374,9 +445,11 @@
     "wu": 40,
     "hu": 40
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3h8m-7 0v12L5 28c-1 2 23 2 22 0l-8-13V3M9 22h14\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3h8m-7 0v12L5 28c-1 2 23 2 22 0l-8-13V3M9 22h14\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
+   "z": 0,
    "order": 20,
    "tag": "strong",
    "cls": "",
@@ -390,6 +463,13 @@
     "wu": 110.1,
     "hu": 27.6
    },
+   "trect": {
+    "x": 181.7,
+    "y": 179.4,
+    "w": 58.4,
+    "h": 15
+   },
+   "lines": 1,
    "text": "Lab Tests",
    "type": {
     "family": "-apple-system",
@@ -404,6 +484,7 @@
    }
   },
   {
+   "z": 0,
    "order": 21,
    "tag": "small",
    "cls": "",
@@ -417,6 +498,13 @@
     "wu": 110.1,
     "hu": 20.7
    },
+   "trect": {
+    "x": 181.7,
+    "y": 197.1,
+    "w": 51.6,
+    "h": 11
+   },
+   "lines": 1,
    "text": "2 upcoming",
    "type": {
     "family": "-apple-system",
@@ -431,6 +519,7 @@
    }
   },
   {
+   "z": 0,
    "order": 22,
    "tag": "button",
    "cls": "",
@@ -446,6 +535,7 @@
    }
   },
   {
+   "z": 0,
    "order": 23,
    "tag": "svg",
    "cls": "",
@@ -459,9 +549,11 @@
     "wu": 40,
     "hu": 40
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 9 13-6 13 6v15l-13 6-13-6Zm0 0 13 6 13-6M16 15v15M9 6l13 6\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 9 13-6 13 6v15l-13 6-13-6Zm0 0 13 6 13-6M16 15v15M9 6l13 6\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
+   "z": 0,
    "order": 24,
    "tag": "strong",
    "cls": "",
@@ -475,6 +567,13 @@
     "wu": 89.6,
     "hu": 27.6
    },
+   "trect": {
+    "x": 307.3,
+    "y": 179.4,
+    "w": 38.1,
+    "h": 15
+   },
+   "lines": 1,
    "text": "Refills",
    "type": {
     "family": "-apple-system",
@@ -489,6 +588,7 @@
    }
   },
   {
+   "z": 0,
    "order": 25,
    "tag": "small",
    "cls": "",
@@ -502,6 +602,13 @@
     "wu": 89.6,
     "hu": 20.7
    },
+   "trect": {
+    "x": 307.3,
+    "y": 197.1,
+    "w": 47.5,
+    "h": 11
+   },
+   "lines": 1,
    "text": "1 due soon",
    "type": {
     "family": "-apple-system",
@@ -516,6 +623,7 @@
    }
   },
   {
+   "z": 0,
    "order": 26,
    "tag": "h2",
    "cls": "",
@@ -529,6 +637,13 @@
     "wu": 205.6,
     "hu": 34.5
    },
+   "trect": {
+    "x": 14.8,
+    "y": 235.1,
+    "w": 109.1,
+    "h": 18
+   },
+   "lines": 1,
    "text": "Today\u2019s doses",
    "type": {
     "family": "Georgia",
@@ -543,6 +658,7 @@
    }
   },
   {
+   "z": 0,
    "order": 27,
    "tag": "button",
    "cls": "",
@@ -556,6 +672,13 @@
     "wu": 182.6,
     "hu": 60.3
    },
+   "trect": {
+    "x": 278.3,
+    "y": 238.8,
+    "w": 84.2,
+    "h": 11
+   },
+   "lines": 1,
    "text": "View full schedule",
    "type": {
     "family": "-apple-system",
@@ -570,6 +693,7 @@
    }
   },
   {
+   "z": 0,
    "order": 28,
    "tag": "svg",
    "cls": "",
@@ -583,9 +707,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(194, 77, 32)"
   },
   {
+   "z": 0,
    "order": 29,
    "tag": "button",
    "cls": "dose-row",
@@ -603,6 +729,7 @@
    "radius": "11.6735px"
   },
   {
+   "z": 0,
    "order": 30,
    "tag": "i",
    "cls": "",
@@ -620,6 +747,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 31,
    "tag": "svg",
    "cls": "",
@@ -633,9 +761,11 @@
     "wu": 37.2,
     "hu": 37.2
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>",
+   "color": "rgb(203, 81, 36)"
   },
   {
+   "z": 0,
    "order": 32,
    "tag": "strong",
    "cls": "",
@@ -649,6 +779,13 @@
     "wu": 317.1,
     "hu": 28.6
    },
+   "trect": {
+    "x": 67.4,
+    "y": 277.5,
+    "w": 118.2,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Paracetamol 500 mg",
    "type": {
     "family": "-apple-system",
@@ -663,6 +800,7 @@
    }
   },
   {
+   "z": 0,
    "order": 33,
    "tag": "small",
    "cls": "",
@@ -676,6 +814,13 @@
     "wu": 317.1,
     "hu": 25.2
    },
+   "trect": {
+    "x": 67.4,
+    "y": 294.3,
+    "w": 112.2,
+    "h": 11
+   },
+   "lines": 1,
    "text": "1 tablet \u00b7 After breakfast",
    "type": {
     "family": "-apple-system",
@@ -690,6 +835,7 @@
    }
   },
   {
+   "z": 0,
    "order": 34,
    "tag": "time",
    "cls": "",
@@ -703,6 +849,13 @@
     "wu": 70.6,
     "hu": 20.7
    },
+   "trect": {
+    "x": 246.2,
+    "y": 286.1,
+    "w": 37.5,
+    "h": 11
+   },
+   "lines": 1,
    "text": "8:00 AM",
    "type": {
     "family": "-apple-system",
@@ -717,6 +870,7 @@
    }
   },
   {
+   "z": 0,
    "order": 35,
    "tag": "span",
    "cls": "j-status green",
@@ -730,6 +884,13 @@
     "wu": 101.4,
     "hu": 35
    },
+   "trect": {
+    "x": 315.5,
+    "y": 285.2,
+    "w": 25.7,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Taken",
    "type": {
     "family": "-apple-system",
@@ -746,6 +907,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 36,
    "tag": "svg",
    "cls": "",
@@ -759,9 +921,11 @@
     "wu": 21,
     "hu": 21
    },
-   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"m6 12 4 4 8-9\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"m6 12 4 4 8-9\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>",
+   "color": "rgb(47, 134, 56)"
   },
   {
+   "z": 0,
    "order": 37,
    "tag": "svg",
    "cls": "",
@@ -775,9 +939,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
+   "z": 0,
    "order": 38,
    "tag": "button",
    "cls": "dose-row",
@@ -795,6 +961,7 @@
    "radius": "11.6735px"
   },
   {
+   "z": 0,
    "order": 39,
    "tag": "i",
    "cls": "",
@@ -812,6 +979,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 40,
    "tag": "svg",
    "cls": "",
@@ -825,9 +993,11 @@
     "wu": 37.2,
     "hu": 37.2
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>",
+   "color": "rgb(203, 81, 36)"
   },
   {
+   "z": 0,
    "order": 41,
    "tag": "strong",
    "cls": "",
@@ -841,6 +1011,13 @@
     "wu": 317.1,
     "hu": 28.6
    },
+   "trect": {
+    "x": 67.4,
+    "y": 328.4,
+    "w": 95.6,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Amlodipine 5 mg",
    "type": {
     "family": "-apple-system",
@@ -855,6 +1032,7 @@
    }
   },
   {
+   "z": 0,
    "order": 42,
    "tag": "small",
    "cls": "",
@@ -868,6 +1046,13 @@
     "wu": 317.1,
     "hu": 25.2
    },
+   "trect": {
+    "x": 67.4,
+    "y": 345.2,
+    "w": 112.2,
+    "h": 11
+   },
+   "lines": 1,
    "text": "1 tablet \u00b7 After breakfast",
    "type": {
     "family": "-apple-system",
@@ -882,6 +1067,7 @@
    }
   },
   {
+   "z": 0,
    "order": 43,
    "tag": "time",
    "cls": "",
@@ -895,6 +1081,13 @@
     "wu": 70.6,
     "hu": 20.7
    },
+   "trect": {
+    "x": 246.2,
+    "y": 337,
+    "w": 37.5,
+    "h": 11
+   },
+   "lines": 1,
    "text": "8:00 AM",
    "type": {
     "family": "-apple-system",
@@ -909,6 +1102,7 @@
    }
   },
   {
+   "z": 0,
    "order": 44,
    "tag": "span",
    "cls": "j-status green",
@@ -922,6 +1116,13 @@
     "wu": 101.4,
     "hu": 35
    },
+   "trect": {
+    "x": 315.5,
+    "y": 336.1,
+    "w": 25.7,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Taken",
    "type": {
     "family": "-apple-system",
@@ -938,6 +1139,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 45,
    "tag": "svg",
    "cls": "",
@@ -951,9 +1153,11 @@
     "wu": 21,
     "hu": 21
    },
-   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"m6 12 4 4 8-9\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"m6 12 4 4 8-9\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>",
+   "color": "rgb(47, 134, 56)"
   },
   {
+   "z": 0,
    "order": 46,
    "tag": "svg",
    "cls": "",
@@ -967,9 +1171,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
+   "z": 0,
    "order": 47,
    "tag": "button",
    "cls": "dose-row",
@@ -987,6 +1193,7 @@
    "radius": "11.6735px"
   },
   {
+   "z": 0,
    "order": 48,
    "tag": "i",
    "cls": "",
@@ -1004,6 +1211,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 49,
    "tag": "svg",
    "cls": "",
@@ -1017,9 +1225,11 @@
     "wu": 37.2,
     "hu": 37.2
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>",
+   "color": "rgb(203, 81, 36)"
   },
   {
+   "z": 0,
    "order": 50,
    "tag": "strong",
    "cls": "",
@@ -1033,6 +1243,13 @@
     "wu": 336.3,
     "hu": 28.6
    },
+   "trect": {
+    "x": 67.4,
+    "y": 379.3,
+    "w": 106,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Metformin 500 mg",
    "type": {
     "family": "-apple-system",
@@ -1047,6 +1264,7 @@
    }
   },
   {
+   "z": 0,
    "order": 51,
    "tag": "small",
    "cls": "",
@@ -1060,6 +1278,13 @@
     "wu": 336.3,
     "hu": 25.2
    },
+   "trect": {
+    "x": 67.4,
+    "y": 396.1,
+    "w": 93.8,
+    "h": 11
+   },
+   "lines": 1,
    "text": "1 tablet \u00b7 After lunch",
    "type": {
     "family": "-apple-system",
@@ -1074,6 +1299,7 @@
    }
   },
   {
+   "z": 0,
    "order": 52,
    "tag": "time",
    "cls": "",
@@ -1087,6 +1313,13 @@
     "wu": 67,
     "hu": 20.7
    },
+   "trect": {
+    "x": 256.4,
+    "y": 387.9,
+    "w": 35.5,
+    "h": 11
+   },
+   "lines": 1,
    "text": "1:00 PM",
    "type": {
     "family": "-apple-system",
@@ -1101,6 +1334,7 @@
    }
   },
   {
+   "z": 0,
    "order": 53,
    "tag": "span",
    "cls": "j-status amber",
@@ -1114,6 +1348,13 @@
     "wu": 85.9,
     "hu": 35
    },
+   "trect": {
+    "x": 323.8,
+    "y": 387,
+    "w": 17.5,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Due",
    "type": {
     "family": "-apple-system",
@@ -1130,6 +1371,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 54,
    "tag": "svg",
    "cls": "",
@@ -1143,9 +1385,11 @@
     "wu": 21,
     "hu": 21
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>",
+   "color": "rgb(166, 107, 25)"
   },
   {
+   "z": 0,
    "order": 55,
    "tag": "svg",
    "cls": "",
@@ -1159,9 +1403,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
+   "z": 0,
    "order": 56,
    "tag": "button",
    "cls": "dose-row",
@@ -1179,6 +1425,7 @@
    "radius": "11.6735px"
   },
   {
+   "z": 0,
    "order": 57,
    "tag": "i",
    "cls": "",
@@ -1196,6 +1443,7 @@
    "radius": "10.6122px"
   },
   {
+   "z": 0,
    "order": 58,
    "tag": "svg",
    "cls": "",
@@ -1209,9 +1457,11 @@
     "wu": 37.2,
     "hu": 37.2
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>",
+   "color": "rgb(203, 81, 36)"
   },
   {
+   "z": 0,
    "order": 59,
    "tag": "strong",
    "cls": "",
@@ -1225,6 +1475,13 @@
     "wu": 282,
     "hu": 28.6
    },
+   "trect": {
+    "x": 67.4,
+    "y": 430.3,
+    "w": 107.6,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Atorvastatin 10 mg",
    "type": {
     "family": "-apple-system",
@@ -1239,6 +1496,7 @@
    }
   },
   {
+   "z": 0,
    "order": 60,
    "tag": "small",
    "cls": "",
@@ -1252,6 +1510,13 @@
     "wu": 282,
     "hu": 25.2
    },
+   "trect": {
+    "x": 67.4,
+    "y": 447,
+    "w": 97.9,
+    "h": 11
+   },
+   "lines": 1,
    "text": "1 tablet \u00b7 After dinner",
    "type": {
     "family": "-apple-system",
@@ -1266,6 +1531,7 @@
    }
   },
   {
+   "z": 0,
    "order": 61,
    "tag": "time",
    "cls": "",
@@ -1279,6 +1545,13 @@
     "wu": 70,
     "hu": 20.7
    },
+   "trect": {
+    "x": 227.6,
+    "y": 438.8,
+    "w": 37.1,
+    "h": 11
+   },
+   "lines": 1,
    "text": "8:00 PM",
    "type": {
     "family": "-apple-system",
@@ -1293,6 +1566,7 @@
    }
   },
   {
+   "z": 0,
    "order": 62,
    "tag": "span",
    "cls": "j-status neutral",
@@ -1306,6 +1580,13 @@
     "wu": 137.2,
     "hu": 35
    },
+   "trect": {
+    "x": 296.5,
+    "y": 437.9,
+    "w": 44.7,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Upcoming",
    "type": {
     "family": "-apple-system",
@@ -1322,6 +1603,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 63,
    "tag": "svg",
    "cls": "",
@@ -1335,9 +1617,11 @@
     "wu": 21,
     "hu": 21
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>",
+   "color": "rgb(123, 125, 116)"
   },
   {
+   "z": 0,
    "order": 64,
    "tag": "svg",
    "cls": "",
@@ -1351,9 +1635,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(60, 28, 16)"
   },
   {
+   "z": 0,
    "order": 65,
    "tag": "h2",
    "cls": "",
@@ -1367,6 +1653,13 @@
     "wu": 284.3,
     "hu": 34.5
    },
+   "trect": {
+    "x": 14.8,
+    "y": 490.9,
+    "w": 150.8,
+    "h": 18
+   },
+   "lines": 1,
    "text": "Upcoming lab tests",
    "type": {
     "family": "Georgia",
@@ -1381,6 +1674,7 @@
    }
   },
   {
+   "z": 0,
    "order": 66,
    "tag": "button",
    "cls": "",
@@ -1394,6 +1688,13 @@
     "wu": 115.5,
     "hu": 60.3
    },
+   "trect": {
+    "x": 313.9,
+    "y": 494.6,
+    "w": 61.3,
+    "h": 11
+   },
+   "lines": 1,
    "text": "View all tests",
    "type": {
     "family": "-apple-system",
@@ -1408,6 +1709,7 @@
    }
   },
   {
+   "z": 0,
    "order": 67,
    "tag": "article",
    "cls": "care-lab-card",
@@ -1425,6 +1727,7 @@
    "radius": "11.6735px"
   },
   {
+   "z": 0,
    "order": 69,
    "tag": "strong",
    "cls": "",
@@ -1438,6 +1741,13 @@
     "wu": 332.3,
     "hu": 27.3
    },
+   "trect": {
+    "x": 92.8,
+    "y": 534.6,
+    "w": 163.7,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Complete Blood Count (CBC)",
    "type": {
     "family": "-apple-system",
@@ -1452,6 +1762,7 @@
    }
   },
   {
+   "z": 0,
    "order": 70,
    "tag": "small",
    "cls": "",
@@ -1465,6 +1776,13 @@
     "wu": 332.3,
     "hu": 23.8
    },
+   "trect": {
+    "x": 92.8,
+    "y": 549.1,
+    "w": 158,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Thyrocare Diagnostics \u00b7 HSR Layout",
    "type": {
     "family": "-apple-system",
@@ -1479,6 +1797,7 @@
    }
   },
   {
+   "z": 0,
    "order": 71,
    "tag": "span",
    "cls": "j-status warm",
@@ -1492,6 +1811,13 @@
     "wu": 167.8,
     "hu": 35
    },
+   "trect": {
+    "x": 298.3,
+    "y": 542.4,
+    "w": 61,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Today, 4:30 PM",
    "type": {
     "family": "-apple-system",
@@ -1508,6 +1834,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 72,
    "tag": "svg",
    "cls": "",
@@ -1521,9 +1848,11 @@
     "wu": 21,
     "hu": 21
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"4\" y=\"6\" width=\"24\" height=\"23\" rx=\"3\"></rect><path d=\"M10 3v7m12-7v7M4 13h24M10 18h4v5h-4Z\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"4\" y=\"6\" width=\"24\" height=\"23\" rx=\"3\"></rect><path d=\"M10 3v7m12-7v7M4 13h24M10 18h4v5h-4Z\"></path></svg>",
+   "color": "rgb(196, 89, 40)"
   },
   {
+   "z": 0,
    "order": 73,
    "tag": "div",
    "cls": "care-lab-facts",
@@ -1541,6 +1870,7 @@
    "radius": "9.55102px"
   },
   {
+   "z": 0,
    "order": 74,
    "tag": "i",
    "cls": "",
@@ -1558,6 +1888,7 @@
    "radius": "7.95918px"
   },
   {
+   "z": 0,
    "order": 75,
    "tag": "svg",
    "cls": "",
@@ -1571,9 +1902,11 @@
     "wu": 27,
     "hu": 27
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"9\"></circle><circle cx=\"16\" cy=\"16\" r=\"3\"></circle><path d=\"M16 1v6m0 18v6M1 16h6m18 0h6\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"9\"></circle><circle cx=\"16\" cy=\"16\" r=\"3\"></circle><path d=\"M16 1v6m0 18v6M1 16h6m18 0h6\"></path></svg>",
+   "color": "rgb(205, 87, 39)"
   },
   {
+   "z": 0,
    "order": 76,
    "tag": "span",
    "cls": "",
@@ -1587,6 +1920,13 @@
     "wu": 96.1,
     "hu": 65.8
    },
+   "trect": {
+    "x": 62,
+    "y": 578.7,
+    "w": 51,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Lab address",
    "type": {
     "family": "-apple-system",
@@ -1601,6 +1941,7 @@
    }
   },
   {
+   "z": 0,
    "order": 77,
    "tag": "small",
    "cls": "",
@@ -1614,7 +1955,14 @@
     "wu": 96.1,
     "hu": 41.9
    },
-   "text": "HSR Layout 1.1 km",
+   "trect": {
+    "x": 62,
+    "y": 591.3,
+    "w": 45.6,
+    "h": 21.1
+   },
+   "lines": 2,
+   "text": "HSR Layout\n1.1 km",
    "type": {
     "family": "-apple-system",
     "size": 8,
@@ -1628,6 +1976,7 @@
    }
   },
   {
+   "z": 0,
    "order": 78,
    "tag": "i",
    "cls": "",
@@ -1645,6 +1994,7 @@
    "radius": "7.95918px"
   },
   {
+   "z": 0,
    "order": 79,
    "tag": "svg",
    "cls": "",
@@ -1658,9 +2008,11 @@
     "wu": 27,
     "hu": 27
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3h8m-7 0v12L5 28c-1 2 23 2 22 0l-8-13V3M9 22h14\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3h8m-7 0v12L5 28c-1 2 23 2 22 0l-8-13V3M9 22h14\"></path></svg>",
+   "color": "rgb(205, 87, 39)"
   },
   {
+   "z": 0,
    "order": 80,
    "tag": "span",
    "cls": "",
@@ -1674,6 +2026,13 @@
     "wu": 137.4,
     "hu": 65.8
    },
+   "trect": {
+    "x": 173.7,
+    "y": 578.7,
+    "w": 48.3,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Preparation",
    "type": {
     "family": "-apple-system",
@@ -1688,6 +2047,7 @@
    }
   },
   {
+   "z": 0,
    "order": 81,
    "tag": "small",
    "cls": "",
@@ -1701,6 +2061,13 @@
     "wu": 137.4,
     "hu": 41.9
    },
+   "trect": {
+    "x": 173.7,
+    "y": 591.3,
+    "w": 40.5,
+    "h": 21.1
+   },
+   "lines": 2,
    "text": "No fasting required",
    "type": {
     "family": "-apple-system",
@@ -1715,6 +2082,7 @@
    }
   },
   {
+   "z": 0,
    "order": 82,
    "tag": "i",
    "cls": "",
@@ -1732,6 +2100,7 @@
    "radius": "7.95918px"
   },
   {
+   "z": 0,
    "order": 83,
    "tag": "svg",
    "cls": "",
@@ -1745,9 +2114,11 @@
     "wu": 27,
     "hu": 27
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"7\" y=\"3\" width=\"18\" height=\"27\" rx=\"3\"></rect><path d=\"M12 9h8m-8 6h8m-8 6h5\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"7\" y=\"3\" width=\"18\" height=\"27\" rx=\"3\"></rect><path d=\"M12 9h8m-8 6h8m-8 6h5\"></path></svg>",
+   "color": "rgb(205, 87, 39)"
   },
   {
+   "z": 0,
    "order": 84,
    "tag": "span",
    "cls": "",
@@ -1761,6 +2132,13 @@
     "wu": 137.4,
     "hu": 65.8
    },
+   "trect": {
+    "x": 285.3,
+    "y": 578.7,
+    "w": 55.1,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Test includes",
    "type": {
     "family": "-apple-system",
@@ -1775,6 +2153,7 @@
    }
   },
   {
+   "z": 0,
    "order": 85,
    "tag": "small",
    "cls": "",
@@ -1788,6 +2167,13 @@
     "wu": 137.4,
     "hu": 41.9
    },
+   "trect": {
+    "x": 285.3,
+    "y": 591.3,
+    "w": 47.9,
+    "h": 21.1
+   },
+   "lines": 2,
    "text": "CBC (24 parameters)",
    "type": {
     "family": "-apple-system",
@@ -1802,6 +2188,7 @@
    }
   },
   {
+   "z": 0,
    "order": 86,
    "tag": "button",
    "cls": "j-outline",
@@ -1815,6 +2202,13 @@
     "wu": 314.5,
     "hu": 66
    },
+   "trect": {
+    "x": 95.7,
+    "y": 639.9,
+    "w": 47.2,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Directions",
    "type": {
     "family": "-apple-system",
@@ -1835,6 +2229,7 @@
    "radius": "8.4898px"
   },
   {
+   "z": 0,
    "order": 87,
    "tag": "svg",
    "cls": "",
@@ -1848,9 +2243,11 @@
     "wu": 28,
     "hu": 28
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m2 12 28-10-10 28-5-13Z\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m2 12 28-10-10 28-5-13Z\"></path></svg>",
+   "color": "rgb(189, 66, 29)"
   },
   {
+   "z": 0,
    "order": 88,
    "tag": "button",
    "cls": "",
@@ -1864,6 +2261,13 @@
     "wu": 314.6,
     "hu": 66
    },
+   "trect": {
+    "x": 236.2,
+    "y": 639.9,
+    "w": 76.5,
+    "h": 11
+   },
+   "lines": 1,
    "text": "View test details",
    "type": {
     "family": "-apple-system",
@@ -1885,6 +2289,7 @@
    "radius": "8.4898px"
   },
   {
+   "z": 0,
    "order": 89,
    "tag": "svg",
    "cls": "",
@@ -1898,9 +2303,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(194, 75, 31)"
   },
   {
+   "z": 0,
    "order": 90,
    "tag": "h2",
    "cls": "",
@@ -1914,6 +2321,13 @@
     "wu": 265.1,
     "hu": 34.5
    },
+   "trect": {
+    "x": 14.8,
+    "y": 695.7,
+    "w": 140.6,
+    "h": 18
+   },
+   "lines": 1,
    "text": "Refills & reorders",
    "type": {
     "family": "Georgia",
@@ -1928,6 +2342,7 @@
    }
   },
   {
+   "z": 0,
    "order": 91,
    "tag": "button",
    "cls": "",
@@ -1941,6 +2356,13 @@
     "wu": 91,
     "hu": 60.3
    },
+   "trect": {
+    "x": 326.9,
+    "y": 699.3,
+    "w": 35.6,
+    "h": 11
+   },
+   "lines": 1,
    "text": "View all",
    "type": {
     "family": "-apple-system",
@@ -1955,6 +2377,7 @@
    }
   },
   {
+   "z": 0,
    "order": 92,
    "tag": "svg",
    "cls": "",
@@ -1968,9 +2391,11 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(194, 77, 32)"
   },
   {
+   "z": 0,
    "order": 93,
    "tag": "article",
    "cls": "care-refill-card",
@@ -1988,6 +2413,7 @@
    "radius": "11.6735px"
   },
   {
+   "z": 0,
    "order": 95,
    "tag": "strong",
    "cls": "",
@@ -2001,6 +2427,13 @@
     "wu": 306.5,
     "hu": 27.3
    },
+   "trect": {
+    "x": 92.8,
+    "y": 739.4,
+    "w": 113.5,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Pantoprazole 40 mg",
    "type": {
     "family": "-apple-system",
@@ -2015,6 +2448,7 @@
    }
   },
   {
+   "z": 0,
    "order": 96,
    "tag": "small",
    "cls": "",
@@ -2028,6 +2462,13 @@
     "wu": 306.5,
     "hu": 23.8
    },
+   "trect": {
+    "x": 92.8,
+    "y": 753.9,
+    "w": 143.4,
+    "h": 11
+   },
+   "lines": 1,
    "text": "MedPlus Pharmacy \u00b7 HSR Layout",
    "type": {
     "family": "-apple-system",
@@ -2042,6 +2483,7 @@
    }
   },
   {
+   "z": 0,
    "order": 97,
    "tag": "span",
    "cls": "j-status amber",
@@ -2055,6 +2497,13 @@
     "wu": 193.6,
     "hu": 35
    },
+   "trect": {
+    "x": 284.6,
+    "y": 747.2,
+    "w": 74.6,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Refill due in 5 days",
    "type": {
     "family": "-apple-system",
@@ -2071,6 +2520,7 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 98,
    "tag": "svg",
    "cls": "",
@@ -2084,9 +2534,11 @@
     "wu": 21,
     "hu": 21
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>",
+   "color": "rgb(166, 107, 25)"
   },
   {
+   "z": 0,
    "order": 99,
    "tag": "div",
    "cls": "care-refill-facts",
@@ -2104,6 +2556,7 @@
    "radius": "9.55102px"
   },
   {
+   "z": 0,
    "order": 100,
    "tag": "svg",
    "cls": "",
@@ -2117,9 +2570,11 @@
     "wu": 33,
     "hu": 33
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"4\" y=\"6\" width=\"24\" height=\"23\" rx=\"3\"></rect><path d=\"M10 3v7m12-7v7M4 13h24M10 18h4v5h-4Z\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"4\" y=\"6\" width=\"24\" height=\"23\" rx=\"3\"></rect><path d=\"M10 3v7m12-7v7M4 13h24M10 18h4v5h-4Z\"></path></svg>",
+   "color": "rgb(207, 91, 38)"
   },
   {
+   "z": 0,
    "order": 101,
    "tag": "span",
    "cls": "",
@@ -2133,6 +2588,13 @@
     "wu": 94.2,
     "hu": 42.9
    },
+   "trect": {
+    "x": 54.6,
+    "y": 781.3,
+    "w": 50,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Last ordered",
    "type": {
     "family": "-apple-system",
@@ -2147,6 +2609,7 @@
    }
   },
   {
+   "z": 0,
    "order": 102,
    "tag": "small",
    "cls": "",
@@ -2160,6 +2623,13 @@
     "wu": 94.2,
     "hu": 19.5
    },
+   "trect": {
+    "x": 54.6,
+    "y": 793.7,
+    "w": 49.6,
+    "h": 10
+   },
+   "lines": 1,
    "text": "10 Sep 2026",
    "type": {
     "family": "-apple-system",
@@ -2174,6 +2644,7 @@
    }
   },
   {
+   "z": 0,
    "order": 103,
    "tag": "svg",
    "cls": "",
@@ -2187,9 +2658,11 @@
     "wu": 33,
     "hu": 33
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>",
+   "color": "rgb(207, 91, 38)"
   },
   {
+   "z": 0,
    "order": 104,
    "tag": "span",
    "cls": "",
@@ -2203,6 +2676,13 @@
     "wu": 102.3,
     "hu": 42.9
    },
+   "trect": {
+    "x": 166.9,
+    "y": 781.3,
+    "w": 33.5,
+    "h": 10
+   },
+   "lines": 1,
    "text": "Quantity",
    "type": {
     "family": "-apple-system",
@@ -2217,6 +2697,7 @@
    }
   },
   {
+   "z": 0,
    "order": 105,
    "tag": "small",
    "cls": "",
@@ -2230,6 +2711,13 @@
     "wu": 102.3,
     "hu": 19.5
    },
+   "trect": {
+    "x": 166.9,
+    "y": 793.7,
+    "w": 54.3,
+    "h": 10
+   },
+   "lines": 1,
    "text": "10 tablets left",
    "type": {
     "family": "-apple-system",
@@ -2244,6 +2732,7 @@
    }
   },
   {
+   "z": 0,
    "order": 106,
    "tag": "svg",
    "cls": "",
@@ -2257,9 +2746,11 @@
     "wu": 33,
     "hu": 33
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M28 12A12 12 0 0 0 7 6L3 10m0-8v8h8M4 20a12 12 0 0 0 21 6l4-4m0 8v-8h-8\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M28 12A12 12 0 0 0 7 6L3 10m0-8v8h8M4 20a12 12 0 0 0 21 6l4-4m0 8v-8h-8\"></path></svg>",
+   "color": "rgb(207, 91, 38)"
   },
   {
+   "z": 0,
    "order": 107,
    "tag": "span",
    "cls": "",
@@ -2273,6 +2764,13 @@
     "wu": 82.8,
     "hu": 38.9
    },
+   "trect": {
+    "x": 279.3,
+    "y": 782.3,
+    "w": 36.9,
+    "h": 20.3
+   },
+   "lines": 2,
    "text": "Set auto-refill",
    "type": {
     "family": "-apple-system",
@@ -2287,6 +2785,7 @@
    }
   },
   {
+   "z": 0,
    "order": 108,
    "tag": "i",
    "cls": "",
@@ -2304,7 +2803,27 @@
    "radius": "99px"
   },
   {
+   "z": 0,
    "order": 109,
+   "tag": "span",
+   "cls": "__pseudo before",
+   "rect": {
+    "x": 331.1,
+    "y": 785.8,
+    "w": 13.8,
+    "h": 13.8,
+    "xu": 624,
+    "yu": 1480.9,
+    "wu": 25.9,
+    "hu": 25.9
+   },
+   "bg": "rgb(255, 255, 255)",
+   "radius": "50%",
+   "shadow": "rgba(113, 99, 77, 0.2) 0px 1px 4px 0px"
+  },
+  {
+   "z": 0,
+   "order": 110,
    "tag": "div",
    "cls": "j-notice care-reminders",
    "rect": {
@@ -2326,7 +2845,8 @@
    "radius": "10.6122px"
   },
   {
-   "order": 110,
+   "z": 0,
+   "order": 111,
    "tag": "i",
    "cls": "",
    "rect": {
@@ -2343,7 +2863,8 @@
    "radius": "50%"
   },
   {
-   "order": 111,
+   "z": 0,
+   "order": 112,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -2356,10 +2877,12 @@
     "wu": 39,
     "hu": 39
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M10 22c0-5-5-6-5-12a11 11 0 0 1 22 0c0 6-5 7-5 12ZM11 26h10m-8 4h6\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M10 22c0-5-5-6-5-12a11 11 0 0 1 22 0c0 6-5 7-5 12ZM11 26h10m-8 4h6\"></path></svg>",
+   "color": "rgb(182, 90, 33)"
   },
   {
-   "order": 112,
+   "z": 0,
+   "order": 113,
    "tag": "strong",
    "cls": "",
    "rect": {
@@ -2372,6 +2895,13 @@
     "wu": 398.6,
     "hu": 27.3
    },
+   "trect": {
+    "x": 68.9,
+    "y": 842.6,
+    "w": 111.5,
+    "h": 13
+   },
+   "lines": 1,
    "text": "Medicine reminders",
    "type": {
     "family": "-apple-system",
@@ -2386,7 +2916,8 @@
    }
   },
   {
-   "order": 113,
+   "z": 0,
+   "order": 114,
    "tag": "small",
    "cls": "",
    "rect": {
@@ -2399,6 +2930,13 @@
     "wu": 398.6,
     "hu": 24.3
    },
+   "trect": {
+    "x": 68.9,
+    "y": 858.6,
+    "w": 205.6,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Get timely reminders and never miss a dose.",
    "type": {
     "family": "-apple-system",
@@ -2413,7 +2951,8 @@
    }
   },
   {
-   "order": 114,
+   "z": 0,
+   "order": 115,
    "tag": "button",
    "cls": "j-outline",
    "rect": {
@@ -2426,6 +2965,13 @@
     "wu": 141.7,
     "hu": 66
    },
+   "trect": {
+    "x": 301.6,
+    "y": 851.5,
+    "w": 36.6,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Manage",
    "type": {
     "family": "-apple-system",
@@ -2446,7 +2992,8 @@
    "radius": "9.55102px"
   },
   {
-   "order": 115,
+   "z": 0,
+   "order": 116,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -2459,10 +3006,12 @@
     "wu": 14,
     "hu": 23
    },
-   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+   "color": "rgb(189, 66, 29)"
   },
   {
-   "order": 116,
+   "z": 0,
+   "order": 117,
    "tag": "p",
    "cls": "j-sample-note",
    "rect": {
@@ -2475,6 +3024,13 @@
     "wu": 679.1,
     "hu": 23.7
    },
+   "trect": {
+    "x": 41.2,
+    "y": 890.9,
+    "w": 307.6,
+    "h": 11
+   },
+   "lines": 1,
    "text": "Care preview \u00b7 schedules and preparation text are reference examples",
    "type": {
     "family": "-apple-system",
@@ -2489,7 +3045,8 @@
    }
   },
   {
-   "order": 117,
+   "z": 3,
+   "order": 118,
    "tag": "nav",
    "cls": "j-bottom-nav",
    "rect": {
@@ -2512,7 +3069,8 @@
    "radius": "14.3265px 14.3265px 0px 0px"
   },
   {
-   "order": 118,
+   "z": 0,
+   "order": 119,
    "tag": "button",
    "cls": "",
    "rect": {
@@ -2527,7 +3085,8 @@
    }
   },
   {
-   "order": 119,
+   "z": 0,
+   "order": 120,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -2540,10 +3099,12 @@
     "wu": 35,
     "hu": 35
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 14 13-11 13 11M7 13v16h7v-9h5v9h6V13\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 14 13-11 13 11M7 13v16h7v-9h5v9h6V13\"></path></svg>",
+   "color": "rgb(138, 142, 139)"
   },
   {
-   "order": 120,
+   "z": 0,
+   "order": 121,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -2556,6 +3117,13 @@
     "wu": 53.6,
     "hu": 22.6
    },
+   "trect": {
+    "x": 34.1,
+    "y": 943.8,
+    "w": 28.4,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Home",
    "type": {
     "family": "-apple-system",
@@ -2570,7 +3138,8 @@
    }
   },
   {
-   "order": 121,
+   "z": 0,
+   "order": 122,
    "tag": "button",
    "cls": "",
    "rect": {
@@ -2585,7 +3154,8 @@
    }
   },
   {
-   "order": 122,
+   "z": 0,
+   "order": 123,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -2598,10 +3168,12 @@
     "wu": 35,
     "hu": 35
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"7\" y=\"3\" width=\"18\" height=\"27\" rx=\"3\"></rect><path d=\"M12 9h8m-8 6h8m-8 6h5\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"7\" y=\"3\" width=\"18\" height=\"27\" rx=\"3\"></rect><path d=\"M12 9h8m-8 6h8m-8 6h5\"></path></svg>",
+   "color": "rgb(138, 142, 139)"
   },
   {
-   "order": 123,
+   "z": 0,
+   "order": 124,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -2614,6 +3186,13 @@
     "wu": 67.1,
     "hu": 22.6
    },
+   "trect": {
+    "x": 103.9,
+    "y": 943.8,
+    "w": 35.6,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Parchis",
    "type": {
     "family": "-apple-system",
@@ -2628,7 +3207,8 @@
    }
   },
   {
-   "order": 124,
+   "z": 0,
+   "order": 125,
    "tag": "button",
    "cls": "",
    "rect": {
@@ -2643,7 +3223,8 @@
    }
   },
   {
-   "order": 125,
+   "z": 0,
+   "order": 126,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -2656,10 +3237,12 @@
     "wu": 35,
     "hu": 35
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M2 6h18v19H2Zm18 7h6l4 6v6H20M23 14v5h7\"></path><circle cx=\"8\" cy=\"26\" r=\"3\"></circle><circle cx=\"25\" cy=\"26\" r=\"3\"></circle></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M2 6h18v19H2Zm18 7h6l4 6v6H20M23 14v5h7\"></path><circle cx=\"8\" cy=\"26\" r=\"3\"></circle><circle cx=\"25\" cy=\"26\" r=\"3\"></circle></svg>",
+   "color": "rgb(138, 142, 139)"
   },
   {
-   "order": 126,
+   "z": 0,
+   "order": 127,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -2672,6 +3255,13 @@
     "wu": 50.4,
     "hu": 22.6
    },
+   "trect": {
+    "x": 181.6,
+    "y": 943.8,
+    "w": 26.7,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Track",
    "type": {
     "family": "-apple-system",
@@ -2686,7 +3276,8 @@
    }
   },
   {
-   "order": 127,
+   "z": 0,
+   "order": 128,
    "tag": "button",
    "cls": "",
    "rect": {
@@ -2701,7 +3292,8 @@
    }
   },
   {
-   "order": 128,
+   "z": 0,
+   "order": 129,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -2714,10 +3306,12 @@
     "wu": 35,
     "hu": 35
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M16 28S2 18 2 10c0-9 12-10 14-2 3-8 14-7 14 2 0 8-14 18-14 18Z\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M16 28S2 18 2 10c0-9 12-10 14-2 3-8 14-7 14 2 0 8-14 18-14 18Z\"></path></svg>",
+   "color": "rgb(211, 68, 22)"
   },
   {
-   "order": 129,
+   "z": 0,
+   "order": 130,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -2730,6 +3324,13 @@
     "wu": 42.8,
     "hu": 22.6
    },
+   "trect": {
+    "x": 257,
+    "y": 943.8,
+    "w": 22.7,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Care",
    "type": {
     "family": "-apple-system",
@@ -2744,7 +3345,8 @@
    }
   },
   {
-   "order": 130,
+   "z": 0,
+   "order": 131,
    "tag": "button",
    "cls": "",
    "rect": {
@@ -2759,7 +3361,8 @@
    }
   },
   {
-   "order": 131,
+   "z": 0,
+   "order": 132,
    "tag": "svg",
    "cls": "",
    "rect": {
@@ -2772,10 +3375,12 @@
     "wu": 35,
     "hu": 35
    },
-   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"9\" r=\"5\"></circle><path d=\"M5 28v-4c0-10 22-10 22 0v4Z\"></path></svg>"
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"9\" r=\"5\"></circle><path d=\"M5 28v-4c0-10 22-10 22 0v4Z\"></path></svg>",
+   "color": "rgb(138, 142, 139)"
   },
   {
-   "order": 132,
+   "z": 0,
+   "order": 133,
    "tag": "span",
    "cls": "",
    "rect": {
@@ -2788,6 +3393,13 @@
     "wu": 75.3,
     "hu": 22.6
    },
+   "trect": {
+    "x": 321.7,
+    "y": 943.8,
+    "w": 40,
+    "h": 12
+   },
+   "lines": 1,
    "text": "Account",
    "type": {
     "family": "-apple-system",
@@ -2802,7 +3414,8 @@
    }
   },
   {
-   "order": 133,
+   "z": 5,
+   "order": 134,
    "tag": "div",
    "cls": "home-indicator",
    "rect": {
@@ -2821,6 +3434,7 @@
  ],
  "art": [
   {
+   "z": 0,
    "viewBox": "526 146 209 174",
    "href": "assets/references/care.jpeg",
    "aspect": "xMidYMid meet",
@@ -2839,6 +3453,7 @@
    "asset": "art_care_526_146_209_174"
   },
   {
+   "z": 0,
    "viewBox": "115 725 135 94",
    "href": "assets/references/lab-options.jpeg",
    "aspect": "xMidYMid meet",
@@ -2857,6 +3472,7 @@
    "asset": "art_laboptions_115_725_135_94"
   },
   {
+   "z": 0,
    "viewBox": "48 924 117 61",
    "href": "assets/references/medicine-options.jpeg",
    "aspect": "xMidYMid meet",
@@ -2877,6 +3493,7 @@
  ],
  "images": [
   {
+   "z": 0,
    "src": "assets/parchi-logo-transparent.png",
    "alt": "",
    "rect": {
