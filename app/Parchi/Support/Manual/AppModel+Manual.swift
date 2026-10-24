@@ -22,14 +22,18 @@ extension AppModel {
         }, lines.map(\.askDoctor))
     }
 
+    /// One flag per current line: true when its quantity was not read (KR).
+    private var assumedFlags: [Bool] { lines.map { quantityAssumed.contains($0.id) } }
+
     /// True when every id is r1, r2... (a list from the reader or an earlier rebuild); false for the demo parchi's own ids.
     private var linesAreReaderLines: Bool {
         lines.allSatisfy { $0.id.hasPrefix("r") && Int($0.id.dropFirst()) != nil }
     }
 
-    private func manualRebuild(_ read: [ReaderLine], askDoctor: [Bool]) {
+    /// KR: keeps where the list came from (`readSource`) and which quantities are still assumed (`assumed`, one flag per line).
+    private func manualRebuild(_ read: [ReaderLine], askDoctor: [Bool], assumed: [Bool]) {
         let unresolvedRows = readerNeedsHelp
-        loadReaderLines(read)
+        loadReaderLines(read, source: readSource, assumedIndices: Set(assumed.indices.filter { assumed[$0] }))
         readerNeedsHelp = unresolvedRows
         for (index, asked) in askDoctor.enumerated() where asked && index < lines.count {
             askDoctorAbout(testLine: lines[index].id)
@@ -59,7 +63,7 @@ extension AppModel {
         read.append(ReaderLine(kind: "medicine", name: trimmed, strength: cleaned,
                                quantity: min(max(quantity, 1), Self.maxManualQuantity), schedule: nil))
         asked.append(false)
-        manualRebuild(read, askDoctor: asked)
+        manualRebuild(read, askDoctor: asked, assumed: assumedFlags + [false])
     }
 
     /// Adds a test by its canonical name; the usual test-matching rules apply to it.
@@ -73,7 +77,7 @@ extension AppModel {
         var (read, asked) = manualSnapshot()
         read.append(ReaderLine(kind: "test", name: trimmed, strength: nil, quantity: nil, schedule: nil))
         asked.append(false)
-        manualRebuild(read, askDoctor: asked)
+        manualRebuild(read, askDoctor: asked, assumed: assumedFlags + [false])
     }
 
     /// Removes one line (by its current id). Unknown ids do nothing.
@@ -83,6 +87,8 @@ extension AppModel {
         var (read, asked) = manualSnapshot()
         read.remove(at: index)
         asked.remove(at: index)
-        manualRebuild(read, askDoctor: asked)
+        var assumed = assumedFlags
+        assumed.remove(at: index)
+        manualRebuild(read, askDoctor: asked, assumed: assumed)
     }
 }

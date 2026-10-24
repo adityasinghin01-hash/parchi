@@ -86,7 +86,7 @@ They are candidate catalogue matches shown as “Ask your doctor”, never autom
 
 ## 14. “Does your name-blur result mean the whole prescription is private?”
 
-No. The app **tries to hide name, age, phone and address on the phone; the user must look at the preview**. The separate tool hid **98.3%** of names on **300 synthetic parchis** and **12/12 real web photos by eye**, but phones only **46.0% (23/50)**; **7.1% (73/1,033)** of medicine lines were over-blurred. In Live mode the whole processed picture goes to our own lab computer to be read, with no medicine crop or confidence gate; those tool scores are not an app privacy guarantee.
+No. The app **tries to hide name, age, phone and address on the phone; the user must look at the preview**. The separate tool hid **98.3%** of names on **300 synthetic parchis** and **12/12 real web photos by eye**, but phones only **46.0% (23/50)**; **7.1% (73/1,033)** of medicine lines were over-blurred. In Live mode the whole processed picture goes through our lab server to Anthropic's Claude service to be read (Anthropic's own terms apply to that copy), with no medicine crop or confidence gate; those tool scores are not an app privacy guarantee.
 
 **Evidence:** [source: docs/research/10-dataset-training-verification.md] [source: docs/verification/CODEX-REVIEW-4-PRIVACY.md] [source: app/KIRO_REPORT_K13.md]
 
@@ -100,7 +100,7 @@ The independent Codex review found **12 problems**; most are reported fixed. The
 
 ## 16. “Have real patients consented to this full data flow?”
 
-The consent gate now appears once before the first photo, with **Not now** to decline. It explains attempted masking, the user's preview check and the whole processed picture going to our lab computer in Live mode. That is an implemented gate, not evidence of consent validation with real patients; Hindi consent is a plain translation, not native-reviewed, and the real-iPhone run is still missing.
+The consent gate now appears once before the first photo, with **Not now** to decline. It explains attempted masking, the user's preview check and the whole processed picture going through our lab server to Anthropic's Claude service in Live mode (consent version 2). That is an implemented gate, not evidence of consent validation with real patients; Hindi consent is a plain translation, not native-reviewed, and the real-iPhone run is still missing.
 
 **Evidence:** [source: app/Parchi/Support/Capture/CaptureSession.swift] [source: app/Parchi/Support/Phase4/FirstRunConsentView.swift] [source: app/KIRO_REPORT_K13.md] [source: docs/verification/EVIDENCE-23-OCT-2026.md]
 

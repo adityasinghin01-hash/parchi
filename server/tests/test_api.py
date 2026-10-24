@@ -162,7 +162,7 @@ def test_read_without_reader_is_503(api_client, monkeypatch):
     monkeypatch.delenv("PARCHI_READER_URL", raising=False)
     response = api_client.client.post("/read", headers=headers(api_client))
     assert response.status_code == 503
-    assert response.json() == {"detail": "reader not connected"}
+    assert response.json() == {"detail": "reader not connected", "code": "not_configured"}
 
 
 def test_reset_only_this_install(api_client):

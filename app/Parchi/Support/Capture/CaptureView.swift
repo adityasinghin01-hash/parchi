@@ -15,6 +15,8 @@ final class CaptureModel {
     static let uploadQuality: CGFloat = 0.7
 
     var phase: Phase = .idle
+    /// Why the last read failed; set together with `phase = .failed(...)`. nil for a photo problem (could not open, no text) or no failure.
+    private(set) var failure: ReaderFailure?
     private(set) var blurred: UIImage?
     private(set) var rule = ""
     private(set) var hiddenCount = 0
@@ -46,7 +48,7 @@ final class CaptureModel {
     private func restart() -> Int {
         work?.cancel(); useTask?.cancel(); useTask = nil
         generation += 1
-        blurred = nil; decision = nil; userChecked = false; notice = nil
+        blurred = nil; decision = nil; userChecked = false; notice = nil; failure = nil
         phase = .blurring
         return generation
     }
@@ -59,7 +61,7 @@ final class CaptureModel {
         let image = await Self.decode(picked)
         guard gen == generation, !Task.isCancelled else { return }
         guard let image else {
-            phase = .failed("That photo could not be opened.")
+            failPhoto(ReaderCopy.photoNotOpened)
             return
         }
         await load(image, gen: gen)
@@ -77,7 +79,7 @@ final class CaptureModel {
         guard gen == generation, !Task.isCancelled else { return }   // closed or replaced meanwhile: do not refill the preview
         guard result.usable else {
             blurred = nil; decision = nil
-            phase = .failed("No text could be read on this photo, so nothing was kept. Try again in better light, flat on a table.")
+            failPhoto(ReaderCopy.noTextOnPhoto)
             return
         }
         blurred = result.image; rule = result.rule; hiddenCount = result.boxCount; decision = result.decision
@@ -91,7 +93,7 @@ final class CaptureModel {
         useTask?.cancel(); useTask = nil
         generation += 1
         blurred = nil; decision = nil; userChecked = false
-        phase = .idle; notice = nil; hiddenCount = 0
+        phase = .idle; notice = nil; hiddenCount = 0; failure = nil
     }
 
     // MARK: Using the photo
@@ -128,60 +130,98 @@ final class CaptureModel {
     func use(model: AppModel) async -> Bool { await use(model: model, gen: generation) }
 
     /// Reads a PRINTED parchi on this phone (Apple Vision + the printed-line parser; nothing leaves the phone). Returns true when it
-    /// read at least one medicine or test and loaded them for Confirm; false when it read nothing (the caller then does what it did
-    /// before: the demo parchi or the error). Lines it was not sure about go to `AppModel.readerNeedsHelp` (a card on Confirm), never guessed.
-    private func readOnPhone(_ image: UIImage, model: AppModel, gen: Int) async -> Bool {
+    /// read at least one medicine or test (or lines it was unsure about) and loaded them for Confirm with source `.onPhone`; false when
+    /// it read nothing. It NEVER loads the sample parchi: the caller shows a failure with an explicit choice instead (G2).
+    /// Lines it was not sure about go to `AppModel.readerNeedsHelp` (a card on Confirm), never guessed.
+    private func readOnPhone(_ image: UIImage, model: AppModel, gen: Int, why: ReaderFailure? = nil) async -> Bool {
         phase = .reading
         let result = await OnPhoneReader().read(image)
-        // Lines it was unsure about are kept in the model (K27): Confirm shows them in a card. If it was unsure about every line, Confirm
-        // still opens (empty list + that card) rather than showing the demo parchi in place of the patient's own.
         guard gen == generation, !Task.isCancelled, !result.lines.isEmpty || !result.needsHelp.isEmpty else { return false }
-        model.loadReaderLines(result.lines)
+        model.loadReaderLines(result.lines, source: .onPhone)
         model.readerNeedsHelp = result.needsHelp
-        notice = result.note
+        notice = why.map { ReaderCopy.onPhoneAfterFailure($0) + " " + result.note } ?? result.note
+        phase = .idle
+        failure = nil
+        return true
+    }
+
+    /// Shows a reader failure: `phase = .failed(message)` (kept for older views) and `failure` (for the buttons).
+    private func fail(_ reason: ReaderFailure) {
+        failure = reason
+        phase = .failed(reason.message)
+    }
+
+    /// A problem with the photo itself (before any reading): no `ReaderFailure`, so no reader-specific buttons.
+    private func failPhoto(_ message: String) {
+        failure = nil
+        phase = .failed(message)
+    }
+
+    /// Keeps the processed copy on the phone (removed the next time Parchi opens after 24 h) and, in Live mode, asks the reader.
+    /// Returns true when Confirm should open with lines read from THIS photo. A failed or empty read never loads the sample (G2):
+    /// it ends in `.failed` with a `ReaderFailure`, and the person chooses `retry`, `continueManually` or `useSampleInstead`.
+    private func use(model: AppModel, gen: Int) async -> Bool {
+        guard canUse, let blurred, let jpeg = Self.uploadJPEG(blurred) else { return false }
+        _ = TempFileStore().write(jpeg, name: "crop-\(UUID().uuidString).jpg")
+        failure = nil
+        guard model.backend.mode == .live, let live = model.backend.makeClient() else {
+            if await readOnPhone(blurred, model: model, gen: gen) { return true }
+            guard gen == generation, !Task.isCancelled else { return false }
+            fail(.noReaderInMock)
+            return false
+        }
+        phase = .reading
+        let reason: ReaderFailure
+        do {
+            let lines = try await ReaderClient(live: live).read(jpeg: jpeg)
+            guard gen == generation, !Task.isCancelled else { return false }   // closed while reading: do not touch the model
+            guard !lines.isEmpty else { fail(.empty); return false }
+            model.loadReaderLines(lines, source: .reader)
+            phase = .idle
+            return true
+        } catch let error as ReaderFailure {
+            reason = error
+        } catch {
+            reason = .offline
+        }
+        guard gen == generation, !Task.isCancelled else { return false }
+        // The lab reader did not read it: a PRINTED parchi can still be read on this phone (Apple Vision), also without internet.
+        if await readOnPhone(blurred, model: model, gen: gen, why: reason) { return true }
+        guard gen == generation, !Task.isCancelled else { return false }
+        fail(reason)
+        return false
+    }
+
+    // MARK: After a failure (explicit choices only)
+
+    /// "Try again": the same processed photo is read again. `onUse` runs when Confirm should open (same as "Use this photo").
+    func retry(model: AppModel, onUse: @escaping () -> Void = {}) {
+        guard case .failed = phase else { return }
+        guard blurred != nil, decision != nil else { phase = .idle; failure = nil; return }   // nothing to read again
+        failure = nil
+        phase = .preview
+        beginUse(model: model, onUse: onUse)
+    }
+
+    /// "Type the medicines in": Confirm opens with an empty list, source `.manual`. Returns true (the caller opens Confirm).
+    @discardableResult
+    func continueManually(model: AppModel) -> Bool {
+        useTask?.cancel(); useTask = nil
+        model.startManualList()
+        failure = nil; notice = nil
         phase = .idle
         return true
     }
 
-    /// Keeps the processed copy on the phone (removed the next time Parchi opens after 24 h) and, in Live mode, asks the reader.
-    /// Returns true when Confirm should open (reader lines or the demo parchi are loaded).
-    private func use(model: AppModel, gen: Int) async -> Bool {
-        guard canUse, let blurred, let jpeg = Self.uploadJPEG(blurred) else { return false }
-        _ = TempFileStore().write(jpeg, name: "crop-\(UUID().uuidString).jpg")
-        guard model.backend.mode == .live, let live = model.backend.makeClient() else {
-            if await readOnPhone(blurred, model: model, gen: gen) { return true }
-            guard gen == generation, !Task.isCancelled else { return false }
-            notice = "Demo: no reader in Mock mode, so the sample parchi is shown."
-            model.readDemoParchi()
-            return true
-        }
-        phase = .reading
-        do {
-            let lines = try await ReaderClient(live: live).read(jpeg: jpeg)
-            guard gen == generation, !Task.isCancelled else { return false }   // closed while reading: do not touch the model
-            guard !lines.isEmpty else { phase = .failed("The reader found no medicines or tests on this photo."); return false }
-            model.loadReaderLines(lines)
-            phase = .idle
-            return true
-        } catch let error as ReaderError {
-            guard gen == generation, !Task.isCancelled else { return false }
-            switch error {
-            case .notConnected, .unreachable:
-                // No server reader: a PRINTED parchi can still be read on this phone (Apple Vision), also without internet.
-                if await readOnPhone(blurred, model: model, gen: gen) { return true }
-                guard gen == generation, !Task.isCancelled else { return false }
-                if case .notConnected = error { notice = error.message; model.readDemoParchi(); phase = .idle; return true }
-                phase = .failed(error.message)
-                return false
-            default:
-                phase = .failed(error.message)
-                return false
-            }
-        } catch {
-            guard gen == generation, !Task.isCancelled else { return false }
-            phase = .failed(ReaderError.unreachable.message)
-            return false
-        }
+    /// "Use the sample parchi": the person chose to see the bundled sample (source `.sample`, Confirm shows the sample banner).
+    /// Returns true (the caller opens Confirm).
+    @discardableResult
+    func useSampleInstead(model: AppModel) -> Bool {
+        useTask?.cancel(); useTask = nil
+        model.readDemoParchi()
+        failure = nil; notice = nil
+        phase = .idle
+        return true
     }
 }
 
@@ -257,6 +297,27 @@ struct CapturePreviewView: View {
                         ProgressView("Reading your parchi…")
                     case .failed(let message):
                         ContentUnavailableView("Can't use this photo", systemImage: "exclamationmark.triangle", description: Text(message))
+                        // KR (G2/G5) minimal choices after a failed read; FE2 owns the look of this view and may restyle them.
+                        // Identifiers used by tests: readerRetry, readerTypeIn, readerUseSample.
+                        if let failure = capture.failure {
+                            if failure.canRetry {
+                                Button { capture.retry(model: model, onUse: onUse) } label: {
+                                    Text(ReaderCopy.retryButton).frame(maxWidth: .infinity, minHeight: 44)
+                                }
+                                .buttonStyle(.borderedProminent).accessibilityIdentifier("readerRetry")
+                            }
+                            Button { if capture.continueManually(model: model) { onUse() } } label: {
+                                Text(ReaderCopy.continueManuallyButton).frame(maxWidth: .infinity, minHeight: 44)
+                            }
+                            .buttonStyle(.bordered).accessibilityIdentifier("readerTypeIn")
+                            if failure == .noReaderInMock {
+                                Button { if capture.useSampleInstead(model: model) { onUse() } } label: {
+                                    Text(ReaderCopy.useSampleButton).frame(maxWidth: .infinity, minHeight: 44)
+                                }
+                                .buttonStyle(.bordered).accessibilityIdentifier("readerUseSample")
+                                .accessibilityHint("Shows the sample parchi. It is not your photo.")
+                            }
+                        }
                     case .preview:
                         if let image = capture.blurred {
                             Image(uiImage: image).resizable().scaledToFit()
@@ -269,8 +330,7 @@ struct CapturePreviewView: View {
                                 Label(warning, systemImage: "exclamationmark.triangle").font(.footnote).foregroundStyle(.orange)
                             }
                             Text(model.backend.mode == .live
-                                 ? "When you continue, this picture goes to the Parchi lab server to be read. A copy stays on this phone and is removed the next time you open Parchi after 24 hours."
-                                 : "Demo mode: this picture stays on this phone. It is removed the next time you open Parchi after 24 hours.")
+                                 ? ReaderCopy.liveUploadNote : ReaderCopy.mockNote)
                                 .font(.footnote).foregroundStyle(.secondary)
                             if let notice = capture.notice { Text(notice).font(.footnote).foregroundStyle(.orange) }
                             if capture.decision?.needsUserCheck == true {

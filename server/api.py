@@ -1,8 +1,12 @@
 import asyncio
+import collections
 import hashlib
 import json
 import html
+import math
 import os
+import threading
+import time
 from contextlib import asynccontextmanager
 from typing import Any
 
@@ -359,12 +363,48 @@ READER_TYPES = {"image/jpeg", "image/png", "image/heic"}
 READER_TRANSPORT: Any = None  # tests inject an httpx.MockTransport here
 
 
+# G10: at most READ_LIMIT /read requests per install key in READ_WINDOW_S seconds (in memory, sliding window).
+READ_LIMIT = 6
+READ_WINDOW_S = 60.0
+_read_times: dict[str, "collections.deque[float]"] = {}
+_read_lock = threading.Lock()
+_read_clock = time.monotonic  # tests replace it
+
+
+def _read_allowed(key: str) -> int:
+    """0 when this request may go ahead (and is counted), else the seconds to wait (Retry-After)."""
+    now = _read_clock()
+    with _read_lock:
+        times = _read_times.setdefault(key, collections.deque())
+        while times and now - times[0] >= READ_WINDOW_S:
+            times.popleft()
+        if len(times) >= READ_LIMIT:
+            return max(1, math.ceil(READ_WINDOW_S - (now - times[0])))
+        times.append(now)
+        if len(_read_times) > 10_000:  # bound memory: drop keys with no recent request
+            for k in [k for k, v in _read_times.items() if not v or now - v[-1] >= READ_WINDOW_S]:
+                _read_times.pop(k, None)
+        return 0
+
+
+def _read_failed(status: int, detail: str, code: str, headers: dict | None = None) -> JSONResponse:
+    """Error answer of /read: {"detail": ..., "code": ...}. Codes: docs/team/READER-CONTRACT.md."""
+    return JSONResponse({"detail": detail, "code": code}, status_code=status, headers=headers)
+
+
+_READER_CODES = {"not_configured", "cap_reached", "bad_key", "reader_error", "timeout"}
+
+
 @app.post("/read")
-async def read(image: UploadFile | None = File(None), _: str = Depends(auth.require_install)) -> JSONResponse:
-    """Forward a parchi crop to the reader model on the iMac (PARCHI_READER_URL). The image is never logged or stored."""
+async def read(image: UploadFile | None = File(None), key: str = Depends(auth.require_install)) -> JSONResponse:
+    """Forward a parchi crop to the reader (PARCHI_READER_URL, reader_claude.py). The image is never logged or stored.
+    Every failure carries a machine `code` (not_configured, cap_reached, bad_key, reader_error, timeout, slow_down)."""
+    wait = _read_allowed(key)
+    if wait:
+        return _read_failed(429, "too many photos, wait a minute", "slow_down", {"Retry-After": str(wait)})
     reader = os.environ.get("PARCHI_READER_URL", "")
     if not reader:
-        raise HTTPException(503, "reader not connected")
+        return _read_failed(503, "reader not connected", "not_configured")
     if image is None or image.content_type not in READER_TYPES:
         raise HTTPException(415, "send one image (jpeg, png or heic) in the 'image' field")
     data = await image.read(READER_MAX_BYTES + 1)
@@ -373,12 +413,22 @@ async def read(image: UploadFile | None = File(None), _: str = Depends(auth.requ
     try:
         async with httpx.AsyncClient(timeout=float(os.environ.get("PARCHI_READER_TIMEOUT", "60")), transport=READER_TRANSPORT) as client:
             reply = await client.post(reader, files={"image": ("parchi", data, image.content_type)})
+    except httpx.TimeoutException:
+        return _read_failed(504, "reader timed out", "timeout")
     except httpx.HTTPError:
-        raise HTTPException(503, "reader not connected")
-    if reply.status_code == 503:  # no key, or the reader's spending cap is reached: the app falls back to reading on the phone
-        raise HTTPException(503, "reader not connected")
+        return _read_failed(503, "reader not connected", "not_configured")
     if reply.status_code >= 400:
-        raise HTTPException(502, "reader error")
+        try:
+            code = reply.json().get("code")
+        except (ValueError, AttributeError):
+            code = None
+        if code not in _READER_CODES:
+            code = "not_configured" if reply.status_code == 503 else "reader_error"
+        if reply.status_code == 503:  # no key, or a spending cap: the app says which, then tries its on-phone reader
+            return _read_failed(503, "reader not connected", code)
+        if code == "timeout":
+            return _read_failed(504, "reader timed out", code)
+        return _read_failed(502, "reader error", code)
     return JSONResponse(reply.json())
 
 

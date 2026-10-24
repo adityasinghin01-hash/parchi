@@ -89,7 +89,7 @@ def test_contract_shape_and_call_parameters(web, monkeypatch):
         {"kind": "test", "name": "HbA1c"},
     ]}
     call = fake.calls[0]
-    assert call["model"] == "claude-opus-5-5" and call["max_tokens"] == 4000
+    assert call["model"] == "claude-opus-5-5" and call["max_tokens"] == 2000
     assert call["output_config"]["effort"] == "low"
     fmt = call["output_config"]["format"]
     assert fmt["type"] == "json_schema" and fmt["schema"]["additionalProperties"] is False
@@ -129,14 +129,14 @@ def test_empty_list(web, monkeypatch):
 def test_refusal_and_max_tokens_are_502_never_partial(web, monkeypatch, stop):
     use(monkeypatch, Fake(reply(GOOD, stop_reason=stop)))
     r = post(web)
-    assert r.status_code == 502 and r.json() == {"detail": "reader could not read this photo"}
+    assert r.status_code == 502 and r.json() == {"detail": "reader could not read this photo", "code": "reader_error"}
 
 
 @pytest.mark.parametrize("text", ["not json {", "", "[1,2]", '{"rows": []}', '{"lines": "x"}'])
 def test_invalid_json_is_502(web, monkeypatch, text):
     use(monkeypatch, Fake(reply(None, raw_text=text)))
     r = post(web)
-    assert r.status_code == 502 and r.json() == {"detail": "reader could not read this photo"}
+    assert r.status_code == 502 and r.json() == {"detail": "reader could not read this photo", "code": "reader_error"}
 
 
 def test_no_text_block_is_502(web, monkeypatch):
@@ -165,7 +165,7 @@ def test_exactly_at_limit_is_not_413(web, monkeypatch):
 
 def test_missing_key_is_503(web):
     r = post(web)
-    assert r.status_code == 503 and r.json() == {"detail": "reader not connected"}
+    assert r.status_code == 503 and r.json() == {"detail": "reader not connected", "code": "not_configured"}
     assert web.get("/health").json()["keyConfigured"] is False
 
 
@@ -201,7 +201,7 @@ def test_retry_once_then_success(web, monkeypatch, first):
 def test_retry_once_then_502(web, monkeypatch):
     fake = use(monkeypatch, Fake(err(anthropic.RateLimitError, 429), err(anthropic.RateLimitError, 429), reply(GOOD)))
     r = post(web)
-    assert r.status_code == 502 and r.json() == {"detail": "reader could not read this photo"}
+    assert r.status_code == 502 and r.json() == {"detail": "reader could not read this photo", "code": "reader_error"}
     assert len(fake.calls) == 2
 
 
@@ -256,8 +256,8 @@ def test_usage_counts_and_cost(web, monkeypatch):
     u = web.get("/usage").json()
     assert u["calls"] == 2 and u["inputTokens"] == 1_001_000 and u["outputTokens"] == 100_200
     assert u["costUsd"] == pytest.approx(4.004 + 2.004, abs=1e-4)  # opus: $4/M in, $20/M out
-    assert u["costInr"] == pytest.approx(u["costUsd"] * 88, rel=1e-3) and u["inrPerUsd"] == 88
-    assert "x 88" in u["note"] and set(u) >= {"calls", "inputTokens", "outputTokens", "costUsd", "costInr"}
+    assert u["costInr"] == pytest.approx(u["costUsd"] * 97, rel=1e-3) and u["inrPerUsd"] == 97
+    assert "x 97.0" in u["note"] and set(u) >= {"calls", "inputTokens", "outputTokens", "costUsd", "costInr"}
 
 
 def test_price_table_per_model(monkeypatch):
@@ -448,7 +448,8 @@ def test_total_time_never_passes_the_deadline_plus_slack(web, monkeypatch):
             return super().create(**kwargs)
 
     fake = UsesItAll(anthropic.APITimeoutError(request=_req()), anthropic.APITimeoutError(request=_req()))
-    assert post_via(web, monkeypatch, fake).status_code == 502 and len(fake.calls) == 2
+    r = post_via(web, monkeypatch, fake)   # KR: a timeout now answers 504 + code "timeout" (was a plain 502)
+    assert r.status_code == 504 and r.json()["code"] == "timeout" and len(fake.calls) == 2
     assert clock.t - start <= rc.TOTAL_DEADLINE_S + 1e-9 < 60
 
 

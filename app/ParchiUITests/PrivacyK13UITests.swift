@@ -10,7 +10,7 @@ final class PrivacyK13UITests: XCTestCase {
     func testNothingHiddenBlocksUseUntilTheBoxIsTicked() throws {
         try XCTSkipUnless(FileManager.default.fileExists(atPath: zeroSample), "k13 sample image not on this machine")
         let app = XCUIApplication()
-        app.launchArguments = ["-backendMode", "mock", "-parchi.consentAt", "2026-10-24T00:00:00Z", "-parchi.consentVersion", "1", "-captureImagePath", zeroSample]
+        app.launchArguments = ["-backendMode", "mock", "-parchi.consentAt", "2026-10-24T00:00:00Z", "-parchi.consentVersion", "2", "-captureImagePath", zeroSample]
         app.launch()
         XCTAssertTrue(app.navigationBars["Check your photo"].waitForExistence(timeout: 15))
         let box = app.switches["noPersonalDetailsToggle"]
@@ -29,7 +29,7 @@ final class PrivacyK13UITests: XCTestCase {
     func testHiddenAreasNeedNoTickAndTheNoteIsHonest() throws {
         try XCTSkipUnless(FileManager.default.fileExists(atPath: sample), "sample parchi not on this machine")
         let app = XCUIApplication()
-        app.launchArguments = ["-backendMode", "mock", "-parchi.consentAt", "2026-10-24T00:00:00Z", "-parchi.consentVersion", "1", "-captureImagePath", sample]
+        app.launchArguments = ["-backendMode", "mock", "-parchi.consentAt", "2026-10-24T00:00:00Z", "-parchi.consentVersion", "2", "-captureImagePath", sample]
         app.launch()
         XCTAssertTrue(app.images["Your parchi, with the details we could find covered"].waitForExistence(timeout: 20))
         XCTAssertTrue(app.buttons["Use this photo"].isEnabled)

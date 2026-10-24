@@ -53,8 +53,16 @@ final class K24Journey1UITests: XCTestCase {
         XCTAssertTrue(use.isEnabled, "Use this photo works (after the tick if asked)")
         use.tap()
 
-        // 3. Confirm.
+        // KR (G2): Mock mode never shows the sample by itself after a read that found nothing. The person picks it explicitly.
         let title = app.navigationBars["Did we read it right?"]
+        let useSample = app.buttons["readerUseSample"]
+        for _ in 0..<40 where !title.exists && !useSample.exists { Thread.sleep(forTimeInterval: 1) }
+        if useSample.exists {
+            rec.look(app, "j1", "04b-read-failed-choice")
+            useSample.tap()
+        }
+
+        // 3. Confirm.
         XCTAssertTrue(title.waitForExistence(timeout: 40), "Confirm opens after Use this photo: \(app.debugDescription)")
         Thread.sleep(forTimeInterval: 1)
         rec.look(app, "j1", "05-confirm-top", audit: true)

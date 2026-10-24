@@ -77,3 +77,16 @@ def proposal(current=None, failed="s1", replacement="s3", extra=25):
         - sum(row["price"] for row in current["lines"] if row["sellerID"] == failed),
         "stillMissing": [],
     }
+
+
+@pytest.fixture(autouse=True)
+def _fresh_read_rate_limit():
+    """G10: the per-install /read window is in memory; every test starts with an empty one."""
+    try:
+        import api
+    except Exception:
+        yield
+        return
+    api._read_times.clear()
+    yield
+    api._read_times.clear()
