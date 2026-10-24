@@ -1,0 +1,536 @@
+# Strings requiring a source change
+
+Conservative candidates; data/configuration may be false positives. These are not automatically localized by a catalog.
+- Model/AppModel+V2.swift:40: `%@Delivers about %@ of 10 in %@ (%@ orders)` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel+V2.swift:45: `Real extra fees reported: %@ (%@ reports)` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel+V2.swift:58: `Thanks. Demo mode: nothing was sent.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel+V2.swift:64: `Thanks, saved. It helps show the real price.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel+V2.swift:66: `Could not send. Try again on Wi-Fi.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:48: `Placed` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:48: `Re-routed (Plan B)` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:48: `Cancelled by seller` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:160: `medicine` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:171: `thyroid` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:194: `test` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:195: `r%@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:294: `doctorshop` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:356: `%@, %@ a pack` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:357: `%@ × %@ at %@ a pack` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:365: `en_US_POSIX` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:366: `Asia/Kolkata` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:369: `%@ a pack` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:370: `Ask your doctor: same salt at Jan Aushadhi %@ (list of %@)` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:465: `janaushadhi` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:611: `done` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:622: `awaiting_approval` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:625: `delivered` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:640: `needs_proposal` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:656: `awaiting_approval` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:693: `json` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:702: `brand_strengths` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Model/AppModel.swift:702: `json` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- ParchiApp.swift:55: `confirm` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- ParchiApp.swift:60: `plan` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- ParchiApp.swift:61: `checkout` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- ParchiApp.swift:63: `getItAll` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- ParchiApp.swift:66: `planB` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/ConfirmView.swift:20: `text` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ConfirmView.swift:76: `model.lines.isEmpty ? "Add a medicine or test first" : model.allConfirmed ? "All correct" : "Answer the highlighted line"` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ConfirmView.swift:138: `strength` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ConfirmView.swift:151: `title` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ConfirmView.swift:156: `title` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ConfirmView.swift:170: `suggestions.isEmpty                      ? "We couldn't find \"\(read)\". Check the spelling, or remove this line and add the medicine by hand."                      : "We couldn't find \"\(read)\". D` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ConfirmView.swift:177: `schedule.inPersonMessage` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ConfirmView.swift:196: `line.item.name` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ConfirmView.swift:206: `line.askDoctor ? "Left out of your plan. Ask your doctor which test they meant." : "Which test?"` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ConfirmView.swift:210: `name` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/GetItAllView.swift:20: `model.sellerName(sellerID)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/GetItAllView.swift:21: `lines.map { model.itemName($0.itemID) }.joined(separator: ", ")` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/GetItAllView.swift:25: `rupees(total)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/GetItAllView.swift:37: `link.pricePaise.map { "Seen \(rupees($0))" } ?? "Price on seller page"` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/GetItAllView.swift:29: `https` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/PlanMapView.swift:109: `price.isAsk ? "Ask" : price.fullText` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/PlanMapView.swift:134: `row.shop.name` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/PlanMapView.swift:135: `[row.shop.distanceText, row.shop.planSellerID != nil ? "in your plan data" : nil].compactMap { $0 }.joined(separator: " · ")` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/PlanMapView.swift:142: `price.text` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/PlanMapView.swift:143: `coverage` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/PlanMapView.swift:163: `seller.name` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/PlanMapView.swift:164: `seller.price.isAsk ? "Ask" : seller.price.fullText` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/PlanMapView.swift:165: `([seller.inPlan ? "In your plan" : "Not in your plan"] + (seller.price.isAsk ? [] : [seller.source.datedLabel])).joined(separator: " · ")` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/PlanMapView.swift:124: `cross.case` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/PlanView.swift:75: `model.sellerName(sellerID)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/PlanView.swift:79: `model.itemName(line.itemID)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/PlanView.swift:81: `rupees(line.price)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/PlanView.swift:85: `pack` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/PlanView.swift:89: `message` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/PlanView.swift:92: `ask` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/PlanView.swift:103: `rupees(fee)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ShopSheet.swift:23: `notice` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ShopSheet.swift:29: `footnote` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ShopSheet.swift:50: `shop.name` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ShopSheet.swift:51: `[kindText, shop.distanceText].compactMap { $0 }.joined(separator: " · ")` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ShopSheet.swift:53: `address` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ShopSheet.swift:55: `repliedUnavailable ? "Not available" : quote.price.text` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ShopSheet.swift:56: `coverage` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ShopSheet.swift:60: `repliedUnavailable ? "Not available, the shop replied" : quote.price.spoken` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ShopSheet.swift:99: `title` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ShopSheet.swift:103: `label` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ShopSheet.swift:151: `item.name` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ShopSheet.swift:152: `note` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ShopSheet.swift:155: `item.paise.map { rupees($0) } ?? "—"` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ShopSheet.swift:156: `item.paise.map { rupees($0) } ?? "no price"` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/ShopSheet.swift:71: `Chemist · in your plan data` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/ShopSheet.swift:72: `Chemist` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/ShopSheet.swift:86: `phone` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/ShopSheet.swift:86: `Call %@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/ShopSheet.swift:86: `shopCall` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/ShopSheet.swift:88: `map` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/ShopSheet.swift:88: `Directions to %@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/ShopSheet.swift:88: `shopDirections` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/ShopSheet.swift:89: `bubble.left.and.text.bubble.right` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/ShopSheet.swift:89: `Ask %@ for prices` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/ShopSheet.swift:89: `shopAsk` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/ShopSheet.swift:93: `doc.on.doc` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/ShopSheet.swift:93: `Copy the message to ask %@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/ShopSheet.swift:93: `shopCopy` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/ShopSheet.swift:109: `Calling works on a real iPhone.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/ShopSheet.swift:111: `This phone number cannot be dialled.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/ShopSheet.swift:127: `Directions are not available for this shop.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/ShopSheet.swift:134: `The message template is missing.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/ShopSheet.swift:140: `Message copied. Paste it into WhatsApp or SMS. Nothing was sent.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Screens/TrackView.swift:17: `model.sellerName(sellerID)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/TrackView.swift:19: `model.statuses[sellerID]?.rawValue ?? "Placed"` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/TrackView.swift:29: `model.itemName(line.itemID)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/TrackView.swift:81: `model.itemName(line.itemID)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Screens/TrackView.swift:83: `model.sellerName(line.sellerID)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/AppData.swift:24: `home_collection` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:25: `booking_url` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:26: `source_url` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:27: `date_seen` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:49: `price_paise` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:50: `price_text` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:51: `source_url` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:52: `date_seen` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:64: `product_url` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:65: `price_paise` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:66: `mrp_paise` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:67: `date_seen` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:83: `lab_prices` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:84: `product_links` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:85: `product_links_with_price` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:86: `tests_canonical` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:87: `schedule_h1_x` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:88: `brand_schedule` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:99: `input_folder` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:100: `build_date` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:102: `janaushadhi_list_date` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:133: `in.tessanova.parchi` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:133: `AppData` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/AppData.swift:152: `json` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Backend.swift:8: `Live` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Backend.swift:26: `parchi.backend.mode` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Backend.swift:27: `parchi.backend.url` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Backend.swift:28: `parchi.backend.installKey` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/BackendSwitchView.swift:29: `$0.title` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/BackendSwitchView.swift:44: `testing ? "Testing…" : "Test connection"` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/BackendSwitchView.swift:48: `testResult` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/BackendSwitchView.swift:56: `error` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/BackendSwitchView.swift:48: `OK` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/BackendSwitchView.swift:67: `Failed` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/CaptureView.swift:259: `message` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Capture/CaptureView.swift:264: `Self.honestNote` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Capture/CaptureView.swift:265: `capture.hiddenCount == 0 ? "We could not find a name, phone or address to hide."                                   : "We hid \(capture.hiddenCount) area\(capture.hiddenCount == 1 ? "" : "s") on this p` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Capture/CaptureView.swift:269: `warning` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Capture/CaptureView.swift:271: `model.backend.mode == .live                                  ? "When you continue, this picture goes to the Parchi lab server to be read. A copy stays on this phone and is removed the next time you op` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Capture/CaptureView.swift:275: `notice` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Capture/CaptureView.swift:277: `Self.checkedBox` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Capture/CaptureView.swift:150: `crop-%@.jpg` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/CaptureView.swift:154: `Demo: no reader in Mock mode, so the sample parchi is shown.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/CaptureView.swift:241: `We try to hide the name, age, phone and address we can find. Check the picture before you continue; if anything personal is still visible, close it and crop it first.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/CaptureView.swift:242: `I checked: no name, phone or address is visible` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:31: `no_text` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:31: `no_image` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:38: `Some text could not be checked on this phone.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:51: `(?i)^\s*(\d+[\).]?\s*)?[-—–]?\s*(tab|tabs|cap|caps|syp|syr|syrup|inj|oint|gel|drops?|cream|lotion|t\.|c\.)\b|^\s*(\d+[\).]?\s*)?[-—–]?\s*(टैब|टेब|कैप|सिरप|इंज)` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:52: `(?i)^\s*(rx|℞|r/x|adv\b|inv\b|investigations?)` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:53: `(?i)\b(patient'?s?\s*name|pt\.?\s*name|name|mr\.|mrs\.|ms\.|shri|smt\.?|baby|master)\s*[:\-.]?\s*|(रोगी\s*का\s*नाम|मरीज़?\s*का\s*नाम|नाम)\s*[:\-.]?\s*` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:54: `(?i)\b(age\s*/\s*sex|age|sex|उम्र|आयु)\s*[:\-.]?\s*` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:55: `(?i)\b(mob(ile)?|phone|contact|cell|m\.?\s*no)\b\s*[:\-.]?\s*` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:56: `(?i)\b(address|addr|r/o|h\.?\s*no|vill(age)?|dist(t|rict)?|पता)\s*[:\-.]?\s*` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:57: `(?i)\b(age|sex|date|wt|weight|temp|bp|pulse|dt)\b` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:58: `(?:\+91[\s-]?)?[6-9]\d{4}[\s-]?\d{5}` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:59: `(?i)\b\d{1,3}\s*(y|yr|yrs|years|y/m|y/f|m|f)\b|\b\d{1,3}\s*/\s*[mf]\b` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:60: `(?i)(^\s*dr\b|^\s*dr\.|m\.?b\.?b\.?s|\breg\b|reg\.|clinic|hospital|nursing|centre|center|physician|specialist|consultant|surgeon|timing|m\.?d\b|d\.?n\.?b|d\.?c\.?h|d\.?g\.?o|polyclinic|emergency|डॉ|चि` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:127: `fallback_top_half` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:129: `none` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:143: `no_image` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:145: `no_image` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:150: `no_image` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:163: `no_image` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/PIIBlur.swift:175: `no_image` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/ReaderClient.swift:19: `The reader is not connected yet, so the demo parchi is shown.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/ReaderClient.swift:20: `The reader could not use this photo (%@).` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/ReaderClient.swift:21: `Can't reach the server. Try again on the same Wi-Fi as the lab iMac.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/ReaderClient.swift:22: `The reader answered in a way the app does not understand.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/ReaderClient.swift:33: `parchi-` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/ReaderClient.swift:39: `POST` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/ReaderClient.swift:40: `Content-Type` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Capture/ReaderClient.swift:41: `X-Install-Key` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/CheckoutAssistantView.swift:58: `flow.headerText` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/CheckoutAssistant/CheckoutAssistantView.swift:60: `flow.currentState.label` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/CheckoutAssistant/CheckoutAssistantView.swift:71: `item.name` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/CheckoutAssistant/CheckoutAssistantView.swift:91: `text` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/CheckoutAssistant/CheckoutAssistantView.swift:103: `item.name` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/CheckoutAssistant/CheckoutAssistantView.swift:110: `step.messageBody` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/CheckoutAssistant/CheckoutAssistantView.swift:119: `step.kind == .web                  ? "This is \(step.sellerName)'s real website. You tap Add to cart and Pay yourself. Parchi never clicks for you."                  : "You send the message and pay th` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/CheckoutAssistant/CheckoutAssistantView.swift:160: `title` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/CheckoutAssistant/CheckoutAssistantView.swift:184: `step.sellerName` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/CheckoutAssistant/CheckoutAssistantView.swift:71: `circle` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/CheckoutAssistantView.swift:143: `Share the list` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/CheckoutAssistantView.swift:169: `Could not find "%@" on this page. Use the seller's search box.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/CheckoutFlow.swift:15: `Waiting` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/CheckoutFlow.swift:16: `Opened` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/CheckoutFlow.swift:17: `Items added` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/CheckoutFlow.swift:18: `At checkout` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/CheckoutFlow.swift:19: `Ordered ✓` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/CheckoutFlow.swift:20: `Skipped` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/CheckoutFlow.swift:49: `Hello, I would like to buy these. Please tell me what you have in stock and the total price: ` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/CheckoutFlow.swift:50: ` (Sent from Parchi)` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/CheckoutFlow.swift:90: `All steps done` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/CheckoutFlow.swift:92: `Step %@ of %lld · %@ · %@ item%@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/CheckoutFlow.swift:169: `seller_confirm_patterns` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/CheckoutFlow.swift:169: `json` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/CheckoutPrivacy.swift:22: `done ? "Done. Seller logins and carts opened in Parchi are cleared."                       : "Clears logins and cookies of the seller websites you opened inside Parchi."` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/CheckoutAssistant/CheckoutRouteView.swift:12: `probe` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:56: `web.currentURL?.absoluteString ?? "No page loaded"` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/CheckoutAssistant/SellerProbeView.swift:58: `status` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/CheckoutAssistant/SellerProbeView.swift:66: `row.site.name` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/CheckoutAssistant/SellerProbeView.swift:67: `row.detail.isEmpty ? row.url.host() ?? "" : row.detail` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/CheckoutAssistant/SellerProbeView.swift:73: `v.rawValue` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/CheckoutAssistant/SellerProbeView.swift:75: `row.verdict.rawValue` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/CheckoutAssistant/SellerProbeView.swift:86: `running ? "Probing…" : "Probe all"` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/CheckoutAssistant/SellerProbeView.swift:7: `Not tried` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:7: `Renders` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:7: `Blocked` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:7: `Needs login` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:33: `idle` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:103: `running` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:107: `loading…` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:108: `running: %@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:110: `product` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:112: `home` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:113: ` | home: %@ %@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:121: `done` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:136: `product` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:148: `%@ · %@ chars · %@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:150: `error: %@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:151: `blocked` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:154: `timed out, nothing rendered` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:154: `timed out` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:156: `page says "%@" · %@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:156: `blocked` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:156: `page says %@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:158: `bot wall: %@ · %@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:158: `blocked` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:160: `blank page (%@ chars) · %@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:160: `blank` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:162: `loaded` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerProbeView.swift:163: `page never finished loading but rendered %@ chars` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerSites.swift:17: `onemg` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerSites.swift:22: `apollopharmacy` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerSites.swift:24: `instamart` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerSites.swift:28: `max` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerSites.swift:63: `product_links` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerSites.swift:63: `json` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerSites.swift:69: `https` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerSites.swift:76: `Ghaziabad` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerSites.swift:78: `labs` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerSites.swift:78: `json` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/SellerSites.swift:84: `https` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/WebViewHost.swift:38: `https` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/WebViewHost.swift:38: `Only secure (https) pages open here.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/WebViewHost.swift:83: `(function(q){   document.querySelectorAll('mark[data-parchi]').forEach(function(m){ m.replaceWith(document.createTextNode(m.textContent)); });   var esc = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');   v` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/WebViewHost.swift:113: `JSON.stringify({h: location.host, t: document.title || '', n: (document.body ? document.body.innerText.length : 0), s: (document.body ? document.body.innerText.slice(0, 600) : '')})` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/WebViewHost.swift:136: `null` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/WebViewHost.swift:137: `(function(brand){   function vis(e){ var r=e.getBoundingClientRect(); if(r.width<2||r.height<2) return false; var s=getComputedStyle(e); return s.visibility!=='hidden'&&s.display!=='none'&&s.opacity!=` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/WebViewHost.swift:205: `https` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/WebViewHost.swift:205: `about` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/WebViewHost.swift:208: `Blocked a non-https link (%@). Parchi only opens secure pages.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/WebViewHost.swift:237: `Page did not load: %@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/CheckoutAssistant/WebViewHost.swift:250: `https` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/LiveClient.swift:18: `The server address isn't valid. Showing the demo.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/LiveClient.swift:19: `No install key is set. Showing the demo.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/LiveClient.swift:20: `Can't reach the server. Showing the demo.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/LiveClient.swift:21: `The server didn't accept the install key. Showing the demo.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/LiveClient.swift:22: `The server is busy. Trying again shortly.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/LiveClient.swift:23: `The order changed on the server. Refreshing.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/LiveClient.swift:24: `The server didn't accept this: %@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/LiveClient.swift:25: `The server gave an unexpected answer. Showing the demo.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/LiveClient.swift:101: `http` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/LiveClient.swift:101: `https` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/LiveClient.swift:162: `Accept` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/LiveClient.swift:163: `X-Install-Key` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/LiveClient.swift:167: `Content-Type` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/LiveClient.swift:195: `bad request` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Manual/AddMedicineSheet.swift:73: `ManualBrandIndex.displayName(forBrand: brand)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Manual/AddMedicineSheet.swift:112: `name` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Manual/AddMedicineSheet.swift:129: `value` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Manual/AddMedicineSheet.swift:135: `value` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Manual/AppModel+Manual.swift:20: `medicine` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Manual/AppModel+Manual.swift:55: `m` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Manual/AppModel+Manual.swift:59: `medicine` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Manual/AppModel+Manual.swift:70: `m` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Manual/AppModel+Manual.swift:74: `test` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Manual/ManualBrandIndex.swift:88: `brand_mrp` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Manual/ManualBrandIndex.swift:88: `json` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Map/PinPricing.swift:23: `Ask` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Map/PinPricing.swift:28: `for %@ of %@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Map/ShopPricer.swift:45: `en_US_POSIX` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Map/ShopPricer.swift:46: `Asia/Kolkata` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Map/ShopPricer.swift:49: `Jan Aushadhi list of %@ · ask your doctor` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Map/ShopPricer.swift:75: `Not available` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Map/ShopPricer.swift:78: `The shop's own reply to your message.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Map/ShopPricer.swift:87: `Same salt only, not the same brand. Only your doctor can approve a switch; Parchi never changes a medicine.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Map/ShopPricer.swift:93: `This is the printed price (MRP), not a quote from this shop. Ask the shop for its price.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Map/ShopSearch.swift:46: `map-%@-%lld-%lld` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Map/ShopSearch.swift:166: `Test address (not a real shop)` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Money.swift:8: `en_IN` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Money.swift:9: `INR` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Money.swift:15: `in %lld min` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Money.swift:16: `in %@ h` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Money.swift:18: `in %lld days` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/CareView.swift:83: `refillText(refill.inDays)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/CareView.swift:91: `lab.name` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/CareView.swift:93: `saved.labSlot ?? "Slot not confirmed yet"` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/CareView.swift:133: `dose.medicine` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/CareView.swift:134: `label` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/CareView.swift:115: `Can't tell` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/CareView.swift:116: `Refill now` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/CareView.swift:117: `Refill in %lld days` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/CareView.swift:141: `not taken` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/CareView.swift:147: `Morning` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/CareView.swift:148: `Afternoon` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/CareView.swift:149: `Evening` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/CareView.swift:150: `Night` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/CareView.swift:156: `sunrise` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/CareView.swift:157: `sun.max` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/CareView.swift:158: `sunset` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/CareView.swift:159: `moon` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/ConsentStore.swift:10: `parchi.consentAt` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/ConsentStore.swift:11: `parchi.consentVersion` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/ConsentStore.swift:46: `Not agreed yet` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/ConsentStore.swift:47: `Agreed on ` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/ConsentStore.swift:47: ` (version %@)` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/ErasableArtifacts.swift:56: `parchi.backend.usedLive` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/EraseEverything.swift:14: `parchi.backend.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/EraseEverything.swift:18: `Events Parchi added to your Calendar stay there; delete them in the Calendar app.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/FirstRunConsentView.swift:17: `hindi ? "आपका डेटा, आपके हाथ में" : "Your data stays yours"` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/FirstRunConsentView.swift:28: `hindi ? card.hiTitle : card.title` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/FirstRunConsentView.swift:29: `hindi ? card.hiBody : card.body` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/FirstRunConsentView.swift:42: `hindi ? "सहमत हूँ, आगे बढ़ें" : "Agree & continue"` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/FirstRunConsentView.swift:52: `hindi ? "आप कभी भी सेटिंग्स से सब कुछ मिटा सकते हैं।" : "You can delete everything any time in Settings."` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/FirstRunConsentView.swift:63: `eye.slash` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/FirstRunConsentView.swift:64: `We try to hide the patient's details` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/FirstRunConsentView.swift:65: `We try to hide the name, age, phone and address we can find. Check the picture before you continue; if anything personal is still visible, close it and crop it first.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/FirstRunConsentView.swift:68: `server.rack` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/FirstRunConsentView.swift:69: `When connected to our lab server, the picture goes there` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/FirstRunConsentView.swift:70: `When Parchi is connected to our lab server, tapping Use this photo sends the whole picture (with what we could hide, hidden) to our own computer to be read. In the demo the picture stays on this phone` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/FirstRunConsentView.swift:72: `जब Parchi हमारे लैब सर्वर से जुड़ा हो, तब “Use this photo” दबाने पर पूरी तस्वीर (जो हिस्सा हम छिपा पाए, वह छिपा हुआ) पढ़ने के लिए हमारे अपने कंप्यूटर पर जाती है। डेमो में तस्वीर इसी फ़ोन पर रहती है।` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/FirstRunConsentView.swift:73: `internaldrive` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/FirstRunConsentView.swift:74: `Your history stays on this phone` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/FirstRunConsentView.swift:75: `Saved parchis, doses and settings are stored only on this phone. Test orders are kept on our lab computer under a random install key, never your name.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/FirstRunConsentView.swift:77: `सेव की गई पर्चियाँ, खुराक और सेटिंग्स सिर्फ़ इसी फ़ोन में रहती हैं। टेस्ट ऑर्डर हमारे लैब कंप्यूटर पर एक random install key से रखे जाते हैं, आपके नाम से नहीं।` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/FirstRunConsentView.swift:78: `trash` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/FirstRunConsentView.swift:79: `Photo copies are removed after 24 hours` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/FirstRunConsentView.swift:80: `Photo copies on this phone are removed the next time you open Parchi after 24 hours. Delete everything in Settings wipes the phone and asks our lab computer to delete this phone's test orders. Calenda` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/FirstRunConsentView.swift:82: `इस फ़ोन पर फ़ोटो की कॉपी 24 घंटे के बाद, अगली बार Parchi खोलने पर मिटा दी जाती हैं। सेटिंग्स में “Delete everything” फ़ोन का सारा डेटा मिटाता है और हमारे लैब कंप्यूटर से इस फ़ोन के टेस्ट ऑर्डर मिटाने ` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/HistoryStore.swift:41: `Planned` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/HistoryStore.swift:42: `Test order placed` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/HistoryStore.swift:43: `Done` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/HistoryStore.swift:49: `list.bullet.clipboard` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/HistoryStore.swift:50: `shippingbox` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/HistoryStore.swift:51: `checkmark.circle` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/HistoryStore.swift:148: `OD` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/HistoryStore.swift:148: `OD` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/HistoryStore.swift:151: `Sample parchi: general check-up` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/HistoryStore.swift:152: `Tomorrow, 7:30 am (sample)` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/HistoryStore.swift:156: `Sample parchi: fever` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/HistoryStore.swift:156: `OD` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/HistoryStore.swift:178: `real_basket_cheapest` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/HistoryStore.swift:178: `json` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/HistoryStore.swift:185: `shop` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/HistoryStore.swift:185: `Sample chemist` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/HistoryStore.swift:186: `shop` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/HistoryView.swift:41: `HistoryTitle.short(record.title)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/HistoryView.swift:42: `record.createdAt.formatted(date: .abbreviated, time: .omitted)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/HistoryView.swift:47: `record.historyStatus.title` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/HistoryView.swift:69: `rupees(saved.plan.payable)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/HistoryView.swift:73: `saved.sellerName(sellerID)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/HistoryView.swift:80: `slot` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/HistoryView.swift:93: `HistoryTitle.short(record.title)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/HowWeRankView.swift:50: `title` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/HowWeRankView.swift:51: `text` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/LocationProvider.swift:100: `statusText` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/LocationProvider.swift:111: `city.name` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/LocationProvider.swift:16: `parchi.city` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/LocationProvider.swift:35: `Your location` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/LocationProvider.swift:128: `Not asked yet.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/LocationProvider.swift:129: `Finding you…` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/LocationProvider.swift:132: `Your location is outside the cities we cover. Please choose a city.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/LocationProvider.swift:133: `Location is off for Parchi. Choose a city, or turn it on in the Settings app.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/LocationProvider.swift:134: `Couldn't get your location. Choose a city.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/ResetClient.swift:17: `Server copy deleted (%@ test order%@).` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/ResetClient.swift:18: ` The lab server's workflow log of order steps is kept for up to 24 hours.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/ResetClient.swift:19: `Mock mode: nothing was ever sent to a server.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/ResetClient.swift:20: `A server copy may exist: switch to Live and delete again.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/ResetClient.swift:21: `No install key is saved, so the server copy could not be asked to delete. Add the key in the Developer panel and try again.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/ResetClient.swift:22: `Server copy NOT confirmed deleted: the server could not be reached. Try again on Wi-Fi.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/ResetClient.swift:23: `Server copy NOT confirmed deleted: the server did not give a clear yes. Try again.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/ResetClient.swift:50: `http` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/ResetClient.swift:50: `https` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/ResetClient.swift:52: `POST` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/ResetClient.swift:53: `X-Install-Key` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/ResetClient.swift:54: `Content-Type` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/ResetClient.swift:55: `Accept` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Phase4/SettingsView.swift:64: `capPaise == 0 ? "Always ask me first" : "Auto-approve up to ₹\(capPaise / 100) extra"` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/SettingsView.swift:92: `EraseEverything.calendarNote` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/SettingsView.swift:95: `deleteResult.message` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/SettingsView.swift:183: `what` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/SettingsView.swift:184: `result` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/Phase4/SettingsView.swift:14: `en` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/PriceChips.swift:11: `source.datedLabel` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/PriceChips.swift:32: `$0` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/PriceChips.swift:54: `line.item.name` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/PriceChips.swift:61: `row.lab` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/PriceChips.swift:65: `rupees(row.paise)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/PriceChips.swift:83: `lab.lab` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/PriceChips.swift:84: `homeText(lab.homeCollection)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/PriceChips.swift:87: `https` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/PriceChips.swift:98: `Home collection: yes` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/PriceChips.swift:99: `Home collection: no` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/PriceChips.swift:100: `Home collection: not confirmed` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/PriceChips.swift:106: `Meerut` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:34: `brand_strengths` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:34: `json` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:40: `tests_canonical` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:40: `json` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:149: `test` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:182: `medicine` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:196: `Tab` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:197: `Cap` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:198: `Syp` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:199: `Inj` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:200: `Oint` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:201: `Cream` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:202: `Gel` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:203: `Lotion` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:204: `Inhaler` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:205: `Powder` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:215: `u{00A0}` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:227: `^(\W{0,3}(?:\d{1,2}\s*[).]\s*)?)(Tab|Cap|Syr|Syp|Sol|Inj|Gtt)(?=[A-Z]{3,})` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:315: `Nothing could be read on this phone. Handwriting cannot be read here. Add the medicines yourself.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:318: `Handwriting could not be read on this phone. Only a few lines were read. Check every line and add the rest yourself.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:320: `Read on this phone. Printed text only. Check every line.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/Reader/OnPhoneReader.swift:321: ` %@ line%@ could not be read for sure.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:19: `Home collection` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:20: `Visit the lab` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:21: `Home collection: ask the lab` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:43: `requested` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:55: `rejected` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:55: `done` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:72: `Meerut` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:214: `Add your address for home collection, or switch to visiting the lab.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:223: `pending-%@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:268: `requested` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:269: `confirmed` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:271: `Demo confirmation: no lab was contacted.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:323: `rejected` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:323: `done` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:323: `expired` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:325: `requested` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:379: `lab_booking_request` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:391: `Lab tests at %@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:393: `No fasting reminder: none of the tests is marked fasting.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:396: `lab_fasting_reminder` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingModel.swift:398: `Tomorrow: %@ at %@.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabBookingView.swift:19: `error` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/LabBookingView.swift:28: `model.phase == .booking ? "Booking…" : "Request booking · \(rupees(model.selectedTotal))"` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/LabBookingView.swift:58: `$0` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/LabBookingView.swift:68: `ISOTime.format(day, "EEE d MMM")` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/LabBookingView.swift:75: `LabBookingModel.hourText(hour)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/LabBookingView.swift:95: `choice.name` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/LabBookingView.swift:96: `choice.homeText + (choice.reportMinutes.map { " · report \(readyText(minutes: $0))" } ?? "")` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/LabBookingView.swift:98: `choice.source.datedLabel` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/LabBookingView.swift:102: `rupees(choice.pricePaise)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/LabBookingView.swift:111: `row.name` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/LabBookingView.swift:153: `booking.labName` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/LabBookingView.swift:160: `booking.testNames.joined(separator: ", ")` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/LabBookingView.swift:161: `booking.homeCollection ? "Home collection" : "Visit the lab"` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/LabBookingView.swift:168: `result` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/LabBookingView.swift:171: `result` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/LabBookingView.swift:183: `note` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/LabBookingView.swift:190: `model.isDemo ? "Demo mode: no lab was contacted. The confirmation is scripted so the flow can be shown offline." : "The lab confirms on a web page. Parchi never books or pays for you."` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/LabReminders.swift:11: `parchi.address` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabReminders.swift:28: `Calendar access was not allowed. You can turn it on in Settings.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabReminders.swift:35: `No calendar on this phone to add to.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabReminders.swift:38: `Added to Calendar: %@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabReminders.swift:40: `Could not add to Calendar.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabReminders.swift:47: `Fasting reminder time (%@) has already passed.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabReminders.swift:55: `Notifications are off, so no reminder was set. You can turn them on in Settings.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabReminders.swift:57: `Parchi: lab tomorrow` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabReminders.swift:62: `parchi.lab.fasting.%@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabReminders.swift:63: `Fasting reminder set for %@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/LabReminders.swift:65: `Could not set the reminder.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/MessageTemplates.swift:8: `English` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/MessageTemplates.swift:10: `Hinglish` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/MessageTemplates.swift:14: `parchi.message.language` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/MessageTemplates.swift:47: `message_templates` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/MessageTemplates.swift:47: `json` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskClient.swift:82: `not_asked` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskModel.swift:92: `parchi.shopask.phones` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskModel.swift:126: `map-` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskModel.swift:128: `Shop near you %lld` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskModel.swift:146: `Shop near you` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskModel.swift:232: ` x%@` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskModel.swift:241: `shop_ask` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskModel.swift:264: `The message template is missing.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskModel.swift:265: `the shop` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskModel.swift:269: `Press send in the message app to ask %@.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskModel.swift:273: `Simulator: message for %@ copied to the clipboard instead of opening WhatsApp. Nothing was sent.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskModel.swift:275: `Demo mode: message for %@ copied to the clipboard. Nothing was sent.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskModel.swift:316: `demo` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskModel.swift:338: `Shop near you` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskModel.swift:385: `closed` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskModel.swift:416: `not_asked` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskModel.swift:464: `Next shops opened. Tap Send message on each.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskModel.swift:476: `Waiting for a reply` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskModel.swift:478: `Waiting · asked %lld min ago` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopAskSheet.swift:20: `notice` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/ShopAskSheet.swift:23: `error` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/ShopAskSheet.swift:36: `model.phase == .asking ? "Asking…" : "Send to \(model.selected.count) shop\(model.selected.count == 1 ? "" : "s")"` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/ShopAskSheet.swift:71: `shop.name` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/ShopAskSheet.swift:72: `shop.distanceText ?? "Distance not known"` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/ShopAskSheet.swift:103: `$0.title` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/ShopAskSheet.swift:107: `preview.text` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/ShopAskSheet.swift:127: `model.isDemo ? "Demo mode: no message was sent. The reply below is scripted so the flow can be shown offline." : "Shops reply on a web page. The first complete reply wins."` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/ShopAskSheet.swift:153: `row.name` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/ShopAskSheet.swift:165: `app.itemName(item.itemID)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/ShopAskSheet.swift:167: `item.available ? rupees(item.pricePaise ?? 0) : "Not available"` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/ShopAskSheet.swift:176: `model.waitingText(for: row, now: context.date)` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/ShopLab/ShopLabHooks.swift:57: `Demo address, Muradnagar` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopLabHTTP.swift:15: `Accept` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopLabHTTP.swift:16: `X-Install-Key` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopLabHTTP.swift:19: `Content-Type` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopLabHTTP.swift:56: `bad request` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopLabHTTP.swift:62: `Asia/Kolkata` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopLabHTTP.swift:88: `en_US_POSIX` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopLabHTTP.swift:98: `en_US_POSIX` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopLabHTTP.swift:107: `AM` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopLabHTTP.swift:107: `am` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopLabHTTP.swift:107: `PM` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopLabHTTP.swift:107: `pm` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/ShopLab/ShopLabHTTP.swift:123: `ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.
+- Support/V2/V2Views.swift:10: `note` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/V2/V2Views.swift:11: `note` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/V2/V2Views.swift:37: `message` — Wrap user-facing String values with String(localized:) or use LocalizedStringKey after review.
+- Support/V2/V2Views.swift:43: `Enter the amount in rupees.` — Confirm this is UI text; use String(localized:) or LocalizedStringKey at its source.

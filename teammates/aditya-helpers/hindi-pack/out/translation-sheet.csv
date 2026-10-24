@@ -1,0 +1,276 @@
+key,english,hindi,status,screen_hint,max_ratio_note
+ · report %@, · report %@, · रिपोर्ट %@,draft,Support/ShopLab/LabBookingView.swift:96,1.08x
+%@ %@ doesn't exist. It comes in %@. Which one?,%@ %@ doesn't exist. It comes in %@. Which one?,%@ %@ उपलब्ध नहीं है। यह %@ में मिलता है। कौन सा है?,draft,Screens/ConfirmView.swift:161,1.11x
+%@ cancelled %lld items.,%@ cancelled %lld items.,%@ ने %lld सामान रद्द किए।,draft,Screens/TrackView.swift:74,1.08x
+%@ medicines · %@ tests,%@ medicines · %@ tests,%@ दवाएं · %@ टेस्ट,draft,Support/Phase4/HistoryView.swift:45,0.83x
+%lld price%@ from this shop are ready to go into the plan.,%lld price%@ from this shop are ready to go into the plan.,इस दुकान से %lld कीमत%@ प्लान में जोड़ने के लिए तैयार हैं।,draft,Support/ShopLab/ShopAskSheet.swift:143,1.00x
++ %@ fee,+ %@ fee,+ %@ शुल्क,draft,Support/ShopLab/LabBookingView.swift:103,1.25x
+Add,Add,जोड़ें,draft,Support/Manual/AddMedicineSheet.swift:156,2.00x
+"Add ""%@"" as typed","Add ""%@"" as typed","जैसा लिखा है, ""%@"" जोड़ें",draft,Support/Manual/AddMedicineSheet.swift:85,1.47x
+Add a medicine,Add a medicine,दवा जोड़ें,draft,Screens/ConfirmView.swift:54; Screens/ConfirmView.swift:57; Support/Manual/AddMedicineSheet.swift:29,0.71x
+Add a medicine for the lines we could not read,Add a medicine for the lines we could not read,न पढ़ी गई लाइनों के लिए दवा जोड़ें,draft,Screens/ConfirmView.swift:27,0.74x
+Add a medicine or test first,Add a medicine or test first,पहले दवा या टेस्ट जोड़ें,draft,Screens/ConfirmView.swift:76,0.86x
+Add a test,Add a test,टेस्ट जोड़ें,draft,Screens/ConfirmView.swift:60; Screens/ConfirmView.swift:63,1.20x
+Add these by hand,Add these by hand,इन्हें खुद लिखकर जोड़ें,draft,Screens/ConfirmView.swift:24,1.35x
+Add to Calendar and set reminder,Add to Calendar and set reminder,कैलेंडर में जोड़ें और रिमाइंडर लगाएं,draft,Support/ShopLab/LabBookingView.swift:176,1.12x
+Agree & continue,Agree & continue,सहमत हूं और आगे बढ़ें,draft,Support/Phase4/FirstRunConsentView.swift:42,1.31x
+All correct,All correct,सब सही है,draft,Screens/ConfirmView.swift:76,0.82x
+Always ask me first,Always ask me first,हमेशा पहले मुझसे पूछें,draft,Support/Phase4/SettingsView.swift:64,1.16x
+Amount in ₹,Amount in ₹,रकम ₹ में,draft,Support/V2/V2Views.swift:31,0.82x
+Answer the highlighted line,Answer the highlighted line,चिह्नित लाइन का जवाब दें,draft,Screens/ConfirmView.swift:76,0.89x
+Approve,Approve,मंज़ूर करें,draft,Screens/TrackView.swift:96,1.57x
+Approve a plan and your doses and refill dates show up here.,Approve a plan and your doses and refill dates show up here.,प्लान मंज़ूर करने पर दवा लेने का समय और रीफिल की तारीखें यहां दिखेंगी।,draft,Support/Phase4/CareView.swift:102,1.17x
+Ask,Ask,पूछें,draft,Screens/PlanMapView.swift:109; Screens/PlanMapView.swift:164,1.67x
+Ask different shops,Ask different shops,दूसरी दुकानों से पूछें,draft,Support/ShopLab/ShopAskSheet.swift:147,1.16x
+Ask my doctor,Ask my doctor,अपने डॉक्टर से पूछें,draft,Screens/ConfirmView.swift:215,1.54x
+Ask nearby shops,Ask nearby shops,आसपास की दुकानों से पूछें,draft,Support/ShopLab/ShopAskSheet.swift:26,1.56x
+Ask next %@?,Ask next %@?,अगला %@ पूछें?,draft,Support/ShopLab/ShopAskSheet.swift:134,1.17x
+Ask shops,Ask shops,दुकानों से पूछें,draft,Support/ShopLab/ShopLabHooks.swift:78,1.78x
+Ask your doctor,Ask your doctor,अपने डॉक्टर से पूछें,draft,Screens/PlanView.swift:115,1.33x
+Asking…,Asking…,पूछ रहे हैं…,draft,Support/ShopLab/ShopAskSheet.swift:36,1.71x
+Auto-approve up to ₹%@ extra,Auto-approve up to ₹%@ extra,₹%@ तक अतिरिक्त रकम अपने आप मंज़ूर करें,draft,Support/Phase4/SettingsView.swift:64,1.39x
+Backend,Backend,बैकएंड,draft,Support/BackendSwitchView.swift:28,0.86x
+Book lab tests,Book lab tests,लैब टेस्ट बुक करें,draft,Support/ShopLab/LabBookingView.swift:22,1.29x
+Book other tests,Book other tests,दूसरे टेस्ट बुक करें,draft,Support/ShopLab/LabBookingView.swift:188,1.25x
+Booking…,Booking…,बुकिंग हो रही है…,draft,Support/ShopLab/LabBookingView.swift:28,2.12x
+Call,Call,कॉल करें,draft,Support/ShopLab/ShopAskSheet.swift:83,2.00x
+Call a shop instead.,Call a shop instead.,इसके बजाय दुकान को कॉल करें।,draft,Support/ShopLab/ShopAskSheet.swift:136,1.40x
+Can't use this photo,Can't use this photo,यह फ़ोटो इस्तेमाल नहीं कर सकते,draft,Support/Capture/CaptureView.swift:259,1.50x
+Cancel,Cancel,रद्द करें,draft,Support/CheckoutAssistant/CheckoutPrivacy.swift:30; Support/Manual/AddMedicineSheet.swift:33; Support/Phase4/SettingsView.swift:119,1.50x
+Care,Care,देखभाल,draft,Screens/HomeView.swift:40; Support/Phase4/CareView.swift:105,1.50x
+Change,Change,बदलें,draft,Support/Manual/AddMedicineSheet.swift:114,0.83x
+Cheapest,Cheapest,सबसे सस्ता,draft,Screens/PlanView.swift:68,1.25x
+Cheapest lab first. Prices are from lab websites on 23 Oct 2026; the lab confirms the final fee.,Cheapest lab first. Prices are from lab websites on 23 Oct 2026; the lab confirms the final fee.,सबसे सस्ती लैब पहले। कीमतें 23 Oct 2026 को लैब की वेबसाइटों से ली गई हैं; अंतिम शुल्क लैब बताएगी।,draft,Support/ShopLab/LabBookingView.swift:62,1.01x
+Check your photo,Check your photo,अपनी फ़ोटो जांचें,draft,Support/Capture/CaptureView.swift:290,1.06x
+Checkout Assistant,Checkout Assistant,चेकआउट सहायक,draft,Support/CheckoutAssistant/CheckoutAssistantView.swift:25,0.67x
+Checkout finished,Checkout finished,चेकआउट पूरा हुआ,draft,Support/CheckoutAssistant/CheckoutAssistantView.swift:181,0.88x
+Choose a photo of the parchi,Choose a photo of the parchi,पर्ची की फ़ोटो चुनें,draft,Support/Capture/CaptureView.swift:198,0.71x
+Choose myself,Choose myself,मैं खुद चुनूंगा/चुनूंगी,draft,Screens/TrackView.swift:104,1.77x
+Choose the strength written on the parchi.,Choose the strength written on the parchi.,पर्ची पर लिखी स्ट्रेंथ चुनें।,draft,Support/Manual/AddMedicineSheet.swift:162,0.69x
+City,City,शहर,draft,Support/PriceChips.swift:31; Support/ShopLab/LabBookingView.swift:57,0.75x
+Clears logins and cookies of the seller websites you opened inside Parchi.,Clears logins and cookies of the seller websites you opened inside Parchi.,पर्ची के अंदर खोली गई विक्रेता वेबसाइटों के लॉगिन और कुकीज़ मिटाता है।,draft,Support/CheckoutAssistant/CheckoutPrivacy.swift:23,0.95x
+Close,Close,बंद करें,draft,Support/Capture/CaptureView.swift:292; Support/V2/V2Views.swift:47,1.60x
+Close shop sheet,Close shop sheet,दुकान की जानकारी बंद करें,draft,Screens/ShopSheet.swift:37,1.56x
+Collect the sample at home,Collect the sample at home,घर से सैंपल लें,draft,Support/ShopLab/LabBookingView.swift:116,0.58x
+Collected around %@,Collected around %@,लगभग %@ बजे लिया गया,draft,Support/ShopLab/LabBookingView.swift:207,1.05x
+Confirmed,Confirmed,पुष्टि हो गई,draft,Screens/ConfirmView.swift:129; Screens/ConfirmView.swift:201,1.33x
+Confirmed %@,Confirmed %@,पुष्टि हुई %@,draft,Support/ShopLab/LabBookingView.swift:211,1.08x
+Day,Day,दिन,draft,Support/ShopLab/LabBookingView.swift:66,1.00x
+Delete everything,Delete everything,सब मिटाएं,draft,Support/Phase4/SettingsView.swift:83; Support/Phase4/SettingsView.swift:118,0.53x
+Delete everything?,Delete everything?,सब मिटाएं?,draft,Support/Phase4/SettingsView.swift:117,0.56x
+"Deletes saved parchis, doses, settings, your agreement, photo copies, seller logins, reminders Parchi scheduled and the message it copied on this phone, and asks our lab server to delete this phone's test orders. The server address and key stay so the server can be asked again. %@","Deletes saved parchis, doses, settings, your agreement, photo copies, seller logins, reminders Parchi scheduled and the message it copied on this phone, and asks our lab server to delete this phone's test orders. The server address and key stay so the server can be asked again. %@","इस फ़ोन पर सेव की गई पर्चियां, दवा लेने के समय, सेटिंग्स, आपकी सहमति, फ़ोटो की प्रतियां, विक्रेता लॉगिन, पर्ची के लगाए रिमाइंडर और कॉपी किया संदेश मिटाता है। यह हमारे लैब सर्वर से इस फ़ोन के टेस्ट ऑर्डर मिटाने को कहता है। दोबारा अनुरोध करने के लिए सर्वर का पता और कुंजी रखे जाते हैं। %@",draft,Support/Phase4/SettingsView.swift:101,1.02x
+Deleting…,Deleting…,मिटा रहे हैं…,draft,Support/Phase4/SettingsView.swift:85,1.44x
+Delivered to you (not on the map),Delivered to you (not on the map),आप तक डिलीवरी (मैप पर नहीं),draft,Screens/PlanMapView.swift:158,0.82x
+Demo build: uses a sample parchi with real prices captured 23 Oct 2026.,Demo build: uses a sample parchi with real prices captured 23 Oct 2026.,डेमो बिल्ड: नमूना पर्ची और 23 Oct 2026 को दर्ज असली कीमतें।,draft,Screens/HomeView.swift:35,0.83x
+Demo data restored.,Demo data restored.,डेमो डेटा फिर से लोड हो गया।,draft,Support/Phase4/SettingsView.swift:112,1.47x
+Demo mode: no lab was contacted. The confirmation is scripted so the flow can be shown offline.,Demo mode: no lab was contacted. The confirmation is scripted so the flow can be shown offline.,डेमो मोड: किसी लैब से संपर्क नहीं किया गया। बिना इंटरनेट डेमो दिखाने के लिए पुष्टि पहले से तय है।,draft,Support/ShopLab/LabBookingView.swift:190,1.02x
+Demo mode: no message was sent. The reply below is scripted so the flow can be shown offline.,Demo mode: no message was sent. The reply below is scripted so the flow can be shown offline.,डेमो मोड: कोई संदेश नहीं भेजा गया। बिना इंटरनेट डेमो दिखाने के लिए नीचे का जवाब पहले से तय है।,draft,Support/ShopLab/ShopAskSheet.swift:127,1.01x
+Demo mode: nothing leaves this phone.,Demo mode: nothing leaves this phone.,डेमो मोड: इस फ़ोन से कुछ नहीं भेजा जाता।,draft,Support/BackendSwitchView.swift:52,1.08x
+Demo mode: this picture stays on this phone. It is removed the next time you open Parchi after 24 hours.,Demo mode: this picture stays on this phone. It is removed the next time you open Parchi after 24 hours.,डेमो मोड: यह तस्वीर इसी फ़ोन पर रहती है। 24 घंटे बाद अगली बार पर्ची खोलने पर इसे हटा दिया जाता है।,draft,Support/Capture/CaptureView.swift:273,0.94x
+Demo reply,Demo reply,डेमो जवाब,draft,Support/ShopLab/LabBookingView.swift:156; Support/ShopLab/ShopAskSheet.swift:156,0.90x
+Demo reset,Demo reset,डेमो रीसेट,draft,Support/Phase4/SettingsView.swift:111,1.00x
+Did we read it right?,Did we read it right?,क्या हमने सही पढ़ा?,draft,Screens/ConfirmView.swift:67,0.90x
+Directions,Directions,रास्ता देखें,draft,Support/ShopLab/ShopAskSheet.swift:86,1.20x
+Distance not known,Distance not known,दूरी मालूम नहीं है,draft,Support/ShopLab/ShopAskSheet.swift:72,1.00x
+Done,Done,हो गया,draft,Screens/ShopSheet.swift:37; Support/ShopLab/LabBookingView.swift:24; Support/ShopLab/ShopAskSheet.swift:29,1.50x
+Done. Seller logins and carts opened in Parchi are cleared.,Done. Seller logins and carts opened in Parchi are cleared.,हो गया। पर्ची में खुले विक्रेता लॉगिन और कार्ट साफ कर दिए गए हैं।,draft,Support/CheckoutAssistant/CheckoutPrivacy.swift:22,1.10x
+English,English,अंग्रेज़ी,draft,Support/Phase4/FirstRunConsentView.swift:19; Support/Phase4/SettingsView.swift:46,1.29x
+Everything %@,Everything %@,सब कुछ %@,draft,Screens/PlanView.swift:55,0.69x
+Everything on this phone is deleted.,Everything on this phone is deleted.,इस फ़ोन का सारा डेटा मिटा दिया गया है।,draft,Support/Phase4/SettingsView.swift:88,1.06x
+Extra cost %@. Everything else stays as it is.,Extra cost %@. Everything else stays as it is.,अतिरिक्त रकम %@। बाकी सब पहले जैसा रहेगा।,draft,Screens/TrackView.swift:86,0.89x
+Fastest,Fastest,सबसे तेज़,draft,Screens/PlanView.swift:69,1.29x
+Fasting for this test is not known to us. Only turn this on if the lab or doctor said so.,Fasting for this test is not known to us. Only turn this on if the lab or doctor said so.,हमें इस टेस्ट के लिए खाली पेट रहने की जानकारी नहीं है। इसे तभी चालू करें जब लैब या डॉक्टर ने कहा हो।,draft,Support/ShopLab/LabBookingView.swift:139,1.12x
+Fasting needed for this test,Fasting needed for this test,इस टेस्ट के लिए खाली पेट रहना है,draft,Support/ShopLab/LabBookingView.swift:132,1.14x
+Fasting reminder will be set for %@,Fasting reminder will be set for %@,खाली पेट रहने का रिमाइंडर %@ के लिए लगेगा,draft,Support/ShopLab/LabBookingView.swift:173,1.17x
+Fee %@,Fee %@,शुल्क %@,draft,Support/ShopLab/LabBookingView.swift:212,1.33x
+Fees (delivery / handling / collection),Fees (delivery / handling / collection),शुल्क (डिलीवरी / हैंडलिंग / कलेक्शन),draft,Screens/PlanView.swift:101,0.92x
+Finding shops…,Finding shops…,दुकानें ढूंढ रहे हैं…,draft,Screens/PlanMapView.swift:32,1.50x
+Get it all,Get it all,सब हासिल करें,draft,Screens/GetItAllView.swift:51; Screens/PlanView.swift:35,1.30x
+"Handwriting is hard to read, which is why you check every line on the Confirm screen before any plan is made. When Parchi is unsure about a brand and strength, it asks you instead of guessing.","Handwriting is hard to read, which is why you check every line on the Confirm screen before any plan is made. When Parchi is unsure about a brand and strength, it asks you instead of guessing.","हाथ की लिखावट पढ़ना कठिन है, इसलिए कोई प्लान बनने से पहले पुष्टि स्क्रीन पर हर लाइन जांचें। ब्रांड या स्ट्रेंथ पर संदेह होने पर पर्ची अनुमान लगाने के बजाय आपसे पूछती है।",draft,Support/Phase4/SettingsView.swift:172,0.88x
+"Hiding the name, age, phone and address is a best effort and can miss something, phone numbers most of all. Always check the picture before you continue.","Hiding the name, age, phone and address is a best effort and can miss something, phone numbers most of all. Always check the picture before you continue.","नाम, उम्र, फ़ोन और पता छिपाने की कोशिश में कुछ छूट सकता है, खासकर फ़ोन नंबर। आगे बढ़ने से पहले तस्वीर हमेशा जांचें।",draft,Support/Phase4/SettingsView.swift:173,0.75x
+Hinglish,Hinglish,हिंग्लिश,draft,Support/Phase4/SettingsView.swift:48,1.00x
+Home address,Home address,घर का पता,draft,Support/ShopLab/LabBookingView.swift:118,0.75x
+Home collection,Home collection,घर से कलेक्शन,draft,Support/ShopLab/LabBookingView.swift:122; Support/ShopLab/LabBookingView.swift:161,0.87x
+"House, street, area, city","House, street, area, city","मकान, गली, इलाका, शहर",draft,Support/Phase4/SettingsView.swift:53,0.84x
+How accurate is Parchi?,How accurate is Parchi?,पर्ची कितनी सटीक है?,draft,Support/Phase4/SettingsView.swift:74; Support/Phase4/SettingsView.swift:178,0.87x
+How we rank,How we rank,हम क्रम कैसे तय करते हैं,draft,Screens/PlanView.swift:124; Support/Phase4/HowWeRankView.swift:43; Support/Phase4/SettingsView.swift:75,2.18x
+"If a seller cancels, Parchi can approve a replacement plan that costs at most this much more. Above it, you decide.","If a seller cancels, Parchi can approve a replacement plan that costs at most this much more. Above it, you decide.","विक्रेता के रद्द करने पर, पर्ची इतने तक अतिरिक्त खर्च वाला नया प्लान अपने आप मंज़ूर कर सकती है। इससे अधिक रकम के लिए आप फैसला करेंगे।",draft,Support/Phase4/SettingsView.swift:69,1.16x
+In the real app you finish payment in each seller's own app or website. Parchi never holds your money.,In the real app you finish payment in each seller's own app or website. Parchi never holds your money.,असली ऐप में आप हर विक्रेता के अपने ऐप या वेबसाइट पर भुगतान पूरा करते हैं। पर्ची आपके पैसे अपने पास नहीं रखती।,draft,Screens/GetItAllView.swift:46,1.07x
+In your plan,In your plan,आपके प्लान में,draft,Screens/PlanMapView.swift:165,1.17x
+Keep ready by,Keep ready by,इस समय तक तैयार रखें,draft,Support/ShopLab/ShopAskSheet.swift:58,1.54x
+Keep ready by %@,Keep ready by %@,%@ तक तैयार रखें,draft,Support/ShopLab/ShopAskSheet.swift:60,1.00x
+Keep ready by %@ · round %@,Keep ready by %@ · round %@,%@ तक तैयार रखें · दौर %@,draft,Support/ShopLab/ShopAskSheet.swift:125,0.93x
+Lab,Lab,लैब,draft,Support/Phase4/CareView.swift:89,1.00x
+Lab prices in %@,Lab prices in %@,%@ में लैब की कीमतें,draft,Support/PriceChips.swift:40,1.25x
+Lab prices were read from each lab's own page. Home collection and booking come from the lab.,Lab prices were read from each lab's own page. Home collection and booking come from the lab.,लैब की कीमतें हर लैब के अपने पेज से ली गई हैं। घर से कलेक्शन और बुकिंग लैब करती है।,draft,Support/PriceChips.swift:42,0.89x
+Lab slot,Lab slot,लैब स्लॉट,draft,Support/Phase4/HistoryView.swift:80,1.12x
+Lab tests are priced lab by lab below. They are not part of the total above.,Lab tests are priced lab by lab below. They are not part of the total above.,टेस्ट की कीमतें नीचे हर लैब के हिसाब से हैं। वे ऊपर के कुल खर्च में शामिल नहीं हैं।,draft,Screens/PlanView.swift:110,1.09x
+Labs,Labs,लैब,draft,Support/ShopLab/ShopLabHooks.swift:79,0.75x
+Language,Language,भाषा,draft,Support/Phase4/FirstRunConsentView.swift:18; Support/Phase4/SettingsView.swift:44; Support/Phase4/SettingsView.swift:45; Support/ShopLab/ShopAskSheet.swift:102,0.50x
+Left out of your plan. Ask your doctor which test they meant.,Left out of your plan. Ask your doctor which test they meant.,आपके प्लान से बाहर रखा गया है। अपने डॉक्टर से पूछें कि उनका मतलब कौन सा टेस्ट था।,draft,Screens/ConfirmView.swift:206,1.33x
+List,List,सूची,draft,Screens/PlanView.swift:24,1.00x
+Loading...,Loading...,लोड हो रहा है...,draft,Support/Manual/AddMedicineSheet.swift:57,1.60x
+Local shops show MRP until they reply. Without a phone number we write an SMS text instead of a WhatsApp one.,Local shops show MRP until they reply. Without a phone number we write an SMS text instead of a WhatsApp one.,जवाब आने तक स्थानीय दुकानों के लिए MRP दिखता है। फ़ोन नंबर न होने पर WhatsApp के बजाय SMS का संदेश बनता है।,draft,Support/ShopLab/ShopAskSheet.swift:98,0.98x
+"Looking for the name, phone and address on this phone…","Looking for the name, phone and address on this phone…","इस फ़ोन पर नाम, फ़ोन और पता ढूंढ रहे हैं…",draft,Support/Capture/CaptureView.swift:255,0.76x
+Map,Map,मैप,draft,Screens/PlanView.swift:25,1.00x
+Medicine name,Medicine name,दवा का नाम,draft,Support/Manual/AddMedicineSheet.swift:47,0.77x
+Medicines,Medicines,दवाएं,draft,Screens/ConfirmView.swift:36,0.56x
+Medicines %@ · reports %@ · %@ trips,Medicines %@ · reports %@ · %@ trips,दवाएं %@ · रिपोर्ट %@ · %@ चक्कर,draft,Screens/PlanView.swift:57,0.89x
+Medicines cost %@ less than MRP at the doctor's shop (%@).,Medicines cost %@ less than MRP at the doctor's shop (%@).,"दवाओं का खर्च %@ कम है, डॉक्टर की दुकान के MRP (%@) की तुलना में।",draft,Screens/PlanView.swift:61,1.12x
+Message language,Message language,संदेश की भाषा,draft,Support/ShopLab/ShopAskSheet.swift:101,0.81x
+My lab told me to fast,My lab told me to fast,मेरी लैब ने खाली पेट रहने को कहा है,draft,Support/ShopLab/LabBookingView.swift:138,1.59x
+"No catalogue price found yet for %@. Check the name and strength on the previous screen, or ask the shop.","No catalogue price found yet for %@. Check the name and strength on the previous screen, or ask the shop.",%@ की कैटलॉग कीमत अभी नहीं मिली। पिछली स्क्रीन पर नाम और स्ट्रेंथ जांचें या दुकान से पूछें।,draft,Screens/PlanView.swift:142,0.87x
+No complete plan found.,No complete plan found.,पूरा प्लान नहीं मिला।,draft,Screens/PlanView.swift:139,0.91x
+No dose times could be read from this parchi.,No dose times could be read from this parchi.,इस पर्ची से दवा लेने का समय नहीं पढ़ सके।,draft,Support/Phase4/CareView.swift:73,0.91x
+No fasting needed,No fasting needed,खाली पेट रहने की ज़रूरत नहीं,draft,Support/ShopLab/LabBookingView.swift:134,1.65x
+No lab price known for this test.,No lab price known for this test.,इस टेस्ट की लैब कीमत मालूम नहीं है।,draft,Support/ShopLab/LabBookingView.swift:87,1.06x
+No labs found yet for %@.,No labs found yet for %@.,%@ के लिए अभी कोई लैब नहीं मिली।,draft,Support/PriceChips.swift:77,1.28x
+"No number is measured yet for our trained reader, so none is shown. Source: CONTEXT.md, “Key measured numbers”; raw data in docs/research/evidence/.","No number is measured yet for our trained reader, so none is shown. Source: CONTEXT.md, “Key measured numbers”; raw data in docs/research/evidence/.","हमारे प्रशिक्षित रीडर की सटीकता का माप अभी नहीं है, इसलिए कोई संख्या नहीं दिखाई गई है। स्रोत: CONTEXT.md, “Key measured numbers”; मूल डेटा docs/research/evidence/ में है।",draft,Support/Phase4/SettingsView.swift:169,1.15x
+No other seller has %@. Ask your doctor or chemist.,No other seller has %@. Ask your doctor or chemist.,किसी दूसरे विक्रेता के पास %@ नहीं है। अपने डॉक्टर या केमिस्ट से पूछें।,draft,Screens/TrackView.swift:90,1.39x
+No page loaded,No page loaded,कोई पेज लोड नहीं हुआ,draft,Support/CheckoutAssistant/SellerProbeView.swift:56,1.43x
+No plan yet. Build a plan first.,No plan yet. Build a plan first.,अभी कोई प्लान नहीं है। पहले प्लान बनाएं।,draft,Support/CheckoutAssistant/CheckoutRouteView.swift:17,1.25x
+No price yet · ask the shop,No price yet · ask the shop,अभी कीमत नहीं है · दुकान से पूछें,draft,Screens/PlanMapView.swift:138; Screens/ShopSheet.swift:65,1.22x
+No reply,No reply,जवाब नहीं आया,draft,Support/ShopLab/ShopAskSheet.swift:184,1.62x
+No reply in 10 min.,No reply in 10 min.,10 मिनट में जवाब नहीं आया।,draft,Support/ShopLab/ShopAskSheet.swift:132,1.37x
+No reply in 30 min. Call the lab instead?,No reply in 30 min. Call the lab instead?,30 मिनट में जवाब नहीं आया। इसके बजाय लैब को कॉल करें?,draft,Support/ShopLab/LabBookingView.swift:198,1.29x
+No saved parchis yet,No saved parchis yet,अभी कोई पर्ची सेव नहीं है,draft,Support/Phase4/HistoryView.swift:20,1.25x
+No shops to show yet.,No shops to show yet.,अभी दिखाने के लिए दुकानें नहीं हैं।,draft,Screens/PlanMapView.swift:34,1.67x
+No trips,No trips,कोई चक्कर नहीं,draft,Screens/PlanView.swift:70,1.75x
+Not asked yet,Not asked yet,अभी पूछा नहीं है,draft,Support/ShopLab/ShopAskSheet.swift:186,1.23x
+Not available,Not available,उपलब्ध नहीं,draft,Screens/ShopSheet.swift:55; Support/ShopLab/ShopAskSheet.swift:167,0.85x
+Not available anywhere: %@,Not available anywhere: %@,कहीं उपलब्ध नहीं: %@,draft,Screens/PlanView.swift:135,0.77x
+"Not available, the shop replied","Not available, the shop replied",दुकान ने बताया: उपलब्ध नहीं,draft,Screens/ShopSheet.swift:60,0.87x
+Not everything on this phone could be deleted: %@. Try again.,Not everything on this phone could be deleted: %@. Try again.,इस फ़ोन पर सब कुछ नहीं मिट सका: %@। फिर कोशिश करें।,draft,Support/Phase4/SettingsView.swift:90,0.84x
+Not in your plan,Not in your plan,आपके प्लान में नहीं,draft,Screens/PlanMapView.swift:165,1.19x
+Not needed any more (another shop replied first),Not needed any more (another shop replied first),अब ज़रूरत नहीं (दूसरी दुकान ने पहले जवाब दिया),draft,Support/ShopLab/ShopAskSheet.swift:182,0.96x
+Not now,Not now,अभी नहीं,draft,Support/Phase4/FirstRunConsentView.swift:49,1.14x
+Nothing on the list yet. Add the medicines and tests written on your parchi.,Nothing on the list yet. Add the medicines and tests written on your parchi.,सूची अभी खाली है। पर्ची पर लिखी दवाएं और टेस्ट जोड़ें।,draft,Screens/ConfirmView.swift:49,0.71x
+Nothing to track yet,Nothing to track yet,अभी ट्रैक करने के लिए कुछ नहीं है,draft,Support/Phase4/CareView.swift:101,1.65x
+Open %@ on %@,Open %@ on %@,%@ को %@ पर खोलें,draft,Screens/GetItAllView.swift:32,1.31x
+Open Checkout Assistant,Open Checkout Assistant,चेकआउट सहायक खोलें,draft,Screens/GetItAllView.swift:44,0.78x
+"Optional. We store only the amount, the seller and your city's PIN, never your name or phone.","Optional. We store only the amount, the seller and your city's PIN, never your name or phone.","वैकल्पिक। हम केवल रकम, विक्रेता और आपके शहर का PIN रखते हैं; आपका नाम या फ़ोन कभी नहीं।",draft,Support/V2/V2Views.swift:35,0.94x
+Options for %@,Options for %@,%@ के विकल्प,draft,Screens/ConfirmView.swift:117,0.86x
+Or choose your city,Or choose your city,या अपना शहर चुनें,draft,Support/Phase4/LocationProvider.swift:104,0.89x
+Parchi,Parchi,पर्ची,draft,Screens/HomeView.swift:17,0.83x
+"Parchi helps you write the message. You send it, and you pay the shop yourself.","Parchi helps you write the message. You send it, and you pay the shop yourself.",पर्ची संदेश लिखने में मदद करती है। आप संदेश भेजते हैं और दुकान को खुद भुगतान करते हैं।,draft,Support/CheckoutAssistant/CheckoutAssistantView.swift:111,1.09x
+Parchi uses your location to show shops and labs near you. The map search sends the area around you to Apple Maps; Parchi does not save it.,Parchi uses your location to show shops and labs near you. The map search sends the area around you to Apple Maps; Parchi does not save it.,पर्ची आपके स्थान से आसपास की दुकानें और लैब दिखाती है। मैप खोज में आपका आसपास का इलाका Apple Maps को भेजा जाता है; पर्ची उसे सेव नहीं करती।,draft,Support/Phase4/LocationProvider.swift:102,1.00x
+Pick the nearest 3,Pick the nearest 3,सबसे नज़दीकी 3 चुनें,draft,Support/ShopLab/ShopAskSheet.swift:94,1.11x
+Place test orders,Place test orders,टेस्ट ऑर्डर बनाएं,draft,Screens/GetItAllView.swift:58,1.00x
+Placed,Placed,ऑर्डर दिया गया,draft,Screens/TrackView.swift:19,2.33x
+Plan B,Plan B,Plan B,draft,Screens/TrackView.swift:78; Screens/TrackView.swift:93; Support/Phase4/SettingsView.swift:67,1.00x
+Plan for,Plan for,इनके लिए प्लान,draft,Screens/PlanView.swift:67,1.75x
+Plan view,Plan view,प्लान देखें,draft,Screens/PlanView.swift:23,1.22x
+Prefer reliable sellers,Prefer reliable sellers,भरोसेमंद विक्रेताओं को प्राथमिकता दें,draft,Support/Phase4/SettingsView.swift:37,1.61x
+Preferred time,Preferred time,पसंदीदा समय,draft,Support/ShopLab/LabBookingView.swift:65,0.79x
+Preferred: %@. The lab confirms or proposes another time.,Preferred: %@. The lab confirms or proposes another time.,पसंद: %@। लैब पुष्टि करेगी या दूसरा समय सुझाएगी।,draft,Support/ShopLab/LabBookingView.swift:81,0.84x
+Price for each medicine,Price for each medicine,हर दवा की कीमत,draft,Screens/ShopSheet.swift:147,0.61x
+Price not found yet,Price not found yet,अभी कीमत नहीं मिली,draft,Support/PriceChips.swift:56,0.95x
+Price on seller page,Price on seller page,विक्रेता के पेज पर कीमत,draft,Screens/GetItAllView.swift:37,1.15x
+"Prices captured 23 Oct 2026 (MedScanner, Jan Aushadhi PMBI list, lab price pages). We rank by total price, then time, then trips. No seller pays to appear higher.","Prices captured 23 Oct 2026 (MedScanner, Jan Aushadhi PMBI list, lab price pages). We rank by total price, then time, then trips. No seller pays to appear higher.","कीमतें 23 Oct 2026 को दर्ज की गईं (MedScanner, Jan Aushadhi PMBI सूची, लैब के कीमत पेज)। क्रम कुल कीमत, फिर समय, फिर चक्करों के आधार पर है। ऊपर दिखने के लिए कोई विक्रेता भुगतान नहीं करता।",draft,Screens/PlanView.swift:121,1.15x
+Privacy,Privacy,निजता,draft,Support/Phase4/SettingsView.swift:72,0.71x
+Probe all,Probe all,सबकी जांच करें,draft,Support/CheckoutAssistant/SellerProbeView.swift:86,1.56x
+Probing…,Probing…,जांच हो रही है…,draft,Support/CheckoutAssistant/SellerProbeView.swift:86,1.88x
+Reading your parchi…,Reading your parchi…,आपकी पर्ची पढ़ रहे हैं…,draft,Support/Capture/CaptureView.swift:257,1.15x
+Real price,Real price,असली कीमत,draft,Support/V2/V2Views.swift:39,0.90x
+Recent parchis,Recent parchis,हाल की पर्चियां,draft,Screens/HomeView.swift:39; Support/Phase4/HistoryView.swift:32,1.07x
+Refills,Refills,रीफिल,draft,Support/Phase4/CareView.swift:81,0.71x
+Refresh,Refresh,ताज़ा करें,draft,Support/ShopLab/LabBookingView.swift:187,1.43x
+Remove,Remove,हटाएं,draft,Screens/ConfirmView.swift:98; Screens/ConfirmView.swift:111,0.83x
+Remove %@,Remove %@,%@ हटाएं,draft,Screens/ConfirmView.swift:99; Screens/ConfirmView.swift:112,0.89x
+Replied %@ · ready by %@,Replied %@ · ready by %@,जवाब %@ · %@ तक तैयार,draft,Support/ShopLab/ShopAskSheet.swift:162,0.88x
+Report expected %@,Report expected %@,रिपोर्ट की अपेक्षित तारीख %@,draft,Support/Phase4/CareView.swift:96,1.56x
+Request booking · %@,Request booking · %@,बुकिंग का अनुरोध · %@,draft,Support/ShopLab/LabBookingView.swift:28,1.05x
+Save,Save,सेव करें,draft,Support/V2/V2Views.swift:42,2.00x
+Saved address,Saved address,सेव किया पता,draft,Support/Phase4/SettingsView.swift:57,0.92x
+Saved for your plan,Saved for your plan,आपके प्लान के लिए सेव किया गया,draft,Support/ShopLab/ShopAskSheet.swift:142,1.58x
+Saved on this phone. It opens without internet.,Saved on this phone. It opens without internet.,इस फ़ोन पर सेव है। बिना इंटरनेट खुलता है।,draft,Support/Phase4/HistoryView.swift:86,0.87x
+Scan or share parchi,Scan or share parchi,पर्ची स्कैन या शेयर करें,draft,Screens/HomeView.swift:28,1.20x
+Scan with the camera,Scan with the camera,कैमरे से स्कैन करें,draft,Support/Capture/CaptureView.swift:204; Support/Capture/CaptureView.swift:209,0.95x
+Seen %@,Seen %@,%@ को देखा गया,draft,Screens/GetItAllView.swift:37,2.00x
+Selected,Selected,चुना गया,draft,Support/Phase4/LocationProvider.swift:113,1.00x
+Seller probe,Seller probe,विक्रेता की जांच,draft,Support/CheckoutAssistant/SellerProbeView.swift:82,1.33x
+Send message,Send message,संदेश भेजें,draft,Support/ShopLab/ShopAskSheet.swift:179,0.92x
+Send this list to %@,Send this list to %@,यह सूची %@ को भेजें,draft,Support/CheckoutAssistant/CheckoutAssistantView.swift:98,0.95x
+Send this request to the lab,Send this request to the lab,यह अनुरोध लैब को भेजें,draft,Support/ShopLab/LabBookingView.swift:181,0.79x
+Send to %lld shop%@,Send to %lld shop%@,%lld दुकान%@ को भेजें,draft,Support/ShopLab/ShopAskSheet.swift:36,1.11x
+Server URL,Server URL,सर्वर URL,draft,Support/BackendSwitchView.swift:34,0.90x
+Settings,Settings,सेटिंग्स,draft,Screens/HomeView.swift:56; Support/Phase4/SettingsView.swift:116,1.00x
+"Share or scan your doctor's parchi. We read every medicine and test, and find the full price to get all of it.","Share or scan your doctor's parchi. We read every medicine and test, and find the full price to get all of it.",डॉक्टर की पर्ची शेयर या स्कैन करें। हम हर दवा और टेस्ट पढ़ते हैं और सब हासिल करने की पूरी कीमत ढूंढते हैं।,draft,Screens/HomeView.swift:19,0.96x
+Shop,Shop,दुकान,draft,Screens/ShopSheet.swift:34,1.25x
+Shop phone (optional),Shop phone (optional),दुकान का फ़ोन (वैकल्पिक),draft,Support/ShopLab/ShopAskSheet.swift:79,1.14x
+"Shops come from Apple Maps, searched live around %@. Their names and places stay on this phone and are not saved. If you ask a shop, Parchi's server gets only a random code and a generic name, never its real name or place. Map data © Apple. A price marked ""Catalogue MRP"" is the printed price, not a quote from that shop.","Shops come from Apple Maps, searched live around %@. Their names and places stay on this phone and are not saved. If you ask a shop, Parchi's server gets only a random code and a generic name, never its real name or place. Map data © Apple. A price marked ""Catalogue MRP"" is the printed price, not a quote from that shop.","Apple Maps से %@ के आसपास की दुकानें खोजी जाती हैं। उनके नाम और स्थान इसी फ़ोन पर रहते हैं और सेव नहीं होते। दुकान से पूछने पर पर्ची सर्वर को केवल एक रैंडम कोड और सामान्य नाम मिलता है; असली नाम या स्थान नहीं। मैप डेटा © Apple। “Catalogue MRP” लिखी कीमत छपी हुई कीमत है, उस दुकान का बताया भाव नहीं।",draft,Screens/PlanMapView.swift:38,0.93x
+Shops reply on a web page. The first complete reply wins.,Shops reply on a web page. The first complete reply wins.,दुकानें वेब पेज पर जवाब देती हैं। पहला पूरा जवाब चुना जाता है।,draft,Support/ShopLab/ShopAskSheet.swift:127,1.09x
+"Shops, cheapest first, then nearest","Shops, cheapest first, then nearest","दुकानें: पहले सबसे सस्ती, फिर सबसे नज़दीक",draft,Screens/PlanMapView.swift:36,1.17x
+Sign out,Sign out,साइन आउट करें,draft,Support/CheckoutAssistant/CheckoutPrivacy.swift:27,1.62x
+Sign out of all seller websites?,Sign out of all seller websites?,सभी विक्रेता वेबसाइटों से साइन आउट करें?,draft,Support/CheckoutAssistant/CheckoutPrivacy.swift:26,1.25x
+Sign out of all sellers,Sign out of all sellers,सभी विक्रेताओं से साइन आउट करें,draft,Support/CheckoutAssistant/CheckoutPrivacy.swift:21,1.35x
+Simulate cancel,Simulate cancel,रद्द होने का डेमो दिखाएं,draft,Screens/TrackView.swift:23,1.60x
+Slot not confirmed yet,Slot not confirmed yet,स्लॉट की पुष्टि अभी नहीं हुई है,draft,Support/Phase4/CareView.swift:93,1.41x
+Smart Router,Smart Router,स्मार्ट राउटर,draft,Support/Phase4/SettingsView.swift:39,1.08x
+Stays on this phone. Do not enter your name or phone number. It is used only to fill lab and shop messages.,Stays on this phone. Do not enter your name or phone number. It is used only to fill lab and shop messages.,यह इसी फ़ोन पर रहता है। अपना नाम या फ़ोन नंबर न लिखें। इसका इस्तेमाल केवल लैब और दुकान के संदेश भरने में होता है।,draft,Support/Phase4/SettingsView.swift:59,1.06x
+Strength,Strength,स्ट्रेंथ,draft,Support/Manual/AddMedicineSheet.swift:117,1.00x
+"Strength (number, if written)","Strength (number, if written)","स्ट्रेंथ (संख्या, अगर लिखी है)",draft,Support/Manual/AddMedicineSheet.swift:119,1.03x
+Suggestions,Suggestions,सुझाव,draft,Support/Manual/AddMedicineSheet.swift:68,0.45x
+Tablets / units,Tablets / units,टैबलेट / इकाइयां,draft,Support/Manual/AddMedicineSheet.swift:143,1.07x
+Tap seven times for the demo reset,Tap seven times for the demo reset,डेमो रीसेट के लिए सात बार टैप करें,draft,Support/Phase4/SettingsView.swift:109,1.00x
+Test connection,Test connection,कनेक्शन टेस्ट करें,draft,Support/BackendSwitchView.swift:44,1.20x
+Test order only: nothing was bought.,Test order only: nothing was bought.,केवल टेस्ट ऑर्डर: कुछ खरीदा नहीं गया।,draft,Support/Phase4/HistoryView.swift:89,1.03x
+Test order: nothing is really bought or booked in this demo.,Test order: nothing is really bought or booked in this demo.,टेस्ट ऑर्डर: इस डेमो में असल में कुछ खरीदा या बुक नहीं किया जाता।,draft,Screens/GetItAllView.swift:10,1.08x
+Testing…,Testing…,जांच हो रही है…,draft,Support/BackendSwitchView.swift:44,1.88x
+Tests,Tests,टेस्ट,draft,Screens/ConfirmView.swift:41,1.00x
+The lab cannot do this slot.,The lab cannot do this slot.,लैब इस स्लॉट में नहीं कर सकती।,draft,Support/ShopLab/LabBookingView.swift:201,1.07x
+The lab confirms on a web page. Parchi never books or pays for you.,The lab confirms on a web page. Parchi never books or pays for you.,लैब वेब पेज पर पुष्टि करती है। पर्ची आपकी ओर से बुकिंग या भुगतान नहीं करती।,draft,Support/ShopLab/LabBookingView.swift:190,1.12x
+The map needs internet. The list still works.,The map needs internet. The list still works.,मैप के लिए इंटरनेट चाहिए। सूची फिर भी काम करती है।,draft,Screens/PlanMapView.swift:77,1.11x
+The medicine list could not be loaded. You can still add the name as you typed it.,The medicine list could not be loaded. You can still add the name as you typed it.,"दवाओं की सूची लोड नहीं हो सकी। आपने जैसा नाम लिखा है, वैसा फिर भी जोड़ सकते हैं।",draft,Support/Manual/AddMedicineSheet.swift:62,0.98x
+The same salts cost %@ at Jan Aushadhi instead of %@ at MRP. Only your doctor can approve a switch; Parchi never changes a medicine on its own.,The same salts cost %@ at Jan Aushadhi instead of %@ at MRP. Only your doctor can approve a switch; Parchi never changes a medicine on its own.,"उन्हीं साल्ट की कीमत Jan Aushadhi पर %@ है, MRP पर %@ के बजाय। बदलाव केवल आपके डॉक्टर की मंज़ूरी से हो सकता है; पर्ची खुद दवा नहीं बदलती।",draft,Screens/PlanView.swift:116,0.96x
+The scanner needs a real iPhone,The scanner needs a real iPhone,स्कैनर के लिए असली iPhone चाहिए,draft,Support/Capture/CaptureView.swift:213,1.00x
+This booking was closed because nothing happened for a week. Book again if you still need it.,This booking was closed because nothing happened for a week. Book again if you still need it.,एक हफ्ते तक कोई कार्रवाई न होने के कारण यह बुकिंग बंद हो गई। अभी भी ज़रूरत हो तो फिर बुक करें।,draft,Support/ShopLab/LabBookingView.swift:203,1.01x
+This cannot be undone. Your saved parchis and settings will be gone.,This cannot be undone. Your saved parchis and settings will be gone.,इसे वापस नहीं किया जा सकता। आपकी सेव की गई पर्चियां और सेटिंग्स मिट जाएंगी।,draft,Support/Phase4/SettingsView.swift:121,1.10x
+This is %@'s real website. You tap Add to cart and Pay yourself. Parchi never clicks for you.,This is %@'s real website. You tap Add to cart and Pay yourself. Parchi never clicks for you.,यह %@ की असली वेबसाइट है। आप खुद कार्ट में जोड़ें और भुगतान करें। पर्ची आपकी ओर से क्लिक नहीं करती।,draft,Support/CheckoutAssistant/CheckoutAssistantView.swift:120,1.06x
+This parchi has only lab tests. Their prices are shown lab by lab below.,This parchi has only lab tests. Their prices are shown lab by lab below.,इस पर्ची में केवल लैब टेस्ट हैं। नीचे उनकी कीमतें लैब के हिसाब से दी गई हैं।,draft,Screens/PlanView.swift:137,1.06x
+This saved plan can't be opened,This saved plan can't be opened,यह सेव किया प्लान नहीं खुल सकता,draft,Support/Phase4/HistoryView.swift:83,1.00x
+Today's doses,Today's doses,आज दवा लेने के समय,draft,Support/Phase4/CareView.swift:71,1.38x
+Total %@,Total %@,कुल %@,draft,Screens/TrackView.swift:14,0.75x
+Total you pay,Total you pay,आपका कुल भुगतान,draft,Support/Phase4/HistoryView.swift:66,1.15x
+Track,Track,ट्रैक करें,draft,Screens/TrackView.swift:47,2.00x
+Try again,Try again,फिर कोशिश करें,draft,Screens/PlanMapView.swift:81,1.56x
+Try the map search again,Try the map search again,मैप खोज फिर करें,draft,Screens/PlanMapView.swift:84,0.67x
+Try the server again,Try the server again,सर्वर से फिर कोशिश करें,draft,Support/Phase4/SettingsView.swift:97,1.15x
+Use my location,Use my location,मेरा स्थान इस्तेमाल करें,draft,Support/Phase4/LocationProvider.swift:98,1.60x
+Use this photo,Use this photo,यह फ़ोटो इस्तेमाल करें,draft,Support/Capture/CaptureView.swift:282,1.57x
+Version %@,Version %@,वर्ज़न %@,draft,Support/Phase4/SettingsView.swift:105,0.90x
+Visit the lab,Visit the lab,लैब जाएं,draft,Support/ShopLab/LabBookingView.swift:161,0.62x
+Waiting for the lab to confirm · preferred %@,Waiting for the lab to confirm · preferred %@,लैब की पुष्टि का इंतज़ार · पसंद %@,draft,Support/ShopLab/LabBookingView.swift:199,0.76x
+"We could not find a name, phone or address to hide.","We could not find a name, phone or address to hide.","हमें छिपाने के लिए नाम, फ़ोन या पता नहीं मिला।",draft,Support/Capture/CaptureView.swift:265,0.90x
+We could not match this test,We could not match this test,यह टेस्ट नहीं मिला,draft,Screens/ConfirmView.swift:220,0.64x
+We could not read these lines:,We could not read these lines:,हम ये लाइनें नहीं पढ़ सके:,draft,Screens/ConfirmView.swift:16,0.87x
+"We couldn't find ""%@"". Check the spelling, or remove this line and add the medicine by hand.","We couldn't find ""%@"". Check the spelling, or remove this line and add the medicine by hand.","""%@"" नहीं मिला। वर्तनी जांचें, या यह लाइन हटाकर दवा खुद लिखें।",draft,Screens/ConfirmView.swift:171,0.67x
+"We couldn't find ""%@"". Did you mean %@?","We couldn't find ""%@"". Did you mean %@?","""%@"" नहीं मिला। क्या आपका मतलब %@ था?",draft,Screens/ConfirmView.swift:172,0.95x
+We don't have this name. You can still add it; the next screen will ask you to check it.,We don't have this name. You can still add it; the next screen will ask you to check it.,यह नाम हमारे पास नहीं है। आप फिर भी जोड़ सकते हैं; अगली स्क्रीन पर इसे जांचने को कहा जाएगा।,draft,Support/Manual/AddMedicineSheet.swift:91,1.03x
+We hid %@ area%@ on this phone.,We hid %@ area%@ on this phone.,इस फ़ोन पर %@ जगह%@ छिपाई गईं।,draft,Support/Capture/CaptureView.swift:266,0.97x
+What decides the order,What decides the order,क्रम किस आधार पर तय होता है,draft,Support/Phase4/HowWeRankView.swift:7,1.23x
+What did you pay %@ in total?,What did you pay %@ in total?,आपने %@ को कुल कितना भुगतान किया?,draft,Support/V2/V2Views.swift:33,1.14x
+What did you pay?,What did you pay?,आपने कितना भुगतान किया?,draft,Screens/TrackView.swift:33,1.35x
+What next? Doses and refills,What next? Doses and refills,आगे क्या? दवा लेने के समय और रीफिल,draft,Screens/TrackView.swift:42; Screens/TrackView.swift:45,1.21x
+What this means for you,What this means for you,आपके लिए इसका मतलब,draft,Support/Phase4/SettingsView.swift:175,0.78x
+What we do not do,What we do not do,हम क्या नहीं करते,draft,Support/Phase4/HowWeRankView.swift:26,1.00x
+What we measured,What we measured,हमने क्या मापा,draft,Support/Phase4/SettingsView.swift:167,0.88x
+"When on, a seller that often cancels or delivers late must be clearly cheaper to be chosen. The prices shown are always the real prices.","When on, a seller that often cancels or delivers late must be clearly cheaper to be chosen. The prices shown are always the real prices.","चालू होने पर, अक्सर रद्द करने या देर से डिलीवरी देने वाले विक्रेता को चुने जाने के लिए काफ़ी सस्ता होना होगा। दिखाई गई कीमतें हमेशा असली कीमतें हैं।",draft,Support/Phase4/SettingsView.swift:41,1.09x
+"When you approve a plan it is saved here, on this phone.","When you approve a plan it is saved here, on this phone.",प्लान मंज़ूर करने पर वह यहां इसी फ़ोन पर सेव होता है।,draft,Support/Phase4/HistoryView.swift:21,0.95x
+"When you continue, this picture goes to the Parchi lab server to be read. A copy stays on this phone and is removed the next time you open Parchi after 24 hours.","When you continue, this picture goes to the Parchi lab server to be read. A copy stays on this phone and is removed the next time you open Parchi after 24 hours.",आगे बढ़ने पर यह तस्वीर पढ़ने के लिए पर्ची लैब सर्वर पर जाती है। एक प्रति इसी फ़ोन पर रहती है और 24 घंटे बाद अगली बार पर्ची खोलने पर हटाई जाती है।,draft,Support/Capture/CaptureView.swift:272,0.90x
+Where prices come from,Where prices come from,कीमतें कहां से आती हैं,draft,Support/Phase4/HowWeRankView.swift:37,1.00x
+Which shops? (up to 3),Which shops? (up to 3),कौन सी दुकानें? (अधिकतम 3),draft,Support/ShopLab/ShopAskSheet.swift:96,1.18x
+Which test?,Which test?,कौन सा टेस्ट?,draft,Screens/ConfirmView.swift:206,1.18x
+"Worked out from the quantity and schedule written on your parchi, minus 3 days. It is a reminder, not medical advice.","Worked out from the quantity and schedule written on your parchi, minus 3 days. It is a reminder, not medical advice.","पर्ची पर लिखी संख्या और समय के हिसाब से, 3 दिन घटाकर निकाला गया। यह रिमाइंडर है, चिकित्सा सलाह नहीं।",draft,Support/Phase4/CareView.swift:85,0.85x
+You can delete everything any time in Settings.,You can delete everything any time in Settings.,आप कभी भी सेटिंग्स में “सब मिटाएं” चुन सकते हैं।,draft,Support/Phase4/FirstRunConsentView.swift:52,1.02x
+You choose what matters,You choose what matters,आप चुनते हैं कि क्या ज़रूरी है,draft,Support/Phase4/HowWeRankView.swift:18,1.30x
+You send the message and pay the shop yourself.,You send the message and pay the shop yourself.,आप संदेश भेजते हैं और दुकान को खुद भुगतान करते हैं।,draft,Support/CheckoutAssistant/CheckoutAssistantView.swift:121,1.09x
+Your address is saved on this phone only and is sent to the lab with the booking. Do not type your name or phone number here.,Your address is saved on this phone only and is sent to the lab with the booking. Do not type your name or phone number here.,आपका पता केवल इसी फ़ोन पर सेव होता है और बुकिंग के साथ लैब को भेजा जाता है। यहां अपना नाम या फ़ोन नंबर न लिखें।,draft,Support/ShopLab/LabBookingView.swift:124,0.89x
+Your city,Your city,आपका शहर,draft,Support/Phase4/LocationProvider.swift:123,0.89x
+Your data stays yours,Your data stays yours,आपका डेटा आपका है,draft,Support/Phase4/FirstRunConsentView.swift:17,0.81x
+"Your parchi, with the details we could find covered","Your parchi, with the details we could find covered","आपकी पर्ची, जिन जानकारियों को ढूंढ सके उन्हें छिपाकर",draft,Support/Capture/CaptureView.swift:263,1.02x
+Your plan,Your plan,आपका प्लान,draft,Screens/PlanView.swift:20,1.11x
+Your report was due. Call the lab to ask for it.,Your report was due. Call the lab to ask for it.,आपकी रिपोर्ट की तारीख निकल गई है। लैब को कॉल करके पूछें।,draft,Support/ShopLab/LabBookingView.swift:206,1.17x
+in your plan data,in your plan data,आपके प्लान के डेटा में,draft,Screens/PlanMapView.swift:135,1.29x
+no price,no price,कीमत नहीं है,draft,Screens/ShopSheet.swift:156,1.50x
+qty %lld,qty %lld,संख्या %lld,draft,Support/CheckoutAssistant/CheckoutAssistantView.swift:105,1.38x

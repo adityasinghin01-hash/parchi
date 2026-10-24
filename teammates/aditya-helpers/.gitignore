@@ -1,0 +1,9 @@
+.venv*/
+.cache/
+.tmp/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+!hindi-pack/out/
+!hindi-pack/out/**

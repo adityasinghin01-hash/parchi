@@ -1,0 +1,27 @@
+{
+  "lang": "en",
+  "issue": "refund_pending",
+  "seller": {
+    "name": "Tata 1mg",
+    "kind": "online_pharmacy"
+  },
+  "order": {
+    "orderId": "EXAMPLE-001",
+    "placedOn": "2026-10-20",
+    "amountPaise": 269677,
+    "paidVia": "upi",
+    "items": [
+      {
+        "name": "Dolo",
+        "strength": "650",
+        "qty": 15
+      }
+    ],
+    "isTestOrder": false
+  },
+  "events": {
+    "refundRequestedOn": "2026-10-22",
+    "supportContactedOn": "2026-10-28"
+  },
+  "today": "2026-10-30"
+}

@@ -1,0 +1,49 @@
+{
+  "input": {
+    "lang": "en",
+    "issue": "cancelled_by_seller",
+    "seller": {
+      "name": "Tata 1mg",
+      "kind": "online_pharmacy"
+    },
+    "order": {
+      "orderId": "EXAMPLE-001",
+      "placedOn": "2026-10-20",
+      "amountPaise": 269677,
+      "paidVia": "upi",
+      "items": [
+        {
+          "name": "Dolo",
+          "strength": "650",
+          "qty": 15
+        }
+      ],
+      "isTestOrder": true
+    },
+    "events": {
+      "refundRequestedOn": "2026-10-22",
+      "supportContactedOn": "2026-10-28"
+    },
+    "today": "2026-10-30"
+  },
+  "output": {
+    "message": {
+      "subject": "Test order — Order support request — EXAMPLE-001",
+      "body": "Hello,\nThe seller cancelled my order.\nOrder ID: EXAMPLE-001\nPlaced on: 2026-10-20\nAmount: ₹2696.77\nPayment method: upi\nItems: Dolo / 650 / qty 15\nRefund requested on: 2026-10-22\nSupport contacted on: 2026-10-28\nPlease explain the cancellation and confirm the refund status.\nPlease refund to my original payment method.\nThank you.",
+      "lang": "en"
+    },
+    "evidence": [
+      "Order confirmation and bill",
+      "Payment record, if paid",
+      "Support conversation, if available"
+    ],
+    "ladder": [],
+    "followUps": [],
+    "notes": [
+      "Message is a draft for you to review and send.",
+      "Sandbox only: no real seller contact or escalation."
+    ],
+    "disclaimer": "Review and send this message yourself. Parchi does not send messages, handle money or provide legal advice.",
+    "precautions": []
+  }
+}
