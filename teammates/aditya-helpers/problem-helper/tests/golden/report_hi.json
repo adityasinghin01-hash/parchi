@@ -1,0 +1,104 @@
+{
+  "input": {
+    "lang": "hi",
+    "issue": "lab_report_late",
+    "seller": {
+      "name": "Metropolis",
+      "kind": "lab"
+    },
+    "order": {
+      "orderId": "EXAMPLE-001",
+      "placedOn": "2026-10-20",
+      "amountPaise": 269677,
+      "paidVia": "upi",
+      "items": [
+        {
+          "name": "Dolo",
+          "strength": "650",
+          "qty": 15
+        }
+      ],
+      "isTestOrder": false
+    },
+    "events": {
+      "refundRequestedOn": "2026-10-22",
+      "supportContactedOn": "2026-10-28"
+    },
+    "today": "2026-10-30"
+  },
+  "output": {
+    "message": {
+      "subject": "ऑर्डर संबंधी अनुरोध — EXAMPLE-001",
+      "body": "नमस्ते,\nमेरी लैब रिपोर्ट में देरी हो रही है।\nऑर्डर आईडी: EXAMPLE-001\nऑर्डर की तारीख: 2026-10-20\nरकम: ₹2696.77\nभुगतान का तरीका: upi\nसामान: Dolo / 650 / संख्या 15\nरिफंड मांगा: 2026-10-22\nसपोर्ट से संपर्क किया: 2026-10-28\nकृपया बताएं कि मेरी रिपोर्ट कब मिलेगी।\nधन्यवाद।",
+      "lang": "hi"
+    },
+    "evidence": [
+      "ऑर्डर की पुष्टि और बिल",
+      "भुगतान का रिकॉर्ड, यदि भुगतान किया है",
+      "सपोर्ट से हुई बातचीत, यदि मौजूद है"
+    ],
+    "ladder": [
+      {
+        "level": 1,
+        "who": "विक्रेता सपोर्ट",
+        "how": "ईमेल या ऑर्डर के ऐप चैट से संपर्क करें",
+        "contact": {
+          "value": "support@metropolisindia.com",
+          "sourceUrl": "https://www.metropolisindia.com/complaints-and-grievance-redressal-policy",
+          "dateSeen": "2026-10-23"
+        },
+        "when": "now",
+        "why": "पहले विक्रेता से संपर्क करें"
+      },
+      {
+        "level": 2,
+        "who": "शिकायत अधिकारी",
+        "how": "ईमेल",
+        "contact": {
+          "value": "nodal.officer@metropolisindia.com",
+          "sourceUrl": "https://www.metropolisindia.com/complaints-and-grievance-redressal-policy",
+          "dateSeen": "2026-10-23"
+        },
+        "when": "2026-10-30",
+        "why": "दिए गए द्वितीयक स्रोतों में 48 घंटे में पावती और 1 महीने में निवारण बताया गया है; check on the official site"
+      },
+      {
+        "level": 3,
+        "who": "National Consumer Helpline (NCH)",
+        "how": "1915 / WhatsApp 8800001915 / https://consumerhelpline.gov.in",
+        "contact": {
+          "value": "1915",
+          "sourceUrl": "https://newsonair.gov.in/toll-free-number-in-17-languages-for-consumers-grievance-redressal-across-the-country-govt-in-ls/",
+          "dateSeen": "2026-10-24"
+        },
+        "when": "2026-11-01",
+        "why": "जवाब न मिले तो हेल्पलाइन से अगले विकल्प पूछें; check on the official site"
+      }
+    ],
+    "followUps": [
+      {
+        "dueOn": "2026-11-01",
+        "text": "पावती जांचें; check on the official site",
+        "basis": "planned",
+        "complaintDate": "2026-10-30"
+      },
+      {
+        "dueOn": "2026-11-29",
+        "text": "निवारण की स्थिति जांचें; check on the official site",
+        "basis": "planned",
+        "complaintDate": "2026-10-30"
+      }
+    ],
+    "notes": [
+      "Hindi wording is draft; native review pending.",
+      "SECONDARY SOURCES ONLY (news and law-firm notes). Every item must be checked on the official page and re-dated before the app shows it to a patient. Until then the app must label it 'check on the official site'.",
+      "check on the official site",
+      "Refund completion time is not verified; no number is promised.",
+      "ASSUMPTION: wait 2 days after contacting support before escalation; this is not a verified rule.",
+      "ASSUMPTION: resolution reminder uses +30 days as specified; it is not a calendar-month calculation or a verified deadline.",
+      "Follow-ups are planned dates. Recompute with events.grievanceSentOn after you actually send the complaint."
+    ],
+    "disclaimer": "यह संदेश आप जांचकर खुद भेजें। पर्ची संदेश नहीं भेजती, पैसे नहीं संभालती और कानूनी सलाह नहीं देती।",
+    "precautions": []
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "en": {
+    "not_delivered": {
+      "fact": "My order has not arrived.",
+      "ask": "Please confirm the order status and arrange delivery."
+    },
+    "late": {
+      "fact": "My order is late.",
+      "ask": "Please confirm a revised delivery date."
+    },
+    "cancelled_by_seller": {
+      "fact": "The seller cancelled my order.",
+      "ask": "Please explain the cancellation and confirm the refund status."
+    },
+    "wrong_item": {
+      "fact": "The item received does not match my order.",
+      "ask": "Please arrange the correct item or a refund."
+    },
+    "missing_item": {
+      "fact": "An item is missing from my order.",
+      "ask": "Please send the missing item or refund its cost."
+    },
+    "expired_or_damaged": {
+      "fact": "The item received is expired or damaged.",
+      "ask": "Please replace the item or refund its cost."
+    },
+    "refund_pending": {
+      "fact": "My refund is pending.",
+      "ask": "Please confirm the refund status and reference."
+    },
+    "overcharged": {
+      "fact": "I am reporting an overcharge.",
+      "ask": "Please check the bill and refund any excess amount charged."
+    },
+    "no_support_reply": {
+      "fact": "I have not received a support reply.",
+      "ask": "Please reply with the status of my request."
+    },
+    "lab_sample_issue": {
+      "fact": "I am reporting a problem with sample collection.",
+      "ask": "Please contact me to resolve the sample collection issue."
+    },
+    "lab_report_late": {
+      "fact": "My lab report is delayed.",
+      "ask": "Please confirm when my report will be available."
+    }
+  },
+  "hi": {
+    "not_delivered": {
+      "fact": "मेरा ऑर्डर अभी तक नहीं आया है।",
+      "ask": "कृपया ऑर्डर की स्थिति बताएं और डिलीवरी करवाएं।"
+    },
+    "late": {
+      "fact": "मेरे ऑर्डर की डिलीवरी में देरी हो रही है।",
+      "ask": "कृपया डिलीवरी की नई तारीख बताएं।"
+    },
+    "cancelled_by_seller": {
+      "fact": "विक्रेता ने मेरा ऑर्डर रद्द कर दिया है।",
+      "ask": "कृपया रद्द करने का कारण और रिफंड की स्थिति बताएं।"
+    },
+    "wrong_item": {
+      "fact": "मिला हुआ सामान मेरे ऑर्डर से मेल नहीं खाता।",
+      "ask": "कृपया सही सामान भेजें या रिफंड करें।"
+    },
+    "missing_item": {
+      "fact": "मेरे ऑर्डर में सामान कम मिला है।",
+      "ask": "कृपया बचा हुआ सामान भेजें या उसकी रकम वापस करें।"
+    },
+    "expired_or_damaged": {
+      "fact": "मिला हुआ सामान एक्सपायर हो चुका है या खराब है।",
+      "ask": "कृपया सामान बदलें या उसकी रकम वापस करें।"
+    },
+    "refund_pending": {
+      "fact": "मेरा रिफंड अभी तक नहीं मिला है।",
+      "ask": "कृपया रिफंड की स्थिति और रेफरेंस बताएं।"
+    },
+    "overcharged": {
+      "fact": "मैं अधिक रकम लिए जाने की शिकायत कर रहा/रही हूं।",
+      "ask": "कृपया बिल जांचें और ली गई अतिरिक्त रकम वापस करें।"
+    },
+    "no_support_reply": {
+      "fact": "मुझे सपोर्ट से जवाब नहीं मिला है।",
+      "ask": "कृपया मेरे अनुरोध की स्थिति बताएं।"
+    },
+    "lab_sample_issue": {
+      "fact": "मैं सैंपल कलेक्शन की समस्या बता रहा/रही हूं।",
+      "ask": "कृपया सैंपल कलेक्शन की समस्या हल करने के लिए मुझसे संपर्क करें।"
+    },
+    "lab_report_late": {
+      "fact": "मेरी लैब रिपोर्ट में देरी हो रही है।",
+      "ask": "कृपया बताएं कि मेरी रिपोर्ट कब मिलेगी।"
+    }
+  }
+}

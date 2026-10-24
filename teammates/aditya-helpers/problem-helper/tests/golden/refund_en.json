@@ -1,0 +1,104 @@
+{
+  "input": {
+    "lang": "en",
+    "issue": "refund_pending",
+    "seller": {
+      "name": "Tata 1mg",
+      "kind": "online_pharmacy"
+    },
+    "order": {
+      "orderId": "EXAMPLE-001",
+      "placedOn": "2026-10-20",
+      "amountPaise": 269677,
+      "paidVia": "upi",
+      "items": [
+        {
+          "name": "Dolo",
+          "strength": "650",
+          "qty": 15
+        }
+      ],
+      "isTestOrder": false
+    },
+    "events": {
+      "refundRequestedOn": "2026-10-22",
+      "supportContactedOn": "2026-10-28"
+    },
+    "today": "2026-10-30"
+  },
+  "output": {
+    "message": {
+      "subject": "Order support request — EXAMPLE-001",
+      "body": "Hello,\nMy refund is pending.\nOrder ID: EXAMPLE-001\nPlaced on: 2026-10-20\nAmount: ₹2696.77\nPayment method: upi\nItems: Dolo / 650 / qty 15\nRefund requested on: 2026-10-22\nSupport contacted on: 2026-10-28\nPlease confirm the refund status and reference.\nPlease confirm the amount due for refund.\nPlease refund to my original payment method.\nThank you.",
+      "lang": "en"
+    },
+    "evidence": [
+      "Order confirmation and bill",
+      "Payment record, if paid",
+      "Support conversation, if available"
+    ],
+    "ladder": [
+      {
+        "level": 1,
+        "who": "Seller support",
+        "how": "Use the seller's email or order app chat",
+        "contact": {
+          "value": "care@1mg.com",
+          "sourceUrl": "https://www.1mg.com/aboutUs",
+          "dateSeen": "2026-10-23"
+        },
+        "when": "now",
+        "why": "Ask the seller first"
+      },
+      {
+        "level": 2,
+        "who": "Grievance officer",
+        "how": "Email",
+        "contact": {
+          "value": "grievance-officer@1mg.com",
+          "sourceUrl": "https://www.1mg.com/grievance-redressal-policy",
+          "dateSeen": "2026-10-23"
+        },
+        "when": "2026-10-30",
+        "why": "Secondary sources describe acknowledgement within 48 hours and redress within 1 month; check on the official site"
+      },
+      {
+        "level": 3,
+        "who": "National Consumer Helpline (NCH)",
+        "how": "1915 / WhatsApp 8800001915 / https://consumerhelpline.gov.in",
+        "contact": {
+          "value": "1915",
+          "sourceUrl": "https://newsonair.gov.in/toll-free-number-in-17-languages-for-consumers-grievance-redressal-across-the-country-govt-in-ls/",
+          "dateSeen": "2026-10-24"
+        },
+        "when": "2026-11-01",
+        "why": "If there is no reply by the acknowledgement check, ask the helpline about next options; check on the official site"
+      }
+    ],
+    "followUps": [
+      {
+        "dueOn": "2026-11-01",
+        "text": "Check acknowledgement; check on the official site",
+        "basis": "planned",
+        "complaintDate": "2026-10-30"
+      },
+      {
+        "dueOn": "2026-11-29",
+        "text": "Check resolution status; check on the official site",
+        "basis": "planned",
+        "complaintDate": "2026-10-30"
+      }
+    ],
+    "notes": [
+      "Message is a draft for you to review and send.",
+      "SECONDARY SOURCES ONLY (news and law-firm notes). Every item must be checked on the official page and re-dated before the app shows it to a patient. Until then the app must label it 'check on the official site'.",
+      "check on the official site",
+      "Refund completion time is not verified; no number is promised.",
+      "ASSUMPTION: wait 2 days after contacting support before escalation; this is not a verified rule.",
+      "ASSUMPTION: resolution reminder uses +30 days as specified; it is not a calendar-month calculation or a verified deadline.",
+      "Follow-ups are planned dates. Recompute with events.grievanceSentOn after you actually send the complaint."
+    ],
+    "disclaimer": "Review and send this message yourself. Parchi does not send messages, handle money or provide legal advice.",
+    "precautions": []
+  }
+}
