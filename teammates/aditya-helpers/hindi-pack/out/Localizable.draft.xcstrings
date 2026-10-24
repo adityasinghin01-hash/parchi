@@ -1,0 +1,2756 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    " · report %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": " · रिपोर्ट %@"
+          }
+        }
+      }
+    },
+    "%@ %@ doesn't exist. It comes in %@. Which one?": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%@ %@ उपलब्ध नहीं है। यह %@ में मिलता है। कौन सा है?"
+          }
+        }
+      }
+    },
+    "%@ cancelled %lld items.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%@ ने %lld सामान रद्द किए।"
+          }
+        }
+      }
+    },
+    "%@ medicines · %@ tests": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%@ दवाएं · %@ टेस्ट"
+          }
+        }
+      }
+    },
+    "%lld price%@ from this shop are ready to go into the plan.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "इस दुकान से %lld कीमत%@ प्लान में जोड़ने के लिए तैयार हैं।"
+          }
+        }
+      }
+    },
+    "+ %@ fee": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "+ %@ शुल्क"
+          }
+        }
+      }
+    },
+    "Add": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "जोड़ें"
+          }
+        }
+      }
+    },
+    "Add \"%@\" as typed": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "जैसा लिखा है, \"%@\" जोड़ें"
+          }
+        }
+      }
+    },
+    "Add a medicine": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "दवा जोड़ें"
+          }
+        }
+      }
+    },
+    "Add a medicine for the lines we could not read": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "न पढ़ी गई लाइनों के लिए दवा जोड़ें"
+          }
+        }
+      }
+    },
+    "Add a medicine or test first": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "पहले दवा या टेस्ट जोड़ें"
+          }
+        }
+      }
+    },
+    "Add a test": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "टेस्ट जोड़ें"
+          }
+        }
+      }
+    },
+    "Add these by hand": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "इन्हें खुद लिखकर जोड़ें"
+          }
+        }
+      }
+    },
+    "Add to Calendar and set reminder": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "कैलेंडर में जोड़ें और रिमाइंडर लगाएं"
+          }
+        }
+      }
+    },
+    "Agree & continue": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सहमत हूं और आगे बढ़ें"
+          }
+        }
+      }
+    },
+    "All correct": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सब सही है"
+          }
+        }
+      }
+    },
+    "Always ask me first": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "हमेशा पहले मुझसे पूछें"
+          }
+        }
+      }
+    },
+    "Amount in ₹": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "रकम ₹ में"
+          }
+        }
+      }
+    },
+    "Answer the highlighted line": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "चिह्नित लाइन का जवाब दें"
+          }
+        }
+      }
+    },
+    "Approve": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "मंज़ूर करें"
+          }
+        }
+      }
+    },
+    "Approve a plan and your doses and refill dates show up here.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "प्लान मंज़ूर करने पर दवा लेने का समय और रीफिल की तारीखें यहां दिखेंगी।"
+          }
+        }
+      }
+    },
+    "Ask": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "पूछें"
+          }
+        }
+      }
+    },
+    "Ask different shops": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "दूसरी दुकानों से पूछें"
+          }
+        }
+      }
+    },
+    "Ask my doctor": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "अपने डॉक्टर से पूछें"
+          }
+        }
+      }
+    },
+    "Ask nearby shops": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आसपास की दुकानों से पूछें"
+          }
+        }
+      }
+    },
+    "Ask next %@?": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "अगला %@ पूछें?"
+          }
+        }
+      }
+    },
+    "Ask shops": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "दुकानों से पूछें"
+          }
+        }
+      }
+    },
+    "Ask your doctor": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "अपने डॉक्टर से पूछें"
+          }
+        }
+      }
+    },
+    "Asking…": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "पूछ रहे हैं…"
+          }
+        }
+      }
+    },
+    "Auto-approve up to ₹%@ extra": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "₹%@ तक अतिरिक्त रकम अपने आप मंज़ूर करें"
+          }
+        }
+      }
+    },
+    "Backend": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "बैकएंड"
+          }
+        }
+      }
+    },
+    "Book lab tests": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "लैब टेस्ट बुक करें"
+          }
+        }
+      }
+    },
+    "Book other tests": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "दूसरे टेस्ट बुक करें"
+          }
+        }
+      }
+    },
+    "Booking…": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "बुकिंग हो रही है…"
+          }
+        }
+      }
+    },
+    "Call": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "कॉल करें"
+          }
+        }
+      }
+    },
+    "Call a shop instead.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "इसके बजाय दुकान को कॉल करें।"
+          }
+        }
+      }
+    },
+    "Can't use this photo": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "यह फ़ोटो इस्तेमाल नहीं कर सकते"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "रद्द करें"
+          }
+        }
+      }
+    },
+    "Care": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "देखभाल"
+          }
+        }
+      }
+    },
+    "Change": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "बदलें"
+          }
+        }
+      }
+    },
+    "Cheapest": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सबसे सस्ता"
+          }
+        }
+      }
+    },
+    "Cheapest lab first. Prices are from lab websites on 23 Oct 2026; the lab confirms the final fee.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सबसे सस्ती लैब पहले। कीमतें 23 Oct 2026 को लैब की वेबसाइटों से ली गई हैं; अंतिम शुल्क लैब बताएगी।"
+          }
+        }
+      }
+    },
+    "Check your photo": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "अपनी फ़ोटो जांचें"
+          }
+        }
+      }
+    },
+    "Checkout Assistant": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "चेकआउट सहायक"
+          }
+        }
+      }
+    },
+    "Checkout finished": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "चेकआउट पूरा हुआ"
+          }
+        }
+      }
+    },
+    "Choose a photo of the parchi": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "पर्ची की फ़ोटो चुनें"
+          }
+        }
+      }
+    },
+    "Choose myself": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "मैं खुद चुनूंगा/चुनूंगी"
+          }
+        }
+      }
+    },
+    "Choose the strength written on the parchi.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "पर्ची पर लिखी स्ट्रेंथ चुनें।"
+          }
+        }
+      }
+    },
+    "City": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "शहर"
+          }
+        }
+      }
+    },
+    "Clears logins and cookies of the seller websites you opened inside Parchi.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "पर्ची के अंदर खोली गई विक्रेता वेबसाइटों के लॉगिन और कुकीज़ मिटाता है।"
+          }
+        }
+      }
+    },
+    "Close": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "बंद करें"
+          }
+        }
+      }
+    },
+    "Close shop sheet": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "दुकान की जानकारी बंद करें"
+          }
+        }
+      }
+    },
+    "Collect the sample at home": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "घर से सैंपल लें"
+          }
+        }
+      }
+    },
+    "Collected around %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "लगभग %@ बजे लिया गया"
+          }
+        }
+      }
+    },
+    "Confirmed": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "पुष्टि हो गई"
+          }
+        }
+      }
+    },
+    "Confirmed %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "पुष्टि हुई %@"
+          }
+        }
+      }
+    },
+    "Day": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "दिन"
+          }
+        }
+      }
+    },
+    "Delete everything": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सब मिटाएं"
+          }
+        }
+      }
+    },
+    "Delete everything?": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सब मिटाएं?"
+          }
+        }
+      }
+    },
+    "Deletes saved parchis, doses, settings, your agreement, photo copies, seller logins, reminders Parchi scheduled and the message it copied on this phone, and asks our lab server to delete this phone's test orders. The server address and key stay so the server can be asked again. %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "इस फ़ोन पर सेव की गई पर्चियां, दवा लेने के समय, सेटिंग्स, आपकी सहमति, फ़ोटो की प्रतियां, विक्रेता लॉगिन, पर्ची के लगाए रिमाइंडर और कॉपी किया संदेश मिटाता है। यह हमारे लैब सर्वर से इस फ़ोन के टेस्ट ऑर्डर मिटाने को कहता है। दोबारा अनुरोध करने के लिए सर्वर का पता और कुंजी रखे जाते हैं। %@"
+          }
+        }
+      }
+    },
+    "Deleting…": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "मिटा रहे हैं…"
+          }
+        }
+      }
+    },
+    "Delivered to you (not on the map)": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आप तक डिलीवरी (मैप पर नहीं)"
+          }
+        }
+      }
+    },
+    "Demo build: uses a sample parchi with real prices captured 23 Oct 2026.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "डेमो बिल्ड: नमूना पर्ची और 23 Oct 2026 को दर्ज असली कीमतें।"
+          }
+        }
+      }
+    },
+    "Demo data restored.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "डेमो डेटा फिर से लोड हो गया।"
+          }
+        }
+      }
+    },
+    "Demo mode: no lab was contacted. The confirmation is scripted so the flow can be shown offline.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "डेमो मोड: किसी लैब से संपर्क नहीं किया गया। बिना इंटरनेट डेमो दिखाने के लिए पुष्टि पहले से तय है।"
+          }
+        }
+      }
+    },
+    "Demo mode: no message was sent. The reply below is scripted so the flow can be shown offline.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "डेमो मोड: कोई संदेश नहीं भेजा गया। बिना इंटरनेट डेमो दिखाने के लिए नीचे का जवाब पहले से तय है।"
+          }
+        }
+      }
+    },
+    "Demo mode: nothing leaves this phone.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "डेमो मोड: इस फ़ोन से कुछ नहीं भेजा जाता।"
+          }
+        }
+      }
+    },
+    "Demo mode: this picture stays on this phone. It is removed the next time you open Parchi after 24 hours.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "डेमो मोड: यह तस्वीर इसी फ़ोन पर रहती है। 24 घंटे बाद अगली बार पर्ची खोलने पर इसे हटा दिया जाता है।"
+          }
+        }
+      }
+    },
+    "Demo reply": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "डेमो जवाब"
+          }
+        }
+      }
+    },
+    "Demo reset": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "डेमो रीसेट"
+          }
+        }
+      }
+    },
+    "Did we read it right?": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "क्या हमने सही पढ़ा?"
+          }
+        }
+      }
+    },
+    "Directions": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "रास्ता देखें"
+          }
+        }
+      }
+    },
+    "Distance not known": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "दूरी मालूम नहीं है"
+          }
+        }
+      }
+    },
+    "Done": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "हो गया"
+          }
+        }
+      }
+    },
+    "Done. Seller logins and carts opened in Parchi are cleared.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "हो गया। पर्ची में खुले विक्रेता लॉगिन और कार्ट साफ कर दिए गए हैं।"
+          }
+        }
+      }
+    },
+    "English": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "अंग्रेज़ी"
+          }
+        }
+      }
+    },
+    "Everything %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सब कुछ %@"
+          }
+        }
+      }
+    },
+    "Everything on this phone is deleted.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "इस फ़ोन का सारा डेटा मिटा दिया गया है।"
+          }
+        }
+      }
+    },
+    "Extra cost %@. Everything else stays as it is.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "अतिरिक्त रकम %@। बाकी सब पहले जैसा रहेगा।"
+          }
+        }
+      }
+    },
+    "Fastest": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सबसे तेज़"
+          }
+        }
+      }
+    },
+    "Fasting for this test is not known to us. Only turn this on if the lab or doctor said so.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "हमें इस टेस्ट के लिए खाली पेट रहने की जानकारी नहीं है। इसे तभी चालू करें जब लैब या डॉक्टर ने कहा हो।"
+          }
+        }
+      }
+    },
+    "Fasting needed for this test": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "इस टेस्ट के लिए खाली पेट रहना है"
+          }
+        }
+      }
+    },
+    "Fasting reminder will be set for %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "खाली पेट रहने का रिमाइंडर %@ के लिए लगेगा"
+          }
+        }
+      }
+    },
+    "Fee %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "शुल्क %@"
+          }
+        }
+      }
+    },
+    "Fees (delivery / handling / collection)": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "शुल्क (डिलीवरी / हैंडलिंग / कलेक्शन)"
+          }
+        }
+      }
+    },
+    "Finding shops…": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "दुकानें ढूंढ रहे हैं…"
+          }
+        }
+      }
+    },
+    "Get it all": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सब हासिल करें"
+          }
+        }
+      }
+    },
+    "Handwriting is hard to read, which is why you check every line on the Confirm screen before any plan is made. When Parchi is unsure about a brand and strength, it asks you instead of guessing.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "हाथ की लिखावट पढ़ना कठिन है, इसलिए कोई प्लान बनने से पहले पुष्टि स्क्रीन पर हर लाइन जांचें। ब्रांड या स्ट्रेंथ पर संदेह होने पर पर्ची अनुमान लगाने के बजाय आपसे पूछती है।"
+          }
+        }
+      }
+    },
+    "Hiding the name, age, phone and address is a best effort and can miss something, phone numbers most of all. Always check the picture before you continue.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "नाम, उम्र, फ़ोन और पता छिपाने की कोशिश में कुछ छूट सकता है, खासकर फ़ोन नंबर। आगे बढ़ने से पहले तस्वीर हमेशा जांचें।"
+          }
+        }
+      }
+    },
+    "Hinglish": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "हिंग्लिश"
+          }
+        }
+      }
+    },
+    "Home address": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "घर का पता"
+          }
+        }
+      }
+    },
+    "Home collection": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "घर से कलेक्शन"
+          }
+        }
+      }
+    },
+    "House, street, area, city": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "मकान, गली, इलाका, शहर"
+          }
+        }
+      }
+    },
+    "How accurate is Parchi?": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "पर्ची कितनी सटीक है?"
+          }
+        }
+      }
+    },
+    "How we rank": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "हम क्रम कैसे तय करते हैं"
+          }
+        }
+      }
+    },
+    "If a seller cancels, Parchi can approve a replacement plan that costs at most this much more. Above it, you decide.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "विक्रेता के रद्द करने पर, पर्ची इतने तक अतिरिक्त खर्च वाला नया प्लान अपने आप मंज़ूर कर सकती है। इससे अधिक रकम के लिए आप फैसला करेंगे।"
+          }
+        }
+      }
+    },
+    "In the real app you finish payment in each seller's own app or website. Parchi never holds your money.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "असली ऐप में आप हर विक्रेता के अपने ऐप या वेबसाइट पर भुगतान पूरा करते हैं। पर्ची आपके पैसे अपने पास नहीं रखती।"
+          }
+        }
+      }
+    },
+    "In your plan": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आपके प्लान में"
+          }
+        }
+      }
+    },
+    "Keep ready by": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "इस समय तक तैयार रखें"
+          }
+        }
+      }
+    },
+    "Keep ready by %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%@ तक तैयार रखें"
+          }
+        }
+      }
+    },
+    "Keep ready by %@ · round %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%@ तक तैयार रखें · दौर %@"
+          }
+        }
+      }
+    },
+    "Lab": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "लैब"
+          }
+        }
+      }
+    },
+    "Lab prices in %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%@ में लैब की कीमतें"
+          }
+        }
+      }
+    },
+    "Lab prices were read from each lab's own page. Home collection and booking come from the lab.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "लैब की कीमतें हर लैब के अपने पेज से ली गई हैं। घर से कलेक्शन और बुकिंग लैब करती है।"
+          }
+        }
+      }
+    },
+    "Lab slot": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "लैब स्लॉट"
+          }
+        }
+      }
+    },
+    "Lab tests are priced lab by lab below. They are not part of the total above.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "टेस्ट की कीमतें नीचे हर लैब के हिसाब से हैं। वे ऊपर के कुल खर्च में शामिल नहीं हैं।"
+          }
+        }
+      }
+    },
+    "Labs": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "लैब"
+          }
+        }
+      }
+    },
+    "Language": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "भाषा"
+          }
+        }
+      }
+    },
+    "Left out of your plan. Ask your doctor which test they meant.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आपके प्लान से बाहर रखा गया है। अपने डॉक्टर से पूछें कि उनका मतलब कौन सा टेस्ट था।"
+          }
+        }
+      }
+    },
+    "List": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सूची"
+          }
+        }
+      }
+    },
+    "Loading...": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "लोड हो रहा है..."
+          }
+        }
+      }
+    },
+    "Local shops show MRP until they reply. Without a phone number we write an SMS text instead of a WhatsApp one.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "जवाब आने तक स्थानीय दुकानों के लिए MRP दिखता है। फ़ोन नंबर न होने पर WhatsApp के बजाय SMS का संदेश बनता है।"
+          }
+        }
+      }
+    },
+    "Looking for the name, phone and address on this phone…": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "इस फ़ोन पर नाम, फ़ोन और पता ढूंढ रहे हैं…"
+          }
+        }
+      }
+    },
+    "Map": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "मैप"
+          }
+        }
+      }
+    },
+    "Medicine name": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "दवा का नाम"
+          }
+        }
+      }
+    },
+    "Medicines": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "दवाएं"
+          }
+        }
+      }
+    },
+    "Medicines %@ · reports %@ · %@ trips": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "दवाएं %@ · रिपोर्ट %@ · %@ चक्कर"
+          }
+        }
+      }
+    },
+    "Medicines cost %@ less than MRP at the doctor's shop (%@).": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "दवाओं का खर्च %@ कम है, डॉक्टर की दुकान के MRP (%@) की तुलना में।"
+          }
+        }
+      }
+    },
+    "Message language": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "संदेश की भाषा"
+          }
+        }
+      }
+    },
+    "My lab told me to fast": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "मेरी लैब ने खाली पेट रहने को कहा है"
+          }
+        }
+      }
+    },
+    "No catalogue price found yet for %@. Check the name and strength on the previous screen, or ask the shop.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%@ की कैटलॉग कीमत अभी नहीं मिली। पिछली स्क्रीन पर नाम और स्ट्रेंथ जांचें या दुकान से पूछें।"
+          }
+        }
+      }
+    },
+    "No complete plan found.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "पूरा प्लान नहीं मिला।"
+          }
+        }
+      }
+    },
+    "No dose times could be read from this parchi.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "इस पर्ची से दवा लेने का समय नहीं पढ़ सके।"
+          }
+        }
+      }
+    },
+    "No fasting needed": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "खाली पेट रहने की ज़रूरत नहीं"
+          }
+        }
+      }
+    },
+    "No lab price known for this test.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "इस टेस्ट की लैब कीमत मालूम नहीं है।"
+          }
+        }
+      }
+    },
+    "No labs found yet for %@.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%@ के लिए अभी कोई लैब नहीं मिली।"
+          }
+        }
+      }
+    },
+    "No number is measured yet for our trained reader, so none is shown. Source: CONTEXT.md, “Key measured numbers”; raw data in docs/research/evidence/.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "हमारे प्रशिक्षित रीडर की सटीकता का माप अभी नहीं है, इसलिए कोई संख्या नहीं दिखाई गई है। स्रोत: CONTEXT.md, “Key measured numbers”; मूल डेटा docs/research/evidence/ में है।"
+          }
+        }
+      }
+    },
+    "No other seller has %@. Ask your doctor or chemist.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "किसी दूसरे विक्रेता के पास %@ नहीं है। अपने डॉक्टर या केमिस्ट से पूछें।"
+          }
+        }
+      }
+    },
+    "No page loaded": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "कोई पेज लोड नहीं हुआ"
+          }
+        }
+      }
+    },
+    "No plan yet. Build a plan first.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "अभी कोई प्लान नहीं है। पहले प्लान बनाएं।"
+          }
+        }
+      }
+    },
+    "No price yet · ask the shop": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "अभी कीमत नहीं है · दुकान से पूछें"
+          }
+        }
+      }
+    },
+    "No reply": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "जवाब नहीं आया"
+          }
+        }
+      }
+    },
+    "No reply in 10 min.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "10 मिनट में जवाब नहीं आया।"
+          }
+        }
+      }
+    },
+    "No reply in 30 min. Call the lab instead?": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "30 मिनट में जवाब नहीं आया। इसके बजाय लैब को कॉल करें?"
+          }
+        }
+      }
+    },
+    "No saved parchis yet": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "अभी कोई पर्ची सेव नहीं है"
+          }
+        }
+      }
+    },
+    "No shops to show yet.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "अभी दिखाने के लिए दुकानें नहीं हैं।"
+          }
+        }
+      }
+    },
+    "No trips": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "कोई चक्कर नहीं"
+          }
+        }
+      }
+    },
+    "Not asked yet": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "अभी पूछा नहीं है"
+          }
+        }
+      }
+    },
+    "Not available": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "उपलब्ध नहीं"
+          }
+        }
+      }
+    },
+    "Not available anywhere: %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "कहीं उपलब्ध नहीं: %@"
+          }
+        }
+      }
+    },
+    "Not available, the shop replied": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "दुकान ने बताया: उपलब्ध नहीं"
+          }
+        }
+      }
+    },
+    "Not everything on this phone could be deleted: %@. Try again.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "इस फ़ोन पर सब कुछ नहीं मिट सका: %@। फिर कोशिश करें।"
+          }
+        }
+      }
+    },
+    "Not in your plan": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आपके प्लान में नहीं"
+          }
+        }
+      }
+    },
+    "Not needed any more (another shop replied first)": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "अब ज़रूरत नहीं (दूसरी दुकान ने पहले जवाब दिया)"
+          }
+        }
+      }
+    },
+    "Not now": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "अभी नहीं"
+          }
+        }
+      }
+    },
+    "Nothing on the list yet. Add the medicines and tests written on your parchi.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सूची अभी खाली है। पर्ची पर लिखी दवाएं और टेस्ट जोड़ें।"
+          }
+        }
+      }
+    },
+    "Nothing to track yet": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "अभी ट्रैक करने के लिए कुछ नहीं है"
+          }
+        }
+      }
+    },
+    "Open %@ on %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%@ को %@ पर खोलें"
+          }
+        }
+      }
+    },
+    "Open Checkout Assistant": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "चेकआउट सहायक खोलें"
+          }
+        }
+      }
+    },
+    "Optional. We store only the amount, the seller and your city's PIN, never your name or phone.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "वैकल्पिक। हम केवल रकम, विक्रेता और आपके शहर का PIN रखते हैं; आपका नाम या फ़ोन कभी नहीं।"
+          }
+        }
+      }
+    },
+    "Options for %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%@ के विकल्प"
+          }
+        }
+      }
+    },
+    "Or choose your city": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "या अपना शहर चुनें"
+          }
+        }
+      }
+    },
+    "Parchi": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "पर्ची"
+          }
+        }
+      }
+    },
+    "Parchi helps you write the message. You send it, and you pay the shop yourself.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "पर्ची संदेश लिखने में मदद करती है। आप संदेश भेजते हैं और दुकान को खुद भुगतान करते हैं।"
+          }
+        }
+      }
+    },
+    "Parchi uses your location to show shops and labs near you. The map search sends the area around you to Apple Maps; Parchi does not save it.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "पर्ची आपके स्थान से आसपास की दुकानें और लैब दिखाती है। मैप खोज में आपका आसपास का इलाका Apple Maps को भेजा जाता है; पर्ची उसे सेव नहीं करती।"
+          }
+        }
+      }
+    },
+    "Pick the nearest 3": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सबसे नज़दीकी 3 चुनें"
+          }
+        }
+      }
+    },
+    "Place test orders": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "टेस्ट ऑर्डर बनाएं"
+          }
+        }
+      }
+    },
+    "Placed": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ऑर्डर दिया गया"
+          }
+        }
+      }
+    },
+    "Plan B": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Plan B"
+          }
+        }
+      }
+    },
+    "Plan for": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "इनके लिए प्लान"
+          }
+        }
+      }
+    },
+    "Plan view": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "प्लान देखें"
+          }
+        }
+      }
+    },
+    "Prefer reliable sellers": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "भरोसेमंद विक्रेताओं को प्राथमिकता दें"
+          }
+        }
+      }
+    },
+    "Preferred time": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "पसंदीदा समय"
+          }
+        }
+      }
+    },
+    "Preferred: %@. The lab confirms or proposes another time.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "पसंद: %@। लैब पुष्टि करेगी या दूसरा समय सुझाएगी।"
+          }
+        }
+      }
+    },
+    "Price for each medicine": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "हर दवा की कीमत"
+          }
+        }
+      }
+    },
+    "Price not found yet": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "अभी कीमत नहीं मिली"
+          }
+        }
+      }
+    },
+    "Price on seller page": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "विक्रेता के पेज पर कीमत"
+          }
+        }
+      }
+    },
+    "Prices captured 23 Oct 2026 (MedScanner, Jan Aushadhi PMBI list, lab price pages). We rank by total price, then time, then trips. No seller pays to appear higher.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "कीमतें 23 Oct 2026 को दर्ज की गईं (MedScanner, Jan Aushadhi PMBI सूची, लैब के कीमत पेज)। क्रम कुल कीमत, फिर समय, फिर चक्करों के आधार पर है। ऊपर दिखने के लिए कोई विक्रेता भुगतान नहीं करता।"
+          }
+        }
+      }
+    },
+    "Privacy": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "निजता"
+          }
+        }
+      }
+    },
+    "Probe all": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सबकी जांच करें"
+          }
+        }
+      }
+    },
+    "Probing…": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "जांच हो रही है…"
+          }
+        }
+      }
+    },
+    "Reading your parchi…": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आपकी पर्ची पढ़ रहे हैं…"
+          }
+        }
+      }
+    },
+    "Real price": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "असली कीमत"
+          }
+        }
+      }
+    },
+    "Recent parchis": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "हाल की पर्चियां"
+          }
+        }
+      }
+    },
+    "Refills": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "रीफिल"
+          }
+        }
+      }
+    },
+    "Refresh": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ताज़ा करें"
+          }
+        }
+      }
+    },
+    "Remove": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "हटाएं"
+          }
+        }
+      }
+    },
+    "Remove %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%@ हटाएं"
+          }
+        }
+      }
+    },
+    "Replied %@ · ready by %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "जवाब %@ · %@ तक तैयार"
+          }
+        }
+      }
+    },
+    "Report expected %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "रिपोर्ट की अपेक्षित तारीख %@"
+          }
+        }
+      }
+    },
+    "Request booking · %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "बुकिंग का अनुरोध · %@"
+          }
+        }
+      }
+    },
+    "Save": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सेव करें"
+          }
+        }
+      }
+    },
+    "Saved address": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सेव किया पता"
+          }
+        }
+      }
+    },
+    "Saved for your plan": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आपके प्लान के लिए सेव किया गया"
+          }
+        }
+      }
+    },
+    "Saved on this phone. It opens without internet.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "इस फ़ोन पर सेव है। बिना इंटरनेट खुलता है।"
+          }
+        }
+      }
+    },
+    "Scan or share parchi": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "पर्ची स्कैन या शेयर करें"
+          }
+        }
+      }
+    },
+    "Scan with the camera": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "कैमरे से स्कैन करें"
+          }
+        }
+      }
+    },
+    "Seen %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%@ को देखा गया"
+          }
+        }
+      }
+    },
+    "Selected": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "चुना गया"
+          }
+        }
+      }
+    },
+    "Seller probe": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "विक्रेता की जांच"
+          }
+        }
+      }
+    },
+    "Send message": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "संदेश भेजें"
+          }
+        }
+      }
+    },
+    "Send this list to %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "यह सूची %@ को भेजें"
+          }
+        }
+      }
+    },
+    "Send this request to the lab": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "यह अनुरोध लैब को भेजें"
+          }
+        }
+      }
+    },
+    "Send to %lld shop%@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%lld दुकान%@ को भेजें"
+          }
+        }
+      }
+    },
+    "Server URL": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सर्वर URL"
+          }
+        }
+      }
+    },
+    "Settings": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सेटिंग्स"
+          }
+        }
+      }
+    },
+    "Share or scan your doctor's parchi. We read every medicine and test, and find the full price to get all of it.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "डॉक्टर की पर्ची शेयर या स्कैन करें। हम हर दवा और टेस्ट पढ़ते हैं और सब हासिल करने की पूरी कीमत ढूंढते हैं।"
+          }
+        }
+      }
+    },
+    "Shop": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "दुकान"
+          }
+        }
+      }
+    },
+    "Shop phone (optional)": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "दुकान का फ़ोन (वैकल्पिक)"
+          }
+        }
+      }
+    },
+    "Shops come from Apple Maps, searched live around %@. Their names and places stay on this phone and are not saved. If you ask a shop, Parchi's server gets only a random code and a generic name, never its real name or place. Map data © Apple. A price marked \"Catalogue MRP\" is the printed price, not a quote from that shop.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Apple Maps से %@ के आसपास की दुकानें खोजी जाती हैं। उनके नाम और स्थान इसी फ़ोन पर रहते हैं और सेव नहीं होते। दुकान से पूछने पर पर्ची सर्वर को केवल एक रैंडम कोड और सामान्य नाम मिलता है; असली नाम या स्थान नहीं। मैप डेटा © Apple। “Catalogue MRP” लिखी कीमत छपी हुई कीमत है, उस दुकान का बताया भाव नहीं।"
+          }
+        }
+      }
+    },
+    "Shops reply on a web page. The first complete reply wins.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "दुकानें वेब पेज पर जवाब देती हैं। पहला पूरा जवाब चुना जाता है।"
+          }
+        }
+      }
+    },
+    "Shops, cheapest first, then nearest": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "दुकानें: पहले सबसे सस्ती, फिर सबसे नज़दीक"
+          }
+        }
+      }
+    },
+    "Sign out": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "साइन आउट करें"
+          }
+        }
+      }
+    },
+    "Sign out of all seller websites?": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सभी विक्रेता वेबसाइटों से साइन आउट करें?"
+          }
+        }
+      }
+    },
+    "Sign out of all sellers": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सभी विक्रेताओं से साइन आउट करें"
+          }
+        }
+      }
+    },
+    "Simulate cancel": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "रद्द होने का डेमो दिखाएं"
+          }
+        }
+      }
+    },
+    "Slot not confirmed yet": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "स्लॉट की पुष्टि अभी नहीं हुई है"
+          }
+        }
+      }
+    },
+    "Smart Router": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "स्मार्ट राउटर"
+          }
+        }
+      }
+    },
+    "Stays on this phone. Do not enter your name or phone number. It is used only to fill lab and shop messages.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "यह इसी फ़ोन पर रहता है। अपना नाम या फ़ोन नंबर न लिखें। इसका इस्तेमाल केवल लैब और दुकान के संदेश भरने में होता है।"
+          }
+        }
+      }
+    },
+    "Strength": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "स्ट्रेंथ"
+          }
+        }
+      }
+    },
+    "Strength (number, if written)": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "स्ट्रेंथ (संख्या, अगर लिखी है)"
+          }
+        }
+      }
+    },
+    "Suggestions": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सुझाव"
+          }
+        }
+      }
+    },
+    "Tablets / units": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "टैबलेट / इकाइयां"
+          }
+        }
+      }
+    },
+    "Tap seven times for the demo reset": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "डेमो रीसेट के लिए सात बार टैप करें"
+          }
+        }
+      }
+    },
+    "Test connection": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "कनेक्शन टेस्ट करें"
+          }
+        }
+      }
+    },
+    "Test order only: nothing was bought.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "केवल टेस्ट ऑर्डर: कुछ खरीदा नहीं गया।"
+          }
+        }
+      }
+    },
+    "Test order: nothing is really bought or booked in this demo.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "टेस्ट ऑर्डर: इस डेमो में असल में कुछ खरीदा या बुक नहीं किया जाता।"
+          }
+        }
+      }
+    },
+    "Testing…": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "जांच हो रही है…"
+          }
+        }
+      }
+    },
+    "Tests": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "टेस्ट"
+          }
+        }
+      }
+    },
+    "The lab cannot do this slot.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "लैब इस स्लॉट में नहीं कर सकती।"
+          }
+        }
+      }
+    },
+    "The lab confirms on a web page. Parchi never books or pays for you.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "लैब वेब पेज पर पुष्टि करती है। पर्ची आपकी ओर से बुकिंग या भुगतान नहीं करती।"
+          }
+        }
+      }
+    },
+    "The map needs internet. The list still works.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "मैप के लिए इंटरनेट चाहिए। सूची फिर भी काम करती है।"
+          }
+        }
+      }
+    },
+    "The medicine list could not be loaded. You can still add the name as you typed it.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "दवाओं की सूची लोड नहीं हो सकी। आपने जैसा नाम लिखा है, वैसा फिर भी जोड़ सकते हैं।"
+          }
+        }
+      }
+    },
+    "The same salts cost %@ at Jan Aushadhi instead of %@ at MRP. Only your doctor can approve a switch; Parchi never changes a medicine on its own.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "उन्हीं साल्ट की कीमत Jan Aushadhi पर %@ है, MRP पर %@ के बजाय। बदलाव केवल आपके डॉक्टर की मंज़ूरी से हो सकता है; पर्ची खुद दवा नहीं बदलती।"
+          }
+        }
+      }
+    },
+    "The scanner needs a real iPhone": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "स्कैनर के लिए असली iPhone चाहिए"
+          }
+        }
+      }
+    },
+    "This booking was closed because nothing happened for a week. Book again if you still need it.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "एक हफ्ते तक कोई कार्रवाई न होने के कारण यह बुकिंग बंद हो गई। अभी भी ज़रूरत हो तो फिर बुक करें।"
+          }
+        }
+      }
+    },
+    "This cannot be undone. Your saved parchis and settings will be gone.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "इसे वापस नहीं किया जा सकता। आपकी सेव की गई पर्चियां और सेटिंग्स मिट जाएंगी।"
+          }
+        }
+      }
+    },
+    "This is %@'s real website. You tap Add to cart and Pay yourself. Parchi never clicks for you.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "यह %@ की असली वेबसाइट है। आप खुद कार्ट में जोड़ें और भुगतान करें। पर्ची आपकी ओर से क्लिक नहीं करती।"
+          }
+        }
+      }
+    },
+    "This parchi has only lab tests. Their prices are shown lab by lab below.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "इस पर्ची में केवल लैब टेस्ट हैं। नीचे उनकी कीमतें लैब के हिसाब से दी गई हैं।"
+          }
+        }
+      }
+    },
+    "This saved plan can't be opened": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "यह सेव किया प्लान नहीं खुल सकता"
+          }
+        }
+      }
+    },
+    "Today's doses": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आज दवा लेने के समय"
+          }
+        }
+      }
+    },
+    "Total %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "कुल %@"
+          }
+        }
+      }
+    },
+    "Total you pay": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आपका कुल भुगतान"
+          }
+        }
+      }
+    },
+    "Track": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ट्रैक करें"
+          }
+        }
+      }
+    },
+    "Try again": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "फिर कोशिश करें"
+          }
+        }
+      }
+    },
+    "Try the map search again": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "मैप खोज फिर करें"
+          }
+        }
+      }
+    },
+    "Try the server again": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सर्वर से फिर कोशिश करें"
+          }
+        }
+      }
+    },
+    "Use my location": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "मेरा स्थान इस्तेमाल करें"
+          }
+        }
+      }
+    },
+    "Use this photo": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "यह फ़ोटो इस्तेमाल करें"
+          }
+        }
+      }
+    },
+    "Version %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "वर्ज़न %@"
+          }
+        }
+      }
+    },
+    "Visit the lab": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "लैब जाएं"
+          }
+        }
+      }
+    },
+    "Waiting for the lab to confirm · preferred %@": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "लैब की पुष्टि का इंतज़ार · पसंद %@"
+          }
+        }
+      }
+    },
+    "We could not find a name, phone or address to hide.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "हमें छिपाने के लिए नाम, फ़ोन या पता नहीं मिला।"
+          }
+        }
+      }
+    },
+    "We could not match this test": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "यह टेस्ट नहीं मिला"
+          }
+        }
+      }
+    },
+    "We could not read these lines:": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "हम ये लाइनें नहीं पढ़ सके:"
+          }
+        }
+      }
+    },
+    "We couldn't find \"%@\". Check the spelling, or remove this line and add the medicine by hand.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "\"%@\" नहीं मिला। वर्तनी जांचें, या यह लाइन हटाकर दवा खुद लिखें।"
+          }
+        }
+      }
+    },
+    "We couldn't find \"%@\". Did you mean %@?": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "\"%@\" नहीं मिला। क्या आपका मतलब %@ था?"
+          }
+        }
+      }
+    },
+    "We don't have this name. You can still add it; the next screen will ask you to check it.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "यह नाम हमारे पास नहीं है। आप फिर भी जोड़ सकते हैं; अगली स्क्रीन पर इसे जांचने को कहा जाएगा।"
+          }
+        }
+      }
+    },
+    "We hid %@ area%@ on this phone.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "इस फ़ोन पर %@ जगह%@ छिपाई गईं।"
+          }
+        }
+      }
+    },
+    "What decides the order": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "क्रम किस आधार पर तय होता है"
+          }
+        }
+      }
+    },
+    "What did you pay %@ in total?": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आपने %@ को कुल कितना भुगतान किया?"
+          }
+        }
+      }
+    },
+    "What did you pay?": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आपने कितना भुगतान किया?"
+          }
+        }
+      }
+    },
+    "What next? Doses and refills": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आगे क्या? दवा लेने के समय और रीफिल"
+          }
+        }
+      }
+    },
+    "What this means for you": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आपके लिए इसका मतलब"
+          }
+        }
+      }
+    },
+    "What we do not do": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "हम क्या नहीं करते"
+          }
+        }
+      }
+    },
+    "What we measured": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "हमने क्या मापा"
+          }
+        }
+      }
+    },
+    "When on, a seller that often cancels or delivers late must be clearly cheaper to be chosen. The prices shown are always the real prices.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "चालू होने पर, अक्सर रद्द करने या देर से डिलीवरी देने वाले विक्रेता को चुने जाने के लिए काफ़ी सस्ता होना होगा। दिखाई गई कीमतें हमेशा असली कीमतें हैं।"
+          }
+        }
+      }
+    },
+    "When you approve a plan it is saved here, on this phone.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "प्लान मंज़ूर करने पर वह यहां इसी फ़ोन पर सेव होता है।"
+          }
+        }
+      }
+    },
+    "When you continue, this picture goes to the Parchi lab server to be read. A copy stays on this phone and is removed the next time you open Parchi after 24 hours.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आगे बढ़ने पर यह तस्वीर पढ़ने के लिए पर्ची लैब सर्वर पर जाती है। एक प्रति इसी फ़ोन पर रहती है और 24 घंटे बाद अगली बार पर्ची खोलने पर हटाई जाती है।"
+          }
+        }
+      }
+    },
+    "Where prices come from": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "कीमतें कहां से आती हैं"
+          }
+        }
+      }
+    },
+    "Which shops? (up to 3)": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "कौन सी दुकानें? (अधिकतम 3)"
+          }
+        }
+      }
+    },
+    "Which test?": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "कौन सा टेस्ट?"
+          }
+        }
+      }
+    },
+    "Worked out from the quantity and schedule written on your parchi, minus 3 days. It is a reminder, not medical advice.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "पर्ची पर लिखी संख्या और समय के हिसाब से, 3 दिन घटाकर निकाला गया। यह रिमाइंडर है, चिकित्सा सलाह नहीं।"
+          }
+        }
+      }
+    },
+    "You can delete everything any time in Settings.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आप कभी भी सेटिंग्स में “सब मिटाएं” चुन सकते हैं।"
+          }
+        }
+      }
+    },
+    "You choose what matters": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आप चुनते हैं कि क्या ज़रूरी है"
+          }
+        }
+      }
+    },
+    "You send the message and pay the shop yourself.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आप संदेश भेजते हैं और दुकान को खुद भुगतान करते हैं।"
+          }
+        }
+      }
+    },
+    "Your address is saved on this phone only and is sent to the lab with the booking. Do not type your name or phone number here.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आपका पता केवल इसी फ़ोन पर सेव होता है और बुकिंग के साथ लैब को भेजा जाता है। यहां अपना नाम या फ़ोन नंबर न लिखें।"
+          }
+        }
+      }
+    },
+    "Your city": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आपका शहर"
+          }
+        }
+      }
+    },
+    "Your data stays yours": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आपका डेटा आपका है"
+          }
+        }
+      }
+    },
+    "Your parchi, with the details we could find covered": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आपकी पर्ची, जिन जानकारियों को ढूंढ सके उन्हें छिपाकर"
+          }
+        }
+      }
+    },
+    "Your plan": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आपका प्लान"
+          }
+        }
+      }
+    },
+    "Your report was due. Call the lab to ask for it.": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आपकी रिपोर्ट की तारीख निकल गई है। लैब को कॉल करके पूछें।"
+          }
+        }
+      }
+    },
+    "in your plan data": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "आपके प्लान के डेटा में"
+          }
+        }
+      }
+    },
+    "no price": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "कीमत नहीं है"
+          }
+        }
+      }
+    },
+    "qty %lld": {
+      "localizations": {
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "संख्या %lld"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}
