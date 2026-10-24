@@ -20,3 +20,5 @@ Total: **678 passed**, no skips or failures. The final root command and raw outp
 Each module was tested, inspected against its acceptance list, corrected and rerun. Regressions cover defects found during review: object validation/Windows UTF-8, placeholder meaning, contextual glossary terms, DEBUG exclusions, duplicate translation keys, strength mistaken for quantity, conflicting fields/expiry labels and absent strength units. No source outside `teammates/aditya-helpers/` changed.
 
 The lead should read each module's README and RESULTS, plus NEEDS-LEAD, before integration. READY here means the standalone acceptance checks passed; it does not mean the iPhone app is integrated or cleared for patient use.
+
+Clean-checkout re-verification: a fresh archive of committed source passed all 678 tests. See clean-checkout-test-output.txt. All tracked changes are confined to this feature folder.
