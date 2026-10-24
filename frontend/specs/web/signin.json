@@ -1,0 +1,906 @@
+{
+ "viewport": {
+  "w": 390,
+  "h": 844
+ },
+ "artboardUnit": 0.5306000000000001,
+ "title": "Parchi \u00b7 Let\u2019s get you started",
+ "scrollHeight": 856,
+ "elements": [
+  {
+   "order": 0,
+   "tag": "span",
+   "cls": "clock",
+   "rect": {
+    "x": 48.8,
+    "y": 14.9,
+    "w": 31,
+    "h": 17,
+    "xu": 91.9,
+    "yu": 28.1,
+    "wu": 58.5,
+    "hu": 32
+   },
+   "text": "9:41",
+   "type": {
+    "family": "-apple-system",
+    "size": 14.8,
+    "sizeU": 27.9,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.1px",
+    "lineHeight": "normal",
+    "align": "start"
+   }
+  },
+  {
+   "order": 1,
+   "tag": "span",
+   "cls": "dynamic-island",
+   "rect": {
+    "x": 141.6,
+    "y": 10.5,
+    "w": 106.9,
+    "h": 30.4,
+    "xu": 266.8,
+    "yu": 19.8,
+    "wu": 201.4,
+    "hu": 57.3
+   },
+   "bg": "rgb(2, 3, 2)",
+   "radius": "39px"
+  },
+  {
+   "order": 2,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 297.2,
+    "y": 13.6,
+    "w": 64.3,
+    "h": 19.5,
+    "xu": 560.1,
+    "yu": 25.7,
+    "wu": 121.3,
+    "hu": 36.8
+   },
+   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>"
+  },
+  {
+   "order": 3,
+   "tag": "section",
+   "cls": "screen auth-screen",
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 856.3,
+    "xu": 0,
+    "yu": 0,
+    "wu": 735,
+    "hu": 1613.7
+   },
+   "bgImage": "radial-gradient(at 35% 35%, rgba(255, 244, 228, 0.3), rgba(0, 0, 0, 0) 70%)"
+  },
+  {
+   "order": 4,
+   "tag": "button",
+   "cls": "back-control",
+   "rect": {
+    "x": 11.1,
+    "y": 42.4,
+    "w": 44,
+    "h": 44,
+    "xu": 21,
+    "yu": 80,
+    "wu": 82.9,
+    "hu": 82.9
+   },
+   "aria": "Go back"
+  },
+  {
+   "order": 5,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 18,
+    "y": 49.3,
+    "w": 30.2,
+    "h": 30.2,
+    "xu": 34,
+    "yu": 93,
+    "wu": 57,
+    "hu": 57
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m20 5-11 11 11 11\"></path></svg>"
+  },
+  {
+   "order": 7,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 21.2,
+    "y": 168.7,
+    "w": 127.3,
+    "h": 33.4,
+    "xu": 40,
+    "yu": 318,
+    "wu": 240,
+    "hu": 63
+   },
+   "text": "Parchi",
+   "type": {
+    "family": "Georgia",
+    "size": 30.8,
+    "sizeU": 58,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.795918px",
+    "lineHeight": "33.4286px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 8,
+   "tag": "small",
+   "cls": "",
+   "rect": {
+    "x": 21.2,
+    "y": 203.7,
+    "w": 127.3,
+    "h": 23.3,
+    "xu": 40,
+    "yu": 383.9,
+    "wu": 240,
+    "hu": 44
+   },
+   "text": "YOUR HEALTH, MORE CLEARLY",
+   "type": {
+    "family": "-apple-system",
+    "size": 8,
+    "sizeU": 15,
+    "weight": "600",
+    "style": "normal",
+    "color": "rgb(104, 85, 63)",
+    "letterSpacing": "1.59184px",
+    "lineHeight": "11.6735px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 10,
+   "tag": "h1",
+   "cls": "",
+   "id": "signin-title",
+   "rect": {
+    "x": 28.6,
+    "y": 253.1,
+    "w": 213.9,
+    "h": 62.6,
+    "xu": 54,
+    "yu": 477,
+    "wu": 403.2,
+    "hu": 118
+   },
+   "text": "Let\u2019s get you started",
+   "type": {
+    "family": "Georgia",
+    "size": 27.6,
+    "sizeU": 52,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.371429px",
+    "lineHeight": "31.3061px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 11,
+   "tag": "p",
+   "cls": "",
+   "rect": {
+    "x": 28.6,
+    "y": 325.3,
+    "w": 213.9,
+    "h": 38.2,
+    "xu": 54,
+    "yu": 613,
+    "wu": 403.2,
+    "hu": 72
+   },
+   "text": "Sign in to save your parchis, track orders and get reminders.",
+   "type": {
+    "family": "-apple-system",
+    "size": 14.9,
+    "sizeU": 28,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(104, 85, 63)",
+    "letterSpacing": "normal",
+    "lineHeight": "19.102px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 12,
+   "tag": "form",
+   "cls": "phone-card",
+   "id": "phone-form",
+   "rect": {
+    "x": 21.2,
+    "y": 376.7,
+    "w": 347.6,
+    "h": 183.6,
+    "xu": 40,
+    "yu": 710,
+    "wu": 655,
+    "hu": 346.1
+   },
+   "bg": "rgba(255, 247, 233, 0.733)",
+   "radius": "18.5714px"
+  },
+  {
+   "order": 13,
+   "tag": "h2",
+   "cls": "",
+   "rect": {
+    "x": 37.7,
+    "y": 389.5,
+    "w": 314.7,
+    "h": 20.2,
+    "xu": 71,
+    "yu": 734,
+    "wu": 593.1,
+    "hu": 38
+   },
+   "text": "Continue with phone number",
+   "type": {
+    "family": "-apple-system",
+    "size": 15.9,
+    "sizeU": 30,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.265306px",
+    "lineHeight": "20.1633px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 14,
+   "tag": "p",
+   "cls": "",
+   "rect": {
+    "x": 37.7,
+    "y": 411.2,
+    "w": 314.7,
+    "h": 17,
+    "xu": 71,
+    "yu": 774.9,
+    "wu": 593.1,
+    "hu": 32
+   },
+   "text": "We\u2019ll send you a one-time password (OTP)",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.7,
+    "sizeU": 24,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(104, 85, 63)",
+    "letterSpacing": "normal",
+    "lineHeight": "16.9796px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 15,
+   "tag": "label",
+   "cls": "number-field",
+   "rect": {
+    "x": 37.7,
+    "y": 444.1,
+    "w": 314.7,
+    "h": 50,
+    "xu": 71,
+    "yu": 836.9,
+    "wu": 593.1,
+    "hu": 94.2
+   },
+   "bg": "rgba(255, 248, 236, 0.333)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(231, 212, 184)"
+   },
+   "radius": "12.2041px",
+   "shadow": "rgba(232, 215, 190, 0.2) 0px 0px 0px 1px inset"
+  },
+  {
+   "order": 16,
+   "tag": "span",
+   "cls": "dial-code",
+   "rect": {
+    "x": 38.7,
+    "y": 457.7,
+    "w": 72.4,
+    "h": 22.8,
+    "xu": 72.9,
+    "yu": 862.5,
+    "wu": 136.4,
+    "hu": 43
+   },
+   "text": "+91",
+   "type": {
+    "family": "-apple-system",
+    "size": 13.3,
+    "sizeU": 25,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "start"
+   },
+   "border": {
+    "width": "0px 1px 0px 0px",
+    "style": "none",
+    "color": "rgb(66, 28, 8)"
+   }
+  },
+  {
+   "order": 17,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 84.6,
+    "y": 462.7,
+    "w": 12.7,
+    "h": 12.7,
+    "xu": 159.4,
+    "yu": 872,
+    "wu": 24,
+    "hu": 24
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>"
+  },
+  {
+   "order": 18,
+   "tag": "input",
+   "cls": "",
+   "id": "phone-number",
+   "rect": {
+    "x": 111,
+    "y": 445.1,
+    "w": 240.3,
+    "h": 48,
+    "xu": 209.3,
+    "yu": 838.8,
+    "wu": 452.9,
+    "hu": 90.5
+   },
+   "aria": "Phone number",
+   "placeholder": "Enter your phone number",
+   "inputType": "tel"
+  },
+  {
+   "order": 19,
+   "tag": "button",
+   "cls": "primary-action",
+   "rect": {
+    "x": 37.7,
+    "y": 503.6,
+    "w": 314.7,
+    "h": 44,
+    "xu": 71,
+    "yu": 949.1,
+    "wu": 593.1,
+    "hu": 82.9
+   },
+   "text": "Send OTP",
+   "type": {
+    "family": "-apple-system",
+    "size": 14.3,
+    "sizeU": 27,
+    "weight": "600",
+    "style": "normal",
+    "color": "rgb(255, 246, 228)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   },
+   "bgImage": "linear-gradient(100deg, rgb(221, 72, 18), rgb(204, 63, 18))",
+   "radius": "99px"
+  },
+  {
+   "order": 20,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 226,
+    "y": 517.9,
+    "w": 15.4,
+    "h": 15.4,
+    "xu": 426,
+    "yu": 976.1,
+    "wu": 29,
+    "hu": 29
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 16h23m-9-9 9 9-9 9\" stroke=\"currentColor\" stroke-width=\"2.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+  },
+  {
+   "order": 21,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 186.3,
+    "y": 573.6,
+    "w": 17.4,
+    "h": 15,
+    "xu": 351.1,
+    "yu": 1081,
+    "wu": 32.7,
+    "hu": 28.3
+   },
+   "text": "OR",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.2,
+    "sizeU": 23,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(120, 107, 83)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "start"
+   }
+  },
+  {
+   "order": 22,
+   "tag": "button",
+   "cls": "guest-card",
+   "rect": {
+    "x": 21.2,
+    "y": 600.3,
+    "w": 347.6,
+    "h": 64.2,
+    "xu": 40,
+    "yu": 1131.3,
+    "wu": 655,
+    "hu": 121
+   },
+   "bg": "rgba(255, 248, 236, 0.68)",
+   "radius": "17.5102px"
+  },
+  {
+   "order": 23,
+   "tag": "span",
+   "cls": "round-icon",
+   "rect": {
+    "x": 36.1,
+    "y": 609.3,
+    "w": 46.2,
+    "h": 46.2,
+    "xu": 68,
+    "yu": 1148.3,
+    "wu": 87,
+    "hu": 87
+   },
+   "bg": "rgba(255, 227, 183, 0.46)",
+   "radius": "50%"
+  },
+  {
+   "order": 24,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 47.1,
+    "y": 620.4,
+    "w": 24,
+    "h": 24,
+    "xu": 88.8,
+    "yu": 1169.2,
+    "wu": 45.2,
+    "hu": 45.2
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"currentColor\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"9\" r=\"6\"></circle><path d=\"M3 30v-3c0-14 26-14 26 0v3Z\"></path></svg>"
+  },
+  {
+   "order": 25,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 98.1,
+    "y": 615.5,
+    "w": 231.4,
+    "h": 16,
+    "xu": 184.9,
+    "yu": 1160,
+    "wu": 436.1,
+    "hu": 30.2
+   },
+   "text": "Continue as Guest",
+   "type": {
+    "family": "-apple-system",
+    "size": 13.8,
+    "sizeU": 26,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "left"
+   }
+  },
+  {
+   "order": 26,
+   "tag": "small",
+   "cls": "",
+   "rect": {
+    "x": 98.1,
+    "y": 634.2,
+    "w": 231.4,
+    "h": 15,
+    "xu": 184.9,
+    "yu": 1195.2,
+    "wu": 436.1,
+    "hu": 28.3
+   },
+   "text": "Scan and use Parchi without an account",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(104, 85, 63)",
+    "letterSpacing": "normal",
+    "lineHeight": "15.0429px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 27,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 345.5,
+    "y": 627.5,
+    "w": 8.5,
+    "h": 13.3,
+    "xu": 651,
+    "yu": 1182.6,
+    "wu": 16,
+    "hu": 25
+   },
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+  },
+  {
+   "order": 28,
+   "tag": "div",
+   "cls": "benefit-strip",
+   "rect": {
+    "x": 21.2,
+    "y": 676.1,
+    "w": 347.6,
+    "h": 86.5,
+    "xu": 40,
+    "yu": 1274.3,
+    "wu": 655,
+    "hu": 162.9
+   },
+   "bg": "rgba(252, 226, 184, 0.525)",
+   "radius": "18.5714px"
+  },
+  {
+   "order": 29,
+   "tag": "div",
+   "cls": "",
+   "rect": {
+    "x": 27.6,
+    "y": 690.5,
+    "w": 111.9,
+    "h": 57.8,
+    "xu": 52,
+    "yu": 1301.2,
+    "wu": 211,
+    "hu": 109
+   },
+   "border": {
+    "width": "0px 1px 0px 0px",
+    "style": "none",
+    "color": "rgb(66, 28, 8)"
+   }
+  },
+  {
+   "order": 30,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 70.3,
+    "y": 690.5,
+    "w": 25.5,
+    "h": 24.9,
+    "xu": 132.5,
+    "yu": 1301.2,
+    "wu": 48,
+    "hu": 47
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"7\" y=\"3\" width=\"18\" height=\"27\" rx=\"3\"></rect><path d=\"M12 9h8m-8 6h8m-8 6h5\"></path></svg>"
+  },
+  {
+   "order": 31,
+   "tag": "p",
+   "cls": "",
+   "rect": {
+    "x": 27.6,
+    "y": 719.6,
+    "w": 110.9,
+    "h": 28.7,
+    "xu": 52,
+    "yu": 1356.2,
+    "wu": 209.1,
+    "hu": 54
+   },
+   "text": "Save your parchis",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(101, 80, 56)",
+    "letterSpacing": "normal",
+    "lineHeight": "14.3265px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 32,
+   "tag": "div",
+   "cls": "",
+   "rect": {
+    "x": 139.5,
+    "y": 690.5,
+    "w": 112,
+    "h": 57.8,
+    "xu": 262.9,
+    "yu": 1301.2,
+    "wu": 211,
+    "hu": 109
+   },
+   "border": {
+    "width": "0px 1px 0px 0px",
+    "style": "none",
+    "color": "rgb(66, 28, 8)"
+   }
+  },
+  {
+   "order": 33,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 182.3,
+    "y": 690.5,
+    "w": 25.5,
+    "h": 24.9,
+    "xu": 343.5,
+    "yu": 1301.2,
+    "wu": 48,
+    "hu": 47
+   },
+   "svg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"bell\" x1=\"14\" y1=\"10\" x2=\"50\" y2=\"58\"><stop stop-color=\"#ffae09\"></stop><stop offset=\"1\" stop-color=\"#dc7900\"></stop></linearGradient></defs><path d=\"M12 47c6-6 5-12 5-20 0-9 6-16 15-16s15 7 15 16c0 8-1 14 5 20l3 4H9l3-4Z\" fill=\"url(#bell)\"></path><circle cx=\"32\" cy=\"10\" r=\"5\" fill=\"#ee9503\"></circle><path d=\"M25 55h14c-1 8-13 8-14 0Z\" fill=\"#c77100\"></path></svg>"
+  },
+  {
+   "order": 34,
+   "tag": "p",
+   "cls": "",
+   "rect": {
+    "x": 139.5,
+    "y": 719.6,
+    "w": 111,
+    "h": 28.7,
+    "xu": 262.9,
+    "yu": 1356.2,
+    "wu": 209.1,
+    "hu": 54
+   },
+   "text": "Get medicine reminders",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(101, 80, 56)",
+    "letterSpacing": "normal",
+    "lineHeight": "14.3265px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 35,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 294.2,
+    "y": 690.5,
+    "w": 25.5,
+    "h": 24.9,
+    "xu": 554.5,
+    "yu": 1301.2,
+    "wu": 48,
+    "hu": 47
+   },
+   "svg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"bars\" x1=\"12\" y1=\"17\" x2=\"52\" y2=\"51\"><stop stop-color=\"#ba672f\"></stop><stop offset=\"1\" stop-color=\"#86421d\"></stop></linearGradient></defs><rect x=\"9\" y=\"23\" width=\"11\" height=\"29\" rx=\"4\" fill=\"url(#bars)\"></rect><rect x=\"26\" y=\"32\" width=\"11\" height=\"20\" rx=\"4\" fill=\"url(#bars)\"></rect><rect x=\"43\" y=\"17\" width=\"12\" height=\"35\" rx=\"4\" fill=\"url(#bars)\"></rect></svg>"
+  },
+  {
+   "order": 36,
+   "tag": "p",
+   "cls": "",
+   "rect": {
+    "x": 251.5,
+    "y": 719.6,
+    "w": 111,
+    "h": 28.7,
+    "xu": 473.9,
+    "yu": 1356.2,
+    "wu": 209.1,
+    "hu": 54
+   },
+   "text": "Track orders and tests",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(101, 80, 56)",
+    "letterSpacing": "normal",
+    "lineHeight": "14.3265px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 37,
+   "tag": "p",
+   "cls": "terms-note",
+   "rect": {
+    "x": 21.2,
+    "y": 780.1,
+    "w": 347.6,
+    "h": 44.3,
+    "xu": 40,
+    "yu": 1470.2,
+    "wu": 655,
+    "hu": 83.5
+   },
+   "text": "By continuing, you agree to our \u00b7 and \u00b7",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(138, 123, 100)",
+    "letterSpacing": "normal",
+    "lineHeight": "14.3265px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 38,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 98.2,
+    "y": 794.4,
+    "w": 85.4,
+    "h": 30,
+    "xu": 185.1,
+    "yu": 1497.2,
+    "wu": 161,
+    "hu": 56.5
+   },
+   "text": "Terms of Service",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(204, 63, 18)",
+    "letterSpacing": "normal",
+    "lineHeight": "14.3265px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 39,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 221.2,
+    "y": 794.4,
+    "w": 70.5,
+    "h": 30,
+    "xu": 416.9,
+    "yu": 1497.2,
+    "wu": 133,
+    "hu": 56.5
+   },
+   "text": "Privacy Policy",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(204, 63, 18)",
+    "letterSpacing": "normal",
+    "lineHeight": "14.3265px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 40,
+   "tag": "div",
+   "cls": "home-indicator",
+   "rect": {
+    "x": 133.6,
+    "y": 845.1,
+    "w": 122.8,
+    "h": 4.1,
+    "xu": 251.7,
+    "yu": 1592.8,
+    "wu": 231.5,
+    "hu": 7.7
+   },
+   "bg": "rgb(21, 18, 13)",
+   "radius": "99px"
+  }
+ ],
+ "art": [
+  {
+   "viewBox": "365 110 370 590",
+   "href": "assets/references/signin.jpeg",
+   "aspect": "xMidYMid meet",
+   "cls": "reference-art auth-illustration",
+   "rect": {
+    "x": 193.7,
+    "y": 58.4,
+    "w": 196.3,
+    "h": 313,
+    "xu": 365,
+    "yu": 110,
+    "wu": 370,
+    "hu": 590
+   },
+   "order": 9,
+   "asset": "art_signin_365_110_370_590"
+  }
+ ],
+ "images": [
+  {
+   "src": "assets/parchi-logo-transparent.png",
+   "alt": "",
+   "rect": {
+    "x": 21.2,
+    "y": 75.9,
+    "w": 127.3,
+    "h": 114.1,
+    "xu": 40,
+    "yu": 143,
+    "wu": 240,
+    "hu": 215
+   },
+   "radius": "0px",
+   "order": 6
+  }
+ ],
+ "route": "signin",
+ "shows": "signin"
+}

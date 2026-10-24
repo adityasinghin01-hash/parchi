@@ -1,0 +1,2416 @@
+{
+ "viewport": {
+  "w": 390,
+  "h": 844
+ },
+ "artboardUnit": 0.5306000000000001,
+ "title": "Parchi \u00b7 Checkout Assistant",
+ "scrollHeight": 1102,
+ "elements": [
+  {
+   "order": 0,
+   "tag": "span",
+   "cls": "clock",
+   "rect": {
+    "x": 48.8,
+    "y": 14.9,
+    "w": 31,
+    "h": 17,
+    "xu": 91.9,
+    "yu": 28.1,
+    "wu": 58.5,
+    "hu": 32
+   },
+   "text": "9:41",
+   "type": {
+    "family": "-apple-system",
+    "size": 14.8,
+    "sizeU": 27.9,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.1px",
+    "lineHeight": "normal",
+    "align": "start"
+   }
+  },
+  {
+   "order": 1,
+   "tag": "span",
+   "cls": "dynamic-island",
+   "rect": {
+    "x": 141.6,
+    "y": 10.5,
+    "w": 106.9,
+    "h": 30.4,
+    "xu": 266.8,
+    "yu": 19.8,
+    "wu": 201.4,
+    "hu": 57.3
+   },
+   "bg": "rgb(2, 3, 2)",
+   "radius": "39px"
+  },
+  {
+   "order": 2,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 297.2,
+    "y": 13.6,
+    "w": 64.3,
+    "h": 19.5,
+    "xu": 560.1,
+    "yu": 25.7,
+    "wu": 121.3,
+    "hu": 36.8
+   },
+   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>"
+  },
+  {
+   "order": 3,
+   "tag": "section",
+   "cls": "screen journey-screen checkout-screen",
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 1101.7,
+    "xu": 0,
+    "yu": 0,
+    "wu": 735,
+    "hu": 2076.2
+   },
+   "bg": "rgb(255, 251, 244)"
+  },
+  {
+   "order": 4,
+   "tag": "button",
+   "cls": "j-back",
+   "rect": {
+    "x": 20.7,
+    "y": 45.6,
+    "w": 40,
+    "h": 40,
+    "xu": 39,
+    "yu": 86,
+    "wu": 75.4,
+    "hu": 75.4
+   },
+   "aria": "Go back",
+   "bg": "rgba(250, 237, 223, 0.533)",
+   "radius": "50%"
+  },
+  {
+   "order": 5,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 28.6,
+    "y": 53.6,
+    "w": 24.1,
+    "h": 24.1,
+    "xu": 54,
+    "yu": 100.9,
+    "wu": 45.4,
+    "hu": 45.4
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m20 5-11 11 11 11\"></path></svg>"
+  },
+  {
+   "order": 7,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 179.6,
+    "y": 50.4,
+    "w": 69.5,
+    "h": 21.2,
+    "xu": 338.5,
+    "yu": 95,
+    "wu": 131,
+    "hu": 40
+   },
+   "text": "Parchi",
+   "type": {
+    "family": "Georgia",
+    "size": 21.2,
+    "sizeU": 40,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "-0.371429px",
+    "lineHeight": "21.2245px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 8,
+   "tag": "button",
+   "cls": "j-area",
+   "rect": {
+    "x": 282.2,
+    "y": 46.7,
+    "w": 87.1,
+    "h": 38,
+    "xu": 531.9,
+    "yu": 88,
+    "wu": 164.1,
+    "hu": 71.6
+   },
+   "bg": "rgb(249, 238, 226)",
+   "radius": "99px"
+  },
+  {
+   "order": 9,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 287,
+    "y": 59.6,
+    "w": 10.6,
+    "h": 12.2,
+    "xu": 540.9,
+    "yu": 112.3,
+    "wu": 20,
+    "hu": 23
+   },
+   "svg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"pin\" x1=\"16\" y1=\"4\" x2=\"43\" y2=\"60\"><stop stop-color=\"#e94f14\"></stop><stop offset=\"1\" stop-color=\"#b6340a\"></stop></linearGradient></defs><path d=\"M32 4C18 4 10 14 10 26c0 15 22 35 22 35s22-20 22-35C54 14 46 4 32 4Z\" fill=\"url(#pin)\"></path><circle cx=\"32\" cy=\"25\" r=\"9.5\" fill=\"#fff2d9\"></circle></svg>"
+  },
+  {
+   "order": 10,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 301.3,
+    "y": 60.2,
+    "w": 51,
+    "h": 11,
+    "xu": 567.9,
+    "yu": 113.4,
+    "wu": 96.2,
+    "hu": 20.7
+   },
+   "text": "HSR Layout",
+   "type": {
+    "family": "-apple-system",
+    "size": 9,
+    "sizeU": 17,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 11,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 356.1,
+    "y": 61.4,
+    "w": 8.5,
+    "h": 8.5,
+    "xu": 671,
+    "yu": 115.8,
+    "wu": 16,
+    "hu": 16
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>"
+  },
+  {
+   "order": 12,
+   "tag": "h1",
+   "cls": "",
+   "rect": {
+    "x": 20.7,
+    "y": 85.9,
+    "w": 348.6,
+    "h": 27.3,
+    "xu": 39,
+    "yu": 162,
+    "wu": 657,
+    "hu": 51.5
+   },
+   "text": "Checkout Assistant",
+   "type": {
+    "family": "Georgia",
+    "size": 24.4,
+    "sizeU": 46,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.42449px",
+    "lineHeight": "27.3371px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 13,
+   "tag": "p",
+   "cls": "",
+   "rect": {
+    "x": 20.7,
+    "y": 117,
+    "w": 348.6,
+    "h": 33.1,
+    "xu": 39,
+    "yu": 220.4,
+    "wu": 657,
+    "hu": 62.4
+   },
+   "text": "Order from each seller to get everything in your plan. We\u2019ll guide you step by step.",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.7,
+    "sizeU": 24,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(119, 121, 112)",
+    "letterSpacing": "normal",
+    "lineHeight": "16.5551px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 14,
+   "tag": "i",
+   "cls": "",
+   "rect": {
+    "x": 47,
+    "y": 163.3,
+    "w": 18.6,
+    "h": 18.6,
+    "xu": 88.6,
+    "yu": 307.8,
+    "wu": 35,
+    "hu": 35
+   },
+   "text": "1",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.2,
+    "sizeU": 23,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(255, 255, 255)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   },
+   "bg": "rgb(205, 71, 21)",
+   "radius": "50%"
+  },
+  {
+   "order": 15,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 16,
+    "y": 186.6,
+    "w": 80.7,
+    "h": 11,
+    "xu": 30.1,
+    "yu": 351.7,
+    "wu": 152.1,
+    "hu": 20.7
+   },
+   "text": "Pay at pharmacies",
+   "type": {
+    "family": "-apple-system",
+    "size": 9,
+    "sizeU": 17,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(189, 62, 22)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 16,
+   "tag": "i",
+   "cls": "",
+   "rect": {
+    "x": 139.5,
+    "y": 163.3,
+    "w": 18.6,
+    "h": 18.6,
+    "xu": 262.9,
+    "yu": 307.8,
+    "wu": 35,
+    "hu": 35
+   },
+   "text": "2",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.2,
+    "sizeU": 23,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(255, 255, 255)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   },
+   "bg": "rgb(176, 170, 161)",
+   "radius": "50%"
+  },
+  {
+   "order": 17,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 127.2,
+    "y": 186.6,
+    "w": 43,
+    "h": 11,
+    "xu": 239.8,
+    "yu": 351.7,
+    "wu": 81.1,
+    "hu": 20.7
+   },
+   "text": "Pay at lab",
+   "type": {
+    "family": "-apple-system",
+    "size": 9,
+    "sizeU": 17,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(153, 156, 146)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 18,
+   "tag": "i",
+   "cls": "",
+   "rect": {
+    "x": 231.9,
+    "y": 163.3,
+    "w": 18.6,
+    "h": 18.6,
+    "xu": 437.1,
+    "yu": 307.8,
+    "wu": 35,
+    "hu": 35
+   },
+   "text": "3",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.2,
+    "sizeU": 23,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(255, 255, 255)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   },
+   "bg": "rgb(176, 170, 161)",
+   "radius": "50%"
+  },
+  {
+   "order": 19,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 213,
+    "y": 186.6,
+    "w": 56.5,
+    "h": 11,
+    "xu": 401.4,
+    "yu": 351.7,
+    "wu": 106.5,
+    "hu": 20.7
+   },
+   "text": "Confirm plan",
+   "type": {
+    "family": "-apple-system",
+    "size": 9,
+    "sizeU": 17,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(153, 156, 146)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 20,
+   "tag": "i",
+   "cls": "",
+   "rect": {
+    "x": 324.4,
+    "y": 163.3,
+    "w": 18.6,
+    "h": 18.6,
+    "xu": 611.4,
+    "yu": 307.8,
+    "wu": 35,
+    "hu": 35
+   },
+   "text": "4",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.2,
+    "sizeU": 23,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(255, 255, 255)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   },
+   "bg": "rgb(176, 170, 161)",
+   "radius": "50%"
+  },
+  {
+   "order": 21,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 308.4,
+    "y": 186.6,
+    "w": 50.5,
+    "h": 11,
+    "xu": 581.2,
+    "yu": 351.7,
+    "wu": 95.3,
+    "hu": 20.7
+   },
+   "text": "Track order",
+   "type": {
+    "family": "-apple-system",
+    "size": 9,
+    "sizeU": 17,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(153, 156, 146)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 22,
+   "tag": "article",
+   "cls": "checkout-seller is-open",
+   "rect": {
+    "x": 10.1,
+    "y": 210.9,
+    "w": 369.8,
+    "h": 612.1,
+    "xu": 19,
+    "yu": 397.4,
+    "wu": 697,
+    "hu": 1153.5
+   },
+   "bg": "rgb(255, 253, 250)",
+   "radius": "12.2041px"
+  },
+  {
+   "order": 23,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 20.7,
+    "y": 218.8,
+    "w": 85.3,
+    "h": 32,
+    "xu": 39,
+    "yu": 412.4,
+    "wu": 160.8,
+    "hu": 60.3
+   },
+   "text": "\u00b7 Pharmacy",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.1,
+    "sizeU": 19,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 24,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 20.7,
+    "y": 228.8,
+    "w": 28.1,
+    "h": 12,
+    "xu": 39,
+    "yu": 431.3,
+    "wu": 53,
+    "hu": 22.6
+   },
+   "text": "1 of 3",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.1,
+    "sizeU": 19,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 25,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 290.9,
+    "y": 218.8,
+    "w": 78.5,
+    "h": 32,
+    "xu": 548.2,
+    "yu": 412.4,
+    "wu": 147.9,
+    "hu": 60.3
+   },
+   "text": "Skip this seller",
+   "type": {
+    "family": "-apple-system",
+    "size": 9,
+    "sizeU": 17,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(204, 79, 40)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 26,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 361.9,
+    "y": 228.7,
+    "w": 7.4,
+    "h": 12.2,
+    "xu": 682,
+    "yu": 431.1,
+    "wu": 14,
+    "hu": 23
+   },
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+  },
+  {
+   "order": 28,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 101.3,
+    "y": 259.9,
+    "w": 120.3,
+    "h": 15.9,
+    "xu": 191,
+    "yu": 489.7,
+    "wu": 226.7,
+    "hu": 30
+   },
+   "text": "Apollo Pharmacy",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.7,
+    "sizeU": 24,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "-0.265306px",
+    "lineHeight": "15.9184px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 29,
+   "tag": "small",
+   "cls": "",
+   "rect": {
+    "x": 101.3,
+    "y": 276.8,
+    "w": 120.3,
+    "h": 13.6,
+    "xu": 191,
+    "yu": 521.7,
+    "wu": 226.7,
+    "hu": 25.6
+   },
+   "text": "HSR Layout \u00b7 0.8 km",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.1,
+    "sizeU": 19,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(133, 136, 127)",
+    "letterSpacing": "normal",
+    "lineHeight": "13.6102px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 30,
+   "tag": "span",
+   "cls": "j-status green",
+   "rect": {
+    "x": 101.3,
+    "y": 293,
+    "w": 100.8,
+    "h": 18.5,
+    "xu": 191,
+    "yu": 552.3,
+    "wu": 190,
+    "hu": 35
+   },
+   "text": "Ready in ~30 mins",
+   "type": {
+    "family": "-apple-system",
+    "size": 8,
+    "sizeU": 15,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(47, 134, 56)",
+    "letterSpacing": "normal",
+    "lineHeight": "9.55102px",
+    "align": "start"
+   },
+   "bg": "rgb(234, 246, 229)",
+   "radius": "99px"
+  },
+  {
+   "order": 31,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 108.2,
+    "y": 296.8,
+    "w": 11.1,
+    "h": 11.1,
+    "xu": 204,
+    "yu": 559.3,
+    "wu": 21,
+    "hu": 21
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>"
+  },
+  {
+   "order": 32,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 232.2,
+    "y": 268.2,
+    "w": 50.5,
+    "h": 35,
+    "xu": 437.6,
+    "yu": 505.5,
+    "wu": 95.1,
+    "hu": 66
+   },
+   "text": "Call",
+   "type": {
+    "family": "-apple-system",
+    "size": 9,
+    "sizeU": 17,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   },
+   "bg": "rgb(255, 253, 247)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(238, 230, 217)"
+   },
+   "radius": "99px"
+  },
+  {
+   "order": 33,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 240.6,
+    "y": 279.9,
+    "w": 11.7,
+    "h": 11.7,
+    "xu": 453.5,
+    "yu": 527.5,
+    "wu": 22,
+    "hu": 22
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 2 7 6-4 5c3 6 5 8 11 10l5-4 6 7c-8 13-38-18-25-24Z\"></path></svg>"
+  },
+  {
+   "order": 34,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 290.6,
+    "y": 268.2,
+    "w": 78.7,
+    "h": 35,
+    "xu": 547.7,
+    "yu": 505.5,
+    "wu": 148.3,
+    "hu": 66
+   },
+   "text": "Directions",
+   "type": {
+    "family": "-apple-system",
+    "size": 9,
+    "sizeU": 17,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   },
+   "bg": "rgb(255, 253, 247)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(238, 230, 217)"
+   },
+   "radius": "99px"
+  },
+  {
+   "order": 35,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 299.1,
+    "y": 279.9,
+    "w": 11.7,
+    "h": 11.7,
+    "xu": 563.6,
+    "yu": 527.5,
+    "wu": 22,
+    "hu": 22
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m2 12 28-10-10 28-5-13Z\"></path></svg>"
+  },
+  {
+   "order": 36,
+   "tag": "div",
+   "cls": "checkout-info",
+   "rect": {
+    "x": 20.7,
+    "y": 319,
+    "w": 348.6,
+    "h": 41.6,
+    "xu": 39,
+    "yu": 601.2,
+    "wu": 657,
+    "hu": 78.3
+   },
+   "bg": "rgb(255, 241, 223)",
+   "radius": "7.95918px"
+  },
+  {
+   "order": 37,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 28.1,
+    "y": 333.2,
+    "w": 13.3,
+    "h": 13.3,
+    "xu": 53,
+    "yu": 627.9,
+    "wu": 25,
+    "hu": 25
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"13\"></circle><path d=\"M16 14v10m0-16v1\"></path></svg>"
+  },
+  {
+   "order": 38,
+   "tag": "p",
+   "cls": "",
+   "rect": {
+    "x": 49.3,
+    "y": 326.4,
+    "w": 224.4,
+    "h": 26.7,
+    "xu": 92.9,
+    "yu": 615.2,
+    "wu": 422.9,
+    "hu": 50.4
+   },
+   "text": "Continue to Apollo Pharmacy to place this order. These are the selected items in this preview.",
+   "type": {
+    "family": "-apple-system",
+    "size": 9.6,
+    "sizeU": 18,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(111, 106, 90)",
+    "letterSpacing": "normal",
+    "lineHeight": "13.3714px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 39,
+   "tag": "h2",
+   "cls": "",
+   "rect": {
+    "x": 23.3,
+    "y": 374,
+    "w": 260,
+    "h": 16.5,
+    "xu": 44,
+    "yu": 704.9,
+    "wu": 489.9,
+    "hu": 31.2
+   },
+   "text": "Items to order from Apollo Pharmacy",
+   "type": {
+    "family": "Georgia",
+    "size": 12.7,
+    "sizeU": 24,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "-0.212245px",
+    "lineHeight": "16.5551px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 40,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 264.6,
+    "y": 374,
+    "w": 18.7,
+    "h": 15,
+    "xu": 498.7,
+    "yu": 704.9,
+    "wu": 35.2,
+    "hu": 28.3
+   },
+   "text": "(3)",
+   "type": {
+    "family": "Georgia",
+    "size": 12.7,
+    "sizeU": 24,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(136, 136, 136)",
+    "letterSpacing": "-0.212245px",
+    "lineHeight": "16.5551px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 41,
+   "tag": "b",
+   "cls": "",
+   "rect": {
+    "x": 327.3,
+    "y": 373.8,
+    "w": 39.4,
+    "h": 17,
+    "xu": 616.7,
+    "yu": 704.5,
+    "wu": 74.3,
+    "hu": 32
+   },
+   "text": "\u20b9830",
+   "type": {
+    "family": "-apple-system",
+    "size": 14.9,
+    "sizeU": 28,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "start"
+   }
+  },
+  {
+   "order": 42,
+   "tag": "label",
+   "cls": "",
+   "rect": {
+    "x": 20.7,
+    "y": 401.4,
+    "w": 262.9,
+    "h": 30.6,
+    "xu": 39,
+    "yu": 756.6,
+    "wu": 495.4,
+    "hu": 57.7
+   },
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(226, 218, 207)"
+   },
+   "radius": "99px"
+  },
+  {
+   "order": 43,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 32.3,
+    "y": 409.3,
+    "w": 14.8,
+    "h": 14.8,
+    "xu": 60.9,
+    "yu": 771.4,
+    "wu": 28,
+    "hu": 28
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"13\" cy=\"13\" r=\"9\"></circle><path d=\"m20 20 8 8\"></path></svg>"
+  },
+  {
+   "order": 44,
+   "tag": "input",
+   "cls": "",
+   "id": "checkout-search",
+   "rect": {
+    "x": 54.6,
+    "y": 410.3,
+    "w": 217.4,
+    "h": 13,
+    "xu": 102.8,
+    "yu": 773.2,
+    "wu": 409.7,
+    "hu": 24.5
+   },
+   "aria": "Find an item on this page",
+   "placeholder": "Find on page (e.g., Paracetamol)",
+   "inputType": "search"
+  },
+  {
+   "order": 45,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 291,
+    "y": 401.4,
+    "w": 78.3,
+    "h": 30.6,
+    "xu": 548.4,
+    "yu": 756.6,
+    "wu": 147.6,
+    "hu": 57.7
+   },
+   "text": "Open store",
+   "type": {
+    "family": "-apple-system",
+    "size": 9,
+    "sizeU": 17,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   },
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(241, 231, 216)"
+   },
+   "radius": "99px"
+  },
+  {
+   "order": 46,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 297.3,
+    "y": 410.6,
+    "w": 12.2,
+    "h": 12.2,
+    "xu": 560.3,
+    "yu": 773.9,
+    "wu": 23,
+    "hu": 23
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M18 3h11v11M29 3 14 18M12 6H4v23h23v-8\"></path></svg>"
+  },
+  {
+   "order": 47,
+   "tag": "div",
+   "cls": "checkout-item-list",
+   "rect": {
+    "x": 20.7,
+    "y": 438.4,
+    "w": 348.6,
+    "h": 130.9,
+    "xu": 39,
+    "yu": 826.3,
+    "wu": 657,
+    "hu": 246.7
+   },
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(243, 233, 220)"
+   },
+   "radius": "9.55102px"
+  },
+  {
+   "order": 48,
+   "tag": "label",
+   "cls": "checkout-item",
+   "rect": {
+    "x": 32.3,
+    "y": 439.4,
+    "w": 325.4,
+    "h": 43,
+    "xu": 60.9,
+    "yu": 828.1,
+    "wu": 613.3,
+    "hu": 81
+   },
+   "border": {
+    "width": "0px 0px 1px 0px",
+    "style": "none",
+    "color": "rgb(60, 28, 16)"
+   }
+  },
+  {
+   "order": 49,
+   "tag": "span",
+   "cls": "checkout-tick",
+   "rect": {
+    "x": 32.3,
+    "y": 451.9,
+    "w": 17,
+    "h": 17,
+    "xu": 60.9,
+    "yu": 851.7,
+    "wu": 32,
+    "hu": 32
+   },
+   "bg": "rgb(204, 75, 18)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(204, 75, 18)"
+   },
+   "radius": "3.18367px"
+  },
+  {
+   "order": 50,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 34.8,
+    "y": 454.4,
+    "w": 12,
+    "h": 12,
+    "xu": 65.6,
+    "yu": 856.4,
+    "wu": 22.6,
+    "hu": 22.6
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>"
+  },
+  {
+   "order": 51,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 62,
+    "y": 447.8,
+    "w": 193.8,
+    "h": 13.1,
+    "xu": 116.9,
+    "yu": 843.9,
+    "wu": 365.2,
+    "hu": 24.7
+   },
+   "text": "Paracetamol 500 mg (10 tabs)",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.1,
+    "sizeU": 19,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "13.1061px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 52,
+   "tag": "small",
+   "cls": "",
+   "rect": {
+    "x": 62,
+    "y": 463,
+    "w": 193.8,
+    "h": 10,
+    "xu": 116.9,
+    "yu": 872.6,
+    "wu": 365.2,
+    "hu": 18.8
+   },
+   "text": "Selected for this preview",
+   "type": {
+    "family": "-apple-system",
+    "size": 8,
+    "sizeU": 15,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(143, 140, 126)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "start"
+   }
+  },
+  {
+   "order": 53,
+   "tag": "span",
+   "cls": "j-status green",
+   "rect": {
+    "x": 268.5,
+    "y": 452.3,
+    "w": 42,
+    "h": 16.3,
+    "xu": 506.1,
+    "yu": 852.3,
+    "wu": 79.1,
+    "hu": 30.7
+   },
+   "text": "In stock",
+   "type": {
+    "family": "-apple-system",
+    "size": 7.4,
+    "sizeU": 14,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(47, 134, 56)",
+    "letterSpacing": "normal",
+    "lineHeight": "8.91429px",
+    "align": "start"
+   },
+   "bg": "rgb(234, 246, 229)",
+   "radius": "99px"
+  },
+  {
+   "order": 54,
+   "tag": "b",
+   "cls": "",
+   "rect": {
+    "x": 323.2,
+    "y": 454.9,
+    "w": 34.5,
+    "h": 11,
+    "xu": 609.1,
+    "yu": 857.3,
+    "wu": 65,
+    "hu": 20.7
+   },
+   "text": "\u20b925",
+   "type": {
+    "family": "-apple-system",
+    "size": 9.6,
+    "sizeU": 18,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "right"
+   }
+  },
+  {
+   "order": 55,
+   "tag": "label",
+   "cls": "checkout-item",
+   "rect": {
+    "x": 32.3,
+    "y": 482.4,
+    "w": 325.4,
+    "h": 43,
+    "xu": 60.9,
+    "yu": 909.1,
+    "wu": 613.3,
+    "hu": 81
+   },
+   "border": {
+    "width": "0px 0px 1px 0px",
+    "style": "none",
+    "color": "rgb(60, 28, 16)"
+   }
+  },
+  {
+   "order": 56,
+   "tag": "span",
+   "cls": "checkout-tick",
+   "rect": {
+    "x": 32.3,
+    "y": 494.9,
+    "w": 17,
+    "h": 17,
+    "xu": 60.9,
+    "yu": 932.6,
+    "wu": 32,
+    "hu": 32
+   },
+   "bg": "rgb(204, 75, 18)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(204, 75, 18)"
+   },
+   "radius": "3.18367px"
+  },
+  {
+   "order": 57,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 34.8,
+    "y": 497.4,
+    "w": 12,
+    "h": 12,
+    "xu": 65.6,
+    "yu": 937.4,
+    "wu": 22.6,
+    "hu": 22.6
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>"
+  },
+  {
+   "order": 58,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 62,
+    "y": 490.8,
+    "w": 193.8,
+    "h": 13.1,
+    "xu": 116.9,
+    "yu": 924.9,
+    "wu": 365.2,
+    "hu": 24.7
+   },
+   "text": "Amlodipine 5 mg (10 tabs)",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.1,
+    "sizeU": 19,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "13.1061px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 59,
+   "tag": "small",
+   "cls": "",
+   "rect": {
+    "x": 62,
+    "y": 506,
+    "w": 193.8,
+    "h": 10,
+    "xu": 116.9,
+    "yu": 953.6,
+    "wu": 365.2,
+    "hu": 18.8
+   },
+   "text": "Selected for this preview",
+   "type": {
+    "family": "-apple-system",
+    "size": 8,
+    "sizeU": 15,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(143, 140, 126)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "start"
+   }
+  },
+  {
+   "order": 60,
+   "tag": "span",
+   "cls": "j-status green",
+   "rect": {
+    "x": 268.5,
+    "y": 495.2,
+    "w": 42,
+    "h": 16.3,
+    "xu": 506.1,
+    "yu": 933.3,
+    "wu": 79.1,
+    "hu": 30.7
+   },
+   "text": "In stock",
+   "type": {
+    "family": "-apple-system",
+    "size": 7.4,
+    "sizeU": 14,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(47, 134, 56)",
+    "letterSpacing": "normal",
+    "lineHeight": "8.91429px",
+    "align": "start"
+   },
+   "bg": "rgb(234, 246, 229)",
+   "radius": "99px"
+  },
+  {
+   "order": 61,
+   "tag": "b",
+   "cls": "",
+   "rect": {
+    "x": 323.2,
+    "y": 497.9,
+    "w": 34.5,
+    "h": 11,
+    "xu": 609.1,
+    "yu": 938.3,
+    "wu": 65,
+    "hu": 20.7
+   },
+   "text": "\u20b960",
+   "type": {
+    "family": "-apple-system",
+    "size": 9.6,
+    "sizeU": 18,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "right"
+   }
+  },
+  {
+   "order": 62,
+   "tag": "span",
+   "cls": "checkout-tick",
+   "rect": {
+    "x": 32.3,
+    "y": 538.3,
+    "w": 17,
+    "h": 17,
+    "xu": 60.9,
+    "yu": 1014.6,
+    "wu": 32,
+    "hu": 32
+   },
+   "bg": "rgb(204, 75, 18)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(204, 75, 18)"
+   },
+   "radius": "3.18367px"
+  },
+  {
+   "order": 63,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 34.8,
+    "y": 540.8,
+    "w": 12,
+    "h": 12,
+    "xu": 65.6,
+    "yu": 1019.3,
+    "wu": 22.6,
+    "hu": 22.6
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>"
+  },
+  {
+   "order": 64,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 62,
+    "y": 534.2,
+    "w": 193.8,
+    "h": 13.1,
+    "xu": 116.9,
+    "yu": 1006.8,
+    "wu": 365.2,
+    "hu": 24.7
+   },
+   "text": "Metformin 500 mg (10 tabs)",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.1,
+    "sizeU": 19,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "13.1061px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 65,
+   "tag": "small",
+   "cls": "",
+   "rect": {
+    "x": 62,
+    "y": 549.4,
+    "w": 193.8,
+    "h": 10,
+    "xu": 116.9,
+    "yu": 1035.5,
+    "wu": 365.2,
+    "hu": 18.8
+   },
+   "text": "Selected for this preview",
+   "type": {
+    "family": "-apple-system",
+    "size": 8,
+    "sizeU": 15,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(143, 140, 126)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "start"
+   }
+  },
+  {
+   "order": 66,
+   "tag": "span",
+   "cls": "j-status green",
+   "rect": {
+    "x": 268.5,
+    "y": 538.7,
+    "w": 42,
+    "h": 16.3,
+    "xu": 506.1,
+    "yu": 1015.2,
+    "wu": 79.1,
+    "hu": 30.7
+   },
+   "text": "In stock",
+   "type": {
+    "family": "-apple-system",
+    "size": 7.4,
+    "sizeU": 14,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(47, 134, 56)",
+    "letterSpacing": "normal",
+    "lineHeight": "8.91429px",
+    "align": "start"
+   },
+   "bg": "rgb(234, 246, 229)",
+   "radius": "99px"
+  },
+  {
+   "order": 67,
+   "tag": "b",
+   "cls": "",
+   "rect": {
+    "x": 323.2,
+    "y": 541.3,
+    "w": 34.5,
+    "h": 11,
+    "xu": 609.1,
+    "yu": 1020.2,
+    "wu": 65,
+    "hu": 20.7
+   },
+   "text": "\u20b945",
+   "type": {
+    "family": "-apple-system",
+    "size": 9.6,
+    "sizeU": 18,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "right"
+   }
+  },
+  {
+   "order": 68,
+   "tag": "div",
+   "cls": "checkout-selection-notice",
+   "rect": {
+    "x": 20.7,
+    "y": 577.3,
+    "w": 348.6,
+    "h": 41.1,
+    "xu": 39,
+    "yu": 1088,
+    "wu": 657,
+    "hu": 77.5
+   },
+   "bg": "rgb(254, 237, 224)",
+   "radius": "8.4898px"
+  },
+  {
+   "order": 69,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 28.6,
+    "y": 589.1,
+    "w": 17.5,
+    "h": 17.5,
+    "xu": 54,
+    "yu": 1110.2,
+    "wu": 33,
+    "hu": 33
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M6 9h20l3 21H3Zm5 3V6a5 5 0 0 1 10 0v6\"></path></svg>"
+  },
+  {
+   "order": 70,
+   "tag": "li",
+   "cls": "",
+   "rect": {
+    "x": 64.2,
+    "y": 585.2,
+    "w": 272,
+    "h": 12.6,
+    "xu": 120.9,
+    "yu": 1102.9,
+    "wu": 512.6,
+    "hu": 23.8
+   },
+   "text": "These items are selected for your checkout handoff.",
+   "type": {
+    "family": "-apple-system",
+    "size": 9,
+    "sizeU": 17,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(119, 117, 100)",
+    "letterSpacing": "normal",
+    "lineHeight": "12.6286px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 71,
+   "tag": "li",
+   "cls": "",
+   "rect": {
+    "x": 64.2,
+    "y": 597.8,
+    "w": 272,
+    "h": 12.6,
+    "xu": 120.9,
+    "yu": 1126.7,
+    "wu": 512.6,
+    "hu": 23.8
+   },
+   "text": "Confirm any medicine change with your doctor or pharmacist.",
+   "type": {
+    "family": "-apple-system",
+    "size": 9,
+    "sizeU": 17,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(119, 117, 100)",
+    "letterSpacing": "normal",
+    "lineHeight": "12.6286px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 72,
+   "tag": "div",
+   "cls": "checkout-estimate",
+   "rect": {
+    "x": 20.7,
+    "y": 626.4,
+    "w": 348.6,
+    "h": 56.6,
+    "xu": 39,
+    "yu": 1180.4,
+    "wu": 657,
+    "hu": 106.7
+   },
+   "bg": "rgb(252, 240, 226)",
+   "radius": "10.6122px"
+  },
+  {
+   "order": 73,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 33.4,
+    "y": 635.4,
+    "w": 323.2,
+    "h": 38.6,
+    "xu": 63,
+    "yu": 1197.4,
+    "wu": 609,
+    "hu": 72.8
+   }
+  },
+  {
+   "order": 74,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 33.4,
+    "y": 635.4,
+    "w": 164.9,
+    "h": 38.6,
+    "xu": 63,
+    "yu": 1197.4,
+    "wu": 310.8,
+    "hu": 72.8
+   },
+   "text": "Estimated total on Apollo Pharmacy",
+   "type": {
+    "family": "-apple-system",
+    "size": 9.6,
+    "sizeU": 18,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "left"
+   }
+  },
+  {
+   "order": 75,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 33.4,
+    "y": 648.5,
+    "w": 164.9,
+    "h": 25.5,
+    "xu": 63,
+    "yu": 1222.1,
+    "wu": 310.8,
+    "hu": 48.1
+   },
+   "text": "\u20b9830",
+   "type": {
+    "family": "-apple-system",
+    "size": 19.6,
+    "sizeU": 37,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "25.5224px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 76,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 89.7,
+    "y": 655.4,
+    "w": 11.7,
+    "h": 11.7,
+    "xu": 169.1,
+    "yu": 1235.2,
+    "wu": 22,
+    "hu": 22
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"13\"></circle><path d=\"M16 14v10m0-16v1\"></path></svg>"
+  },
+  {
+   "order": 77,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 341.7,
+    "y": 647.3,
+    "w": 14.8,
+    "h": 14.8,
+    "xu": 644,
+    "yu": 1219.8,
+    "wu": 28,
+    "hu": 28
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>"
+  },
+  {
+   "order": 78,
+   "tag": "button",
+   "cls": "primary-action j-primary",
+   "rect": {
+    "x": 20.7,
+    "y": 692,
+    "w": 348.6,
+    "h": 44,
+    "xu": 39,
+    "yu": 1304.2,
+    "wu": 657,
+    "hu": 82.9
+   },
+   "text": "Go to checkout on Apollo Pharmacy",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.7,
+    "sizeU": 22,
+    "weight": "500",
+    "style": "normal",
+    "color": "rgb(255, 248, 237)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   },
+   "bgImage": "linear-gradient(110deg, rgb(211, 71, 15), rgb(198, 56, 12))",
+   "radius": "99px"
+  },
+  {
+   "order": 79,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 292.7,
+    "y": 706.3,
+    "w": 15.4,
+    "h": 15.4,
+    "xu": 551.7,
+    "yu": 1331.2,
+    "wu": 29,
+    "hu": 29
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M18 3h11v11M29 3 14 18M12 6H4v23h23v-8\"></path></svg>"
+  },
+  {
+   "order": 80,
+   "tag": "button",
+   "cls": "j-outline mark-ordered",
+   "rect": {
+    "x": 20.7,
+    "y": 744.5,
+    "w": 348.6,
+    "h": 44,
+    "xu": 39,
+    "yu": 1403.1,
+    "wu": 657,
+    "hu": 82.9
+   },
+   "text": "Mark as ordered and continue",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "600",
+    "style": "normal",
+    "color": "rgb(189, 66, 29)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   },
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(233, 161, 125)"
+   },
+   "radius": "9.55102px"
+  },
+  {
+   "order": 81,
+   "tag": "p",
+   "cls": "checkout-return",
+   "rect": {
+    "x": 20.7,
+    "y": 800.2,
+    "w": 348.6,
+    "h": 11.1,
+    "xu": 39,
+    "yu": 1508,
+    "wu": 657,
+    "hu": 21
+   },
+   "text": "You\u2019ll return to Parchi after completing payment.",
+   "type": {
+    "family": "-apple-system",
+    "size": 7.4,
+    "sizeU": 14,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(147, 147, 137)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "start"
+   }
+  },
+  {
+   "order": 82,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 97.5,
+    "y": 800.2,
+    "w": 9.5,
+    "h": 11.1,
+    "xu": 183.7,
+    "yu": 1508,
+    "wu": 18,
+    "hu": 21
+   },
+   "svg": "<svg viewBox=\"0 0 32 40\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M7 15V9a9 9 0 0 1 18 0v6h2a3 3 0 0 1 3 3v19H2V18a3 3 0 0 1 3-3Zm4 0h10V9a5 5 0 0 0-10 0Zm3 12v5h4v-5a3 3 0 1 0-4 0Z\"></path></svg>"
+  },
+  {
+   "order": 83,
+   "tag": "article",
+   "cls": "checkout-seller ",
+   "rect": {
+    "x": 10.1,
+    "y": 830.4,
+    "w": 369.8,
+    "h": 108.7,
+    "xu": 19,
+    "yu": 1565,
+    "wu": 697,
+    "hu": 204.8
+   },
+   "bg": "rgb(255, 253, 250)",
+   "radius": "12.2041px"
+  },
+  {
+   "order": 84,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 20.7,
+    "y": 838.3,
+    "w": 86.7,
+    "h": 32,
+    "xu": 39,
+    "yu": 1580,
+    "wu": 163.3,
+    "hu": 60.3
+   },
+   "text": "\u00b7 Pharmacy",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.1,
+    "sizeU": 19,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 85,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 20.7,
+    "y": 848.3,
+    "w": 29.5,
+    "h": 12,
+    "xu": 39,
+    "yu": 1598.8,
+    "wu": 55.5,
+    "hu": 22.6
+   },
+   "text": "2 of 3",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.1,
+    "sizeU": 19,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 87,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 101.3,
+    "y": 879.4,
+    "w": 213.4,
+    "h": 15.9,
+    "xu": 191,
+    "yu": 1657.3,
+    "wu": 402.1,
+    "hu": 30
+   },
+   "text": "MedPlus Pharmacy",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.7,
+    "sizeU": 24,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "-0.265306px",
+    "lineHeight": "15.9184px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 88,
+   "tag": "small",
+   "cls": "",
+   "rect": {
+    "x": 101.3,
+    "y": 896.3,
+    "w": 213.4,
+    "h": 13.6,
+    "xu": 191,
+    "yu": 1689.2,
+    "wu": 402.1,
+    "hu": 25.6
+   },
+   "text": "HSR Layout \u00b7 1.2 km",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.1,
+    "sizeU": 19,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(133, 136, 127)",
+    "letterSpacing": "normal",
+    "lineHeight": "13.6102px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 89,
+   "tag": "span",
+   "cls": "j-status green",
+   "rect": {
+    "x": 101.3,
+    "y": 912.5,
+    "w": 101,
+    "h": 18.5,
+    "xu": 191,
+    "yu": 1719.8,
+    "wu": 190.3,
+    "hu": 35
+   },
+   "text": "Ready in ~40 mins",
+   "type": {
+    "family": "-apple-system",
+    "size": 8,
+    "sizeU": 15,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(47, 134, 56)",
+    "letterSpacing": "normal",
+    "lineHeight": "9.55102px",
+    "align": "start"
+   },
+   "bg": "rgb(234, 246, 229)",
+   "radius": "99px"
+  },
+  {
+   "order": 90,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 108.2,
+    "y": 916.3,
+    "w": 11.1,
+    "h": 11.1,
+    "xu": 204,
+    "yu": 1726.8,
+    "wu": 21,
+    "hu": 21
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>"
+  },
+  {
+   "order": 91,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 325.3,
+    "y": 883.2,
+    "w": 44,
+    "h": 44,
+    "xu": 613.1,
+    "yu": 1664.5,
+    "wu": 82.9,
+    "hu": 82.9
+   },
+   "aria": "Expand MedPlus Pharmacy"
+  },
+  {
+   "order": 92,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 339.9,
+    "y": 896.4,
+    "w": 14.8,
+    "h": 14.8,
+    "xu": 640.6,
+    "yu": 1689.3,
+    "wu": 28,
+    "hu": 28
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>"
+  },
+  {
+   "order": 93,
+   "tag": "article",
+   "cls": "checkout-seller ",
+   "rect": {
+    "x": 10.1,
+    "y": 946.5,
+    "w": 369.8,
+    "h": 108.7,
+    "xu": 19,
+    "yu": 1783.7,
+    "wu": 697,
+    "hu": 204.8
+   },
+   "bg": "rgb(255, 253, 250)",
+   "radius": "12.2041px"
+  },
+  {
+   "order": 94,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 20.7,
+    "y": 954.4,
+    "w": 56.6,
+    "h": 32,
+    "xu": 39,
+    "yu": 1798.7,
+    "wu": 106.6,
+    "hu": 60.3
+   },
+   "text": "\u00b7 Lab",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.1,
+    "sizeU": 19,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 95,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 20.7,
+    "y": 964.4,
+    "w": 29.7,
+    "h": 12,
+    "xu": 39,
+    "yu": 1817.6,
+    "wu": 56,
+    "hu": 22.6
+   },
+   "text": "3 of 3",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.1,
+    "sizeU": 19,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 97,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 101.3,
+    "y": 995.4,
+    "w": 213.4,
+    "h": 15.9,
+    "xu": 191,
+    "yu": 1876,
+    "wu": 402.1,
+    "hu": 30
+   },
+   "text": "Thyrocare Diagnostics",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.7,
+    "sizeU": 24,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(60, 28, 16)",
+    "letterSpacing": "-0.265306px",
+    "lineHeight": "15.9184px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 98,
+   "tag": "small",
+   "cls": "",
+   "rect": {
+    "x": 101.3,
+    "y": 1012.4,
+    "w": 213.4,
+    "h": 13.6,
+    "xu": 191,
+    "yu": 1908,
+    "wu": 402.1,
+    "hu": 25.6
+   },
+   "text": "HSR Layout \u00b7 1.1 km",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.1,
+    "sizeU": 19,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(133, 136, 127)",
+    "letterSpacing": "normal",
+    "lineHeight": "13.6102px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 99,
+   "tag": "span",
+   "cls": "j-status green",
+   "rect": {
+    "x": 101.3,
+    "y": 1028.6,
+    "w": 125.2,
+    "h": 18.5,
+    "xu": 191,
+    "yu": 1938.6,
+    "wu": 236,
+    "hu": 35
+   },
+   "text": "Ready in Today, 4:30 PM",
+   "type": {
+    "family": "-apple-system",
+    "size": 8,
+    "sizeU": 15,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(47, 134, 56)",
+    "letterSpacing": "normal",
+    "lineHeight": "9.55102px",
+    "align": "start"
+   },
+   "bg": "rgb(234, 246, 229)",
+   "radius": "99px"
+  },
+  {
+   "order": 100,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 108.2,
+    "y": 1032.3,
+    "w": 11.1,
+    "h": 11.1,
+    "xu": 204,
+    "yu": 1945.5,
+    "wu": 21,
+    "hu": 21
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>"
+  },
+  {
+   "order": 101,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 325.3,
+    "y": 999.3,
+    "w": 44,
+    "h": 44,
+    "xu": 613.1,
+    "yu": 1883.3,
+    "wu": 82.9,
+    "hu": 82.9
+   },
+   "aria": "Expand Thyrocare Diagnostics"
+  },
+  {
+   "order": 102,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 339.9,
+    "y": 1012.5,
+    "w": 14.8,
+    "h": 14.8,
+    "xu": 640.6,
+    "yu": 1908.1,
+    "wu": 28,
+    "hu": 28
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 12 9 8 9-8\"></path></svg>"
+  },
+  {
+   "order": 103,
+   "tag": "p",
+   "cls": "j-sample-note",
+   "rect": {
+    "x": 10.1,
+    "y": 1061.5,
+    "w": 369.8,
+    "h": 12.6,
+    "xu": 19,
+    "yu": 2000.5,
+    "wu": 697,
+    "hu": 23.7
+   },
+   "text": "Checkout preview \u00b7 no seller cart or payment is connected",
+   "type": {
+    "family": "-apple-system",
+    "size": 9,
+    "sizeU": 17,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(141, 126, 107)",
+    "letterSpacing": "normal",
+    "lineHeight": "12.6px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 104,
+   "tag": "div",
+   "cls": "home-indicator",
+   "rect": {
+    "x": 133.6,
+    "y": 1090.5,
+    "w": 122.8,
+    "h": 4.1,
+    "xu": 251.7,
+    "yu": 2055.3,
+    "wu": 231.5,
+    "hu": 7.7
+   },
+   "bg": "rgb(21, 18, 13)",
+   "radius": "99px"
+  }
+ ],
+ "art": [
+  {
+   "viewBox": "48 738 117 101",
+   "href": "assets/references/medicine-options.jpeg",
+   "aspect": "xMidYMid meet",
+   "cls": "reference-art ",
+   "rect": {
+    "x": 20.7,
+    "y": 263.7,
+    "w": 70,
+    "h": 44,
+    "xu": 39,
+    "yu": 497,
+    "wu": 132,
+    "hu": 83
+   },
+   "order": 27,
+   "asset": "art_medicineoptions_48_738_117_101"
+  },
+  {
+   "viewBox": "48 924 117 61",
+   "href": "assets/references/medicine-options.jpeg",
+   "aspect": "xMidYMid meet",
+   "cls": "reference-art ",
+   "rect": {
+    "x": 20.7,
+    "y": 883.2,
+    "w": 70,
+    "h": 44,
+    "xu": 39,
+    "yu": 1664.5,
+    "wu": 132,
+    "hu": 83
+   },
+   "order": 86,
+   "asset": "art_medicineoptions_48_924_117_61"
+  },
+  {
+   "viewBox": "115 725 135 94",
+   "href": "assets/references/lab-options.jpeg",
+   "aspect": "xMidYMid meet",
+   "cls": "reference-art ",
+   "rect": {
+    "x": 20.7,
+    "y": 999.3,
+    "w": 70,
+    "h": 44,
+    "xu": 39,
+    "yu": 1883.3,
+    "wu": 132,
+    "hu": 83
+   },
+   "order": 96,
+   "asset": "art_laboptions_115_725_135_94"
+  }
+ ],
+ "images": [
+  {
+   "src": "assets/parchi-logo-transparent.png",
+   "alt": "",
+   "rect": {
+    "x": 140.9,
+    "y": 44,
+    "w": 35.5,
+    "h": 34,
+    "xu": 265.5,
+    "yu": 83,
+    "wu": 67,
+    "hu": 64
+   },
+   "radius": "0px",
+   "order": 6
+  }
+ ],
+ "route": "checkout",
+ "shows": "checkout"
+}

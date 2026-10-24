@@ -1,0 +1,366 @@
+{
+ "art_area_59_1322_142_52": {
+  "source": "assets/references/area.jpeg",
+  "crop": [
+   59,
+   1322,
+   142,
+   52
+  ],
+  "size": [
+   142,
+   52
+  ]
+ },
+ "art_area_228_1316_137_62": {
+  "source": "assets/references/area.jpeg",
+  "crop": [
+   228,
+   1316,
+   137,
+   62
+  ],
+  "size": [
+   137,
+   62
+  ]
+ },
+ "art_area_394_1314_142_64": {
+  "source": "assets/references/area.jpeg",
+  "crop": [
+   394,
+   1314,
+   142,
+   64
+  ],
+  "size": [
+   142,
+   64
+  ]
+ },
+ "art_capturecamera_96_430_36_650": {
+  "source": "assets/references/capture-camera.jpeg",
+  "crop": [
+   96,
+   430,
+   36,
+   650
+  ],
+  "size": [
+   36,
+   650
+  ]
+ },
+ "art_capturecamera_88_260_154_143": {
+  "source": "assets/references/capture-camera.jpeg",
+  "crop": [
+   88,
+   260,
+   154,
+   143
+  ],
+  "size": [
+   154,
+   143
+  ]
+ },
+ "art_capturecamera_178_416_551_713": {
+  "source": "assets/references/capture-camera.jpeg",
+  "crop": [
+   178,
+   416,
+   551,
+   713
+  ],
+  "size": [
+   551,
+   713
+  ]
+ },
+ "art_care_526_146_209_174": {
+  "source": "assets/references/care.jpeg",
+  "crop": [
+   526,
+   146,
+   209,
+   174
+  ],
+  "size": [
+   209,
+   174
+  ]
+ },
+ "art_laboptions_115_725_135_94": {
+  "source": "assets/references/lab-options.jpeg",
+  "crop": [
+   115,
+   725,
+   135,
+   94
+  ],
+  "size": [
+   135,
+   94
+  ]
+ },
+ "art_medicineoptions_48_924_117_61": {
+  "source": "assets/references/medicine-options.jpeg",
+  "crop": [
+   48,
+   924,
+   117,
+   61
+  ],
+  "size": [
+   117,
+   61
+  ]
+ },
+ "art_medicineoptions_48_738_117_101": {
+  "source": "assets/references/medicine-options.jpeg",
+  "crop": [
+   48,
+   738,
+   117,
+   101
+  ],
+  "size": [
+   117,
+   101
+  ]
+ },
+ "art_historyfinal_524_157_183_156": {
+  "source": "assets/references/history-final.jpeg",
+  "crop": [
+   524,
+   157,
+   183,
+   156
+  ],
+  "size": [
+   183,
+   156
+  ]
+ },
+ "art_home_465_391_337_277": {
+  "source": "assets/references/home.jpeg",
+  "crop": [
+   465,
+   391,
+   337,
+   277
+  ],
+  "size": [
+   337,
+   277
+  ]
+ },
+ "art_home_550_860_242_91": {
+  "source": "assets/references/home.jpeg",
+  "crop": [
+   550,
+   860,
+   242,
+   91
+  ],
+  "size": [
+   242,
+   91
+  ]
+ },
+ "art_laboptions_114_909_127_86": {
+  "source": "assets/references/lab-options.jpeg",
+  "crop": [
+   114,
+   909,
+   127,
+   86
+  ],
+  "size": [
+   127,
+   86
+  ]
+ },
+ "art_laboptions_113_1108_133_77": {
+  "source": "assets/references/lab-options.jpeg",
+  "crop": [
+   113,
+   1108,
+   133,
+   77
+  ],
+  "size": [
+   133,
+   77
+  ]
+ },
+ "art_planslist_166_833_90_57": {
+  "source": "assets/references/plans-list.jpeg",
+  "crop": [
+   166,
+   833,
+   90,
+   57
+  ],
+  "size": [
+   90,
+   57
+  ]
+ },
+ "art_planslist_423_844_55_44": {
+  "source": "assets/references/plans-list.jpeg",
+  "crop": [
+   423,
+   844,
+   55,
+   44
+  ],
+  "size": [
+   55,
+   44
+  ]
+ },
+ "art_planslist_280_846_108_34": {
+  "source": "assets/references/plans-list.jpeg",
+  "crop": [
+   280,
+   846,
+   108,
+   34
+  ],
+  "size": [
+   108,
+   34
+  ]
+ },
+ "art_planslist_512_841_83_51": {
+  "source": "assets/references/plans-list.jpeg",
+  "crop": [
+   512,
+   841,
+   83,
+   51
+  ],
+  "size": [
+   83,
+   51
+  ]
+ },
+ "art_rankingfinal_65_412_183_168": {
+  "source": "assets/references/ranking-final.jpeg",
+  "crop": [
+   65,
+   412,
+   183,
+   168
+  ],
+  "size": [
+   183,
+   168
+  ]
+ },
+ "art_rankingfinal_65_658_182_157": {
+  "source": "assets/references/ranking-final.jpeg",
+  "crop": [
+   65,
+   658,
+   182,
+   157
+  ],
+  "size": [
+   182,
+   157
+  ]
+ },
+ "art_rankingfinal_65_884_183_166": {
+  "source": "assets/references/ranking-final.jpeg",
+  "crop": [
+   65,
+   884,
+   183,
+   166
+  ],
+  "size": [
+   183,
+   166
+  ]
+ },
+ "art_reviewregenerated_125_1088_156_121": {
+  "source": "assets/references/review-regenerated.jpeg",
+  "crop": [
+   125,
+   1088,
+   156,
+   121
+  ],
+  "size": [
+   156,
+   121
+  ]
+ },
+ "art_reviewregenerated_125_1265_156_120": {
+  "source": "assets/references/review-regenerated.jpeg",
+  "crop": [
+   125,
+   1265,
+   156,
+   120
+  ],
+  "size": [
+   156,
+   120
+  ]
+ },
+ "art_signin_365_110_370_590": {
+  "source": "assets/references/signin.jpeg",
+  "crop": [
+   365,
+   110,
+   370,
+   590
+  ],
+  "size": [
+   370,
+   590
+  ]
+ },
+ "art_tracking_465_149_268_116": {
+  "source": "assets/references/tracking.jpeg",
+  "crop": [
+   465,
+   149,
+   268,
+   116
+  ],
+  "size": [
+   268,
+   116
+  ]
+ },
+ "art_tracking_437_567_83_96": {
+  "source": "assets/references/tracking.jpeg",
+  "crop": [
+   437,
+   567,
+   83,
+   96
+  ],
+  "size": [
+   83,
+   96
+  ]
+ },
+ "art_otp_345_120_390_505": {
+  "source": "assets/references/otp.jpeg",
+  "crop": [
+   345,
+   120,
+   390,
+   505
+  ],
+  "size": [
+   390,
+   505
+  ]
+ }
+}

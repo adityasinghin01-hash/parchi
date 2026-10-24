@@ -46,6 +46,7 @@ struct RootView: View {
         .captureInbox(path: $path, consent: model.consent)   // K12: Open in Parchi + the single capture preview sheet; consent gate in front of the first photo
         .overlay { if let name = UserDefaults.standard.string(forKey: "demoRoute"), let screen = Phase4Route.view(for: name) { screen.background(Color(.systemBackground)) } }   // Phase 4 demo screens: history|care|settings|consent|rank|city
         .onChange(of: path) { _, newPath in model.trackVisibilityChanged(newPath.contains(.track)) }
+        .overlay { if let name = UserDefaults.standard.string(forKey: "fidelityScreen"), let screen = FidelityScreens.view(for: name) { screen.background(Color(.systemBackground)) } }   // -fidelityScreen <web route>: one screen, for pixel comparison with frontend/specs/web
     }
 
     /// Launch with `-demoRoute confirm|plan|getItAll|track|planB|askShops|lab` to open the demo at that step (screenshots, rehearsal reset).

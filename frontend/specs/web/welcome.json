@@ -1,0 +1,906 @@
+{
+ "viewport": {
+  "w": 390,
+  "h": 844
+ },
+ "artboardUnit": 0.5306000000000001,
+ "title": "Parchi \u00b7 Welcome",
+ "scrollHeight": 850,
+ "elements": [
+  {
+   "order": 0,
+   "tag": "span",
+   "cls": "clock",
+   "rect": {
+    "x": 48.8,
+    "y": 14.9,
+    "w": 31,
+    "h": 17,
+    "xu": 91.9,
+    "yu": 28.1,
+    "wu": 58.5,
+    "hu": 32
+   },
+   "text": "9:41",
+   "type": {
+    "family": "-apple-system",
+    "size": 14.8,
+    "sizeU": 27.9,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.1px",
+    "lineHeight": "normal",
+    "align": "start"
+   }
+  },
+  {
+   "order": 1,
+   "tag": "span",
+   "cls": "dynamic-island",
+   "rect": {
+    "x": 141.6,
+    "y": 10.5,
+    "w": 106.9,
+    "h": 30.4,
+    "xu": 266.8,
+    "yu": 19.8,
+    "wu": 201.4,
+    "hu": 57.3
+   },
+   "bg": "rgb(2, 3, 2)",
+   "radius": "39px"
+  },
+  {
+   "order": 2,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 297.2,
+    "y": 13.6,
+    "w": 64.3,
+    "h": 19.5,
+    "xu": 560.1,
+    "yu": 25.7,
+    "wu": 121.3,
+    "hu": 36.8
+   },
+   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>"
+  },
+  {
+   "order": 3,
+   "tag": "svg",
+   "cls": "welcome__decoration",
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 849.8,
+    "xu": 0,
+    "yu": 0,
+    "wu": 735,
+    "hu": 1601.6
+   },
+   "svg": "<svg class=\"welcome__decoration\" viewBox=\"0 0 735 1600\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><defs><linearGradient id=\"wave\" x1=\"0\" y1=\"0\" x2=\"100\" y2=\"280\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#ffc972\"></stop><stop offset=\"1\" stop-color=\"#ffb645\"></stop></linearGradient></defs><path d=\"M0 0h60C10 60 64 110 82 150c35 75-38 102-82 128Z\" fill=\"url(#wave)\"></path><path d=\"M74-6C21 62 96 111 121 170c28 66-16 96-67 114C20 297 6 316-3 345\" stroke=\"#edb85e\" stroke-width=\"1.4\" fill=\"none\"></path><path d=\"M735 1408c-47 20-39 84-81 109-29 18-59 40-64 83h145Z\" fill=\"#ffbb4e\"></path><path d=\"M738 1394c-55 22-38 79-92 107-34 19-65 40-78 99\" fill=\"none\" stroke=\"#edb85e\" stroke-width=\"1.4\"></path></svg>"
+  },
+  {
+   "order": 5,
+   "tag": "div",
+   "cls": "welcome__wordmark",
+   "rect": {
+    "x": 28.1,
+    "y": 200.6,
+    "w": 333.8,
+    "h": 43.5,
+    "xu": 53,
+    "yu": 378,
+    "wu": 629,
+    "hu": 82
+   },
+   "aria": "Parchi",
+   "text": "Parchi",
+   "type": {
+    "family": "Georgia",
+    "size": 40.3,
+    "sizeU": 76,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-1.06122px",
+    "lineHeight": "43.5102px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 6,
+   "tag": "p",
+   "cls": "welcome__tagline",
+   "rect": {
+    "x": 28.1,
+    "y": 244.1,
+    "w": 333.8,
+    "h": 11.7,
+    "xu": 53,
+    "yu": 460,
+    "wu": 629,
+    "hu": 22
+   },
+   "text": "YOUR HEALTH, MORE CLEARLY",
+   "type": {
+    "family": "-apple-system",
+    "size": 8,
+    "sizeU": 15,
+    "weight": "600",
+    "style": "normal",
+    "color": "rgb(104, 85, 63)",
+    "letterSpacing": "1.59184px",
+    "lineHeight": "11.6735px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 7,
+   "tag": "h1",
+   "cls": "welcome__headline",
+   "id": "welcome-title",
+   "rect": {
+    "x": 23.9,
+    "y": 264.8,
+    "w": 342.3,
+    "h": 55.2,
+    "xu": 45,
+    "yu": 499,
+    "wu": 645,
+    "hu": 104
+   },
+   "text": "Turn your prescription into a",
+   "type": {
+    "family": "Georgia",
+    "size": 24.4,
+    "sizeU": 46,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.265306px",
+    "lineHeight": "27.5918px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 8,
+   "tag": "em",
+   "cls": "",
+   "rect": {
+    "x": 171.9,
+    "y": 292.4,
+    "w": 121.9,
+    "h": 27,
+    "xu": 324,
+    "yu": 551,
+    "wu": 229.7,
+    "hu": 50.9
+   },
+   "text": "clear plan",
+   "type": {
+    "family": "Georgia",
+    "size": 24.4,
+    "sizeU": 46,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(204, 63, 18)",
+    "letterSpacing": "-0.265306px",
+    "lineHeight": "27.5918px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 9,
+   "tag": "p",
+   "cls": "welcome__intro",
+   "rect": {
+    "x": 27.1,
+    "y": 323.1,
+    "w": 335.9,
+    "h": 32.9,
+    "xu": 51,
+    "yu": 609,
+    "wu": 633,
+    "hu": 62
+   },
+   "text": "Parchi reads your prescription, protects your privacy, shows options and helps you get your medicines easily.",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.7,
+    "sizeU": 24,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(104, 85, 63)",
+    "letterSpacing": "normal",
+    "lineHeight": "16.449px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 10,
+   "tag": "button",
+   "cls": "permission-row",
+   "rect": {
+    "x": 28.1,
+    "y": 366.1,
+    "w": 333.8,
+    "h": 65.8,
+    "xu": 53,
+    "yu": 690,
+    "wu": 629,
+    "hu": 124
+   },
+   "bg": "rgba(255, 246, 228, 0.65)",
+   "radius": "18.0408px",
+   "shadow": "rgba(171, 106, 33, 0.02) 0px 5px 18px 0px"
+  },
+  {
+   "order": 11,
+   "tag": "span",
+   "cls": "permission-row__icon",
+   "rect": {
+    "x": 38.7,
+    "y": 375.1,
+    "w": 47.8,
+    "h": 47.8,
+    "xu": 73,
+    "yu": 707,
+    "wu": 90,
+    "hu": 90
+   },
+   "bgImage": "radial-gradient(circle at 45% 40%, rgba(255, 224, 175, 0.68), rgba(249, 216, 171, 0.45))",
+   "radius": "50%"
+  },
+  {
+   "order": 12,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 47.3,
+    "y": 383.7,
+    "w": 30.5,
+    "h": 30.5,
+    "xu": 89.2,
+    "yu": 723.2,
+    "wu": 57.6,
+    "hu": 57.6
+   },
+   "svg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"pin\" x1=\"16\" y1=\"4\" x2=\"43\" y2=\"60\"><stop stop-color=\"#e94f14\"></stop><stop offset=\"1\" stop-color=\"#b6340a\"></stop></linearGradient></defs><path d=\"M32 4C18 4 10 14 10 26c0 15 22 35 22 35s22-20 22-35C54 14 46 4 32 4Z\" fill=\"url(#pin)\"></path><circle cx=\"32\" cy=\"25\" r=\"9.5\" fill=\"#fff2d9\"></circle></svg>"
+  },
+  {
+   "order": 13,
+   "tag": "span",
+   "cls": "permission-row__title",
+   "rect": {
+    "x": 101.3,
+    "y": 375.7,
+    "w": 229.3,
+    "h": 15.9,
+    "xu": 190.9,
+    "yu": 708,
+    "wu": 432.1,
+    "hu": 30
+   },
+   "text": "Location",
+   "type": {
+    "family": "-apple-system",
+    "size": 13.3,
+    "sizeU": 25,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.2px",
+    "lineHeight": "15.9184px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 14,
+   "tag": "span",
+   "cls": "permission-row__description",
+   "rect": {
+    "x": 101.3,
+    "y": 393.7,
+    "w": 229.3,
+    "h": 28.7,
+    "xu": 190.9,
+    "yu": 741.9,
+    "wu": 432.1,
+    "hu": 54
+   },
+   "text": "Find nearby pharmacies and labs and show accurate prices",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(104, 85, 63)",
+    "letterSpacing": "normal",
+    "lineHeight": "14.3265px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 15,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 341.7,
+    "y": 392.6,
+    "w": 8,
+    "h": 12.7,
+    "xu": 644,
+    "yu": 739.9,
+    "wu": 15,
+    "hu": 24
+   },
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+  },
+  {
+   "order": 16,
+   "tag": "button",
+   "cls": "permission-row",
+   "rect": {
+    "x": 28.1,
+    "y": 436.1,
+    "w": 333.8,
+    "h": 65.8,
+    "xu": 53,
+    "yu": 821.9,
+    "wu": 629,
+    "hu": 124
+   },
+   "bg": "rgba(255, 246, 228, 0.65)",
+   "radius": "18.0408px",
+   "shadow": "rgba(171, 106, 33, 0.02) 0px 5px 18px 0px"
+  },
+  {
+   "order": 17,
+   "tag": "span",
+   "cls": "permission-row__icon",
+   "rect": {
+    "x": 38.7,
+    "y": 445.1,
+    "w": 47.8,
+    "h": 47.8,
+    "xu": 73,
+    "yu": 838.9,
+    "wu": 90,
+    "hu": 90
+   },
+   "bgImage": "radial-gradient(circle at 45% 40%, rgba(255, 224, 175, 0.68), rgba(249, 216, 171, 0.45))",
+   "radius": "50%"
+  },
+  {
+   "order": 18,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 47.3,
+    "y": 453.7,
+    "w": 30.5,
+    "h": 30.5,
+    "xu": 89.2,
+    "yu": 855.1,
+    "wu": 57.6,
+    "hu": 57.6
+   },
+   "svg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"camera\" x1=\"12\" y1=\"10\" x2=\"50\" y2=\"57\"><stop stop-color=\"#eb651b\"></stop><stop offset=\"1\" stop-color=\"#be410e\"></stop></linearGradient></defs><path d=\"M22 10h20l4 8h9c3 0 5 2 5 5v31H4V23c0-3 2-5 5-5h9l4-8Z\" fill=\"url(#camera)\"></path><rect x=\"22\" y=\"10\" width=\"20\" height=\"6\" rx=\"2\" fill=\"#ec802b\"></rect><circle cx=\"32\" cy=\"35\" r=\"13\" fill=\"#ffebc7\"></circle><circle cx=\"32\" cy=\"35\" r=\"8\" fill=\"#a14018\"></circle><circle cx=\"52\" cy=\"25\" r=\"2.5\" fill=\"#ffcc85\"></circle></svg>"
+  },
+  {
+   "order": 19,
+   "tag": "span",
+   "cls": "permission-row__title",
+   "rect": {
+    "x": 101.3,
+    "y": 445.7,
+    "w": 229.3,
+    "h": 15.9,
+    "xu": 190.9,
+    "yu": 839.9,
+    "wu": 432.1,
+    "hu": 30
+   },
+   "text": "Camera & Photos",
+   "type": {
+    "family": "-apple-system",
+    "size": 13.3,
+    "sizeU": 25,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.2px",
+    "lineHeight": "15.9184px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 20,
+   "tag": "span",
+   "cls": "permission-row__description",
+   "rect": {
+    "x": 101.3,
+    "y": 463.7,
+    "w": 229.3,
+    "h": 28.7,
+    "xu": 190.9,
+    "yu": 873.9,
+    "wu": 432.1,
+    "hu": 54
+   },
+   "text": "Scan your prescription from camera, photos or WhatsApp",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(104, 85, 63)",
+    "letterSpacing": "normal",
+    "lineHeight": "14.3265px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 21,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 341.7,
+    "y": 462.6,
+    "w": 8,
+    "h": 12.7,
+    "xu": 644,
+    "yu": 871.9,
+    "wu": 15,
+    "hu": 24
+   },
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+  },
+  {
+   "order": 22,
+   "tag": "button",
+   "cls": "permission-row",
+   "rect": {
+    "x": 28.1,
+    "y": 506.1,
+    "w": 333.8,
+    "h": 65.8,
+    "xu": 53,
+    "yu": 953.9,
+    "wu": 629,
+    "hu": 124
+   },
+   "bg": "rgba(255, 246, 228, 0.65)",
+   "radius": "18.0408px",
+   "shadow": "rgba(171, 106, 33, 0.02) 0px 5px 18px 0px"
+  },
+  {
+   "order": 23,
+   "tag": "span",
+   "cls": "permission-row__icon",
+   "rect": {
+    "x": 38.7,
+    "y": 515.2,
+    "w": 47.8,
+    "h": 47.8,
+    "xu": 73,
+    "yu": 970.9,
+    "wu": 90,
+    "hu": 90
+   },
+   "bgImage": "radial-gradient(circle at 45% 40%, rgba(255, 224, 175, 0.68), rgba(249, 216, 171, 0.45))",
+   "radius": "50%"
+  },
+  {
+   "order": 24,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 47.3,
+    "y": 523.8,
+    "w": 30.5,
+    "h": 30.5,
+    "xu": 89.2,
+    "yu": 987.1,
+    "wu": 57.6,
+    "hu": 57.6
+   },
+   "svg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"bell\" x1=\"14\" y1=\"10\" x2=\"50\" y2=\"58\"><stop stop-color=\"#ffae09\"></stop><stop offset=\"1\" stop-color=\"#dc7900\"></stop></linearGradient></defs><path d=\"M12 47c6-6 5-12 5-20 0-9 6-16 15-16s15 7 15 16c0 8-1 14 5 20l3 4H9l3-4Z\" fill=\"url(#bell)\"></path><circle cx=\"32\" cy=\"10\" r=\"5\" fill=\"#ee9503\"></circle><path d=\"M25 55h14c-1 8-13 8-14 0Z\" fill=\"#c77100\"></path></svg>"
+  },
+  {
+   "order": 25,
+   "tag": "span",
+   "cls": "permission-row__title",
+   "rect": {
+    "x": 101.3,
+    "y": 515.7,
+    "w": 229.3,
+    "h": 15.9,
+    "xu": 190.9,
+    "yu": 971.9,
+    "wu": 432.1,
+    "hu": 30
+   },
+   "text": "Notifications",
+   "type": {
+    "family": "-apple-system",
+    "size": 13.3,
+    "sizeU": 25,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.2px",
+    "lineHeight": "15.9184px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 26,
+   "tag": "span",
+   "cls": "permission-row__description",
+   "rect": {
+    "x": 101.3,
+    "y": 533.7,
+    "w": 229.3,
+    "h": 28.7,
+    "xu": 190.9,
+    "yu": 1005.8,
+    "wu": 432.1,
+    "hu": 54
+   },
+   "text": "Reminders for medicines, tests and important updates",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(104, 85, 63)",
+    "letterSpacing": "normal",
+    "lineHeight": "14.3265px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 27,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 341.7,
+    "y": 532.7,
+    "w": 8,
+    "h": 12.7,
+    "xu": 644,
+    "yu": 1003.9,
+    "wu": 15,
+    "hu": 24
+   },
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+  },
+  {
+   "order": 28,
+   "tag": "button",
+   "cls": "permission-row",
+   "rect": {
+    "x": 28.1,
+    "y": 576.2,
+    "w": 333.8,
+    "h": 65.8,
+    "xu": 53,
+    "yu": 1085.8,
+    "wu": 629,
+    "hu": 124
+   },
+   "bg": "rgba(255, 246, 228, 0.65)",
+   "radius": "18.0408px",
+   "shadow": "rgba(171, 106, 33, 0.02) 0px 5px 18px 0px"
+  },
+  {
+   "order": 29,
+   "tag": "span",
+   "cls": "permission-row__icon",
+   "rect": {
+    "x": 38.7,
+    "y": 585.2,
+    "w": 47.8,
+    "h": 47.8,
+    "xu": 73,
+    "yu": 1102.8,
+    "wu": 90,
+    "hu": 90
+   },
+   "bgImage": "radial-gradient(circle at 45% 40%, rgba(255, 224, 175, 0.68), rgba(249, 216, 171, 0.45))",
+   "radius": "50%"
+  },
+  {
+   "order": 30,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 47.3,
+    "y": 593.8,
+    "w": 30.5,
+    "h": 30.5,
+    "xu": 89.2,
+    "yu": 1119,
+    "wu": 57.6,
+    "hu": 57.6
+   },
+   "svg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"bars\" x1=\"12\" y1=\"17\" x2=\"52\" y2=\"51\"><stop stop-color=\"#ba672f\"></stop><stop offset=\"1\" stop-color=\"#86421d\"></stop></linearGradient></defs><rect x=\"9\" y=\"23\" width=\"11\" height=\"29\" rx=\"4\" fill=\"url(#bars)\"></rect><rect x=\"26\" y=\"32\" width=\"11\" height=\"20\" rx=\"4\" fill=\"url(#bars)\"></rect><rect x=\"43\" y=\"17\" width=\"12\" height=\"35\" rx=\"4\" fill=\"url(#bars)\"></rect></svg>"
+  },
+  {
+   "order": 31,
+   "tag": "span",
+   "cls": "permission-row__title",
+   "rect": {
+    "x": 101.3,
+    "y": 585.7,
+    "w": 229.3,
+    "h": 15.9,
+    "xu": 190.9,
+    "yu": 1103.8,
+    "wu": 432.1,
+    "hu": 30
+   },
+   "text": "Usage Data (optional)",
+   "type": {
+    "family": "-apple-system",
+    "size": 13.3,
+    "sizeU": 25,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.2px",
+    "lineHeight": "15.9184px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 32,
+   "tag": "span",
+   "cls": "permission-row__description",
+   "rect": {
+    "x": 101.3,
+    "y": 603.7,
+    "w": 229.3,
+    "h": 28.7,
+    "xu": 190.9,
+    "yu": 1137.8,
+    "wu": 432.1,
+    "hu": 54
+   },
+   "text": "Helps us improve accuracy and experiences",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(104, 85, 63)",
+    "letterSpacing": "normal",
+    "lineHeight": "14.3265px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 33,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 341.7,
+    "y": 602.7,
+    "w": 8,
+    "h": 12.7,
+    "xu": 644,
+    "yu": 1135.8,
+    "wu": 15,
+    "hu": 24
+   },
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+  },
+  {
+   "order": 34,
+   "tag": "section",
+   "cls": "privacy-panel",
+   "rect": {
+    "x": 28.1,
+    "y": 652.5,
+    "w": 333.8,
+    "h": 73.2,
+    "xu": 53,
+    "yu": 1229.8,
+    "wu": 629,
+    "hu": 138
+   },
+   "bgImage": "linear-gradient(110deg, rgba(251, 228, 194, 0.79), rgba(251, 228, 194, 0.867))",
+   "radius": "17.5102px"
+  },
+  {
+   "order": 35,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 40.8,
+    "y": 663.7,
+    "w": 47.8,
+    "h": 50.9,
+    "xu": 77,
+    "yu": 1250.8,
+    "wu": 90,
+    "hu": 96
+   },
+   "svg": "<svg viewBox=\"0 0 64 78\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"shield\" x1=\"9\" y1=\"4\" x2=\"58\" y2=\"74\"><stop stop-color=\"#fff3d8\"></stop><stop offset=\".5\" stop-color=\"#ffe2b1\"></stop><stop offset=\"1\" stop-color=\"#e7ba79\"></stop></linearGradient><filter id=\"shield-shadow\" x=\"-45%\" y=\"-30%\" width=\"190%\" height=\"180%\"><feDropShadow dx=\"0\" dy=\"3\" stdDeviation=\"3\" flood-color=\"#a86a28\" flood-opacity=\".28\"></feDropShadow></filter></defs><path d=\"M32 3C22 10 13 11 7 15v23c0 17 9 27 25 35 16-8 25-18 25-35V15C47 11 42 10 32 3Z\" fill=\"url(#shield)\" stroke=\"#f9d7a0\" stroke-width=\"1.4\" filter=\"url(#shield-shadow)\"></path><path d=\"M32 8c-8 6-15 8-20 10v20c0 14 6 23 20 30 14-7 20-16 20-30V18c-8-3-13-5-20-10Z\" fill=\"#fff1d6\" opacity=\".65\"></path><rect x=\"21\" y=\"31\" width=\"22\" height=\"22\" rx=\"6\" fill=\"#4a220c\"></rect><path d=\"M25 32v-6a7 7 0 0 1 14 0v6\" stroke=\"#4a220c\" stroke-width=\"4\"></path><circle cx=\"32\" cy=\"40\" r=\"2.4\" fill=\"#ffe6bd\"></circle><path d=\"M32 41v5\" stroke=\"#ffe6bd\" stroke-width=\"2.5\" stroke-linecap=\"round\"></path></svg>"
+  },
+  {
+   "order": 36,
+   "tag": "h2",
+   "cls": "",
+   "id": "privacy-title",
+   "rect": {
+    "x": 104,
+    "y": 665.2,
+    "w": 223.8,
+    "h": 16.5,
+    "xu": 195.9,
+    "yu": 1253.7,
+    "wu": 421.8,
+    "hu": 31.2
+   },
+   "text": "Your privacy is our priority",
+   "type": {
+    "family": "-apple-system",
+    "size": 13.8,
+    "sizeU": 26,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.106122px",
+    "lineHeight": "16.5551px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 37,
+   "tag": "p",
+   "cls": "",
+   "rect": {
+    "x": 104,
+    "y": 684.4,
+    "w": 223.8,
+    "h": 28.7,
+    "xu": 195.9,
+    "yu": 1289.9,
+    "wu": 421.8,
+    "hu": 54
+   },
+   "text": "We automatically blur sensitive details like your name, age and phone number.",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(104, 85, 63)",
+    "letterSpacing": "normal",
+    "lineHeight": "14.3265px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 38,
+   "tag": "button",
+   "cls": "primary-action",
+   "rect": {
+    "x": 28.1,
+    "y": 736.9,
+    "w": 333.8,
+    "h": 44,
+    "xu": 53,
+    "yu": 1388.8,
+    "wu": 629,
+    "hu": 82.9
+   },
+   "text": "I Agree & Continue",
+   "type": {
+    "family": "-apple-system",
+    "size": 14.3,
+    "sizeU": 27,
+    "weight": "600",
+    "style": "normal",
+    "color": "rgb(255, 246, 228)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   },
+   "bgImage": "linear-gradient(100deg, rgb(221, 72, 18), rgb(204, 63, 18))",
+   "radius": "99px"
+  },
+  {
+   "order": 39,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 257,
+    "y": 751.5,
+    "w": 14.8,
+    "h": 14.8,
+    "xu": 484.3,
+    "yu": 1416.3,
+    "wu": 28,
+    "hu": 28
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 16h23m-9-9 9 9-9 9\" stroke=\"currentColor\" stroke-width=\"2.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+  },
+  {
+   "order": 40,
+   "tag": "button",
+   "cls": "text-action",
+   "rect": {
+    "x": 28.1,
+    "y": 789.4,
+    "w": 333.8,
+    "h": 44,
+    "xu": 53,
+    "yu": 1487.7,
+    "wu": 629,
+    "hu": 82.9
+   },
+   "text": "Continue as Guest",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.7,
+    "sizeU": 24,
+    "weight": "600",
+    "style": "normal",
+    "color": "rgb(204, 63, 18)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 41,
+   "tag": "div",
+   "cls": "home-indicator",
+   "rect": {
+    "x": 133.6,
+    "y": 838.7,
+    "w": 122.8,
+    "h": 4.1,
+    "xu": 251.7,
+    "yu": 1580.7,
+    "wu": 231.5,
+    "hu": 7.7
+   },
+   "bg": "rgb(21, 18, 13)",
+   "radius": "99px"
+  }
+ ],
+ "art": [],
+ "images": [
+  {
+   "src": "assets/parchi-logo-transparent.png",
+   "alt": "",
+   "rect": {
+    "x": 120.7,
+    "y": 59.4,
+    "w": 148.6,
+    "h": 148.6,
+    "xu": 227.5,
+    "yu": 112,
+    "wu": 280,
+    "hu": 280
+   },
+   "radius": "0px",
+   "order": 4
+  }
+ ],
+ "route": "welcome",
+ "shows": "welcome"
+}

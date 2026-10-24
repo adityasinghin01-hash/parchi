@@ -1,0 +1,14 @@
+import SwiftUI
+
+/// Job FE3 fills this in. Return the REAL screen view for each web route this job owns (plans, plan-map, get-all, checkout), wrapped the way the app shows it
+/// (inside a NavigationStack when it needs one, with `.artboardScaled()` at the root), or nil for any other name.
+/// `FidelityScreens` calls it for `-fidelityScreen <route>`.
+@MainActor
+enum FidelityFE3 {
+    static func view(_ name: String) -> AnyView? {
+        switch name {
+        // case "home": return AnyView(NavigationStack { HomeView(path: .constant([])) })
+        default: return nil
+        }
+    }
+}

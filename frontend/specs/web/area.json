@@ -1,0 +1,1428 @@
+{
+ "viewport": {
+  "w": 390,
+  "h": 844
+ },
+ "artboardUnit": 0.5306000000000001,
+ "title": "Parchi \u00b7 Choose your area",
+ "scrollHeight": 857,
+ "elements": [
+  {
+   "order": 0,
+   "tag": "span",
+   "cls": "clock",
+   "rect": {
+    "x": 48.8,
+    "y": 14.9,
+    "w": 31,
+    "h": 17,
+    "xu": 91.9,
+    "yu": 28.1,
+    "wu": 58.5,
+    "hu": 32
+   },
+   "text": "9:41",
+   "type": {
+    "family": "-apple-system",
+    "size": 14.8,
+    "sizeU": 27.9,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.1px",
+    "lineHeight": "normal",
+    "align": "start"
+   }
+  },
+  {
+   "order": 1,
+   "tag": "span",
+   "cls": "dynamic-island",
+   "rect": {
+    "x": 141.6,
+    "y": 10.5,
+    "w": 106.9,
+    "h": 30.4,
+    "xu": 266.8,
+    "yu": 19.8,
+    "wu": 201.4,
+    "hu": 57.3
+   },
+   "bg": "rgb(2, 3, 2)",
+   "radius": "39px"
+  },
+  {
+   "order": 2,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 297.2,
+    "y": 13.6,
+    "w": 64.3,
+    "h": 19.5,
+    "xu": 560.1,
+    "yu": 25.7,
+    "wu": 121.3,
+    "hu": 36.8
+   },
+   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>"
+  },
+  {
+   "order": 3,
+   "tag": "section",
+   "cls": "screen area-screen",
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 857.3,
+    "xu": 0,
+    "yu": 0,
+    "wu": 735,
+    "hu": 1615.7
+   },
+   "bgImage": "radial-gradient(at 35% 35%, rgba(255, 244, 228, 0.3), rgba(0, 0, 0, 0) 70%)"
+  },
+  {
+   "order": 5,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 84.9,
+    "y": 50.4,
+    "w": 77.7,
+    "h": 25.5,
+    "xu": 160,
+    "yu": 95,
+    "wu": 146.5,
+    "hu": 48
+   },
+   "text": "Parchi",
+   "type": {
+    "family": "Georgia",
+    "size": 24.4,
+    "sizeU": 46,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.795918px",
+    "lineHeight": "25.4694px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 6,
+   "tag": "small",
+   "cls": "",
+   "rect": {
+    "x": 84.9,
+    "y": 77.5,
+    "w": 77.7,
+    "h": 20.2,
+    "xu": 160,
+    "yu": 146,
+    "wu": 146.5,
+    "hu": 38
+   },
+   "text": "YOUR HEALTH, MORE CLEARLY",
+   "type": {
+    "family": "-apple-system",
+    "size": 6.9,
+    "sizeU": 13,
+    "weight": "600",
+    "style": "normal",
+    "color": "rgb(104, 85, 63)",
+    "letterSpacing": "1.32653px",
+    "lineHeight": "10.0816px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 7,
+   "tag": "h1",
+   "cls": "",
+   "id": "area-title",
+   "rect": {
+    "x": 20.2,
+    "y": 107.7,
+    "w": 349.7,
+    "h": 29.2,
+    "xu": 38,
+    "yu": 203,
+    "wu": 659,
+    "hu": 55
+   },
+   "text": "Choose your area",
+   "type": {
+    "family": "Georgia",
+    "size": 24.4,
+    "sizeU": 46,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.371429px",
+    "lineHeight": "29.1837px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 8,
+   "tag": "p",
+   "cls": "screen-description",
+   "rect": {
+    "x": 20.2,
+    "y": 138.5,
+    "w": 349.7,
+    "h": 36.1,
+    "xu": 38,
+    "yu": 261,
+    "wu": 659,
+    "hu": 68
+   },
+   "text": "We\u2019ll show nearby medicine stores and labs in this area.",
+   "type": {
+    "family": "-apple-system",
+    "size": 13.8,
+    "sizeU": 26,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(104, 85, 63)",
+    "letterSpacing": "normal",
+    "lineHeight": "18.0408px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 9,
+   "tag": "label",
+   "cls": "search-field",
+   "rect": {
+    "x": 20.2,
+    "y": 184.1,
+    "w": 349.7,
+    "h": 44,
+    "xu": 38,
+    "yu": 347,
+    "wu": 659,
+    "hu": 82.9
+   },
+   "bg": "rgba(255, 250, 242, 0.7)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgba(228, 210, 182, 0.37)"
+   },
+   "radius": "12.2041px"
+  },
+  {
+   "order": 10,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 33.9,
+    "y": 197.6,
+    "w": 17,
+    "h": 17,
+    "xu": 63.9,
+    "yu": 372.4,
+    "wu": 32,
+    "hu": 32
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"13\" cy=\"13\" r=\"9\"></circle><path d=\"m20 20 8 8\"></path></svg>"
+  },
+  {
+   "order": 11,
+   "tag": "input",
+   "cls": "",
+   "id": "area-search",
+   "rect": {
+    "x": 62,
+    "y": 185.1,
+    "w": 294.1,
+    "h": 42,
+    "xu": 116.8,
+    "yu": 348.9,
+    "wu": 554.3,
+    "hu": 79.2
+   },
+   "aria": "Search area, locality or pincode",
+   "placeholder": "Search area, locality or pincode",
+   "inputType": "search"
+  },
+  {
+   "order": 12,
+   "tag": "section",
+   "cls": "map-placeholder",
+   "id": "area-map",
+   "rect": {
+    "x": 20.2,
+    "y": 237.7,
+    "w": 349.7,
+    "h": 142.2,
+    "xu": 38,
+    "yu": 447.9,
+    "wu": 659,
+    "hu": 268
+   },
+   "aria": "Map unavailable",
+   "bgImage": "linear-gradient(135deg, rgb(232, 234, 220), rgb(235, 231, 221) 65%, rgb(225, 233, 221))",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(227, 221, 202)"
+   },
+   "radius": "11.6735px"
+  },
+  {
+   "order": 13,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 181.2,
+    "y": 277.2,
+    "w": 27.6,
+    "h": 27.6,
+    "xu": 341.5,
+    "yu": 522.5,
+    "wu": 52,
+    "hu": 52
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 7 9-4 9 4 8-4v23l-8 4-9-4-9 4ZM12 3v23M21 7v23\"></path></svg>"
+  },
+  {
+   "order": 14,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 144.9,
+    "y": 309,
+    "w": 100.1,
+    "h": 15,
+    "xu": 273.1,
+    "yu": 582.4,
+    "wu": 188.7,
+    "hu": 28.3
+   },
+   "text": "Map unavailable",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.7,
+    "sizeU": 24,
+    "weight": "600",
+    "style": "normal",
+    "color": "rgb(115, 128, 107)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "start"
+   }
+  },
+  {
+   "order": 15,
+   "tag": "p",
+   "cls": "",
+   "rect": {
+    "x": 101.5,
+    "y": 328.3,
+    "w": 186.9,
+    "h": 12,
+    "xu": 191.3,
+    "yu": 618.7,
+    "wu": 352.3,
+    "hu": 22.6
+   },
+   "text": "You can still choose your area below.",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(133, 144, 123)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "start"
+   }
+  },
+  {
+   "order": 16,
+   "tag": "button",
+   "cls": "map-target",
+   "rect": {
+    "x": 320.9,
+    "y": 330.9,
+    "w": 40,
+    "h": 40,
+    "xu": 604.8,
+    "yu": 623.6,
+    "wu": 75.4,
+    "hu": 75.4
+   },
+   "aria": "Use current location",
+   "bg": "rgb(255, 249, 239)",
+   "radius": "50%",
+   "shadow": "rgba(119, 98, 69, 0.1) 0px 2px 5px 0px"
+  },
+  {
+   "order": 17,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 328.8,
+    "y": 338.9,
+    "w": 24.1,
+    "h": 24.1,
+    "xu": 619.7,
+    "yu": 638.6,
+    "wu": 45.4,
+    "hu": 45.4
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"9\"></circle><circle cx=\"16\" cy=\"16\" r=\"3\"></circle><path d=\"M16 1v6m0 18v6M1 16h6m18 0h6\"></path></svg>"
+  },
+  {
+   "order": 18,
+   "tag": "button",
+   "cls": "current-location-row",
+   "rect": {
+    "x": 20.2,
+    "y": 388.9,
+    "w": 349.7,
+    "h": 47.8,
+    "xu": 38,
+    "yu": 732.9,
+    "wu": 659,
+    "hu": 90
+   },
+   "bg": "rgba(255, 230, 191, 0.55)",
+   "radius": "10.6122px"
+  },
+  {
+   "order": 19,
+   "tag": "span",
+   "cls": "round-icon",
+   "rect": {
+    "x": 32.4,
+    "y": 397.9,
+    "w": 29.7,
+    "h": 29.7,
+    "xu": 61,
+    "yu": 749.9,
+    "wu": 56,
+    "hu": 56
+   },
+   "bg": "rgb(249, 191, 112)",
+   "radius": "50%"
+  },
+  {
+   "order": 20,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 39.5,
+    "y": 405,
+    "w": 15.4,
+    "h": 15.4,
+    "xu": 74.4,
+    "yu": 763.3,
+    "wu": 29.1,
+    "hu": 29.1
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"9\"></circle><circle cx=\"16\" cy=\"16\" r=\"3\"></circle><path d=\"M16 1v6m0 18v6M1 16h6m18 0h6\"></path></svg>"
+  },
+  {
+   "order": 21,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 75.3,
+    "y": 398,
+    "w": 260.6,
+    "h": 15,
+    "xu": 141.9,
+    "yu": 750,
+    "wu": 491.1,
+    "hu": 28.3
+   },
+   "text": "Use my current location",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.7,
+    "sizeU": 24,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "left"
+   }
+  },
+  {
+   "order": 22,
+   "tag": "small",
+   "cls": "",
+   "rect": {
+    "x": 75.3,
+    "y": 414.5,
+    "w": 260.6,
+    "h": 13,
+    "xu": 141.9,
+    "yu": 781.2,
+    "wu": 491.1,
+    "hu": 24.5
+   },
+   "text": "HSR Layout, Bengaluru 560102",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(130, 112, 86)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "left"
+   }
+  },
+  {
+   "order": 23,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 349.2,
+    "y": 407.9,
+    "w": 8.5,
+    "h": 13.3,
+    "xu": 658,
+    "yu": 768.7,
+    "wu": 16,
+    "hu": 25
+   },
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+  },
+  {
+   "order": 24,
+   "tag": "h2",
+   "cls": "",
+   "rect": {
+    "x": 20.2,
+    "y": 448.3,
+    "w": 77.3,
+    "h": 16,
+    "xu": 38,
+    "yu": 844.8,
+    "wu": 145.7,
+    "hu": 30.2
+   },
+   "text": "Saved areas",
+   "type": {
+    "family": "-apple-system",
+    "size": 13.3,
+    "sizeU": 25,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.212245px",
+    "lineHeight": "normal",
+    "align": "start"
+   }
+  },
+  {
+   "order": 25,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 327.8,
+    "y": 447.2,
+    "w": 42,
+    "h": 18,
+    "xu": 617.8,
+    "yu": 842.9,
+    "wu": 79.2,
+    "hu": 34
+   },
+   "text": "Manage",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(204, 63, 18)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 26,
+   "tag": "button",
+   "cls": "area-row ",
+   "rect": {
+    "x": 20.2,
+    "y": 469.5,
+    "w": 349.7,
+    "h": 44,
+    "xu": 38,
+    "yu": 884.8,
+    "wu": 659,
+    "hu": 83
+   },
+   "bg": "rgba(255, 249, 240, 0.79)",
+   "radius": "10.6122px"
+  },
+  {
+   "order": 27,
+   "tag": "span",
+   "cls": "area-row__icon",
+   "rect": {
+    "x": 32.4,
+    "y": 476.1,
+    "w": 30.8,
+    "h": 30.8,
+    "xu": 61,
+    "yu": 897.3,
+    "wu": 58,
+    "hu": 58
+   },
+   "bg": "rgb(255, 229, 198)",
+   "radius": "9.55102px"
+  },
+  {
+   "order": 28,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 39,
+    "y": 482.7,
+    "w": 17.5,
+    "h": 17.5,
+    "xu": 73.4,
+    "yu": 909.8,
+    "wu": 33,
+    "hu": 33
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 14 13-11 13 11M7 13v16h7v-9h5v9h6V13\"></path></svg>"
+  },
+  {
+   "order": 29,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 75.9,
+    "y": 477.2,
+    "w": 253.7,
+    "h": 15,
+    "xu": 143,
+    "yu": 899.4,
+    "wu": 478.1,
+    "hu": 28.3
+   },
+   "text": "Home",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.7,
+    "sizeU": 24,
+    "weight": "550",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "left"
+   }
+  },
+  {
+   "order": 30,
+   "tag": "small",
+   "cls": "",
+   "rect": {
+    "x": 75.9,
+    "y": 493.8,
+    "w": 253.7,
+    "h": 12,
+    "xu": 143,
+    "yu": 930.6,
+    "wu": 478.1,
+    "hu": 22.6
+   },
+   "text": "HSR Layout, Bengaluru 560102",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(139, 122, 100)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "left"
+   }
+  },
+  {
+   "order": 31,
+   "tag": "span",
+   "cls": "area-radio selected",
+   "rect": {
+    "x": 342.3,
+    "y": 483.8,
+    "w": 15.4,
+    "h": 15.4,
+    "xu": 645,
+    "yu": 911.8,
+    "wu": 29,
+    "hu": 29
+   },
+   "bgImage": "radial-gradient(circle, rgb(215, 71, 20) 0px, rgb(215, 71, 20) 49%, rgba(0, 0, 0, 0) 51%)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(223, 125, 75)"
+   },
+   "radius": "50%"
+  },
+  {
+   "order": 32,
+   "tag": "button",
+   "cls": "area-row ",
+   "rect": {
+    "x": 20.2,
+    "y": 517.8,
+    "w": 349.7,
+    "h": 44,
+    "xu": 38,
+    "yu": 975.8,
+    "wu": 659,
+    "hu": 83
+   },
+   "bg": "rgba(255, 249, 240, 0.79)",
+   "radius": "10.6122px"
+  },
+  {
+   "order": 33,
+   "tag": "span",
+   "cls": "area-row__icon",
+   "rect": {
+    "x": 32.4,
+    "y": 524.4,
+    "w": 30.8,
+    "h": 30.8,
+    "xu": 61,
+    "yu": 988.3,
+    "wu": 58,
+    "hu": 58
+   },
+   "bg": "rgb(255, 229, 198)",
+   "radius": "9.55102px"
+  },
+  {
+   "order": 34,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 39,
+    "y": 531,
+    "w": 17.5,
+    "h": 17.5,
+    "xu": 73.4,
+    "yu": 1000.7,
+    "wu": 33,
+    "hu": 33
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"9\" width=\"26\" height=\"20\" rx=\"3\"></rect><path d=\"M11 9V4h10v5M3 17h26m-16 0v4h6v-4\"></path></svg>"
+  },
+  {
+   "order": 35,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 75.9,
+    "y": 525.5,
+    "w": 253.7,
+    "h": 15,
+    "xu": 143,
+    "yu": 990.3,
+    "wu": 478.1,
+    "hu": 28.3
+   },
+   "text": "Work",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.7,
+    "sizeU": 24,
+    "weight": "550",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "left"
+   }
+  },
+  {
+   "order": 36,
+   "tag": "small",
+   "cls": "",
+   "rect": {
+    "x": 75.9,
+    "y": 542.1,
+    "w": 253.7,
+    "h": 12,
+    "xu": 143,
+    "yu": 1021.6,
+    "wu": 478.1,
+    "hu": 22.6
+   },
+   "text": "Koramangala, Bengaluru 560034",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(139, 122, 100)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "left"
+   }
+  },
+  {
+   "order": 37,
+   "tag": "span",
+   "cls": "area-radio ",
+   "rect": {
+    "x": 342.3,
+    "y": 532.1,
+    "w": 15.4,
+    "h": 15.4,
+    "xu": 645,
+    "yu": 1002.8,
+    "wu": 29,
+    "hu": 29
+   },
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(216, 201, 179)"
+   },
+   "radius": "50%"
+  },
+  {
+   "order": 38,
+   "tag": "h2",
+   "cls": "",
+   "rect": {
+    "x": 20.2,
+    "y": 573.4,
+    "w": 83,
+    "h": 16,
+    "xu": 38,
+    "yu": 1080.7,
+    "wu": 156.4,
+    "hu": 30.2
+   },
+   "text": "Recent areas",
+   "type": {
+    "family": "-apple-system",
+    "size": 13.3,
+    "sizeU": 25,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.212245px",
+    "lineHeight": "normal",
+    "align": "start"
+   }
+  },
+  {
+   "order": 39,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 342,
+    "y": 572.4,
+    "w": 27.8,
+    "h": 18,
+    "xu": 644.6,
+    "yu": 1078.8,
+    "wu": 52.4,
+    "hu": 34
+   },
+   "text": "Clear",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(204, 63, 18)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 40,
+   "tag": "button",
+   "cls": "area-row area-row--recent",
+   "rect": {
+    "x": 20.2,
+    "y": 594.7,
+    "w": 349.7,
+    "h": 32.4,
+    "xu": 38,
+    "yu": 1120.7,
+    "wu": 659,
+    "hu": 61
+   },
+   "bg": "rgba(255, 249, 240, 0.79)",
+   "radius": "10.6122px"
+  },
+  {
+   "order": 41,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 32.4,
+    "y": 603.6,
+    "w": 14.8,
+    "h": 14.8,
+    "xu": 61,
+    "yu": 1137.5,
+    "wu": 28,
+    "hu": 28
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>"
+  },
+  {
+   "order": 42,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 59.9,
+    "y": 604.3,
+    "w": 269.6,
+    "h": 13,
+    "xu": 113,
+    "yu": 1139,
+    "wu": 508.1,
+    "hu": 24.5
+   },
+   "text": "Indiranagar, Bengaluru 560038",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.7,
+    "sizeU": 22,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "left"
+   }
+  },
+  {
+   "order": 43,
+   "tag": "span",
+   "cls": "area-radio ",
+   "rect": {
+    "x": 342.3,
+    "y": 603.2,
+    "w": 15.4,
+    "h": 15.4,
+    "xu": 645,
+    "yu": 1136.7,
+    "wu": 29,
+    "hu": 29
+   },
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(216, 201, 179)"
+   },
+   "radius": "50%"
+  },
+  {
+   "order": 44,
+   "tag": "button",
+   "cls": "area-row area-row--recent",
+   "rect": {
+    "x": 20.2,
+    "y": 631.3,
+    "w": 349.7,
+    "h": 32.4,
+    "xu": 38,
+    "yu": 1189.7,
+    "wu": 659,
+    "hu": 61
+   },
+   "bg": "rgba(255, 249, 240, 0.79)",
+   "radius": "10.6122px"
+  },
+  {
+   "order": 45,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 32.4,
+    "y": 640.2,
+    "w": 14.8,
+    "h": 14.8,
+    "xu": 61,
+    "yu": 1206.5,
+    "wu": 28,
+    "hu": 28
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12\"></circle><path d=\"M16 8v9l6 3\"></path></svg>"
+  },
+  {
+   "order": 46,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 59.9,
+    "y": 640.9,
+    "w": 269.6,
+    "h": 13,
+    "xu": 113,
+    "yu": 1207.9,
+    "wu": 508.1,
+    "hu": 24.5
+   },
+   "text": "Whitefield, Bengaluru 560066",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.7,
+    "sizeU": 22,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "left"
+   }
+  },
+  {
+   "order": 47,
+   "tag": "span",
+   "cls": "area-radio ",
+   "rect": {
+    "x": 342.3,
+    "y": 639.8,
+    "w": 15.4,
+    "h": 15.4,
+    "xu": 645,
+    "yu": 1205.7,
+    "wu": 29,
+    "hu": 29
+   },
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(216, 201, 179)"
+   },
+   "radius": "50%"
+  },
+  {
+   "order": 48,
+   "tag": "h2",
+   "cls": "",
+   "rect": {
+    "x": 20.2,
+    "y": 675.3,
+    "w": 105.5,
+    "h": 16,
+    "xu": 38,
+    "yu": 1272.6,
+    "wu": 198.8,
+    "hu": 30.2
+   },
+   "text": "Supported cities",
+   "type": {
+    "family": "-apple-system",
+    "size": 13.3,
+    "sizeU": 25,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.212245px",
+    "lineHeight": "normal",
+    "align": "start"
+   }
+  },
+  {
+   "order": 49,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 334.7,
+    "y": 674.2,
+    "w": 35.1,
+    "h": 18,
+    "xu": 630.8,
+    "yu": 1270.7,
+    "wu": 66.2,
+    "hu": 34
+   },
+   "text": "See all",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(204, 63, 18)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 50,
+   "tag": "button",
+   "cls": "city-tile selected",
+   "rect": {
+    "x": 20.2,
+    "y": 696.5,
+    "w": 83.4,
+    "h": 68,
+    "xu": 38,
+    "yu": 1312.6,
+    "wu": 157.2,
+    "hu": 128.2
+   },
+   "bg": "rgba(255, 251, 242, 0.78)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(219, 72, 20)"
+   },
+   "radius": "11.6735px",
+   "shadow": "rgba(158, 94, 38, 0.125) 0px 2px 4px 0px"
+  },
+  {
+   "order": 52,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 34,
+    "y": 743.1,
+    "w": 55.8,
+    "h": 16.7,
+    "xu": 64.1,
+    "yu": 1400.4,
+    "wu": 105.1,
+    "hu": 31.5
+   },
+   "text": "Bengaluru",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "550",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 53,
+   "tag": "button",
+   "cls": "city-tile ",
+   "rect": {
+    "x": 108.9,
+    "y": 696.5,
+    "w": 83.5,
+    "h": 68,
+    "xu": 205.2,
+    "yu": 1312.6,
+    "wu": 157.3,
+    "hu": 128.2
+   },
+   "bg": "rgba(255, 251, 242, 0.78)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgba(0, 0, 0, 0)"
+   },
+   "radius": "11.6735px"
+  },
+  {
+   "order": 55,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 131.1,
+    "y": 743.1,
+    "w": 38.9,
+    "h": 16.7,
+    "xu": 247.1,
+    "yu": 1400.4,
+    "wu": 73.4,
+    "hu": 31.5
+   },
+   "text": "Meerut",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "550",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 56,
+   "tag": "button",
+   "cls": "city-tile ",
+   "rect": {
+    "x": 197.6,
+    "y": 696.5,
+    "w": 83.5,
+    "h": 68,
+    "xu": 372.5,
+    "yu": 1312.6,
+    "wu": 157.3,
+    "hu": 128.2
+   },
+   "bg": "rgba(255, 251, 242, 0.78)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgba(0, 0, 0, 0)"
+   },
+   "radius": "11.6735px"
+  },
+  {
+   "order": 58,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 206.3,
+    "y": 743.1,
+    "w": 66.1,
+    "h": 16.7,
+    "xu": 388.8,
+    "yu": 1400.4,
+    "wu": 124.6,
+    "hu": 31.5
+   },
+   "text": "Muradnagar",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "550",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 59,
+   "tag": "button",
+   "cls": "city-tile ",
+   "rect": {
+    "x": 286.4,
+    "y": 696.5,
+    "w": 83.5,
+    "h": 68,
+    "xu": 539.7,
+    "yu": 1312.6,
+    "wu": 157.3,
+    "hu": 128.2
+   },
+   "bg": "rgba(255, 251, 242, 0.78)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgba(0, 0, 0, 0)"
+   },
+   "radius": "11.6735px"
+  },
+  {
+   "order": 60,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 317.8,
+    "y": 710.5,
+    "w": 20.7,
+    "h": 20.7,
+    "xu": 598.9,
+    "yu": 1339,
+    "wu": 39,
+    "hu": 39
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"4\" y=\"4\" width=\"9\" height=\"9\" rx=\"2\"></rect><rect x=\"19\" y=\"4\" width=\"9\" height=\"9\" rx=\"2\"></rect><rect x=\"4\" y=\"19\" width=\"9\" height=\"9\" rx=\"2\"></rect><rect x=\"19\" y=\"19\" width=\"9\" height=\"9\" rx=\"2\"></rect></svg>"
+  },
+  {
+   "order": 61,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 297.9,
+    "y": 743.1,
+    "w": 60.5,
+    "h": 16.7,
+    "xu": 561.4,
+    "yu": 1400.4,
+    "wu": 114,
+    "hu": 31.5
+   },
+   "text": "More cities",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "550",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 62,
+   "tag": "button",
+   "cls": "primary-action",
+   "rect": {
+    "x": 20.2,
+    "y": 781.5,
+    "w": 349.7,
+    "h": 44,
+    "xu": 38,
+    "yu": 1472.8,
+    "wu": 659,
+    "hu": 82.9
+   },
+   "text": "Confirm this area",
+   "type": {
+    "family": "-apple-system",
+    "size": 14.3,
+    "sizeU": 27,
+    "weight": "600",
+    "style": "normal",
+    "color": "rgb(255, 246, 228)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   },
+   "bgImage": "linear-gradient(100deg, rgb(221, 72, 18), rgb(204, 63, 18))",
+   "radius": "99px"
+  },
+  {
+   "order": 63,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 251.3,
+    "y": 795.8,
+    "w": 15.4,
+    "h": 15.4,
+    "xu": 473.6,
+    "yu": 1499.7,
+    "wu": 29,
+    "hu": 29
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 16h23m-9-9 9 9-9 9\" stroke=\"currentColor\" stroke-width=\"2.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+  },
+  {
+   "order": 64,
+   "tag": "div",
+   "cls": "home-indicator",
+   "rect": {
+    "x": 133.6,
+    "y": 846.2,
+    "w": 122.8,
+    "h": 4.1,
+    "xu": 251.7,
+    "yu": 1594.7,
+    "wu": 231.5,
+    "hu": 7.7
+   },
+   "bg": "rgb(21, 18, 13)",
+   "radius": "99px"
+  }
+ ],
+ "art": [
+  {
+   "viewBox": "59 1322 142 52",
+   "href": "assets/references/area.jpeg",
+   "aspect": "xMidYMid meet",
+   "cls": "reference-art city-art",
+   "rect": {
+    "x": 24.9,
+    "y": 701.2,
+    "w": 74,
+    "h": 39.3,
+    "xu": 46.9,
+    "yu": 1321.5,
+    "wu": 139.5,
+    "hu": 74
+   },
+   "order": 51,
+   "asset": "art_area_59_1322_142_52"
+  },
+  {
+   "viewBox": "228 1316 137 62",
+   "href": "assets/references/area.jpeg",
+   "aspect": "xMidYMid meet",
+   "cls": "reference-art city-art",
+   "rect": {
+    "x": 113.6,
+    "y": 701.2,
+    "w": 74,
+    "h": 39.3,
+    "xu": 214.1,
+    "yu": 1321.5,
+    "wu": 139.5,
+    "hu": 74
+   },
+   "order": 54,
+   "asset": "art_area_228_1316_137_62"
+  },
+  {
+   "viewBox": "394 1314 142 64",
+   "href": "assets/references/area.jpeg",
+   "aspect": "xMidYMid meet",
+   "cls": "reference-art city-art",
+   "rect": {
+    "x": 202.3,
+    "y": 701.2,
+    "w": 74,
+    "h": 39.3,
+    "xu": 381.3,
+    "yu": 1321.5,
+    "wu": 139.5,
+    "hu": 74
+   },
+   "order": 57,
+   "asset": "art_area_394_1314_142_64"
+  }
+ ],
+ "images": [
+  {
+   "src": "assets/parchi-logo-transparent.png",
+   "alt": "",
+   "rect": {
+    "x": 20.2,
+    "y": 48.8,
+    "w": 58.4,
+    "h": 50.4,
+    "xu": 38,
+    "yu": 92,
+    "wu": 110,
+    "hu": 95
+   },
+   "radius": "0px",
+   "order": 4
+  }
+ ],
+ "route": "area",
+ "shows": "area"
+}

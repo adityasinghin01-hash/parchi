@@ -1,0 +1,843 @@
+{
+ "viewport": {
+  "w": 390,
+  "h": 844
+ },
+ "artboardUnit": 0.5306000000000001,
+ "title": "Parchi \u00b7 Capture or import your parchi",
+ "scrollHeight": 844,
+ "elements": [
+  {
+   "order": 0,
+   "tag": "span",
+   "cls": "clock",
+   "rect": {
+    "x": 48.8,
+    "y": 14.9,
+    "w": 31,
+    "h": 17,
+    "xu": 91.9,
+    "yu": 28.1,
+    "wu": 58.5,
+    "hu": 32
+   },
+   "text": "9:41",
+   "type": {
+    "family": "-apple-system",
+    "size": 14.8,
+    "sizeU": 27.9,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.1px",
+    "lineHeight": "normal",
+    "align": "start"
+   }
+  },
+  {
+   "order": 1,
+   "tag": "span",
+   "cls": "dynamic-island",
+   "rect": {
+    "x": 141.6,
+    "y": 10.5,
+    "w": 106.9,
+    "h": 30.4,
+    "xu": 266.8,
+    "yu": 19.8,
+    "wu": 201.4,
+    "hu": 57.3
+   },
+   "bg": "rgb(2, 3, 2)",
+   "radius": "39px"
+  },
+  {
+   "order": 2,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 297.2,
+    "y": 13.6,
+    "w": 64.3,
+    "h": 19.5,
+    "xu": 560.1,
+    "yu": 25.7,
+    "wu": 121.3,
+    "hu": 36.8
+   },
+   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>"
+  },
+  {
+   "order": 3,
+   "tag": "section",
+   "cls": "screen scan-screen camera-screen",
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 819.8,
+    "xu": 0,
+    "yu": 0,
+    "wu": 735,
+    "hu": 1545
+   },
+   "aria": "Capture parchi",
+   "bg": "rgb(255, 251, 242)"
+  },
+  {
+   "order": 4,
+   "tag": "button",
+   "cls": "scan-back",
+   "rect": {
+    "x": 12.7,
+    "y": 53.6,
+    "w": 44,
+    "h": 44,
+    "xu": 24,
+    "yu": 101,
+    "wu": 82.9,
+    "hu": 82.9
+   },
+   "aria": "Go back",
+   "bg": "rgba(250, 236, 214, 0.49)",
+   "radius": "50%"
+  },
+  {
+   "order": 5,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 23.3,
+    "y": 64.2,
+    "w": 22.8,
+    "h": 22.8,
+    "xu": 44,
+    "yu": 121,
+    "wu": 42.9,
+    "hu": 42.9
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m20 5-11 11 11 11\"></path></svg>"
+  },
+  {
+   "order": 7,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 182,
+    "y": 57.8,
+    "w": 72.1,
+    "h": 26,
+    "xu": 343,
+    "yu": 109,
+    "wu": 135.9,
+    "hu": 49
+   },
+   "text": "Parchi",
+   "type": {
+    "family": "-apple-system",
+    "size": 26,
+    "sizeU": 49,
+    "weight": "800",
+    "style": "normal",
+    "color": "rgb(66, 27, 11)",
+    "letterSpacing": "-1.06122px",
+    "lineHeight": "26px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 8,
+   "tag": "h1",
+   "cls": "",
+   "rect": {
+    "x": 0,
+    "y": 94.4,
+    "w": 390,
+    "h": 19.3,
+    "xu": 0,
+    "yu": 177.9,
+    "wu": 735,
+    "hu": 36.4
+   },
+   "text": "Capture parchi",
+   "type": {
+    "family": "-apple-system",
+    "size": 14.9,
+    "sizeU": 28,
+    "weight": "500",
+    "style": "normal",
+    "color": "rgb(53, 27, 19)",
+    "letterSpacing": "-0.265306px",
+    "lineHeight": "19.3143px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 9,
+   "tag": "div",
+   "cls": "camera-viewfinder",
+   "rect": {
+    "x": 0,
+    "y": 118.8,
+    "w": 390,
+    "h": 517.3,
+    "xu": 0,
+    "yu": 224,
+    "wu": 735,
+    "hu": 975
+   },
+   "aria": "Sample camera scene; live camera is not connected",
+   "bg": "rgb(137, 86, 38)",
+   "radius": "10.0816px 10.0816px 0px 0px"
+  },
+  {
+   "order": 12,
+   "tag": "div",
+   "cls": "camera-guidance",
+   "rect": {
+    "x": 82.8,
+    "y": 132.6,
+    "w": 223.4,
+    "h": 51.1,
+    "xu": 156,
+    "yu": 249.9,
+    "wu": 421,
+    "hu": 96.2
+   },
+   "text": "Fill the frame, avoid glare, keep all edges visible.",
+   "type": {
+    "family": "-apple-system",
+    "size": 13.3,
+    "sizeU": 25,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(255, 248, 237)",
+    "letterSpacing": "normal",
+    "lineHeight": "16.5816px",
+    "align": "center"
+   },
+   "bg": "rgba(44, 22, 11, 0.74)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgba(255, 243, 211, 0.17)"
+   },
+   "radius": "99px"
+  },
+  {
+   "order": 13,
+   "tag": "button",
+   "cls": "camera-flash",
+   "rect": {
+    "x": 341.7,
+    "y": 135.8,
+    "w": 38.7,
+    "h": 38.7,
+    "xu": 644,
+    "yu": 256,
+    "wu": 73,
+    "hu": 73
+   },
+   "aria": "Flash unavailable in browser preview",
+   "bg": "rgba(37, 23, 11, 0.77)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgba(228, 211, 188, 0.64)"
+   },
+   "radius": "50%"
+  },
+  {
+   "order": 14,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 352.3,
+    "y": 146.4,
+    "w": 17.6,
+    "h": 17.6,
+    "xu": 663.9,
+    "yu": 275.8,
+    "wu": 33.2,
+    "hu": 33.2
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m18 2-9 15h8l-2 13 9-17h-8ZM3 3l26 26\"></path></svg>"
+  },
+  {
+   "order": 15,
+   "tag": "div",
+   "cls": "camera-paper",
+   "rect": {
+    "x": 46.5,
+    "y": 200.6,
+    "w": 298.5,
+    "h": 396.3,
+    "xu": 87.7,
+    "yu": 378,
+    "wu": 562.6,
+    "hu": 746.9
+   },
+   "bg": "rgb(229, 222, 211)",
+   "shadow": "rgba(53, 22, 3, 0.55) 0px 4px 20px 0px"
+  },
+  {
+   "order": 17,
+   "tag": "div",
+   "cls": "document-frame",
+   "rect": {
+    "x": 40.3,
+    "y": 195.8,
+    "w": 314.1,
+    "h": 408,
+    "xu": 76,
+    "yu": 369,
+    "wu": 592,
+    "hu": 769
+   },
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(255, 248, 233)"
+   },
+   "radius": "6.89796px",
+   "shadow": "rgba(255, 156, 44, 0.867) 0px 0px 6.36735px 2.65306px, rgb(255, 156, 44) 0px 0px 5.30612px 0px inset"
+  },
+  {
+   "order": 18,
+   "tag": "i",
+   "cls": "",
+   "rect": {
+    "x": 37.1,
+    "y": 192.5,
+    "w": 17,
+    "h": 17,
+    "xu": 69.9,
+    "yu": 362.9,
+    "wu": 32,
+    "hu": 32
+   },
+   "border": {
+    "width": "3px 0px 0px 3px",
+    "style": "solid",
+    "color": "rgb(255, 253, 244)"
+   },
+   "radius": "6.89796px"
+  },
+  {
+   "order": 19,
+   "tag": "i",
+   "cls": "",
+   "rect": {
+    "x": 340.7,
+    "y": 192.5,
+    "w": 17,
+    "h": 17,
+    "xu": 642.1,
+    "yu": 362.9,
+    "wu": 32,
+    "hu": 32
+   },
+   "border": {
+    "width": "3px 3px 0px 0px",
+    "style": "solid",
+    "color": "rgb(255, 253, 244)"
+   },
+   "radius": "6.89796px"
+  },
+  {
+   "order": 20,
+   "tag": "i",
+   "cls": "",
+   "rect": {
+    "x": 37.1,
+    "y": 590.1,
+    "w": 17,
+    "h": 17,
+    "xu": 69.9,
+    "yu": 1112.1,
+    "wu": 32,
+    "hu": 32
+   },
+   "border": {
+    "width": "0px 0px 3px 3px",
+    "style": "none",
+    "color": "rgb(66, 28, 8)"
+   },
+   "radius": "6.89796px"
+  },
+  {
+   "order": 21,
+   "tag": "i",
+   "cls": "",
+   "rect": {
+    "x": 340.7,
+    "y": 590.1,
+    "w": 17,
+    "h": 17,
+    "xu": 642.1,
+    "yu": 1112.1,
+    "wu": 32,
+    "hu": 32
+   },
+   "border": {
+    "width": "0px 3px 3px 0px",
+    "style": "none",
+    "color": "rgb(66, 28, 8)"
+   },
+   "radius": "6.89796px"
+  },
+  {
+   "order": 22,
+   "tag": "button",
+   "cls": "camera-quality",
+   "rect": {
+    "x": 126.3,
+    "y": 577,
+    "w": 137.4,
+    "h": 38,
+    "xu": 238,
+    "yu": 1087.4,
+    "wu": 259,
+    "hu": 71.6
+   },
+   "aria": "Preview reading with the sample parchi",
+   "bg": "rgba(56, 32, 11, 0.88)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgba(232, 202, 166, 0.39)"
+   },
+   "radius": "99px"
+  },
+  {
+   "order": 23,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 147.4,
+    "y": 588.8,
+    "w": 14.3,
+    "h": 14.3,
+    "xu": 277.9,
+    "yu": 1109.7,
+    "wu": 27,
+    "hu": 27
+   },
+   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"m6 12 4 4 8-9\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>"
+  },
+  {
+   "order": 24,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 169.7,
+    "y": 588.5,
+    "w": 72.8,
+    "h": 15,
+    "xu": 319.8,
+    "yu": 1109,
+    "wu": 137.3,
+    "hu": 28.3
+   },
+   "text": "Looks good!",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.7,
+    "sizeU": 24,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(255, 249, 239)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 25,
+   "tag": "span",
+   "cls": "camera-demo-label",
+   "rect": {
+    "x": 9.5,
+    "y": 618.8,
+    "w": 69.4,
+    "h": 11,
+    "xu": 18,
+    "yu": 1166.3,
+    "wu": 130.7,
+    "hu": 20.7
+   },
+   "text": "Sample preview",
+   "type": {
+    "family": "-apple-system",
+    "size": 9,
+    "sizeU": 17,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(255, 244, 222)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "start"
+   }
+  },
+  {
+   "order": 26,
+   "tag": "div",
+   "cls": "camera-controls",
+   "rect": {
+    "x": 0,
+    "y": 635.1,
+    "w": 390,
+    "h": 183,
+    "xu": 0,
+    "yu": 1197,
+    "wu": 735,
+    "hu": 345
+   },
+   "bg": "rgb(255, 251, 242)",
+   "radius": "13.7959px 13.7959px 0px 0px"
+  },
+  {
+   "order": 27,
+   "tag": "button",
+   "cls": "camera-import",
+   "rect": {
+    "x": 27.6,
+    "y": 657.6,
+    "w": 69,
+    "h": 76,
+    "xu": 52,
+    "yu": 1239.3,
+    "wu": 130,
+    "hu": 143.2
+   }
+  },
+  {
+   "order": 28,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 34.2,
+    "y": 657.6,
+    "w": 55.7,
+    "h": 55.7,
+    "xu": 64.5,
+    "yu": 1239.3,
+    "wu": 105,
+    "hu": 105
+   },
+   "bg": "rgba(250, 236, 216, 0.514)",
+   "radius": "50%"
+  },
+  {
+   "order": 29,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 49.5,
+    "y": 672.9,
+    "w": 25.1,
+    "h": 25.1,
+    "xu": 93.3,
+    "yu": 1268.2,
+    "wu": 47.2,
+    "hu": 47.2
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"4\" y=\"4\" width=\"24\" height=\"24\" rx=\"4\"></rect><circle cx=\"21\" cy=\"11\" r=\"2\"></circle><path d=\"m5 23 8-9 8 8 3-3 4 4\"></path></svg>"
+  },
+  {
+   "order": 30,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 40.8,
+    "y": 718.6,
+    "w": 42.5,
+    "h": 15,
+    "xu": 76.9,
+    "yu": 1354.3,
+    "wu": 80.1,
+    "hu": 28.3
+   },
+   "text": "Photos",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.7,
+    "sizeU": 24,
+    "weight": "500",
+    "style": "normal",
+    "color": "rgb(65, 35, 20)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 31,
+   "tag": "button",
+   "cls": "camera-shutter",
+   "rect": {
+    "x": 153.1,
+    "y": 653.7,
+    "w": 83.8,
+    "h": 83.8,
+    "xu": 288.5,
+    "yu": 1232,
+    "wu": 158,
+    "hu": 158
+   },
+   "aria": "Take a photo",
+   "bg": "rgb(197, 71, 35)",
+   "border": {
+    "width": "4px 4px 4px 4px",
+    "style": "solid",
+    "color": "rgb(250, 224, 202)"
+   },
+   "radius": "50%",
+   "shadow": "rgba(250, 232, 215, 0.36) 0px 0px 0px 4.77551px"
+  },
+  {
+   "order": 32,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 160.8,
+    "y": 661.4,
+    "w": 68.4,
+    "h": 68.4,
+    "xu": 303,
+    "yu": 1246.5,
+    "wu": 128.9,
+    "hu": 128.9
+   },
+   "bgImage": "linear-gradient(140deg, rgb(219, 84, 38), rgb(189, 61, 34))",
+   "border": {
+    "width": "2px 2px 2px 2px",
+    "style": "solid",
+    "color": "rgb(255, 245, 229)"
+   },
+   "radius": "50%"
+  },
+  {
+   "order": 33,
+   "tag": "button",
+   "cls": "camera-import",
+   "rect": {
+    "x": 293.5,
+    "y": 657.6,
+    "w": 69,
+    "h": 76,
+    "xu": 553,
+    "yu": 1239.3,
+    "wu": 130,
+    "hu": 143.2
+   }
+  },
+  {
+   "order": 34,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 300.1,
+    "y": 657.6,
+    "w": 55.7,
+    "h": 55.7,
+    "xu": 565.5,
+    "yu": 1239.3,
+    "wu": 105,
+    "hu": 105
+   },
+   "bg": "rgba(250, 236, 216, 0.514)",
+   "radius": "50%"
+  },
+  {
+   "order": 35,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 315.4,
+    "y": 672.9,
+    "w": 25.1,
+    "h": 25.1,
+    "xu": 594.4,
+    "yu": 1268.2,
+    "wu": 47.2,
+    "hu": 47.2
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"7\" y=\"3\" width=\"18\" height=\"27\" rx=\"3\"></rect><path d=\"M12 9h8m-8 6h8m-8 6h5\"></path></svg>"
+  },
+  {
+   "order": 36,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 296.8,
+    "y": 718.6,
+    "w": 62.4,
+    "h": 15,
+    "xu": 559.3,
+    "yu": 1354.3,
+    "wu": 117.6,
+    "hu": 28.3
+   },
+   "text": "Import file",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.7,
+    "sizeU": 24,
+    "weight": "500",
+    "style": "normal",
+    "color": "rgb(65, 35, 20)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 37,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 129.7,
+    "y": 752.4,
+    "w": 37.8,
+    "h": 44,
+    "xu": 244.5,
+    "yu": 1417.9,
+    "wu": 71.3,
+    "hu": 82.9
+   },
+   "text": "Photo",
+   "type": {
+    "family": "-apple-system",
+    "size": 13.3,
+    "sizeU": 25,
+    "weight": "600",
+    "style": "normal",
+    "color": "rgb(199, 71, 36)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 38,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 196.7,
+    "y": 752.4,
+    "w": 63.5,
+    "h": 44,
+    "xu": 370.8,
+    "yu": 1417.9,
+    "wu": 119.8,
+    "hu": 82.9
+   },
+   "text": "Document",
+   "type": {
+    "family": "-apple-system",
+    "size": 13.3,
+    "sizeU": 25,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(140, 120, 102)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "order": 39,
+   "tag": "div",
+   "cls": "home-indicator",
+   "rect": {
+    "x": 133.6,
+    "y": 808.7,
+    "w": 122.8,
+    "h": 4.1,
+    "xu": 251.7,
+    "yu": 1524,
+    "wu": 231.5,
+    "hu": 7.7
+   },
+   "bg": "rgb(21, 18, 13)",
+   "radius": "99px"
+  }
+ ],
+ "art": [
+  {
+   "viewBox": "96 430 36 650",
+   "href": "assets/references/capture-camera.jpeg",
+   "aspect": "none",
+   "cls": "reference-art camera-wood",
+   "rect": {
+    "x": 0,
+    "y": 118.8,
+    "w": 390,
+    "h": 517.3,
+    "xu": 0,
+    "yu": 224,
+    "wu": 735,
+    "hu": 975
+   },
+   "order": 10,
+   "asset": "art_capturecamera_96_430_36_650"
+  },
+  {
+   "viewBox": "88 260 154 143",
+   "href": "assets/references/capture-camera.jpeg",
+   "aspect": "xMidYMid meet",
+   "cls": "reference-art camera-plant",
+   "rect": {
+    "x": 0,
+    "y": 118.8,
+    "w": 81.7,
+    "h": 75.9,
+    "xu": 0,
+    "yu": 224,
+    "wu": 154,
+    "hu": 143
+   },
+   "order": 11,
+   "asset": "art_capturecamera_88_260_154_143"
+  },
+  {
+   "viewBox": "178 416 551 713",
+   "href": "assets/references/capture-camera.jpeg",
+   "aspect": "xMidYMid meet",
+   "cls": "reference-art camera-paper-art",
+   "rect": {
+    "x": 46.5,
+    "y": 200.6,
+    "w": 298.5,
+    "h": 396.3,
+    "xu": 87.7,
+    "yu": 378,
+    "wu": 562.6,
+    "hu": 746.9
+   },
+   "order": 16,
+   "asset": "art_capturecamera_178_416_551_713"
+  }
+ ],
+ "images": [
+  {
+   "src": "assets/parchi-logo-transparent.png",
+   "alt": "",
+   "rect": {
+    "x": 135.9,
+    "y": 49.6,
+    "w": 43.5,
+    "h": 42.4,
+    "xu": 256,
+    "yu": 93.5,
+    "wu": 82,
+    "hu": 80
+   },
+   "radius": "0px",
+   "order": 6
+  }
+ ],
+ "route": "capture",
+ "shows": "capture"
+}

@@ -1,0 +1,1951 @@
+{
+ "viewport": {
+  "w": 390,
+  "h": 844
+ },
+ "artboardUnit": 0.5306000000000001,
+ "title": "Parchi \u00b7 Review your parchi",
+ "scrollHeight": 852,
+ "elements": [
+  {
+   "order": 0,
+   "tag": "span",
+   "cls": "clock",
+   "rect": {
+    "x": 48.8,
+    "y": 14.9,
+    "w": 31,
+    "h": 17,
+    "xu": 91.9,
+    "yu": 28.1,
+    "wu": 58.5,
+    "hu": 32
+   },
+   "text": "9:41",
+   "type": {
+    "family": "-apple-system",
+    "size": 14.8,
+    "sizeU": 27.9,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.1px",
+    "lineHeight": "normal",
+    "align": "start"
+   }
+  },
+  {
+   "order": 1,
+   "tag": "span",
+   "cls": "dynamic-island",
+   "rect": {
+    "x": 141.6,
+    "y": 10.5,
+    "w": 106.9,
+    "h": 30.4,
+    "xu": 266.8,
+    "yu": 19.8,
+    "wu": 201.4,
+    "hu": 57.3
+   },
+   "bg": "rgb(2, 3, 2)",
+   "radius": "39px"
+  },
+  {
+   "order": 2,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 297.2,
+    "y": 13.6,
+    "w": 64.3,
+    "h": 19.5,
+    "xu": 560.1,
+    "yu": 25.7,
+    "wu": 121.3,
+    "hu": 36.8
+   },
+   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>"
+  },
+  {
+   "order": 3,
+   "tag": "section",
+   "cls": "screen scan-screen confirmation-screen",
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 852,
+    "xu": 0,
+    "yu": 0,
+    "wu": 735,
+    "hu": 1605.8
+   },
+   "bg": "rgb(255, 251, 242)"
+  },
+  {
+   "order": 4,
+   "tag": "button",
+   "cls": "scan-back",
+   "rect": {
+    "x": 12.7,
+    "y": 53.6,
+    "w": 44,
+    "h": 44,
+    "xu": 24,
+    "yu": 101,
+    "wu": 82.9,
+    "hu": 82.9
+   },
+   "aria": "Go back",
+   "bg": "rgba(250, 236, 214, 0.49)",
+   "radius": "50%"
+  },
+  {
+   "order": 5,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 23.3,
+    "y": 64.2,
+    "w": 22.8,
+    "h": 22.8,
+    "xu": 44,
+    "yu": 121,
+    "wu": 42.9,
+    "hu": 42.9
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m20 5-11 11 11 11\"></path></svg>"
+  },
+  {
+   "order": 7,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 182,
+    "y": 57.8,
+    "w": 72.1,
+    "h": 26,
+    "xu": 343,
+    "yu": 109,
+    "wu": 135.9,
+    "hu": 49
+   },
+   "text": "Parchi",
+   "type": {
+    "family": "-apple-system",
+    "size": 26,
+    "sizeU": 49,
+    "weight": "800",
+    "style": "normal",
+    "color": "rgb(66, 27, 11)",
+    "letterSpacing": "-1.06122px",
+    "lineHeight": "26px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 8,
+   "tag": "h1",
+   "cls": "",
+   "rect": {
+    "x": 0,
+    "y": 94.4,
+    "w": 390,
+    "h": 19.3,
+    "xu": 0,
+    "yu": 177.9,
+    "wu": 735,
+    "hu": 36.4
+   },
+   "text": "Did we read it right?",
+   "type": {
+    "family": "-apple-system",
+    "size": 14.9,
+    "sizeU": 28,
+    "weight": "500",
+    "style": "normal",
+    "color": "rgb(53, 27, 19)",
+    "letterSpacing": "-0.265306px",
+    "lineHeight": "19.3143px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 9,
+   "tag": "div",
+   "cls": "confirmation-summary",
+   "rect": {
+    "x": 9.5,
+    "y": 118.8,
+    "w": 370.9,
+    "h": 52.5,
+    "xu": 18,
+    "yu": 224,
+    "wu": 699,
+    "hu": 99
+   },
+   "bg": "rgb(251, 239, 221)",
+   "radius": "13.2653px"
+  },
+  {
+   "order": 10,
+   "tag": "span",
+   "cls": "summary-check",
+   "rect": {
+    "x": 47.6,
+    "y": 132.4,
+    "w": 25.5,
+    "h": 25.5,
+    "xu": 89.8,
+    "yu": 249.4,
+    "wu": 48,
+    "hu": 48
+   },
+   "bgImage": "linear-gradient(125deg, rgb(145, 185, 88), rgb(87, 149, 63))",
+   "radius": "50%"
+  },
+  {
+   "order": 11,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 52.7,
+    "y": 137.5,
+    "w": 15.3,
+    "h": 15.3,
+    "xu": 99.4,
+    "yu": 259,
+    "wu": 28.8,
+    "hu": 28.8
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>"
+  },
+  {
+   "order": 12,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 86.4,
+    "y": 128,
+    "w": 85.4,
+    "h": 17.9,
+    "xu": 162.8,
+    "yu": 241.2,
+    "wu": 161,
+    "hu": 33.7
+   },
+   "text": "4 confirmed",
+   "type": {
+    "family": "-apple-system",
+    "size": 14.3,
+    "sizeU": 27,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "normal",
+    "lineHeight": "17.9082px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 13,
+   "tag": "small",
+   "cls": "",
+   "rect": {
+    "x": 86.4,
+    "y": 145.9,
+    "w": 85.4,
+    "h": 16.3,
+    "xu": 162.8,
+    "yu": 274.9,
+    "wu": 161,
+    "hu": 30.8
+   },
+   "text": "Looks good",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.7,
+    "sizeU": 22,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(108, 104, 91)",
+    "letterSpacing": "normal",
+    "lineHeight": "16.3429px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 14,
+   "tag": "div",
+   "cls": "",
+   "rect": {
+    "x": 194.5,
+    "y": 128,
+    "w": 170.6,
+    "h": 34.2,
+    "xu": 366.6,
+    "yu": 241.2,
+    "wu": 321.5,
+    "hu": 64.5
+   },
+   "border": {
+    "width": "0px 0px 0px 1px",
+    "style": "none",
+    "color": "rgb(66, 28, 8)"
+   }
+  },
+  {
+   "order": 15,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 212.3,
+    "y": 132.4,
+    "w": 25.5,
+    "h": 25.5,
+    "xu": 400,
+    "yu": 249.4,
+    "wu": 48,
+    "hu": 48
+   },
+   "svg": "<svg viewBox=\"0 0 32 30\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M13 3c1-3 5-3 6 0l13 23c1 2-1 4-3 4H3c-3 0-4-2-3-4Z\"></path><path d=\"M16 9v9m0 4v2\" stroke=\"#fff\" stroke-width=\"3\" stroke-linecap=\"round\"></path></svg>"
+  },
+  {
+   "order": 16,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 251,
+    "y": 128,
+    "w": 97.3,
+    "h": 17.9,
+    "xu": 473,
+    "yu": 241.2,
+    "wu": 183.5,
+    "hu": 33.7
+   },
+   "text": "2 need review",
+   "type": {
+    "family": "-apple-system",
+    "size": 14.3,
+    "sizeU": 27,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "normal",
+    "lineHeight": "17.9082px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 17,
+   "tag": "small",
+   "cls": "",
+   "rect": {
+    "x": 251,
+    "y": 145.9,
+    "w": 97.3,
+    "h": 16.3,
+    "xu": 473,
+    "yu": 274.9,
+    "wu": 183.5,
+    "hu": 30.8
+   },
+   "text": "Please verify",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.7,
+    "sizeU": 22,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(108, 104, 91)",
+    "letterSpacing": "normal",
+    "lineHeight": "16.3429px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 18,
+   "tag": "h2",
+   "cls": "",
+   "rect": {
+    "x": 13.3,
+    "y": 185.7,
+    "w": 98.6,
+    "h": 20,
+    "xu": 25,
+    "yu": 349.9,
+    "wu": 185.8,
+    "hu": 37.7
+   },
+   "text": "Medicines (3)",
+   "type": {
+    "family": "-apple-system",
+    "size": 15.4,
+    "sizeU": 29,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(61, 32, 24)",
+    "letterSpacing": "-0.318367px",
+    "lineHeight": "20.0041px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 19,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 315.3,
+    "y": 188.8,
+    "w": 61.4,
+    "h": 13.8,
+    "xu": 594.3,
+    "yu": 355.8,
+    "wu": 115.7,
+    "hu": 26
+   },
+   "text": "3 confirmed",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(130, 125, 113)",
+    "letterSpacing": "normal",
+    "lineHeight": "13.7959px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 20,
+   "tag": "button",
+   "cls": "scan-confirmed-row",
+   "rect": {
+    "x": 9.5,
+    "y": 211,
+    "w": 370.9,
+    "h": 67.4,
+    "xu": 18,
+    "yu": 397.6,
+    "wu": 699,
+    "hu": 127.1
+   },
+   "bg": "rgb(255, 255, 255)",
+   "radius": "12.2041px",
+   "shadow": "rgba(108, 75, 48, 0.016) 0px 3px 12px 0px"
+  },
+  {
+   "order": 21,
+   "tag": "span",
+   "cls": "scan-item-icon rose",
+   "rect": {
+    "x": 22.8,
+    "y": 224.5,
+    "w": 40.3,
+    "h": 40.3,
+    "xu": 43,
+    "yu": 423.1,
+    "wu": 76,
+    "hu": 76
+   },
+   "bg": "rgb(255, 240, 235)",
+   "radius": "50%"
+  },
+  {
+   "order": 22,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 33.3,
+    "y": 235,
+    "w": 19.3,
+    "h": 19.3,
+    "xu": 62.7,
+    "yu": 442.9,
+    "wu": 36.5,
+    "hu": 36.5
+   },
+   "svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" aria-hidden=\"true\"><ellipse cx=\"20\" cy=\"20\" rx=\"15\" ry=\"11\" transform=\"rotate(-35 20 20)\"></ellipse><path d=\"M8 18c4 12 20 8 24-4M13 12l14 15\"></path></svg>"
+  },
+  {
+   "order": 23,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 74.8,
+    "y": 220,
+    "w": 167.8,
+    "h": 17.2,
+    "xu": 140.9,
+    "yu": 414.6,
+    "wu": 316.2,
+    "hu": 32.5
+   },
+   "text": "Amlodipine 5 mg",
+   "type": {
+    "family": "-apple-system",
+    "size": 13.8,
+    "sizeU": 26,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(45, 26, 20)",
+    "letterSpacing": "-0.265306px",
+    "lineHeight": "17.2449px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 24,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 74.8,
+    "y": 238.3,
+    "w": 167.8,
+    "h": 15,
+    "xu": 140.9,
+    "yu": 449,
+    "wu": 316.2,
+    "hu": 28.3
+   },
+   "text": "Tablet",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(113, 110, 100)",
+    "letterSpacing": "normal",
+    "lineHeight": "15.0429px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 25,
+   "tag": "small",
+   "cls": "",
+   "rect": {
+    "x": 74.8,
+    "y": 254.3,
+    "w": 167.8,
+    "h": 15,
+    "xu": 140.9,
+    "yu": 479.3,
+    "wu": 316.2,
+    "hu": 28.3
+   },
+   "text": "1 OD \u00d7 30 days",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(113, 110, 100)",
+    "letterSpacing": "normal",
+    "lineHeight": "15.0429px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 26,
+   "tag": "span",
+   "cls": "scan-match-badge ",
+   "rect": {
+    "x": 254.2,
+    "y": 232.8,
+    "w": 96,
+    "h": 23.8,
+    "xu": 479.1,
+    "yu": 438.6,
+    "wu": 180.9,
+    "hu": 44.9
+   },
+   "text": "Exact match",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(67, 106, 38)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "left"
+   },
+   "bg": "rgb(233, 244, 226)",
+   "radius": "99px"
+  },
+  {
+   "order": 27,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 262.2,
+    "y": 238,
+    "w": 13.3,
+    "h": 13.3,
+    "xu": 494.1,
+    "yu": 448.6,
+    "wu": 25,
+    "hu": 25
+   },
+   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"m6 12 4 4 8-9\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>"
+  },
+  {
+   "order": 28,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 361.9,
+    "y": 242.2,
+    "w": 5.3,
+    "h": 11.7,
+    "xu": 682.1,
+    "yu": 456.4,
+    "wu": 10,
+    "hu": 22
+   },
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+  },
+  {
+   "order": 29,
+   "tag": "button",
+   "cls": "scan-confirmed-row",
+   "rect": {
+    "x": 9.5,
+    "y": 283.7,
+    "w": 370.9,
+    "h": 67.4,
+    "xu": 18,
+    "yu": 534.6,
+    "wu": 699,
+    "hu": 127.1
+   },
+   "bg": "rgb(255, 255, 255)",
+   "radius": "12.2041px",
+   "shadow": "rgba(108, 75, 48, 0.016) 0px 3px 12px 0px"
+  },
+  {
+   "order": 30,
+   "tag": "span",
+   "cls": "scan-item-icon peach",
+   "rect": {
+    "x": 22.8,
+    "y": 297.2,
+    "w": 40.3,
+    "h": 40.3,
+    "xu": 43,
+    "yu": 560.2,
+    "wu": 76,
+    "hu": 76
+   },
+   "bg": "rgb(252, 237, 219)",
+   "radius": "50%"
+  },
+  {
+   "order": 31,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 33.3,
+    "y": 307.7,
+    "w": 19.3,
+    "h": 19.3,
+    "xu": 62.7,
+    "yu": 579.9,
+    "wu": 36.5,
+    "hu": 36.5
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>"
+  },
+  {
+   "order": 32,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 74.8,
+    "y": 292.7,
+    "w": 167.8,
+    "h": 17.2,
+    "xu": 140.9,
+    "yu": 551.6,
+    "wu": 316.2,
+    "hu": 32.5
+   },
+   "text": "Metformin 500 mg",
+   "type": {
+    "family": "-apple-system",
+    "size": 13.8,
+    "sizeU": 26,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(45, 26, 20)",
+    "letterSpacing": "-0.265306px",
+    "lineHeight": "17.2449px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 33,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 74.8,
+    "y": 311,
+    "w": 167.8,
+    "h": 15,
+    "xu": 140.9,
+    "yu": 586.1,
+    "wu": 316.2,
+    "hu": 28.3
+   },
+   "text": "Tablet",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(113, 110, 100)",
+    "letterSpacing": "normal",
+    "lineHeight": "15.0429px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 34,
+   "tag": "small",
+   "cls": "",
+   "rect": {
+    "x": 74.8,
+    "y": 327.1,
+    "w": 167.8,
+    "h": 15,
+    "xu": 140.9,
+    "yu": 616.4,
+    "wu": 316.2,
+    "hu": 28.3
+   },
+   "text": "1 BD \u00d7 30 days",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(113, 110, 100)",
+    "letterSpacing": "normal",
+    "lineHeight": "15.0429px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 35,
+   "tag": "span",
+   "cls": "scan-match-badge ",
+   "rect": {
+    "x": 254.2,
+    "y": 305.5,
+    "w": 96,
+    "h": 23.8,
+    "xu": 479.1,
+    "yu": 575.7,
+    "wu": 180.9,
+    "hu": 44.9
+   },
+   "text": "Exact match",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(67, 106, 38)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "left"
+   },
+   "bg": "rgb(233, 244, 226)",
+   "radius": "99px"
+  },
+  {
+   "order": 36,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 262.2,
+    "y": 310.8,
+    "w": 13.3,
+    "h": 13.3,
+    "xu": 494.1,
+    "yu": 585.7,
+    "wu": 25,
+    "hu": 25
+   },
+   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"m6 12 4 4 8-9\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>"
+  },
+  {
+   "order": 37,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 361.9,
+    "y": 314.9,
+    "w": 5.3,
+    "h": 11.7,
+    "xu": 682.1,
+    "yu": 593.4,
+    "wu": 10,
+    "hu": 22
+   },
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+  },
+  {
+   "order": 38,
+   "tag": "button",
+   "cls": "scan-confirmed-row",
+   "rect": {
+    "x": 9.5,
+    "y": 356.4,
+    "w": 370.9,
+    "h": 67.4,
+    "xu": 18,
+    "yu": 671.7,
+    "wu": 699,
+    "hu": 127.1
+   },
+   "bg": "rgb(255, 255, 255)",
+   "radius": "12.2041px",
+   "shadow": "rgba(108, 75, 48, 0.016) 0px 3px 12px 0px"
+  },
+  {
+   "order": 39,
+   "tag": "span",
+   "cls": "scan-item-icon blue",
+   "rect": {
+    "x": 22.8,
+    "y": 370,
+    "w": 40.3,
+    "h": 40.3,
+    "xu": 43,
+    "yu": 697.2,
+    "wu": 76,
+    "hu": 76
+   },
+   "bg": "rgb(234, 244, 252)",
+   "radius": "50%"
+  },
+  {
+   "order": 40,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 33.3,
+    "y": 380.4,
+    "w": 19.3,
+    "h": 19.3,
+    "xu": 62.7,
+    "yu": 717,
+    "wu": 36.5,
+    "hu": 36.5
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 25a8 8 0 0 1 0-11L18 3a8 8 0 0 1 11 11L18 25a8 8 0 0 1-11 0ZM12 9l11 11\"></path></svg>"
+  },
+  {
+   "order": 41,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 74.8,
+    "y": 365.4,
+    "w": 167.8,
+    "h": 17.2,
+    "xu": 140.9,
+    "yu": 688.7,
+    "wu": 316.2,
+    "hu": 32.5
+   },
+   "text": "Atorvastatin 10 mg",
+   "type": {
+    "family": "-apple-system",
+    "size": 13.8,
+    "sizeU": 26,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(45, 26, 20)",
+    "letterSpacing": "-0.265306px",
+    "lineHeight": "17.2449px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 42,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 74.8,
+    "y": 383.7,
+    "w": 167.8,
+    "h": 15,
+    "xu": 140.9,
+    "yu": 723.1,
+    "wu": 316.2,
+    "hu": 28.3
+   },
+   "text": "Capsule",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(113, 110, 100)",
+    "letterSpacing": "normal",
+    "lineHeight": "15.0429px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 43,
+   "tag": "small",
+   "cls": "",
+   "rect": {
+    "x": 74.8,
+    "y": 399.8,
+    "w": 167.8,
+    "h": 15,
+    "xu": 140.9,
+    "yu": 753.4,
+    "wu": 316.2,
+    "hu": 28.3
+   },
+   "text": "1 OD \u00d7 30 days",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(113, 110, 100)",
+    "letterSpacing": "normal",
+    "lineHeight": "15.0429px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 44,
+   "tag": "span",
+   "cls": "scan-match-badge ",
+   "rect": {
+    "x": 254.2,
+    "y": 378.2,
+    "w": 96,
+    "h": 23.8,
+    "xu": 479.1,
+    "yu": 712.7,
+    "wu": 180.9,
+    "hu": 44.9
+   },
+   "text": "Exact match",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(67, 106, 38)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "left"
+   },
+   "bg": "rgb(233, 244, 226)",
+   "radius": "99px"
+  },
+  {
+   "order": 45,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 262.2,
+    "y": 383.5,
+    "w": 13.3,
+    "h": 13.3,
+    "xu": 494.1,
+    "yu": 722.7,
+    "wu": 25,
+    "hu": 25
+   },
+   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"m6 12 4 4 8-9\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>"
+  },
+  {
+   "order": 46,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 361.9,
+    "y": 387.6,
+    "w": 5.3,
+    "h": 11.7,
+    "xu": 682.1,
+    "yu": 730.5,
+    "wu": 10,
+    "hu": 22
+   },
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+  },
+  {
+   "order": 47,
+   "tag": "h2",
+   "cls": "",
+   "rect": {
+    "x": 13.3,
+    "y": 438.7,
+    "w": 61.4,
+    "h": 20,
+    "xu": 25,
+    "yu": 826.7,
+    "wu": 115.8,
+    "hu": 37.7
+   },
+   "text": "Tests (1)",
+   "type": {
+    "family": "-apple-system",
+    "size": 15.4,
+    "sizeU": 29,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(61, 32, 24)",
+    "letterSpacing": "-0.318367px",
+    "lineHeight": "20.0041px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 48,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 317.1,
+    "y": 441.8,
+    "w": 59.7,
+    "h": 13.8,
+    "xu": 597.6,
+    "yu": 832.6,
+    "wu": 112.5,
+    "hu": 26
+   },
+   "text": "1 confirmed",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(130, 125, 113)",
+    "letterSpacing": "normal",
+    "lineHeight": "13.7959px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 49,
+   "tag": "button",
+   "cls": "scan-confirmed-row",
+   "rect": {
+    "x": 9.5,
+    "y": 464,
+    "w": 370.9,
+    "h": 58.3,
+    "xu": 18,
+    "yu": 874.4,
+    "wu": 699,
+    "hu": 110
+   },
+   "bg": "rgb(255, 255, 255)",
+   "radius": "12.2041px",
+   "shadow": "rgba(108, 75, 48, 0.016) 0px 3px 12px 0px"
+  },
+  {
+   "order": 50,
+   "tag": "span",
+   "cls": "scan-item-icon rose",
+   "rect": {
+    "x": 22.8,
+    "y": 473,
+    "w": 40.3,
+    "h": 40.3,
+    "xu": 43,
+    "yu": 891.4,
+    "wu": 76,
+    "hu": 76
+   },
+   "bg": "rgb(255, 240, 235)",
+   "radius": "50%"
+  },
+  {
+   "order": 51,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 33.3,
+    "y": 483.5,
+    "w": 19.3,
+    "h": 19.3,
+    "xu": 62.7,
+    "yu": 911.2,
+    "wu": 36.5,
+    "hu": 36.5
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3h8m-7 0v12L5 28c-1 2 23 2 22 0l-8-13V3M9 22h14\"></path></svg>"
+  },
+  {
+   "order": 52,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 74.8,
+    "y": 477.1,
+    "w": 178.2,
+    "h": 15.9,
+    "xu": 140.9,
+    "yu": 899.2,
+    "wu": 335.9,
+    "hu": 30
+   },
+   "text": "CBC (Complete Blood Count)",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.7,
+    "sizeU": 24,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(45, 26, 20)",
+    "letterSpacing": "-0.265306px",
+    "lineHeight": "15.9184px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 53,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 74.8,
+    "y": 494.1,
+    "w": 178.2,
+    "h": 15,
+    "xu": 140.9,
+    "yu": 931.2,
+    "wu": 335.9,
+    "hu": 28.3
+   },
+   "text": "Blood Test",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.1,
+    "sizeU": 21,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(113, 110, 100)",
+    "letterSpacing": "normal",
+    "lineHeight": "15.0429px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 54,
+   "tag": "span",
+   "cls": "scan-match-badge ",
+   "rect": {
+    "x": 264.7,
+    "y": 481.2,
+    "w": 85.6,
+    "h": 23.8,
+    "xu": 498.8,
+    "yu": 906.9,
+    "wu": 161.3,
+    "hu": 44.9
+   },
+   "text": "No fasting",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(67, 106, 38)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "left"
+   },
+   "bg": "rgb(233, 244, 226)",
+   "radius": "99px"
+  },
+  {
+   "order": 55,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 272.6,
+    "y": 486.5,
+    "w": 13.3,
+    "h": 13.3,
+    "xu": 513.8,
+    "yu": 916.9,
+    "wu": 25,
+    "hu": 25
+   },
+   "svg": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\"></circle><path d=\"m6 12 4 4 8-9\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"></path></svg>"
+  },
+  {
+   "order": 56,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 361.9,
+    "y": 490.6,
+    "w": 5.3,
+    "h": 11.7,
+    "xu": 682.1,
+    "yu": 924.6,
+    "wu": 10,
+    "hu": 22
+   },
+   "svg": "<svg viewBox=\"0 0 18 26\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m5 3 9 10L5 23\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+  },
+  {
+   "order": 57,
+   "tag": "h2",
+   "cls": "",
+   "rect": {
+    "x": 13.3,
+    "y": 540.3,
+    "w": 157.5,
+    "h": 20,
+    "xu": 25,
+    "yu": 1018.3,
+    "wu": 296.9,
+    "hu": 37.7
+   },
+   "text": "Needs your review (2)",
+   "type": {
+    "family": "-apple-system",
+    "size": 15.4,
+    "sizeU": 29,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(61, 32, 24)",
+    "letterSpacing": "-0.318367px",
+    "lineHeight": "20.0041px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 58,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 247.9,
+    "y": 543.5,
+    "w": 128.8,
+    "h": 13.8,
+    "xu": 467.3,
+    "yu": 1024.2,
+    "wu": 242.8,
+    "hu": 26
+   },
+   "text": "Please confirm or correct",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(130, 125, 113)",
+    "letterSpacing": "normal",
+    "lineHeight": "13.7959px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 59,
+   "tag": "article",
+   "cls": "scan-uncertain-card ",
+   "id": "uncertainty-unclear-medicine",
+   "rect": {
+    "x": 9.5,
+    "y": 565.6,
+    "w": 370.9,
+    "h": 93.7,
+    "xu": 18,
+    "yu": 1066,
+    "wu": 699,
+    "hu": 176.5
+   },
+   "bg": "rgb(255, 248, 235)",
+   "border": {
+    "width": "2px 2px 2px 2px",
+    "style": "solid",
+    "color": "rgb(246, 223, 175)"
+   },
+   "radius": "11.6735px"
+  },
+  {
+   "order": 60,
+   "tag": "div",
+   "cls": "uncertain-source",
+   "rect": {
+    "x": 20.6,
+    "y": 579.6,
+    "w": 84.9,
+    "h": 65.8,
+    "xu": 38.8,
+    "yu": 1092.3,
+    "wu": 160,
+    "hu": 124
+   },
+   "bg": "rgb(230, 223, 210)",
+   "radius": "7.42857px"
+  },
+  {
+   "order": 62,
+   "tag": "h3",
+   "cls": "",
+   "rect": {
+    "x": 116.1,
+    "y": 576.7,
+    "w": 253.4,
+    "h": 15.2,
+    "xu": 218.7,
+    "yu": 1086.8,
+    "wu": 477.5,
+    "hu": 28.6
+   },
+   "text": "1. Medicine name unclear",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.7,
+    "sizeU": 22,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(58, 32, 21)",
+    "letterSpacing": "normal",
+    "lineHeight": "15.1755px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 63,
+   "tag": "span",
+   "cls": "uncertain-reason",
+   "rect": {
+    "x": 116.1,
+    "y": 595.7,
+    "w": 116.6,
+    "h": 16.4,
+    "xu": 218.7,
+    "yu": 1122.6,
+    "wu": 219.8,
+    "hu": 30.9
+   },
+   "text": "Handwriting unclear",
+   "type": {
+    "family": "-apple-system",
+    "size": 9,
+    "sizeU": 17,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(140, 91, 36)",
+    "letterSpacing": "normal",
+    "lineHeight": "10.8245px",
+    "align": "start"
+   },
+   "bg": "rgb(255, 237, 200)",
+   "radius": "99px"
+  },
+  {
+   "order": 64,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 122.4,
+    "y": 597.8,
+    "w": 12.2,
+    "h": 12.2,
+    "xu": 230.7,
+    "yu": 1126.6,
+    "wu": 23,
+    "hu": 23
+   },
+   "svg": "<svg viewBox=\"0 0 32 30\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M13 3c1-3 5-3 6 0l13 23c1 2-1 4-3 4H3c-3 0-4-2-3-4Z\"></path><path d=\"M16 9v9m0 4v2\" stroke=\"#fff\" stroke-width=\"3\" stroke-linecap=\"round\"></path></svg>"
+  },
+  {
+   "order": 65,
+   "tag": "button",
+   "cls": "is-highlighted",
+   "rect": {
+    "x": 116.1,
+    "y": 618.3,
+    "w": 59.4,
+    "h": 30,
+    "xu": 218.7,
+    "yu": 1165.3,
+    "wu": 111.9,
+    "hu": 56.5
+   },
+   "text": "Telma 40",
+   "type": {
+    "family": "-apple-system",
+    "size": 9.6,
+    "sizeU": 18,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(189, 69, 34)",
+    "letterSpacing": "normal",
+    "lineHeight": "11.4612px",
+    "align": "center"
+   },
+   "bg": "rgb(255, 230, 206)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(208, 84, 46)"
+   },
+   "radius": "9.55102px"
+  },
+  {
+   "order": 66,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 179.1,
+    "y": 618.3,
+    "w": 59.4,
+    "h": 30,
+    "xu": 337.6,
+    "yu": 1165.3,
+    "wu": 111.9,
+    "hu": 56.5
+   },
+   "text": "Telma 80",
+   "type": {
+    "family": "-apple-system",
+    "size": 9.6,
+    "sizeU": 18,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(41, 32, 22)",
+    "letterSpacing": "normal",
+    "lineHeight": "11.4612px",
+    "align": "center"
+   },
+   "bg": "rgb(255, 253, 250)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(215, 208, 195)"
+   },
+   "radius": "9.55102px"
+  },
+  {
+   "order": 67,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 242.2,
+    "y": 618.3,
+    "w": 59.4,
+    "h": 30,
+    "xu": 456.5,
+    "yu": 1165.3,
+    "wu": 111.9,
+    "hu": 56.5
+   },
+   "text": "Telsar 40",
+   "type": {
+    "family": "-apple-system",
+    "size": 9.6,
+    "sizeU": 18,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(41, 32, 22)",
+    "letterSpacing": "normal",
+    "lineHeight": "11.4612px",
+    "align": "center"
+   },
+   "bg": "rgb(255, 253, 250)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(215, 208, 195)"
+   },
+   "radius": "9.55102px"
+  },
+  {
+   "order": 68,
+   "tag": "button",
+   "cls": "type-choice",
+   "rect": {
+    "x": 310.1,
+    "y": 618.3,
+    "w": 59.4,
+    "h": 30,
+    "xu": 584.3,
+    "yu": 1165.3,
+    "wu": 111.9,
+    "hu": 56.5
+   },
+   "text": "Type it",
+   "type": {
+    "family": "-apple-system",
+    "size": 9.6,
+    "sizeU": 18,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(41, 32, 22)",
+    "letterSpacing": "normal",
+    "lineHeight": "11.4612px",
+    "align": "center"
+   },
+   "bg": "rgb(255, 253, 250)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(51, 45, 34)"
+   },
+   "radius": "9.55102px"
+  },
+  {
+   "order": 69,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 316.9,
+    "y": 628,
+    "w": 10.6,
+    "h": 10.6,
+    "xu": 597.2,
+    "yu": 1183.5,
+    "wu": 20,
+    "hu": 20
+   },
+   "svg": "<svg viewBox=\"0 0 28 28\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m4 24 2-7L22 2l5 5L11 22Zm3-7 4 5M18 6l5 5\"></path></svg>"
+  },
+  {
+   "order": 70,
+   "tag": "article",
+   "cls": "scan-uncertain-card ",
+   "id": "uncertainty-unclear-test",
+   "rect": {
+    "x": 9.5,
+    "y": 665.7,
+    "w": 370.9,
+    "h": 93.7,
+    "xu": 18,
+    "yu": 1254.5,
+    "wu": 699,
+    "hu": 176.5
+   },
+   "bg": "rgb(255, 248, 235)",
+   "border": {
+    "width": "2px 2px 2px 2px",
+    "style": "solid",
+    "color": "rgb(246, 223, 175)"
+   },
+   "radius": "11.6735px"
+  },
+  {
+   "order": 71,
+   "tag": "div",
+   "cls": "uncertain-source",
+   "rect": {
+    "x": 20.6,
+    "y": 679.6,
+    "w": 84.9,
+    "h": 65.8,
+    "xu": 38.8,
+    "yu": 1280.8,
+    "wu": 160,
+    "hu": 124
+   },
+   "bg": "rgb(230, 223, 210)",
+   "radius": "7.42857px"
+  },
+  {
+   "order": 73,
+   "tag": "h3",
+   "cls": "",
+   "rect": {
+    "x": 116.1,
+    "y": 676.7,
+    "w": 253.4,
+    "h": 15.2,
+    "xu": 218.7,
+    "yu": 1275.3,
+    "wu": 477.5,
+    "hu": 28.6
+   },
+   "text": "2. Test name unclear",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.7,
+    "sizeU": 22,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(58, 32, 21)",
+    "letterSpacing": "normal",
+    "lineHeight": "15.1755px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 74,
+   "tag": "span",
+   "cls": "uncertain-reason",
+   "rect": {
+    "x": 116.1,
+    "y": 695.7,
+    "w": 129.9,
+    "h": 16.4,
+    "xu": 218.7,
+    "yu": 1311.2,
+    "wu": 244.8,
+    "hu": 30.9
+   },
+   "text": "Could be multiple tests",
+   "type": {
+    "family": "-apple-system",
+    "size": 9,
+    "sizeU": 17,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(140, 91, 36)",
+    "letterSpacing": "normal",
+    "lineHeight": "10.8245px",
+    "align": "start"
+   },
+   "bg": "rgb(255, 237, 200)",
+   "radius": "99px"
+  },
+  {
+   "order": 75,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 122.4,
+    "y": 697.8,
+    "w": 12.2,
+    "h": 12.2,
+    "xu": 230.7,
+    "yu": 1315.1,
+    "wu": 23,
+    "hu": 23
+   },
+   "svg": "<svg viewBox=\"0 0 32 30\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M13 3c1-3 5-3 6 0l13 23c1 2-1 4-3 4H3c-3 0-4-2-3-4Z\"></path><path d=\"M16 9v9m0 4v2\" stroke=\"#fff\" stroke-width=\"3\" stroke-linecap=\"round\"></path></svg>"
+  },
+  {
+   "order": 76,
+   "tag": "button",
+   "cls": "is-highlighted",
+   "rect": {
+    "x": 116.1,
+    "y": 718.3,
+    "w": 59.4,
+    "h": 30,
+    "xu": 218.7,
+    "yu": 1353.8,
+    "wu": 111.9,
+    "hu": 56.5
+   },
+   "text": "T3",
+   "type": {
+    "family": "-apple-system",
+    "size": 9.6,
+    "sizeU": 18,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(189, 69, 34)",
+    "letterSpacing": "normal",
+    "lineHeight": "11.4612px",
+    "align": "center"
+   },
+   "bg": "rgb(255, 230, 206)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(208, 84, 46)"
+   },
+   "radius": "9.55102px"
+  },
+  {
+   "order": 77,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 179.1,
+    "y": 718.3,
+    "w": 59.4,
+    "h": 30,
+    "xu": 337.6,
+    "yu": 1353.8,
+    "wu": 111.9,
+    "hu": 56.5
+   },
+   "text": "Free T3",
+   "type": {
+    "family": "-apple-system",
+    "size": 9.6,
+    "sizeU": 18,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(41, 32, 22)",
+    "letterSpacing": "normal",
+    "lineHeight": "11.4612px",
+    "align": "center"
+   },
+   "bg": "rgb(255, 253, 250)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(215, 208, 195)"
+   },
+   "radius": "9.55102px"
+  },
+  {
+   "order": 78,
+   "tag": "button",
+   "cls": "",
+   "rect": {
+    "x": 242.2,
+    "y": 718.3,
+    "w": 59.4,
+    "h": 30,
+    "xu": 456.5,
+    "yu": 1353.8,
+    "wu": 111.9,
+    "hu": 56.5
+   },
+   "text": "Total T3",
+   "type": {
+    "family": "-apple-system",
+    "size": 9.6,
+    "sizeU": 18,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(41, 32, 22)",
+    "letterSpacing": "normal",
+    "lineHeight": "11.4612px",
+    "align": "center"
+   },
+   "bg": "rgb(255, 253, 250)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(215, 208, 195)"
+   },
+   "radius": "9.55102px"
+  },
+  {
+   "order": 79,
+   "tag": "button",
+   "cls": "type-choice",
+   "rect": {
+    "x": 310.1,
+    "y": 718.3,
+    "w": 59.4,
+    "h": 30,
+    "xu": 584.3,
+    "yu": 1353.8,
+    "wu": 111.9,
+    "hu": 56.5
+   },
+   "text": "Type it",
+   "type": {
+    "family": "-apple-system",
+    "size": 9.6,
+    "sizeU": 18,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(41, 32, 22)",
+    "letterSpacing": "normal",
+    "lineHeight": "11.4612px",
+    "align": "center"
+   },
+   "bg": "rgb(255, 253, 250)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(51, 45, 34)"
+   },
+   "radius": "9.55102px"
+  },
+  {
+   "order": 80,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 316.9,
+    "y": 728,
+    "w": 10.6,
+    "h": 10.6,
+    "xu": 597.2,
+    "yu": 1372,
+    "wu": 20,
+    "hu": 20
+   },
+   "svg": "<svg viewBox=\"0 0 28 28\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m4 24 2-7L22 2l5 5L11 22Zm3-7 4 5M18 6l5 5\"></path></svg>"
+  },
+  {
+   "order": 81,
+   "tag": "button",
+   "cls": "primary-action all-correct",
+   "rect": {
+    "x": 9.5,
+    "y": 772.1,
+    "w": 370.9,
+    "h": 46.7,
+    "xu": 18,
+    "yu": 1455.1,
+    "wu": 699,
+    "hu": 88
+   },
+   "text": "All correct",
+   "type": {
+    "family": "-apple-system",
+    "size": 14.9,
+    "sizeU": 28,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(255, 246, 228)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   },
+   "bgImage": "linear-gradient(110deg, rgb(211, 76, 36), rgb(195, 71, 37))",
+   "radius": "99px"
+  },
+  {
+   "order": 82,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 229.4,
+    "y": 787.7,
+    "w": 15.4,
+    "h": 15.4,
+    "xu": 432.4,
+    "yu": 1484.6,
+    "wu": 29,
+    "hu": 29
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 16h23m-9-9 9 9-9 9\" stroke=\"currentColor\" stroke-width=\"2.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+  },
+  {
+   "order": 83,
+   "tag": "p",
+   "cls": "scan-reference-note",
+   "rect": {
+    "x": 9.5,
+    "y": 823.5,
+    "w": 370.9,
+    "h": 12.6,
+    "xu": 18,
+    "yu": 1552,
+    "wu": 699,
+    "hu": 23.7
+   },
+   "text": "Reference demo \u00b7 sample prescription details",
+   "type": {
+    "family": "-apple-system",
+    "size": 9,
+    "sizeU": 17,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(138, 122, 100)",
+    "letterSpacing": "normal",
+    "lineHeight": "12.6px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 84,
+   "tag": "div",
+   "cls": "home-indicator",
+   "rect": {
+    "x": 133.6,
+    "y": 840.9,
+    "w": 122.8,
+    "h": 4.1,
+    "xu": 251.7,
+    "yu": 1584.8,
+    "wu": 231.5,
+    "hu": 7.7
+   },
+   "bg": "rgb(21, 18, 13)",
+   "radius": "99px"
+  }
+ ],
+ "art": [
+  {
+   "viewBox": "125 1088 156 121",
+   "href": "assets/references/review-regenerated.jpeg",
+   "aspect": "xMidYMid meet",
+   "cls": "reference-art ",
+   "rect": {
+    "x": 20.6,
+    "y": 579.6,
+    "w": 84.9,
+    "h": 65.8,
+    "xu": 38.8,
+    "yu": 1092.3,
+    "wu": 160,
+    "hu": 124
+   },
+   "order": 61,
+   "asset": "art_reviewregenerated_125_1088_156_121"
+  },
+  {
+   "viewBox": "125 1265 156 120",
+   "href": "assets/references/review-regenerated.jpeg",
+   "aspect": "xMidYMid meet",
+   "cls": "reference-art ",
+   "rect": {
+    "x": 20.6,
+    "y": 679.6,
+    "w": 84.9,
+    "h": 65.8,
+    "xu": 38.8,
+    "yu": 1280.8,
+    "wu": 160,
+    "hu": 124
+   },
+   "order": 72,
+   "asset": "art_reviewregenerated_125_1265_156_120"
+  }
+ ],
+ "images": [
+  {
+   "src": "assets/parchi-logo-transparent.png",
+   "alt": "",
+   "rect": {
+    "x": 135.9,
+    "y": 49.6,
+    "w": 43.5,
+    "h": 42.4,
+    "xu": 256,
+    "yu": 93.5,
+    "wu": 82,
+    "hu": 80
+   },
+   "radius": "0px",
+   "order": 6
+  }
+ ],
+ "route": "review",
+ "shows": "review"
+}

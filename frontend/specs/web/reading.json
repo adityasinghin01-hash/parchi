@@ -1,0 +1,925 @@
+{
+ "viewport": {
+  "w": 390,
+  "h": 844
+ },
+ "artboardUnit": 0.5306000000000001,
+ "title": "Parchi \u00b7 Reading your parchi",
+ "scrollHeight": 873,
+ "elements": [
+  {
+   "order": 0,
+   "tag": "span",
+   "cls": "clock",
+   "rect": {
+    "x": 48.8,
+    "y": 14.9,
+    "w": 31,
+    "h": 17,
+    "xu": 91.9,
+    "yu": 28.1,
+    "wu": 58.5,
+    "hu": 32
+   },
+   "text": "9:41",
+   "type": {
+    "family": "-apple-system",
+    "size": 14.8,
+    "sizeU": 27.9,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.1px",
+    "lineHeight": "normal",
+    "align": "start"
+   }
+  },
+  {
+   "order": 1,
+   "tag": "span",
+   "cls": "dynamic-island",
+   "rect": {
+    "x": 141.6,
+    "y": 10.5,
+    "w": 106.9,
+    "h": 30.4,
+    "xu": 266.8,
+    "yu": 19.8,
+    "wu": 201.4,
+    "hu": 57.3
+   },
+   "bg": "rgb(2, 3, 2)",
+   "radius": "39px"
+  },
+  {
+   "order": 2,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 297.2,
+    "y": 13.6,
+    "w": 64.3,
+    "h": 19.5,
+    "xu": 560.1,
+    "yu": 25.7,
+    "wu": 121.3,
+    "hu": 36.8
+   },
+   "svg": "<svg viewBox=\"0 0 126 34\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"#421c08\"><rect x=\"2\" y=\"18\" width=\"5\" height=\"10\" rx=\"1.6\"></rect><rect x=\"10\" y=\"14\" width=\"5\" height=\"14\" rx=\"1.6\"></rect><rect x=\"18\" y=\"9\" width=\"5\" height=\"19\" rx=\"1.6\"></rect><rect x=\"26\" y=\"4\" width=\"5\" height=\"24\" rx=\"1.6\"></rect></g><g stroke=\"#421c08\" stroke-width=\"3.5\" stroke-linecap=\"round\"><path d=\"M44 11q12-10 24 0M48 16q8-7 16 0M53 21q3-3 6 0\"></path></g><circle cx=\"56\" cy=\"26\" r=\"2\" fill=\"#421c08\"></circle><rect x=\"82\" y=\"5\" width=\"37\" height=\"23\" rx=\"5\" stroke=\"#80664a\" stroke-width=\"1.4\"></rect><rect x=\"85\" y=\"8\" width=\"31\" height=\"17\" rx=\"3\" fill=\"#421c08\"></rect><path d=\"M122 12v9\" stroke=\"#80664a\" stroke-width=\"2.3\" stroke-linecap=\"round\"></path></svg>"
+  },
+  {
+   "order": 3,
+   "tag": "section",
+   "cls": "screen reading-screen",
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 872.9,
+    "xu": 0,
+    "yu": 0,
+    "wu": 735,
+    "hu": 1645.2
+   },
+   "bgImage": "radial-gradient(at 35% 35%, rgba(255, 244, 228, 0.3), rgba(0, 0, 0, 0) 70%)"
+  },
+  {
+   "order": 4,
+   "tag": "button",
+   "cls": "back-control",
+   "rect": {
+    "x": 11.1,
+    "y": 42.4,
+    "w": 44,
+    "h": 44,
+    "xu": 21,
+    "yu": 80,
+    "wu": 82.9,
+    "hu": 82.9
+   },
+   "aria": "Go back"
+  },
+  {
+   "order": 5,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 18,
+    "y": 49.3,
+    "w": 30.2,
+    "h": 30.2,
+    "xu": 34,
+    "yu": 93,
+    "wu": 57,
+    "hu": 57
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m20 5-11 11 11 11\"></path></svg>"
+  },
+  {
+   "order": 7,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 188.5,
+    "y": 57.3,
+    "w": 77.7,
+    "h": 25.5,
+    "xu": 355.2,
+    "yu": 108,
+    "wu": 146.5,
+    "hu": 48
+   },
+   "text": "Parchi",
+   "type": {
+    "family": "Georgia",
+    "size": 24.4,
+    "sizeU": 46,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.795918px",
+    "lineHeight": "25.4694px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 8,
+   "tag": "small",
+   "cls": "",
+   "rect": {
+    "x": 188.5,
+    "y": 84.3,
+    "w": 77.7,
+    "h": 20.2,
+    "xu": 355.2,
+    "yu": 159,
+    "wu": 146.5,
+    "hu": 38
+   },
+   "text": "YOUR HEALTH, MORE CLEARLY",
+   "type": {
+    "family": "-apple-system",
+    "size": 6.9,
+    "sizeU": 13,
+    "weight": "600",
+    "style": "normal",
+    "color": "rgb(104, 85, 63)",
+    "letterSpacing": "1.32653px",
+    "lineHeight": "10.0816px",
+    "align": "left"
+   }
+  },
+  {
+   "order": 9,
+   "tag": "h1",
+   "cls": "",
+   "rect": {
+    "x": 20.2,
+    "y": 128.4,
+    "w": 349.7,
+    "h": 32.7,
+    "xu": 38,
+    "yu": 242,
+    "wu": 659,
+    "hu": 61.6
+   },
+   "text": "Reading your \u2026",
+   "type": {
+    "family": "Georgia",
+    "size": 29.2,
+    "sizeU": 55,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "-0.371429px",
+    "lineHeight": "32.6857px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 10,
+   "tag": "em",
+   "cls": "",
+   "rect": {
+    "x": 224,
+    "y": 127.4,
+    "w": 95.2,
+    "h": 33,
+    "xu": 422.1,
+    "yu": 240.1,
+    "wu": 179.4,
+    "hu": 62.2
+   },
+   "text": "parchi",
+   "type": {
+    "family": "Georgia",
+    "size": 29.2,
+    "sizeU": 55,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(204, 63, 18)",
+    "letterSpacing": "-0.371429px",
+    "lineHeight": "32.6857px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 11,
+   "tag": "p",
+   "cls": "flow-lead",
+   "rect": {
+    "x": 20.2,
+    "y": 166.4,
+    "w": 349.7,
+    "h": 37.8,
+    "xu": 38,
+    "yu": 313.6,
+    "wu": 659,
+    "hu": 71.3
+   },
+   "text": "We are securely reading the medicines and tests from your image.",
+   "type": {
+    "family": "-apple-system",
+    "size": 14.3,
+    "sizeU": 27,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(112, 102, 86)",
+    "letterSpacing": "normal",
+    "lineHeight": "18.911px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 12,
+   "tag": "div",
+   "cls": "reading-photo",
+   "rect": {
+    "x": 20.2,
+    "y": 214.8,
+    "w": 349.7,
+    "h": 252,
+    "xu": 38,
+    "yu": 404.8,
+    "wu": 659,
+    "hu": 475
+   },
+   "bg": "rgb(210, 183, 138)",
+   "border": {
+    "width": "4px 4px 4px 4px",
+    "style": "solid",
+    "color": "rgb(255, 249, 237)"
+   },
+   "radius": "15.3878px"
+  },
+  {
+   "order": 14,
+   "tag": "div",
+   "cls": "privacy-overlay",
+   "rect": {
+    "x": 91,
+    "y": 322.7,
+    "w": 208,
+    "h": 51.8,
+    "xu": 171.5,
+    "yu": 608.2,
+    "wu": 392,
+    "hu": 97.5
+   },
+   "bg": "rgba(255, 231, 224, 0.937)",
+   "radius": "99px",
+   "shadow": "rgba(66, 28, 8, 0.063) 0px 4px 16px 0px"
+  },
+  {
+   "order": 15,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 101.6,
+    "y": 335.8,
+    "w": 22.8,
+    "h": 25.5,
+    "xu": 191.5,
+    "yu": 632.9,
+    "wu": 43,
+    "hu": 48
+   },
+   "svg": "<svg viewBox=\"0 0 32 40\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M7 15V9a9 9 0 0 1 18 0v6h2a3 3 0 0 1 3 3v19H2V18a3 3 0 0 1 3-3Zm4 0h10V9a5 5 0 0 0-10 0Zm3 12v5h4v-5a3 3 0 1 0-4 0Z\"></path></svg>"
+  },
+  {
+   "order": 16,
+   "tag": "span",
+   "cls": "",
+   "rect": {
+    "x": 135,
+    "y": 332.2,
+    "w": 149.9,
+    "h": 32.7,
+    "xu": 254.5,
+    "yu": 626.2,
+    "wu": 282.5,
+    "hu": 61.5
+   },
+   "text": "Your prescription is blurred for your privacy",
+   "type": {
+    "family": "-apple-system",
+    "size": 11.7,
+    "sizeU": 22,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(53, 25, 12)",
+    "letterSpacing": "normal",
+    "lineHeight": "16.3429px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 17,
+   "tag": "div",
+   "cls": "reading-steps",
+   "rect": {
+    "x": 20.2,
+    "y": 477.4,
+    "w": 349.7,
+    "h": 199,
+    "xu": 38,
+    "yu": 899.8,
+    "wu": 659,
+    "hu": 375
+   },
+   "bg": "rgba(255, 249, 239, 0.61)",
+   "radius": "14.8571px"
+  },
+  {
+   "order": 18,
+   "tag": "span",
+   "cls": "step-mark",
+   "rect": {
+    "x": 36.1,
+    "y": 491.2,
+    "w": 26,
+    "h": 26,
+    "xu": 68,
+    "yu": 925.7,
+    "wu": 49,
+    "hu": 49
+   },
+   "bgImage": "linear-gradient(135deg, rgb(227, 76, 11), rgb(183, 34, 9))",
+   "radius": "50%"
+  },
+  {
+   "order": 19,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 40,
+    "y": 495.1,
+    "w": 18.2,
+    "h": 18.2,
+    "xu": 75.3,
+    "yu": 933.1,
+    "wu": 34.3,
+    "hu": 34.3
+   },
+   "svg": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 16 7 7L27 8\"></path></svg>"
+  },
+  {
+   "order": 20,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 76.9,
+    "y": 490.2,
+    "w": 96.7,
+    "h": 15.3,
+    "xu": 144.9,
+    "yu": 923.8,
+    "wu": 182.3,
+    "hu": 28.7
+   },
+   "text": "Image uploaded",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.2,
+    "sizeU": 23,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "normal",
+    "lineHeight": "15.2551px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 21,
+   "tag": "p",
+   "cls": "",
+   "rect": {
+    "x": 76.9,
+    "y": 507.5,
+    "w": 96.7,
+    "h": 14.8,
+    "xu": 144.9,
+    "yu": 956.5,
+    "wu": 182.3,
+    "hu": 28
+   },
+   "text": "Keeping it secure",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(119, 112, 95)",
+    "letterSpacing": "normal",
+    "lineHeight": "14.8571px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 22,
+   "tag": "span",
+   "cls": "step-mark",
+   "rect": {
+    "x": 35.8,
+    "y": 537.6,
+    "w": 26.5,
+    "h": 26.5,
+    "xu": 67.5,
+    "yu": 1013.2,
+    "wu": 50,
+    "hu": 50
+   },
+   "border": {
+    "width": "3px 3px 3px 3px",
+    "style": "solid",
+    "color": "rgb(223, 93, 38)"
+   },
+   "radius": "50%"
+  },
+  {
+   "order": 23,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 76.9,
+    "y": 537.4,
+    "w": 150.6,
+    "h": 15.3,
+    "xu": 144.9,
+    "yu": 1012.7,
+    "wu": 283.8,
+    "hu": 28.7
+   },
+   "text": "Reading text",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.2,
+    "sizeU": 23,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "normal",
+    "lineHeight": "15.2551px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 24,
+   "tag": "p",
+   "cls": "",
+   "rect": {
+    "x": 76.9,
+    "y": 554.7,
+    "w": 150.6,
+    "h": 14.8,
+    "xu": 144.9,
+    "yu": 1045.5,
+    "wu": 283.8,
+    "hu": 28
+   },
+   "text": "Finding medicines and tests\u2026",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(119, 112, 95)",
+    "letterSpacing": "normal",
+    "lineHeight": "14.8571px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 25,
+   "tag": "span",
+   "cls": "step-mark",
+   "rect": {
+    "x": 36.1,
+    "y": 585.6,
+    "w": 26,
+    "h": 26,
+    "xu": 68,
+    "yu": 1103.7,
+    "wu": 49,
+    "hu": 49
+   },
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(205, 189, 171)"
+   },
+   "radius": "50%"
+  },
+  {
+   "order": 26,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 76.9,
+    "y": 584.6,
+    "w": 182.4,
+    "h": 15.3,
+    "xu": 144.9,
+    "yu": 1101.7,
+    "wu": 343.8,
+    "hu": 28.7
+   },
+   "text": "Checking details",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.2,
+    "sizeU": 23,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "normal",
+    "lineHeight": "15.2551px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 27,
+   "tag": "p",
+   "cls": "",
+   "rect": {
+    "x": 76.9,
+    "y": 602,
+    "w": 182.4,
+    "h": 14.8,
+    "xu": 144.9,
+    "yu": 1134.5,
+    "wu": 343.8,
+    "hu": 28
+   },
+   "text": "Organising and removing duplicates",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(119, 112, 95)",
+    "letterSpacing": "normal",
+    "lineHeight": "14.8571px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 28,
+   "tag": "span",
+   "cls": "step-mark",
+   "rect": {
+    "x": 36.1,
+    "y": 632.9,
+    "w": 26,
+    "h": 26,
+    "xu": 68,
+    "yu": 1192.7,
+    "wu": 49,
+    "hu": 49
+   },
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(205, 189, 171)"
+   },
+   "radius": "50%"
+  },
+  {
+   "order": 29,
+   "tag": "strong",
+   "cls": "",
+   "rect": {
+    "x": 76.9,
+    "y": 631.8,
+    "w": 166.4,
+    "h": 15.3,
+    "xu": 144.9,
+    "yu": 1190.7,
+    "wu": 313.6,
+    "hu": 28.7
+   },
+   "text": "Almost ready",
+   "type": {
+    "family": "-apple-system",
+    "size": 12.2,
+    "sizeU": 23,
+    "weight": "650",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "normal",
+    "lineHeight": "15.2551px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 30,
+   "tag": "p",
+   "cls": "",
+   "rect": {
+    "x": 76.9,
+    "y": 649.2,
+    "w": 166.4,
+    "h": 14.8,
+    "xu": 144.9,
+    "yu": 1223.4,
+    "wu": 313.6,
+    "hu": 28
+   },
+   "text": "This usually takes a few seconds",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(119, 112, 95)",
+    "letterSpacing": "normal",
+    "lineHeight": "14.8571px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 31,
+   "tag": "aside",
+   "cls": "reading-privacy",
+   "rect": {
+    "x": 20.2,
+    "y": 687,
+    "w": 349.7,
+    "h": 85.5,
+    "xu": 38,
+    "yu": 1294.7,
+    "wu": 659,
+    "hu": 161.1
+   },
+   "bg": "rgba(255, 248, 234, 0.63)",
+   "radius": "13.7959px"
+  },
+  {
+   "order": 32,
+   "tag": "svg",
+   "cls": "",
+   "rect": {
+    "x": 32.9,
+    "y": 699.7,
+    "w": 41.4,
+    "h": 46.2,
+    "xu": 62,
+    "yu": 1318.7,
+    "wu": 78,
+    "hu": 87
+   },
+   "svg": "<svg viewBox=\"0 0 64 78\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"shield\" x1=\"9\" y1=\"4\" x2=\"58\" y2=\"74\"><stop stop-color=\"#fff3d8\"></stop><stop offset=\".5\" stop-color=\"#ffe2b1\"></stop><stop offset=\"1\" stop-color=\"#e7ba79\"></stop></linearGradient><filter id=\"shield-shadow\" x=\"-45%\" y=\"-30%\" width=\"190%\" height=\"180%\"><feDropShadow dx=\"0\" dy=\"3\" stdDeviation=\"3\" flood-color=\"#a86a28\" flood-opacity=\".28\"></feDropShadow></filter></defs><path d=\"M32 3C22 10 13 11 7 15v23c0 17 9 27 25 35 16-8 25-18 25-35V15C47 11 42 10 32 3Z\" fill=\"url(#shield)\" stroke=\"#f9d7a0\" stroke-width=\"1.4\" filter=\"url(#shield-shadow)\"></path><path d=\"M32 8c-8 6-15 8-20 10v20c0 14 6 23 20 30 14-7 20-16 20-30V18c-8-3-13-5-20-10Z\" fill=\"#fff1d6\" opacity=\".65\"></path><rect x=\"21\" y=\"31\" width=\"22\" height=\"22\" rx=\"6\" fill=\"#4a220c\"></rect><path d=\"M25 32v-6a7 7 0 0 1 14 0v6\" stroke=\"#4a220c\" stroke-width=\"4\"></path><circle cx=\"32\" cy=\"40\" r=\"2.4\" fill=\"#ffe6bd\"></circle><path d=\"M32 41v5\" stroke=\"#ffe6bd\" stroke-width=\"2.5\" stroke-linecap=\"round\"></path></svg>"
+  },
+  {
+   "order": 33,
+   "tag": "h2",
+   "cls": "",
+   "rect": {
+    "x": 87,
+    "y": 699.7,
+    "w": 245.1,
+    "h": 16.6,
+    "xu": 164,
+    "yu": 1318.7,
+    "wu": 461.9,
+    "hu": 31.2
+   },
+   "text": "Your privacy comes first",
+   "type": {
+    "family": "-apple-system",
+    "size": 13.3,
+    "sizeU": 25,
+    "weight": "700",
+    "style": "normal",
+    "color": "rgb(66, 28, 8)",
+    "letterSpacing": "normal",
+    "lineHeight": "16.5816px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 34,
+   "tag": "li",
+   "cls": "",
+   "rect": {
+    "x": 87,
+    "y": 720,
+    "w": 245.1,
+    "h": 13.3,
+    "xu": 164,
+    "yu": 1357,
+    "wu": 461.9,
+    "hu": 25
+   },
+   "text": "Images are securely processed",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(130, 121, 102)",
+    "letterSpacing": "normal",
+    "lineHeight": "13.2653px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 35,
+   "tag": "li",
+   "cls": "",
+   "rect": {
+    "x": 87,
+    "y": 733.3,
+    "w": 245.1,
+    "h": 13.3,
+    "xu": 164,
+    "yu": 1381.9,
+    "wu": 461.9,
+    "hu": 25
+   },
+   "text": "Not shared with anyone",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(130, 121, 102)",
+    "letterSpacing": "normal",
+    "lineHeight": "13.2653px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 36,
+   "tag": "li",
+   "cls": "",
+   "rect": {
+    "x": 87,
+    "y": 746.5,
+    "w": 245.1,
+    "h": 13.3,
+    "xu": 164,
+    "yu": 1406.9,
+    "wu": 461.9,
+    "hu": 25
+   },
+   "text": "Only used to extract your medicines and tests",
+   "type": {
+    "family": "-apple-system",
+    "size": 10.6,
+    "sizeU": 20,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(130, 121, 102)",
+    "letterSpacing": "normal",
+    "lineHeight": "13.2653px",
+    "align": "start"
+   }
+  },
+  {
+   "order": 37,
+   "tag": "button",
+   "cls": "cancel-reading",
+   "rect": {
+    "x": 20.2,
+    "y": 783.1,
+    "w": 349.7,
+    "h": 44,
+    "xu": 38,
+    "yu": 1475.9,
+    "wu": 659,
+    "hu": 82.9
+   },
+   "text": "Cancel",
+   "type": {
+    "family": "-apple-system",
+    "size": 13.8,
+    "sizeU": 26,
+    "weight": "600",
+    "style": "normal",
+    "color": "rgb(182, 49, 16)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "align": "center"
+   },
+   "bg": "rgba(255, 248, 236, 0.333)",
+   "border": {
+    "width": "1px 1px 1px 1px",
+    "style": "solid",
+    "color": "rgb(204, 63, 18)"
+   },
+   "radius": "99px"
+  },
+  {
+   "order": 38,
+   "tag": "p",
+   "cls": "reference-disclosure",
+   "rect": {
+    "x": 20.2,
+    "y": 835.1,
+    "w": 349.7,
+    "h": 14,
+    "xu": 38,
+    "yu": 1573.8,
+    "wu": 659,
+    "hu": 26.4
+   },
+   "text": "Reference demo \u00b7 sample image and simulated progress",
+   "type": {
+    "family": "-apple-system",
+    "size": 10,
+    "sizeU": 18.8,
+    "weight": "400",
+    "style": "normal",
+    "color": "rgb(135, 118, 101)",
+    "letterSpacing": "normal",
+    "lineHeight": "14px",
+    "align": "center"
+   }
+  },
+  {
+   "order": 39,
+   "tag": "div",
+   "cls": "home-indicator",
+   "rect": {
+    "x": 133.6,
+    "y": 861.8,
+    "w": 122.8,
+    "h": 4.1,
+    "xu": 251.7,
+    "yu": 1624.2,
+    "wu": 231.5,
+    "hu": 7.7
+   },
+   "bg": "rgb(21, 18, 13)",
+   "radius": "99px"
+  }
+ ],
+ "art": [
+  {
+   "viewBox": "178 416 551 713",
+   "href": "assets/references/capture-camera.jpeg",
+   "aspect": "xMidYMid meet",
+   "cls": "reference-art prescription-photo",
+   "rect": {
+    "x": 17.3,
+    "y": 213.9,
+    "w": 355.4,
+    "h": 253.8,
+    "xu": 32.6,
+    "yu": 403.1,
+    "wu": 669.7,
+    "hu": 478.3
+   },
+   "order": 13,
+   "asset": "art_capturecamera_178_416_551_713"
+  }
+ ],
+ "images": [
+  {
+   "src": "assets/parchi-logo-transparent.png",
+   "alt": "",
+   "rect": {
+    "x": 123.8,
+    "y": 55.7,
+    "w": 58.4,
+    "h": 50.4,
+    "xu": 233.3,
+    "yu": 105,
+    "wu": 110,
+    "hu": 95
+   },
+   "radius": "0px",
+   "order": 6
+  }
+ ],
+ "route": "reading",
+ "shows": "reading"
+}
